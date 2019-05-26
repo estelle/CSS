@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="editme.css">
+<style>
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em;}
+</style>
+
+<style contenteditable class="editme">li[title*="unicorn" i] {color: purple; font-weight: bold;}
+a[href] {text-decoration: overline;}
+</style>
+<title>CSS Selector Test</title>
+</head>
+
+<body><ol>
+<li class="myClass" title="Unicorns fart rainbows.">1 - &lt;li class=&quot;myClass&quot; title=&quot;Unicorns fart rainbows.&quot;&gt;</li>
+<li>2 -  has a <span>span</span> - &lt;li&gt;Second List Item has a &lt;span&gt;span&lt;/span&gt;&lt;/li&gt;</li>
+<li class="myClass">3 - &lt;li class=&quot;myClass&quot;&gt;</li>
+<li>4 - simple &lt;LI></li>
+<li>5 - simple &lt;LI> with a nested &lt;UL>
+	<ul>
+    	<li>Child 1 external  <a href="http://site.com/file.pdf" title="external pdf file">pdf</a> - &lt;a href=&quot;https://site.com/file.pdf&quot; title=&quot;external pdf file&quot;&gt;</li>
+    	<li>Child 2</li>
+    	<li>Child 3</li>
+    </ul>
+</li>
+<li>6 - simple &lt;LI></li>
+<li id="myID">7 - &lt;li id=&quot;myID&quot;&gt;</li>
+<li>8 - simple &lt;LI></li>
+<li class="myClass">9 - &lt;li class=&quot;myClass&quot;&gt;</li>
+<li>10  - with an external <a href="http://standardista.com">Link</a> - &lt;a href=&quot;https://standardista.com&quot;&gt;Link&lt;/a&gt;</li>
+<li>11 - with a <a href="local.pdf" title="a local pdf file">PDF</a> - &lt;a href=&quot;local.pdf&quot;  title=&quot;a local pdf file&quot;&gt;PDF&lt;/a&gt;</li>
+<li>12 - simple &lt;LI></li>
+<li title="A unicorn farted a rainbow">13 -  &lt;li title=&quot;A unicorn farted a rainbow&quot;&gt;</li>
+</ol>
+</body>
+</html>
+

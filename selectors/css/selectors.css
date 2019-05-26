@@ -1,0 +1,589 @@
+/* CSS Document */
+.button {
+  color: #FFFFFF;
+  transform: translatez(0);
+  overflow: hidden;
+  font-family: Helvetica;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 10px;
+  float: right;
+}
+
+.cancel {
+  float: left;
+}
+
+.button:hover {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#info {
+  font-size: small;
+  position: absolute;
+  bottom: 0px;
+  left: 40%;
+  z-index: 500;
+  color: #fff;
+}
+
+#topinfo {
+  font-size: small;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 500;
+}
+
+.key {
+  color: black;
+  display: inline-block;
+  padding: 3px 3px 3px 3px;
+  text-shadow: none;
+  letter-spacing: 0;
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-shadow: 0 0 1px currentColor;
+}
+
+pre, .ex, .pre, .codelike {
+  text-align: left;
+  padding: 10px 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+pre b,
+.pre b,
+.imp {
+  font-weight: normal;
+}
+
+code {
+  color: blue;
+}
+
+pre b {
+  color: blue;
+  text-shadow: blue 0 0 1px;
+}
+
+pre em {
+  font-style: normal;
+  color: red;
+  text-shadow: red 0 0 1px;
+}
+
+[contenteditable]:focus {
+  box-shadow: none;
+  outline: 1px dashed red;
+}
+
+/* Presentation and generic slides */
+body {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif, "Droid Sans";
+}
+
+#presentation {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  display: block;
+  overflow: hidden;
+  animation: none;
+  background-color: #eee;
+}
+
+.slide {
+  position: absolute;
+  overflow: hidden;
+  padding: 10px;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #fff;
+  transform: scale(0.01);
+}
+
+@media screen and (min-width: 1000px) {
+  .slide {
+    transition: all 0.25s ease-in-out;
+  }
+}
+@media screen and (max-width: 960px) {
+  .current {
+    transform: scale(1) translatez(0);
+  }
+}
+.slide.past {
+  margin-left: -100vw;
+}
+
+.slide.current {
+  margin-left: 0;
+}
+
+.slide.future {
+  margin-left: 100vw;
+}
+
+/* move the relavant slides back */
+.slide.future, .slide.past {
+  transform: scale(0.8);
+}
+
+.slide.current.current.current.current {
+  transform: scale(1);
+}
+
+.slide.intro {
+  text-align: center;
+  font-size: 200%;
+}
+
+.slide.intro hgroup {
+  margin-top: 200px;
+}
+
+.content {
+  font-size: 140%;
+}
+
+.content input, button {
+  font-size: 140%;
+}
+
+.content td {
+  border: 1px solid black;
+}
+
+.invalid {
+  background-color: red;
+}
+
+.slide.section, .slide.intro {
+  text-align: center;
+}
+
+.slide.section, .slide.intro header {
+  font-size: 200%;
+}
+
+.intro p, header, .divider {
+  text-align: center;
+}
+
+.intro header, .divider {
+  font-size: 200%;
+}
+
+.divider h1 {
+  padding-top: 200px;
+}
+
+.slide li {
+  margin-bottom: 10px;
+}
+
+.slide img {
+  max-height: 90%;
+}
+
+.slide p, .slide textarea {
+  font-size: 120%;
+}
+
+@media print {
+  .slide {
+    page-break-inside: avoid;
+    page-break-after: always;
+    visibility: visible !important;
+    font-size: 20pt;
+    font-family: Arial, sans-serif;
+  }
+
+  @page {
+    size: landscape;
+  }
+  body {
+    font-size: 12pt;
+    background: white;
+  }
+
+  header h1 {
+    border-top: 2pt solid gray;
+    border-bottom: 1px dotted silver;
+  }
+
+  #presentation-counter, #info, #topinfo, .counter {
+    display: none;
+  }
+}
+/* CSS Counter */
+body {
+  counter-reset: pagecount;
+}
+
+.slide {
+  counter-increment: pagecount;
+}
+
+.slide:after {
+  content: counter(pagecount);
+  color: lightblue;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+}
+
+.slide .counter {
+  color: #999999;
+  position: absolute;
+  left: 20px;
+  top: 90%;
+  display: block;
+  font-size: 0.7rem;
+}
+
+.slide.title > .counter,
+.slide.segue > .counter,
+.slide.mainTitle > .counter {
+  display: none;
+}
+
+#presentation-counter {
+  color: #ccc;
+  font-size: 70%;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* OBJECT PAGES */
+.object header {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  left: 0;
+}
+
+.objectlink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background: #000;
+  padding: 3px 5px;
+  border: none;
+}
+
+.slide.object {
+  padding: 0;
+}
+
+.object object {
+  width: 100%;
+  height: calc(100% - 2.2em);
+  margin-top: 2em;
+}
+
+.object object[data^=http] {
+  height: 100%;
+  margin-top: 0;
+}
+
+header {
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  left: 30px;
+  top: 25px;
+  font-size: 140%;
+}
+
+h1 {
+  font-size: 140%;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 90%;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+section, footer {
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  margin: 20px 30px 0;
+  display: block;
+  overflow: hidden;
+}
+
+footer {
+  font-size: 100%;
+  margin: 20px 0 0 30px;
+}
+
+section footer,
+.slide footer {
+  font-size: 22px;
+  margin: 20px 0 0 30px;
+}
+
+section footer {
+  text-align: right;
+  position: absolute;
+  bottom: 10px;
+  width: 800px;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: dotted 1px;
+  line-height: 110%;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div.example {
+  display: block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+video {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+section.twopart {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* definition lists */
+dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+  background-color: #ccc;
+  display: inline-block;
+  margin-bottom: 2px;
+  clear: both;
+}
+
+dl.inline dt {
+  width: 200px;
+  float: left;
+  text-align: right;
+  padding-right: 15px;
+  clear: both;
+  margin: 0 0 2px 0;
+}
+
+.flex12 {
+  display: flex;
+}
+
+.flex12 article:first-of-type {
+  flex: 1;
+}
+
+.flex12 article:last-of-type {
+  flex: 2;
+}
+.flex12 article:last-of-type ul {
+  column-count: 2;
+}
+
+ul.col3 {
+  column-count: 3;
+}
+
+ul.col2 {
+  column-count: 2;
+}
+
+.flex12, .col3, .col2 {
+  padding-left: 0;
+}
+.flex12 li, .col3 li, .col2 li {
+  list-style-type: none;
+}
+
+/* CSS for Structural Selector Slide */
+.structural {
+  margin-top: 0;
+  height: calc(90vh - 4rem);
+  overflow: scroll;
+}
+
+.structural li:first-child,
+.structural li:last-child {
+  font-weight: bold;
+}
+
+.structural li:nth-child(even) {
+  background-color: #CCC;
+}
+
+.structural li:nth-of-type(odd) {
+  background-color: #FFF;
+}
+
+.structural li:nth-child(3) {
+  color: #CCC;
+}
+
+.structural li:first-of-type,
+.structural li:last-of-type {
+  text-decoration: line-through;
+}
+
+.structural li:nth-of-type(4n) {
+  color: #990000;
+}
+
+.structural li:nth-of-type(3n-1) {
+  text-align: right;
+}
+
+.count li {
+  display: inline-block;
+  text-align: center;
+}
+
+.count li:nth-of-type(even) {
+  background-color: white;
+}
+
+.count li:nth-of-type(odd) {
+  background-color: #C7573A;
+}
+
+.count li:first-of-type:last-of-type {
+  width: 100%;
+}
+
+.count li:nth-of-type(1):nth-last-of-type(2),
+.count li:nth-of-type(2):nth-last-of-type(1) {
+  width: 50%;
+}
+
+.count li:nth-of-type(1):nth-last-of-type(3),
+.count li:nth-of-type(3):nth-last-of-type(1),
+.count li:nth-of-type(2):nth-last-of-type(2) {
+  width: 33.33%;
+}
+
+.count li:nth-of-type(1):nth-last-of-type(4),
+.count li:nth-of-type(2):nth-last-of-type(3),
+.count li:nth-of-type(3):nth-last-of-type(2),
+.count li:nth-of-type(4):nth-last-of-type(1) {
+  width: 25%;
+}
+
+.count li:nth-of-type(odd) {
+  background: linear-gradient(to bottom, #f36, #f63);
+  color: white;
+}
+
+input[type=checkbox]:checked + label {
+  color: red;
+}
+
+input[type=number] {
+  width: 2em;
+  margin-right: 0.5em;
+  box-sizing: border-box;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:required {
+  border-width: 5px;
+}
+
+input:optional {
+  border-width: 10px;
+}
+
+input:out-of-range {
+  background-color: pink;
+}
+
+input:in-range {
+  background-color: lightgreen;
+}
+
+p.firstletter {
+  width: 400px;
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0 20px 20px;
+}
+
+.firstletter::first-letter {
+  position: relative;
+  top: 8px;
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  color: #900;
+  padding: 0 4px 2px 0;
+  font-weight: bold;
+}
+
+/* SELECTION SLIDE */
+.thisSlide *::selection {
+  background-color: #990000;
+  color: #ffffff;
+}
+
+.current * {
+  -webkit-tap-highlight-color: #bada55;
+}
+
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=selectors.css.map */

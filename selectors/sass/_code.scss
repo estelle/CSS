@@ -1,0 +1,29 @@
+pre, .ex, .pre, .codelike {
+	text-align: left;
+	padding: 10px 20px;
+	background: #fafafa;
+	border-radius: 8px;
+	border: 1px solid #eee;
+}
+pre b, 
+.pre b, 
+.imp {
+	font-weight: normal;
+}
+code {
+	color: $hilite;
+}
+pre b {
+	color: $hilite;
+	text-shadow: $hilite 0 0 1px;
+}
+pre em {
+	font-style: normal;
+	color: $hilite2;
+	text-shadow: $hilite2 0 0 1px;
+}
+
+[contenteditable]:focus {
+	box-shadow:none; 
+	outline:1px dashed $hilite2;
+}

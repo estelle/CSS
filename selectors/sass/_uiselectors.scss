@@ -1,0 +1,10 @@
+input[type=checkbox]:checked + label {
+  color: red;
+}
+input[type=number] {width: 2em; margin-right: 0.5em; box-sizing: border-box;}
+input:valid { border: 1px solid green;}
+input:invalid { border: 1px solid red;}
+input:required {border-width: 5px;}
+input:optional {border-width: 10px;}
+input:out-of-range { background-color: pink;}
+input:in-range { background-color:lightgreen;}

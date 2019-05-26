@@ -1,0 +1,15 @@
+p.firstletter {width: 400px;
+ font-size: 24px;
+ font-family:Georgia, "Times New Roman", Times, serif;
+ margin: 0 20px 20px;
+}
+.firstletter::first-letter {
+	position: relative;
+	top: 8px;
+	float: left;
+	font-size: 3em;
+	line-height: 1;
+	color: #900;
+	padding: 0 4px 2px 0;
+	font-weight: bold;
+}

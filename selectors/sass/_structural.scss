@@ -1,0 +1,29 @@
+  /* CSS for Structural Selector Slide */
+.structural {
+	margin-top: 0;
+	height: calc(90vh - 4rem);
+	overflow: scroll;
+}
+.structural li:first-child,
+.structural li:last-child {
+  font-weight: bold;
+}
+.structural li:nth-child(even) {
+  background-color: #CCC;
+}
+.structural li:nth-of-type(odd) {
+  background-color: #FFF;
+}
+.structural li:nth-child(3) {
+  color: #CCC;
+}
+.structural li:first-of-type,
+.structural li:last-of-type{
+  text-decoration:line-through;
+}
+.structural li:nth-of-type(4n) {
+  color: #990000;
+}
+.structural li:nth-of-type(3n-1) {
+  text-align: right;
+}
