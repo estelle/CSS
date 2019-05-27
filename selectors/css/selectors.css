@@ -21,13 +21,19 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+@media screen and (max-width: 600px) {
+  .button {
+    position: relative;
+    top: calc(100vh - 3em);
+  }
+}
 #info {
   font-size: small;
   position: absolute;
   bottom: 0px;
   left: 40%;
   z-index: 500;
-  color: #fff;
+  color: #aaa;
 }
 
 #topinfo {
@@ -41,11 +47,11 @@
 .key {
   color: black;
   display: inline-block;
-  padding: 3px 3px 3px 3px;
+  padding: 3px;
   text-shadow: none;
   letter-spacing: 0;
   position: relative;
-  background: white;
+  background: #ccc;
   border-radius: 5px;
   font-weight: bold;
   text-shadow: 0 0 1px currentColor;
@@ -386,6 +392,14 @@ video {
 section.twopart {
   display: flex;
   justify-content: space-between;
+}
+
+.wrong {
+  opacity: 0.3;
+}
+
+input[type=checkbox]:indeterminate + label {
+  color: blue;
 }
 
 /* definition lists */

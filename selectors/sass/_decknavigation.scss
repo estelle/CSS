@@ -17,3 +17,10 @@
   color: #000;
   background-color: rgba(255,255,255,0.4);
 }
+
+@media screen and (max-width: 600px) {
+  .button {
+    position: relative;
+    top: calc(100vh - 3em);
+  }
+}

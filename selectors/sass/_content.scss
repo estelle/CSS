@@ -69,3 +69,10 @@ section.twopart {
 	display: flex;
 	justify-content: space-between;
 }
+.wrong {
+	opacity: 0.3;
+}
+
+input[type="checkbox"]:indeterminate + label {
+  color: blue;
+}

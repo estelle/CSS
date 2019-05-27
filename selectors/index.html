@@ -548,12 +548,13 @@ function hasaclass(selector) {
     <dd>Select elements containing the named attribute</dd>
   </dl>
 
-<pre contenteditable style="font-size: 95%;"><strong>img[alt] {}</strong>
-     &lt;img src=&quot;image.jpg&quot; <strong>alt</strong>=&quot;accessible&quot;&gt;
-     <span style="opacity:0.3">&lt;img src=&quot;image.jpg&quot; title=&quot;inaccessible&quot;&gt;</span>
+<pre contenteditable><strong>img[alt] {}</strong>
+     &lt;img src=&quot;image.jpg&quot; <b>alt</b>=&quot;accessible&quot;&gt;
+     <span class="wrong">&lt;img src=&quot;image.jpg&quot; title=&quot;inaccessible&quot;&gt;</span>
+
 <strong>form [type] {}</strong>
-     &lt;input <strong>type</strong>="date"&gt;
-     <span style="opacity:0.3">&lt;select&gt;</span></pre>  
+     &lt;input <b>type</b>="date"&gt;
+     <span class="wrong">&lt;select&gt;</span></pre>  
   </section>
 </div>
 
@@ -818,7 +819,7 @@ input:in-range { background-color:lightgreen;}</pre>
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
-     <header><h1>the other UI pseudo-classes</h1></header>
+     <header><h1>Other UI pseudo-classes</h1></header>
      <section class="content">
   <pre contenteditable>
 
@@ -837,6 +838,76 @@ input:in-range { background-color:lightgreen;}</pre>
 
 :user-invalid</pre>
   </section>
+</div>
+
+
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/wbjVYq"></object>
+     <header><h1>:read-write &amp; :read-only</h1></header>
+  <a href="https://codepen.io/estelle/pen/wbjVYq" target="play" class="objectlink">Codepen</a>
+</div>
+
+
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/BexXbd"></object>
+     <header><h1>:enabled &amp; :disabled</h1></header>
+  <a href="https://codepen.io/estelle/pen/BexXbd" target="play" class="objectlink">Codepen</a>
+</div>
+
+
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/yWEBOZ"></object>
+     <header><h1>:default</h1></header>
+  <a href="https://codepen.io/estelle/pen/yWEBOZ" target="play" class="objectlink">Codepen</a>
+</div>
+
+
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+  <header><h1>the other UI pseudo-classes</h1></header>
+  <section class="content">
+    <pre contenteditable>[type="checkbox"]:indeterminate + label {
+  color: blue;
+}</pre>
+    <p>
+      <input type="checkbox" id="indeterminate_checkbox"> <label for="indeterminate_checkbox" onclick="document.getElementById('indeterminate_checkbox').indeterminate = true; return false">Make prior checkbox indeterminate</label>
+    </p>
+    <ul>
+      <li>When radio and checkbox elements are neither checked nor unchecked 
+      </li>
+      <li>progress meter when the percent completion is not known</li>
+      <li>Radio-group initialized with no pre-selected choice</li>
+</ul>
+  </section>
+</div>
+
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>the other UI pseudo-classes</h1></header>
+     <section class="content">
+        <pre contenteditable>:placeholder-shown</pre>
+      </section>
+</div>
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>the other UI pseudo-classes</h1></header>
+     <section class="content">
+        <pre contenteditable>:blank</pre>
+      </section>
+</div>
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>the other UI pseudo-classes</h1></header>
+     <section class="content">
+        <pre contenteditable>:user-invalid</pre>
+     </section>
 </div>
 
 <!-- divider -->
