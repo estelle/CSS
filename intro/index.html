@@ -88,10 +88,17 @@ a:link {
 
 
 
-<div class="slide intro">
+<div class="slide intro toc">
 
   <header><h1>Including CSS</h1></header>
-  <section></section>
+  <section><ul>
+    <li><code>&lt;link></code></li>
+   <li><code>&lt;style></code></li>
+   <li><code>@import</code></li>
+   <li>inline (<code>style</code> attribute)</li>
+   <li>scripting</li>
+
+  </section>
 </div>
 
 
@@ -213,13 +220,14 @@ a:link {
 
     <pre contenteditable>myTarget.style.color = 'blue';</pre>
 
-    <pre contenteditable>myTarget.classList.add('myClass');
-    <i>/* add, remove, toggle, contains */</i></pre>
+    <pre contenteditable>myTarget.classList.toggle('myClass');
+
+<i>/* methods: add, remove, toggle, contains */</i></pre>
 
   </section>
 </div>
 
-<div class="slide">
+<div class="slide intro toc">
   <header><h1>Syntax</h1></header>
   <section>
     <ul>
@@ -291,9 +299,25 @@ that spans 3 lines */</i></pre>
   <section>
     <h2>Forgiving</h2>
     <p>Skips declaration it doesn't understand</p>
-    <pre contenteditable>color: granola; <i>/* not a valid color */</i>
-groot: green; <i>/* not a valid property */</i></pre>
+    <pre contenteditable>p {
+  color: granola; <i>/* not a valid color */</i>
+  groot: green; <i>/* not a valid property */</i>
+  font-weight: bold <i>/* will not ignore this */</i>
+}</pre>
 <h2>Strict</h2>
+<p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
+<pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
+p.valid { 
+  color: green;
+}</pre>
+</section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Forgiving for ::-webkit</h1></header>
+  <section>
 <p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
 <pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
 p.valid { 
@@ -303,7 +327,8 @@ p.valid {
 <pre contenteditable>::-webkit-does-not-exist,
 ::after { <i>/* this is NOT ignored */</i>
   content: 'foo';
-}
+}</pre>
+<p><i>If there is an invalid pseudo-element or pseudo-class within in a chain or group of selectors, the whole selector list is invalid. If a pseudo-element (but not pseudo-class) has a -webkit- prefix, webkit and mozilla will not invalidate the selector list.</i>
   </section>
 </div>
 
