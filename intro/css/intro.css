@@ -312,13 +312,66 @@ body {
   margin-top: 0;
 }
 
+/* definition lists */
+dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+  background-color: #ccc;
+  display: inline-block;
+  margin-bottom: 2px;
+  clear: both;
+}
+
+dl.inline dt {
+  width: 200px;
+  float: left;
+  text-align: right;
+  padding-right: 15px;
+  clear: both;
+  margin: 0 0 2px 0;
+}
+
+.flex12 {
+  display: flex;
+}
+
+.flex12 article:first-of-type {
+  flex: 1;
+}
+
+.flex12 article:last-of-type {
+  flex: 2;
+}
+.flex12 article:last-of-type ul {
+  column-count: 2;
+}
+
+ul.col3 {
+  column-count: 3;
+}
+
+ul.col2 {
+  column-count: 2;
+}
+
+.flex12, .col3, .col2 {
+  padding-left: 0;
+}
+.flex12 li, .col3 li, .col2 li {
+  list-style-type: none;
+}
+
 header {
   font-weight: normal;
   letter-spacing: -0.05em;
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  left: 30px;
-  top: 25px;
   font-size: 140%;
+}
+
+body > header {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 }
 
 h1 {
@@ -403,197 +456,8 @@ input[type=checkbox]:indeterminate + label {
   color: blue;
 }
 
-/* definition lists */
-dt {
-  font-weight: bold;
-  margin-top: 0.5em;
-  background-color: #ccc;
-  display: inline-block;
-  margin-bottom: 2px;
-  clear: both;
+i {
+  opacity: 0.5;
 }
 
-dl.inline dt {
-  width: 200px;
-  float: left;
-  text-align: right;
-  padding-right: 15px;
-  clear: both;
-  margin: 0 0 2px 0;
-}
-
-.flex12 {
-  display: flex;
-}
-
-.flex12 article:first-of-type {
-  flex: 1;
-}
-
-.flex12 article:last-of-type {
-  flex: 2;
-}
-.flex12 article:last-of-type ul {
-  column-count: 2;
-}
-
-ul.col3 {
-  column-count: 3;
-}
-
-ul.col2 {
-  column-count: 2;
-}
-
-.flex12, .col3, .col2 {
-  padding-left: 0;
-}
-.flex12 li, .col3 li, .col2 li {
-  list-style-type: none;
-}
-
-/* CSS for Structural Selector Slide */
-.structural {
-  margin-top: 0;
-  height: calc(90vh - 4rem);
-  overflow: scroll;
-}
-
-.structural li:first-child,
-.structural li:last-child {
-  font-weight: bold;
-}
-
-.structural li:nth-child(even) {
-  background-color: #CCC;
-}
-
-.structural li:nth-of-type(odd) {
-  background-color: #FFF;
-}
-
-.structural li:nth-child(3) {
-  color: #CCC;
-}
-
-.structural li:first-of-type,
-.structural li:last-of-type {
-  text-decoration: line-through;
-}
-
-.structural li:nth-of-type(4n) {
-  color: blue;
-}
-
-.structural li:nth-of-type(3n-1) {
-  text-align: right;
-}
-
-.count li {
-  display: inline-block;
-  text-align: center;
-  outline: 1px solid black;
-}
-
-.count li:nth-of-type(even) {
-  background-color: white;
-}
-
-.count li:nth-of-type(odd) {
-  background-color: blue;
-  color: white;
-}
-
-.count li:first-of-type:last-of-type {
-  width: 100%;
-}
-
-.count li:nth-of-type(1):nth-last-of-type(2),
-.count li:nth-of-type(2):nth-last-of-type(1) {
-  width: 50%;
-}
-
-.count li:nth-of-type(1):nth-last-of-type(3),
-.count li:nth-of-type(3):nth-last-of-type(1),
-.count li:nth-of-type(2):nth-last-of-type(2) {
-  width: 33.33%;
-}
-
-.count li:nth-of-type(1):nth-last-of-type(4),
-.count li:nth-of-type(1):nth-last-of-type(4) ~ li {
-  width: 25%;
-}
-
-input[type=checkbox]:checked + label {
-  color: red;
-}
-
-input[type=number] {
-  width: 2em;
-  margin-right: 0.5em;
-  box-sizing: border-box;
-}
-
-input:valid {
-  border: 1px solid green;
-}
-
-input:invalid {
-  border: 1px solid red;
-}
-
-input:required {
-  border-width: 5px;
-}
-
-input:optional {
-  border-width: 10px;
-}
-
-input:out-of-range {
-  background-color: pink;
-}
-
-input:in-range {
-  background-color: lightgreen;
-}
-
-p.firstletter {
-  width: 400px;
-  font-size: 24px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 0 20px 20px;
-}
-
-.firstletter::first-letter {
-  position: relative;
-  top: 8px;
-  float: left;
-  font-size: 3em;
-  line-height: 1;
-  color: #900;
-  padding: 0 4px 2px 0;
-  font-weight: bold;
-}
-
-/* SELECTION SLIDE */
-.thisSlide *::selection {
-  background-color: #990000;
-  color: #ffffff;
-}
-
-.current * {
-  -webkit-tap-highlight-color: #bada55;
-}
-
-.beforeafter:before {
-  content: "before - ";
-  font-weight: bold;
-}
-
-.beforeafter:after {
-  content: " - after";
-  font-weight: bold;
-}
-
-/*# sourceMappingURL=selectors.css.map */
+/*# sourceMappingURL=intro.css.map */

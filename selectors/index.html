@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
     <title>Selectors: Select This!</title>
     <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
-<link rel="stylesheet" href="css/selectors.css"/>
 <link rel="stylesheet" href="exercises/editme.css"/>
+<link rel="stylesheet" href="css/selectors.css"/>
 <style>
 
 </style>
@@ -456,8 +456,19 @@ ul > li {} 0-0-2</pre>
      </section>
 </div>
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>Global selector<br/><span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span></h1>
+</div>
 
 
+<div class="slide object">
+  <header><h1>Play Time</h1></header>
+  <object data="exercises/02_global.html"></object>
+  <a href="exercises/02_global.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+02
 <!-- divider -->
 <div class="slide divider">
   <h1>Relational selectors &amp; Combinators</h1>
@@ -522,8 +533,8 @@ function hasaclass(selector) {
 
 <div class="slide object">
   <header><h1>Play Time</h1></header>
-  <object data="exercises/02_combinators.html"></object>
-  <a href="exercises/02_combinators.html" target="play" class="objectlink">Try it out</a>
+  <object data="exercises/03_combinators.html"></object>
+  <a href="exercises/03_combinators.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 
@@ -888,25 +899,71 @@ input:in-range { background-color:lightgreen;}</pre>
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
-     <header><h1>the other UI pseudo-classes</h1></header>
+     <header><h1>:placeholder-shown</h1></header>
      <section class="content">
-        <pre contenteditable>:placeholder-shown</pre>
+
+<style class="editme" contenteditable>input[placeholder]:placeholder-shown {
+  border: initial;
+  background-color: pink;
+}</style>
+<p>
+  <input type=text placeholder="change color above" class="phs"></p>
       </section>
 </div>
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
-     <header><h1>the other UI pseudo-classes</h1></header>
+     <header><h1>:blank</h1></header>
      <section class="content">
-        <pre contenteditable>:blank</pre>
+        <style class="editme" contenteditable>input:blank {
+  border: initial; /* not supported / at risk */
+  background-color: lightblue;
+}
+input:empty { /* supported  */
+  border: initial;
+  background-color: lightgreen;
+}</style>
+<p>
+  <input type=text></p>
+ <p>
+  <input type=text value=""></p>
+   
       </section>
 </div>
 
+ <!-- :empty pseudo-class -->
+<div class="slide normal">
+     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <section class="content">
+  <pre contenteditable>E<b>:empty</b></pre>
+ <pre contenteditable>&lt;E/>
+&lt;E&gt;&lt;/E&gt;
+&lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
+&lt;E title="this is an empty element"/></pre>
+<hr/>
+<p>No browser support...
+<pre contenteditable>E<b>:blank</b></pre>
+ <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre><small>
+ :-moz-whitespace-only</small>
+     </section>
+    </div>
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
-     <header><h1>the other UI pseudo-classes</h1></header>
+     <header><h1>:user-invalid</h1></header>
      <section class="content">
         <pre contenteditable>:user-invalid</pre>
+        <pre contenteditable>:-moz-ui-invalid</pre>
+<style class="editme" contenteditable>input:user-invalid { /* not supported */
+  border: initial;
+  background-color: lightblue;
+}
+input:-moz-ui-invalid { /* FF only */
+  border: initial; 
+  background-color: lightblue;
+}</style>
+<p><input type="number" min="5" max="7" id="test5ck" required /> <label  for="test5ck">Number between 5 and 7</label><br>
+<input type="number" min="0" step="0.1" max="10" id="test6ck"/><label for="test4ck">Number between 0 and 10</label>
+
      </section>
 </div>
 
@@ -1032,7 +1089,7 @@ li:nth-child(<b>3</b>) {
   color: #CCC;
 }
 li:nth-of-type(<b>4n</b>) {
-  color: hsl(205, 87%, 50%);
+  color: blue;
 }
 li:nth-of-type(<b>3n-1</b>) {
   text-align: right;
@@ -1148,22 +1205,7 @@ li:nth-last-match(3n+1 of .bar)</pre>
      </section>
     </div>
 
- <!-- :empty pseudo-class -->
-<div class="slide normal">
-     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
-     <section class="content">
-  <pre contenteditable>E<b>:empty</b></pre>
- <pre contenteditable>&lt;E/>
-&lt;E&gt;&lt;/E&gt;
-&lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
-&lt;E title="this is an empty element"/></pre>
-<hr/>
-<p>No browser support...
-<pre contenteditable>E<b>:blank</b></pre>
- <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre><small>
- :-moz-whitespace-only</small>
-     </section>
-    </div>
+
 
 
 

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Intro</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rum+Raisin"/>
+    <link rel="stylesheet" href="exercises/editme.css"/>
+    <link rel="stylesheet" href="css/intro.css"/>
+    <style>
+
+    </style>
+  </head>
+
+  <body style="">
+    ...
+  </body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header>
+      <h1>CSS Basics</h1>
+     </header>
+     <p><a href="https://estelle.github.io/CSS/intro/">estelle.github.io/CSS/intro/</a></p>
+    </div>
+
+
+<div class="slide">
+
+  <header><h1>CSS Declaration</h1></header>
+  <section>
+    <h2>Declaration</h2>
+    <pre><b>property</b><em>:</em> <b>value</b><em>;</em></pre>
+    <pre>color: red;</pre>
+    <pre>font-weight: bold;</pre>
+    <h2>Declaration block</h2>
+
+    <pre>{
+  color: red;
+  font-weight: bold;
+}</pre>
+  </section>
+
+</div>
+<!-- basics -->
+<div class="slide normal">
+  <header><h1>CSS Ruleset Syntax</h1></header>
+   <section class="content">
+<pre contenteditable>selectorA {
+   property1: value1;
+   property2: value2;
+}
+
+selectorB, 
+selectorC {
+   property1: value3;
+   property2: value4;
+}</pre>
+</section>
+ </div>
+
+<div class="slide">
+  <header><h1>CSS Rules</h1></header>
+  <section>
+<pre contenteditable>p {
+   color: #333333;
+   line-height: 2;
+}
+
+a:link {
+   text-decoration: underline;
+   color: blue;
+}</pre>
+    <p>Selectors define which elements &amp; pseudo elements rulesets are applied to.</p>
+  </section>
+</div>
+
+
+
+
+
+
+<div class="slide intro">
+
+  <header><h1>Including CSS</h1></header>
+  <section></section>
+</div>
+
+
+<!-- exmaple of included styles -->
+<div class="slide">
+
+  <header><h1>&lt;link></h1></header>
+  <section>
+<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;CSS Intro&lt;/title&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;styles1.css&quot; <em>type="text/css"</em>/&gt;
+  <b>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles2.css&quot;/&gt;</b>
+  &lt;link rel=&quot;stylesheet&quot; <em>media="all"</em> href=&quot;http://fonts.googleapis.com/css?family=Rum+Raisin&quot;/&gt;
+  &lt;style&gt;
+     @import url(style3.css);
+     pre {
+        border-radius: 5px;
+     }
+  &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body style=&quot;&quot;&gt;
+  ...
+ &lt;/body&gt;</pre></section>
+</div>
+
+
+
+<!-- exmaple of included styles -->
+<div class="slide">
+
+  <header><h1>&lt;style></h1></header>
+  <section>
+<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;CSS Intro&lt;/title&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;styles1.css&quot;type="text/css"/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles2.css&quot;/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://fonts.googleapis.com/css?family=Rum+Raisin&quot;/&gt;
+  <b>&lt;style&gt;</b>
+     @import url(style3.css);
+     pre {
+        border-radius: 5px;
+     }
+  <b>&lt;/style&gt;</b>
+ &lt;/head&gt;
+ &lt;body style=&quot;&quot;&gt;
+  ...
+ &lt;/body&gt;</pre></section>
+</div>
+
+
+
+
+<!-- exmaple of included styles -->
+<div class="slide">
+
+  <header><h1>@import</h1></header>
+  <section>
+<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;CSS Intro&lt;/title&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;styles1.css&quot;type="text/css"/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles2.css&quot;/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://fonts.googleapis.com/css?family=Rum+Raisin&quot;/&gt;
+  <em>&lt;style&gt;</em>
+     <b>@import url(print.css) print;</b>
+     pre {
+        border-radius: 5px;
+     }
+  <em>&lt;/style&gt;</em>
+ &lt;/head&gt;
+ &lt;body style=&quot;&quot;&gt;
+  ...
+ &lt;/body&gt;</pre>
+<p>@import must be first inside &lt;style>. Media values are comma separated.</p>
+</section>
+</div>
+
+
+
+<!-- exmaple of included styles -->
+<div class="slide">
+
+  <header><h1>inline styles</h1></header>
+  <section>
+<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;CSS Intro&lt;/title&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;styles1.css&quot;type="text/css"/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles2.css&quot;/&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://fonts.googleapis.com/css?family=Rum+Raisin&quot;/&gt;
+  &lt;style&gt;
+     @import url(style3.css);
+     pre {
+        border-radius: 5px;
+     }
+  &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body <b>style=&quot;</b>background-color: white;<b>&quot;</b>&gt;
+  ...
+ &lt;/body&gt;</pre></section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Scripting</h1></header>
+  <section>
+
+    <pre contenteditable>let myTarget = document.querySelector('#myID');</pre>
+
+    <pre contenteditable>myTarget.style.color = 'blue';</pre>
+
+    <pre contenteditable>myTarget.classList.add('myClass');
+    <i>/* add, remove, toggle, contains */</i></pre>
+
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Syntax</h1></header>
+  <section>
+    <ul>
+      <li>CSS Rules</li>
+      <li>White space</li>
+      <li>Comments</li>
+      <li>Character declaration</li>
+      <li>Forgiving yet strict</li>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>White space</h1></header>
+  <section>
+    <p>CSS is for the most part insensitive to white space, with 2 exceptions:</p>
+    <ul><li>Required between keywords in a value</li>
+      <li>The Character declaration needs to be exact</li>
+    </ul>
+    <p>In a selector, one or more spaces is also a descendant combinator</p>
+    <p>White space is encouraged for readability, and can be removed during minification.</p>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Comments</h1></header>
+  <section><p>Comments are generally optional and encouraged for readability, and written with:</p>
+    <pre contenteditable><i>/* this is a comment in CSS (and JS) */</i></pre>
+
+    <pre contenteditable><i>/* this is a multiline
+comment in CSS (and JS)
+that spans 3 lines */</i></pre>
+
+<pre contenteditable>color: <i>/* this works */</i> red;</pre>
+
+<p>Comments can not be nested</p>
+<pre contenteditable><i>/* this is the outer comment
+    /* inner comment */</i>
+  <strike>This is not a comment */</strike></pre>
+
+  <pre contenteditable><strike>// This is a sass &amp; JS comment,  but not CSS </strike></pre>
+
+
+
+
+    <p>Comments are encouraged for readability, and can be removed during minification / build.</p>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Character declaration</h1></header>
+  <section>
+    <pre><em>@charset "UTF-8";</em></pre>       
+
+    <ul><li>Must be the first thing in the stylesheet</li>
+      <li>Must be the first character on the page</li>
+      <li>Must have EXACTLY one space</li>
+      <li>Must have double quotes</li>
+      <li>Only for linked or imported stylesheets</li>
+    </ul>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Forgiving yet strict</h1></header>
+  <section>
+    <h2>Forgiving</h2>
+    <p>Skips declaration it doesn't understand</p>
+    <pre contenteditable>color: granola; <i>/* not a valid color */</i>
+groot: green; <i>/* not a valid property */</i></pre>
+<h2>Strict</h2>
+<p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
+<pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
+p.valid { 
+  color: green;
+}</pre>
+<p>Unless it's a <b>::-webkit-</b> prefixed pseudoelement</p>
+<pre contenteditable>::-webkit-does-not-exist,
+::after { <i>/* this is NOT ignored */</i>
+  content: 'foo';
+}
+  </section>
+</div>
+
+<div class="slide intro">
+  <header><h1>Up Next</h1></header>
+  <section>
+<a href="../selectors/">Selectors</a>
+  </section>
+</div>
+
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">&laquo; Back</li>
+            <li class="button done" id="next">Next &raquo; </li>
+        </ul>
+    </nav>
+</header>
+<script src="../slideshow.js"></script>
+</body>
+</html>

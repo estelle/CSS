@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Attribute selector and case sensitivity</title>
+<link rel="stylesheet" href="editme.css">
+<style>input {font-size: 1em;} p, input {font-family:Verdana, Geneva, sans-serif;}</style>
+<style contenteditable class="editme">p[class="text"] { color: red; }
+p[class="TEXT"] { color: blue; }
+p[class="TeXt" i] { color: green; }</style>
+</head>
+<body>
+<p class="TEXT">&lt;p class="TEXT"></p>
+<p class="text">&lt;p class="text"></p>
+<p class="TeXt">&lt;p class="TeXt"></p>
+<p><input type="text" value='&lt;input type="text">'/></p>
+</body>
+</html>
+
