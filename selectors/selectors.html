@@ -52,8 +52,6 @@
 <dd><code>[attribute='value' s]</code></dd>
 <dt>Blank <span>pseudo-class</span></dt>
 <dd><code>:blank</code></dd>
-<dt>Structural <span>pseudo-class</span></dt>
-<dd><code>:nth-match()</code></dd>
 <dt>Dir <span>pseudo-class</span></dt>
 <dd><code>:dir(ltr)</code></dd>
 <dt>Lang <span>pseudo-class</span></dt>
@@ -64,8 +62,6 @@
 <dd><code>:local-link</code></dd>
 <dt>Target container <span>pseudo-class</span></dt>
 <dd><code>:target-within</code></dd>
-<dt>Matches-any <span>pseudo-class</span></dt>
-<dd><code>:matches(s1, s2)</code></dd>
 <dt>Mutability* <span>pseudo-class</span></dt>
 <dd><code>:read-only <br/> :read-write</code></dd>
 <dt>Optionality <span>pseudo-class</span></dt>
@@ -82,7 +78,8 @@
 <dt>User interaction <span>pseudo-classes</span></dt>
 <dd><code>:user-invalid</code></dd>
 <dt>Matches any <span>pseudo-class</span></dt>
-<dd><code>:is()</code></dd>
+<dd><strike>:matches(s1, s2)</strike><br/>
+	<code>:is(s1, s2)</code></dd>
 <dt>Negation <span>pseudo-class</span></dt>
 <dd><code>:not(s1, s2)</code></dd>
 <dt>Specificity Adjustment <span>pseudo-class</span></dt>
@@ -94,10 +91,6 @@
 <dt>Child-indexed <span>pseudo-classes</span></dt>
 <dd><code>E:nth-child(n [of S]?)<br/>
   E:nth-last-child(n [of S]?)</code></dd>
-<dt>Grid <span>pseudo-classes</span></dt>
-<dd><code>:column(selector)<br/>
- :nth-column(n)<br/> 
- :nth-last-column(n)</code></dd>
 <dt>Time dimensional<span> pseudo-class</span></dt>
 <dd><code>:current<br/>
  :current(s)<br/>

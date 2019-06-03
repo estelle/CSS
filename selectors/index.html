@@ -168,12 +168,12 @@ a.external:link {
         <li>*</li>
         <li>E &gt; F</li>
         <li>E + F</li>
-        <li>E[attr]</li>
-        <li>E[attr=value]</li>
-        <li>E[attr~=value]</li>
-        <li>E[attr|=value]</li>
+        <li>[attr]</li>
+        <li>[attr=value]</li>
+        <li>[attr~=value]</li>
+        <li>[attr|=value]</li>
         <li>:first-child</li>
-        <li>:lang(en)</li>
+        <li>:lang()</li>
         <li>:focus</li>
         <li>:hover</li>
         <li>:visited</li>
@@ -202,25 +202,25 @@ a.external:link {
       <li>::first-letter</li>
       <li>::first-line<br/></li>
 
-      <li>E[attr^=value]</li>
-      <li>E[attr$=value]</li>
-      <li>E[attr*=value]<br/></li>
+      <li>[attr^=value]</li>
+      <li>[attr$=value]</li>
+      <li>[attr*=value]<br/></li>
 
       <li>E ~ F</li>
       <li>:root</li>
-      <li>E:last-child</li>
-      <li>E:only-child</li>
-      <li>E:nth-child(n)</li>
-      <li>E:nth-last-child(n)</li>
-      <li>E:first-of-type</li>
-      <li>E:last-of-type</li>
-      <li>E:only-of-type</li>
-      <li>E:nth-of-type(n)</li>
-      <li>E:nth-last-of-type(n)<br/></li>
+      <li>:last-child</li>
+      <li>:only-child</li>
+      <li>:nth-child(n)</li>
+      <li>:nth-last-child(n)</li>
+      <li>:first-of-type</li>
+      <li>:last-of-type</li>
+      <li>:only-of-type</li>
+      <li>:nth-of-type(n)</li>
+      <li>:nth-last-of-type(n)<br/></li>
 
-      <li>E:empty</li>
-      <li>E:not(selector)</li>
-      <li>E:target</li>
+      <li>:empty</li>
+      <li>:not(selector)</li>
+      <li>:target</li>
     </ul></section></div>
 
 
@@ -233,20 +233,20 @@ a.external:link {
   <section class="content">
     <h3>UI / Selectors #4</h3>
     <ul class="col2">
-      <li>E:enabled</li>
-      <li>E:disabled</li>
-      <li>E:read-only</li>
-      <li>E:read-write</li>
+      <li>:enabled</li>
+      <li>:disabled</li>
+      <li>:read-only</li>
+      <li>:read-write</li>
       <li>:placeholder-shown </li>
-      <li>E:default</li>
-      <li>E:checked</li>
+      <li>:default</li>
+      <li>:checked</li>
        <li>:indeterminate </li>
-      <li>E:valid</li>
-      <li>E:invalid</li>
-      <li>E:in-range</li>
-      <li>E:out-of-range</li>
-      <li>E:required</li>
-      <li>E:optional</li>
+      <li>:valid</li>
+      <li>:invalid</li>
+      <li>:in-range</li>
+      <li>:out-of-range</li>
+      <li>:required</li>
+      <li>:optional</li>
        <li>:blank </li>
        <li>:user-invalid </li>
     </ul>
@@ -468,7 +468,7 @@ ul > li {} 0-0-2</pre>
   <a href="exercises/02_global.html" target="play" class="objectlink">Try it out</a>
 </div>
 
-02
+
 <!-- divider -->
 <div class="slide divider">
   <h1>Relational selectors &amp; Combinators</h1>
@@ -489,8 +489,7 @@ ul > li {} 0-0-2</pre>
       matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
       <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
       <dd><em>adjacent sibling</em> </dd>
-      <dt onclick="hasaclass('li.hasaclass ~ li');"><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 20px; position:relative; left: 22px; margin-left: -20px;">(IE7+)</span><br />
-      li.hasaclass ~ li</dt>
+      <dt onclick="hasaclass('li.hasaclass ~ li');">li.hasaclass ~ li</dt>
       <dd><em>general sibling selector</em><br />
       matches later siblings, but not nested.</dd>
     </dl>
@@ -740,7 +739,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <div style="clear:both;">
 <input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
 <input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
-<footer>Basic User Interface Module Level 3 (CSS3 UI)</footer></div>
+<footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer></div>
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
@@ -789,16 +788,16 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 </div>
 
 <!--Form related UI pseudo-classes -->
-<div class="slide normal">
+<div class="slide normal" id="UI">
      <header><h1>Form related UI pseudo-classes</h1></header>
      <section class="content">
-<pre  contenteditable class="example">input:valid { border: 1px solid green;}
-input:invalid { border: 1px solid red;}
-input:required,
-input[aria-required="true"] {border-width: 5px;}
-input:optional {border-width: 10px;}
-input:out-of-range { background-color: pink;}
-input:in-range { background-color:lightgreen;}</pre>
+<style class="editme" contenteditable>#UI input:valid { border: 1px solid green;}
+#UI input:invalid { border: 1px solid red;}
+#UI input:required,
+#UI input[aria-required="true"] {border-width: 5px;}
+#UI input:optional {border-width: 10px;}
+#UI input:out-of-range { background-color: pink;}
+#UI input:in-range { background-color:lightgreen;}</style>
 <div style="clear:both;">
 <input type="number" min="5" max="7" id="test3ck" required /> <label  for="test3ck">Number between 5 and 7</label><br>
 <input type="number" min="0" step="0.1" max="10" id="test4ck"/><label for="test4ck">Number between 0 and 10</label>
@@ -912,14 +911,14 @@ input:in-range { background-color:lightgreen;}</pre>
 </div>
 
 <!--Form related UI pseudo-classes -->
-<div class="slide normal">
+<div class="slide normal" id="blank">
      <header><h1>:blank</h1></header>
      <section class="content">
-        <style class="editme" contenteditable>input:blank {
-  border: initial; /* not supported / at risk */
+        <style class="editme" contenteditable>#blank input:blank { /*greater specicity 1-1-1 */
+  border: initial; 
   background-color: lightblue;
 }
-input:empty { /* supported  */
+[id="blank"] input:empty { /* supported 0-2-1 */
   border: initial;
   background-color: lightgreen;
 }</style>
@@ -943,27 +942,34 @@ input:empty { /* supported  */
 <hr/>
 <p>No browser support...
 <pre contenteditable>E<b>:blank</b></pre>
- <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre><small>
+<pre contenteditable="">&lt;input name="novalue" value=""></pre>
+
+<pre contenteditable="">&lt;textarea name="novalue" value="">&lt;/textarea></pre>
+
+<hr/>
+<small>
  :-moz-whitespace-only</small>
-     </section>
+
+ <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre> </section>
     </div>
 <!--Form related UI pseudo-classes -->
-<div class="slide normal">
+<div class="slide normal" id="mui">
      <header><h1>:user-invalid</h1></header>
      <section class="content">
         <pre contenteditable>:user-invalid</pre>
         <pre contenteditable>:-moz-ui-invalid</pre>
-<style class="editme" contenteditable>input:user-invalid { /* not supported */
-  border: initial;
-  background-color: lightblue;
-}
-input:-moz-ui-invalid { /* FF only */
-  border: initial; 
-  background-color: lightblue;
-}</style>
-<p><input type="number" min="5" max="7" id="test5ck" required /> <label  for="test5ck">Number between 5 and 7</label><br>
+<style class="editme" contenteditable>#mui   input:user-invalid { /* not supported */
+         border: initial;
+         background-color: lightblue;
+       }
+#mui   input:-moz-ui-invalid { /* FF only */
+         border: initial; 
+         background-color: lightblue;
+       }</style>
+       <div>
+<p><input type="number" min="5" max="7" id="test5ck" required /> <label  for="test5ck">Number between 5 and 7</label></p><p>
 <input type="number" min="0" step="0.1" max="10" id="test6ck"/><label for="test4ck">Number between 0 and 10</label>
-
+</p>
      </section>
 </div>
 
@@ -976,8 +982,9 @@ input:-moz-ui-invalid { /* FF only */
 <!-- List of Structural selectors -->
 <div class="slide normal">
      <header><h1>Structural selectors</h1></header>
-     <section class="content">
-  <pre contenteditable class="columns2">
+     <section class="content ">
+      <article  class="col2">
+<pre contenteditable style="background: initial; border: initial;">
 :root
 
 :empty
@@ -989,6 +996,7 @@ input:-moz-ui-invalid { /* FF only */
 :nth-last-child()
 
 :first-child<sup style="color:#C61800">*</sup>
+
 
 :last-child
 
@@ -1004,6 +1012,7 @@ input:-moz-ui-invalid { /* FF only */
 
 :only-of-type
 </pre>
+</article>
 <ul><li>Target elements on the page based on their relationships to other elements in the DOM.</li>
 <li>Updates dynamically if page updates.</li>
 
@@ -1058,11 +1067,13 @@ input:-moz-ui-invalid { /* FF only */
 :nth-last-of-type(<b>3n+1</b>) </pre>
 
 <p>Target element or elements based on argument passed to the selector</p>
-<ul class="pre">
-	<li>:nth-of-type(<b>even</b>)</li>
-    <li>:nth-of-type(<b>odd</b>)</li>
-    <li>:nth-of-type(<b>an+b</b>) </li>
-</ul>
+<pre contenteditable>
+:nth-of-type(<b>even</b>)
+
+:nth-of-type(<b>odd</b>)
+
+:nth-of-type(<b>an+b</b>) 
+</pre>
      </section>
     </div>
 
@@ -1089,7 +1100,7 @@ li:nth-child(<b>3</b>) {
   color: #CCC;
 }
 li:nth-of-type(<b>4n</b>) {
-  color: blue;
+  color: red;
 }
 li:nth-of-type(<b>3n-1</b>) {
   text-align: right;
@@ -1216,6 +1227,15 @@ li:nth-last-match(3n+1 of .bar)</pre>
 </div>
 
 
+
+
+<!-- divider -->
+<div class="slide intro">
+  <h1>:not(), the negation pseudo-class</h1>
+</div>
+
+
+
 <!-- :not(s) -->
 <div class="slide normal">
      <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
@@ -1236,14 +1256,16 @@ li:nth-last-match(3n+1 of .bar)</pre>
      <pre contenteditable>E<b contenteditable="false">:not(</b>s1, s2<b contenteditable="false">)</b></pre>
      <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe, .excuseYou<b contenteditable="false">)</b></span></pre>
      <p><a href="https://caniuse.com/#feat=css-not-sel-list" target="play">Safari Only</a></p>
+     <p class="sidenote">Reminder: if a browser doesn't recognize a pseudo-class, the entire selector block fails</p>
+     <p class="sidenote">"<a href="https://github.com/w3c/csswg-drafts/issues/3264#issuecomment-467190906" target="play">RESOLVED</a>: Drop individual invalid selectors from selector lists in *all* selector functions that take such lists, *except* for :not()."
    </section>
  </div>
 
 
  <div class="slide object">
- <object data="exercises/06_not.html"></object>
+ <object data="exercises/20_not.html"></object>
      <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
- <a href="exercises/06_not.html" target="play" class="objectlink">Negation Selectors</a>
+ <a href="exercises/20_not.html" target="play" class="objectlink">Negation Selectors</a>
  </div>
 
 
@@ -1253,6 +1275,7 @@ li:nth-last-match(3n+1 of .bar)</pre>
 <div class="slide">
   <header><h1>:matches(s1, s2)</h1></header>
     <section class="content">
+      <p>RESOLVED: Rename <i>:matches()</i> to <strong>:is()</strong> and deprecate <i>:matches()</i></p>
      <pre  contenteditable>E:matches(s1, s2)</pre><hr/>
      <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">) a</b> {}</pre>
   <pre>li[title] a, 
@@ -1263,7 +1286,7 @@ li[role] a {}</pre>
 #contact aside a:active,
 #home aside a:focus, 
 #contact aside a:focus {}</pre>
-<p><a href="https://caniuse.com/#feat=css-matches-pseudo">Safari only</a></p>
+<p><a href="https://caniuse.com/#feat=css-matches-pseudo"  target="play">Safari only</a>, :-moz-any & :-webkit-any for FF &amp; Chrome</p>
      </section>
     </div>
 
@@ -1290,20 +1313,61 @@ nav a:not(.foo):not(.bar).not(.bam){
 </div>
 
 
-
-
-<!-- Reference Combinator -->
 <div class="slide">
-  <header>
-    <h1>Removed from the specification</h1>
-  </header>
-  <section class="content">
+  <header><h1>Future standard :is()</h1></header>
+    <section class="content">
+      <pre  contenteditable>
+:-webkit-any(header, aside, footer) [contenteditable]:hover {
+  color: blue;
+  cursor: pointer;
+}
+:-moz-any(header, aside, footer) [contenteditable]:hover {
+  color: blue;
+  cursor: pointer;
+}
+:matches(header, aside, footer) [contenteditable]:hover {
+  color: blue;
+  cursor: pointer;
+}
+:is(header, aside, footer) [contenteditable]:hover {
+  color: blue;
+  cursor: pointer;
+}</pre>
 
-    <p>Reference combinator</p>
-    <pre><s>E /attr/ F</s></pre>
-    <pre><s>label /for/ input</s></pre>
-</section>
+
+</section></div>
+
+
+<div class="slide">
+  <header><h1>:is() == preprocessors</h1></header>
+  <section>
+<pre contenteditable>:is(header, aside, footer) [contenteditable]:hover {
+    color: blue;
+    cursor: pointer;
+  }</pre>
+<pre contenteditable>header, aside, footer {
+  [contenteditable]:hover {
+    color: blue;
+    cursor: pointer;
+  }
+}</pre>
+
+<pre contenteditable>header [contenteditable]:hover {
+    color: blue;
+    cursor: pointer;
+  }
+aside [contenteditable]:hover {
+    color: blue;
+    cursor: pointer;
+  }
+footer [contenteditable]:hover {
+    color: blue;
+    cursor: pointer;
+  }</pre>
+  </section>
 </div>
+
+
 
  <!-- Reference Combinator -->
 <div class="slide">
@@ -1745,11 +1809,11 @@ p:after{
 
 <!-- UI selectors -->
 <div class="slide object">
-<object data="exercises/02_counting.html?hop"></object>
+<object data="exercises/10_counting.html?hop"></object>
      <header><h1>Generated Content: UI selectors</h1></header>
- <a href="exercises/02_uiselectors.html" target="play">UI Selectors</a></h1>
+ <a href="exercises/10_counting.html" target="play">UI Selectors</a></h1>
   <p>Test them out for yourselves</p>
-  <a class="objectlink" href="exercises/02_counting.html">Open in new page</a>
+  <a class="objectlink" href="exercises/10_counting.html">Open in new page</a>
     </div>
 
 <div class="slide">

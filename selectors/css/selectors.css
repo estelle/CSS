@@ -64,6 +64,7 @@ pre, .ex, .pre, .codelike, style[class=editme i] {
   border-radius: 8px;
   border: 1px solid #eee;
   font-size: 1em;
+  line-height: 1.2;
 }
 
 pre b,
@@ -111,6 +112,7 @@ body {
 
 .slide {
   position: absolute;
+  transform-origin: top left;
   overflow: hidden;
   padding: 10px;
   height: 100vh;
@@ -316,9 +318,14 @@ header {
   font-weight: normal;
   letter-spacing: -0.05em;
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  left: 30px;
-  top: 25px;
   font-size: 140%;
+}
+
+body > header {
+  position: absolute;
+  bottom: 1vw;
+  left: -1vw;
+  width: 100vw;
 }
 
 h1 {
@@ -392,15 +399,19 @@ video {
 
 section.twopart {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.wrong {
+.wrong, .sidenote {
   opacity: 0.3;
 }
 
 input[type=checkbox]:indeterminate + label {
   color: blue;
+}
+
+strike {
+  opacity: 0.5;
 }
 
 /* definition lists */
@@ -428,6 +439,10 @@ dl.inline dt {
 
 .flex12 article:first-of-type {
   flex: 1;
+  margin-right: 1em;
+}
+.flex12 article:first-of-type ul {
+  border-right: 1px solid;
 }
 
 .flex12 article:last-of-type {
@@ -437,16 +452,17 @@ dl.inline dt {
   column-count: 2;
 }
 
-ul.col3 {
+.col3 {
   column-count: 3;
 }
 
-ul.col2 {
+.col2 {
   column-count: 2;
 }
 
 .flex12, .col3, .col2 {
   padding-left: 0;
+  column-rule: 1px solid #00000033;
 }
 .flex12 li, .col3 li, .col2 li {
   list-style-type: none;
@@ -482,7 +498,7 @@ ul.col2 {
 }
 
 .structural li:nth-of-type(4n) {
-  color: blue;
+  color: red;
 }
 
 .structural li:nth-of-type(3n-1) {

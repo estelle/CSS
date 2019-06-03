@@ -13,7 +13,8 @@
   color: blue;
   font-weight: normal;
   }
-li:not(:first-child) {
+li:not(:first-child, :last-child),
+li:not(:first-child):not(:last-child) {
   color: red;
   font-weight:bold;
   }</style>

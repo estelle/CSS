@@ -16,6 +16,7 @@ body {
 }
 .slide {
 	position: absolute;
+	transform-origin: top left;
 	overflow: hidden;
 	padding: 10px;
 	height: 100vh;

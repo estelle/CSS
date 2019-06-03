@@ -3,9 +3,13 @@ header {
 	font-weight: normal;
 	letter-spacing: -.05em;
 	text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-	left: 30px;
-	top: 25px;
 	font-size: 140%;
+}
+body > header {
+	position: absolute;
+	bottom: 1vw;
+	left: -1vw;
+	width: 100vw;
 }
 h1 {
 	font-size: 140%;
@@ -67,12 +71,14 @@ video {
 
 section.twopart {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
-.wrong {
+.wrong, .sidenote {
 	opacity: 0.3;
 }
 
 input[type="checkbox"]:indeterminate + label {
   color: blue;
 }
+
+strike {opacity: 0.5;}
