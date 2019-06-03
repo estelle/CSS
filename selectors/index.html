@@ -270,9 +270,8 @@ a.external:link {
        <li>:dir(ltr) </li>
        <li>:lang(zh, *-hant) </li>
        <li>:any-link </li>
-       <li>:scope </li>
-
        <li>:local-link </li>
+       <li>:scope </li>
        <li>:target-within </li>
        <li>:scope </li>
        <li>:focus-within </li>
@@ -357,7 +356,6 @@ a.external:link {
        <li><strike>E >> F</strike></li>
        <li><strike>:matches()</strike> (now :is())</li>
        <li><strike>:drop</strike></li>
-       <li><strike>:local-link(n)</strike></li>
        <li><strike>:nth-match()</strike> (now :nth-child(… of selector))</li>
     </ul>
   </article>
@@ -1072,7 +1070,9 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :nth-of-type(<b>odd</b>)
 
-:nth-of-type(<b>an+b</b>) 
+:nth-of-type(<b>An+B</b>)
+
+:nth-last-child(<b>An+B [of S]</b>) 
 </pre>
      </section>
     </div>
@@ -1185,18 +1185,67 @@ li:nth-of-type(<b>3n-1</b>) {
  </div>
 
 
-<!-- nth-matchnes()
+<!-- nth-matchnes() -->
 <div class="slide">
   <header><h1>Structural Selectors Level 4</h1></header>
     <section class="content double">
-      <pre contenteditable>E:nth-match(n of selector)
-E:nth-last-match(n of selector)</pre>
+      <pre contenteditable>:nth-child(<b>An+B [of S]</b>) 
+:nth-last-child(<b>An+B [of S]</b>) </pre>
 
-      <pre contenteditable class="example">li:nth-match(2n of .foo)
-li:nth-last-match(3n+1 of .bar)</pre>
+      <pre contenteditable class="example">li:nth-child(2n of .foo)
+li:nth-child(3n+1 of .bar)</pre>
+
+<p>Specificity is <code>0-1-0</code> for <code>:nth-child(An+B)</code>, plus  specificity of the most specific complex selector in <code>S</code></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#Browser_compatibility">Safari 9+ only</a></p>
     </section>
 </div>
--->
+
+
+<!-- nth-matchnes() -->
+<div class="slide">
+  <header><h1>Structural Selectors Level 4</h1></header>
+    <section class="content twopart">
+      
+
+     <div style="margin-top: 0; flex:2">
+<p>select the 3rd li with the class of foo</p>
+<pre contenteditable>:nth-child(3 of li.foo) /* matches #8 */</pre>
+
+<p>Select the 3rd li if it has the class foo</p>
+<pre contenteditable>li.foo:nth-child(3) /* no match */</pre>
+
+<p>Match every even row of the visible rows</p>
+<pre contenteditable>tr:nth-child(even of :not([hidden]))</pre>
+</div>
+<ul class="matchesOfSelector" style="flex: 1;">
+
+<li class="foo">item 1 .foo</li>
+<li>item 2</li>
+<li>item 3</li>
+<li>item 4</li>
+<li class="foo">item 5 .foo</li>
+<li>item 6</li>
+<li>item 7</li>
+<li class="foo">item 8 .foo</li>
+<li>item 9</li>
+<li>item 10</li>
+<li>item 11</li>
+<li class="foo">item 12 .foo</li>
+<li>item 13</li>
+<li>item 14</li>
+<li>item 15</li>
+<li class="foo">item 16 .foo</li>
+<li>item 17</li>
+<li>item 18</li>
+<li class="foo">item 19 .foo</li>
+</ul>
+     </section>
+
+</div>
+
+
+
 
 <!--root  -->
 <div class="slide normal">
@@ -1212,7 +1261,7 @@ li:nth-last-match(3n+1 of .bar)</pre>
 
   <li>In CSS4, define Defining Variables on root. (see <a href="http://dev.w3.org/csswg/css-variables/"  target="play">Variables module</a>)</li>
 </ul>
-<p><small><a href="exercises/03_root.html" target="play">example</a></small></p>
+<p><small><a href="exercises/19_root.html" target="play">example</a></small></p>
      </section>
     </div>
 
@@ -1242,7 +1291,13 @@ li:nth-last-match(3n+1 of .bar)</pre>
      <section class="content">
      <pre contenteditable>E<b contenteditable="false">:not(</b>s1<b contenteditable="false">)</b></pre>
      <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe<b contenteditable="false">)</b></span></pre> 
-  <p>Supported everywhere since IE9</p>
+  
+  <p>Specificity: weight of <code>(s1)</code>, not the <code>:not</code>.</p>
+  <pre contenteditable>*:not(h1)     <i>/* 0 - 0 - 1 */</i>
+*:not(.class) <i>/* 0 - 1 - 0 */</i>
+*:not(#myId)  <i>/* 1 - 0 - 0 */</i> </pre>
+
+<p><small>Supported everywhere since IE9</small></p>
      </section>
     </div>
 
@@ -1257,7 +1312,8 @@ li:nth-last-match(3n+1 of .bar)</pre>
      <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe, .excuseYou<b contenteditable="false">)</b></span></pre>
      <p><a href="https://caniuse.com/#feat=css-not-sel-list" target="play">Safari Only</a></p>
      <p class="sidenote">Reminder: if a browser doesn't recognize a pseudo-class, the entire selector block fails</p>
-     <p class="sidenote">"<a href="https://github.com/w3c/csswg-drafts/issues/3264#issuecomment-467190906" target="play">RESOLVED</a>: Drop individual invalid selectors from selector lists in *all* selector functions that take such lists, *except* for :not()."
+     <p class="sidenote">"<a href="https://github.com/w3c/csswg-drafts/issues/3264#issuecomment-467190906" target="play">RESOLVED</a>: Drop individual invalid selectors from selector lists in *all* selector functions that take such lists, *except* for :not()."</p>
+     <p>Most specific of <code>(s1, .s2, #s3)</code>, in this case <code>1-0-0</code>. </p>
    </section>
  </div>
 
@@ -1369,14 +1425,56 @@ footer [contenteditable]:hover {
 
 
 
+<div class="slide">
+  <header><h1>Specificity Rules</h1></header>
+  <section>
+    <p>The specificity is the specificity of its most specific argument s</p>
+      <pre>:is(ul, ol, .list) > [hidden] { ... <i>/* 0-2-0 */</i></pre>
+      <pre>ul > [hidden], 
+ol > [hidden], <i>/* 0-1-1 */</i> 
+.list > [hidden] { ...</pre> 
+<pre>&lt;ol>
+  &lt;li hidden>This matches&lt;/li>
+  &lt;li>This doesn't&lt;/li>
+&lt;/ol></pre>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>:where()</h1></header>
+  <section>
+    <p>Same as <code>:is(s1, s2)</code>, but with no specificity</p>
+<p>Specificity sometimes makes life hard:</p>
+
+<pre contenteditable>a:not(:hover) {
+  text-decoration: none;
+}
+nav a {
+  <i>/* Has no effect */</i>
+  text-decoration: underline;
+}</pre>
+
+<p><code>:where()</code> adds no specificity weight</p>
+
+<pre contenteditable>a:where(:not(:hover)) {
+  text-decoration: none;
+}
+nav a {
+  <i>/* Works now! */</i>
+  text-decoration: underline;
+}</pre>
+
+  </section>
+</div>
+
  <!-- Reference Combinator -->
 <div class="slide">
   <header>
     <h1>Parent Selector</h1>
   </header>
     <p>Parent selector</p>
-    <pre><s>E! > F</s></pre>
-    <pre>:has</pre>
+    <pre>:has(s1, s2)</pre>
 <p>Contains a header</p>
     <pre>header:has(h1, h2, h3, h4, h5, h6)</pre>
 <p>Contains no headers</p>
@@ -1386,6 +1484,7 @@ footer [contenteditable]:hover {
     <a href="https://caniuse.com/#feat=css-has" target="play">CanIUse.com</a>
   </section>
 </div>
+
 
 
 
@@ -1420,34 +1519,48 @@ footer [contenteditable]:hover {
 <div class="slide normal">
      <header><h1>Link Pseudo Classes</h1></header>
      <section class="content">
-      <p><code>a</code> with an <code>href</code> attribute</p> 
+      <p>Any element with an <code>href</code> attribute</p> 
   <pre contenteditable class="double">:link
 :visited</pre>
   <p class="css4 temphidden">CSS Selectors Level 4</p>
  <pre contenteditable class="double">:any-link
-<s>:local-link</s></pre>
-<code>:any-link</code> is the same as <code>:is(:link, :visited)</code>
+:local-link</pre>
+
   </section>
   </div>
 
 
-<!--
+<div class="slide normal">
+     <header><h1>:any-link</h1></header>
+     <section class="content">
+      <p>Any element with an <code>href</code> attribute:</p>
+      <pre contenteditable>&lt;a>
+&lt;area>
+&lt;link></pre>
+<p><code>:any-link</code> is the same as <code>:is(:link, :visited)</code></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link#Browser_compatibility" target="play">Supported in FF, webkit and blink</a></p>
+  </section>
+  </div>
+
+
+
 <div class="slide">
-  <header><h1>link levels</h1></header>
+  <header><h1>:local-link</h1></header>
     <section class="content">
      <pre contenteditable class="example">:local-link {
   text-decoration: none;
   color: inherit;
 }</pre>
-<pre contenteditable class="example"><s>a[href^=http],</s>
-a[href^="http://"],
-a[href^="https://"],
-a:not(:local-link(0)){
-  /* external link */
-}
-    </section>
+<pre contenteditable class="example">
+a:local-link {
+  /* match links on this page or section of page (#fragment) */
+}</pre>
+<pre contenteditable class="example">
+a:not(:local-link) {
+  /* on a different document or site */
+}</pre></section>
 </div>
--->
 
 <!-- lang, target, anchor links-->
 <div class="slide normal">
@@ -1457,11 +1570,8 @@ a:not(:local-link(0)){
 :active
 :focus</pre>
 <p>Note: always style :focus when you style :hover</p>
-<pre>:focus-ring
+<pre>:focus-visible
 :focus-within</pre>
-
-<pre>:drop
-:drop()</pre>
   </section>
   </div>
 
@@ -1484,9 +1594,29 @@ button:active:focus</pre>
   </div>
 
 
-
-
 <!-- lang, target, anchor links-->
+<div class="slide normal">
+ <header><h1>:focus-visible</h1></header>
+ <section class="content">
+<p>Improving accessibility:</p>
+<ul>
+    <li>If user enabled,  <code>:focus-visible</code> matches active elements</li>
+
+    <li>Any element which supports keyboard input matches <code>:focus-visible</code> when focused, even if interaction doesn’t affect <code>:focus</code>.</li>
+
+    <li>When mousing, does <strong>not</strong> match if focus is moved to a new element which does not support user input</li>
+
+    <li>If scripts move away from a <code>:focus-visible</code> spot, the newly focused element should match <code>:focus-visible</code>.</li>
+
+    <li>If scripts move away from a NON <code>:focus-visible</code> spot, the newly focused element should NOT match <code>:focus-visible</code> either.</li>
+
+<li><code>:focus-visible</code> is applied to <code>:focus</code> as well. </li>
+ </section>
+</div>
+
+
+
+<!-- lang, target, anchor links
 <div class="slide normal">
      <header><h1>Drag and Drop Pseudo Classes</h1></header>
      <section class="content">
@@ -1503,7 +1633,7 @@ button:active:focus</pre>
 </ul>
 
   </section>
-  </div>
+  </div> -->
 
 
 
@@ -1516,8 +1646,8 @@ button:active:focus</pre>
 <div class="slide normal">
      <header><h1>:target</h1></header>
      <section class="content">
-  <pre contenteditable class="double">
-:target</pre>
+  <pre contenteditable class="double">:target
+:target-within</pre>
  
  <pre>myPage.html#anchor
 
@@ -1579,6 +1709,7 @@ E || F
   <header><h1>Time dimensional</h1></header>
   <section class="content">
 <pre>:current
+:current(s)
 :future
 :past</pre>
   </section>
@@ -1651,7 +1782,19 @@ ul > li {} 0-0-2</pre>
 </div>
 
 
+<!-- hacking specificity-->
+<div class="slide">
+  <header><h1>Parameters</h1></header>
+  <section class="content">
+    <pre contenteditable>:not(a, .b, #c)</pre>
 
+    <pre contenteditable>:is(a, .b, #c)</pre>
+
+    <pre contenteditable>:where(a, .b, #c)</pre>
+
+    <pre contenteditable>:nth-child(-n + 3 of a.b#c)</pre>
+  </section>
+</div>
 
 <!-- hacking specificity-->
 <div class="slide">
@@ -1693,8 +1836,9 @@ v.
 <div class="slide object">
 <header><h1>!Even More Important</h1></header>
   <object data="exercises/importantanimation.html"></object>
-  <a href="exercises/importantanimation.html" target="play" title="open code example in new window">↪</a>
+  <a href="exercises/importantanimation.html" target="play" title="open code example in new window"  class="objectlink">↪</a>
 </div>
+
 
 
 
@@ -1702,6 +1846,9 @@ v.
 
 <div class="slide intro"><h1>
 PRACTICE</h1></div>
+
+
+
 <!-- Pseudo elements -->
 <div class="slide divider">
      <h1>Pseudo elements</h1>

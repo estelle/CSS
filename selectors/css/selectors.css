@@ -612,4 +612,15 @@ p.firstletter {
   font-weight: bold;
 }
 
+i {
+  opacity: 0.5;
+}
+
+.matchesOfSelector :nth-child(3 of li.foo) {
+  color: blue;
+}
+.matchesOfSelector li.foo:nth-child(3) {
+  color: red;
+}
+
 /*# sourceMappingURL=selectors.css.map */
