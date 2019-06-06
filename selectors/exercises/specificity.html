@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>basic selectors</title>
+  <link rel="stylesheet" href="editme.css">
+  <style>
+  	input[pattern] {width: 2em;box-shadow:  none;}
+  	li {margin-bottom: 1em;}
+span {padding-right: 1em;}
+
+.checkme input:invalid,
+.checkme input:empty {border-color: red; box-shadow: red 0 0 3px;}
+.checkme input:valid {border-color: green; box-shadow: green 0 0 3px;}
+
+
+  </style>
+
+<title>Specificity</title>
+</head>
+
+<body>
+	<p>What is the specificity of the following selectors:</p>
+<ul>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="1"></span><code>p</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="0"></span><code>.important</code></li>
+	<li><span><input required pattern="1">-<input required pattern="0">-<input required pattern="0"></span><code>#unique</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>a:hover</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li.list-item</code></li>
+	<li><span><input required pattern="1">-<input required pattern="0">-<input required pattern="1"></span><code>div#mainNav</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>div[id="mainNav"]</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li:nth-of-type(2n+3)</code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="1"></span><code>li:where(:nth-of-type(2n+3)</code></li>
+	
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li:is(:nth-of-type(2n+3)</code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span></li>
+</ul>
+<input required type="button" onclick="document.body.classList.toggle('checkme'); return false;" value="check answers">
+
+</body>
+</html>
