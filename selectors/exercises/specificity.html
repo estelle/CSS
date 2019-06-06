@@ -19,7 +19,8 @@ span {padding-right: 1em;}
 </head>
 
 <body>
-	<p>What is the specificity of the following selectors:</p>
+	<p>What is the specificity of the following selectors: 
+<input required type="button" onclick="document.body.classList.toggle('checkme'); return false;" value="check answers"></p>
 <ul>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="1"></span><code>p</code></li>
 	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="0"></span><code>.important</code></li>
@@ -31,7 +32,7 @@ span {padding-right: 1em;}
 	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li:nth-of-type(2n+3)</code></li>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="1"></span><code>li:where(:nth-of-type(2n+3)</code></li>
 	
-	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li:is(:nth-of-type(2n+3)</code></li>
+	<li><span><input required pattern="0">-<input required pattern="1">-<input required pattern="1"></span><code>li:is(:nth-of-type(2n+3)</code></li><!--
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
@@ -44,9 +45,8 @@ span {padding-right: 1em;}
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
 	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code></li>
-	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span></li>
+	<li><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span><code></code><span><input required pattern="0">-<input required pattern="0">-<input required pattern="0"></span></li>-->
 </ul>
-<input required type="button" onclick="document.body.classList.toggle('checkme'); return false;" value="check answers">
 
 </body>
 </html>
