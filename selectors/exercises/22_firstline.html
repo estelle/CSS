@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>::first-line</title>
+<link rel="stylesheet" href="editme.css">
+<style>
+
+
+p{width: 450px;
+ font-size: 24px;
+ font-family:Georgia, "Times New Roman", Times, serif;
+ margin: 0 20px 20px;
+}</style>
+
+<style contenteditable class="editme">
+p:first-of-type::first-line {
+  color: blue;
+  font-size: 120%;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<p>If you want to ident the first line use the <code>text-indent</code> property, because only a limited number of CSS properties are relevant with <code>::first-line</code>.</p><p> 
+All font and background-related properties work, as well as <code>color</code>, <code>word-spacing</code>, <code>letter-spacing</code>, <code>text-decoration</code>, <code>text-transform</code>, <code>line-height</code>, <code>text-shadow</code>, <code>text-decoration</code>, <code>text-decoration-color</code>, <code>text-decoration-line</code>, <code>text-decoration-style</code>, and <code>vertical-align</code>.</p>
+</body>
+
+</html>
+

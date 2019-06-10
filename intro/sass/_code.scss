@@ -5,7 +5,7 @@ pre, .ex, .pre, .codelike, style[class="editme" i]   {
 	border-radius: 8px;
 	border: 1px solid #eee;
 	font-size: 1em;
-	line-height: 1.2;
+	line-height: 1.6;
 }
 pre b, 
 .pre b, 
@@ -23,6 +23,10 @@ pre em {
 	font-style: normal;
 	color: $hilite2;
 	text-shadow: $hilite2 0 0 1px;
+}
+pre.largeblock {
+	max-height: 60vh;
+	overflow-x: scroll;
 }
 
 [contenteditable]:focus {

@@ -19,7 +19,7 @@ a[href] {text-decoration: overline;}
 <li>4 - simple &lt;LI></li>
 <li>5 - simple &lt;LI> with a nested &lt;UL>
 	<ul>
-    	<li>Child 1 external  <a href="http://site.com/file.pdf" title="external pdf file">pdf</a> - &lt;a href=&quot;https://site.com/file.pdf&quot; title=&quot;external pdf file&quot;&gt;</li>
+    	<li>Child 1 external  <a href="http://site.com/file.pdf" title="external pdf file" target="foo">pdf</a> - &lt;a href=&quot;https://site.com/file.pdf&quot; title=&quot;external pdf file&quot;  target="foo"&gt;</li>
     	<li>Child 2</li>
     	<li>Child 3</li>
     </ul>
@@ -28,8 +28,8 @@ a[href] {text-decoration: overline;}
 <li id="myID">7 - &lt;li id=&quot;myID&quot;&gt;</li>
 <li>8 - simple &lt;LI></li>
 <li class="myClass">9 - &lt;li class=&quot;myClass&quot;&gt;</li>
-<li>10  - with an external <a href="http://standardista.com">Link</a> - &lt;a href=&quot;https://standardista.com&quot;&gt;Link&lt;/a&gt;</li>
-<li>11 - with a <a href="local.pdf" title="a local pdf file">PDF</a> - &lt;a href=&quot;local.pdf&quot;  title=&quot;a local pdf file&quot;&gt;PDF&lt;/a&gt;</li>
+<li>10  - with an external <a href="http://standardista.com"  target="Foo">Link</a> - &lt;a href=&quot;https://standardista.com&quot;  target="Foo"&gt;Link&lt;/a&gt;</li>
+<li>11 - with a <a href="local.pdf" title="a local pdf file"  target="FOO">PDF</a> - &lt;a href=&quot;local.pdf&quot;  title=&quot;a local pdf file&quot;  target="FOO"&gt;PDF&lt;/a&gt;</li>
 <li>12 - simple &lt;LI></li>
 <li title="A unicorn farted a rainbow">13 -  &lt;li title=&quot;A unicorn farted a rainbow&quot;&gt;</li>
 </ol>

@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Specificity</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+<link rel="stylesheet" href="exercises/editme.css"/>
+<link rel="stylesheet" href="css/selectors.css"/>
+
+<style>
+.far-future.object object {display: none;}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header>
+      <h1>Specificity</h1>
+     </header>
+     <p><a href="https://estelle.github.io/CSS/selectors/specificity.html">estelle.github.io/CSS/selectors/specificity.html</a></p>
+    </div>
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Specificity</h1>
+</div>
+
+
+
+
+<!-- Specificity -->
+ <div class="slide object">
+ <div style="background-image: url(http://specifishity.com/specifishity.png); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+ <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
+ </div>
+
+
+<!-- Specificity -->
+ <div class="object slide">
+  <object data="https://specifishity.com/specifishity.pdf" style="height: 792px;"></object>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+  <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: How it works</h1></header>
+     <section class="content">
+      <ul>
+        <li><code contenteditable>0-0-0</code>: Global selector</li>
+        <li><code contenteditable>0-0-1</code>: Type Selector (Elements &amp; pseudoelements)</li>
+        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+        <li><code contenteditable>1-0-0</code>: ID selector</li></ul>
+        <ul>
+         <li> <code contenteditable>1-0-0-0</code>: inline styles</li>
+         <li> <code contenteditable>1-0-0-0-0</code>: <pre style="display: inline"><em>!important</em></pre> (on value)</li>
+
+ 
+
+     </section>
+</div>
+
+
+
+<!-- Specificity Notes -->
+<div class="slide">
+     <header><h1>Specificity: The less than obvious</h1></header>
+     <section class="content">
+ <p>The * selector, or global selector, has a specifity of 0.</p>
+
+<p>Combinators, like ~, >, spaces, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter selector does</p>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+
+     </section>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide">
+     <header><h1>Specificity v Inheritance</h1></header>
+     <section class="content">
+<p>Specificity is not inheritance</p>
+
+<pre contenteditable>p#myParagraph.important { 
+  color: red !important;
+}
+a {
+  color: purple;
+}</pre>
+<pre contenteditable>&lt;p>Paragraph with a &lt;a href="x.html">link&lt;/a>&lt;/p></pre>
+<p>Styles for a directly targeted element take precedence over inherited styles regardless of inherited specificity. </p>
+     </section>
+</div>
+
+<!-- hacking specificity-->
+<div class="slide">
+  <header><h1>Parameters</h1></header>
+  <section class="content">
+    <pre contenteditable>:not(a, .b, #c)</pre>
+
+    <pre contenteditable>:is(a, .b, #c)</pre>
+
+    <pre contenteditable>:where(a, .b, #c)</pre>
+
+    <pre contenteditable>:nth-child(-n + 3 of a.b#c)</pre>
+  </section>
+</div>
+
+<!-- hacking specificity-->
+<div class="slide">
+  <header><h1>Avoid !important</h1></header>
+  <section class="content">
+    <h2>Hacking specificity</h2>
+    <pre contenteditable>.disabled {cursor: default !important;}
+p.btn {cursor: pointer;}</pre>
+<p>v.</p>
+<pre contenteditable>.disabled.disabled.disabled {cursor: default;}
+p.btn {cursor: pointer;}</pre>
+  </section>
+</div>
+
+
+<!-- hacking specifity: id -->
+<div class="slide">
+  <header><h1>Hacking specificity with IDs</h1></header>
+  <section class="content">
+    <pre contenteditable><b>#TheirWidget</b> {background-color: blue <b>!important</b>;}
+#3rdPartyWidget {background-color: white;}</pre>
+v.
+<pre contenteditable><b>#TheirWidget#TheirWidget</b> {background-color: blue ;}
+#3rdPartyWidget {background-color: white;}</pre>
+  </section>
+</div>
+
+
+<!-- Crazy Hack -->
+<div class="slide">
+  <header><h1>Hack in case of emergency</h1></header>
+  <section class="content">
+    <pre contenteditable>a:not(#idDoesNotExist#idDoesNotExist#idDoesNotExist) </pre>
+  </section>
+</div>
+
+    <div class="slide intro">
+     <header>
+      <h1>Math Class!</h1>
+     </header>
+     <p><a href="exercises/specificity.html">Let's practice</a></p>
+    </div>
+
+
+<!-- Overriding important with animation -->
+<div class="slide object">
+<header><h1>!Even More Important</h1></header>
+  <object data="exercises/importantanimation.html"></object>
+  <a href="exercises/importantanimation.html" target="play" title="open code example in new window"  class="objectlink">↪</a>
+</div>
+
+
+
+
+
+<div class="slide intro">
+  <header><h1>The Cascade</h1></header>
+</div>
+
+<div class="slide">
+<header><h1>The Cascade</h1></header>
+<section class="content">
+<ol>
+<li>Transition declarations</li>
+<li>Important user agent declarations</li>
+<li>Important user declarations</li>
+<li>Important author declarations</li>
+<li>Animation declarations </li>
+<li><strong>Normal author declarations</strong></li>
+<li>Normal user declarations</li>
+<li>Normal user agent declarations</li>
+</ol>
+</section>
+</div>
+
+<div class="slide">
+  <section class="content">
+  <p>When multiple declarations have equal specificity, the last declaration found in the CSS is applied to the element. </p></section>
+</div>
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Pseudoelements</h1></header>
+     <section class="content">
+    <h1><a href="pseudo.html">Next ➹</a></h1></section>
+</div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="column2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors/specificity.html">Specificity &amp; the Cascade</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudoelements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../sass">Best Practices</a></li>
+    <li><a href="../debugging">Debugging</a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    
+    <li><a href="../tables">Tables</a></li>
+
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
+
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">&laquo; Back</li>
+            <li class="button done" id="next">Next &raquo; </li>
+        </ul>
+    </nav>
+</header>
+<script src="selectors.js"></script>
+  </body>
+
+</html>
+

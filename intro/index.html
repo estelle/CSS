@@ -35,24 +35,37 @@
 
 <div class="slide">
 
-  <header><h1>CSS Declaration</h1></header>
-  <section>
+  <header><h1>Declaration</h1></header>
+  <section class="content">
     <h2>Declaration</h2>
     <pre><b>property</b><em>:</em> <b>value</b><em>;</em></pre>
     <pre>color: red;</pre>
     <pre>font-weight: bold;</pre>
-    <h2>Declaration block</h2>
+  </section>
 
+</div>
+
+
+<div class="slide">
+
+  <header><h1>Declaration block</h1></header>
+  <section class="content">
     <pre>{
   color: red;
   font-weight: bold;
 }</pre>
+
+    <pre>{
+  transition: all 2s ease-in;
+  transform: scale(2) translate(50vw, 50vh);
+}</pre>
   </section>
 
 </div>
+
 <!-- basics -->
-<div class="slide normal">
-  <header><h1>CSS Ruleset Syntax</h1></header>
+<div class="slide">
+  <header><h1>CSS Ruleset</h1></header>
    <section class="content">
 <pre contenteditable>selectorA {
    property1: value1;
@@ -68,8 +81,8 @@ selectorC {
  </div>
 
 <div class="slide">
-  <header><h1>CSS Rules</h1></header>
-  <section>
+  <header><h1>CSS Rulesets</h1></header>
+  <section class="content">
 <pre contenteditable>p {
    color: #333333;
    line-height: 2;
@@ -88,10 +101,10 @@ a:link {
 
 
 
-<div class="slide intro toc">
+<div class="slide toc">
 
   <header><h1>Including CSS</h1></header>
-  <section><ul>
+  <section class="content"><ul>
     <li><code>&lt;link></code></li>
    <li><code>&lt;style></code></li>
    <li><code>@import</code></li>
@@ -106,8 +119,8 @@ a:link {
 <div class="slide">
 
   <header><h1>&lt;link></h1></header>
-  <section>
-<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  <section class="content">
+<pre contenteditable  class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
   &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -127,14 +140,39 @@ a:link {
  &lt;/body&gt;</pre></section>
 </div>
 
+<!-- exmaple of included styles -->
+<div class="slide">
+  <header><h1>media</h1></header>
+  <section class="content">
+
+    <pre style="float: right;">media="screen"
+media="screen and (max-width: 600px)"
+media="screen, print"
+@media screen and (max-width: 600px)</pre>
+    <ol style="margin-left: 1em; float-left">
+      <li>all</li>
+      <li>aural</li>
+      <li>handheld</li>
+      <li>braille</li>
+      <li>embossed</li>
+      <li>print</li>
+      <li>projection</li>
+      <li>screen</li>
+      <li>tty</li>
+      <li>tv</li>
+    </ol>
+<p><a href="../media">covered later!</a></p>
+  </section>
+</div>
+
 
 
 <!-- exmaple of included styles -->
 <div class="slide">
 
   <header><h1>&lt;style></h1></header>
-  <section>
-<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  <section class="content">
+<pre contenteditable  class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
   &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -161,8 +199,8 @@ a:link {
 <div class="slide">
 
   <header><h1>@import</h1></header>
-  <section>
-<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  <section class="content">
+<pre contenteditable class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
   &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -190,8 +228,8 @@ a:link {
 <div class="slide">
 
   <header><h1>inline styles</h1></header>
-  <section>
-<pre contenteditable style="line-height: 1.6">&lt;!DOCTYPE HTML&gt;
+  <section class="content">
+<pre contenteditable class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
   &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -214,7 +252,7 @@ a:link {
 
 <div class="slide">
   <header><h1>Scripting</h1></header>
-  <section>
+  <section class="content">
 
     <pre contenteditable>let myTarget = document.querySelector('#myID');</pre>
 
@@ -227,14 +265,14 @@ a:link {
   </section>
 </div>
 
-<div class="slide intro toc">
+<div class="slide toc">
   <header><h1>Syntax</h1></header>
-  <section>
+  <section class="content">
     <ul>
       <li>CSS Rules</li>
       <li>White space</li>
-      <li>Comments</li>
       <li>Character declaration</li>
+      <li>Comments</li>
       <li>Forgiving yet strict</li>
   </section>
 </div>
@@ -242,20 +280,39 @@ a:link {
 
 <div class="slide">
   <header><h1>White space</h1></header>
-  <section>
-    <p>CSS is for the most part insensitive to white space, with 2 exceptions:</p>
+  <section class="content">
+    <ul>
+    <li>CSS is for the most part insensitive to white space, with 2 exceptions:
     <ul><li>Required between keywords in a value</li>
-      <li>The Character declaration needs to be exact</li>
+      <li>The <code>charset</code> declaration needs to be exact</li>
     </ul>
-    <p>In a selector, one or more spaces is also a descendant combinator</p>
-    <p>White space is encouraged for readability, and can be removed during minification.</p>
+  </li>
+    <li>In a selector, one or more spaces is also a descendant combinator</li>
+    <li>White space is encouraged for readability, and can be removed during minification.</li></ul>
   </section>
 </div>
 
 
+
+<div class="slide">
+  <header><h1>Character declaration</h1></header>
+  <section class="content">
+    <pre><em>@charset "UTF-8";</em></pre>       
+
+    <ul><li>Must be the first thing in the stylesheet</li>
+      <li>Must be the first character on the page</li>
+      <li>Must have EXACTLY one space</li>
+      <li>Must have double quotes</li>
+      <li>Only for linked or imported stylesheets</li>
+    </ul>
+  </section>
+</div>
+
+
+
 <div class="slide">
   <header><h1>Comments</h1></header>
-  <section><p>Comments are generally optional and encouraged for readability, and written with:</p>
+  <section class="content"><p>Comments are generally optional and encouraged for readability, and written with:</p>
     <pre contenteditable><i>/* this is a comment in CSS (and JS) */</i></pre>
 
     <pre contenteditable><i>/* this is a multiline
@@ -271,39 +328,33 @@ that spans 3 lines */</i></pre>
 
   <pre contenteditable><strike>// This is a sass &amp; JS comment,  but not CSS </strike></pre>
 
-
-
-
     <p>Comments are encouraged for readability, and can be removed during minification / build.</p>
   </section>
 </div>
 
 
-<div class="slide">
-  <header><h1>Character declaration</h1></header>
-  <section>
-    <pre><em>@charset "UTF-8";</em></pre>       
-
-    <ul><li>Must be the first thing in the stylesheet</li>
-      <li>Must be the first character on the page</li>
-      <li>Must have EXACTLY one space</li>
-      <li>Must have double quotes</li>
-      <li>Only for linked or imported stylesheets</li>
-    </ul>
-  </section>
-</div>
 
 
 <div class="slide">
   <header><h1>Forgiving yet strict</h1></header>
-  <section>
+  <section class="content">
     <h2>Forgiving</h2>
     <p>Skips declaration it doesn't understand</p>
     <pre contenteditable>p {
   color: granola; <i>/* not a valid color */</i>
   groot: green; <i>/* not a valid property */</i>
-  font-weight: bold <i>/* will not ignore this */</i>
+  font-weight: bold; <i>/* will not ignore this */</i>
 }</pre>
+
+</section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Forgiving yet strict</h1></header>
+  <section class="content">
+   
 <h2>Strict</h2>
 <p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
 <pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
@@ -315,14 +366,10 @@ p.valid {
 
 
 
+
 <div class="slide">
   <header><h1>Forgiving for ::-webkit</h1></header>
-  <section>
-<p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
-<pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
-p.valid { 
-  color: green;
-}</pre>
+  <section class="content">
 <p>Unless it's a <b>::-webkit-</b> prefixed pseudoelement</p>
 <pre contenteditable>::-webkit-does-not-exist,
 ::after { <i>/* this is NOT ignored */</i>
@@ -332,11 +379,48 @@ p.valid {
   </section>
 </div>
 
-<div class="slide intro">
-  <header><h1>Up Next</h1></header>
+
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Selectors</h1></header>
+     <section class="content">
+    <h1><a href="../selectors/">Next ➹</a></h1></section>
+</div>
+
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
   <section>
-<a href="../selectors/">Selectors</a>
+    <ol class="column2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors/specificity.html">Specificity &amp; the Cascade</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudoelements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../sass">Best Practices</a></li>
+    <li><a href="../debugging">Debugging</a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    
+    <li><a href="../tables">Tables</a></li>
+
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
   </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
 </div>
 
 
@@ -353,5 +437,7 @@ p.valid {
     </nav>
 </header>
 <script src="../slideshow.js"></script>
-</body>
+  </body>
+
 </html>
+

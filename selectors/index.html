@@ -405,7 +405,7 @@ var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
   <section class="content">
 
 <pre contenteditable>
-function hasaclass(slctr){
+function makeActive(slctr){
   let i = j = 0,
       elements = document.<strong>querySelectorAll</strong>('.cur .ex li'),
       cur = document.<strong>querySelectorAll</strong>('.cur .ex ' + slctr);
@@ -426,7 +426,9 @@ function hasaclass(slctr){
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Specificity</h1>
+
+  <h1><span style="font-size: xx-large;">Brief intro to</span><br> Specificity</h1>
+  <p  style="font-size: xx-large;">Will be covered in depth later</p>
 </div>
 
  <div class="object slide">
@@ -470,13 +472,13 @@ ul > li {} 0-0-2</pre>
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Relational selectors &amp; Combinators</h1>
+  <h1>Relational selectors &amp; combinators</h1>
 </div>
 
 
 <!-- Relational selectors -->
 <div class="slide normal" id="slcRelational">
-  <header><h1>Relational selectors &amp; Combinators</h1></header>
+  <header><h1>Relational selectors &amp; combinators</h1></header>
   <section class="content twopart">
     <dl>
       <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
@@ -611,10 +613,20 @@ a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
   <dt>E[attr*=val]</dt>
   <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
 </dl>
-<p>Note: Multiple attributes work! a[title][href]</p>
      </section>
  </div>
 
+
+<!-- CSS3 Attribute Selectors -->
+<div class="slide normal">
+     <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
+     <section class="content">
+
+<p>Multiple attributes work! </p>
+<pre contenteditable>a[title][href]</pre>
+<pre contenteditable>input[type="number"][min][max]</pre>
+     </section>
+ </div>
 
 <!-- CSS4: Attribute Selector -->
 <div class="slide">
@@ -643,10 +655,10 @@ a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
 
     <pre contenteditable>E[id="foobar"]</pre>
     <pre contenteditable>E[id="FooBar"]</pre>
-    <pre contenteditable>input[type="checkbox" s ]</pre>
-    <pre contenteditable>input[type="ChEcKbOx" s ]</pre>
+    <pre contenteditable>a[target="ABC" s ]</pre>
+    <pre contenteditable>a[target="abc" s ]</pre>
 
-<p>Relevant if attribute value is NOT case senstive (like keyterm values )</p>
+<p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a></p>
   </section>
 </div>
 
@@ -743,8 +755,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
      <header><h1>UI pseudo-classes</h1></header>
-     <section class="content">
-  <pre contenteditable>:valid
+     <section class="content twopart" style="flex-flow: row wrap">
+  <pre contenteditable style="flex:1; margin: 20px;">:valid
 :invalid
 
 :required
@@ -757,8 +769,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 :read-write
 
 :enabled
-:disabled
-
+:disabled</pre>
+<pre contenteditable  style="flex:1;  margin: 20px;">
 :default
 :indeterminate
 
@@ -913,7 +925,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <div class="slide normal" id="blank">
      <header><h1>:blank</h1></header>
      <section class="content">
-        <style class="editme" contenteditable>#blank input:blank { /*greater specicity 1-1-1 */
+        <style class="editme" contenteditable>#blank input:blank { /*greater specificity 1-1-1 */
   border: initial; 
   background-color: lightblue;
 }
@@ -1397,19 +1409,19 @@ nav a:not(.foo):not(.bar).not(.bam){
 
 <div class="slide">
   <header><h1>:is() == preprocessors</h1></header>
-  <section>
-<pre contenteditable>:is(header, aside, footer) [contenteditable]:hover {
+  <section class="content">
+<pre contenteditable>:is(header, aside, footer) [contenteditable]:hover { <i>/* CSS Selectors level 4 */</i>
     color: blue;
     cursor: pointer;
   }</pre>
-<pre contenteditable>header, aside, footer {
+<pre contenteditable>header, aside, footer { <i>/* sass */</i>
   [contenteditable]:hover {
     color: blue;
     cursor: pointer;
   }
 }</pre>
 
-<pre contenteditable>header [contenteditable]:hover {
+<pre contenteditable>header [contenteditable]:hover { <i>/* CSS Selectors level 2 */</i>
     color: blue;
     cursor: pointer;
   }
@@ -1428,12 +1440,12 @@ footer [contenteditable]:hover {
 
 <div class="slide">
   <header><h1>Specificity Rules</h1></header>
-  <section>
-    <p>The specificity is the specificity of its most specific argument s</p>
+  <section class="content">
+    <p>The specificity is the specificity of its most specific argument:</p>
       <pre>:is(ul, ol, .list) > [hidden] { ... <i>/* 0-2-0 */</i></pre>
       <pre>ul > [hidden], 
 ol > [hidden], <i>/* 0-1-1 */</i> 
-.list > [hidden] { ...</pre> 
+.list > [hidden] { <i>/* 0-2-0 */</i> </pre> 
 <pre>&lt;ol>
   &lt;li hidden>This matches&lt;/li>
   &lt;li>This doesn't&lt;/li>
@@ -1444,7 +1456,7 @@ ol > [hidden], <i>/* 0-1-1 */</i>
 
 <div class="slide">
   <header><h1>:where()</h1></header>
-  <section>
+  <section class="content">
     <p>Same as <code>:is(s1, s2)</code>, but with no specificity</p>
 <p>Specificity sometimes makes life hard:</p>
 
@@ -1474,6 +1486,7 @@ nav a {
   <header>
     <h1>Parent Selector</h1>
   </header>
+  <section class="content">
     <p>Parent selector</p>
     <pre>:has(s1, s2)</pre>
 <p>Contains a header</p>
@@ -1554,11 +1567,11 @@ nav a {
 }</pre>
 <pre contenteditable class="example">
 a:local-link {
-  /* match links on this page or section of page (#fragment) */
+  <i>/* match links on this page or section of page (#fragment) */</i>
 }</pre>
 <pre contenteditable class="example">
 a:not(:local-link) {
-  /* on a different document or site */
+  <i>/* on a different document or site */</i>
 }</pre></section>
 </div>
 
@@ -1731,12 +1744,47 @@ E || F
 PRACTICE</h1></div>
 
 
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Specificity</h1></header>
+     <section class="content">
+    <h1><a href="specificity.html">Next ➹</a></h1></section>
+</div>
 
-<!-- Pseudo elements -->
-<div class="slide divider">
-     <h1><a href="pseudo.html">Specificity &amp;Pseudo elements</a></h1>
-     <a href="pseudo.html">Next section</a>
- </div>
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="column2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors/specificity.html">Specificity &amp; the Cascade</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudoelements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../sass">Best Practices</a></li>
+    <li><a href="../debugging">Debugging</a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    
+    <li><a href="../tables">Tables</a></li>
+
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
 
 
    </div>
@@ -1752,11 +1800,6 @@ PRACTICE</h1></div>
     </nav>
 </header>
 <script src="selectors.js"></script>
-  <!--[if lt IE 9]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({ mode: "overlay" });</script>
-  <![endif]-->
-
   </body>
 
 </html>

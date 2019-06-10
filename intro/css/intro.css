@@ -64,6 +64,7 @@ pre, .ex, .pre, .codelike, style[class=editme i] {
   border-radius: 8px;
   border: 1px solid #eee;
   font-size: 1em;
+  line-height: 1.6;
 }
 
 pre b,
@@ -85,6 +86,11 @@ pre em {
   font-style: normal;
   color: red;
   text-shadow: red 0 0 1px;
+}
+
+pre.largeblock {
+  max-height: 60vh;
+  overflow-x: scroll;
 }
 
 [contenteditable]:focus {
@@ -391,7 +397,11 @@ section, footer {
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   margin: 20px 30px 0;
   display: block;
-  overflow: hidden;
+}
+
+section {
+  max-height: calc(100vh - 3em);
+  overflow-y: auto;
 }
 
 footer {

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8" />
-    <title>Specificity & Pseudo Elements</title>
+    <title>Pseudo Elements</title>
     <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="exercises/editme.css"/>
 <link rel="stylesheet" href="css/selectors.css"/>
 
 <style>
-.far-future.object object {display: none;}
+.far-future.object object {display: none; }
 </style>
 </head>
 
@@ -26,136 +26,10 @@
 
     <div class="slide intro">
      <header>
-      <h1>Specificity &amp; Pseudo Elements</h1>
+      <h1>Pseudo Elements</h1>
      </header>
      <p><a href="https://estelle.github.io/CSS/selectors/pseudo.html">estelle.github.io/CSS/selectors/pseudo.html</a></p>
     </div>
-
-<!-- divider -->
-<div class="slide divider">
-  <h1>Specificity</h1>
-</div>
-
-
-
-
-<!-- Specificity -->
- <div class="slide object">
- <div style="background-image: url(http://specifishity.com/specifishity.png); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
-     <header><h1>Specificity (SpeciFISHity)</h1></header>
- <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
- </div>
-
-
-<!-- Specificity -->
- <div class="object slide">
-  <object data="https://specifishity.com/specifishity.pdf" style="height: 792px;"></object>
-     <header><h1>Specificity (SpeciFISHity)</h1></header>
-  <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
-</div>
-
-
-<!-- Specificity Notes -->
-<div class="slide normal">
-     <header><h1>Specificity: How it works</h1></header>
-     <section class="content">
-      <ul>
-        <li><code contenteditable>0-0-0</code>: Global selector</li>
-        <li><code contenteditable>1-0-0</code>: ID selector</li>
-        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
-        <li><code contenteditable>0-0-1</code>: Element Selector</li>
-
- 
-
-     </section>
-</div>
-
-
-
-<!-- Specificity Notes -->
-<div class="slide">
-     <header><h1>Specificity: The less than obvious</h1></header>
-     <section class="content">
- <p>The * selector, or global selector, has a specifity of 0.</p>
-
-<p>Combinators, like ~, >, spaces, and + have no value</p>
-<pre contenteditable>ul li {} 0-0-2
-ul > li {} 0-0-2</pre>
-
-<p>:not has no value, but parameter selector does</p>
-<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
-
-<p>Specificity is not inheritance</p>
-     </section>
-</div>
-
-
-<!-- hacking specificity-->
-<div class="slide">
-  <header><h1>Parameters</h1></header>
-  <section class="content">
-    <pre contenteditable>:not(a, .b, #c)</pre>
-
-    <pre contenteditable>:is(a, .b, #c)</pre>
-
-    <pre contenteditable>:where(a, .b, #c)</pre>
-
-    <pre contenteditable>:nth-child(-n + 3 of a.b#c)</pre>
-  </section>
-</div>
-
-<!-- hacking specificity-->
-<div class="slide">
-  <header><h1>Avoid !important</h1></header>
-  <section class="content">
-    <h2>Hacking specificity</h2>
-    <pre contenteditable>.disabled {cursor: default !important;}
-p.btn {cursor: pointer;}</pre>
-<p>v.</p>
-<pre contenteditable>.disabled.disabled.disabled {cursor: default;}
-p.btn {cursor: pointer;}</pre>
-  </section>
-</div>
-
-
-<!-- hacking specifity: id -->
-<div class="slide">
-  <header><h1>Hacking specificity with IDs</h1></header>
-  <section class="content">
-    <pre contenteditable><b>#TheirWidget</b> {background-color: blue <b>!important</b>;}
-#3rdPartyWidget {background-color: white;}</pre>
-v.
-<pre contenteditable><b>#TheirWidget#TheirWidget</b> {background-color: blue ;}
-#3rdPartyWidget {background-color: white;}</pre>
-  </section>
-</div>
-
-
-<!-- Crazy Hack -->
-<div class="slide">
-  <header><h1>Hack in case of emergency</h1></header>
-  <section class="content">
-    <pre contenteditable>a:not(#idDoesNotExist#idDoesNotExist#idDoesNotExist) </pre>
-  </section>
-</div>
-
-
-<!-- Overriding important with animation -->
-<div class="slide object">
-<header><h1>!Even More Important</h1></header>
-  <object data="exercises/importantanimation.html"></object>
-  <a href="exercises/importantanimation.html" target="play" title="open code example in new window"  class="objectlink">↪</a>
-</div>
-
-    <div class="slide intro">
-     <header>
-      <h1>Math Class!</h1>
-     </header>
-     <p><a href="exercises/specificity.html">Let's practice</a></p>
-    </div>
-
-
-
 
 
 <!-- Pseudo elements -->
@@ -167,14 +41,22 @@ v.
 <div class="slide normal thisSlide">
      <header><h1>Pseudo elements</h1></header>
      <section class="content">
-     <pre contenteditable style="font-size: 100%;">
-::first-line
-::first-letter
-::selection (not in specification)
-::before
-::after
+     <pre contenteditable style="font-size: 100%;">::after
+::before (:before)
+::first-letter (:first-letter)
+::first-line (:first-line)</pre>
+<pre contenteditable style="font-size: 100%;">::selection
+::inactive-selection
+::spelling-error 
+::grammar-error
+::marker 
+::placeholder
     </pre>
+</section>
+</div>
 
+<div class="slide normal thisSlide">
+     <header><h1>Pseudo elements</h1></header>
   <p><i class="imp">Pseudo-classes</i> select elements that
 
 already exist.<br>
@@ -184,13 +66,27 @@ already exist.<br>
     </div>
 
 
+<!-- Pseudo elements -->
+<div class="slide normal thisSlide">
+     <header><h1>Original pseudo-elements</h1></header>
+     <section class="content">
+     <pre contenteditable style="font-size: 100%;">:after
+:before
+:first-letter
+:first-line</pre>
+
+ <small>The double colon notation was introduced to “establish a discrimination between pseudo-classes and pseudo-elements.”<br><br/>For compatibility, browsers accept the one-colon notation for pseudo-elements introduced in CSS levels 1 and 2, but not for newer pseudo-elements</small>
+      </section>
+    </div>
+
+
 <!-- Drop Cap -->
 <div class="slide object ">
      <header><h1>::first-letter</h1></header>
-     <object data="exercises/08_dropcap.html">
+     <object data="exercises/20_dropcap.html">
      <section class="content">
 
-   <p class="firstletter">You can even pretty drop-caps with :first-letter, but make sure to apply it to p:first-of-type so your site not too ugly. <a href="exercises/08_dropcap.html" target="play" class="objectlink">Code for drop cap.</a></p>  <pre contenteditable>p:first-of-type::first-letter {
+   <p class="firstletter">You can even pretty drop-caps with :first-letter, but make sure to apply it to p:first-of-type so your site not too ugly. <a href="exercises/20_dropcap.html" target="play" class="objectlink">Code for drop cap.</a></p>  <pre contenteditable>p:first-of-type::first-letter {
 	position: relative;
 	top: 8px;
 	float: left;
@@ -203,22 +99,29 @@ already exist.<br>
  </pre>
      </section>
      </object>
-     <a href="exercises/08_dropcap.html" target="play" class="objectlink">Drop Cap</a>
+     <a href="exercises/20_dropcap.html" target="play" class="objectlink">Drop Cap</a>
     </div>
 
 
-<!-- ::selection -->
-<div class="slide thisSlide">
-     <header><h1>::selection</h1></header>
+
+<!-- Drop Cap -->
+<div class="slide object ">
+     <header><h1>::first-line</h1></header>
+     <object data="exercises/22_firstline.html">
      <section class="content">
 
-    <pre contenteditable>.thisSlide *::selection {
-   background-color: #990000;
-   color: #ffffff;
-}
-    </pre>
+   <p class="firstline">You can ident the first line or otherwise make it stand out. How about making the first line blue and bold? What happens if you change the font size?</p><p class="first-line">There is the <code>text-indent</code> property, so maybe it doesn't make sense to use for indentation.  Nor does it make sense to do it for every paragraph! <a href="exercises/22_firstline.html" target="play" class="objectlink">Code for drop cap.</a></p>  <pre contenteditable>p:first-of-type::first-line {
+  color: blue;
+  font-size: 120%;
+  font-weight: bold;
+}</pre>
      </section>
+     </object>
+     <a href="exercises/22_firstline.html" target="play" class="objectlink">First Line</a>
     </div>
+
+
+
 
      </section>
     </div>
@@ -227,6 +130,7 @@ already exist.<br>
 <div class="slide divider">
      <h1>Generated Content<br/>
      with ::before and ::after</h1>
+     <small>Just an intro. We'll deep dive in the next section</small>
  </div>
 
 <!-- :before and :after  -->
@@ -275,16 +179,18 @@ p:after{
 <div class="slide">
      <header><h1>Additional Pseudo-elements</h1></header>
      <section class="content">
-<p>Highlight Pseudo-elements:</p>
-<pre>::selection
+<pre class="largeblock">
+::selection
 ::inactive-selection
-::spelling-error
-::grammar-error</pre>
-
-<p>Other Pseudo-elements:</p>
-<pre>::marker
-::placeholder
-::content</pre>
+::spelling-error 
+::grammar-error
+::marker 
+::placeholder</pre>
+<pre>
+::backdrop      <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">Fullscreen API</a> */</i> 
+::cue           <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">VTT - video text tracks</a> */</i>
+::part()        <i>/* <a href="https://drafts.csswg.org/css-shadow-parts/">CSS shadow parts</a> */</i>
+::slotted()     <i>/* <a href="https://drafts.csswg.org/css-scoping/#slotted-pseudo">CSS Scoping</a> */</i></pre>
 </section>
 </div>
 
@@ -293,16 +199,19 @@ p:after{
   <h1>::selection</h1>
 </div>
 
-
+<!-- ::selection -->
 <div class="slide thisSlide">
      <header><h1>::selection</h1></header>
      <section class="content">
 
-    <pre contenteditable="">.thisSlide *::selection {
-   background-color: #F63;
-}</pre>
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: #990000;
+   color: #ffffff;
+}
+    </pre>
      </section>
-</div>
+    </div>
+
 
 <div class="slide normal thisSlide foo">
      <header><h1>Disabling ::selection</h1></header>
@@ -322,6 +231,47 @@ p:after{
 </div>
 
 
+
+
+<div class="slide">
+  <header><h1>::inactive-selection</h1></header>
+    <section class="content">
+      <p>Similar to <code>::selection</code>, but <code>::selection</code> applies to active selections. <code>::inactive-selection</code> applies to inactive selections</p> <p>     Example: selected area when the document window is inactive and therefore not receiving events.
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>::spelling-error</h1></header>
+    <section class="content"> 
+      <p>The portions of text that have been flagged by the user agent as misspelled.</p>  
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>::grammar-error</h1></header>
+    <section class="content">
+      <p>The portions of text that have been flagged by the user agent as grammatically incorrect.</p> 
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>::marker </h1></header>
+    <section class="content">
+      <p>The bullet, or marker, of a list item. </p>
+
+<p>Currently, only limited CSS properties apply: </p>
+<ul>
+    <li><code>color</code> and <code>content</code></li>
+    <li> all font properties </li>
+    <li>some writing mode properties: <code>text-combine-upright</code>, <code>unicode-bidi</code>, and direction properties</li></ul>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>::placeholder</h1></header>
+    <section class="content">The placeholder text in an input field
+    </section>
+</div>
 <!--  -->
 <div class="slide divider">
  <h1>Other pseudo-elements</h1>
@@ -330,7 +280,7 @@ p:after{
 
 
 <div class="slide">
-  <header><h1>IE10 Specific</h1></header>
+  <header><h1>IE Specific</h1></header>
     <section class="content">
 <pre contenteditable style="font-size: 1.9rem">::-ms-browse
 ::-ms-value
@@ -350,28 +300,58 @@ p:after{
 </div>
 
 <div class="slide">
-  <header><h1>Shadow DOM</h1></header>
-    <section class="content">
-          <p>Many, many more pseudo-elements with prefixes currently treated as a shadow DOM
-      <ul><li>::-webkit-progress-bar</li>
-         <li>::-webkit-progress-value</li>
-         <li>::-webkit-meter-even-less-good-value
-         </li>
-         <li>::-webkit-inner-spin-button /outer-spin-button
-         </li>
-         <li>::-webkit-validation-bubble / arrow-clipper /arrow /message</li>
-         <li>::-webkit-scrollbar</li>
-         <li>::-webkit-scrollbar-button / thumb / track
-         <li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions#section_22" target="_new">Mozilla Pseudo-elements and pseudo-classes</a></li>
+  <header><h1>Mozilla specific</h1></header>
+  <section class="content">
+    <pre contenteditable>::-moz-anonymous-block
+::-moz-anonymous-positioned-block
+::-moz-canvas
+::-moz-color-swatch
+::-moz-cell-content
+::-moz-focus-inner
+::-moz-focus-outer
+::-moz-inline-table
+::-moz-page
+::-moz-page-sequence
+::-moz-pagebreak
+::-moz-pagecontent
+::-moz-progress-bar
+::-moz-range-progress
+::-moz-range-thumb
+::-moz-range-track
+::-moz-scrolled-canvas
+::-moz-scrolled-content
+::-moz-scrolled-page-sequence
+::-moz-svg-foreign-content
+::-moz-table
+::-moz-table-cell
+::-moz-table-column
+::-moz-table-column-group
+::-moz-table-outer
+::-moz-table-row
+::-moz-table-row-group
+::-moz-viewport
+::-moz-viewport-scroll
+::-moz-xul-anonymous-block</pre></section></div>
 
-         </ul>
-    </section>
+<div class="slide">
+  <header><h1>-webkit scrolling pseudo-elements</h1></header>
+    <section class="content">
+      <pre contenteditable>::-webkit-progress-bar
+::-webkit-progress-value
+::-webkit-meter-even-less-good-value
+::-webkit-inner-spin-button
+::-webkit-outer-spin-button
+::-webkit-scrollbar
+::-webkit-scrollbar-button
+::-webkit-scrollbar-thumb
+::-webkit-scrollbar-track</pre>
+</section>
 </div>
 
 
 <!-- Example Slider -->
 <div class="slide">
-  <header><h1>Pseudo Elements</h1></header>
+  <header><h1>Pseudo Elements (open in -webkit- browser)</h1></header>
   <section class="content  scrollbar">
     <style style="height: 70vh; font-size: 20px; width: calc(100% - 60px); overflow: scroll" class="editme" contenteditable>.scrollbar ::-webkit-scrollbar {
   margin-right: 5px;
@@ -411,13 +391,15 @@ p:after{
     <h1><a href="../generated/">Next ➹</a></h1></section>
 </div>
 
+
 <div class="slide dots">
   <header><h1>Table of Content</h1></header>
   <section>
     <ol class="column2">
     <li><a href="../intro">Introduction</a></li>
     <li><a href="../selectors">Selectors</a></li>
-    <li><a href="../selectors">Specificity</a></li>
+    <li><a href="../selectors/specificity.html">Specificity &amp; the Cascade</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudoelements</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>
     <li><a href="../sass">Best Practices</a></li>
@@ -459,11 +441,6 @@ p:after{
     </nav>
 </header>
 <script src="selectors.js"></script>
-  <!--[if lt IE 9]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({ mode: "overlay" });</script>
-  <![endif]-->
-
   </body>
 
 </html>
