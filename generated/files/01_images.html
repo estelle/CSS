@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+li li {color: green;}
+p, pre {font-size: 2em;padding: 20px; background-color: #ccc; border-radius: 15px;}
+p {
+	padding: 20px;
+	background-color: red;
+	color: white;
+	display: inline-block;
+	border-radius: 10px;
+}
+</style>
+
+<style contenteditable>.showMe {
+	position:relative;
+}
+.showMe:hover::after {
+	position:absolute;
+	content: url(attr(data-url)); /* doesn't work */
+	content: url(estelle.svg); /* does work */
+	width: 200px;
+	height:200px; color: blue;
+	bottom: -39px;
+	left: 20px;	
+}</style>
+<title>Generate Text</title>
+</head>
+
+<body>
+<p class="showMe" data-url="estelle.svg">Hover over me!</p>
+
+<div></div><small style="clear:all">Content is not parsed, so url(attr()) does not work.</small>
+</body>
+</html>
+
