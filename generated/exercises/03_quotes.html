@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Quotes</title>
+  <link rel="stylesheet" href="../../css/editme.css">
+<style contenteditable id="editme">q, blockquote, .quote {
+	quotes: "«" "»" "‹" "›";
+}
+q::before, blockquote::before, .quote::before {
+	content: open-quote;
+}
+q:after, blockquote:after, .quote:after {
+	content: close-quote;
+}</style>
+</head>
+<body>
+<blockquote>The dude on the bus was rambling on. <q>OMG, you wouldn't believe the squawking, <span class="quote">Like, oh my god.</span></q>. He went on, <q>I just wanted him to shut up.</q> That's exactly what I felt about the dude.</blockquote>
+</body>
+</html>
+

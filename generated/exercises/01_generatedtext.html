@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+  <link rel="stylesheet" href="../../css/editme.css">
+<style>
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.75em;}
+</style>
+<style contenteditable class="editme">
+p:before {
+	content: '';	
+}
+p:after {
+	content: '';	
+}
+</style>
+<title>Generate Text</title>
+</head>
+
+<body>
+	<p contenteditable id="text"> are </p>
+    <pre contenteditable>&lt;p&gt;<span id="textchange" contenteditable tabindex> are </span>&lt;/p&gt;</pre>
+<small>Text is editable, and p has an id of text</small>    
+    <script>
+var curText = document.getElementById('textchange');
+var showText = document.getElementById('text');
+
+document.addEventListener('keyup', function () {
+  	showText.innerHTML =  " " + curText.textContent + " ";
+});
+
+
+
+
+</script>
+</body>
+</html>
+

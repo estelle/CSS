@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Generated Content</title>
-   <link rel="stylesheet" href="../selectors/selectors.css"/><link rel="stylesheet" href="generated.css"/>
+   <link rel="stylesheet" href="../css/sitewide.css"/>
+   <link rel="stylesheet" href="generated.css"/>
  
    <style>
 
@@ -11,22 +12,11 @@
 
   </head>
   <body>
-  <header>
-    <nav>
-        <ul>
-            <li class="button cancel" id="back">Back</li>
-            <li class="button done" id="next">Next</li>
-        </ul>
-    </nav>
-</header>
-  <div id="topinfo">
-
-  </div>
 
   <div id="info">
     <p>
     <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
-    <span class="key">2</span> for comments. <a href="http://estelle.github.io/cssmastery/generated">estelle.github.io/cssmastery/generated</a>
+    <span class="key">2</span> for comments. <a href="http://estelle.github.io/CSS/generated">estelle.github.io/CSS/generated</a>
     </p>
   </div>
 
@@ -36,12 +26,12 @@
 
    <div id="slides">
 <!-- slidedeck title -->
-<div class="slide">
+<div class="slide intro">
     <header>
     	<h1>CSS: Generated Content</h1>
     </header>
      <section class="content">
-      <h2><a href="http://estelle.github.io/cssmastery/generated">estelle.github.io/cssmastery/generated</a></h2>
+      <h2><a href="http://estelle.github.io/css/generated">estelle.github.io/css/generated</a></h2>
      <p> ◈ Estelle Weyl</p>
   <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
      </section>
@@ -76,27 +66,28 @@ p:after{
         the content
     &lt;after&gt; - after content&lt;/after>
 &lt;/p></pre>
-<a href="files/01_generatedtext.html" target="play" class="objectlink">Try it out</a> </section>
+<a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a> </section>
 
     </div>
 
 
 <div class="slide object">
 <header><h1>Try it out</h1></header>
-<object data="files/01_generatedtext.html"></object>
-<a href="files/01_generatedtext.html" target="play" class="objectlink">Try it out</a>
+<object data="exercises/01_generatedtext.html"></object>
+<a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 
 
-<!-- 2 free elements  -->
+ <!-- 2 free elements  -->
 <div class="slide intro">
      <header><h1>Pseudo Elements</h1></header>
      <section class="content">
      You get 2 free stylable faux elements for every non-empty element
      <div class="beforeafterdivcont  d3">
-     	<div class="beforeafterdiv"><i>Content</i></div>
+      <div class="beforeafterdiv"><i>Content</i></div>
       </div>
+      <small>Doesn't apply to replaced elements like <code>&lt;img></code> and <code>&lt;br></code>.</small>
      </section>
  </div>
 
@@ -113,32 +104,113 @@ element::after {
   /* without "content:", you have no content */
   content: ""; 
  }</pre>
+ <p>Objects inserted using the <code>content</code> property are anonymous replaced elements.</p>
+
      </section>
  </div>
 
 
+<div class="slide intro">
+<header><h1><code>content</code> property</h1></header></div>
+
+
+
+
 <!-- counters and content -->
+<div class="slide">
+     <header><h1>content: value;</h1></header>
+     <section class="content">
+     <dl class="deprecated listed">
+  <dt>none / normal</dt>
+  <dd>Same as no content property declared.</dd>
+  <dt>string</dt>
+  <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
+  <dt>&lt;image></dt>
+  <dd>URL of  a resource, usual an image</dd>
+  <dt>counter() / counters()</dt>
+  <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
+  <dt>open-quote / close-quote</dt>
+  <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
+  <dt>no-open-quote / no-close-quote</dt>
+  <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
+  <dt>attr()</dt>
+  <dd>Displays the value of the attribute 'X'</dd>
+</dl>
+</section>
+</div>
+
+
+<!-- counters and content -->
+<div class="slide">
+     <header><h1>content: value;</h1></header>
+     <section class="content">
+     <pre contenteditable class="largeblock">content: none;
+content: normal;
+
+content: "string of text";
+
+content: url(path/image.jpg);
+
+content: counter(mycounter, lower-roman);
+content: counters(mycounter, '.', upper-roman);
+
+content: open-quote;
+content: close-quote;
+content: no-open-quote;
+content: no-close-quote;</dt>
+
+content: attr(href)</dt>
+
+content: url(path/email.png) " " attr(title);
+
+content: inherit;
+content: initial;
+content: unset;
+</pre>
+</div>
+
+
+<div class="slide">
+<section class="content">
+  <h1>none</h1>
+  <pre>content: none;</pre>
+  <p>Acts as <code>display: none;</code> on pseudo-elements</p>
+  <h1>normal</h1>
+  <pre>content: normal;</pre>
+  <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.
+ <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.
+  <p>For DOM elements, computes to contents, as if not set at all.</p>
+
+</div>
+
+
+<div class="slide">
+  <header><h1><code>content</code> and <code>quote</code> properties</h1></header>
+<section class="content">
+<p>Quotes are a two step process: definte the <code>quote</code> property, then use <code>open-quote</code> and <code>close-quote</code> as values for the <code>content</code> property.</p>
+  <pre><i>/* Example: Pairs of quotes for two levels in three languages */</i>
+:lang(en) > q { quotes: '"' '"' "'" "'"; }
+:lang(fr) > q { quotes: "«" "»" "’" "’"; }
+:lang(de) > q { quotes: "«" "»" "‹" "›"; }
+
+<i>/* Insert quotes before and after <code>&lt;q></code> element's content */</i>
+q::before { content: open-quote }
+q::after  { content: close-quote }
+</pre>
+<small>They'll alternate, even if they're on different elements</small>
+</div>
+
+
+
+<div class="slide object">
+<header><h1>Try it out</h1></header>
+<object data="exercises/03_quotes.html"></object>
+<a href="exercises/03_quotes.html" target="play" class="objectlink">Try it out</a>
+</div>
+
 <div class="slide">
      <header><h1>Values for content:</h1></header>
      <section class="content">
-     <dl class="deprecated listed">
-  <dt><span title="none"><strong>none</strong></span></a></dt>
-  <dd>Same as no content property declared.</dd>
-  <dt><span title="normal"><strong>normal</strong></span></a></dt>
-  <dd>Same as no content property declared.</dd>
-  <dt><span title="&lt;string&gt;"><strong>string</strong></a></span></dt>
-  <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
-  <dt><span title="&lt;uri&gt;"><strong>image</strong></span></dt>
-  <dd>URL of  a resource, usual an image</dd>
-  <dt><span title="&lt;counter&gt;"><strong>counter</strong></a></span></dt>
-  <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
-  <dt><span title="open-quote"><strong>open-quote</strong></a></span> / <span title="close-quote"><strong>close-quote</strong></a></span><a href="http://www.w3.org/TR/CSS2/generate.html" target="resource">⎘</a></dt>
-  <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
-  <dt><span title="no-open-quote"><strong>no-open-quote</strong></a></span> / <span title="no-close-quote"><strong>no-close-quote</strong></a></span></dt>
-  <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
-  <dt><span title="attr()"><strong>attr(X)</strong></span></a></dt>
-  <dd>Displays the value of the attribute 'X'</dd>
-</dl>
 <pre contenteditable>body {counter-reset: sections;}
 header h1.sectiontitle:before{
 	content: "Part " counter(sections) ": ";
@@ -184,18 +256,6 @@ width: attr(data-count em, auto);</pre>
 </div>
 
 
-<div class="slide">
-  <header><h1>Quotes</h1></header>
-<section class="content">
-  <pre>/* Specify pairs of quotes for two levels in two languages */
-:lang(en) > q { quotes: '"' '"' "'" "'" }
-:lang(fr) > q { quotes: "«" "»" "’" "’" }
-
-/* Insert quotes before and after Q element content */
-q::before { content: open-quote }
-q::after  { content: close-quote }
-</pre>
-</div>
 
 
 <div class="slide object">
@@ -219,7 +279,7 @@ q::after  { content: close-quote }
  <div class="slide">
      <header><h1>Attribute Values as content</h1></header>
      <section class="content attribute">
-     <p>There are <a href="files/02_generatedtext.html" target="play">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
+     <p>There are <a href="exercises/02_generatedtext.html" target="play">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
      <pre contenteditable>a[href^=http]:hover {
    position: relative;
 }
@@ -238,8 +298,8 @@ a[href^=http]:hover:after {
 
 <div class="slide object">
   <header><h1>Play</h1></header>
-  <object data="files/00_attr.html"></object>
-  <a href="files/00_attr.html" target="resource" class="objectlink">Open</a>
+  <object data="exercises/02_attr_function.html"></object>
+  <a href="exercises/02_attr_function.html" target="resource" class="objectlink">Open</a>
 </div>
 
 <div class="slide divider">
@@ -247,8 +307,8 @@ a[href^=http]:hover:after {
  </div>
 <div class="slide object">
   <header><h1>Counter</h1></header>
-  <object data="files/02_counting.html"></object>
-  <a href="files/02_counting.html" target="play" title="open code example in new window">↪</a>
+  <object data="exercises/04_counting.html"></object>
+  <a href="exercises/04_counting.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 
@@ -256,8 +316,8 @@ a[href^=http]:hover:after {
 
 <div class="slide object">
   <header><h1>Counter</h1></header>
-  <object data="files/counting.html"></object>
-  <a href="files/counting.html" target="play" title="open code example in new window">↪</a>
+  <object data="exercises/06_counting.html"></object>
+  <a href="exercises/06_counting.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 <div class="slide">
@@ -288,8 +348,8 @@ body {counter-reset: pagecount;}
 
 <div class="slide object">
   <header><h1>Play</h1></header>
-  <object data="files/01_images.html"></object>
-  <a href="files/01_images.html" target="resource" class="objectlink">Open</a>
+  <object data="exercises/08_images.html"></object>
+  <a href="exercises/08_images.html" target="resource" class="objectlink">Open</a>
 </div>
 
 
@@ -402,7 +462,7 @@ a[href$="vcs"]:before {
  </pre>
  <style>#a2603:after {content: "\2603";}</style>
 <object data="https://evotech.net/articles/testjsentities.html" style="height:300px; width:100%; transform: scale(1.35); transform-origin: top left"></object>
-<p><a href="files/02_generatedtext.html" target="play">Try it out</a><br>
+<p><a href="exercises/10_generatedtext.html" target="play">Try it out</a><br>
  <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a>
      </section>
  </div>
@@ -414,7 +474,7 @@ a[href$="vcs"]:before {
      <header><h1>Quotes</h1></header>
      <section class="content">
 
-     <p class="quote">This is a quote<a href="files/03_bubbles.html" target="play" style="color: inherit">✍</a> </p>
+     <p class="quote">This is a quote<a href="exercises/12_bubbles.html" target="play" style="color: inherit">✍</a> </p>
 
 <pre contenteditable>.quote {
     border-radius: 10px;
@@ -438,8 +498,8 @@ a[href$="vcs"]:before {
 
 <div class="slide object">
   <header><h1>Play</h1></header>
-  <object data="files/03_bubbles.html"></object>
-  <a href="files/03_bubbles.html" target="resource" class="objectlink">Open</a>
+  <object data="exercises/12_bubbles.html"></object>
+  <a href="exercises/12_bubbles.html" target="resource" class="objectlink">Open</a>
 </div>
 
 
@@ -447,8 +507,8 @@ a[href$="vcs"]:before {
   <header>
     <h1>Material Design Icons</h1>
   </header>
-  <object data="files/icons_list.html"></object>
-  <a href="files/icons_list.html" target="play" title="open code example in new window">↪</a>
+  <object data="exercises/14_materialicons.html"></object>
+  <a href="exercises/14_materialicons.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 
@@ -457,8 +517,8 @@ a[href$="vcs"]:before {
   <header>
     <h1>Icon Fonts</h1>
   </header>
-  <object data="files/icons.html"></object>
-  <a href="files/icons.html" target="play" title="open code example in new window">↪</a>
+  <object data="exercises/icons.html"></object>
+  <a href="exercises/icons.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 
@@ -467,8 +527,8 @@ a[href$="vcs"]:before {
   <header>
     <h1>Icon Fonts</h1>
   </header>
-  <object data="files/icons2.html"></object>
-  <a href="files/icons2.html" target="play" title="open code example in new window">↪</a>
+  <object data="exercises/icons2.html"></object>
+  <a href="exercises/icons2.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 <div class="slide divider">
@@ -500,7 +560,7 @@ a[href$="vcs"]:before {
      <header><h1>Thought bubbles</h1></header>
      <section class="content">
 
-     <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
+     <p class="thought">This is a thought bubble <a href="exercises/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
 
 <pre contenteditable style="font-size: 75%; padding:0">.thought,.thought:before,
 .thought:after  {
@@ -543,7 +603,7 @@ a[href$="vcs"]:before {
      <section class="content">
      <p>In this section you have learned the general idea of using generated content to create effects and / or to provide additional information.  Try hovering over me to find out how awesome <i title="Generated Content Rocks my world" data-tooltip="true">generated content</i> can be.</p>
      <p>Open up a text editor and try creating a <i title="'Cause tool tips are awesome" data-tooltip="true">tooltip</i> without looking at the code. But, if you must, the code is attached, or you can check out your web inspector.</p>
-     <p style="margin-bottom: 50px;">Here is <a title="Don't cheat" data-tooltip="true" href="files/35_tooltip.html" target="play">one solution</a></p>
+     <p style="margin-bottom: 50px;">Here is <a title="Don't cheat" data-tooltip="true" href="exercises/35_tooltip.html" target="play">one solution</a></p>
      </section>
 </div>
 
@@ -589,8 +649,16 @@ a[href$="vcs"]:before {
     </section>
 </div>
 
-
   </div>
-  <script src="../selectors/selectors.js"></script>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">&laquo; Back</li>
+            <li class="button done" id="next">Next &raquo; </li>
+        </ul>
+    </nav>
+</header>
+  <script src="../slideshow.js"></script>
   </body>
 </html>
