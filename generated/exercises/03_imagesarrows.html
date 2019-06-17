@@ -1,0 +1,28 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+  <link rel="stylesheet" href="../../css/editme.css">
+<style>
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.75em;}
+</style>
+<style contenteditable class="editme">
+p::before {
+	content: url(../../images/arrows.gif) / "arrows"; /* not supported yet */
+	content: url(../../images/arrows.gif);	
+}
+p::after {
+	content: url(../../images/arrows.gif);
+	transform: rotate(180deg);
+	display: inline-block;	
+}</style>
+<title>content: &lgt;image></title>
+</head>
+
+<body>
+	<p contenteditable id="text">original text content</p>
+</body>
+</html>
+

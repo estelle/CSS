@@ -3,8 +3,9 @@
 <html>
 <head>
 <title>Generate Text</title>
-<link href="files.css" rel="stylesheet" />
-<style>
+
+  <link rel="stylesheet" href="../../css/editme.css">
+<style contenteditable>
 p {
 	padding: 20px;
 	background-color: red;
@@ -14,24 +15,22 @@ p {
 }
 </style>
 
-<style contenteditable>.showMe {
+<style contenteditable id="editme">.showMe {
 	position:relative;
 }
 .showMe:hover::after {
 	position:absolute;
 	content: url(attr(data-url)); /* doesn't work */
 	content: url(estelle.svg); /* does work */
-	width: 200px;
-	height:200px; color: blue;
-	bottom: -39px;
-	left: 20px;	
+	width: 200px; height:200px; color: blue;
+	bottom: -39px; left: 20px;	
 }</style>
 </head>
 
 <body>
 <p class="showMe" data-url="estelle.svg">Hover over me!</p>
-
-<div></div><small style="clear:all">Content is not parsed, so url(attr()) does not work.</small>
+<small style="clear:all">Content is not parsed, so <code>url(attr())</code> does not work.</small>
+<pre>&lt;p class="showMe" data-url="estelle.svg"></pre>
 </body>
 </html>
 

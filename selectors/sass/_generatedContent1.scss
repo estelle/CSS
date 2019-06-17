@@ -1,9 +1,9 @@
 .current * { -webkit-tap-highlight-color: #bada55;}
-.beforeafter:before {
+.beforeafter::before {
   content: "before - ";
   font-weight: bold;
 }
-.beforeafter:after {
+.beforeafter::after {
   content: " - after";
   font-weight: bold;
   }

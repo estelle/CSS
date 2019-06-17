@@ -1,0 +1,29 @@
+.flex12 {
+	display: flex;
+}
+.flex12 article:first-of-type {
+	flex: 1;
+    margin-right: 1em;
+    ul {
+    	border-right: 1px solid ;
+    }
+}
+.flex12 article:last-of-type {
+	flex: 2;
+	ul {
+		column-count: 2;
+	}
+}
+.col3 {
+	column-count: 3;
+}
+.col2 {
+	column-count: 2;
+}
+.flex12, .col3, .col2 {
+	padding-left: 0;
+	column-rule: 1px solid #00000033;
+	li {
+		list-style-type: none;
+	}
+}

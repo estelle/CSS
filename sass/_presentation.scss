@@ -1,0 +1,54 @@
+/* Presentation and generic slides */
+body {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif, 'Droid Sans';
+}
+
+#presentation {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	left: 0px;
+	top: 0px;
+	display: block;
+	overflow: hidden;
+    animation: none; 
+    background-color: #eee;
+}
+.slide {
+	position: absolute;
+	transform-origin: top left;
+	overflow: hidden;
+	padding: 10px;
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+	background-color: #fff;
+	transform: scale(.01);
+}
+@media screen and (min-width: 1000px){
+	.slide {
+	transition: all 0.25s ease-in-out;
+	}
+}
+@media screen and (max-width: 960px){
+	.current {
+	transform: scale(1) translatez(0);
+	}
+}
+.slide.past {
+	margin-left: -100vw;
+}
+.slide.current {
+	margin-left: 0;
+}
+.slide.future {
+	margin-left: 100vw;
+}
+
+/* move the relavant slides back */
+.slide.future, .slide.past {
+  transform:  scale(0.8);
+}
+.slide.current.current.current.current {
+  transform: scale(1);
+}

@@ -1,0 +1,46 @@
+
+.slide.intro {
+	text-align: center;
+	font-size: 200%;
+}
+.slide.intro hgroup {
+	margin-top: 200px;
+}
+.content {
+	font-size: 140%;
+}
+.content input, button {
+	font-size: 140%;
+}
+.content td {
+ 	border: 1px solid black;
+}
+.invalid {
+	background-color: red;
+}
+.slide.section,.slide.intro {
+	text-align: center;
+}
+.slide.section,.slide.intro header {
+	font-size: 200%;
+}
+
+.intro p, header, .divider {
+  text-align: center;
+}
+.intro header, .divider {
+  font-size: 200%;
+}
+
+.divider h1 {
+  padding-top: 200px;
+}
+.slide li {
+margin-bottom: 10px;
+}
+.slide img {
+	max-height: 90%;
+}
+.slide p, .slide textarea {
+font-size: 120%;
+}

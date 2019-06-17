@@ -1,0 +1,28 @@
+
+#info {
+	font-size: small;
+	position: absolute;
+	bottom: 0px;
+	left: 40%;
+	z-index: 500;
+	color: #aaa;
+}
+#topinfo {
+	font-size: small;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 500;
+}
+.key {
+	color: black;
+	display: inline-block;
+	padding: 3px;
+	text-shadow: none;
+	letter-spacing: 0;
+	position: relative;
+	background: #ccc;
+	border-radius: 5px;
+	font-weight: bold;
+	text-shadow: 0 0 1px currentColor;
+}

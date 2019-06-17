@@ -41,7 +41,7 @@
 <div class="slide normal thisSlide">
      <header><h1>Pseudo elements</h1></header>
      <section class="content">
-     <pre contenteditable style="font-size: 100%;">::after
+     <pre contenteditable style="font-size: 100%;">::after (:after)
 ::before (:before)
 ::first-letter (:first-letter)
 ::first-line (:first-line)</pre>
@@ -70,8 +70,8 @@ already exist.<br>
 <div class="slide normal thisSlide">
      <header><h1>Original pseudo-elements</h1></header>
      <section class="content">
-     <pre contenteditable style="font-size: 100%;">:after
-:before
+     <pre contenteditable style="font-size: 100%;">::after
+::before
 :first-letter
 :first-line</pre>
 
@@ -133,17 +133,17 @@ already exist.<br>
      <small>Just an intro. We'll deep dive in the next section</small>
  </div>
 
-<!-- :before and :after  -->
+<!-- ::before and ::after  -->
 <div class="slide normal">
      <header><h1>::before and ::after</h1></header>
 
 
      <section class="content">
-  <pre contenteditable>p:before {
+  <pre contenteditable>p::before {
   content: "before content - ";
   font-weight: bold;
 }
-p:after{
+p::after{
   content: " - after content";
   font-weight: bold;
 }</pre>

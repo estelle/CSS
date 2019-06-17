@@ -64,7 +64,7 @@ pre, .ex, .pre, .codelike, style[class=editme i] {
   border-radius: 8px;
   border: 1px solid #eee;
   font-size: 1em;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
 pre b,
@@ -88,14 +88,17 @@ pre em {
   text-shadow: red 0 0 1px;
 }
 
-pre.largeblock {
-  max-height: 60vh;
-  overflow-x: scroll;
-}
-
 [contenteditable]:focus {
   box-shadow: none;
   outline: 1px dashed red;
+}
+
+code, pre {
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+code i, pre i {
+  opacity: 0.3;
 }
 
 /* Presentation and generic slides */
@@ -117,6 +120,7 @@ body {
 
 .slide {
   position: absolute;
+  transform-origin: top left;
   overflow: hidden;
   padding: 10px;
   height: 100vh;
@@ -289,7 +293,8 @@ body {
   top: 10px;
   width: 100%;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
   left: 0;
 }
 
@@ -318,55 +323,6 @@ body {
   margin-top: 0;
 }
 
-/* definition lists */
-dt {
-  font-weight: bold;
-  margin-top: 0.5em;
-  background-color: #ccc;
-  display: inline-block;
-  margin-bottom: 2px;
-  clear: both;
-}
-
-dl.inline dt {
-  width: 200px;
-  float: left;
-  text-align: right;
-  padding-right: 15px;
-  clear: both;
-  margin: 0 0 2px 0;
-}
-
-.flex12 {
-  display: flex;
-}
-
-.flex12 article:first-of-type {
-  flex: 1;
-}
-
-.flex12 article:last-of-type {
-  flex: 2;
-}
-.flex12 article:last-of-type ul {
-  column-count: 2;
-}
-
-ul.col3 {
-  column-count: 3;
-}
-
-ul.col2 {
-  column-count: 2;
-}
-
-.flex12, .col3, .col2 {
-  padding-left: 0;
-}
-.flex12 li, .col3 li, .col2 li {
-  list-style-type: none;
-}
-
 header {
   font-weight: normal;
   letter-spacing: -0.05em;
@@ -376,17 +332,19 @@ header {
 
 body > header {
   position: absolute;
-  bottom: 0;
+  bottom: 1vw;
+  left: -1vw;
   width: 100vw;
 }
 
 h1 {
-  font-size: 140%;
+  font-size: 200%;
   margin-bottom: 0px;
 }
 
-h2 {
-  font-size: 90%;
+section h1 ~ h1 {
+  border-top: 1px solid #00000099;
+  padding-top: 0.25em;
 }
 
 h1:first-child {
@@ -397,11 +355,7 @@ section, footer {
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   margin: 20px 30px 0;
   display: block;
-}
-
-section {
-  max-height: calc(100vh - 3em);
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 footer {
@@ -423,7 +377,7 @@ section footer {
 }
 
 a {
-  color: inherit;
+  color: purple;
   display: inline-block;
   text-decoration: dotted 1px;
   line-height: 110%;
@@ -455,24 +409,74 @@ video {
 
 section.twopart {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.wrong {
+.wrong, .sidenote {
   opacity: 0.3;
 }
 
-input[type=checkbox]:indeterminate + label {
-  color: blue;
-}
-
-i {
+strike {
   opacity: 0.5;
 }
 
-.current.intro.toc ul {
-  text-align: left;
-  margin-left: 1em;
+.largeblock {
+  max-height: 70vh;
+  overflow-x: scroll;
 }
 
-/*# sourceMappingURL=intro.css.map */
+/* definition lists */
+dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+  background-color: #ccc;
+  display: inline-block;
+  margin-bottom: 2px;
+  clear: both;
+}
+
+dl.inline dt {
+  width: 200px;
+  float: left;
+  text-align: right;
+  padding-right: 15px;
+  clear: both;
+  margin: 0 0 2px 0;
+}
+
+.flex12 {
+  display: flex;
+}
+
+.flex12 article:first-of-type {
+  flex: 1;
+  margin-right: 1em;
+}
+.flex12 article:first-of-type ul {
+  border-right: 1px solid;
+}
+
+.flex12 article:last-of-type {
+  flex: 2;
+}
+.flex12 article:last-of-type ul {
+  column-count: 2;
+}
+
+.col3 {
+  column-count: 3;
+}
+
+.col2 {
+  column-count: 2;
+}
+
+.flex12, .col3, .col2 {
+  padding-left: 0;
+  column-rule: 1px solid #00000033;
+}
+.flex12 li, .col3 li, .col2 li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=sitewide.css.map */

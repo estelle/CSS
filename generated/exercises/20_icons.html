@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="files.css"/>
+  <link rel="stylesheet" href="../../css/editme.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <style>
@@ -20,7 +20,7 @@
 }
       </style>
 
-<style contenteditable id="editme">[class|='material-icons'] { margin: 0 auto;
+<style contenteditable class="editme" style="height: 45vh; overflow-y: scroll">[class|='material-icons'] { margin: 0 auto;
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -32,12 +32,15 @@
   word-wrap: normal;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
-}</style>
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+.material-icons::after {content: 'battery_charging_full'; color: red;}</style>
 <title>Icon Fonts</title>
 </head>
 
 <body>
-<pre>&lt;p class="material-icons"><strong style="color: white; text-shadow: 3px 3px black;">face</strong>&lt;p></pre>
+<pre>&lt;p class="material-icons"><strong>face</strong>&lt;p></pre>
 <p class="material-icons">face<p>
 <pre>&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"></pre>

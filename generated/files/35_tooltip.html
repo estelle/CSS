@@ -20,7 +20,7 @@ p [data-tooltip="true"] {
 p [data-tooltip="true"]:hover {	
 	position: relative;
 	}
-p [data-tooltip="true"]:hover:before {
+p [data-tooltip="true"]:hover::before {
 	content: attr(title);
 	position: absolute; 
 	top: 45px;
@@ -35,7 +35,7 @@ p [data-tooltip="true"]:hover:before {
 	text-align:center;
 	z-index: 100;
 }
-p [data-tooltip="true"]:hover:after {
+p [data-tooltip="true"]:hover::after {
 	content: "";
 	position:absolute;
 	bottom: -10px;

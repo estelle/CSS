@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8"/>
   <title>CSS is Awesome</title>
-  <link rel="stylesheet" href="files.css">
+  <link rel="stylesheet" href="../../css/editme.css">
   <style>p {margin: 0.25em;}</style>
   <style contenteditable id="editme">body { counter-reset: pagecount; }
 p { 
-	counter-increment: pagecount;
+  counter-increment: pagecount;
 }
-p:after { color: magenta;
+p::after { color: magenta;
   content: " " counter(pagecount);
 }</style>
 </head>

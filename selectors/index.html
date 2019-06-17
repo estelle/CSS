@@ -603,12 +603,12 @@ function hasaclass(selector) {
   <dt>E[attr^=val]</dt>
   <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
     <pre contenteditable class="example">a[href^=mailto] {background-image: url(emailicon.gif);}
-a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+a[href^=http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Attribute <em>attr</em> ends in <em>val</em> . <br />
     <pre contenteditable class="example">a[href$=pdf] {background-image: url(pdficon.gif);}
-a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
+a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
   <dt>E[attr*=val]</dt>
   <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
@@ -704,10 +704,10 @@ E:[att*=VAL i]  <b class="notes">/* anywhere as a case-insenstive substring */</
 E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b></pre>
 <pre contenteditable style="clear:both">
 @media print{
-  abbr[title]:after {
+  abbr[title]::after {
     content: "(" attr(title) ")";
   }
-  a[href^=http]:after {
+  a[href^=http]::after {
     content: "(" attr(href) ")";
   }
 }</pre>

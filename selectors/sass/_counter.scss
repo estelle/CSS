@@ -1,7 +1,7 @@
 /* CSS Counter */
 body {counter-reset: pagecount;}
 .slide {counter-increment: pagecount;}
-.slide:after {
+.slide::after {
   content: counter(pagecount);
   color: lightblue;
   position: absolute;

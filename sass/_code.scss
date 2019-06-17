@@ -1,0 +1,38 @@
+pre, .ex, .pre, .codelike, style[class="editme" i]   {
+	text-align: left;
+	padding: 10px 20px;
+	background: #fafafa;
+	border-radius: 8px;
+	border: 1px solid #eee;
+	font-size: 1em;
+	line-height: 1.2;
+}
+pre b, 
+.pre b, 
+.imp {
+	font-weight: normal;
+}
+code {
+	color: $hilite;
+}
+pre b {
+	color: $hilite;
+	text-shadow: $hilite 0 0 1px;
+}
+pre em {
+	font-style: normal;
+	color: $hilite2;
+	text-shadow: $hilite2 0 0 1px;
+}
+
+[contenteditable]:focus {
+	box-shadow:none; 
+	outline:1px dashed $hilite2;
+}
+code, pre {
+	font-size: 1.25em;
+	line-height: 1.4;
+	i {
+		opacity: 0.3;
+	}
+}

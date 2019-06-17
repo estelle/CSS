@@ -3,12 +3,12 @@
 <html>
 <head>
 <title>Generate Text</title>
-<link href="files.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/editme.css">
 
-<style contenteditable>a[href^=http]:hover {
+<style contenteditable id="editme">a[href^=http]:hover {
    position: relative;
 }
-a[href^=http]:hover:after {
+a[href^=http]:hover::after {
    content: attr(href);
    position: absolute;
    top: 1em;
@@ -21,8 +21,8 @@ a[href^=http]:hover:after {
 </head>
 
 <body>
-     <p>There are <a href="00_attr.html" target="play" title="open this file in a new window">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes" title="search Google for generated content">Google</a>.</p>
-     <small>Links have href and title</small>
+     <p>There is a  <a href="00_attr.html" target="play" title="open this file in a new window">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" title="search Google for generated content">External link</a>.</p>
+     <small>Links have <code>href</code> and <code>title</code> attributes</small>
 </body>
 </html>
 

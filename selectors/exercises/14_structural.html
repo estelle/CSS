@@ -5,7 +5,7 @@
 <style>
 ul {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; counter-reset: item;}
 li {counter-increment: item}
-li:after {content: ' ' counter(item);}
+li::after {content: ' ' counter(item);}
 </style>
   <link rel="stylesheet" href="editme.css">
 <style contenteditable id="editme">li:first-child,

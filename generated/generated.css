@@ -6,14 +6,14 @@
 .beforeafter::after{
 	content: " - after content";
   }
-.beforeafter:before,
-.beforeafter:after {font-weight: bold;}
+.beforeafter::before,
+.beforeafter::after {font-weight: bold;}
 
 /* GENERATED CONTENT: 2 FREE FAUX ELEMENTS */
 .beforeafterdivcont {position:relative;}
 .beforeafterdiv,
-.beforeafterdiv:before,
-.beforeafterdiv:after,
+.beforeafterdiv::before,
+.beforeafterdiv::after,
 .beforeafterdiv i {
 	height: 200px;
 	content: "";
@@ -27,14 +27,14 @@
   font-size: 3rem;
 }
 
-.beforeafterdiv:before {
+.beforeafterdiv::before {
 	content: "before";
 	background-color: green;
 	margin-right: -50px;
 	color: #fff;
 	transform: translatez(15px);
 }
-.beforeafterdiv:after {
+.beforeafterdiv::after {
 	content: "after";
 	background-color: blue;
 	margin-left: -50px;
@@ -48,38 +48,34 @@
 .ba li {
 	list-style-type: none; 
 	margin-bottom: 20px;}
-.ba a:before {
-  color: #ffffff;
-  background: #000000;
+.ba a::before {
   font-size: 120%;
   padding: 2px 5px;
   display: inline-block;
-  width: 1.2em;
   margin-right: 10px;
-  text-align: center;
 }
-.ba a[href^="mailto:"]:before {
+.ba a[href^="mailto:"]::before {
   content: "\2709 ";
 }
-.ba a[href^="tel:"]:before {
+.ba a[href^="tel:"]::before {
   content: "\2706";
 }
-.ba a[href$="vcs"]:before {
+.ba a[href$="vcs"]::before {
   content: "\231A";
 }
 
 /* GENERATED CONTENT -- QUOTES */
-blockquote.gc p:before, blockquote.gc p:after {
+blockquote.gc p::before, blockquote.gc p::after {
   font-size: 2em;
   color: #C7573A;
   line-height: 0;
   vertical-align: middle;
 }
-blockquote.gc p:first-child:before {
+blockquote.gc p:first-child::before {
   content: "\275D";
   margin: 0 5px 0 -48px;
 }
-blockquote.gc p:last-child:after {
+blockquote.gc p:last-child::after {
   content: "\275E";
   margin: 0 -40px 0 5px;
 }
@@ -92,7 +88,7 @@ blockquote.gc p:last-child:after {
 	background-color: red;
 	color: white;
 }
-.quote:after {
+.quote::after {
 	position:absolute;
 	content: '';
 	width: 0;
@@ -114,8 +110,8 @@ blockquote.gc p:last-child:after {
 	overflow:visible;
 	margin-bottom: 80px;
 }
-.thought:before,
-.thought:after {
+.thought::before,
+.thought::after {
 	content: '';
 	border: 5px solid blue;
 	border-radius: 50%;
@@ -126,7 +122,7 @@ blockquote.gc p:last-child:after {
 	height: 40px;
 	background-color: #fff;
 }
-.thought:after {
+.thought::after {
 	height: 20px;
 	width: 20px;
 	bottom: -50px;
@@ -144,7 +140,7 @@ p [data-tooltip="true"] {
 p [data-tooltip="true"]:hover {
 	position: relative;
 	}
-p [data-tooltip="true"]:hover:before {
+p [data-tooltip="true"]:hover::before {
 	content: attr(title);
 	position: absolute;
 	top: 45px;
@@ -159,7 +155,7 @@ p [data-tooltip="true"]:hover:before {
 	text-align:center;
 	z-index: 100;
 }
-p [data-tooltip="true"]:hover:after {
+p [data-tooltip="true"]:hover::after {
 	content: "";
 	position:absolute;
 	top: 1.1rem;
@@ -176,7 +172,7 @@ p [data-tooltip="true"]:hover:after {
 .attribute a[href^=http]:hover {
    position: relative;
 }
-.attribute a[href^=http]:hover:after {
+.attribute a[href^=http]:hover::after {
    content: attr(href);
    position: absolute;
    top: 1em;

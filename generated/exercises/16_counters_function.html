@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS counters() function</title>
+  <link rel="stylesheet" href="../../css/editme.css">
+  <style>p {margin: 0.25em;}</style>
+  <style contenteditable id="editme">ol {
+  counter-reset: listCounter;
+}
+li {
+  counter-increment: listCounter;
+}
+li::marker {
+  content:  counters(listCounter, '.', upper-roman) ') ';
+  padding-right:5px;
+}
+li::before {
+  content:  counters(listCounter, ".") " == " counters(listCounter, ".", lower-roman) ;
+}</style>
+</head>
+
+<body>
+<ol>
+  <li>
+     <ol> 
+        <li></li>
+        <li></li>
+        <li></li> 
+      </ol>
+  </li>
+  <li></li>
+  <li></li>
+  <li>
+     <ol> 
+        <li></li>
+        <li>
+           <ol> 
+              <li></li>
+              <li></li>
+              <li></li> 
+           </ol>
+        </li>
+      </ol>
+  </li>
+</ol>
+
+</body>
+</html>
+

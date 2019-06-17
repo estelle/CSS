@@ -4,9 +4,10 @@
 <head>
 
 <title>Turn text into a bubble quote</title>
-<link rel="stylesheet" src="files.css">
 
-<style contenteditable>.quote {
+  <link rel="stylesheet" href="../../css/editme.css">
+
+<style contenteditable class="editme">.quote {
 	border-radius: 10px;
 	position:relative;
 	padding: 20px;
@@ -14,20 +15,19 @@
 	color: white;
 	float: left;
 }
-.quote:after {
+.quote::after {
 	position:absolute;
 	content: '';
-	width: 0;
-	height:0;
-	border: 20px solid blue;
-	border-color: red transparent transparent transparent;
+	width: 0; height:0;
+	border: 20px solid transparent;
+	border-top-color: red;
 	bottom: -39px;
 	left: 20px;	
 }</style>
 </head>
 
 <body>
-<p class="quote">This is a paragraph. Looks like a quote.</p>
+<p class="quote">This looks like a pull-quote.</p>
 </body>
 </html>
 
