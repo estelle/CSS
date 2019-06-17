@@ -2,14 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Generated Content</title>
+    <title>CSS: Generated Content</title>
    <link rel="stylesheet" href="../css/sitewide.css"/>
    <link rel="stylesheet" href="generated.css"/>
- 
-   <style>
-
-   </style>
-
   </head>
   <body>
 
@@ -20,11 +15,12 @@
     </p>
   </div>
 
-  <div id="presentation">
+<div id="presentation">
+  <div id="presentation-counter"></div>
+  <div id="slides">
 
-   <div id="presentation-counter"></div>
 
-   <div id="slides">
+
 <!-- slidedeck title -->
 <div class="slide intro">
     <header>
@@ -45,10 +41,8 @@
 
 <!-- ::before and ::after  -->
 <div class="slide">
-     <header><h1>::before and ::after</h1></header>
-
-
-     <section class="content">
+ <header><h1>::before and ::after</h1></header>
+ <section class="content">
   <pre contenteditable>p::before {
   content: "before content - ";
   font-weight: bold;
@@ -57,9 +51,7 @@ p::after{
   content: " - after content";
   font-weight: bold;
 }</pre>
-
 <pre contenteditable>&lt;p>the content&lt;/p></pre>
-
 <p class="beforeafter">the content</p>
 <pre contenteditable>&lt;p>
     &lt;before&gt;before content - &lt;/before>
@@ -67,8 +59,7 @@ p::after{
     &lt;after&gt; - after content&lt;/after>
 &lt;/p></pre>
 <a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a> </section>
-
-    </div>
+</div>
 
 
 <div class="slide object">
@@ -105,15 +96,15 @@ element::after {
   content: ""; 
  }</pre>
  <p>Objects inserted using the <code>content</code> property are anonymous replaced elements.</p>
-
      </section>
  </div>
 
 
 <div class="slide intro">
-<header><h1><code>content</code> property</h1></header></div>
-
-
+  <header>
+    <h1><code>content</code> property</h1>
+  </header>
+</div>
 
 
 <!-- counters and content -->
@@ -167,6 +158,7 @@ content: inherit;
 content: initial;
 content: unset;
 </pre>
+</section>
 </div>
 
 
@@ -201,16 +193,15 @@ countent: counters()</li>
   <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.
  <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.
   <p>For DOM elements, computes to contents, as if not set at all.</p>
-
 </div>
 
 
 
 <div class="slide divider">
-     <header><h1>Generated Content: quotes</h1></header>
- </div>
-
-
+  <header>
+    <h1>Generated Content: quotes</h1>
+  </header>
+</div>
 
 
 <div class="slide">
@@ -232,11 +223,10 @@ q::after  { content: close-quote }
 
 
 <div class="slide object">
-<header><h1>Try it out</h1></header>
-<object data="exercises/03_quotes.html"></object>
-<a href="exercises/03_quotes.html" target="play" class="objectlink">Try it out</a>
+  <header><h1>Try it out</h1></header>
+  <object data="exercises/03_quotes.html"></object>
+  <a href="exercises/03_quotes.html" target="play" class="objectlink">Try it out</a>
 </div>
-
 
 
 <div class="slide object">
@@ -244,12 +234,12 @@ q::after  { content: close-quote }
   <a href="https://codepen.io/estelle/pen/yPbKVW/" target="resource" class="objectlink">Codepen.io</a>
 </div>
 
+
 <div class="slide object">
   <header><h1>no-close-quote</h1></header>
   <object data="https://codepen.io/estelle/full/aVWYyZ"></object>
   <a href="https://codepen.io/estelle/pen/aVWYyZ" target="resource" class="objectlink">Codepen.io</a>
 </div>
-
 
 
 <div class="slide divider">
@@ -260,36 +250,31 @@ q::after  { content: close-quote }
 
 
 <div class="slide object">
-<header><h1>Try it out</h1></header>
-<object data="exercises/03_imagesarrows.html"></object>
-<a href="exercises/03_imagesarrows.html" target="play" class="objectlink">Try it out</a>
+  <header><h1>Try it out</h1></header>
+  <object data="exercises/03_imagesarrows.html"></object>
+  <a href="exercises/03_imagesarrows.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 <div class="slide object">
-<header><h1>text is not parsed.</h1></header>
-<object data="exercises/08_images.html"></object>
-<a href="exercises/08_images.html" target="play" class="objectlink">Try it out</a>
+  <header><h1>text is not parsed.</h1></header>
+  <object data="exercises/08_images.html"></object>
+  <a href="exercises/08_images.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 
 
 <div class="slide divider">
-     <header><h1>Generated Content: Attribute Values</h1></header>
- </div>
+  <header>
+    <h1>Generated Content: Attribute Values</h1>
+  </header>
+</div>
 
-
-
-
-
-
-
-
- <!-- attribute example -->
- <div class="slide">
-     <header><h1>Attribute Values as content</h1></header>
-     <section class="content attribute">
-     <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes">external link</a>.</p>
-     <pre contenteditable>a[href^=http]:hover {
+<!-- attribute example -->
+<div class="slide">
+   <header><h1>Attribute Values as content</h1></header>
+   <section class="content attribute">
+   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes">external link</a>.</p>
+   <pre contenteditable>a[href^=http]:hover {
    position: relative;
 }
 a[href^=http]:hover::after {
@@ -302,16 +287,14 @@ a[href^=http]:hover::after {
    padding: 3px 5px;
    line-height:1;
 } </pre>
-     </section>
- </div>
+  </section>
+</div>
 
 <div class="slide object">
   <header><h1>Play</h1></header>
   <object data="exercises/02_attr_function.html"></object>
   <a href="exercises/02_attr_function.html" target="resource" class="objectlink">Open</a>
 </div>
-
-
 
 
 <div class="slide">
@@ -332,11 +315,9 @@ a[href^=http]:hover::after {
   background-color: #ccc;
   border: 1px solid;
 }</pre>
-
   </section>
 </div>
     
-
 
 <!--
 <div class="slide">
@@ -373,15 +354,17 @@ a[href^=http]:hover::after {
 <pre contenteditable>&lt;p data-count="5">Hi&lt;/p>
 
 width: attr(data-count em, auto);</pre>
-    </section>
+</section>
 </div>
 
 
 
 
 <div class="slide divider">
-     <header><h1>Generated Content: Counters</h1></header>
- </div>
+  <header>
+    <h1>Generated Content: Counters</h1>
+  </header>
+</div>
 
 <div class="slide">
   <header><h1>counter() &amp; counters()</h1></header>
@@ -402,8 +385,6 @@ width: attr(data-count em, auto);</pre>
 </div>
 
 
-
-
 <div class="slide object">
   <header><h1>Counter</h1></header>
   <object data="exercises/06_counting.html"></object>
@@ -422,9 +403,9 @@ body {counter-reset: pagecount;}
   position: absolute;
   bottom: 2rem;
   left: 1rem;
-}</style></section>
+}</style>
+</section>
 </div>
-
 
 
 
@@ -435,8 +416,10 @@ body {counter-reset: pagecount;}
 </div>
 
 <div class="slide divider">
-     <header><h1>Generated Content: Strings</h1></header>
- </div>
+  <header>
+    <h1>Generated Content: Strings</h1>
+  </header>
+</div>
 
 
 <!-- Pseudoelement Syntax & Support-->
@@ -459,19 +442,21 @@ body {counter-reset: pagecount;}
         counter-increment: name;  /* counters */
  }
  </pre>
-     </section>
- </div>
+</section>
+</div>
 
 
 <div class="slide divider">
-     <header><h1>Special Characters</h1></header>
- </div>
+  <header>
+    <h1>Special Characters</h1>
+  </header>
+</div>
 
 
 <!-- quotes example -->
 <div class="slide">
-     <header><h1>Decorative Characters</h1></header>
-     <section class="content">
+  <header><h1>Decorative Characters</h1></header>
+  <section class="content">
 <pre contenteditable>&lt;blockquote&gt;
   &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
   &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
@@ -493,15 +478,14 @@ blockquote p:last-child::after {
   margin: 0 -40px 0 5px;
 }</pre>
 <blockquote class="gc"><p>With generated content you can created text effects.</p><p>We'll cover other uses next.</p></blockquote>
-     </section>
- </div>
+</section>
+</div>
 
 <!-- Generated Content: links icons -->
 <div class="slide">
-     <header><h1>Improved UX</h1></header>
-     <section class="content ba">
-
-     <pre contenteditable style="float: left; margin-right: 30px;">a::before {
+  <header><h1>Improved UX</h1></header>
+  <section class="content ba">
+<pre contenteditable style="float: left; margin-right: 30px;">a::before {
   font-size: 120%;
   padding: 2px 5px;
   display: inline-block;
@@ -516,42 +500,38 @@ a[href^="tel:"]::before {
 a[href$="vcs"]::before {
   content: "\231A";
 }</pre>
-
-<ul>
-	<li><a href="mailto:spam@yahoo.com">spam@yahoo.com</a></li>
-	<li><a href="tel:18005551212">1.800.555.1212</a></li>
-	<li><a href="ical.vcs">Add to Calendar</a></li>
-</ul>
-     </section>
- </div>
+  <ul>
+  	<li><a href="mailto:spam@yahoo.com">spam@yahoo.com</a></li>
+  	<li><a href="tel:18005551212">1.800.555.1212</a></li>
+  	<li><a href="ical.vcs">Add to Calendar</a></li>
+  </ul>
+ </section>
+</div>
 
 
 
 
 <!--  Special Characters -->
 <div class="slide">
-     <header><h1>Special Character</h1></header>
-     <section class="content">
-     <pre contenteditable id="a2603">
+  <header><h1>Special Character</h1></header>
+  <section class="content">
+    <pre contenteditable id="a2603">
  element::before {
   content: "\2603";
- }
- </pre>
- <style>#a2603::after {content: "\2603";}</style>
+ }</pre>
+<style>#a2603::after {content: "\2603";}</style>
 <object data="https://evotech.net/articles/testjsentities.html" style="height:300px; width:100%; transform: scale(1.35); transform-origin: top left"></object>
-<p><a href="exercises/10_generatedtext.html" target="play">Try it out</a><br>
- <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a>
-     </section>
- </div>
-
+  <p><a href="exercises/10_generatedtext.html" target="play">Try it out</a><br>
+  <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a></p>
+</section>
+</div>
 
 
 <!-- quote bubble -->
- <div class="slide">
-     <header><h1>Quotes</h1></header>
-     <section class="content">
-
-     <p class="quote">This is a pull quote<a href="exercises/12_bubbles.html" target="play" style="color: inherit">✍</a> </p>
+<div class="slide">
+ <header><h1>Quotes</h1></header>
+ <section class="content">
+    <p class="quote">This is a pull quote<a href="exercises/12_bubbles.html" target="play" style="color: inherit">✍</a> </p>
 
 <pre contenteditable>.quote {
     border-radius: 10px; padding: 20px;
@@ -566,8 +546,8 @@ a[href$="vcs"]::before {
     border-top-color: red;
     bottom:-39px; left:20px;
 }</pre>
-     </section>
- </div>
+</section>
+</div>
 
 
 
@@ -599,8 +579,12 @@ a[href$="vcs"]::before {
 
 
 <div class="slide divider">
-     <header><h1>Accessibility</h1></header>
- </div>
+  <header>
+    <h1>Accessibility</h1>
+  </header>
+</div>
+
+
 
 <div class="slide">
 <header><h1>Accessibility of Generated Content</h1></header>
@@ -616,19 +600,21 @@ a[href$="vcs"]::before {
 <pre>content: "\25BA" / "";</pre>
 </section>
 </div>
+
+
 <div class="slide divider">
-     <header><h1>Design Elements</h1></header>
- </div>
+  <header>
+    <h1>Design Elements</h1>
+  </header>
+</div>
 
 
 
- <!-- quote bubble -->
- <div class="slide">
-     <header><h1>Thought bubbles</h1></header>
-     <section class="content">
-
-     <p class="thought">This is a thought bubble <a href="exercises/22_bubbles.html" target="play" style="color: inherit">✍</a></p>
-
+<!-- quote bubble -->
+<div class="slide">
+ <header><h1>Thought bubbles</h1></header>
+ <section class="content">
+  <p class="thought">This is a thought bubble <a href="exercises/22_bubbles.html" target="play" style="color: inherit">✍</a></p>
 <pre contenteditable style="font-size: 75%; padding:0">.thought,.thought::before,
 .thought::after  {
   border-radius: 50%;
@@ -647,22 +633,36 @@ a[href$="vcs"]::before {
   left: 12%; bottom: -50px;
   height: 20px; width: 20px;
 }</pre>
-     </section>
- </div>
+ </section>
+</div>
 
-<!-- CSS-Tricks shapes -->
+<!-- Cool Example -->
 <div class="slide object">
-     <object data="https://css-tricks.com/examples/ShapesOfCSS/" style="width:100%; height: 100%;"></object>
-     <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/examples/ShapesOfCSS/" target="play">Shapes</a></h1></header>
-     <a class="objectlink" href="http://css-tricks.com/examples/ShapesOfCSS/" target="resource">Visit Site</a>
- </div>
+  <header><h1>Example</h1></header>
+  <object data=""></object>
+  <a href="" target="play" title="open code example in new window">↪</a>
+</div>
 
-<!-- CSS-Tricks -->
+<!-- Cool Example -->
 <div class="slide object">
-     <object data="https://css-tricks.com/pseudo-element-roundup/" style="width:100%; height: 100%;"></object>
-      <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/pseudo-element-roundup/" target="play">Other ideas</a></h1></header>
-      <a class="objectlink" href="http://css-tricks.com/pseudo-element-roundup/" target="resource">Visit Site</a>
- </div>
+  <header><h1>Example</h1></header>
+  <object data=""></object>
+  <a href="" target="play" title="open code example in new window">↪</a>
+</div>
+
+<!-- Cool Example -->
+<div class="slide object">
+  <header><h1>Example</h1></header>
+  <object data=""></object>
+  <a href="" target="play" title="open code example in new window">↪</a>
+</div>
+
+<!-- Cool Example -->
+<div class="slide object">
+  <header><h1>Example</h1></header>
+  <object data=""></object>
+  <a href="" target="play" title="open code example in new window">↪</a>
+</div>
 
 <!-- Tool Tip Example -->
 <div class="slide">
@@ -695,9 +695,7 @@ a[href$="vcs"]::before {
     <li><a href="../debugging">Debugging</a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
     <li><a href="../flexbox">Flexbox</a></li>
-    
     <li><a href="../tables">Tables</a></li>
-
     <li><a href="../grid">Grids</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
@@ -707,6 +705,7 @@ a[href$="vcs"]::before {
 </ol>
   </section>
 </div>
+
 <!-- TOC -->
 <div class="slide">
   <header><h1>Links</h1></header>
@@ -716,7 +715,10 @@ a[href$="vcs"]::before {
     </section>
 </div>
 
-  </div>
+
+
+</div><!-- End 'slides'-->
+</div><!-- End 'presentation'-->
 
 <header>
     <nav>
