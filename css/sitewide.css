@@ -126,6 +126,7 @@ body {
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
+  background-repeat: no-repeat;
   background-color: #fff;
   transform: scale(0.01);
 }

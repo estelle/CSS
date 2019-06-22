@@ -19,17 +19,67 @@ https://estelle.github.io/CSS/generated/exercises/img/linkedin.png */
 
 
 /* create a selector for linkedin, and add the linkedin icon before the content, and "(Linked Profile)" after the link*/
+a[href*="/in/"][href*=".linkedin.com/"]::before { 
+  content: url(https://estelle.github.io/CSS/generated/exercises/img/linkedin.png);
+  position: relative; top: 4px;
+  margin-right: 0.2em
+}
+
+a[href*="/in/"][href*=".linkedin.com/"]::after{
+  content: " - (Linked Profile)";
+}
 
 /* create a selector for an RSS feed, and add the RSS icon before the content and the text "(RSS feed)" after the text.  */
+a[href*="/feed/"]::before { 
+  content: url(https://estelle.github.io/CSS/generated/exercises/img/rss.png);
+  position: relative; top: 4px;
+  margin-right: 0.2em
+}
 
+a[href*="/feed/"]::after{
+  content: " - (RSS Feed)";
+}
 /* create a selector for facebook, and add the facebook icon before the content */
+a[href*="facebook.com"]::before { 
+  content: url(https://estelle.github.io/CSS/generated/exercises/img/facebook.png);
+  position: relative; top: 4px;
+  margin-right: 0.2em
+}
 
+a[href*="facebook.com"]::after{
+  content: " - (Corrupt mega corp)";
+}
 
 /* create a selector for twitter, and add the twitter icon before the content */
+a[href*="twitter.com/"]::before { 
+  content: url(https://estelle.github.io/CSS/generated/exercises/img/twitter.png);
+  position: relative; top: 4px;
+  margin-right: 0.2em;
+}
+
+a[href*="twitter.com/"]::after{
+  content: " - (Linked Profile)";
+}
 
 
+/* create a selector for an mailto linke, and add the email icon before the content */
+a[href^="mailto:"]::before { 
+  content: url(https://estelle.github.io/CSS/generated/exercises/img/email.png);
+  position: relative; top: 4px;
+  margin-right: 0.2em;
+}
 
-/* create a selector for an mailto linke, and add the email icon before the content */</style>
+a[href^="mailto:"]::after{
+  content: " - (fake email address)";
+}
+
+
+/* extra */
+li {line-height: 2; 
+  font-family: "helvetica neue",georgia;
+  list-style-type: none;
+}
+</style>
 </head>
 
 <body>
@@ -42,7 +92,6 @@ https://estelle.github.io/CSS/generated/exercises/img/linkedin.png */
 </ul>
   
 <small><a href="https://codepen.io/estelle/pen/RzpYXB">Codepen</a></small>
-<small><a href="solution.html">Solution</a></small>
 </body>
 </html>
 
