@@ -1,0 +1,33 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Underline an H1</title>
+
+  <link rel="stylesheet" href="../../css/editme.css">
+
+<style contenteditable class="editme" style="height: 50vh; overflow-y: scroll;">h1 {
+  position: relative;
+  text-align: center;
+  font-family: "helvetica neue",georgia;
+  font-size: 2rem;
+  padding-bottom: 1em;
+}
+h1::after {
+  content: '';
+  height: 0.3em; width: 30%;
+  background: linear-gradient(37deg, magenta, turquoise, rebeccapurple); 
+  position: absolute;
+  transform: skew(-40deg);
+  left: 35%; bottom: 0;
+}</style>
+</head>
+
+<body>
+<h1>This has a pretty bottom border</h1>
+
+<small><a href="https://codepen.io/estelle/pen/BgWPGw">Codepen</a></small>
+</body>
+</html>
+
