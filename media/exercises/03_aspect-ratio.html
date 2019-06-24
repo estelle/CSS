@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/editme.css">
+<style>
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; min-height: 50%;}
+
+:root {background-color:yellow;}
+
+</style>
+
+<style contenteditable id="editme">@media (min-aspect-ratio: 8/5){
+  :root {background-color: lightsteelblue;}
+  body {text-decoration: underline;}
+}
+@media (max-aspect-ratio: 4/5){
+  :root {background-color: slategrey;}
+  body {font-weight: bold;}
+}
+@media (aspect-ratio: 1/1){
+  :root {background-color: magenta;}
+}</style>
+<title>Media Queries</title>
+</head>
+
+<body>
+  <p>The value is read as a width-to-height ratio.</p>
+  <p>Change the @media rules above.</p>
+  <p>Or, open in new window and squish it.</p>
+  <p>What is the aspect ratio of your browser window?</p>
+</body>
+</html>
+

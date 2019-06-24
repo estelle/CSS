@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/editme.css">
+<style>
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; min-height: 50%;}
+
+:root {background-color:yellow;}
+
+</style>
+
+<style contenteditable id="editme">@media screen and (min-color: 1) {
+  :root {background-color: orange;}
+  body {text-decoration: underline;}
+}
+@media screen and (color: 0){
+  :root {yellow;}
+  body {font-weight: bold;}
+}
+@media screen and (color: 8){
+  :root {background-color: magenta;}
+}</style>
+<title>Media Queries</title>
+</head>
+
+<body>
+  <p>Number of bits per color component. Zero if device isn't color.</p>
+  <p>Change the @media rules above.</p>
+</body>
+</html>
+

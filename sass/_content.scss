@@ -30,7 +30,10 @@ section, footer {
 }
 footer {
 	font-size: 100%;
-	margin: 20px 0 0 30px;
+	position: absolute;
+	bottom: 10px;
+	width: 800px;
+	text-align: center;
 }
 section footer, 
 .slide footer {
@@ -39,9 +42,6 @@ section footer,
 }
 section footer {
 	text-align: right;
-	position: absolute;
-	bottom: 10px;
-	width: 800px;
 }
 a {
 	color: purple;
@@ -81,5 +81,8 @@ section.twopart {
 strike {opacity: 0.5;}
 .largeblock {
 	max-height: 70vh;
-	overflow-x: scroll;
+	overflow-y: scroll;
+}
+section.largeblock {
+	max-height: 80vh;
 }
