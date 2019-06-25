@@ -449,6 +449,16 @@ dl.inline dt {
   margin: 0 0 2px 0;
 }
 
+.hide_dd dt {
+  margin-bottom: 0.5rem;
+}
+.hide_dd dd {
+  display: none;
+}
+.hide_dd dt:hover + dd {
+  display: inherit;
+}
+
 .flex12 {
   display: flex;
 }

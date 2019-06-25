@@ -1,0 +1,5 @@
+.fancy {
+    background-image: paint(boxbg);
+    color: red;
+    font-size: 40px;
+}
