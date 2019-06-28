@@ -1,36 +1,8 @@
 
-header {
-	font-weight: normal;
-	letter-spacing: -.05em;
-	text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-	font-size: 140%;
-}
-body > header {
-	position: absolute;
-	bottom: 1vw;
-	left: -1vw;
-	width: 100vw;
-}
-h1 {
-	font-size: 140%;
-	margin-bottom: 0px;
-}
-h2 {
-	font-size: 90%;
-}
 h1:first-child {
 	margin-top: 0;
 }
-section, footer {
-	text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-	margin: 20px 30px 0;
-	display: block;
-	overflow: hidden;
-}
-footer {
-	font-size: 100%;
-	margin: 20px 0 0 30px;
-}
+
 section footer, 
 .slide footer {
 	font-size: 22px;
@@ -42,25 +14,14 @@ section footer {
 	bottom: 10px;
 	width: 800px;
 }
-a {
-	color: purple;
-	display: inline-block;
-	text-decoration: dotted 1px;
-	line-height: 110%;
-}
-a:hover {
-	text-decoration: underline;
-}
+
+
 div.example {
 	display: block;
 	padding: 10px 20px;
 	background: rgba(255, 255, 255, 0.4);
 	border-radius: 8px;
 	margin-bottom: 10px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-}
-video {
-	border-radius: 8px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .active {

@@ -17,10 +17,7 @@
 .col3 {
 	column-count: 3;
 }
-.col2 {
-	column-count: 2;
-}
-.flex12, .col3, .col2 {
+.flex12, .col3 {
 	padding-left: 0;
 	column-rule: 1px solid #00000033;
 	li {

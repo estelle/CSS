@@ -1,284 +1,4 @@
 /* CSS Document */
-.button {
-  color: #FFFFFF;
-  transform: translatez(0);
-  overflow: hidden;
-  font-family: Helvetica;
-  font-size: 0.9em;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 4px 10px;
-  float: right;
-}
-
-.cancel {
-  float: left;
-}
-
-.button:hover {
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-@media screen and (max-width: 600px) {
-  .button {
-    position: relative;
-    top: calc(100vh - 3em);
-  }
-}
-#info {
-  font-size: small;
-  position: absolute;
-  bottom: 0px;
-  left: 40%;
-  z-index: 500;
-  color: #aaa;
-}
-
-#topinfo {
-  font-size: small;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  z-index: 500;
-}
-
-.key {
-  color: black;
-  display: inline-block;
-  padding: 3px;
-  text-shadow: none;
-  letter-spacing: 0;
-  position: relative;
-  background: #ccc;
-  border-radius: 5px;
-  font-weight: bold;
-  text-shadow: 0 0 1px currentColor;
-}
-
-pre, .ex, .pre, .codelike, style[class=editme i] {
-  text-align: left;
-  padding: 10px 20px;
-  background: #fafafa;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  font-size: 1em;
-  line-height: 1.2;
-}
-
-pre b,
-.pre b,
-.imp {
-  font-weight: normal;
-}
-
-code {
-  color: blue;
-}
-
-pre b {
-  color: blue;
-  text-shadow: blue 0 0 1px;
-}
-
-pre em {
-  font-style: normal;
-  color: red;
-  text-shadow: red 0 0 1px;
-}
-
-[contenteditable]:focus {
-  box-shadow: none;
-  outline: 1px dashed red;
-}
-
-/* Presentation and generic slides */
-body {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif, "Droid Sans";
-}
-
-#presentation {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  left: 0px;
-  top: 0px;
-  display: block;
-  overflow: hidden;
-  animation: none;
-  background-color: #eee;
-}
-
-.slide {
-  position: absolute;
-  transform-origin: top left;
-  overflow: hidden;
-  padding: 10px;
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  background-color: #fff;
-  transform: scale(0.01);
-}
-
-@media screen and (min-width: 1000px) {
-  .slide {
-    transition: all 0.25s ease-in-out;
-  }
-}
-@media screen and (max-width: 960px) {
-  .current {
-    transform: scale(1) translatez(0);
-  }
-}
-.slide.past {
-  margin-left: -100vw;
-}
-
-.slide.current {
-  margin-left: 0;
-}
-
-.slide.future {
-  margin-left: 100vw;
-}
-
-/* move the relavant slides back */
-.slide.future, .slide.past {
-  transform: scale(0.8);
-}
-
-.slide.current.current.current.current {
-  transform: scale(1);
-}
-
-.slide.intro {
-  text-align: center;
-  font-size: 200%;
-}
-
-.slide.intro hgroup {
-  margin-top: 200px;
-}
-
-.content {
-  font-size: 140%;
-}
-
-.content input, button {
-  font-size: 140%;
-}
-
-.content td {
-  border: 1px solid black;
-}
-
-.invalid {
-  background-color: red;
-}
-
-.slide.section, .slide.intro {
-  text-align: center;
-}
-
-.slide.section, .slide.intro header {
-  font-size: 200%;
-}
-
-.intro p, header, .divider {
-  text-align: center;
-}
-
-.intro header, .divider {
-  font-size: 200%;
-}
-
-.divider h1 {
-  padding-top: 200px;
-}
-
-.slide li {
-  margin-bottom: 10px;
-}
-
-.slide img {
-  max-height: 90%;
-}
-
-.slide p, .slide textarea {
-  font-size: 120%;
-}
-
-@media print {
-  .slide {
-    page-break-inside: avoid;
-    page-break-after: always;
-    visibility: visible !important;
-    font-size: 20pt;
-    font-family: Arial, sans-serif;
-  }
-
-  @page {
-    size: landscape;
-  }
-  body {
-    font-size: 12pt;
-    background: white;
-  }
-
-  header h1 {
-    border-top: 2pt solid gray;
-    border-bottom: 1px dotted silver;
-  }
-
-  #presentation-counter, #info, #topinfo, .counter {
-    display: none;
-  }
-}
-/* CSS Counter */
-body {
-  counter-reset: pagecount;
-}
-
-.slide {
-  counter-increment: pagecount;
-}
-
-.slide::after {
-  content: counter(pagecount);
-  color: lightblue;
-  position: absolute;
-  bottom: 2rem;
-  left: 1rem;
-}
-
-.slide .counter {
-  color: #999999;
-  position: absolute;
-  left: 20px;
-  top: 90%;
-  display: block;
-  font-size: 0.7rem;
-}
-
-.slide.title > .counter,
-.slide.segue > .counter,
-.slide.mainTitle > .counter {
-  display: none;
-}
-
-#presentation-counter {
-  color: #ccc;
-  font-size: 70%;
-  letter-spacing: 1px;
-  position: absolute;
-  top: 40%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-
 /* OBJECT PAGES */
 .object header {
   position: absolute;
@@ -314,43 +34,8 @@ body {
   margin-top: 0;
 }
 
-header {
-  font-weight: normal;
-  letter-spacing: -0.05em;
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  font-size: 140%;
-}
-
-body > header {
-  position: absolute;
-  bottom: 1vw;
-  left: -1vw;
-  width: 100vw;
-}
-
-h1 {
-  font-size: 140%;
-  margin-bottom: 0px;
-}
-
-h2 {
-  font-size: 90%;
-}
-
 h1:first-child {
   margin-top: 0;
-}
-
-section, footer {
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  margin: 20px 30px 0;
-  display: block;
-  overflow: hidden;
-}
-
-footer {
-  font-size: 100%;
-  margin: 20px 0 0 30px;
 }
 
 section footer,
@@ -366,28 +51,12 @@ section footer {
   width: 800px;
 }
 
-a {
-  color: purple;
-  display: inline-block;
-  text-decoration: dotted 1px;
-  line-height: 110%;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 div.example {
   display: block;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 8px;
   margin-bottom: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-video {
-  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -456,15 +125,11 @@ dl.inline dt {
   column-count: 3;
 }
 
-.col2 {
-  column-count: 2;
-}
-
-.flex12, .col3, .col2 {
+.flex12, .col3 {
   padding-left: 0;
   column-rule: 1px solid #00000033;
 }
-.flex12 li, .col3 li, .col2 li {
+.flex12 li, .col3 li {
   list-style-type: none;
 }
 

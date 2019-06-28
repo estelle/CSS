@@ -1,0 +1,29 @@
+.slide {
+  &.far-past {
+    display: block;
+    margin-left: -240vw;
+  }
+
+  &.past {
+    visibility: visible;
+    display: block;
+    margin-left: -140vw;
+  }
+
+  &.current {
+    visibility: visible;
+    display: block;
+    margin-left: -46vw;
+  }
+
+  &.future {
+    visibility: visible;
+    display: block;
+    margin-left: 48vw;
+  }
+
+  &.far-future {
+    display: block;
+    margin-left: 150vw;
+  }
+}

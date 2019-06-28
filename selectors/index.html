@@ -3,18 +3,33 @@
 <head>
 <meta charset="utf-8" />
     <title>Selectors: Select This!</title>
-    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="exercises/editme.css"/>
 <link rel="stylesheet" href="css/selectors.css"/>
+<link rel="stylesheet" href="../intro/css/selectors.css"/>
 
 <style>
 .far-future.object object {display: none;}
+style[id="editme" i], style[class="editme" i] {
+    font-size: 0.8em;
+  }
+object[data*="exercises"] {
+  margin-top: 60px;
+}
 </style>
 </head>
 
 <body>
 <!-- Top instructions -->
 <div id="topinfo"></div>
+
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
 <!-- footer instructions -->
 <div id="info">
     <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
@@ -375,7 +390,7 @@ a.external:link {
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Selectors API</h1>
+  <header><h1>Selectors API</h1></header>
 </div>
 
 
@@ -427,8 +442,8 @@ function makeActive(slctr){
 <!-- divider -->
 <div class="slide divider">
 
-  <h1><span style="font-size: xx-large;">Brief intro to</span><br> Specificity</h1>
-  <p  style="font-size: xx-large;">Will be covered in depth later</p>
+  <header><h1><span style="font-size: xx-large;">Brief intro to</span><br> Specificity</h1>
+  <p  style="font-size: xx-large;">Will be covered in depth later</p></header>
 </div>
 
  <div class="object slide">
@@ -458,8 +473,8 @@ ul > li {} 0-0-2</pre>
 </div>
 
 <!-- divider -->
-<div class="slide divider">
-  <h1>Global selector<br/><span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span></h1>
+<div class="slide intro">
+  <header><h1>Global selector<br/><span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span></h1></header>
 </div>
 
 
@@ -472,7 +487,7 @@ ul > li {} 0-0-2</pre>
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Relational selectors &amp; combinators</h1>
+  <header><h1>Relational selectors &amp; combinators</h1></header>
 </div>
 
 
@@ -543,7 +558,7 @@ function hasaclass(selector) {
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Attribute Selectors</h1>
+  <header><h1>Attribute Selectors</h1></header>
 </div>
 
 
@@ -727,7 +742,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>UI Pseudo-Class Selectors</h1>
+  <header><h1>UI Pseudo-Class Selectors</h1></header>
 </div>
 
 
@@ -957,12 +972,25 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <pre contenteditable="">&lt;textarea name="novalue" value="">&lt;/textarea></pre>
 
-<hr/>
+ </section>
+    </div>
+
+
+
+ <!-- :empty pseudo-class -->
+<div class="slide normal">
+     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <section class="content">
+
 <small>
  :-moz-whitespace-only</small>
 
  <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre> </section>
     </div>
+
+
+
+
 <!--Form related UI pseudo-classes -->
 <div class="slide normal" id="mui">
      <header><h1>:user-invalid</h1></header>
@@ -986,7 +1014,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Structural selectors</h1>
+  <header><h1>Structural selectors</h1></header>
 </div>
 
 
@@ -1284,8 +1312,8 @@ li:nth-child(3n+1 of .bar)</pre>
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Other Logical Combinations:<br/>
-  Negation, Matching and Parent</h1>
+  <header><h1>Other Logical Combinations:<br/>
+  Negation, Matching and Parent</h1></header>
 </div>
 
 
@@ -1293,7 +1321,7 @@ li:nth-child(3n+1 of .bar)</pre>
 
 <!-- divider -->
 <div class="slide intro">
-  <h1>:not(), the negation pseudo-class</h1>
+  <header><h1>:not(), the negation pseudo-class</h1></header>
 </div>
 
 
@@ -1505,7 +1533,7 @@ nav a {
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Linguistic Pseudo Classess</h1>
+  <header><h1>Linguistic Pseudo Classess</h1></header>
 </div>
 
 <div class="slide normal">
@@ -1525,7 +1553,7 @@ nav a {
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Link, location, and user action</h1>
+  <header><h1>Link, location, and user action</h1></header>
 </div>
 
 <!-- links-->
@@ -1652,7 +1680,7 @@ button:active:focus</pre>
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>Other Pseudo Classes</h1>
+  <header><h1>Other Pseudo Classes</h1></header>
 </div>
 
 <!-- lang, target, anchor links-->
@@ -1740,8 +1768,9 @@ E || F
 
 
 
-<div class="slide intro"><h1>
-PRACTICE</h1></div>
+<div class="slide intro">
+  <header><h1>PRACTICE</h1></header>
+</div>
 
 
 <!--NEXT-->
@@ -1754,7 +1783,7 @@ PRACTICE</h1></div>
 <div class="slide dots">
   <header><h1>Table of Content</h1></header>
   <section>
-    <ol class="column2">
+    <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
     <li><a href="../selectors">Selectors</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
@@ -1786,14 +1815,6 @@ PRACTICE</h1></div>
 
 
 </div>
-<header>
-    <nav>
-        <ul>
-            <li class="button cancel" id="back">&laquo; Back</li>
-            <li class="button done" id="next">Next &raquo; </li>
-        </ul>
-    </nav>
-</header>
 <script src="selectors.js"></script>
   </body>
 

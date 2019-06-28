@@ -5,17 +5,24 @@
     <title>CSS Intro</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rum+Raisin"/>
     <link rel="stylesheet" href="exercises/editme.css"/>
-    <link rel="stylesheet" href="css/intro.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <style>
 
     </style>
   </head>
 
   <body style="">
-    ...
-  </body>
+
 <!-- Top instructions -->
 <div id="topinfo"></div>
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
 <!-- footer instructions -->
 <div id="info">
     <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
@@ -149,7 +156,7 @@ a:link {
 media="screen and (max-width: 600px)"
 media="screen, print"
 @media screen and (max-width: 600px)</pre>
-    <ol style="margin-left: 1em; float-left">
+    <ol class="col2">
       <li>all</li>
       <li>aural</li>
       <li>handheld</li>
@@ -391,7 +398,7 @@ p.valid {
 <div class="slide dots">
   <header><h1>Table of Content</h1></header>
   <section>
-    <ol class="column2">
+    <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
     <li><a href="../selectors">Selectors</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
@@ -424,14 +431,7 @@ p.valid {
 
 
 </div>
-<header>
-    <nav>
-        <ul>
-            <li class="button cancel" id="back">&laquo; Back</li>
-            <li class="button done" id="next">Next &raquo; </li>
-        </ul>
-    </nav>
-</header>
+
 <script src="../slideshow.js"></script>
   </body>
 
