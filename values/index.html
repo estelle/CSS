@@ -274,10 +274,18 @@ pre {height: 33.33%;}</pre></li>
 </div>
 
 
+<div class="slide object">
+  <header><h1>Length Units</h1></header>
+  <object data="exercises/lengths.html"></object>
+  <a href="exercises/lengths.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
 <div class="slide">
   <header><h1>Angle Units</h1></header>
   <section class="content">
-    <p>Angle values are represented by the type {{cssxref("&lt;angle&gt;")}} and accept the following values:</p>
+    <p>Angle values are represented by &lt;angle&gt; in the spec:</p>
 
 <table class="standard-table">
  <thead>
@@ -316,14 +324,15 @@ pre {height: 33.33%;}</pre></li>
 
 
 <div class="slide object">
-  <header><h1>Angle</h1></header>
-  <object></object>
+  <header><h1>Angle Units</h1></header>
+  <object data="exercises/angle.html"></object>
+  <a href="exercises/angle.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 <div class="slide">
   <header><h1>Time units</h1></header>
   <section class="content">
-    <p>Time values are represented by the type {{cssxref("&lt;time&gt;")}}. When including a time value, the unit identifier -- the <code>s</code> or <code>ms</code> -- is required. It accepts the following values.</p>
+    <p>Time values are represented by the type <code>&lt;time&gt;</code>. </p>
 
 <table class="standard-table">
  <thead>
@@ -346,14 +355,15 @@ pre {height: 33.33%;}</pre></li>
   </tr>
  </tbody>
 </table>
+<p>The unit identifier -- the <code>s</code> or <code>ms</code> -- is required.</p>
   </section>
 </div>
 
 <div class="slide object">
-  <header><h1>animation-duration</h1></header>
-  <object></object>
+  <header><h1>Timing units</h1></header>
+  <object data="exercises/timing.html"></object>
+  <a href="exercises/timing.html" target="play" class="objectlink">Try it out</a>
 </div>
-
 
 
 
@@ -365,7 +375,7 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Frequency</h1></header>
   <section class="content">
-    <p>Frequency values are represented by the type {{cssxref("&lt;frequency&gt;")}}. It accepts the following values.</p>
+    <p>Frequency values are represented by the type &lt;frequency&gt;. </p>
 
 <table class="standard-table">
  <thead>
@@ -398,7 +408,7 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Resolution</h1></header>
   <section class="content">
-    <p>Resolution units are represented by the type {{cssxref("&lt;resolution&gt;")}}. They represent the size of a single dot in a graphical representation, such as a screen, by indicating how many of these dots fit in a CSS inch, centimeter, or pixel. It accepts the following values:</p>
+    <p>Resolution units are represented by the type &lt;resolution&gt;. </p>
 
 <table class="standard-table">
  <thead>
@@ -422,14 +432,29 @@ pre {height: 33.33%;}</pre></li>
   </tr>
  </tbody>
 </table>
+<p>Represents the size of a single dot in a graphical representation, such as a screen, by indicating how many of these dots fit in a CSS inch, centimeter, or pixel.</p>
   </section>
+</div>
+
+<div class="slide object">
+  <header><h1>Timing units</h1></header>
+  <object data="exercises/resolution.html"></object>
+  <a href="exercises/resolution.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>non-numeric data types</h1></header>
+
 </div>
 
 
 
-<div class="slide">
-  <header><h1></h1></header>
+<div class="slide divider">
+  <header><h1>Keywords</h1></header>
   <section class="content">
+    <p>
     
   </section>
 </div>
@@ -437,18 +462,45 @@ pre {height: 33.33%;}</pre></li>
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1>Explicit Defaulting: CSS-wide property values</h1></header>
   <section class="content">
+    <dl>
+    <dt>initial</dt> <dd>Sets property to its initial value.</dd>
+    <dt>inherit</dt> <dd>Makes element's property the same as its parent.</dd></dd>
+    <dt>unset</dt><dd>Resets to inherited value if it inherits from its parent. Otherwise, set to initial value.</dd>
     
+ </dl>
+    <p><code>all</code> property lets you reset all properties to their initial, inherited, reverted, or unset state at once.</p>
+<hr/>
+<dl><dt>none</dt> <dd>Not global, but fails if not understood, so behaves similarly</dd></dl>
+<hr />
+    <dl>
+
+    <dt>revert</dt> <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)
+    </dd>
+
   </section>
 </div>
 
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1>Predefined keyword values</h1></header>
   <section class="content">
-    
+<h2><code>clear</code> property</h2>
+    <pre contenteditable>/* Keyword values */
+clear: none;
+clear: left;
+clear: right;
+clear: both;
+clear: inline-start;
+clear: inline-end;
+
+/* Global values */
+clear: inherit;
+clear: initial;
+clear: unset;</pre>
+<ul><li>unquoted</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Don't use as user defined strings</li></ul>
   </section>
 </div>
 

@@ -427,4 +427,8 @@ table.standard-table thead, table.standard-table tr > :first-child {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+dl dt {
+  padding: 0 5px;
+}
+
 /*# sourceMappingURL=values.css.map */
