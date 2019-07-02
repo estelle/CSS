@@ -17,7 +17,7 @@ body {
   color: #333333;
 }
 
-#presentation {
+[id=presentation] {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -25,24 +25,26 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #1a0057;
 }
 
-#info {
+[id=info] {
   font-size: small;
   position: absolute;
   bottom: 0px;
   left: 40%;
   z-index: 500;
 }
+[id=info] > *, [id=info] a {
+  color: #ffffff;
+}
 
-#topinfo {
+[id=topinfo] {
   font-size: small;
   position: absolute;
   top: 5px;
   right: 5px;
   z-index: 500;
-  display: none;
 }
 
 .notes {
@@ -63,7 +65,7 @@ body {
 }
 
 .counter {
-  color: #cc0000;
+  color: #1a26d9;
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;
@@ -73,28 +75,40 @@ body {
   text-align: center;
 }
 
+.far-future.object object {
+  display: none;
+}
+
+style[id=editme i], style[class=editme i] {
+  font-size: 0.8em;
+}
+
+object[data*=exercises] {
+  margin-top: 60px;
+}
+
 .slide.far-past {
   display: block;
-  margin-left: -2400px;
+  margin-left: -240vw;
 }
 .slide.past {
   visibility: visible;
   display: block;
-  margin-left: -1400px;
+  margin-left: -140vw;
 }
 .slide.current {
   visibility: visible;
   display: block;
-  margin-left: -450px;
+  margin-left: -46vw;
 }
 .slide.future {
   visibility: visible;
   display: block;
-  margin-left: 500px;
+  margin-left: 48vw;
 }
 .slide.far-future {
   display: block;
-  margin-left: 1500px;
+  margin-left: 150vw;
 }
 
 nav button {
@@ -102,8 +116,9 @@ nav button {
   position: absolute;
   top: 0;
   padding: 10px 20px;
+  font-size: 90%;
   color: #ffffff;
-  background-color: #cc0000;
+  background-color: #1a26d9;
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -112,30 +127,33 @@ nav button {
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
-  background: linear-gradient(to bottom left, #cc0000 48%, transparent 48%);
+  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: linear-gradient(to bottom left, #cc0000 48%, #ffffff 48%, 52%, #000000 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
 }
 
 #back {
   left: 0;
   padding: 10px 50px 40px 0px;
-  background: linear-gradient(to bottom right, #cc0000 48%, transparent 48%);
+  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: linear-gradient(to bottom right, #cc0000 48%, #ffffff 48%, 52%, #000000 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
 }
 
 .slide {
-  display: none;
+  visibility: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
+  box-sizing: border-box;
   overflow: hidden;
-  width: 900px;
-  height: 700px;
-  margin-top: -350px;
+  min-width: 900px;
+  width: 90vw;
+  min-height: 700px;
+  height: calc(100vh - 50px);
+  margin-top: -48vh;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   transition: all 0.25s ease-in-out;
@@ -167,7 +185,7 @@ nav button {
   margin-bottom: 0px;
   font-family: "sanchez", georgia, sans-serif;
   font-weight: bold;
-  color: #cc0000;
+  color: #1a26d9;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .slide header h2 {
@@ -181,7 +199,8 @@ nav button {
   text-align: center;
 }
 
-.intro header {
+.intro header,
+.divider header {
   font-size: 2.2rem;
 }
 
@@ -194,25 +213,25 @@ nav button {
 
 pre {
   text-align: left;
-  font-size: 80%;
+  font-size: 70%;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
-  border: 1px solid #cc0000;
+  border: 1px solid #1a26d9;
 }
 pre b {
   font-weight: bold;
-  color: #cc0000;
+  color: #1a26d9;
   display: inline-block;
 }
 pre b:hover {
   transform: scale(1.2);
-  color: #cc0000;
+  color: #1a26d9;
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #cc0000;
+  color: #1a26d9;
   text-shadow: currentColor 0 0 1px;
 }
 
@@ -224,25 +243,30 @@ pre em {
 }
 
 .code:hover {
-  color: #cc0000;
+  color: #1a26d9;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 .code:not(.code2):hover {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 .code2:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   transform-origin: top left;
 }
 
+.codelike li {
+  white-space: pre;
+  font-family: monospace;
+}
+
 .content {
-  font-size: 140%;
+  font-size: 120%;
 }
 
 .content input, button {
-  font-size: 140%;
+  font-size: 120%;
 }
 
 .content td {
@@ -262,7 +286,7 @@ footer {
 }
 
 a, em {
-  color: #cc0000;
+  color: #1a26d9;
   text-decoration: none;
   font-style: normal;
 }
@@ -272,10 +296,16 @@ b.imp {
   transition: all 0.2s ease-in;
 }
 
-.imp li:hover, b.imp:hover {
+.imp li:hover,
+b.imp:hover {
   transform: scale(1.2);
-  color: #cc0000;
+  color: #1a26d9;
   transform-origin: left;
+}
+
+section.content {
+  max-height: calc(98vh - 80px);
+  overflow-y: scroll;
 }
 
 @media print {
@@ -331,6 +361,24 @@ b.imp {
 .object object {
   width: 100%;
   height: 100%;
+}
+
+.col2, .col3, .col4 {
+  column-count: 2;
+  padding-left: 0;
+  column-rule: 1px solid #00000033;
+}
+.col2 li, .col3 li, .col4 li {
+  margin-left: 2em;
+}
+
+.col3 {
+  column-count: 3;
+}
+
+.col4 {
+  column-count: 4;
+  line-height: 1.12;
 }
 
 /*# sourceMappingURL=style.css.map */

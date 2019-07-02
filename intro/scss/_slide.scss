@@ -1,5 +1,5 @@
 .slide {
-  display: none;
+  visibility: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -23,8 +23,6 @@
   }
   img {
     max-height: 90%;
-    border: 1px solid white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
   }
   p, textarea {
     font-size: 120%;

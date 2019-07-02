@@ -5,7 +5,7 @@
     <title>Pseudo Elements</title>
     <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="exercises/editme.css"/>
-<link rel="stylesheet" href="css/selectors.css"/>
+<link rel="stylesheet" href="../intro/css/selectors.css"/>
 
 <style>
 .far-future.object object {display: none; }
@@ -34,7 +34,7 @@
 
 <!-- Pseudo elements -->
 <div class="slide divider">
-     <h1>Pseudo elements</h1>
+     <header><h1>Pseudo elements</h1></header>
  </div>
 
 <!-- Pseudo elements -->
@@ -128,10 +128,12 @@ already exist.<br>
 
 
 <div class="slide divider">
-     <h1>Generated Content<br/>
-     with ::before and ::after</h1>
+     <header><h1>Generated Content<br/>
+     with ::before and ::after</h1></header><section>
+       
+   
      <small>Just an intro. We'll deep dive in the next section</small>
- </div>
+  </section> </div>
 
 <!-- ::before and ::after  -->
 <div class="slide normal">
@@ -196,7 +198,7 @@ p::after{
 
 <!-- divider -->
 <div class="slide divider">
-  <h1>::selection</h1>
+  <header><h1>::selection</h1></header>
 </div>
 
 <!-- ::selection -->
@@ -274,7 +276,7 @@ p::after{
 </div>
 <!--  -->
 <div class="slide divider">
- <h1>Other pseudo-elements</h1>
+ <header><h1>Other pseudo-elements</h1></header>
 </div>
 
 
@@ -282,7 +284,7 @@ p::after{
 <div class="slide">
   <header><h1>IE Specific</h1></header>
     <section class="content">
-<pre contenteditable style="font-size: 1.9rem">::-ms-browse
+<pre contenteditable>::-ms-browse
 ::-ms-value
 ::-ms-check
 ::-ms-clear
@@ -401,6 +403,7 @@ p::after{
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
@@ -430,8 +433,8 @@ p::after{
 <header>
     <nav>
         <ul>
-            <li class="button cancel" id="back">&laquo; Back</li>
-            <li class="button done" id="next">Next &raquo; </li>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
         </ul>
     </nav>
 </header>

@@ -1,0 +1,584 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Units and Values</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+<link rel="stylesheet" href="../intro/css/values.css"/>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header>
+      <h1>Units &amp; Values</h1>
+     </header>
+     <section>
+     <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
+   </section>
+    </div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Numeric data types</h1></header>
+
+</div>
+
+
+<div class="slide">
+  <header><h1>Numeric data types</h1></header>
+  <section class="content">
+    <dl>
+    <dt><code>&lt;integer></code></dt>
+    <dd><code>0</code> to <code>9</code>, or lots of them. Optional <code>-</code> or <code>+</code></dd>
+    <dt>&lt;number></dt>
+    <dd>Float, with or without a decimal. Optional <code>-</code> or <code>+</code></dd>
+    <dt>&lt;percentage></dt>
+    <dd>A fraction of some other value, and relative to that value</dd>
+    <dt>&lt;dimension></dt>
+    <dd>
+</dd>
+
+    
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1><code>&lt;integer></code></h1></header>
+  <section class="content">
+    <ul>
+      <li><code>0</code> to <code>9</code>, or lots of them.
+        <pre contenteditable>0
+382</pre>
+      </li>
+      <li> Optional <code>-</code> or <code>+</code>        <pre contenteditable>+18
+-1</pre></li>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>&lt;number></code></h1></header>
+  <section class="content">
+    <ul>
+    <li>Float, with or without a decimal.
+        <pre contenteditable>0
+3.82</pre>
+      </li>
+      <li> Optional <code>-</code> or <code>+</code>        <pre contenteditable>+10.8
+-1.333</pre></li>
+</ul>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>&lt;percentage></code></h1></header>
+  <section class="content">
+    <ul>
+      <li>A fraction of some other value
+        <pre contenteditable style="line-height: 60%">line-height: 60%;</pre>
+        <pre contenteditable style="width: 60%">width: 60%;</pre></li>
+      <li  style="height: 300px;">Relative to that value
+      <pre contenteditable style="height: 33.33333333333%; box-sizing: border-box;">li {height: 300px;} 
+pre {height: 33.33%;}</pre></li>
+    </ul>
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Dimension</h1></header>
+  <section class="content">
+    <ul>
+     <li><code>&lt;length></code></li>
+    <li><code>&lt;angle></code></li>
+    <li><code>&lt;time></code></li>
+    <li><code>&lt;frequency></code></li>
+    <li><code>&lt;resolution></code></li>
+  </ul>
+  <p>&lt;number> with a dimensional unit.</p>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Length</h1></header>
+  <section class="content">
+    <h2>Absolute</h2>
+    <p>Actual physical measurements (that might not match a ruler)</p>
+    <h2>Relative</h2>
+    <p>Relative to some other measurement</p>
+    <p><code>px</code> v. <code>em</code></p>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Absolute units of length</h1></header>
+  <section class="content">
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">Name</th>
+   <th scope="col">Equivalent to</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>cm</code></td>
+   <td>Centimeters</td>
+   <td>1cm = 96px/2.54</td>
+  </tr>
+  <tr>
+   <td><code>mm</code></td>
+   <td>Millimeters</td>
+   <td>1mm = 1/10th of 1cm</td>
+  </tr>
+  <tr>
+   <td><code>Q</code></td>
+   <td>Quarter-millimeters</td>
+   <td>1Q = 1/40th of 1cm</td>
+  </tr>
+  <tr>
+   <td><code>in</code></td>
+   <td>Inches</td>
+   <td>1in = 2.54cm = 96px</td>
+  </tr>
+  <tr>
+   <td><code>pc</code></td>
+   <td>Picas</td>
+   <td>1pc = 1/16th of 1in</td>
+  </tr>
+  <tr>
+   <td><code>pt</code></td>
+   <td>Points</td>
+   <td>1pt = 1/72th of 1in</td>
+  </tr>
+  <tr>
+   <td><code>px</code></td>
+   <td>Pixels</td>
+   <td>1px* = 1/96th of 1in</td>
+  </tr>
+ </tbody>
+</table>
+<small>One pixel. For screen displays, it traditionally represents one device pixel (dot). When hi-dpi (like printers and phones) <code>1px</code> = 1/96th of <code>1in</code>.</small>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Relative units of length</h1></header>
+  <section class="content">
+    <table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Unit</th>
+      <th scope="col">Relative to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>em</code></td>
+      <td>Font size of the element.</td>
+    </tr>
+    <tr>
+      <td><code>ex</code></td>
+      <td>x-height of the element's font.</td>
+    </tr>
+    <tr>
+      <td><code>ch</code></td>
+      <td>Average character advance of a narrow glyph in the element’s font, as represented by the “0” (ZERO, U+0030) glyph.</td>
+    </tr>
+    <tr>
+      <td><code>rem</code></td>
+      <td>Font size of the root element.</td>
+    </tr>
+    <tr>
+      <td><code>vw</code></td>
+      <td>1% of viewport's width.</td>
+    </tr>
+    <tr>
+      <td><code>vh</code></td>
+      <td>1% of viewport's height.</td>
+    </tr>
+    <tr>
+      <td><code>vmin</code></td>
+      <td>1% of viewport's smaller dimension.</td>
+    </tr>
+    <tr>
+      <td><code>vmax</code></td>
+      <td>1% of viewport's larger dimension.</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Relative units of length</h1></header>
+  <section class="content">
+    <table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Unit</th>
+      <th scope="col">Relative to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>cap</code></td>
+      <td>Cap height (the nominal height of capital letters) of the element's font.</td>
+    </tr>
+    <tr>
+      <td><code>ic</code></td>
+      <td>Average character advance of a full width glyph in the element’s font, as represented by the “水” (CJK water ideograph, U+6C34) glyph.</td>
+    </tr>
+    <tr>
+      <td><code>lh</code></td>
+      <td>Line height of the element.</td>
+    </tr>
+    <tr>
+      <td><code>rlh</code></td>
+      <td>Line height of the root element.</td>
+    </tr>
+    <tr>
+      <td><code>vi</code></td>
+      <td>1% of viewport's size in the root element's inline axis.</td>
+    </tr>
+    <tr>
+      <td><code>vb</code></td>
+      <td>1% of viewport's size in the root element's block axis.</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Angle Units</h1></header>
+  <section class="content">
+    <p>Angle values are represented by the type {{cssxref("&lt;angle&gt;")}} and accept the following values:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">Name</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>deg</code></td>
+   <td>Degrees</td>
+   <td>There are 360 degrees in a full circle.</td>
+  </tr>
+  <tr>
+   <td><code>grad</code></td>
+   <td>Gradians</td>
+   <td>There are 400 gradians in a full circle.</td>
+  </tr>
+  <tr>
+   <td><code>rad</code></td>
+   <td>Radians</td>
+   <td>There are 2π radians in a full circle.</td>
+  </tr>
+  <tr>
+   <td><code>turn</code></td>
+   <td>Turns</td>
+   <td>There is 1 turn in a full circle.</td>
+  </tr>
+ </tbody>
+</table>
+
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Angle</h1></header>
+  <object></object>
+</div>
+
+<div class="slide">
+  <header><h1>Time units</h1></header>
+  <section class="content">
+    <p>Time values are represented by the type {{cssxref("&lt;time&gt;")}}. When including a time value, the unit identifier -- the <code>s</code> or <code>ms</code> -- is required. It accepts the following values.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">Name</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>s</code></td>
+   <td>Seconds</td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><code>ms</code></td>
+   <td>Milliseconds</td>
+   <td>There are 1,000 milliseconds in a second.</td>
+  </tr>
+ </tbody>
+</table>
+  </section>
+</div>
+
+<div class="slide object">
+  <header><h1>animation-duration</h1></header>
+  <object></object>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="slide">
+  <header><h1>Frequency</h1></header>
+  <section class="content">
+    <p>Frequency values are represented by the type {{cssxref("&lt;frequency&gt;")}}. It accepts the following values.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">Name</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>Hz</code></td>
+   <td>Hertz</td>
+   <td>Represents the number of occurances per second.</td>
+  </tr>
+  <tr>
+   <td><code>kHz</code></td>
+   <td>KiloHertz</td>
+   <td>A kiloHertz is 1000 Hertz.</td>
+  </tr>
+ </tbody>
+</table>
+<p><code>1Hz</code>, which can also be written as <code>1hz</code> or <code>1HZ</code>, is one cycle per second.</p>
+
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Resolution</h1></header>
+  <section class="content">
+    <p>Resolution units are represented by the type {{cssxref("&lt;resolution&gt;")}}. They represent the size of a single dot in a graphical representation, such as a screen, by indicating how many of these dots fit in a CSS inch, centimeter, or pixel. It accepts the following values:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>dpi</code></td>
+   <td>Dots per inch.</td>
+  </tr>
+  <tr>
+   <td><code>dpcm</code></td>
+   <td>Dots per centimetre.</td>
+  </tr>
+  <tr>
+   <td><code>dppx</code>, <code>x</code></td>
+   <td>Dots per px unit.</td>
+  </tr>
+ </tbody>
+</table>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+    
+  </section>
+</div>
+
+
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Colors &amp; Transparency</h1></header>
+     <section class="content">
+    <h1><a href="../colors/">Next ➹</a></h1></section>
+</div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="col2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors/specificity.html">Specificity</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudo-elements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    <li><a href="../tables">Tables</a></li>
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
+
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
+<script src="../slideshow.js"></script>
+  </body>
+
+</html>
+

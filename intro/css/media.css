@@ -25,7 +25,7 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: #1a0057;
+  background-color: #ecbf2b;
 }
 
 [id=info] {
@@ -65,7 +65,7 @@ body {
 }
 
 .counter {
-  color: #1a26d9;
+  color: #a27d05;
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;
@@ -118,7 +118,7 @@ nav button {
   padding: 10px 20px;
   font-size: 90%;
   color: #ffffff;
-  background-color: #1a26d9;
+  background-color: #a27d05;
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -127,19 +127,19 @@ nav button {
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
-  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, transparent 48%);
+  background: radial-gradient(ellipse at 100% 20%, #a27d05 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, #a27d05 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
 }
 
 #back {
   left: 0;
   padding: 10px 50px 40px 0px;
-  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, transparent 48%);
+  background: radial-gradient(ellipse at 0% 20%, #a27d05 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, #a27d05 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
 }
 
 .slide {
@@ -183,7 +183,7 @@ nav button {
   margin-bottom: 0px;
   font-family: "sanchez", georgia, sans-serif;
   font-weight: bold;
-  color: #1a26d9;
+  color: #a27d05;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .slide header h2 {
@@ -215,21 +215,21 @@ pre {
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
-  border: 1px solid #1a26d9;
+  border: 1px solid #a27d05;
 }
 pre b {
   font-weight: bold;
-  color: #1a26d9;
+  color: #a27d05;
   display: inline-block;
 }
 pre b:hover {
   transform: scale(1.2);
-  color: #1a26d9;
+  color: #a27d05;
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #1a26d9;
+  color: #a27d05;
   text-shadow: currentColor 0 0 1px;
 }
 
@@ -241,7 +241,7 @@ pre em {
 }
 
 .code:hover {
-  color: #1a26d9;
+  color: #a27d05;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -284,7 +284,7 @@ footer {
 }
 
 a, em {
-  color: #1a26d9;
+  color: #a27d05;
   text-decoration: none;
   font-style: normal;
 }
@@ -297,7 +297,7 @@ b.imp {
 .imp li:hover,
 b.imp:hover {
   transform: scale(1.2);
-  color: #1a26d9;
+  color: #a27d05;
   transform-origin: left;
 }
 
@@ -379,4 +379,37 @@ section.content {
   line-height: 1.12;
 }
 
-/*# sourceMappingURL=style.css.map */
+/* definition lists */
+dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+  background-color: #fff;
+  display: inline-block;
+  margin-bottom: 2px;
+  clear: both;
+}
+
+dl.inline dt {
+  width: 200px;
+  float: left;
+  text-align: right;
+  padding-right: 15px;
+  clear: both;
+  margin: 0 0 2px 0;
+}
+
+.hide_dd dt {
+  margin-bottom: 0.5rem;
+}
+.hide_dd dd {
+  display: none;
+}
+.hide_dd dt:hover + dd {
+  display: inherit;
+}
+
+.sameline dt {
+  float: left;
+}
+
+/*# sourceMappingURL=media.css.map */

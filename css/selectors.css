@@ -167,6 +167,8 @@ nav button {
 }
 .slide img {
   max-height: 90%;
+  border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
 }
 .slide p, .slide textarea {
   font-size: 120%;
@@ -302,7 +304,7 @@ b.imp:hover {
 }
 
 section.content {
-  max-height: calc(98vh - 3.5em);
+  max-height: calc(98vh - 80px);
   overflow-y: scroll;
 }
 
@@ -379,4 +381,4 @@ section.content {
   line-height: 1.12;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=selectors.css.map */

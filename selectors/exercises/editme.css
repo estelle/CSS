@@ -7,7 +7,10 @@ head, style {
 	display: block;
 }
 head * {visibility:hidden;}
-
+head style[id="editme" i],
+head style[class="editme" i] {
+	visibility: visible;
+} 
 html, body {margin: 0;}
 body {
 	font-size: 1.75em;
@@ -15,7 +18,6 @@ body {
 }
 style[id="editme" i],
 style[class="editme" i]  {
-	visibility: visible;
 	padding: 20px; 
 	font-size: 1.5em; 
 	font-family: monospace; 
@@ -26,4 +28,7 @@ style[class="editme" i]  {
 	margin: 0 auto;
 	width: 90vw;
 	font-family:"Courier New", Courier, monospace;
+}
+section style {
+	display: block;
 }

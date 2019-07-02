@@ -165,8 +165,8 @@ p [data-tooltip="true"]:hover::after {
 }
 
 .d3 {
-	transform: perspective(500px) rotateY(40deg);
-	margin: 20px auto;
+	transform: perspective(530px) rotateY(30deg);
+	margin: 60px 200px;
 
 }
 .attribute a[href^=http]:hover {

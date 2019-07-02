@@ -45,7 +45,6 @@ body {
   top: 5px;
   right: 5px;
   z-index: 500;
-  display: none;
 }
 
 .notes {
@@ -74,6 +73,18 @@ body {
   left: 50%;
   width: 1vw;
   text-align: center;
+}
+
+.far-future.object object {
+  display: none;
+}
+
+style[id=editme i], style[class=editme i] {
+  font-size: 0.8em;
+}
+
+object[data*=exercises] {
+  margin-top: 60px;
 }
 
 .slide.far-past {
@@ -132,7 +143,7 @@ nav button {
 }
 
 .slide {
-  display: none;
+  visibility: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -156,8 +167,6 @@ nav button {
 }
 .slide img {
   max-height: 90%;
-  border: 1px solid white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
 }
 .slide p, .slide textarea {
   font-size: 120%;
@@ -245,6 +254,11 @@ pre em {
   transform-origin: top left;
 }
 
+.codelike li {
+  white-space: pre;
+  font-family: monospace;
+}
+
 .content {
   font-size: 120%;
 }
@@ -280,10 +294,16 @@ b.imp {
   transition: all 0.2s ease-in;
 }
 
-.imp li:hover, b.imp:hover {
+.imp li:hover,
+b.imp:hover {
   transform: scale(1.2);
   color: #1a26d9;
   transform-origin: left;
+}
+
+section.content {
+  max-height: calc(98vh - 3.5em);
+  overflow-y: scroll;
 }
 
 @media print {
@@ -341,13 +361,22 @@ b.imp {
   height: 100%;
 }
 
-.col2 {
+.col2, .col3, .col4 {
   column-count: 2;
   padding-left: 0;
   column-rule: 1px solid #00000033;
 }
-.col2 li {
+.col2 li, .col3 li, .col4 li {
   margin-left: 2em;
+}
+
+.col3 {
+  column-count: 3;
+}
+
+.col4 {
+  column-count: 4;
+  line-height: 1.12;
 }
 
 /*# sourceMappingURL=selectors.css.map */

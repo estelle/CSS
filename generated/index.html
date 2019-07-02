@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Generated Content</title>
-   <link rel="stylesheet" href="../css/sitewide.css"/>
+   <link rel="stylesheet" href="../intro/css/generated.css"/>
    <link rel="stylesheet" href="generated.css"/>
+
   </head>
   <body>
+
 
   <div id="info">
     <p>
@@ -28,8 +30,7 @@
     </header>
      <section class="content">
       <h2><a href="http://estelle.github.io/css/generated">estelle.github.io/css/generated</a></h2>
-     <p> ◈ Estelle Weyl</p>
-  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+    
      </section>
     </div>
 
@@ -71,7 +72,7 @@ p::after{
 
 
  <!-- 2 free elements  -->
-<div class="slide intro">
+<div class="slide ">
      <header><h1>Pseudo Elements</h1></header>
      <section class="content">
      You get 2 free stylable faux elements for every non-empty element
@@ -124,7 +125,7 @@ element::after {
   <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
   <dt>no-open-quote / no-close-quote</dt>
   <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
-  <dt>attr()</dt>
+  <dt>attr(X)</dt>
   <dd>Displays the value of the attribute 'X'</dd>
 </dl>
 </section>
@@ -165,7 +166,7 @@ content: unset;
 <div class="slide toc">
 <header><h1>content: value;</h1></header>
 <section class="content">
-  <ol style="white-space: pre; font-family: monospace;"  class="largeblock">
+  <ol class="largeblock codelike">
     <li>content: none</li>
     <li>content: normal</li>
     <li>content: open-quote;
@@ -184,15 +185,26 @@ countent: counters()</li>
 
 
 <div class="slide">
+  <header><h1><code>content: none</code></h1></header>
 <section class="content">
   <h1>none</h1>
   <pre>content: none;</pre>
   <p>Acts as <code>display: none;</code> on pseudo-elements</p>
+  <p>Basically, gets rid of the generated content if there was any added.</p>
+
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>content: normal</code></h1></header>
+<section class="content">
   <h1>normal</h1>
   <pre>content: normal;</pre>
   <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.
  <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.
   <p>For DOM elements, computes to contents, as if not set at all.</p>
+</p>
 </div>
 
 
@@ -367,13 +379,13 @@ width: attr(data-count em, auto);</pre>
 </div>
 
 <div class="slide">
-  <header><h1>counter() &amp; counters()</h1></header>
+  <header><h1>counter() &amp; counters() styles</h1></header>
   <section class="content">
 
     <pre contenteditable>counter: counter(counter, style)</pre>
     <pre contenteditable>counter: counters(counter, string, style)</pre>
-    <h2>Styles</h2>
-    <ul class="col3"><li><code>decimal</code></li><li><code>cjk-decimal</code></li><li><code>decimal-leading-zero</code></li><li><code>lower-roman</code></li><li><code>upper-roman</code></li><li><code>lower-greek</code></li><li><code>lower-alpha</code></li><li><code>lower-latin</code></li><li><code>upper-alpha</code></li><li><code>upper-latin</code></li><li><code>arabic-indic</code></li><li><code>armenian</code></li><li><code>bengali</code></li><li><code>cambodian</code></li><li><code>cjk-earthly-branch</code></li><li><code>cjk-heavenly-stem</code></li><li><code>cjk-ideographic</code></li><li><code>devanagari</code></li><li><code>ethiopic-numeric</code></li><li><code>georgian</code></li><li><code>gujarati</code></li><li><code>gurmukhi</code></li><li><code>hebrew</code></li><li><code>hiragana</code></li><li><code>hiragana-iroha</code></li><li><code>japanese-formal</code></li><li><code>japanese-informal</code></li><li><code>kannada</code></li><li><code>katakana</code></li><li><code>katakana-iroha</code></li><li><code>khmer</code></li><li><code>korean-hangul-formal</code></li><li><code>korean-hanja-formal</code></li><li><code>korean-hanja-informal</code></li><li><code>lao</code></li><li><code>lower-armenian</code></li><li><code>malayalam</code></li><li><code>mongolian</code></li><li><code>myanmar</code></li><li><code>oriya</code></li><li><code>persian</code></li><li><code>simp-chinese-formal</code></li><li><code>simp-chinese-informal</code></li><li><code>tamil</code></li><li><code>telugu</code></li><li><code>thai</code></li><li><code>tibetan</code></li><li><code>trad-chinese-formal</code></li><li><code>trad-chinese-informal</code></li><li><code>upper-armenian</code></li></ul>
+  
+    <ul class="col4"><li><code>decimal</code></li><li><code>cjk-decimal</code></li><li><code>decimal-leading-zero</code></li><li><code>lower-roman</code></li><li><code>upper-roman</code></li><li><code>lower-greek</code></li><li><code>lower-alpha</code></li><li><code>lower-latin</code></li><li><code>upper-alpha</code></li><li><code>upper-latin</code></li><li><code>arabic-indic</code></li><li><code>armenian</code></li><li><code>bengali</code></li><li><code>cambodian</code></li><li><code>cjk-earthly-branch</code></li><li><code>cjk-heavenly-stem</code></li><li><code>cjk-ideographic</code></li><li><code>devanagari</code></li><li><code>ethiopic-numeric</code></li><li><code>georgian</code></li><li><code>gujarati</code></li><li><code>gurmukhi</code></li><li><code>hebrew</code></li><li><code>hiragana</code></li><li><code>hiragana-iroha</code></li><li><code>japanese-formal</code></li><li><code>japanese-informal</code></li><li><code>kannada</code></li><li><code>katakana</code></li><li><code>katakana-iroha</code></li><li><code>khmer</code></li><li><code>korean-hangul-formal</code></li><li><code>korean-hanja-formal</code></li><li><code>korean-hanja-informal</code></li><li><code>lao</code></li><li><code>lower-armenian</code></li><li><code>malayalam</code></li><li><code>mongolian</code></li><li><code>myanmar</code></li><li><code>oriya</code></li><li><code>persian</code></li><li><code>simp-chinese-formal</code></li><li><code>simp-chinese-informal</code></li><li><code>tamil</code></li><li><code>telugu</code></li><li><code>thai</code></li><li><code>tibetan</code></li><li><code>trad-chinese-formal</code></li><li><code>trad-chinese-informal</code></li><li><code>upper-armenian</code></li></ul>
   </section>
 </div>
 
@@ -394,7 +406,7 @@ width: attr(data-count em, auto);</pre>
 <div class="slide">
   <header><h1>Counter for this Deck</h1></header>
   <section>
-    <style contenteditable style="display:block; white-space: pre; line-height: 1.5; font-size: 2em" class="editme">/* CSS Counter */
+    <style contenteditable class="editme">/* CSS Counter */
 body {counter-reset: pagecount;}
 .slide {counter-increment: pagecount;}
 .slide::after {
@@ -671,8 +683,8 @@ a[href$="vcs"]::before {
 <!--NEXT-->
 <div class="slide intro">
      <header><h1>Media Queries</h1></header>
-     <section class="content">(briefly)</section>
-    <h1><a href="../media/">Next ➹</a></h1>
+     <section class="content">
+    <h1><a href="../media/">Next ➹</a></h1></section>
 </div>
 
 
@@ -685,6 +697,7 @@ a[href$="vcs"]::before {
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
@@ -706,20 +719,20 @@ a[href$="vcs"]::before {
       </ul>
     </section>
 </div>
-
-
-
-</div><!-- End 'slides'-->
-</div><!-- End 'presentation'-->
-
 <header>
     <nav>
         <ul>
-            <li class="button cancel" id="back">&laquo; Back</li>
-            <li class="button done" id="next">Next &raquo; </li>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
         </ul>
     </nav>
 </header>
+
+
+</div><!-- End 'slides'-->
+
+</div><!-- End 'presentation'-->
+
   <script src="../slideshow.js"></script>
   </body>
 </html>

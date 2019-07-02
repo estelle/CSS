@@ -25,11 +25,16 @@ a, em {
   font-style:normal;
 }
 .imp li,
-b.imp{
+b.imp {
   transition: all 0.2s ease-in;
 }
-.imp li:hover, b.imp:hover{
+.imp li:hover, 
+b.imp:hover {
   transform:scale(1.2);
   color: $splashcolor;
   transform-origin: left;
+}
+section.content {
+  max-height: calc(98vh - 3.5em); 
+  overflow-y: scroll;
 }

@@ -8,13 +8,7 @@
 <link rel="stylesheet" href="../intro/css/selectors.css"/>
 
 <style>
-.far-future.object object {display: none;}
-style[id="editme" i], style[class="editme" i] {
-    font-size: 0.8em;
-  }
-object[data*="exercises"] {
-  margin-top: 60px;
-}
+
 </style>
 </head>
 
@@ -586,16 +580,31 @@ function hasaclass(selector) {
 
 <!-- Older attribute selectors -->
 <div class="slide normal">
-  <header style="position:absolute; top: 20px; right: 20px;">
+  <header>
     <h1>CSS 2 attribute selectors</h1>
   </header>
   <section class="content">
   <dl>
     <dt>E[attr]</dt>
-    <dd>Has the attribute <em>attr</em> with any value.</dd>
+    <dd>Has the attribute <em>attr</em> with any value.
+    <pre contenteditable class="example">p[lang]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;fr-fr&quot;&gt; */ }</pre></dd>
+
     <dt>E[attr=val]</dt>
     <dd>Has the attribute <em>attr</em> with the exact value <em>val</em>.
       <pre contenteditable class="example">p[id=&quot;home&quot;] {...}</pre></dd>
+    
+  </dl>
+ </section>
+</div>
+
+<!-- Older attribute selectors -->
+<div class="slide normal">
+  <header>
+    <h1>CSS 2 attribute selectors</h1>
+  </header>
+  <section class="content">
+  <dl>
+    
     <dt>E[attr|=val]</dt>
     <dd>Attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
 
@@ -612,7 +621,7 @@ function hasaclass(selector) {
 
 <!-- CSS3 Attribute Selectors -->
 <div class="slide normal">
-     <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
+     <header><h1>Attribute Selectors, CSS Selectors 3</h1></header>
      <section class="content">
      <dl>
   <dt>E[attr^=val]</dt>
@@ -625,8 +634,6 @@ a[href^=http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
     <pre contenteditable class="example">a[href$=pdf] {background-image: url(pdficon.gif);}
 a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
-  <dt>E[attr*=val]</dt>
-  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
 </dl>
      </section>
  </div>
@@ -636,7 +643,11 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
 <div class="slide normal">
      <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
      <section class="content">
+      <dl>  <dt>E[attr*=val]</dt>
+  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
+</dl>
 
+<hr />
 <p>Multiple attributes work! </p>
 <pre contenteditable>a[title][href]</pre>
 <pre contenteditable>input[type="number"][min][max]</pre>
@@ -1129,7 +1140,7 @@ li:<b>last-child</b> {
 }
 li:<b>first-of-type</b>,
 li:<b>last-of-type</b>{
-  text-decoration:line-through;
+  text-decoration: line-through;
 }
 li:<b>nth-child</b>(<b>even</b>) {
   background-color: #CCC;
@@ -1145,9 +1156,7 @@ li:nth-of-type(<b>4n</b>) {
 }
 li:nth-of-type(<b>3n-1</b>) {
   text-align: right;
-}
-
-</pre>
+}</pre>
 <ul class="structural" style="flex: 1;">
 
 <li>item 1</li>
@@ -1789,6 +1798,7 @@ E || F
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>

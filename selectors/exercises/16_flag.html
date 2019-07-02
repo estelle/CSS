@@ -9,27 +9,20 @@ td{font-family:Verdana, Geneva, sans-serif; padding:3px 5px;}
 div {background-color: #ededed; padding:10px; margin:10px;}
 table {background-color: white;}</style>
 
-<style contenteditable class="editme">
-td {color: #fff; background-color: #fff;}
+<style contenteditable class="editme">td {color: #fff; background-color: #fff;}
 tr:nth-of-type(odd) td:nth-of-type(8) ~ td,
 tr:nth-of-type(2n+9) td {
 	background-color: #900; color: #900;
 }
-tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9) {
-	background-color: #009;
-	font-size: 0;
-	color: #009;
+tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9) {  font-size: 0;
+	background-color: #009; color: #009;
 }
-tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9)::after {
-	content: '\2605';
-	font-size: 15px;
-	color: white;
+tr:nth-last-of-type(n+7) td:nth-last-of-type(n+9)::after { font-size: 15px;
+	content: '\2605'; color: white;
 }
 tr:nth-last-of-type(2n+7) td::after {
 	position: relative; left: 14px;
-}
-	}
-	</style>
+}</style>
 <title>CSS UI Selector</title>
 </head>
 

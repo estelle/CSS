@@ -1,8 +1,15 @@
-.col2 {
+.col2, .col3, .col4 {
 	column-count: 2;
 	padding-left: 0;
 	column-rule: 1px solid #00000033;
 	li {
 		margin-left: 2em;
 	}
+}
+.col3 {
+	column-count: 3;
+}
+.col4 {
+	column-count: 4;
+	line-height: 1.12;
 }

@@ -43,7 +43,6 @@ body {
   top: 5px;
   right: 5px;
   z-index: 500;
-  display: none;
 }
 
 .notes {display: none;}
@@ -70,5 +69,13 @@ body {
   left: 50%;
   width: 1vw;
   text-align: center;
+}
+
+.far-future.object object {display: none;}
+style[id="editme" i], style[class="editme" i] {
+    font-size: 0.8em;
+  }
+object[data*="exercises"] {
+  margin-top: 60px;
 }
   

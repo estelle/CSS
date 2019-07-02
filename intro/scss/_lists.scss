@@ -2,7 +2,7 @@
 dt {
 font-weight: bold;
 margin-top: 0.5em;
-background-color: #efefef;
+background-color: #fff;
 display: inline-block;
 margin-bottom: 2px;
 clear: both;
@@ -20,4 +20,8 @@ margin: 0 0 2px 0;
 	 dt {margin-bottom: 0.5rem;}
      dd {display: none;}
      dt:hover + dd {display:inherit;}
+}
+.sameline {
+	dd {}
+	dt {float: left;}
 }
