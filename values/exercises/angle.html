@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Angle Units</title>
+<link rel="stylesheet" href="../../css/editme.css">
+<style> .box {
+	padding: 40px;
+	height: 400px;
+}
+	.arrow {
+		margin: 20px auto;
+
+	height: 200px;
+	width: 10px;
+	background-color: #a8a807;
+	position: relative;
+}
+.arrow::before {
+content: '';
+position: absolute;
+height: 0;
+width: 0;
+top: -30px;
+left: -15px;
+border: 20px solid transparent;
+border-bottom-color: #a8a807;
+transform-origin: 200px center;
+}</style>
+<style contenteditable class="editme">.arrow {
+  transform: rotate(90deg);
+}</style>
+</head>
+
+<body>
+<div class="box">
+<div class="arrow"></div>
+</div>
+</body>
+</html>
+
