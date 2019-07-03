@@ -5,6 +5,20 @@
     <title>Units and Values</title>
     <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="../intro/css/values.css"/>
+<style>
+style[class="editme" i]  {
+  padding: 20px; 
+  display: block;
+  font-size: 1.2em; 
+  font-family: monospace; 
+  white-space:pre; 
+  border-radius: 10px; 
+  border: 3px solid #aaa; 
+  background-color:#dedede; 
+  margin: 50px auto 20px;
+  width: 90vw;
+  font-family:"Courier New", Courier, monospace;
+}</style>
 </head>
 
 <body>
@@ -485,29 +499,75 @@ pre {height: 33.33%;}</pre></li>
 
 
 <div class="slide">
-  <header><h1>Predefined keyword values</h1></header>
+  <header><h1>Keyword values</h1></header>
   <section class="content">
-<h2><code>clear</code> property</h2>
+<h2><code>text-align</code> property</h2>
+<code>left | right | center | justify </code>
+    <pre contenteditable>/* Keyword values */         /* Global values */
+text-align: left;            text-align: inherit;
+text-align: right;           text-align: initial;
+text-align: center;          text-align: unset;
+text-align: justify;</pre>
+<ul><li>appear literally, without quotes</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Avoid in custom identifiers</li></ul>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1><code>&lt;position></code></h1></header>
+  <section class="content">
+    <h2>Values</h2>
+    <pre>center | top | right | bottom | left </pre>
+    <ul>
+  <li>Specified with one or two keywords</li>
+  <li>Optional offsets on TRBL</li>
+</ul>
+    <h2>Offsets</h2>
+    <pre> &lt;percentage> | &lt;length></pre>
+
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1><code>&lt;position></code></h1></header>
+  <section class="content">
+    <pre contenteditable>background-position: bottom right;
+background-position: bottom 40px right 60px;
+
+background-image: radial-gradient(ellipse at bottom left, red 50%, blue 50%);
+background-image: radial-gradient(ellipse at bottom left, red 50%, blue 50%);
+</pre>
+
+    <ul><li>position can be outside the parent</li></ul>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Mixed values</h1></header>
+  <section class="content">
+
+<h2><code>border-width </code> property</h2>
+    <code> [ &lt;length> | thick | medium | thin ]{1,4} </code>
     <pre contenteditable>/* Keyword values */
-clear: none;
-clear: left;
-clear: right;
-clear: both;
-clear: inline-start;
-clear: inline-end;
+border-width: 1px thin;
+border-width: thick thin thin thick;
+border-width: medium;
+border-width: 5px 10px thin thick; 
 
 /* Global values */
-clear: inherit;
-clear: initial;
-clear: unset;</pre>
-<ul><li>unquoted</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Don't use as user defined strings</li></ul>
+border-width: inherit;
+border-width: initial;
+border-width: unset;</pre>
   </section>
 </div>
 
 
 
-<div class="slide">
-  <header><h1></h1></header>
+<div class="slide divider">
+  <header><h1>Strings</h1></header>
   <section class="content">
     
   </section>
@@ -516,65 +576,244 @@ clear: unset;</pre>
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;string></code></h1></header>
   <section class="content">
-    
+    <h2>&lt;string></h2>
+    <ul>
+
+    <li>Quoted string of characters</li>
+    <li>Double or single quotes</li>
+    <li>Case-sensitive</li>
+    <li>HTML entities (like &amp;amp;) won't be parsed</li>
+    <li>Unicode characters start with a \, or correct charset</li>
+    <li>Not parsed</li>
+</ul>
+<pre contenteditable>content: ' (pdf)';
+font-family: "myAwesomeFont", serif;
+quotes: "«" '»' "‹" '›';</pre>
+</section>
+</div>
+
+
+
+<div class="slide object">
+     <header><h1>Special Character</h1></header>
+     <section class="content">
+     
+ <style class="editme" contenteditable>#a2603::after {content: "\2603";}</style>
+ <p id="a2603"></p>
+     </section>
+<object data="https://estelle.github.io/CSS-JS-Entity-Calculator/"></object>
+ <a class="objectlink" href="https://estelle.github.io/CSS-JS-Entity-Calculator/" target="resource">Calculator</a>
+ </div>
+
+
+
+<div class="slide">
+  <header><h1>&lt;ident></h1></header>
+  <section class="content">
+    <h2><code>&lt;ident></code> or <code>&lt;custom-ident></code></h2>
+    <ul>
+      <li>idents, or custom identifiers, are unquoted</li>
+      <li>case-sensitive</li>
+      <li>can contain [A-Za-z0-9], hyphen (-), underscore (_), escaped character preceded by a backslash (\), unicode characters (\123)</li>
+      <li>can NOT start with a digit, two hyphens, a hyphen+digit</li>
+      <li>can NOT be <code>unset</code>, <code>initial</code>, <code>reset</code>, <code>inherit</code>, or <code>none</code></li>
+      <li>Should not be a property name or keyword value used elsewhere in CSS</li>
+    </ul>
   </section>
 </div>
 
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;custom-ident></code> use cases</h1></header>
   <section class="content">
-    
+    <pre contenteditable>counter-reset: yourCounter;
+counter-increment: myCounter;
+
+grid-row-start: someGridArea;
+grid-row-end: someOtherGridArea;
+grid-column-start: anotherArea;
+grid-column-end: oneMore;</pre>
+<h2>Property names as values == <code>&lt;custom-ident></code></h2>
+<pre contenteditable>will-change: transform;
+transition-property: opacity;</pre>
   </section>
 </div>
 
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;custom-ident> | &lt;string></code></h1></header>
+  <section class="content">
+<pre contenteditable>animation-name: myAnimation; 
+
+@keyframes 'myAnimation' {
+    0% {transform: translatex(0);}
+  100% {transform: translatex(100vw);}
+}
+
+font-family:  Helvetica Neue;
+font-family: "Helvetica Neue";</pre>
+  </section>
+</div>
+
+
+
+<div class="slide divider">
+  <header><h1>CSS Functions</h1></header>
   <section class="content">
     
   </section>
 </div>
-
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;url></code></h1></header>
   <section class="content">
-    
+<pre contenteditable>/* Simple usage */
+url(https://example.com/images/myImg.jpg);
+url(data:image/png;base64,iRxVB0…);
+url(myFont.woff);
+url(#IDofSVGpath);</pre>
+
+<pre contenteditable>/* at-rules */
+@document url("https://www.example.com/") { ... }  
+@import url("https://www.example.com/style.css");
+@namespace url(http://www.w3.org/1999/xhtml);</pre>
   </section>
 </div>
-
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;url></code></h1></header>
   <section class="content">
-    
+<pre contenteditable>background-image: url("https://mdn.mozillademos.org/files/16761/star.gif");
+list-style-image: url('../images/bullet.jpg');
+
+content: url("pdficon.jpg");
+cursor: url(mycursor.cur);
+
+border-image-source: url(/media/diamonds.png);
+src: url('fantasticfont.woff');
+
+offset-path: url(#path);
+mask-image: url("masks.svg#mask1");</pre>
   </section>
 </div>
-
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;url></code></h1></header>
   <section class="content">
-    
+<pre contenteditable>background: url('https://mdn.mozillademos.org/files/16761/star.gif') bottom right repeat-x blue;
+
+border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;
+
+background-image: cross-fade(20% url(first.png), url(second.png));
+
+mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent);
+
+content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg); </pre>
   </section>
 </div>
-
 
 
 <div class="slide">
-  <header><h1></h1></header>
+  <header><h1><code>&lt;image></code></h1></header>
   <section class="content">
-    
+<pre contenteditable>url(test.jpg)
+linear-gradient(blue, red)
+radial-gradient(blue, red)
+conic-gradient()
+repeating-linear-gradient(blue, red 20%)
+repeating-radial-gradient(blue, red 20%)
+repeating-conic-gradient(blue, red 20%)
+element(#realid)
+image(ltr 'arrow.png#xywh=0,0,16,16', red) 
+cross-fade(20% url(twenty.png), url(eighty.png)) 
+image-set('test.jpg' 1x, 'test-2x.jpg' 2x)
+paint(worklet)</pre>
   </section>
 </div>
+
+
+<div class="slide">
+  <header><h1>Other CSS Functions</h1></header>
+  <section class="content">
+<ul class="col3"><li>attr()</li>
+<li>blur()</li>
+<li>brightness()</li>
+<li>calc()</li>
+<li>character-variant()</li>
+<li>cirlcle()</li>
+<li>clamp()</li>
+<li>contrast()</li>
+<li>counter()</li>
+<li>counters()</li>
+<li>cross-fade()</li>
+<li>cubic-bezier()</li>
+<li>drop-shadow()</li>
+<li>ellipse()</li>
+<li>env()</li>
+<li>fit-content()</li>
+<li>format()</li>
+<li>grayscale()</li>
+<li>hsl()</li>
+<li>hsla()</li>
+<li>hue-rotate()</li>
+<li>inset()</li>
+<li>invert()</li>
+<li>leader()</li>
+<li>local()</li>
+<li>matrix()</li>
+<li>matrix3d()</li>
+<li>max()</li>
+<li>min()</li>
+<li>minmax()</li>
+<li>opacity()</li>
+<li>ornaments()</li>
+<li>perspective()</li>
+<li>polygon()</li>
+<li>rect()</li>
+<li>repeat()</li>
+<li>rgb()</li>
+<li>rgba()</li>
+<li>rotate()</li>
+<li>rotate3d()</li>
+<li>rotateX()</li>
+<li>rotateY()</li>
+<li>rotateZ()</li>
+<li>saturate()</li>
+<li>scale()</li>
+<li>scale3d()</li>
+<li>scaleX()</li>
+<li>scaleY()</li>
+<li>scaleZ()</li>
+<li>selector()</li>
+<li>sepia()</li>
+<li>skew()</li>
+<li>skewX()</li>
+<li>skewY()</li>
+<li>steps()</li>
+<li>styleset()</li>
+<li>stylistic()</li>
+<li>swash()</li>
+<li>symbols()</li>
+<li>target-counter()</li>
+<li>target-counters()</li>
+<li>target-text()</li>
+<li>translate()</li>
+<li>translate3d()</li>
+<li>translateX()</li>
+<li>translateY()</li>
+<li>translateZ()</li>
+<li>var()</li>
+</ul>
+  </section>
+</div>
+
 
 
 <!--NEXT-->
