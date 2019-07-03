@@ -211,7 +211,7 @@ nav button {
 
 pre {
   text-align: left;
-  font-size: 70%;
+  font-size: 1.2em;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -410,6 +410,11 @@ dl.inline dt {
 
 .sameline dt {
   float: left;
+}
+
+dl dt {
+  padding: 0 5px;
+  outline: 1px solid #ccc;
 }
 
 /*# sourceMappingURL=media.css.map */

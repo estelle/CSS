@@ -3,92 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS Mastery: Colors &amp; Transparency</title>
-   <link rel="stylesheet" href="../css/sitewide.css"/>
+    <link rel="stylesheet" href="../intro/css/colors.css"/>
+<style>
+style[class="editme" i]  {
+  padding: 20px; 
+  display: block;
+  font-size: 1.2em; 
+  font-family: monospace; 
+  white-space:pre; 
+  border-radius: 10px; 
+  border: 3px solid #aaa; 
+  background-color:#dedede; 
+  margin: 50px auto 20px;
+  width: 90vw;
+  font-family:"Courier New", Courier, monospace;
+}</style>
    <link rel="stylesheet" href="color.css"/>
-   <link rel="stylesheet" href="files/files.css"/>
-   <style>
-
-/* COLORS */
-.namedcolors span {padding:1px 3px; display:block; color:rgba(0,0,0,0.5); font-size:25px;}
-.givemespace span {font-size: 18px;}
-.namedcolors li {list-style-type: none; font-size:12px; margin:2px; padding:0; float:left;  color: #999; text-shadow: none; text-align:center;}
-.namedcolors {clear:both; margin-bottom: 10px; background-color: #fff; height: 1.8em; }
-.nm .namedcolors  span {
-  font-size: 1.5em;
-}
-.givemespace {margin: -3px 0 0 -40px;  height: auto;}
-
-/* HSL COLOR PICKER */
-#hslas, #hslal, #hslaa, #hslah {
-width: 361px;
-height: 20px;
-display: inline-block;
-}#hslah {
-width: auto;
-}#hslah i {
-display: inline-block;
-width: 1px;
-height: 20px;
-}
-.hsl-value {display: inline-block; width: 3em;}
-#hsl-example {font-size: 100px; font-weight: bold; text-align:center;}
-
-.opacity, .rgba {
-			background-image: /* Safari 5 and earlier */
-				
-		background-image:	
-    linear-gradient(135deg,
-					rgba(255, 255, 255, 0.2) 25%,
-					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%,
-					rgba(255, 255, 255, 0.2) 50%,
-					rgba(255, 255, 255, 0.2) 75%,
-					rgba(255, 255, 255, 0) 75%,
-					rgba(255, 255, 255, 0) 100%
-	  				);
-			background-color: #FF8C00;
-			background-size: 40px 40px;
-			background-repeat:repeat;
-}
-.opacity, .opacity div {
-	border-radius: 10px;
-}
-.opacity pre {
-	background-color: #fff;
-
-}
-
-/* shadow dom */
-.scrollbar ::-webkit-scrollbar {
-    margin-right: 5px;
-    background-color: #bdd9d5;
-	border-radius: 6px;
-    width: 12px;
-}
-.scrollbar ::-webkit-scrollbar-track {
-    box-shadow: 0 0 2px rgba(0,0,0,0.3);
-}
-.scrollbar ::-webkit-scrollbar-thumb {
-    border: 1px #eee solid;
-    border-radius: 12px;
-    background: #C7573A;
-    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
-    transition: all .3s ease-out;
-}
-.scrollbar ::-webkit-scrollbar-thumb:window-inactive {
-    background: #bbb;
-    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
-}
-.scrollbar ::-webkit-scrollbar-thumb:hover { background: #b7472A }
-.scrollbar pre {
-	width: 700px;
-	height: 200px;
-	overflow:auto;
-}
-/* brown: C7573A;*/
-
-#hslah i {opacity: 1;}
-   </style>
 
   </head>
   <body>
@@ -96,8 +26,8 @@ height: 20px;
    <header>
     <nav>
         <ul>
-            <li class="button cancel" id="back">Back</li>
-            <li class="button done" id="next">Next</li>
+            <li><button class="button cancel" id="back">Back</button></li>
+            <li><button class="button done" id="next">Next</button></li>
         </ul>
     </nav>
 </header>
@@ -439,7 +369,7 @@ height: 20px;
   <section class="content">
     <h1 style="text-align: center; font-size: 2em">#RRGGBBAA</h1>
     <div style="display: grid;
-  grid-template-columns: 6em 6em;
+  grid-template-columns: 10em 10em;
   grid-gap: 10px;">
     <pre style="">100% — FF
  95% — F2
