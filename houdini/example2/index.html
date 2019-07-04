@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>My first paint API</title>
+	<style type="text/css" media="screen">
+		@font-face {
+  font-family: 'zillaslab';
+  src: url('https://mdn.github.io/houdini-examples/sharedAssets/ZillaSlab.woff2') format('woff2');
+}
+
+		.fancy {    font-family: "zillaslab", serif;
+			background-image: paint(boxbg);
+		}
+	</style>
+</head>
+<body>
+<h1 class="fancy">This is large</h1>
+<h6 class="fancy">This is small</h6>
+
+<h3 class="fancy" style="width: 50%">This is 50% width</h3>
+<script>
+  CSS.paintWorklet.addModule('image.js');
+</script>
+</body>
+</html>

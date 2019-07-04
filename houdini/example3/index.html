@@ -1,0 +1,64 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8"/>
+	<title>My first paint API</title>
+	<style type="text/css" media="screen">
+		:root {
+			font-size: 18px;
+		}
+		@font-face {
+  font-family: 'zillaslab';
+  src: url('https://mdn.github.io/houdini-examples/sharedAssets/ZillaSlab.woff2') format('woff2');
+}
+
+		ul {
+		   counter-reset: items;
+		   font-family: "zillaslab", serif;
+		}
+		li {
+		   --boxColor: hsla(55, 90%, 60%, 1.0);
+		   counter-increment: items;
+		   background-image: paint(boxbg);
+		   height: 3em;
+		}
+
+		li:nth-of-type(3n) { 
+		   --boxColor: hsla(155, 90%, 60%, 1.0);
+		   --widthSubtractor: 20;
+		}
+
+		li:nth-of-type(3n+1) { 
+		   --boxColor: hsla(255, 90%, 60%, 1.0);
+		   --widthSubtractor: 40;
+		}
+		li::after {
+			content: ' ' counter(items);
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+</ul>
+<script>
+  CSS.paintWorklet.addModule('boxbg.js');
+</script>
+</body>
+</html>
