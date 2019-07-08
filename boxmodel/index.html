@@ -1,0 +1,911 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Box Model</title>
+<link rel="stylesheet" href="../intro/css/box.css"/>
+<style>
+style[class="editme" i]  {
+  padding: 20px; 
+  display: block;
+  font-size: 1.2em; 
+  font-family: monospace; 
+  white-space:pre; 
+  border-radius: 10px; 
+  border: 3px solid #aaa; 
+  background-color:#dedede; 
+  margin: 50px auto 20px;
+  width: 90vw;
+  font-family:"Courier New", Courier, monospace;
+}
+
+.boxmodel {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.boxmodel div {
+  border: 5px solid;
+  padding:10px 50px;
+  text-align: center;
+}
+
+.radius pre {float: left; width:70%;}
+.radius b {
+  display: inline-block;
+  height:50px;
+  width: 50px;
+  border: 10px inset #71c6aa;
+  float:left;
+  margin-left: 10px;
+}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header>
+      <h1>Box Model</h1>
+     </header>
+     <section>
+     <p><a href="https://estelle.github.io/CSS/boxmodel/">estelle.github.io/CSS/boxmodel/</a></p>
+   </section>
+    </div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Box Model Properties</h1></header>
+
+</div>
+
+
+<div class="slide">
+  <header><h1>Box Model Properties</h1></header>
+  <section class="content">
+  <div class="boxmodel">
+    <div>margin
+      <div>border
+        <div>padding
+          <div>content</div>
+        &nbsp;</div>
+      &nbsp;</div>
+    &nbsp;</div>
+  &nbsp;</div>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Box Model Properties</h1></header>
+
+  <section class="content">
+   <div class="col2" style="padding-top: 50px;">
+    <h2 style="margin-top: 0">height</h2>
+    <code><ul>
+      <li>height*</li>
+      <li>padding
+          <ul>
+            <li>padding-top</li>
+            <li>padding-bottom</li>
+          </ul>
+        </li>
+         <li>border
+          <ul>
+            <li>border-top</li>
+            <li>border-bottom</li>
+          </ul>
+        </li>
+        <li>margin
+          <ul>
+            <li>margin-top*</li>
+            <li>margin-bottom*</li>
+          </ul>
+        </li>
+      </ul></code>
+<h2>width</h2>
+        <code>  <ul>
+      <li>width*</li>
+      <li>padding
+          <ul>
+            <li>padding-right</li>
+            <li>padding-left</li>
+          </ul>
+        </li>
+         <li>border
+          <ul>
+            <li>border-right</li>
+            <li>border-left</li>
+          </ul>
+        </li>
+        <li>margin
+          <ul>
+            <li>margin-right</li>
+            <li>margin-left</li>
+          </ul>
+        </li>
+      </ul>
+</code>
+</div>
+<small>* doesn't apply on inline</small>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Box Model Properties</h1></header>
+  <section class="content" style="display: flex;padding-top: 20px;  justify-content: center;">
+  <img src="images/boxmodel.png" alt="box model properties include content width and height, padding, and border. Margin too." style="max-height: 80vh; max-width: 80%">
+  </section>
+</div>
+
+<div class="slide object">
+  <header><h1>Box Model Properties</h1></header>
+  <object data="exercises/box.html"></object>
+  <a href="exercises/box.html" target="play" class="objectlink">Try it out</a>
+</div>
+  
+
+<div class="slide">
+  <header><h1>box-sizing: content-box</h1></header>
+  <section class="content">
+  <h2>width</h2>
+  <pre>content = declared width - (padding-right + padding-left + 
+         border-right + border-left)</pre>
+  <h2>height</h2>
+  <pre>content = declared height - (padding-top + padding-bottom + 
+          border-top + border-bottom)</pre>
+  </section>
+</div><div class="slide">
+  <header><h1>box-sizing: border-box;</h1></header>
+  <section class="content">
+  
+  <h2>width</h2>
+  <pre>physical width  = declared width + 
+         padding-right + padding-left + 
+         border-right  + border-left</pre>
+  <h2>height</h2>
+  <pre>physical height = declared height + 
+         padding-top + padding-bottom + 
+         border-top  + border-bottom</pre>
+  </section>
+</div>
+
+<div class="slide object">
+  <header><h1>box-sizing: border-box;</h1></header>
+  <object data="exercises/border-box.html"></object>
+  <a href="exercises/border-box.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide divider">
+  <header><h1>Borders, Margin &amp; Padding</h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>padding</h1></header>
+  <section class="content">
+    <code>
+      <p>padding: 10px 20px 30px 40px;</p>
+      <ul>
+        <li>padding-top: 10px;</li>
+        <li>padding-right: 20px;</li>
+        <li>padding-bottom: 30px;</li>
+        <li>padding-left: 40px;</li>
+      </ul>
+    </code>
+    <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
+    <pre contenteditable>padding: 10px; /* 10px all sides */
+padding: 10px 20px; /* 10px top and bottom, 20px right and left */
+padding: 10px 20px 30px; /* 10px top and bottom, 20px right, 30px left */
+padding: 10px 20px 30px 40px; /* TRouBLe */</pre>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>margin</h1></header>
+  <section class="content">
+    <code>
+      <p>margin: 10px 20px 30px 40px;</p>
+      <ul>
+        <li>margin-top: 10px;</li>
+        <li>margin-right: 20px;</li>
+        <li>margin-bottom: 30px;</li>
+        <li>margin-left: 40px;</li>
+      </ul>
+    </code>
+    <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
+    <pre contenteditable>margin: 10px; /* 10px all sides */
+margin: 10px 20px; /* 10px top and bottom, 20px right and left */
+margin: 10px 20px 30px; /* 10px top and bottom, 20px right, 30px left */
+margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
+<small>Block: Adjacent margins <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="reference">collapse</a>, except if <code>absolute</code> or <code>float</code></small>, and <code>auto</code> centers horizontally</small><br/>
+<small>Inline: Top/bottom ignored, left/right don't collapse</small>
+  </section>
+</div>
+  
+<div class="slide object">
+  <header><h1>Collapsing margins</h1></header>
+  <object data="exercises/margins.html"></object>
+  <a href="exercises/margins.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide">
+  <header><h1>border-width</h1></header>
+  <section class="content">
+    <code>
+      <p>border-width: 10px 20px 30px 40px;</p>
+      <ul>
+        <li>border-width-top: 10px;</li>
+        <li>border-width-right: 20px;</li>
+        <li>border-width-bottom: 30px;</li>
+        <li>border-width-left: 40px;</li>
+      </ul>
+    </code>
+    <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
+    <pre contenteditable>border-width: 10px; /* 10px all sides */
+border-width: 10px 20px; /* 10px top and bottom, 20px right and left */
+border-width: 10px 20px 30px; /* 10px top and bottom, 20px right, 30px left */
+border-width: 10px 20px 30px 40px; /* TRouBLe */</pre>
+  </section>
+</div>
+
+
+  
+<div class="slide">
+  <header><h1><code>border</code> properties</h1></header>
+  <section class="content">
+    <code>
+      <p>border: 1px solid red;</p>
+      <ul>
+        <li>border-width</li>
+        <li>border-style</li>
+        <li>border-color</li>
+      </ul>
+    </code>
+  </section>
+</div>
+  
+
+  
+  
+<div class="slide">
+  <header><h1>border-width</h1></header>
+  <section class="content">
+    <h2><code>border-width</code></h2>
+    <pre>&lt;length> | thin | <b>medium</b> | thick</pre>
+    <ul>
+      <li>% values are ignored.</li>
+  
+  </section>
+</div>
+  
+  
+
+
+  
+<div class="slide">
+  <header><h1>border-style</h1></header>
+  <section class="content">
+  <pre contenteditable>border-style: <b>none</b>;
+border-style: hidden;
+border-style: dotted;
+border-style: dashed;
+border-style: solid;
+border-style: double;
+border-style: groove;
+border-style: ridge;
+border-style: inset;
+border-style: outset;</pre>
+<ul>
+  <li>Required, or no border will show.</li>
+  <li>Use <code>transparent</code> color instead of <code>hidden</code> for toggling on/off</li>
+</ul>
+
+  </section>
+</div>
+
+<div class="slide object">
+  <header><h1>border-style</h1></header>
+  <object data="exercises/border-style.html"></object>
+  <a href="exercises/border-style.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<!-- border shorthand-->
+<div class="slide">
+     <header><h1>border shorthand</h1></header>
+     <section class="content">
+     <pre contenteditable>border: width style color;</pre>
+     <pre contenteditable>border-left: width style color;</pre>
+     <pre contenteditable>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
+     <ul>
+     <li>style is REQUIRED.</li>
+     <li>width defaults to <span class="imp">medium</span></li>
+     <li>color defaults to <span class="imp">currentColor</span></li>
+     </ul>
+     </section>
+ </div>
+
+ <!-- border shorthand-->
+<div class="slide">
+     <header><h1>border longhand</h1></header>
+     <section class="content">
+     <pre contenteditable>border: 1px solid #58ade3;</pre>
+     <pre contenteditable>border-bottom-color: #58ade3;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #58ade3;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #58ade3;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #58ade3;
+border-top-style: solid;
+border-top-width: 1px;</pre>
+     </section>
+ </div>
+<!--Border properties -->
+<div class="slide divider">
+     <header><h1>border-radius</h1></header>
+ </div>
+
+
+
+
+
+ <!--border-radius -->
+<div class="slide">
+<header><h1>border-radius</h1></header>
+<section class="content">
+<div class="radius">
+  <div><pre contenteditable>border-radius: 0;</pre> <b></b>
+    </div>
+    <div><pre contenteditable>border-radius: 20px;</pre><b style="border-radius: 20px"></b>
+    </div>
+    <div><pre contenteditable>border-radius: 50%;</pre><b style="border-radius: 50%"></b>
+    </div>
+</div>
+  <pre contenteditable style="float: left; margin-right: 40px;">border-top-left-radius
+border-top-right-radius
+border-bottom-right-radius
+border-bottom-left-radius</pre>
+
+<p style="clear:both;">DO NOT PREFIX</p>
+</section>
+</div>
+
+
+ <!--border-radius -->
+<div class="slide">
+<header><h1>border-radius</h1></header>
+<section class="content">
+<div class="radius">
+  <div><pre contenteditable>.circle {border-radius: 50%;}</pre> <b style="border-radius: 50%;"></b></div>
+  <div><pre contenteditable>.oval { border-radius: 50%;}</pre> <b style="border-radius: 50%; width: 100px;"></b></div>
+  <div><pre contenteditable>.different { border-radius: 10px 30px;}</pre> <b style="border-radius: 10px 30px; "></b></div>
+  <div><pre contenteditable>.elliptical { border-radius: 10px / 30px;}</pre> <b style="border-radius: 10px / 30px;"></b></div>
+  <div><pre contenteditable>.uglier {
+  border-radius: 10px 35px 20px 15px /
+                 30px 35px 5px 5px;}</pre> <b style="border-radius: 10px 35px 20px 15px / 30px 35px 5px 5px; width: 75px; height: 75px;"></b></div>
+ </div>
+
+</section>
+</div>
+
+
+<div class="slide object">
+<header><h1>Play with border-radius</h1></header>
+<object data="exercises/border-radius.html"></object>
+<a href="exercises/border-radius.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
+
+  
+<div class="slide object">
+  <header><h1><code>box-sizing</code> revisited</h1></header>
+  <object data="exercises/border-box.html"></object>
+  <a href="exercises/border-box.html" target="play" class="objectlink">Try it out</a>
+</div>
+  
+  
+<div class="slide">
+  <header><h1><code>outline</code> property</h1></header>
+  <section class="content">
+  <pre contenteditable>outline: 1px solid red;</pre>
+<pre contenteditable>outline-style: solid;
+outline-width: 1px;
+outline-color: red;</pre>
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>outline-style</code></h1></header>
+  <object data="exercises/outline-style.html"></object>
+  <a href="exercises/outline-style.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
+
+<div class="slide divider">
+  <header><h1>Overflow</h1></header>
+  <section class="content">
+  <!--If the content becomes larger than the containing box, it will overflow. You can keep it in the box and add scroll bars, or not, with the overflow propertyv-->
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>CSS is awesome</h1></header>
+  <object data="exercises/awesome.html"></object>
+  <a href="exercises/awesome.html" target="play" class="objectlink">Try it out</a>
+</div>
+  
+
+
+<div class="slide">
+  <header><h1>Overflow</h1></header>
+  <section class="content">
+<pre contenteditable>[ <b>visible</b> | hidden | clip | scroll | auto ]{1,2}</pre>
+<pre contenteditable>overflow: <b>visible</b>;
+overflow: hidden;
+overflow: clip;
+overflow: scroll;
+overflow: auto;
+overflow: hidden visible;</pre>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>overflow-x/y</h1></header>
+  <section class="content">
+<h2><code>overflow-x</code> and <code>overflow-y</code></h2>
+<pre contenteditable>[ visible | hidden | clip | scroll | auto ]</pre>
+<pre contenteditable>overflow: visible;
+overflow: hidden;
+overflow: clip;
+overflow: scroll;
+overflow: auto;</pre>
+  </section>
+</div>
+
+
+
+<div class="slide object">
+  <header><h1>Overflow</h1></header>
+  <object data="exercises/overflow.html"></object>
+  <a href="exercises/overflow.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide divider">
+  <header><h1>Size constraints</h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+  
+ 
+<div class="slide">
+  <header><h1>width constraints</h1></header>
+  <section class="content">
+  <pre contenteditable>width: 50em; 
+max-width: 40em;
+min-width: 60em;</pre>
+<p><code>max-width</code> overrides <code>width</code>. <code>min-width</code> overrides <code>max-width</code>.</p>
+<pre contenteditable>/* Keyword values */
+max-width: none;
+max-width: max-content;
+max-width: min-content;
+max-width: fit-content(&lt;length-percentage>);
+max-width: fill-available;</pre>
+<small><a href="https://drafts.csswg.org/css-sizing-3/#width-height-keywords">Specification</a></small>
+  </section>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>height constraints</h1></header>
+  <section class="content">
+  <pre contenteditable>height: 50em; 
+max-height: 40em;
+min-height: 60em;</pre>
+<p><code>max-height</code> overrides <code>height</code>. <code>min-height</code> overrides <code>max-height</code>.</p>
+<pre contenteditable>/* Keyword values */
+max-height: none;
+max-height: max-content;
+max-height: min-content;
+max-height: fit-content(&lt;length-percentage>);
+max-height: fill-available;</pre>
+<small><a href="https://drafts.csswg.org/css-sizing-3/#height-height-keywords">Specification</a></small>
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Size Constraints</h1></header>
+  <object data="exercises/minmax.html"></object>
+  <a href="exercises/minmax.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+  <section class="content">
+  <pre contenteditable>/* &lt;display-outside> values */
+display: block;
+display: inline;
+display: run-in;
+
+/* &lt;display-inside> values */
+display: flow;
+display: flow-root;
+display: table;
+display: flex;
+display: grid;
+display: ruby;
+
+/* &lt;display-outside> plus &lt;display-inside> values */
+display: block flow;
+display: inline table;
+display: flex run-in;
+
+/* &lt;display-listitem> values */
+display: list-item;
+display: list-item block;
+display: list-item inline;
+display: list-item flow;
+display: list-item flow-root;
+display: list-item block flow;
+display: list-item block flow-root;
+display: flow list-item block;
+
+/* &lt;display-internal> values */
+display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;
+
+/* &lt;display-box> values */
+display: contents;
+display: none;
+
+/* &lt;display-legacy> values */
+display: inline-block;
+display: inline-table;
+display: inline-flex;
+display: inline-grid;
+
+/* Global values */
+display: inherit;
+display: initial;
+display: unset;
+</pre>
+  </section>
+</div>
+  
+  
+<div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+  <section class="content">
+  <pre contenteditable>
+display: block;
+display: inline;
+display: inline-block;
+display: none;
+
+display: flex;
+display: inline-flex;
+
+display: grid;
+display: inline-grid;
+
+display: run-in;
+display: list-item;
+
+display: flow;
+display: flow-root;
+display: contents;
+
+display: table;
+display: inline-table;
+display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;
+
+display: ruby;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;
+
+/* Global values */
+display: inherit;
+display: initial;
+display: unset;</pre>
+  </section>
+</div>
+  
+ <!-- 
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+  
+  
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+  
+  
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide object">
+  <header><h1>Length Units</h1></header>
+  <object data="exercises/lengths.html"></object>
+  <a href="exercises/lengths.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  
+  </section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Flexbox</h1></header>
+     <section class="content">
+    <h1><a href="../flexbox/">Next ➹</a></h1></section>
+</div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="col2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors/specificity.html">Specificity</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudo-elements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../boxmodel">Box Model</a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    <li><a href="../tables">Tables</a></li>
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>  <li><a href="https://drafts.csswg.org/css-values-4/" title="The 'CSS Values and Units Module Level&nbsp;4' specification">CSS Values and Units Module Level&nbsp;4</a></li>
+
+  <li><a href="https://drafts.csswg.org/css-values-3/" title="The 'CSS Values and Units Module Level&nbsp;3' specification">CSS Values and Units Module Level&nbsp;3</a></li>
+  
+  <li><a href="https://www.w3.org/TR/CSS2/" title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification">CSS Level&nbsp;2 (Revision&nbsp;1)</a></li>
+  <li><a href="https://www.w3.org/TR/CSS1/" title="The 'CSS Level&nbsp;1' specification">CSS Level&nbsp;1</a></li>
+      </ul>
+    </section>
+</div>
+
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
+<script src="../slideshow.js"></script>
+  </body>
+
+</html>
+

@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Box Model</title>
+<link rel="stylesheet" href="../../css/editme.css">
+<style> 
+	body {
+		display: flex; justify-content: center;
+	}
+	.inner {background-color: lightgreen; }
+	.box {
+
+background-color: red;
+background-clip: content-box;
+outline: 1px dotted red;
+	}
+	.outer {.outline: 1px dotted;}
+</style>
+<style contenteditable class="editme">.inner {}
+.outer {}
+.box {
+	border: 20px dashed;
+	margin: 30px;
+	padding: 40px; 
+	width: 300px;
+	height: 100px
+}
+</style>
+</head>
+
+<body>
+<div class="outer">
+<div class="box">
+<div class="inner"></div>
+</div>
+</div>
+</body>
+</html>
+

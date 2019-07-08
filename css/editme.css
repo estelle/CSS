@@ -26,4 +26,6 @@ style[class="editme" i]  {
 	margin: 0 auto;
 	width: 90vw;
 	font-family:"Courier New", Courier, monospace;
+	-moz-tab-size: 1em;
+	tab-size: 1em;
 }

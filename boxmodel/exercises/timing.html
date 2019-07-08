@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Angle Units</title>
+<link rel="stylesheet" href="../../css/editme.css">
+<style> .box {
+	margin-top: 100px;
+	padding: 20px;
+	height: 40px;
+	border: 1px solid #a8a807;
+
+}
+	.circle {
+	animation: infinite linear 0s moveit;
+	height: 40px;
+	width: 40px;
+	background-color: #a8a807;
+	border-radius: 50%
+}
+
+@keyframes moveit {
+	0% {transform: translateX(-20px);}
+	100% {transform: translateX(90vw);}
+}
+</style>
+<style contenteditable class="editme">.circle {
+  animation-duration: 2s;
+}</style>
+</head>
+
+<body>
+<div class="box">
+<div class="circle"></div>
+</div>
+</body>
+</html>
+
