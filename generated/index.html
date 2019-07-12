@@ -29,6 +29,17 @@
     	<h1>CSS: Generated Content</h1>
     </header>
      <section class="content">
+      <ul>
+        <li>Generated Content</li>
+        <li>Generated Content: quotes</li>
+<li>countent: &lt;image></li>
+<li>Generated Content: Attribute Values</li>
+<li><code>position</code> property</li>
+<li>Generated Content: Counters</li>
+<li>Generated Content: Strings</li>
+<li>Special Characters</li>
+<li>Accessibility</li>
+<li>Design Elements</li></ul>
       <h2><a href="http://estelle.github.io/css/generated">estelle.github.io/css/generated</a></h2>
     
      </section>
@@ -76,9 +87,10 @@ p::after{
      <header><h1>Pseudo Elements</h1></header>
      <section class="content">
      You get 2 free stylable faux elements for every non-empty element
-     <div class="beforeafterdivcont  d3">
+     <div style="padding: 4vh 0 4vh 10vw">
+     <div class="beforeafterdivcont d3">
       <div class="beforeafterdiv"><i>Content</i></div>
-      </div>
+      </div></div>
       <small>Doesn't apply to replaced elements like <code>&lt;img></code> and <code>&lt;br></code>.</small>
      </section>
  </div>
@@ -194,19 +206,19 @@ countent: counters()</li>
 
 </section>
 </div>
-
+<
 
 <div class="slide">
   <header><h1><code>content: normal</code></h1></header>
 <section class="content">
   <h1>normal</h1>
   <pre>content: normal;</pre>
-  <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.
- <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.
+  <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.</p>
+ <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.</p>
   <p>For DOM elements, computes to contents, as if not set at all.</p>
 </p>
+</section>
 </div>
-
 
 
 <div class="slide divider">
@@ -229,7 +241,7 @@ countent: counters()</li>
 q::before { content: open-quote }
 q::after  { content: close-quote }
 </pre>
-<small>They'll alternate, even if they're on different elements</small>
+<small>They'll alternate, even if they're on different elements</small></section>
 </div>
 
 
@@ -369,6 +381,60 @@ width: attr(data-count em, auto);</pre>
 </section>
 </div>
 
+
+<div class="slide divider">
+  <header>
+    <h1><code>position</code> property</h1>
+  </header>
+</div>
+
+
+<div class="slide">
+  <header>
+    <h1><code>position</code> property</h1>
+  </header>
+  <section class="content">
+    <pre contenteditable><b>position: static;</b>
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky;</pre>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header>
+    <h1><code>position</code> property</h1>
+  </header>
+  <section class="content">
+      <ul>
+        <li>If not <code>static</code>, element is considered "positioned"</li>
+        <li>If positioned, it has it's own stacking context</li>
+        <li>If <code>absolute</code> or <code>fixed</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties specify offsets from the edges of the element's containing block.</li>
+
+        <li>containing block is the nearest "positioned" ancestor</li>
+        <li>if no <code>height/width</code> declared, <code>top: 0; bottom: 0; left: 0; right: 0</code> will make it the size of it's parent </li>
+        <li>else, <code>top</code> overrides <code>bottom</code> and <code>left</code> overrides <code>right</code>.</li>
+        <li><code>sticky</code> is similar to fixed, until containing block 
+        </li>
+      </ul>
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>position</code> property</h1></header>
+  <object data="exercises/03_position1.html"></object>
+  <a href="exercises/03_position1.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>position</code> property</h1></header>
+  <object data="https://codepen.io/estelle/pen/YogodZ"></object>
+  <a href="https://codepen.io/estelle/pen/YogodZ" target="play" title="open code example in new window">↪</a>
+</div>
 
 
 

@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
 $font: 'SanchezSlab Semibold', Georgia, serif;
-$splashcolor: #a8a807;
+$splashcolor: #646405;
 $text: #333333;
 $textsecondary: #4d4d4d;
 $invertedtext: #ffffff;
 $header_bg: #ffffff;
 $light_bg: #f4f4f4;
-$dark_bg: #eeee1f;
-$colorpop: #a8a807;
+$dark_bg: #800420;
+$colorpop: #646405;
 
 @import "presentation";
 @import "deck_functionality";
@@ -20,3 +20,38 @@ $colorpop: #a8a807;
 @import "object";
 @import "columns";
 @import "lists";
+
+style[class="editme" i]  {
+  padding: 20px; 
+  display: block;
+  font-size: 1.2em; 
+  font-family: monospace; 
+  white-space:pre; 
+  border-radius: 10px; 
+  border: 3px solid #aaa; 
+  background-color:#dedede; 
+  margin: 50px auto 20px;
+  width: 90vw;
+  font-family:"Courier New", Courier, monospace;
+}
+
+.boxmodel {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.boxmodel div {
+  border: 5px solid;
+  padding:10px 50px;
+  text-align: center;
+}
+
+.radius pre {float: left; width:70%;}
+.radius b {
+  display: inline-block;
+  height:50px;
+  width: 50px;
+  border: 10px inset #71c6aa;
+  float:left;
+  margin-left: 10px;
+}

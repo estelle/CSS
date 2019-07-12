@@ -25,7 +25,7 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: #800420;
+  background-color: #3b6c3b;
 }
 
 [id=info] {
@@ -65,7 +65,7 @@ body {
 }
 
 .counter {
-  color: #646405;
+  color: #3b6c3b;
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;
@@ -118,7 +118,7 @@ nav button {
   padding: 10px 20px;
   font-size: 90%;
   color: #ffffff;
-  background-color: #646405;
+  background-color: #3b6c3b;
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -127,19 +127,19 @@ nav button {
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
-  background: radial-gradient(ellipse at 100% 20%, #646405 48%, transparent 48%);
+  background: radial-gradient(ellipse at 100% 20%, #3b6c3b 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: radial-gradient(ellipse at 100% 20%, #646405 48%, #ffffff 48%, 52%, #800420 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, #3b6c3b 48%, #ffffff 48%, 52%, #3b6c3b 52%, 54%, transparent 54%);
 }
 
 #back {
   left: 0;
   padding: 10px 50px 40px 0px;
-  background: radial-gradient(ellipse at 0% 20%, #646405 48%, transparent 48%);
+  background: radial-gradient(ellipse at 0% 20%, #3b6c3b 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: radial-gradient(ellipse at 0% 20%, #646405 48%, #ffffff 48%, 52%, #800420 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, #3b6c3b 48%, #ffffff 48%, 52%, #3b6c3b 52%, 54%, transparent 54%);
 }
 
 .slide {
@@ -183,7 +183,7 @@ nav button {
   margin-bottom: 0px;
   font-family: "sanchez", georgia, sans-serif;
   font-weight: bold;
-  color: #646405;
+  color: #3b6c3b;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .slide header h2 {
@@ -215,21 +215,21 @@ pre {
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
-  border: 1px solid #646405;
+  border: 1px solid #3b6c3b;
 }
 pre b {
   font-weight: bold;
-  color: #646405;
+  color: #3b6c3b;
   display: inline-block;
 }
 pre b:hover {
   transform: scale(1.2);
-  color: #646405;
+  color: #3b6c3b;
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #646405;
+  color: #3b6c3b;
   text-shadow: currentColor 0 0 1px;
 }
 
@@ -241,7 +241,7 @@ pre em {
 }
 
 .code:hover {
-  color: #646405;
+  color: #3b6c3b;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -284,7 +284,7 @@ footer {
 }
 
 a, em {
-  color: #646405;
+  color: #3b6c3b;
   text-decoration: none;
   font-style: normal;
 }
@@ -297,7 +297,7 @@ b.imp {
 .imp li:hover,
 b.imp:hover {
   transform: scale(1.2);
-  color: #646405;
+  color: #3b6c3b;
   transform-origin: left;
 }
 
@@ -417,44 +417,27 @@ dl dt {
   outline: 1px solid #ccc;
 }
 
-style[class=editme i] {
-  padding: 20px;
-  display: block;
+table.standard-table {
+  border: none;
+  border-spacing: 10px 10px;
+  border-collapse: separate;
+}
+table.standard-table th, table.standard-table td {
+  border: none;
+  padding: 3px;
+  vertical-align: top;
+  text-align: left;
+}
+table.standard-table thead, table.standard-table tr > :first-child {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+dl dt {
+  padding: 0 5px;
+}
+
+pre {
   font-size: 1.2em;
-  font-family: monospace;
-  white-space: pre;
-  border-radius: 10px;
-  border: 3px solid #aaa;
-  background-color: #dedede;
-  margin: 50px auto 20px;
-  width: 90vw;
-  font-family: "Courier New", Courier, monospace;
 }
 
-.boxmodel {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.boxmodel div {
-  border: 5px solid;
-  padding: 10px 50px;
-  text-align: center;
-}
-
-.radius pre {
-  float: left;
-  width: 70%;
-}
-
-.radius b {
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  border: 10px inset #71c6aa;
-  float: left;
-  margin-left: 10px;
-}
-
-/*# sourceMappingURL=box.css.map */
+/*# sourceMappingURL=flex.css.map */

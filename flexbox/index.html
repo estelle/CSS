@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Flexbox</title>
-   <link rel="stylesheet" href="../css/sitewide.css"/>
+   <link rel="stylesheet" href="../intro/css/flex.css"/>
    <link rel="stylesheet" href="flexbox.css"/>
    <style>.current > header {background-color: white;}</style>
    
@@ -15,64 +15,159 @@
    <div id="slides">
 
 <div class="slide divider">
-  <h1>CSS: Flexbox</h1>
+  <header><h1>CSS: Flexbox</h1></header>
+  <section class="content">
+  <p><a href="https://estelle.github.io/CSS/flexbox/">estelle.github.io/CSS/flexbox/</a></p></section>
 </div>
 
 
 <!-- divider -->
 <div class="slide divider">
-<h1>Why?</h1>
+<header><h1>Why?</h1></header>
 </div>
 
 <div class="slide object">
 <header><h1>Problem we're trying to solve</h1></header>
-<object data="files/float.html"></object>
-<a href="files/float.html" target="play" class="objectlink">↪</a>
+<object data="exercises/float_intro.html"></object>
+<a href="exercises/float_intro.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide divider">
+  <header><h1>Floats</h1></header>
+</div>
+
+
+
+<div class="slide">
+  <header><h1><code>float</code> property</h1></header>
+  <section class="content"><pre contenteditable>/* Keyword values */
+float: left;
+float: right;
+float: none;
+float: inline-start;
+float: inline-end;</pre>
+  </section>
 </div>
 
 
 <div class="slide object">
+<header><h1>Understanding floats</h1></header>
+<object data="exercises/float_boxes.html"></object>
+<a href="exercises/float_boxes.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>float features</h1></header>
+  <section class="content">
+    <h2><code>float</code> features</h2>
+    <ul>
+<li>floated to the left or right</li>
+<li>Still in the flow (v. position: absolute)</li>
+<li>Text wraps around the float. </li>
+<li>Adjacent sibling moves up.</li>
+<li>If all children are floated, parent has no height!</li>
+    </ul>
+  </section>
+</div>
+
+<div class="slide object">
+<header><h1>Understanding floats</h1></header>
+<object data="exercises/float_images.html"></object>
+<a href="exercises/float_images.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+
+
+
+<div class="slide object">
 <header><h1>Flex Box</h1></header>
-<object data="files/textflex.html"></object>
-<a href="files/textflex.html" target="play" class="objectlink">↪</a>
+<object data="exercises/intro_flex.html"></object>
+<a href="exercises/intro_flex.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide  object">
 <header><h1>Flex Box</h1></header>
-<object data="files/homepage.html"></object>
-<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+<object data="exercises/homepage.html"></object>
+<a href="exercises/homepage.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide  object">
 <header><h1>Flex Box</h1></header>
-<object data="files/homepagemobile.html"></object>
-<a href="files/homepagemobile.html" target="play" class="objectlink">↪</a>
+<object data="exercises/homepagemobile.html"></object>
+<a href="exercises/homepagemobile.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide  object">
 <header><h1>Flex Box</h1></header>
-<object data="files/magiclayout.html"></object>
-<a href="files/magiclayout.html" target="play" class="objectlink">↪</a>
+<object data="exercises/magiclayout.html"></object>
+<a href="exercises/magiclayout.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide  object">
 <header><h1>Fixed Header and Footer </h1></header>
-<object data="files/fixedfooter.html"></object>
-<a href="files/fixedfooter.html" target="play" class="objectlink">↪</a>
+<object data="exercises/fixedfooter.html"></object>
+<a href="exercises/fixedfooter.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1>Flex Box</h1></header>
-<object data="files/button.html"></object>
-<a href="files/button.html" target="play" class="objectlink">↪</a>
+<object data="exercises/button.html"></object>
+<a href="exercises/button.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <!-- divider -->
 <div class="slide divider">
-<h1>Browser Support</h1>
+<header><h1>Browser Support</h1></header>
 </div>
 
 <!-- General Browser Support -->
@@ -107,15 +202,15 @@ function loadCIU(e){
 
 <div class="slide  object">
 <header><h1>So simple...</h1></header>
-<object data="files/explain.html"></object>
-<a href="files/explain.html" target="play" class="objectlink">↪</a>
+<object data="exercises/explain.html"></object>
+<a href="exercises/explain.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide  object">
 <header><h1>Holy Grail Layout</h1></header>
-<object data="files/pagelayout.html"></object>
-<a href="files/pagelayout.html" target="play" class="objectlink">↪</a>
+<object data="exercises/pagelayout.html"></object>
+<a href="exercises/pagelayout.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -189,7 +284,7 @@ function loadCIU(e){
 
 <!-- divider -->
 <div class="slide divider">
-<h1>The Basics</h1>
+<header><h1>The Basics</h1></header>
 </div>
 
 
@@ -245,15 +340,15 @@ function loadCIU(e){
 
 <div class="slide  object">
 <header><h1><code>display</code> property</h1></header>
-<object data="files/display.html"></object>
-<a href="files/display.html" target="play" class="objectlink">↪</a>
+<object data="exercises/display.html"></object>
+<a href="exercises/display.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide  object">
 <header><h1>display: inline-flex;</h1></header>
-<object data="files/button.html"></object>
-<a href="files/button.html" target="play" class="objectlink">↪</a>
+<object data="exercises/button.html"></object>
+<a href="exercises/button.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide">
@@ -311,21 +406,21 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>flex-direction: ... </code></h1></header>
-<object data="files/direction.html"></object>
-<a href="files/direction.html" target="play" class="objectlink">↪</a>
+<object data="exercises/direction.html"></object>
+<a href="exercises/direction.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1>Flex Box</h1></header>
-<object data="files/homepage.html"></object>
-<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+<object data="exercises/homepage.html"></object>
+<a href="exercises/homepage.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide object">
 <header><h1>main-axis</h1></header>
-<object data="files/axes.html"></object>
-<a href="files/axes.html" target="play" class="objectlink">↪</a>
+<object data="exercises/axes.html"></object>
+<a href="exercises/axes.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -343,14 +438,14 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>flex-wrap: ...</code></h1></header>
-<object data="files/flexwrap.html"></object>
-<a href="files/flexwrap.html" target="play" class="objectlink">↪</a>
+<object data="exercises/flexwrap.html"></object>
+<a href="exercises/flexwrap.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide object">
 <header><h1>Flex Box></h1></header>
-<object data="files/magiclayout.html"></object>
-<a href="files/magiclayout.html" target="play" class="objectlink">↪</a>
+<object data="exercises/magiclayout.html"></object>
+<a href="exercises/magiclayout.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -364,15 +459,15 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>flex-flow: ...</code></h1></header>
-<object data="files/flexflow.html"></object>
-<a href="files/flexflow.html" target="play" class="objectlink">↪</a>
+<object data="exercises/flexflow.html"></object>
+<a href="exercises/flexflow.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1>flex-flow</h1></header>
-<object data="files/multi.html"></object>
-<a href="files/multi.html" target="play" class="objectlink">↪</a>
+<object data="exercises/multi.html"></object>
+<a href="exercises/multi.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -385,7 +480,7 @@ function loadCIU(e){
 
 <!-- divider -->
 <div class="slide divider">
-<h1>The Flex Container</h1>
+<header><h1>The Flex Container</h1></header>
 </div>
 
 
@@ -417,8 +512,8 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>justify-content</code> property</h1></header>
-<object data="files/justify.html"></object>
-<a href="files/justify.html" target="play" class="objectlink">↪</a>
+<object data="exercises/justify.html"></object>
+<a href="exercises/justify.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide">
@@ -438,14 +533,14 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>align-items</code> property</h1></header>
-<object data="files/align.html"></object>
-<a href="files/align.html" target="play" class="objectlink">↪</a>
+<object data="exercises/align.html"></object>
+<a href="exercises/align.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide object">
 <header><h1>Impact of <code>visibility: collapse</code></h1></header>
-<object data="files/collapse.html"></object>
-<a href="files/collapse.html" target="play" class="objectlink">↪</a>
+<object data="exercises/collapse.html"></object>
+<a href="exercises/collapse.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -467,14 +562,14 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>align-content</code> property</h1></header>
-<object data="files/aligncontent.html"></object>
-<a href="files/aligncontent.html" target="play" class="objectlink">↪</a>
+<object data="exercises/aligncontent.html"></object>
+<a href="exercises/aligncontent.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <!-- divider -->
 <div class="slide divider">
-<h1>Flex Items</h1>
+<header><h1>Flex Items</h1></header>
 </div>
 
 
@@ -505,14 +600,14 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>align-self</code> property</h1></header>
-<object data="files/alignself.html"></object>
-<a href="files/alignself.html" target="play" class="objectlink">↪</a>
+<object data="exercises/alignself.html"></object>
+<a href="exercises/alignself.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide object">
 <header><h1><code>align-self</code> property</h1></header>
-<object data="files/alignself2.html"></object>
-<a href="files/alignself2.html" target="play" class="objectlink">↪</a>
+<object data="exercises/alignself2.html"></object>
+<a href="exercises/alignself2.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide">
@@ -528,21 +623,21 @@ function loadCIU(e){
 
 <div class="slide object">
 <header><h1><code>order: ...</code></h1></header>
-<object data="files/order.html"></object>
-<a href="files/order.html" target="play" class="objectlink">↪</a>
+<object data="exercises/order.html"></object>
+<a href="exercises/order.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1>Source Order</h1></header>
-<object data="files/homepage.html"></object>
-<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+<object data="exercises/homepage.html"></object>
+<a href="exercises/homepage.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide object">
 <header><h1>&lt;nav> comes after &lt;main></h1></header>
-<object data="files/homepagemobile2.html"></object>
-<a href="files/homepagemobile.html" target="play" class="objectlink">↪</a>
+<object data="exercises/homepagemobile2.html"></object>
+<a href="exercises/homepagemobile.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -561,7 +656,7 @@ function loadCIU(e){
 
 <!-- divider -->
 <div class="slide divider">
-<h1>Flexibility</h1>
+<header><h1>Flexibility</h1></header>
 </div>
 
 
@@ -587,15 +682,15 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 
 <div class="slide object">
 <header><h1><code>flex</code> shorthand property</h1></header>
-<object data="files/flex.html"></object>
-<a href="files/flex.html" target="play" class="objectlink">↪</a>
+<object data="exercises/flex.html"></object>
+<a href="exercises/flex.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1><code>flex</code> relative numbers</h1></header>
-<object data="files/flex3.html"></object>
-<a href="files/flex3.html" target="play" class="objectlink">↪</a>
+<object data="exercises/flex3.html"></object>
+<a href="exercises/flex3.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide">
@@ -605,8 +700,8 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 
 <div class="slide object">
 <header><h1><code>flex-basis</code> </h1></header>
-<object data="files/basis.html"></object>
-<a href="files/basis.html" target="play" class="objectlink">↪</a>
+<object data="exercises/basis.html"></object>
+<a href="exercises/basis.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -614,15 +709,15 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 
 <div class="slide object">
 <header><h1>Flex Box</h1></header>
-<object data="files/finalflex.html"></object>
-<a href="files/finalflex.html" target="play" class="objectlink">↪</a>
+<object data="exercises/finalflex.html"></object>
+<a href="exercises/finalflex.html" target="play" class="objectlink">↪</a>
 </div>
 
 
 <div class="slide object">
 <header><h1>Flex Box</h1></header>
-<object data="files/notmagic.html"></object>
-<a href="files/notmagic.html" target="play" class="objectlink">↪</a>
+<object data="exercises/notmagic.html"></object>
+<a href="exercises/notmagic.html" target="play" class="objectlink">↪</a>
 </div>
 
 <div class="slide divider">
@@ -666,11 +761,11 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 </div>
   </div>
 
-   <header>
+<header>
     <nav>
         <ul>
-            <li class="button cancel" id="back">Back</li>
-            <li class="button done" id="next">Next</li>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
         </ul>
     </nav>
 </header>

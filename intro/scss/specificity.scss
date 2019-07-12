@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+$font: 'SanchezSlab Semibold', Georgia, serif;
+$splashcolor: #f222b5;
+$text: #333333;
+$textsecondary: #4d4d4d;
+$invertedtext: #ffffff;
+$header_bg: #ffffff;
+$light_bg: #f4f4f4;
+$dark_bg: #410357;
+$colorpop: #f222b5;
+
+@import "presentation";
+@import "deck_functionality";
+@import "buttons";
+@import "slide";
+@import "heading";
+@import "content";
+@import "print";
+@import "object";
+@import "columns";
