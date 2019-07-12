@@ -55,17 +55,26 @@ dt a[href*="mozilla"] {
 <div class="slide intro">
  <header><h1>Media Queries</h1></header>
  <section class="content">
+  <ul><li>Media Query Syntax</li>
+<li>Display, Color &amp; Interaction features</li> 
+   <li>Accessibility &amp; VR Features</li> 
+   <li>Exercises</li>
+   <li>Use Cases</li>
+   <li>viewport</li>
+   <li>Mobile &amp; Touch</li>
+   <li>@supports</li></ul>
+<p><a href="https://estelle.github.io/CSS/media/">estelle.github.io/CSS/media/</a></p>
  </section>
 </div>
 
 
 <div class="slide">
-  <header><h1>This section:</h1></header>
+  <header><h1>General idea:</h1></header>
     <section class="content">
-<h1>1. Media Type &amp; Screen Size <br/>
-    2. Screen Resolution<br/>
-    3. <s>Device Capability</s><br/>
-    4. Browser Capability</h1>
+<ol><li>Media Type &amp; Screen Size</li>
+    <li>Screen Resolution</li>
+    <li>Device Capability</li>
+    <li>Browser Capability</li>
   </section>
 </div>
 
@@ -179,6 +188,15 @@ dt a[href*="mozilla"] {
 </div>
 
 
+
+<!--  -->
+<div class="slide divider">
+ <header><h1>Media Query Syntax</h1></header>
+ <section class="content">
+ </section>
+</div>
+
+
 <!-- media queries: tidbits -->
 <div class="slide">
   <header><h1>Syntax: @media / media= </h1></header>
@@ -256,6 +274,22 @@ dt a[href*="mozilla"] {
 
 
 
+
+
+<!-- media queries: tidbits -->
+<div class="slide">
+  <header><h1>Syntax: media condition</h1></header>
+    <section class="content">
+<img src="images/media.svg" style="width: 80vw"/>
+<p>In parenthesis</p>
+     <pre contenteditable>media="screen and <b>(max-width: 600px)</b>"</pre>
+     <pre contenteditable>media="print and <b>(orientation: landscape)</b>"</pre>
+     <pre contenteditable>@media screen and <b>(prefers-reduced-motion: reduce)</b> {...}</pre>
+     <pre contenteditable>@media tty and <b>(grid)</b> {...}</pre>
+ </section>
+</div>
+
+
 <!-- media queries: v 3 -->
 <div class="slide normal">
   <header><h1>media query condition properties</h1></header>
@@ -298,9 +332,12 @@ dt a[href*="mozilla"] {
 </div>
 
 
-
-
-
+<!--  -->
+<div class="slide intro">
+ <header><h1>Viewport, Page Dimensions, & Display Quality</h1></header>
+ <section class="content">
+ </section>
+</div>
 
 <!-- new @media features -->
 <div class="slide">
@@ -419,9 +456,15 @@ dt a[href*="mozilla"] {
   <a href="exercises/05_orientation.html" class="objectlink" target="play">Play</a>
  </div>
 
+
+
+<div class="slide divider">
+  <header><h1>Display, Color &amp; Interaction features</h1></header>
+</div>
+
 <!-- new @media features -->
 <div class="slide">
-  <header><h1>Media Features</h1></header>
+  <header><h1>Features</h1></header>
   <section class="content">
 <dl>
   <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer"><code>pointer</code></a></dt>
@@ -499,7 +542,7 @@ dt a[href*="mozilla"] {
 
 <!-- new @media features -->
 <div class="slide">
-  <header><h1>Media Features</h1></header>
+  <header><h1>Additional Media Features</h1></header>
   <section class="content">
 <dl>
   <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut"><code>color-gamut</code></a></dt><dd>Approx. range of supported colors. <code>srgb | p3 | rec2020</code> (Ch,Op,Sf)</dd>
@@ -574,6 +617,12 @@ dt a[href*="mozilla"] {
 
 
 
+<div class="slide divider">
+  <header><h1>Accessibility &amp; VR Features</h1></header>
+</div>
+
+
+
 <!-- new @media features -->
 <div class="slide">
   <header><h1>Upcoming Media Features</h1></header>
@@ -619,9 +668,18 @@ dt a[href*="mozilla"] {
 
 
 
+<div class="slide divider">
+  <header><h1>Exercises</h1></header>
+</div>
+
+
+
+
 
 
 <div class="slide object">
+
+  <header><h1>Open in new window</h1></header>
   <object data="exercises/mediaqueries.html"></object>
   <a href="exercises/mediaqueries.html" class="objectlink" target="play">Play</a>
  </div>
@@ -786,6 +844,15 @@ dt a[href*="mozilla"] {
 </div>
 
 
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Mobile & Touch</h1></header>
+  <section class="content">
+  </section>
+</div>
 <!-- mobile specific CSS -->
 <div class="slide">
   <header><h1>Mobile Specific CSS</h1></header>
@@ -875,21 +942,6 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
   <a href="exercises/supports.html" class="objectlink" target="play">Play</a>
  </div>
 
-
-<!--NEXT-->
-<div class="slide intro">
-     <header><h1>Best Practices</h1></header>
-     <section class="content">
-    <h1><a href="../sass/">Go ➹</a></h1></section>
-</div>
-
-
-<!--NEXT-->
-<div class="slide intro">
-     <header><h1>Debugging</h1></header>
-     <section class="content">
-    <h1><a href="../debugging/">Go ➹</a></h1></section>
-</div>
 
 
 <!--NEXT-->
