@@ -345,11 +345,12 @@ section.content {
 .objectlink {
   position: absolute;
   top: 0;
-  right: 0;
-  color: white;
-  background-color: #000;
+  right: 5em;
+  color: #ffffff;
+  background-color: #646405;
   padding: 3px 5px;
-  border: none;
+  border: 3px solid;
+  border-radius: 50%;
 }
 
 .slide.object {

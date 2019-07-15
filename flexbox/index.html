@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>CSS: Flexbox</title>
    <link rel="stylesheet" href="../intro/css/flex.css"/>
-   <link rel="stylesheet" href="flexbox.css"/>
    <style>.current > header {background-color: white;}</style>
    
 
@@ -19,7 +18,7 @@
   <section class="content">
     <ul>
       <li>Overview</li>
-      <li><code>float</code> property</li>
+      <li><code>float</code> property</li></ul>
   <p><a href="https://estelle.github.io/CSS/flexbox/">estelle.github.io/CSS/flexbox/</a></p></section>
 </div>
 
@@ -84,49 +83,20 @@ float: inline-end;</pre>
 </div>
 
 
-<div class="slide">
-  <header><h1></h1></header>
+
+
+<div class="slide divider">
+  <header><h1>Flex "What" and "Why"</h1></header>
   <section class="content">
   </section>
 </div>
 
 
-<div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
-  </section>
+<div class="slide object">
+<header><h1>Problem we're trying to solve</h1></header>
+<object data="exercises/float_intro.html"></object>
+<a href="exercises/float_intro.html" target="play" class="objectlink">↪</a>
 </div>
-
-
-<div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
-  </section>
-</div>
-
-
-<div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
-  </section>
-</div>
-
-
-<div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
-  </section>
-</div>
-
-
-<div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
-  </section>
-</div>
-
-
-
 
 
 <div class="slide object">
@@ -177,7 +147,8 @@ float: inline-end;</pre>
 <div class="slide object">
   <header><h1>Browser support <button onclick="loadCIU(this)">load CANIUSE.com</button></h1></header>
   
-  <object id="caniuse"></object>
+  <object id="caniuse">
+  <img src="images/caniuse.png" alt="screen shot of Can I Use showing Flexbox is supported in all browsers since IE10" style="width: 100%; margin-top: 100px" />    </object>
 <a href="http://caniuse.com/#search=flexbox" target="play" class="objectlink">↪</a>
 <script>
 // required because autofocus in caniuse breaks the presentation
@@ -204,7 +175,7 @@ function loadCIU(e){
 
 
 <div class="slide  object">
-<header><h1>So simple...</h1></header>
+<header><h1>Much simpler...</h1></header>
 <object data="exercises/explain.html"></object>
 <a href="exercises/explain.html" target="play" class="objectlink">↪</a>
 </div>
@@ -281,6 +252,8 @@ function loadCIU(e){
 
           <dt>order</dt>
           <dd>Integer. Controls order of flex item within flex container</dd>
+          <dt>gap</dt>
+          <dd><code>column-gap</code> and <code>row-gap</code>. minimum space between adjacent flex items and lines. </dd>
         </dl>
     </section>
 </div>
@@ -305,6 +278,118 @@ function loadCIU(e){
 
 
 <div class="slide">
+  <header><h1>All the <code>display</code> properties</h1></header>
+  <section class="content">
+  <pre contenteditable>/* &lt;display-outside> values */
+display: block;
+display: inline;
+display: run-in;
+
+/* &lt;display-inside> values */
+display: flow;
+display: flow-root;
+display: table;
+display: flex;
+display: grid;
+display: ruby;
+
+/* &lt;display-outside> plus &lt;display-inside> values */
+display: block flow;
+display: inline table;
+display: flex run-in;
+
+/* &lt;display-listitem> values */
+display: list-item;
+display: list-item block;
+display: list-item inline;
+display: list-item flow;
+display: list-item flow-root;
+display: list-item block flow;
+display: list-item block flow-root;
+display: flow list-item block;
+
+/* &lt;display-internal> values */
+display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;
+
+/* &lt;display-box> values */
+display: contents;
+display: none;
+
+/* &lt;display-legacy> values */
+display: inline-block;
+display: inline-table;
+display: inline-flex;
+display: inline-grid;
+
+/* Global values */
+display: inherit;
+display: initial;
+display: unset;
+</pre>
+  </section>
+</div>
+  
+  
+<div class="slide">
+  <header><h1>Today's <code>display</code> properties</h1></header>
+  <section class="content">
+  <pre contenteditable>
+display: block;
+display: inline;
+display: inline-block;
+display: none;
+
+<b>display: flex;
+display: inline-flex;</b>
+
+display: grid;
+display: inline-grid;
+
+display: run-in;
+display: list-item;
+
+display: flow;
+display: flow-root;
+display: contents;
+
+display: table;
+display: inline-table;
+display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;
+
+display: ruby;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;
+
+/* Global values */
+display: inherit;
+display: initial;
+display: unset;</pre>
+  </section>
+</div>
+
+
+<!--
+<div class="slide">
   <header><h1><code>display</code> property</h1></header>
     <section class="content">
       <p><code style="color: inherit">
@@ -312,7 +397,7 @@ function loadCIU(e){
      </p>
 
     </section>
-</div>
+</div>-->
 
 
 
@@ -320,12 +405,12 @@ function loadCIU(e){
   <header><h1><code>display</code> property</h1></header>
     <section class="content">
       <p><code style="color: inherit">
-          inline | block | list-item | inline-block | <strong>flex | inline-flex</strong> | grid | inline-grid | table | inline-table |  ruby | none </code>
+          inline | block | list-item | inline-block | <b>flex | inline-flex</b> | grid | inline-grid | table | inline-table |  ruby | none </code>
      </p>
 
-      <pre><strong>display: flex;</strong></pre>
+      <pre>display: <b>flex</b>;</pre>
       <p>block-level flex container box</p>
-      <pre><strong>display: inline-flex;</strong></pre>
+      <pre>display: <b>inline-flex</b>;</pre>
       <p>inline-level flex container box</p>
 
     </section>
@@ -333,12 +418,11 @@ function loadCIU(e){
 
 
 
-<div class="slide">
-  <header><h1>Is Flexbox supported in your browser?</h1></header>
-  <figure><iframe height='550' scrolling='no' src='http://codepen.io/estelle/embed/KCzfH/' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; height: 80vh'>See the Pen <a href='http://codepen.io/estelle/pen/KCzfH/'>Browser @support for Flexbox</a> by Estelle Weyl (<a href='http://codepen.io/estelle'>@estelle</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe></figure>
-  <a href="http://codepen.io/estelle/pen/KCzfH/" class="objectlink" target="_new">Visit Site</a>
- </div>
+<div class="slide  object">
+<header><h1>Is Flexbox supported in your browser?</h1></header>
+<object data="exercises/supportsflex.html"></object>
+<a href="exercises/supportsflex.html" target="play" class="objectlink">↪</a>
+</div>
 
 
 <div class="slide  object">

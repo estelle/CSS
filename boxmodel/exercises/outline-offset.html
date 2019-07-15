@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>outline-style</title>
+<link rel="stylesheet" href="../../css/editme.css">
+<style> 
+	ul {display: flex; flex-flow: row wrap;}
+	li {padding: 40px; list-style-type: none;}
+	div {text-align: center;}
+</style>
+<style contenteditable class="editme">div {
+	background: green;
+    height: 100px; width: 100px;
+    border: 0px yellow;
+    outline: 20px green; 
+    outline-offset: -15px;
+}</style>
+</head>
+
+<body>
+	<ul>
+<li><div style="border-style: none; outline-style: none;">none</div></li>
+<li><div style="border-style: hidden; outline-style: hidden">hidden</div></li>
+<li><div style="border-style: dotted; outline-style: dotted">dotted</div></li>
+<li><div style="border-style: dashed; outline-style: dashed">dashed</div></li>
+<li><div style="border-style: solid; outline-style: solid">solid</div></li>
+<li><div style="border-style: double; outline-style: double">double</div></li>
+<li><div style="border-style: groove; outline-style: groove">groove</div></li>
+<li><div style="border-style: ridge; outline-style: ridge">ridge</div></li>
+<li><div style="border-style: inset; outline-style: inset">inset</div></li>
+<li><div style="border-style: outset; outline-style: outset">outset</div></li></ul>
+</body>
+</html>
+
