@@ -126,7 +126,7 @@ float: inline-end;</pre>
 
 <div class="slide  object">
 <header><h1>Fixed Header and Footer </h1></header>
-<object data="exercises/fixedfooter.html"></object>
+<object data="exercises/fixedfooter.html" style="height: 80vh"></object>
 <a href="exercises/fixedfooter.html" target="play" class="objectlink">↪</a>
 </div>
 
@@ -274,6 +274,12 @@ function loadCIU(e){
   <li>Set <code>flex-wrap</code> to control wrap direction</li>
 </ol>
     </section>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<header><h1>The <code>display</code> property</h1></header>
 </div>
 
 
@@ -434,9 +440,16 @@ display: unset;</pre>
 
 <div class="slide  object">
 <header><h1>display: inline-flex;</h1></header>
-<object data="exercises/button.html"></object>
-<a href="exercises/button.html" target="play" class="objectlink">↪</a>
+<object data="exercises/button2.html"></object>
+<a href="exercises/button2.html" target="play" class="objectlink">↪</a>
 </div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<header><h1>Flex impacts</h1></header>
+</div>
+
 
 <div class="slide">
 <header><h1>What is a flex item</h1></header>
@@ -478,6 +491,13 @@ display: unset;</pre>
 </div>
 
 
+<!-- divider -->
+<div class="slide divider">
+  <header><h1><code>flex-direction</code> property</h1></header>
+</div>
+
+
+
 <div class="slide">
   <header><h1><code>flex-direction</code> property</h1></header>
     <section class="content">
@@ -498,11 +518,26 @@ display: unset;</pre>
 </div>
 
 
+
 <div class="slide object">
-<header><h1>Flex Box</h1></header>
+<header><h1><code>flex-direction: ... </code></h1></header>
+<object data="exercises/direction_hebrew.html"></object>
+<a href="exercises/direction.html_hebrew.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>row</code> &amp; <code>column</code></h1></header>
 <object data="exercises/homepage.html"></object>
 <a href="exercises/homepage.html" target="play" class="objectlink">↪</a>
 </div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<header><h1>understanding axes</h1></header>
+</div>
+
 
 <div class="slide object">
 <header><h1>main-axis</h1></header>
@@ -510,6 +545,11 @@ display: unset;</pre>
 <a href="exercises/axes.html" target="play" class="objectlink">↪</a>
 </div>
 
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1><code>flex-wrap</code> property</h1></header>
+</div>
 
 <div class="slide">
   <header><h1><code>flex-wrap</code> property</h1></header>
@@ -530,13 +570,18 @@ display: unset;</pre>
 </div>
 
 <div class="slide object">
-<header><h1>Flex Box></h1></header>
+<header><h1>Flex Box</h1></header>
 <object data="exercises/magiclayout.html"></object>
 <a href="exercises/magiclayout.html" target="play" class="objectlink">↪</a>
 </div>
 
 
-<div class="slide object">
+<!-- divider -->
+<div class="slide divider">
+  <header><h1><code>flex-flow</code> shorthand</h1></header>
+</div>
+
+<div class="slide">
   <header><h1><code>flex-flow</code> property</h1></header>
     <section class="content">
       <p>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code></p>
@@ -566,33 +611,98 @@ display: unset;</pre>
 </div>
 
 <!-- divider -->
-<div class="slide divider">
+<div class="slide intro">
 <header><h1>The Flex Container</h1></header>
 </div>
 
 
-<div class="slide intro">
+<div class="slide divider">
   <header>
-    <h1>Controlling Flex Items</h1>
+    <h1>Controlling Flex Items<br/><span style="font-size: smaller">from the flex container</span></h1>
   </header>
     <section class="content">
-    From the flex container
+    
     </section>
 </div>
+
+
+
+<div class="slide">
+  <header><h1><code>align-items</code> property</h1></header>
+    <section class="content">
+      <p>aligns flex items along the cross axis</p>
+      <pre contenteditable>/* Basic keywords */ 
+align-items: normal; 
+align-items: stretch; 
+
+/* Positional alignment */ 
+/* align-items does not take left and right values */
+align-items: center; /* Pack items around the center */ 
+align-items: start; /* Pack items from the start */ 
+align-items: end; /* Pack items from the end */ 
+align-items: flex-start; /* Pack flex items from the start */ 
+align-items: flex-end; /* Pack flex items from the end */ 
+align-items: self-start; 
+align-items: self-end; 
+
+/* Baseline alignment */
+align-items: baseline; 
+align-items: first baseline; 
+align-items: last baseline; /* Overflow alignment (for positional alignment only) */ 
+align-items: safe center; 
+align-items: unsafe center; 
+
+/* Global values */
+align-items: inherit; 
+align-items: initial; 
+align-items: unset;</pre>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>align-items</code> property</h1></header>
+<object data="exercises/align.html"></object>
+<a href="exercises/align.html" target="play" class="objectlink">↪</a>
+</div>
+
+
 
 
 <div class="slide">
   <header><h1><code>justify-content</code> property</h1></header>
     <section class="content">
-      <ul>
-        <li><code><strong>flex-start</strong></code></li> 
-        <li><code>flex-end</code></li> 
-        <li><code>center</code></li>
-        <li><code>space-between</code></li>
-        <li><code>space-around</code></li>
-        <li><code>space-evenly</code></li>
-      </ul>
       <p>aligns flex items along the main axis</p>
+      <pre contenteditable>/* Basic keywords */
+justify-items: auto;       /* Future: legacy */
+justify-items: stretch;
+justify-items: center;     /* Pack items around the center */
+justify-items: start;      /* Pack items from the start */
+justify-items: end;        /* Pack items from the end */
+justify-items: flex-start; /* Pack flex items from the start */
+justify-items: flex-end;   /* Pack flex items from the end */
+justify-items: self-start;
+justify-items: self-end;
+justify-items: baseline;
+
+justify-items: first baseline;
+justify-items: last baseline;
+
+justify-items: right;
+justify-items: left;
+justify-items: legacy right;
+justify-items: legacy left;
+justify-items: legacy center;
+justify-items: safe center;
+justify-items: unsafe center;
+
+/* Global values */
+justify-items: inherit;
+justify-items: initial;
+justify-items: unset;
+
+/* justify item value ignored in flex */
+justify-items: normal;</pre>
     </section>
 </div>
 
@@ -603,9 +713,17 @@ display: unset;</pre>
 <a href="exercises/justify.html" target="play" class="objectlink">↪</a>
 </div>
 
+
+
+
 <div class="slide">
-  <header><h1><code>align-items</code> property</h1></header>
+  <header><h1><code>place-items</code> property</h1></header>
     <section class="content">
+      <h2>Shorthand for <code>align-items</code> and <code>justify-items</code></h2>
+      <ul>
+        <li><code>place-items: [align-items] [justify-items]?;</code></li>
+        <li>If only one value, the <code>align-items</code> value will be used for both</li>
+      </ul>
       <ul>
         <li><code>flex-start</code></li>
         <li><code>flex-end</code></li>
@@ -617,12 +735,6 @@ display: unset;</pre>
     </section>
 </div>
 
-
-<div class="slide object">
-<header><h1><code>align-items</code> property</h1></header>
-<object data="exercises/align.html"></object>
-<a href="exercises/align.html" target="play" class="objectlink">↪</a>
-</div>
 
 <div class="slide object">
 <header><h1>Impact of <code>visibility: collapse</code></h1></header>

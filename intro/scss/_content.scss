@@ -21,8 +21,13 @@ footer {
 }
 a, em {
   color: $splashcolor;
-  text-decoration: none;
-  font-style:normal;
+  font-style: normal;
+}
+a {
+  text-decoration: underline wavy lighten($splashcolor, 30%);
+  &:hover, &:focus {
+    text-decoration: underline wavy;
+  }
 }
 .imp li,
 b.imp {

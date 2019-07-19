@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <link rel="stylesheet" href="../../css/editme.css"/>
+<style style="display: none;">
+div {border: 3px solid #3b6c3b; padding: 3px; }
+div div {border-color: #333;}
+div > div {border-style: dotted; font-size: 2em; color: green; font-family: helvetica, arial; text-align: center; line-height: 2}
+div:nth-of-type(2){border-style: dashed;} 
+small {opacity: 0.3}
+.a {background-color: #fff;}
+.b {background-color: #ccc;}
+.c {background-color: #999;}
+</style>
+
+<style contenteditable class="editme">body > div {
+  display: flex;
+  flex-direction: column-reverse;
+  writing-mode: horizontal-tb;
+}
+div >  div {
+  flex: 0.2;
+}</style>
+<title>Flexbox</title>
+</head>
+
+<body><br/>
+	<div id="container">
+		<div class="box a">A</div>
+		<div class="box b">B</div>
+		<div class="box c">C</div>
+	</div>
+	<small>writing-mode: lr, lr-tb, rl, rl-tb, tb, tb-rl, horizontal-tb, vertical-lr, and vertical-rl</small>
+</body>
+</html>
+

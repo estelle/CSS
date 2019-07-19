@@ -285,8 +285,14 @@ footer {
 
 a, em {
   color: #f222b5;
-  text-decoration: none;
   font-style: normal;
+}
+
+a {
+  text-decoration: underline wavy #fbb3e5;
+}
+a:hover, a:focus {
+  text-decoration: underline wavy;
 }
 
 .imp li,

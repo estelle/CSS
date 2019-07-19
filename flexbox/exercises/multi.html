@@ -2,7 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Flex Items: flex-wrap</title>  <style>
+  <title>Flex Items: flex-wrap</title>  
+
+<link rel="stylesheet" href="../../css/editme.css"/>
+<style>
+head {display: none;}
 
     article {width: 500px;}
 
@@ -13,26 +17,34 @@
       max-width: 5em;
     }
     section { background-color: rgba(255,255,255,0.6);}
-div {background-color: rgba(0,0,0,0.1); font-family: monospace;}div {
+div {
+  background-color: rgba(0,0,0,0.1); 
+  font-family: monospace;
   border: 1px solid;
   margin: 10px;
   padding: 0.5em 1em;
-
+}
 body {
   font-size: 16px;
-  text-align: center;
 }
-p {margin-top: 0;}
-}section {
+p {
+  margin-top: 0;
+}
+section {
   display: flex;
-  border: 1px dashed;
+  border: 1px dashed black;
   padding: 10px;
 }
   </style>
 
-<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body><br/><style contenteditable class="editme">section {
+  flex-flow: row nowrap;
+  max-height: 300px;
+}
+div {
+  max-width: 100px;
+}</style><br/>
 <article>
 <section>
   <div>A</div>
@@ -47,13 +59,6 @@ p {margin-top: 0;}
   <div>JJJJJ<br>JJJJJ</div>
 </section>
 </article>
-    <style contenteditable>section {
-  flex-flow: row nowrap;
-  max-height: 300px;
-}
-div {
-  max-width: 100px;
-}
-</style>
+    
 </body>
 </html>

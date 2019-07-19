@@ -38,7 +38,8 @@
       <h1>CSS Selectors</h1>
      </header>
      <section>
-      <ul>
+      <ul style="height: 70vh; overflow: scroll;">
+        <li>Overview</li>
         <li>Basic Selectors</li>
 <li>Specifications</li>
 <li>Selectors API</li>
@@ -473,12 +474,12 @@ function makeActive(slctr){
         <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
         <li><code contenteditable>0-0-1</code>: Element Selector</li></ul>
 
- <p>The * selector, or global selector, has no value.</p>
+ <p>The * selector, or global selector, has no weight.</p>
  <pre contenteditable>* {} 0-0-0 </pre>
 
-<p>Combinators, like ~, >, and + have no value</p>
-<pre contenteditable>ul li {} 0-0-2
-ul > li {} 0-0-2</pre>
+<p>Combinators, like ~, >, and + has no weight</p>
+<pre contenteditable>ul > li {} 0-0-2
+ul li {} 0-0-2</pre>
 
      </section>
 </div>
@@ -684,7 +685,7 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
     <pre contenteditable>input[type="ChEcKbOx"]</pre>
 
 <p>Relevant if attribute value is case senstive (Strings, not keywords)</p>
-    <p><a href="http://codepen.io/estelle/pen/lEGev" target="_play">CodePen test page</a></p>
+    <p><a href="https://codepen.io/estelle/pen/lEGev" target="_play">CodePen test page</a></p>
   </section>
 </div>
 
@@ -701,16 +702,16 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
     <pre contenteditable>a[target="ABC" s ]</pre>
     <pre contenteditable>a[target="abc" s ]</pre>
 
-<p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a></p>
+<p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a>.</p><small>case sensitivity in CSS is not exactly the same as in HTML</small>
   </section>
 </div>
 
 
 
  <div class="object slide">
-  <object data="http://codepen.io/estelle/pen/lEGev"></object>
+  <object data="https://codepen.io/estelle/pen/lEGev"></object>
      <header><h1>Case Insensitivity</h1></header>
-  <a href="http://codepen.io/estelle/pen/lEGev" target="play" class="objectlink">Codepen</a>
+  <a href="https://codepen.io/estelle/pen/lEGev" target="play" class="objectlink">Codepen</a>
 </div>
 
 

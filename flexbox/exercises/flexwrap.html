@@ -2,8 +2,6 @@
 <html>
 <head>
 <style>
-[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
-html {min-height:100%;}
 div {border: 3px solid #3b6c3b; padding: 3px; line-height: 2rem; min-height: 2rem;}
 div div {border-color: #333;}
 div>div {border-style: dotted;}
@@ -13,7 +11,7 @@ div:nth-of-type(2){border-style: dashed;}
 .c {background-color: #999;}
 </style>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../css/editme.css"/>
 
 <title>Flexbox</title>
 </head>
@@ -45,7 +43,7 @@ div:nth-of-type(2){border-style: dashed;}
     <div class="box b">Westward</div>
     <div class="box c">Xylophone</div>
 	</div>
-    <style contenteditable>body > div {
+    <style contenteditable class="editme">body > div {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
