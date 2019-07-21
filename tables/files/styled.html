@@ -6,22 +6,69 @@
 	<link rel="stylesheet" href="../files.css">
 <style contenteditable id="editme" style="height: 40vh; overflow: scroll">table {
   border-collapse: collapse; 
-  empty-cells: show;
   font-family: helvetica;
   caption-side: top;
   text-transform: capitalize;
-  background-color: yellow;
+  table-layout: fixed;
 }
-col {
-  width: 200px;
+caption {
+  text-align: left; 
+  position: sticky; 
+  top: 0; left: 0;
+  padding: 10px;
+  background-color: white;
+  z-index: 10;
 }
 td, th {
-  border:  1px solid;
   padding: 10px;
-  background: white;
   box-sizing: border-box;
-  vertical-align: top;
+  text-align: left;
 }
+
+th {
+  outline: solid 1px #aaa;
+}
+
+tr:nth-of-type(even) td {
+  background-color: #efefef;
+}
+
+section {
+  position: relative;
+  max-height:  300px;
+  overflow: scroll;
+}
+
+thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(1em + 24px);
+  z-index: 2;
+  background: #dedede;
+}
+
+thead th:first-child{
+  left: 0;
+  z-index: 3;
+}
+
+tr > :first-child {
+  position: -webkit-sticky;
+  position: sticky; 
+  background: #dedede;
+  left: 0; 
+} 
+tbody {
+  margin-top: 1em;
+}
+col.name { width: 12em;}
+col.number {}
+col.club {12em;}
+col.position {}
+col.games {}
+col.goals {border: solid}
+col.assists {}
+
 td:nth-child(2),
 td:nth-child(5),
 td:nth-child(6),
@@ -29,32 +76,7 @@ td:nth-child(7) {
   text-align: right;
   text-transform: uppercase;
 }
-thead th {
-  background: yellow;
-}
-section {
-  position: relative;
-  max-height: 40vh;
-  overflow: scroll;
-  width: 500px;
-  border: 1px solid;
-}
-caption {
-  text-transform: uppercase;
-  background-color: inherit;
-  z-index: 3;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: 1em;
-}
-thead th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 1em;
-  z-index: 2;
-  background: yellow;
-}</style>
+</style>
 <title>Sticky Header</title>
 </head>
 

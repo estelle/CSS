@@ -6,55 +6,75 @@
 	<link rel="stylesheet" href="../files.css">
 <style contenteditable id="editme" style="height: 40vh; overflow: scroll">table {
   border-collapse: collapse; 
-  empty-cells: show;
   font-family: helvetica;
   caption-side: top;
   text-transform: capitalize;
-  background-color: yellow;
 }
-col {
-  width: 200px;
+caption {
+  text-align: left; position: fixed; left: 0; top:0
 }
-td, th {
-  border:  1px solid;
-  padding: 10px;
-  background: white;
-  box-sizing: border-box;
-  vertical-align: top;
+td, th {border:  1px solid;
+      padding: 10px;
+      min-width: 200px;
+      background: white;
+      box-sizing: border-box;
+      text-align: left;
 }
-td:nth-child(2),
-td:nth-child(5),
-td:nth-child(6),
-td:nth-child(7) {
-  text-align: right;
-  text-transform: uppercase;
-}
-thead th {
-  background: yellow;
+
+th {
+  box-shadow: 0 0 0 1px black;
 }
 section {
   position: relative;
-  max-height: 40vh;
-  overflow: scroll;
+  max-height:  300px;
   width: 500px;
-  border: 1px solid;
+  overflow: scroll;
 }
-caption {
-  text-transform: uppercase;
-  background-color: inherit;
-  z-index: 3;
+
+thead th, 
+tfoot th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 1em;
+  z-index: 2;
+  background: hsl(20, 50%, 70%);
 }
-thead th {
+
+thead th:first-child,
+tfoot th:first-child {
+  left: 0;
+  z-index: 3;
+}
+
+tfoot {
   position: -webkit-sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+tfoot th {
   position: sticky;
-  top: 1em;
+  bottom: 0;
   z-index: 2;
   background: yellow;
-}</style>
+}
+
+tfoot td:first-child {
+  z-index: 3;
+}
+
+tbody {
+  overflow: scroll;
+  height: 200px;
+}
+
+tr > :first-child {
+  position: -webkit-sticky;
+  position: sticky; 
+  background: pink;
+  left: 0; 
+}
+</style>
 <title>Sticky Header</title>
 </head>
 

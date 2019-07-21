@@ -379,6 +379,13 @@ visibility: /* collapse value only */</pre>
   <object data="files/table-layout.html"></object>
 </div>
 
+
+<!-- Style a Table -->
+<div class="slide object">
+  <header><h1>Styling Tables for legibility</h1></header>
+    <object data="files/styled.html"></object>
+</div>
+
 <!-- Style a Table -->
 <div class="slide">
   <header><h1><a href="files/play.html">Try it out!</a></h1></header>
@@ -423,27 +430,28 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
 </div>
 
 <!-- Style a Table -->
-<div class="slide">
+<div class="slide object">
   <header><h1>Static Left Column</h1></header>
-  <section class="content">
-    <pre></pre>
-  </section>
+  <object data="files/leftcolsticky.html"></object>
 </div>
 
 
 <!-- Style a Table -->
-<div class="slide">
-  <header><h1>Static Footer</h1></header>
-  <section class="content">
-    <pre></pre>
-  </section>
+<div class="slide object">
+  <header><h1>Static header, footer &amp; left column</h1></header>
+    <object data="files/fullsticky.html"></object>
 </div>
 
 <!-- Style a Table -->
 <div class="slide">
   <header><h1>Accessibility</h1></header>
   <section class="content">
-    <pre></pre>
+    <ul>
+      <li>Use proportional rather than absolute sizing</li>
+      <li><code>display:</code> other than <code>table</code> removes the table semantics</li>
+      <li>if you do convert to <code>grid</code>, use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role" target="mdn"><code>aria-role</code>s</a>. </li>
+      <li>If table maintains selection state, has two-dimensional navigation, or allows cell rearrangement use grid or treegrid roles instead.</li>
+      </ul> 
   </section>
 </div>
 
@@ -453,18 +461,16 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
 <div class="slide">
   <header><h1>On Mobile</h1></header>
   <section class="content">
-    <pre></pre>
+    <ul>
+      <li>Scroll</li>
+      <li>Fix header and left column, enabling scrolling</li>
+      <li>Linearize</li>
+      <li>hide some columns / allow user selection</li>
+      <li>Shrink (<code>col.club { visibility: collapse; }</code>)</li>
+    </ul>
   </section>
 </div>
 
-
-<!-- Style a Table -->
-<div class="slide">
-  <header><h1>All three!</h1></header>
-  <section class="content">
-    <pre></pre>
-  </section>
-</div>
 
 
 <!--NEXT-->

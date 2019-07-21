@@ -54,7 +54,16 @@ thead th {
   top: 1em;
   z-index: 2;
   background: yellow;
-}</style>
+}
+td:first-child,
+tfoot th:first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  outline: 1px solid;
+  background: pink;
+}
+</style>
 <title>Sticky Header</title>
 </head>
 
