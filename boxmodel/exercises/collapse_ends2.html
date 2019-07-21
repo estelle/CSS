@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Block formatting content</title>	
+<link rel="stylesheet" href="../../css/editme.css">
+<style>body { margin: 5px; } hr { margin: 0; } div {background-color: #800420; color: #fff;}</style>
+<style contenteditable class="editme" style="max-height: 40vh; overflow: scroll;">:root {--width: 50px;}
+div {box-shadow: 0 0 0px var(--width) rgba(0,0,0,0.05); 
+   padding: 20px; margin: var(--width);}
+article { 
+	outline: dotted; 
+	_border: dotted; 
+	_padding: 1px; 
+
+/* block formatting context */
+	_display: inline-block;
+	_display: flow-root;
+	_display: table;     /* anonymous table cell */
+	_display: grid; 
+	_display: inline-flex;
+	_float: left;        /* or right */
+	_position: absolute;
+	_position: fixed;
+	_overflow: hidden;   /* != visible */
+	_column-count: 1;    /* != auto */
+	_column-width: 1em;  /* != auto */
+    _contain: content;   /* content | layout | strict */
+}</style>
+</head>
+
+<body>
+	<hr/>
+	<article>
+		<div>one</div>
+		<div contenteditable>two</div>
+		<div>three</div> 
+	</article>
+</body>
+</html>
+
+

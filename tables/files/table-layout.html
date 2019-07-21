@@ -4,16 +4,29 @@
 	<meta charset="utf-8">
 	<title>Table Play: Women's Soccer</title>
 	<link rel="stylesheet" href="../files.css">
-<style>
+<style>table {
+    text-transform: capitalize;
+}
+caption {
+	text-transform: uppercase;
+}
 </style>
 
-<style contenteditable id="editme">col.name {}
-col.number {}
-col.position {}
-col.games {}
-col.goals {}
-col.assists {}</style>
-<title>col styling</title>
+<style contenteditable id="editme">table {
+  table-layout: fixed;
+  width: 700px;
+  border: 1px solid;
+}
+td {
+  border: 1px solid;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+col.position {
+  width: 4em;
+}</style>
+<title>Text-transform</title>
 </head>
 
 <body>

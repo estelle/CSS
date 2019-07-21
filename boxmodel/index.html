@@ -30,7 +30,24 @@
 <!-- divider -->
 <div class="slide divider">
   <header><h1>Box Model Properties</h1></header>
-
+<section class="content">
+  <ul><li>Box Model Properties</li>
+<li><code>box-sizing</code> property</li>
+<li>Borders, Margin &amp; Padding
+  <ul>
+    <li><code>padding</code> properties</li>
+    <li><code>margin</code> properties</li>
+    <li>collapsing margins</li>
+    <li>browser formatting context</li>
+    <li><code>border</code> properties</li>
+  </ul>
+</li>
+<li>border-radius</li>
+<li><code>outline</code> properties</li>
+<li>Overflow</li>
+<li>Size constraints</li>
+<li><code>display</code> property</li></ul>
+</section>
 </div>
 
 
@@ -123,7 +140,9 @@
 
   <div class="slide divider">
   <header><h1><code>box-sizing</code> property</h1></header>
-
+<section class="content">
+  <a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/box-sizing">Reference</a>
+</section>
 </div>
 
 <div class="slide">
@@ -160,9 +179,13 @@
 
 <div class="slide divider">
   <header><h1>Borders, Margin &amp; Padding</h1></header>
-  <section class="content">
-  
-  </section>
+<section class="content">
+  <ul>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/padding">padding</a></li>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/margin">margin</a></li>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border">border</a></li>
+  </ul>
+</section>
 </div>
 
 
@@ -183,9 +206,55 @@
 padding: 10px 20px; /* 10px top and bottom, 20px right and left */
 padding: 10px 20px 30px; /* 10px top and bottom, 20px right, 30px left */
 padding: 10px 20px 30px 40px; /* TRouBLe */</pre>
+
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>margin</h1></header>
+  <section class="content">
+    <code>
+      <p>margin: 10px;</p>
+      <ul>
+        <li>margin-top: 10px;</li>
+        <li>margin-right: 10px;</li>
+        <li>margin-bottom: 10px;</li>
+        <li>margin-left: 10px;</li>
+      </ul>
+      </code>
   </section>
 </div>
 
+<div class="slide">
+  <header><h1>margin</h1></header>
+  <section class="content">
+    <code>
+      <p>margin: 10px 20px;</p>
+      <ul>
+        <li>margin-top: 10px;</li>
+        <li>margin-right: 20px;</li>
+        <li>margin-bottom: 10px;</li>
+        <li>margin-left: 20px;</li>
+      </ul>
+      </code>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>margin</h1></header>
+  <section class="content">
+    <code>
+      <p>margin: 10px 20px 30px;</p>
+      <ul>
+        <li>margin-top: 10px;</li>
+        <li>margin-right: 20px;</li>
+        <li>margin-bottom: 30px;</li>
+        <li>margin-left: 20px;</li>
+      </ul>
+      </code>
+  </section>
+</div>
 
 <div class="slide">
   <header><h1>margin</h1></header>
@@ -199,25 +268,91 @@ padding: 10px 20px 30px 40px; /* TRouBLe */</pre>
         <li>margin-left: 40px;</li>
       </ul>
     </code>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>margin</h1></header>
+  <section class="content">
     <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
     <pre contenteditable>margin: 10px; /* 10px all sides */
 margin: 10px 20px; /* 10px top and bottom, 20px right and left */
 margin: 10px 20px 30px; /* 10px top and bottom, 20px right, 30px left */
 margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
-<small>Block: Adjacent margins <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="reference">collapse</a>, except if <code>absolute</code> or <code>float</code></small>, and <code>auto</code> centers horizontally</small><br/>
-<small>Inline: Top/bottom ignored, left/right don't collapse</small>
+</section>
+</div>
+
+
+  
+<div class="slide">
+  <header><h1>Collapsing margins</h1></header>
+
+  <section class="content">
+<p>Block: Adjacent margins <a target="mdn" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="reference">collapse</a>, except if <code>absolute</code> or <code>float</code>, and <code>auto</code> centers horizontally</p>
+<ul>
+    <li>Adjacent siblings</li>
+    <li>Completely empty boxes</li>
+    <li>Parent and first or last child element</li>
+  </ul>
+<p>Inline: Top/bottom ignored, left/right don't collapse</p>
   </section>
 </div>
+
+
   
 <div class="slide object">
-  <header><h1>Collapsing margins</h1></header>
+  <header><h1>Collapsing margins: adjacent siblings</h1></header>
   <object data="exercises/margins.html"></object>
   <a href="exercises/margins.html" target="play" class="objectlink">Try it out</a>
 </div>
+  
+<div class="slide object">
+  <header><h1>Collapsing margins on empty boxes</h1></header>
+  <object data="exercises/collapse.html"></object>
+  <a href="exercises/collapse.html" target="play" class="objectlink">Try it out</a>
+</div>
 
+<div class="slide object">
+  <header><h1>Margins outside parent</h1></header>
+  <object data="exercises/collapse_ends.html"></object>
+  <a href="exercises/collapse_ends.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide object">
+  <header><h1>Non collapsing margins</h1></header>
+  <object data="exercises/collapse_ends2.html"></object>
+  <a href="exercises/collapse_ends2.html" target="play" class="objectlink">Try it out</a>
+</div>
+<div class="slide">
+  <header><h1>Block Formatting Context</h1></header>
+
+  <section class="content">
+   <code><ul> 
+  <li>display: inline-block;</li>
+  <li>display: flow-root;</li>
+  <li>display: table;     <i>/* any anonymous table cell */</i></li>
+  <li>display: grid; </li>
+  <li>display: inline-flex;</li>
+  <li>float: left;        <i>/* or right */</i></li>
+  <li>position: absolute;</li>
+  <li>position: fixed;</li>
+  <li>overflow: hidden;   <i>/* != visible */</i></li>
+  <li>column-count: 1;    <i>/* != auto */</i></li>
+  <li>column-width: 1em;  <i>/* != auto */</i></li>
+  <li>contain: content;   <i>/* content | layout | strict */</i></li>
+  </ul></code>
+  </section>
+</div>
 
 <div class="slide divider">
   <header><h1>Border Properties</h1></header>
+  <section class="content">
+  <ul>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-width">border-width</a></li>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-style">border-style</a></li>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-color">border-color</a></li>
+  </ul>
+</section>
 </div>
 
 <div class="slide">
@@ -338,6 +473,11 @@ border-top-width: 1px;</pre>
 <!--Border properties -->
 <div class="slide divider">
      <header><h1>border-radius</h1></header>
+     <section class="content">
+  <ul>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-radius">border-radius</a></li>
+  </ul>
+</section>
  </div>
 
 
@@ -404,6 +544,11 @@ border-bottom-left-radius</pre>
 
 <div class="slide divider">
   <header><h1><code>outline</code> properties</h1></header>
+    <section class="content">
+  <ul>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/outline">outline</a></li>
+  </ul>
+</section>
 </div>
 
 <div class="slide">
@@ -435,6 +580,11 @@ outline-color: red;</pre>
   <header><h1>Overflow</h1></header>
   <section class="content">
   <!--If the content becomes larger than the containing box, it will overflow. You can keep it in the box and add scroll bars, or not, with the overflow propertyv-->
+
+  <ul>
+    <li><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/overflow">overflow</a></li>
+  </ul>
+
   </section>
 </div>
 
@@ -488,15 +638,15 @@ overflow: auto;</pre>
   <section class="content">
   
   </section>
-</div>
+</div>  
   
  
 <div class="slide">
   <header><h1>width constraints</h1></header>
   <section class="content">
-  <pre contenteditable>width: 50em; 
-max-width: 40em;
-min-width: 60em;</pre>
+  <pre contenteditable><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/width">width</a>: 50em; 
+<a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/max-width">max-width</a>: 40em;
+<a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/min-width">min-width</a>: 60em;</pre>
 <p><code>max-width</code> overrides <code>width</code>. <code>min-width</code> overrides <code>max-width</code>.</p>
 <pre contenteditable>/* Keyword values */
 max-width: none;
@@ -514,9 +664,9 @@ max-width: fill-available;</pre>
 <div class="slide">
   <header><h1>height constraints</h1></header>
   <section class="content">
-  <pre contenteditable>height: 50em; 
-max-height: 40em;
-min-height: 60em;</pre>
+  <pre contenteditable><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/height">height</a>: 50em; 
+<a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/max-height">max-height</a>: 40em;
+<a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/min-height">min-height</a>: 60em;</pre>
 <p><code>max-height</code> overrides <code>height</code>. <code>min-height</code> overrides <code>max-height</code>.</p>
 <pre contenteditable>/* Keyword values */
 max-height: none;
@@ -541,7 +691,7 @@ max-height: fill-available;</pre>
 </div>
 
 <div class="slide">
-  <header><h1>All the <code>display</code> properties</h1></header>
+  <header><h1>All the <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
   <section class="content">
   <pre contenteditable>/* &lt;display-outside> values */
 display: block;

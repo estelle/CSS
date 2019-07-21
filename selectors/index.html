@@ -994,7 +994,13 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 &lt;E&gt;&lt;/E&gt;
 &lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
 &lt;E title="this is an empty element"/></pre>
-<hr/>
+</section>
+</div>
+
+ <!-- :empty pseudo-class -->
+<div class="slide normal">
+     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <section class="content">
 <p>No browser support...
 <pre contenteditable>E<b>:blank</b></pre>
 <pre contenteditable="">&lt;input name="novalue" value=""></pre>
@@ -1024,8 +1030,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <div class="slide normal" id="mui">
      <header><h1>:user-invalid</h1></header>
      <section class="content">
-        <pre contenteditable>:user-invalid</pre>
-        <pre contenteditable>:-moz-ui-invalid</pre>
+        <pre contenteditable style="display: inline-block">:user-invalid</pre>
+        <pre contenteditable  style="display: inline-block">:-moz-ui-invalid</pre>
 <style class="editme" contenteditable>#mui   input:user-invalid { /* not supported */
          border: initial;
          background-color: lightblue;
@@ -1265,7 +1271,7 @@ li:nth-child(3n+1 of .bar)</pre>
 
 <p>Specificity is <code>0-1-0</code> for <code>:nth-child(An+B)</code>, plus  specificity of the most specific complex selector in <code>S</code></p>
 
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#Browser_compatibility">Safari 9+ only</a></p>
+<p><a target="mdn" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#Browser_compatibility">Safari 9+ only</a></p>
     </section>
 </div>
 
@@ -1397,14 +1403,23 @@ li:nth-child(3n+1 of .bar)</pre>
 
 
 <div class="slide">
-  <header><h1>:matches(s1, s2)</h1></header>
+  <header><h1>:is(s1, s2) / :matches(s1, s2)</h1></header>
     <section class="content">
       <p>RESOLVED: Rename <i>:matches()</i> to <strong>:is()</strong> and deprecate <i>:matches()</i></p>
      <pre  contenteditable>E:matches(s1, s2)</pre><hr/>
      <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">) a</b> {}</pre>
   <pre>li[title] a, 
 li[role] a {}</pre>
-<hr/>
+<p><a href="
+https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility">:is() browser support</a></p>
+     </section>
+    </div>
+
+
+
+<div class="slide">
+  <header><h1>:matches(s1, s2)</h1></header>
+    <section class="content">
      <pre class="example" contenteditable><b contenteditable="false">:matches(</b>#home, #contact<b contenteditable="false">)</b> aside :matches(a:active, a:focus){}</pre>
 <pre class="example" contenteditable>#home aside a:active, 
 #contact aside a:active,
@@ -1414,8 +1429,11 @@ li[role] a {}</pre>
      </section>
     </div>
 
+
+
+
 <div class="slide">
-  <header><h1>Experimental :any</h1></header>
+  <header><h1>Experimental :any </h1></header>
     <section class="content">
       <pre  contenteditable>E:matches(s1, s2)</pre>
       <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1,
@@ -1607,7 +1625,7 @@ nav a {
 &lt;link></pre>
 <p><code>:any-link</code> is the same as <code>:is(:link, :visited)</code></p>
 
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link#Browser_compatibility" target="play">Supported in FF, webkit and blink</a></p>
+<p><a target="mdn" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link#Browser_compatibility" target="play">Supported in FF, webkit and blink</a></p>
   </section>
   </div>
 

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Collapsing margin on emtpy</title>	
+<link rel="stylesheet" href="../../css/editme.css">
+
+<style contenteditable class="editme">:root { font-size: 24px; --width: 50px;} body { margin: 2rem; }
+article { border: dotted; }
+div {box-shadow: 0 0 0 var(--width) rgba(0,0,0,0.1); 
+  background: #800420; color: #FFFFFF;
+  margin: var(--width);
+  _padding: 1px; _border: solid;
+}</style>
+</head>
+
+<body>
+	<article>
+		<div>one</div>
+		<div><!--two--></div>
+		<div>three</div> 
+	</article>
+</body>
+</html>
+

@@ -4,25 +4,72 @@
 	<meta charset="utf-8">
 	<title>Table Play: Women's Soccer</title>
 	<link rel="stylesheet" href="../files.css">
-<style>
-</style>
+<style contenteditable id="editme" style="height: 40vh; overflow: scroll">table {
+  border-collapse: collapse; 
+  empty-cells: show;
+  font-family: helvetica;
+  caption-side: top;
+  text-transform: capitalize;
+  background-color: yellow;
+}
 
-<style contenteditable id="editme">col.name {}
-col.number {}
-col.position {}
-col.games {}
-col.goals {}
-col.assists {}</style>
-<title>col styling</title>
+col {
+	width: 200px;
+}
+td, th {
+  border:  1px solid;
+  padding: 10px;
+  background: white;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+td:nth-child(2),
+td:nth-child(5),
+td:nth-child(6),
+td:nth-child(7) {
+	text-align: right;
+	text-transform: uppercase;
+}
+thead th {
+  background: yellow;
+}
+section {
+  position: relative;
+  max-height: 40vh;
+  overflow: scroll;
+  width: 500px;
+  border: 1px solid;
+}
+caption {
+  text-transform: uppercase;
+  background-color: inherit;
+  z-index: 3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 1em;
+}
+thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1em;
+  z-index: 2;
+  background: yellow;
+}
+</style>
+<title>Sticky Header</title>
 </head>
 
 <body>
-	
+
+<section>	
 <table>
 <caption>u.s. women's national team</caption>
 <colgroup>
 	<col class="name"/>
 	<col class="number"/>
+	<col class="club"/>
 	<col class="position"/>
 	<col class="games"/>
 	<col class="goals"/>
@@ -32,6 +79,7 @@ col.assists {}</style>
 	<tr>
 		<th>name</th>
 		<th>#</th>
+		<th>home club</th>
 		<th>position</th>
 		<th>games</th>
 		<th>goals</th>
@@ -42,6 +90,7 @@ col.assists {}</style>
 	<tr>
 		<td>morgan brian</td>
 		<td>6</td>
+		<td>Chicago Red Stars</td>
 		<td>midfielder</td>
 		<td>83</td>
 		<td>6</td>
@@ -50,6 +99,7 @@ col.assists {}</style>
 	<tr>
 		<td>abby dahlkemper</td>
 		<td>7</td>
+		<td>North Carolina Courage</td>
 		<td>defender</td>
 		<td>47</td>
 		<td>0</td>
@@ -58,6 +108,7 @@ col.assists {}</style>
 	<tr>
 		<td>tierna davidson</td>
 		<td>12</td>
+		<td>Chicago Red Stars</td>
 		<td>defender</td>
 		<td>21</td>
 		<td>1</td>
@@ -66,6 +117,7 @@ col.assists {}</style>
 	<tr>
 		<td>crystal dunn</td>
 		<td>19</td>
+		<td>North Carolina Courage</td>
 		<td>defender</td>
 		<td>91</td>
 		<td>24</td>
@@ -74,6 +126,7 @@ col.assists {}</style>
 	<tr>
 		<td>julie ertz</td>
 		<td>8</td>
+		<td>Chicago Red Stars</td>
 		<td>midfielder</td>
 		<td>88</td>
 		<td>19</td>
@@ -82,6 +135,7 @@ col.assists {}</style>
 	<tr>
 		<td>adrianna franch</td>
 		<td>21</td>
+		<td>Portland Thorns</td>
 		<td>goalkeeper</td>
 		<td>1</td>
 		<td>0 cs</td>
@@ -90,6 +144,7 @@ col.assists {}</style>
 	<tr>
 		<td>ashlyn harris</td>
 		<td>18</td>
+		<td>Orlando Pride</td>
 		<td>goalkeeper</td>
 		<td>14</td>
 		<td>5 cs</td>
@@ -98,6 +153,7 @@ col.assists {}</style>
 	<tr>
 		<td>tobin heath</td>
 		<td>17</td>
+		<td>Portland Thorns</td>
 		<td>forward</td>
 		<td>156</td>
 		<td>30</td>
@@ -106,6 +162,7 @@ col.assists {}</style>
 	<tr>
 		<td>lindsey horan</td>
 		<td>9</td>
+		<td>Portland Thorns</td>
 		<td>midfielder</td>
 		<td>74</td>
 		<td>10</td>
@@ -114,6 +171,7 @@ col.assists {}</style>
 	<tr>
 		<td>ali krieger</td>
 		<td>11</td>
+		<td>Orlando Pride</td>
 		<td>defender</td>
 		<td>103</td>
 		<td>1</td>
@@ -122,6 +180,7 @@ col.assists {}</style>
 	<tr>
 		<td>rose lavelle</td>
 		<td>16</td>
+		<td>Washington Spirit</td>
 		<td>midfielder</td>
 		<td>33</td>
 		<td>10</td>
@@ -130,6 +189,7 @@ col.assists {}</style>
 	<tr>
 		<td>carli lloyd</td>
 		<td>10</td>
+		<td>Sky Blue FC</td>
 		<td>forward</td>
 		<td>281</td>
 		<td>113</td>
@@ -138,6 +198,7 @@ col.assists {}</style>
 	<tr>
 		<td>allie long</td>
 		<td>20</td>
+		<td>Reign FC</td>
 		<td>midfielder</td>
 		<td>45</td>
 		<td>6</td>
@@ -146,6 +207,7 @@ col.assists {}</style>
 	<tr>
 		<td>jessica mcdonald</td>
 		<td>22</td>
+		<td>North Carolina Courage</td>
 		<td>forward</td>
 		<td>8</td>
 		<td>2</td>
@@ -154,6 +216,7 @@ col.assists {}</style>
 	<tr>
 		<td>samantha mewis</td>
 		<td>3</td>
+		<td>North Carolina Courage</td>
 		<td>midfielder</td>
 		<td>56</td>
 		<td>14</td>
@@ -162,6 +225,7 @@ col.assists {}</style>
 	<tr>
 		<td>alex morgan</td>
 		<td>13</td>
+		<td>Orlando Pride</td>
 		<td>forward</td>
 		<td>169</td>
 		<td>107</td>
@@ -170,14 +234,16 @@ col.assists {}</style>
 	<tr>
 		<td>alyssa naeher</td>
 		<td>1</td>
+		<td>Chicago Red Stars</td>
 		<td>goalkeeper</td>
 		<td>53</td>
 		<td>28 cs</td>
-				<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>kelley o'hara</td>
 		<td>5</td>
+		<td>Utah Royals</td>
 		<td>defender</td>
 		<td>124</td>
 		<td>2</td>
@@ -186,6 +252,7 @@ col.assists {}</style>
 	<tr>
 		<td>christen press</td>
 		<td>23</td>
+		<td>Utah Royals</td>
 		<td>forward</td>
 		<td>123</td>
 		<td>49</td>
@@ -194,6 +261,7 @@ col.assists {}</style>
 	<tr>
 		<td>mallory pugh</td>
 		<td>2</td>
+		<td>Washington Spirit</td>
 		<td>forward</td>
 		<td>56</td>
 		<td>16</td>
@@ -202,6 +270,7 @@ col.assists {}</style>
 	<tr>
 		<td>megan rapinoe</td>
 		<td>15</td>
+		<td>Reign FC</td>
 		<td>forward</td>
 		<td>158</td>
 		<td>50</td>
@@ -210,6 +279,7 @@ col.assists {}</style>
 	<tr>
 		<td>becky sauerbrunn</td>
 		<td>4</td>
+		<td>Utah Royals</td>
 		<td>defender</td>
 		<td>164</td>
 		<td>0</td>
@@ -218,6 +288,7 @@ col.assists {}</style>
 	<tr>
 		<td>emily sonnett</td>
 		<td>14</td>
+		<td>Portland Thorns</td>
 		<td>defender</td>
 		<td>32</td>
 		<td>0</td>
@@ -228,6 +299,7 @@ col.assists {}</style>
 	<tr>
 		<th>name</th>
 		<th>#</th>
+		<th>home club</th>
 		<th>position</th>
 		<th>games</th>
 		<th>goals</th>
@@ -235,5 +307,6 @@ col.assists {}</style>
 	</tr>
 </tfoot>
 </table>
+</section>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Collapsing margin over parent</title>	
+<link rel="stylesheet" href="../../css/editme.css">
+
+<style contenteditable class="editme">body { margin: 5px; }
+hr { margin: 0; }
+article { outline: dotted;}
+:root {--width: 50px;}
+div {box-shadow: 0 0 0px var(--width) rgba(0,0,0,0.05); 
+  background-color: #800420; color: #fff; padding: 20px;
+  margin: var(--width);
+}</style>
+</head>
+
+<body>
+	<hr/>
+	<article>
+		<div>one</div>
+		<div contenteditable>two</div>
+		<div>three</div> 
+	</article>
+</body>
+</html>
+
+

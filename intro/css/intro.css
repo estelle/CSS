@@ -233,6 +233,10 @@ pre em {
   text-shadow: currentColor 0 0 1px;
 }
 
+code i {
+  opacity: 50%;
+}
+
 .code {
   color: #333333;
   font-size: 85%;

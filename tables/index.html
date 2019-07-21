@@ -106,9 +106,18 @@
   </section>
 </div>
 
+
+<!-- cpation side -->
+<div class="slide divider">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
+</div>
+
+
+
+
 <!-- cpation side -->
 <div class="slide">
-  <header><h1><code>caption-side</code> property</h1></header>
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
   <section class="content" style="overflow-y: scroll; max-height: 80vh">
 <p>Put on the <code>&lt;table></code>, not the <code>&lt;caption></code>.</p>
 <p>supported</p><pre>caption-side: top; 
@@ -138,6 +147,38 @@ caption-side: inline-end;</pre>
   <object data="files/caption.html"></object>
 </div>
 
+
+<!-- text-transform -->
+<div class="slide divider">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
+</div>
+
+
+<!-- text-transform -->
+<div class="slide">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
+  <section>
+    <pre contenteditable>text-transform: capitalize;
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: none;
+text-transform: full-width;
+text-transform: full-size-kana;</pre>
+<ul>
+  <li>Takes into account language-specific case mapping rules</li>
+  <li>First unicode letter or number. Initial punctuations of words are ignored</li>
+  <li><code>uppercase</code> can be hard to read.</li>
+</ul>
+  </section>
+</div>
+
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1><code>text-transform</code>  property</h1></header>
+  <object data="files/text-transform.html"></object>
+</div>
+
 <!-- border spacing -->
 <div class="slide intro">
   <header><h1>Borders &amp; Spacing</h1></header>
@@ -147,16 +188,16 @@ caption-side: inline-end;</pre>
 
 <!-- border-collapse -->
 <div class="slide">
-  <header><h1>border-collapse</h1></header>
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a></code></h1></header>
   <section class="content">
-    <pre>border-collapse: <em>separate</em> | collapse | inherit</pre>
+    <pre><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a>: <em>separate</em> | collapse | inherit</pre>
     <p>When the borders are collapsed <code>border-spacing</code> is relevant.</p>  
   </section>
 </div>
 
 <!-- border-spacing -->
 <div class="slide">
-  <header><h1>border-spacing</h1></header>
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-spacing">border-spacing</a></code> property</h1></header>
   <section class="content">
     <pre>border-spacing: &lt;length> &lt;length>?;</pre>
     <p>The look you want is probably:</p>
@@ -171,6 +212,12 @@ table {border-spacing: 5px 10px;}</pre>
 </ul>
   </section>
 </div>
+
+
+
+
+
+
 
 <!-- style the caption -->
 <div class="slide object">
@@ -187,9 +234,9 @@ table {border-spacing: 5px 10px;}</pre>
 </div>
 <!--  -->
 <div class="slide">
-  <header><h1>Empty Cells</h1></header>
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/empty-cells">empty-cells</a></code> property</h1></header>
   <section class="content">
-    <pre>empty-cell: show | hide</pre>
+    <pre>empty-cells: show | hide</pre>
     <p>Similar to:</p>
 
 <pre contenteditable>td:empty, th:empty {
@@ -212,41 +259,26 @@ table {border-spacing: 5px 10px;}</pre>
 </div>
 
 
-<!--  -->
-<div class="slide">
-  <header><h1>table-layout</h1></header>
-  <section class="content">
-    <pre contenteditable>table-layout: <em>auto</em> | fixed</pre>
-    <ul>
-      <li>fixed renders faster</li>
-    </ul>
-  </section>
-</div>
+
 
 
 <!--  -->
 <div class="slide">
-  <header><h1>Vertical Align</h1></header>
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a></code> property</h1></header>
   <section class="content">
-    <pre contenteditable>vertical-align: baseline | sub | super | text-top | 
-                text-bottom | middle | top | bottom | 
-                &lt;percentage> | &lt;length></pre>
-    <dl class="deprecated">
- <dt><code>baseline</code></dt>
- <dd>Aligns the baseline of the cell with the baseline of all other cells in the row that are baseline-aligned.</dd>
- <dt><code>top</code></dt>
- <dd>Aligns the top padding edge of the cell with the top of the row.</dd>
- <dt><code>middle</code></dt>
- <dd>Centers the padding box of the cell within the row.</dd>
- <dt><code>bottom</code></dt>
- <dd>Aligns the bottom padding edge of the cell with the bottom of the row.</dd>
-</dl>
-<ul>
-  <li>applied to thead, tfoot, tbody, tr, td, th, but not table.</li>
-  <li>negative values are ok</li>
-  <li>additional values (sub, super, text-top, text-bottom, &lt;length>, and &lt;percentage>) equal <code>baseline</code>
+    <pre contenteditable><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a>: baseline | top | bottom | middle |
+sub | super | text-top | text-bottom | &lt;percentage> | &lt;length></pre>
+                  <p>applied to thead, tfoot, tbody, tr, td, th, but not table.</p>
+    <ul style="height: 58vh; overflow: scroll">
+ <li><code>baseline</code>: Aligns the baseline of the cell with the baseline of all other cells in the row that are baseline-aligned.</li>
+ <li><code>top</code>: Aligns the top padding edge of the cell with the top of the row.</li>
+ <li><code>middle</code>: Centers the padding box of the cell within the row.</li>
+ <li><code>bottom</code>: 
+ Aligns the bottom padding edge of the cell with the bottom of the row.</li>
+<li><code>sub, super, text-top, text-bottom, &lt;length></code>, and <code>&lt;percentage</code>> equal <code>baseline</code>
   </li>
 </ul>
+
   </section>
 </div>
 
@@ -296,16 +328,21 @@ display: table-caption;</pre>
     
   <section class="content">
 <pre contenteditable>&lt;table>
-  &lt;caption>
-    2017–18 Primera División: Player of the week
-  &lt;/caption>
-  <em>&lt;colgroup>
-    &lt;col class="week"/>
-    &lt;col class="player"/>
-    &lt;col class="club"/>
-    &lt;col class="stat"/>
+  &lt;caption>u.s. women's national team&lt;/caption>
+&lt;colgroup>
+  &lt;col class="name"/>
+  &lt;col class="number"/>
+  &lt;col class="position"/>
+  &lt;col class="games"/>
+  &lt;col class="goals"/>
+  &lt;col class="assists"/>
   &lt;/colgroup></em>
 &lt;thead>....</pre>
+<p>limited stylability</p>
+<pre>border: <i>/* if table { border-collapse: collapse;} is set */</i>
+background:
+width:
+visibility: /* collapse value only */</pre>
   </section>
 </div>
 
@@ -320,6 +357,28 @@ display: table-caption;</pre>
 </div>
 
 
+<!-- table layout -->
+<div class="slide">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/table-layout">table-layout</a></code> property</h1></header>
+  <section class="content">
+    <pre contenteditable>table-layout: <em>auto</em> | fixed</pre>
+    <ul>
+
+<li><code>auto</code> - widths of table and cells fit content.</li>
+<li><code>fixed</code> - widths of table and columns set by &lt;col> width or first row of cells. (with too-wide cells observing <code>overflow</code> value.</li>
+      <li>fixed renders faster - only need first row downloaded to start painting.</li>
+    </ul>
+  </section>
+</div>
+
+
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1><code>table-layout</code> property</h1></header>
+  <object data="files/table-layout.html"></object>
+</div>
+
 <!-- Style a Table -->
 <div class="slide">
   <header><h1><a href="files/play.html">Try it out!</a></h1></header>
@@ -328,10 +387,11 @@ display: table-caption;</pre>
 caption-side:
 border-collapse:
 border-spacing:
-empty-cell:
+empty-cells:
 table-layout:
 vertical-align:</pre>
-<pre>table
+<div style="display: flex; gap: 1em;">
+<pre style="flex: 1; height: 8em; overflow-y: scroll">table
 colgroup
 colspan
 thead
@@ -340,18 +400,26 @@ tfoot
 tr
 th
 td
-</pre><p><a href="files/play.html">Try it out!</a></p>
+</pre><pre style="flex: 1; height: 8em; overflow-y: scroll">table, td, th {}
+table {}
+col.name {}
+col.number {}
+col.position {}
+col.games {}
+col.goals {}
+col.assists {}
+caption {}
+thead {}
+tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></p>
   </section>
 </div>
 
 
 
 <!-- Style a Table -->
-<div class="slide">
+<div class="slide object">
   <header><h1>Static Top Row</h1></header>
-  <section class="content">
-    <pre></pre>
-  </section>
+<object data="files/theadsticky.html"></object>
 </div>
 
 <!-- Style a Table -->
