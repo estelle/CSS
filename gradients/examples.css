@@ -1,0 +1,284 @@
+ .ex_rgba_stripes{
+ background:
+ 	linear-gradient(135deg,
+		rgba(255, 255, 255, 0.2) 25%,
+		rgba(255, 255, 255, 0) 25%,
+		rgba(255, 255, 255, 0) 50%,
+		rgba(255, 255, 255, 0.2) 50%,
+		rgba(255, 255, 255, 0.2) 75%,
+		rgba(255, 255, 255, 0) 75%,
+		rgba(255, 255, 255, 0) 100% ) 40px 40px  rebeccapurple  repeat;
+background-size: 40px 40px;
+
+ }
+
+ .whatisborderimage {
+	margin: auto;
+	height: 200px;
+	width: 200px;
+	background-image:
+		linear-gradient(gold 5px, transparent 5px, transparent 145px, magenta 145px),
+		linear-gradient(left, magenta 5px, transparent 5px, transparent 145px, magenta 145px),
+		linear-gradient(rebeccapurple, magenta, rebeccapurple);
+	background-size: 200px 150px, 150px 200px, 150px 150px;
+	background-position: center;
+	background-position: no-repeat;
+}
+.medexampleshell {display: grid; grid-template-columns: repeat(3,200px); grid-template-rows: repeat(2, 200px); gap: 1em;}
+ .medexample {  text-align: center; list-style-type: none;
+   padding: 60px 0; box-sizing:border-box; text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;}
+
+    .multiplebg {
+	background-image: linear-gradient(gold, magenta), linear-gradient(rebeccapurple,rebeccapurple);
+	background-size: 180px 180px;
+	background-repeat: no-repeat;
+	background-position: 0 0, 20px 20px;
+
+ }
+ .bgimage {
+	background-image: radial-gradient(50% 50%, circle closest-side, transparent 70%, magenta 70%,gold 85%,transparent  85% );
+	background-size: 190px 190px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+
+
+ }
+ .linear {
+background-image:
+		linear-gradient(to left,
+			rgba(0,0,0,0.5) 8%,
+			rgba(0,0,0,0.1) 24%);
+}
+ .linrepeat {
+background-image:
+		repeating-linear-gradient(to left,
+			rgba(0,0,0,0.5) 8%,
+			rgba(0,0,0,0.1) 24%);
+}
+  .radial {
+background-image:
+		radial-gradient(circle 200px at 20% 20%,
+			rgba(0,0,0,0.9),
+			rgba(0,0,0,0.1) 8%,
+			rgba(0,0,0,0.5) 16%);
+}
+  .conic {
+background-image:
+    conic-gradient(
+      rgba(0,0,0,0.9),
+      rgba(0,0,0,0.1) 24%,
+      rgba(0,0,0,0.5) 48%);
+}
+ .radrepeat {
+background-image:
+		repeating-radial-gradient(circle at 40px 40px,
+			rgba(0,0,0,0.9),
+			rgba(0,0,0,0.1) 8%,
+			rgba(0,0,0,0.5) 16%);
+}
+ .conrepeat {
+background-image:
+    repeating-conic-gradient(
+      rgba(0,0,0,0.9),
+      rgba(0,0,0,0.1) 8%,
+      rgba(0,0,0,0.5) 16%);
+}
+ .grad {
+	width: 250px;
+	height: 180px;
+	margin: 0 20px 20px 0px;
+	float: left;
+	border-radius: 150px;
+	background-repeat: repeat;
+ }
+ .grad1 {
+	 background-repeat: repeat;
+ }
+ .grad1 header {background-color: rgba(255,255,255,0.8);}
+
+ .basiclinear {
+	 background: linear-gradient(rebeccapurple, magenta);
+ }
+.linear45 {
+   background: linear-gradient(rebeccapurple 45%, magenta 55%);
+ }
+.linear50 {
+   background: linear-gradient(rebeccapurple 50%, magenta 50%);
+ }
+ .basiclinearnoprefix {
+   background: linear-gradient(to bottom, rebeccapurple, magenta);
+}
+.dark header{
+	background-color: rgba(255,255,255,0.5);
+ }
+
+ .angle {
+	position: absolute;
+	padding: 50px 50px 30px 50px;
+	color: rgba(255,255,255,0.01);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.01);
+	text-align: center;
+
+ }
+.angle:hover {
+
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+		color: white;
+ }
+#basiclinear:after,
+#slide_basiclinearangles:after,
+#slide_anglevkeyterm:after {
+	content: "";
+	background-color: black;
+	top: 49%;
+	left: 49%;
+	bottom: 49%;
+	right: 49%;
+	position:absolute;
+	border-radius: 50%;
+ }
+
+.comparegrad {
+	height: 300px;
+	display: inline-block;
+	width: 300px;
+	border: 5px solid rebeccapurple;
+	margin-right: 10px;
+	position:relative;
+}
+.comparegradkeyterm  {
+	background: linear-gradient(to top right,magenta, rebeccapurple, magenta, rebeccapurple, magenta, rebeccapurple, magenta, rebeccapurple, magenta);
+}
+.comparegradkeyterm div{
+	background: linear-gradient(to top right, transparent 49.95%, black 49.95%, black 50%, transparent 50%);
+	transform: rotate(90deg) scale(3);
+}
+
+.comparegradangle {
+	background: linear-gradient(45deg, magenta, rebeccapurple, magenta, rebeccapurple, magenta, rebeccapurple, magenta, rebeccapurple, magenta);
+}
+.comparegradangle div{
+	background: linear-gradient(45deg, transparent 49.5%, black 49.5%, black 50%, transparent 50%);
+}
+.rainbow {
+	background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
+}
+.rainbow2 {
+  background-image:
+    linear-gradient(to bottom,
+      red 20%,
+      orange 20%,
+      orange 40%,
+      yellow 40%,
+      yellow 60%,
+      green 60%,
+      green 80%,
+      blue 80%
+    );
+	}
+#rainbow5, #lg2{
+	background-image:
+	repeating-linear-gradient(145deg,
+      red 0,
+	  red 20px,
+      orange 20px,
+      orange 40px,
+      yellow 40px,
+      yellow 60px,
+      green 60px,
+      green 80px,
+      blue 80px,
+	  blue 100px,
+	  purple 100px,
+	  purple 120px);
+}
+#rainbow5b {
+	background-image: linear-gradient(90deg,
+  magenta 40%,
+  rebeccapurple 60%);
+}
+
+#angledStripes {
+	background-color: rebeccapurple;
+	background-image:
+			linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%,
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+	background-size: 100px 100px;
+	background-repeat: repeat;
+}
+#tablecloth, #ancientgrad {
+background-color: rebeccapurple;
+background-image:
+    linear-gradient(
+    	rgba(255, 255, 255, 0.2) 50%,
+    	rgba(255, 255, 255, 0) 50%),
+    linear-gradient(to right,
+    	rgba(255, 255, 255, 0.2) 50%,
+    	rgba(255, 255, 255, 0) 50%);
+	background-size: 100px 100px;
+	background-repeat: repeat;
+}
+
+
+#radial01 {
+background-image:
+  radial-gradient(
+  magenta,
+  rebeccapurple);
+}
+#radial02 {
+background-image:
+  radial-gradient(at 25% 35%,
+  magenta,
+  rebeccapurple);
+}
+#radial03 {
+background-image:
+  radial-gradient(at 25% 35%,
+  magenta 20%,
+  rebeccapurple 20%);
+}
+#radial04 {
+background-image:
+  radial-gradient(circle at 75% 75%,
+  magenta 20%,
+  rebeccapurple 20%);
+}
+#radial05 {
+
+  background-image: radial-gradient(farthest-corner at 40px 50px, magenta 298px,
+  rebeccapurple 300px);
+}
+
+#radial06 {
+background-image:radial-gradient(
+     circle,
+      rebeccapurple 50%,
+      magenta 50%);
+background-size: 50px 50px;
+background-repeat:repeat;
+background-color: red;
+}
+
+#radial07 {
+  background-image:
+    radial-gradient(ellipse at center, 
+      magenta 0%,
+      rebeccapurple 100%);
+}
+
+
+
+input[type=range] {width: 360px;}
+.gradientpoop {position: absolute; top:0; right:0; left:0; bottom:0; pointer-events: none;
+	transform:rotate(90deg);
+}
+/* color: rebeccapurple;
+BDD9D5*/

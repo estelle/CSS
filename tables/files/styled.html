@@ -10,14 +10,13 @@
   caption-side: top;
   text-transform: capitalize;
   table-layout: fixed;
+  background-color: white;
+  border: 1px solid #aaa;
 }
 caption {
   text-align: left; 
-  position: sticky; 
-  top: 0; left: 0;
   padding: 10px;
-  background-color: white;
-  z-index: 10;
+  text-transform: uppercase;
 }
 td, th {
   padding: 10px;
@@ -39,29 +38,12 @@ section {
   overflow: scroll;
 }
 
-thead th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: calc(1em + 24px);
-  z-index: 2;
+thead th,
+tfoot th {
   background: #dedede;
 }
 
-thead th:first-child{
-  left: 0;
-  z-index: 3;
-}
-
-tr > :first-child {
-  position: -webkit-sticky;
-  position: sticky; 
-  background: #dedede;
-  left: 0; 
-} 
-tbody {
-  margin-top: 1em;
-}
-col.name { width: 12em;}
+col.name { width: 12em; background: #dedede;}
 col.number {}
 col.club {12em;}
 col.position {}
@@ -69,7 +51,7 @@ col.games {}
 col.goals {border: solid}
 col.assists {}
 
-td:nth-child(2),
+tr > :nth-child(2),
 td:nth-child(5),
 td:nth-child(6),
 td:nth-child(7) {
