@@ -799,7 +799,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 
 <!-- UI pseudo-classes -->
-<div class="slide normal">
+<div class="slide normal" id="checked">
      <header><h1>UI pseudo-classes</h1></header>
      <section class="content">
   <p>Based on current state of UI </p>
@@ -807,10 +807,10 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 :disabled
 :checked
 :indeterminate <i>/* (Level 4) */</i></pre>
-<pre contenteditable class="example">input[type=checkbox]:checked + label {
+<style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
   color: red;
 }</pre>
-<div style="clear:both;" class="showexample">
+<div style="clear:both;">
 <input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
 <input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
 <footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer></div>
@@ -869,13 +869,13 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <div class="slide normal" id="UI">
      <header><h1>Form related UI pseudo-classes</h1></header>
      <section class="content">
-<style class="editme" contenteditable>#UI input:valid { border: 1px solid green;}
-#UI input:invalid { border: 1px solid red;}
+<style class="editme" contenteditable>#UI input:valid { border-color: green;}
+#UI input:invalid { border-color: red;}
 #UI input:required,
 #UI input[aria-required="true"] {border-width: 5px;}
 #UI input:optional {border-width: 10px;}
 #UI input:out-of-range { background-color: pink;}
-#UI input:in-range { background-color:lightgreen;}</style>
+#UI input:in-range { background-color: lightgreen;}</style>
 <div style="clear:both;">
 <input type="number" min="5" max="7" id="test3ck" required /> <label  for="test3ck">Number between 5 and 7</label><br>
 <input type="number" min="0" step="0.1" max="10" id="test4ck"/><label for="test4ck">Number between 0 and 10</label>
