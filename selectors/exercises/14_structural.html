@@ -6,27 +6,43 @@
 ul {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; counter-reset: item;}
 li {counter-increment: item}
 li::after {content: ' ' counter(item);}
-body {display: flex; align-items: flex-start;}
+div {display: flex; align-items: flex-start;height: 80vh; overflow: scroll;}
 ul, style {flex: 1;}
+#editme, ul li {
+    font-size: 1.4rem;
+}
+body {padding-bottom: 2em;}
 </style>
   <link rel="stylesheet" href="editme.css">
 
 <title>CSS Selector Test</title>
 </head>
 
-<body>
+<body><div>
     <style contenteditable id="editme">li:first-child,
 li:last-child {
   font-weight: bold;
 }
+li:first-of-type,
+li:last-of-type{
+  text-decoration: line-through;
+}
 li:nth-child(even) {
   background-color: #CCC;
 }
+li:nth-of-type(odd) {
+  background-color: #FFF;
+}
+li:nth-child(3) {
+  color: #CCC;
+}
+li:nth-of-type(4n) {
+  color: red;
+}
 li:nth-of-type(3n-1) {
   text-align: right;
-}
-</style>
-	<ul style="float: left;">
+}</style>
+	<ul>
      	<li>item</li>
      	<li>item</li>
         <li>item</li>
@@ -60,6 +76,7 @@ li:nth-of-type(3n-1) {
         <li>item</li>
         <li>item</li>
         </ul>
+    </div>
 </body>
 </html>
 
