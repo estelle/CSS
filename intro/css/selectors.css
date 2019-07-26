@@ -398,6 +398,7 @@ section.content {
 .flex12 {
   display: flex;
   justify-content: space-between;
+  gap: 1em;
 }
 
 .flex12 > * {

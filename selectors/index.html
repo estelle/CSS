@@ -810,7 +810,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
   color: red;
 }</style>
-<div style="clear:both;">
+<div>
 <input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
 <input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
 <footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer></div>
@@ -988,29 +988,36 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
       </section>
 </div>
 
+<!-- divider -->
+<div class="slide divider">
+  <header><h1><code>:empty</code> &amp; <code>:blank</code></h1></header>
+</div>
+
 
 
  <!-- :empty pseudo-class -->
 <div class="slide normal">
-     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <header><h1><code>:empty</code></h1></header>
      <section class="content">
   <pre contenteditable>E<b>:empty</b></pre>
  <pre contenteditable>&lt;E/>
 &lt;E&gt;&lt;/E&gt;
 &lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
 &lt;E title="this is an empty element"/></pre>
+<small>Acts like <code>-moz-only-whitespace</code></small>
 </section>
 </div>
 
  <!-- :empty pseudo-class -->
 <div class="slide normal">
-     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <header><h1><code>:blank<code></h1></header>
      <section class="content">
 <p>No browser support...
 <pre contenteditable>E<b>:blank</b></pre>
 <pre contenteditable="">&lt;input name="novalue" value=""></pre>
 
 <pre contenteditable="">&lt;textarea name="novalue" value="">&lt;/textarea></pre>
+<small>Not supported, but <code>:empty</code> matches</small>
 
  </section>
     </div>
