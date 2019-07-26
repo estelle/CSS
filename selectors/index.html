@@ -833,10 +833,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :enabled
 :disabled</pre>
-<pre contenteditable>
-:enabled
-:disabled
-:checked
+<pre contenteditable>:checked
+
 :indeterminate
 
 :default
@@ -861,7 +859,9 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 :optional
 
 :in-range
-:out-of-range</pre>
+:out-of-range
+
+:user-invalid</pre>
   </section>
 </div>
 
@@ -905,6 +905,30 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   <a class="objectlink" href="exercises/10_counting.html">Open in new page</a>
     </div>
 
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal" id="mui">
+     <header><h1>:user-invalid</h1></header>
+     <section class="content">
+        <pre contenteditable style="display: inline-block">:user-invalid</pre>
+        <pre contenteditable  style="display: inline-block">:-moz-ui-invalid</pre>
+<style class="editme" contenteditable>#mui input:-moz-ui-invalid { /* FF only */
+  border: initial; 
+  background-color: pink;
+}
+#mui input:user-invalid { /* not supported */
+  border: initial;
+  background-color: red;
+}</style>
+       <div>
+<p><input type="number" min="5" max="7" id="test5ck" required />
+<label  for="test5ck">Number between 5 and 7</label></p><p>
+<input type="number" min="0" step="0.1" max="10" id="test6ck"/>
+<label for="test4ck">Number between 0 and 10</label>
+</p>
+     </section>
+</div>
+
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
      <header><h1>Other UI pseudo-classes</h1></header>
@@ -922,9 +946,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :placeholder-shown
 
-:blank 
-
-:user-invalid</pre>
+:blank
+(:empty)</pre>
   </section>
 </div>
 
@@ -975,11 +998,11 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 
 <!--Form related UI pseudo-classes -->
-<div class="slide normal">
+<div class="slide normal" id="phs">
      <header><h1>:placeholder-shown</h1></header>
      <section class="content">
 
-<style class="editme" contenteditable>input[placeholder]:placeholder-shown {
+<style class="editme" contenteditable>#phs input[placeholder]:placeholder-shown {
   border: initial;
   background-color: pink;
 }</style>
@@ -1004,7 +1027,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 &lt;E&gt;&lt;/E&gt;
 &lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
 &lt;E title="this is an empty element"/></pre>
-<small>Acts like <code>-moz-only-whitespace</code></small>
+<p>Changed to be like <code>-moz-only-whitespace</code></p>
+ <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
 </section>
 </div>
 
@@ -1024,16 +1048,6 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 
 
- <!-- :empty pseudo-class -->
-<div class="slide normal">
-     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
-     <section class="content">
-
-<small>
- :-moz-only-whitespace</small>
-
- <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre> </section>
-    </div>
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
@@ -1048,7 +1062,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   background-color: lightgreen;
 }</style>
 <div id="blank">
-  <input type=text value="">
+  <input type=text value="" placeholder="this is an input">
   <div></div>
   <div><!-- just a comment --></div>
   <div> <!-- white space too -->  </div>
@@ -1057,26 +1071,6 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 </div>
 
 
-<!--Form related UI pseudo-classes -->
-<div class="slide normal" id="mui">
-     <header><h1>:user-invalid</h1></header>
-     <section class="content">
-        <pre contenteditable style="display: inline-block">:user-invalid</pre>
-        <pre contenteditable  style="display: inline-block">:-moz-ui-invalid</pre>
-<style class="editme" contenteditable>#mui   input:user-invalid { /* not supported */
-         border: initial;
-         background-color: lightblue;
-       }
-#mui   input:-moz-ui-invalid { /* FF only */
-         border: initial; 
-         background-color: lightblue;
-       }</style>
-       <div>
-<p><input type="number" min="5" max="7" id="test5ck" required /> <label  for="test5ck">Number between 5 and 7</label></p><p>
-<input type="number" min="0" step="0.1" max="10" id="test6ck"/><label for="test4ck">Number between 0 and 10</label>
-</p>
-     </section>
-</div>
 
 <!-- divider -->
 <div class="slide divider">
