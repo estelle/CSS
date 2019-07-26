@@ -43,3 +43,7 @@ section.content {
   max-height: calc(98vh - 3.5em); 
   overflow-y: scroll;
 }
+.twopart {
+  display: flex;
+  justify-content: space-around;
+}

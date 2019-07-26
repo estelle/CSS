@@ -7,6 +7,12 @@
 
 <style>
 .far-future.object object {display: none;}
+p#myP.important { 
+  color: red !important;
+}
+.important a {
+  color: purple;
+}
 </style>
 </head>
 
@@ -105,13 +111,14 @@ ul > li {} 0-0-2</pre>
      <section class="content">
 <p>Specificity is not inheritance</p>
 
-<pre contenteditable>p#myParagraph.important { 
+<pre contenteditable>p#myP.important { 
   color: red !important;
 }
 a {
   color: purple;
 }</pre>
-<pre contenteditable>&lt;p>Paragraph with a &lt;a href="x.html">link&lt;/a>&lt;/p></pre>
+<pre contenteditable>&lt;p class="important" id="myP">Paragraph with a &lt;a href="x.html">link&lt;/a>&lt;/p></pre>
+<p class="important" id="myP">Paragraph with a <a href="x.html">link</a></p></p>
 <p>Styles for a directly targeted element take precedence over inherited styles regardless of inherited specificity. </p>
      </section>
 </div>

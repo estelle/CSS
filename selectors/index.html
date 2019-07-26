@@ -4,11 +4,21 @@
 <meta charset="utf-8" />
     <title>Selectors: Select This!</title>
 <link rel="stylesheet" href="exercises/editme.css"/>
-<link rel="stylesheet" href="css/selectors.css"/>
 <link rel="stylesheet" href="../intro/css/selectors.css"/>
 
 <style>
-
+.active {
+  background-color: rgba(0,0,0,0.2);
+  color: red;
+  font-weight: bold;
+}
+dt {
+  font-weight: bold;
+}
+[type="checkbox"]:indeterminate + label {
+  color: blue;
+}
+style.editme {width: 100%; box-sizing: border-box;}
 </style>
 </head>
 
@@ -459,7 +469,7 @@ function makeActive(slctr){
 </div>
 
  <div class="object slide">
-  <object data="https://specifishity.com/" style="height: 792px;"></object>
+  <object data="https://specifishity.com/"></object>
      <header><h1>Specificity (SpeciFISHity)</h1></header>
   <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
 </div>
@@ -512,7 +522,7 @@ ul li {} 0-0-2</pre>
       <dd>descendant selector<br />
         matches nested &lt;li&gt;s
       </dd>
-      <dt onclick="hasaclass('ol > li');">ol &gt; li</dt>
+      <dt><span onclick="hasaclass('ul > li');">ul > li</span>, <br><span onclick="hasaclass('ol > li');">ol &gt; li</span></dt>
       <dd><em>child selector</em> <br />
       matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
       <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
@@ -626,12 +636,12 @@ function hasaclass(selector) {
     <dt>E[attr|=val]</dt>
     <dd>Attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
 
-    <pre contenteditable class="example">p[lang|=&quot;en&quot;]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+    <pre contenteditable class="example">p[lang<b>|=</b>&quot;en&quot;]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
 
     </dd>
     <dt>E[attr~=val]</dt>
     <dd>Attribute <em>attr</em> includes the full word <em>val</em>.<br />
-    <pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Three word sentence&quot;&gt;*/}</pre>
+    <pre contenteditable  class="example">a[title<b>~=</b>"word"] {/* &lt;a title=&quot;Three word sentence&quot;&gt;*/}</pre>
     </dd>
   </dl>
  </section>
@@ -644,13 +654,13 @@ function hasaclass(selector) {
      <dl>
   <dt>E[attr^=val]</dt>
   <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
-    <pre contenteditable class="example">a[href^=mailto] {background-image: url(emailicon.gif);}
-a[href^=http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+    <pre contenteditable class="example">a[href<b>^=</b>mailto] {background-image: url(emailicon.gif);}
+a[href<b>^=</b>http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Attribute <em>attr</em> ends in <em>val</em> . <br />
-    <pre contenteditable class="example">a[href$=pdf] {background-image: url(pdficon.gif);}
-a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
+    <pre contenteditable class="example">a[href<b>$=</b>pdf] {background-image: url(pdficon.gif);}
+a[href<b>$=</b>pdf]::after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
 </dl>
      </section>
@@ -662,7 +672,7 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
      <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
      <section class="content">
       <dl>  <dt>E[attr*=val]</dt>
-  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title~="word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
+  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>~=</b>"word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
 </dl>
 
 <hr />
@@ -685,7 +695,6 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
     <pre contenteditable>input[type="ChEcKbOx"]</pre>
 
 <p>Relevant if attribute value is case senstive (Strings, not keywords)</p>
-    <p><a href="https://codepen.io/estelle/pen/lEGev" target="_play">CodePen test page</a></p>
   </section>
 </div>
 
@@ -699,7 +708,7 @@ a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
 
     <pre contenteditable>E[id="foobar"]</pre>
     <pre contenteditable>E[id="FooBar"]</pre>
-    <pre contenteditable>a[target="ABC" s ]</pre>
+    <pre contenteditable>a[target="ABC" s ] /* <a href="https://codepen.io/estelle/pen/lEGev" target="_play">example</a> */</pre>
     <pre contenteditable>a[target="abc" s ]</pre>
 
 <p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a>.</p><small>case sensitivity in CSS is not exactly the same as in HTML</small>
@@ -965,25 +974,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
       </section>
 </div>
 
-<!--Form related UI pseudo-classes -->
-<div class="slide normal" id="blank">
-     <header><h1>:blank</h1></header>
-     <section class="content">
-        <style class="editme" contenteditable>#blank input:blank { /*greater specificity 1-1-1 */
-  border: initial; 
-  background-color: lightblue;
-}
-[id="blank"] input:empty { /* supported 0-2-1 */
-  border: initial;
-  background-color: lightgreen;
-}</style>
-<p>
-  <input type=text></p>
- <p>
-  <input type=text value=""></p>
-   
-      </section>
-</div>
+
 
  <!-- :empty pseudo-class -->
 <div class="slide normal">
@@ -1018,12 +1009,31 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
      <section class="content">
 
 <small>
- :-moz-whitespace-only</small>
+ :-moz-only-whitespace</small>
 
  <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre> </section>
     </div>
 
-
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>:empty &amp; :blank</h1></header>
+     <section class="content">
+        <style class="editme" contenteditable>#blank {display: flex; justify-content: space-around;}
+#blank > * {border: 3px double; padding: 5px;}
+#blank > *:blank { /*greater specificity 1-1-1 */
+  background-color: lightblue;
+}
+[id="blank"] > *:empty { /* supported 0-2-1 */
+  background-color: lightgreen;
+}</style>
+<div id="blank">
+  <input type=text value="">
+  <div></div>
+  <div><!-- just a comment --></div>
+  <div> <!-- white space too -->  </div>
+</div>
+      </section>
+</div>
 
 
 <!--Form related UI pseudo-classes -->
@@ -1319,6 +1329,12 @@ li:nth-child(3n+1 of .bar)</pre>
 </div>
 
 
+ <div class="slide object">
+ <object data="exercises/18_structural_of.html"></object>
+     <header><h1>Structural Selectors</h1></header>
+ <a href="exercises/18_structural_of.html" target="play" class="objectlink">Structural Selectors</a>
+ </div>
+
 
 
 <!--root  -->
@@ -1403,13 +1419,14 @@ li:nth-child(3n+1 of .bar)</pre>
 
 
 <div class="slide">
-  <header><h1>:is(s1, s2) / :matches(s1, s2)</h1></header>
+  <header><h1>:is(s1, s2) <strike>:matches(s1, s2)</strike></h1></header>
     <section class="content">
       <p>RESOLVED: Rename <i>:matches()</i> to <strong>:is()</strong> and deprecate <i>:matches()</i></p>
-     <pre  contenteditable>E:matches(s1, s2)</pre><hr/>
-     <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">) a</b> {}</pre>
+     <pre  contenteditable>E:is(s1, s2)</pre><hr/>
+     <pre class="example" contenteditable>li<b contenteditable="false">:is(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">) a</b> {}</pre>
   <pre>li[title] a, 
 li[role] a {}</pre>
+<p><code>:is()</code> doesn't get invalidated if a parameter is invalid.</p>
 <p><a href="
 https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility">:is() browser support</a></p>
      </section>
@@ -1418,7 +1435,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility">:is(
 
 
 <div class="slide">
-  <header><h1>:matches(s1, s2)</h1></header>
+  <header><h1>deprecated <code>:matches(s1, s2)</code></h1></header>
     <section class="content">
      <pre class="example" contenteditable><b contenteditable="false">:matches(</b>#home, #contact<b contenteditable="false">)</b> aside :matches(a:active, a:focus){}</pre>
 <pre class="example" contenteditable>#home aside a:active, 
@@ -1433,26 +1450,45 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility">:is(
 
 
 <div class="slide">
-  <header><h1>Experimental :any </h1></header>
+  <header><h1>current code </h1></header>
     <section class="content">
-      <pre  contenteditable>E:matches(s1, s2)</pre>
-      <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1,
-:-moz-any(article, aside) :-moz-any(article, aside) h1 {
-}</pre><pre  contenteditable  class="example" >
-a:matches(.foo, .bar, .bam) span,
-a:-webkit-any(.foo, .bar, .bam) span,
-a:-moz-any(.foo, .bar, .bam) span {
-}</pre><pre  contenteditable  class="example" >
-nav a:not(:matches(.foo, .bar, .bam)),
-nav a:not(:-webkit-any(.foo, .bar, .bam)),
-nav a:not(:-moz-any(.foo, .bar, .bam)),
-nav a:not(.foo, .bar, .bam) {
-}
-nav a:not(.foo):not(.bar).not(.bam){
-}
-</pre>
+      <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1 {}
+:-moz-any(article, aside) :-moz-any(article, aside) h1 {}
+:matches(article, aside) :matches(article, aside) h1 {}
+:is(article, aside) :is(article, aside) h1 {}</pre>
+<pre  contenteditable  class="example">article article h1,
+article aside h1,
+aside article h1,
+aside aside h1 { }</pre>
+<pre  contenteditable  class="example">article, aside {
+  article, aside {
+    h1 {
+      /* sass nesting*/
+    }
+  }
+}</pre>
     </section>
 </div>
+
+
+
+<div class="slide">
+  <header><h1>:is()</h1></header>
+    <section class="content">
+<pre  contenteditable  class="example">a:-webkit-any(.foo, .bar, .bam) span {}
+a:-moz-any(.foo, .bar, .bam) span {}
+a:matches(.foo, .bar, .bam) span {}
+a:is(.foo, .bar, .bam) span {}</pre>
+<pre  contenteditable  class="example" >nav a:not(:matches(.foo, .bar, .bam)),
+nav a:not(:-webkit-any(.foo, .bar, .bam)),
+nav a:not(:-moz-any(.foo, .bar, .bam)),
+nav a:not(:is(.foo, .bar, .bam)),
+nav a:not(.foo, .bar, .bam),
+nav a:not(.foo):not(.bar).not(.bam) {
+}</pre>
+    </section>
+</div>
+
 
 
 <div class="slide">
@@ -1561,13 +1597,13 @@ nav a {
   </header>
   <section class="content">
     <p>Parent selector</p>
-    <pre>:has(s1, s2)</pre>
+    <pre>document.querySelectorAll(':has(s1, s2)');</pre>
 <p>Contains a header</p>
-    <pre>header:has(h1, h2, h3, h4, h5, h6)</pre>
+    <pre>document.querySelectorAll('header:has(h1, h2, h3, h4, h5, h6)');</pre>
 <p>Contains no headers</p>
-    <pre>header:not(:has(h1, h2, h3, h4, h5, h6))</pre>
+    <pre>document.querySelectorAll('header:not(:has(h1, h2, h3, h4, h5, h6))');</pre>
 <p>Contains something that is not a header</p>
-<pre>header:has(:not(h1, h2, h3, h4, h5, h6))</pre>
+<pre>document.querySelectorAll('header:has(:not(h1, h2, h3, h4, h5, h6))');</pre>
     <a href="https://caniuse.com/#feat=css-has" target="play">CanIUse.com</a>
   </section>
 </div>
@@ -1658,8 +1694,17 @@ a:not(:local-link) {
 <p>Note: always style :focus when you style :hover</p>
 <pre>:focus-visible
 :focus-within</pre>
+<small><code>:-moz-focusring</code> 
   </section>
   </div>
+
+<div class="slide object">
+  <header><h1><code>:focus-within</code></h1></header>
+
+ <object data="exercises/21_focusring.html"></object>
+ <a href="exercises/21_focusring.html" target="play" class="objectlink">:focus-within</a>
+ </div>
+
 
 
 
@@ -1700,6 +1745,14 @@ button:active:focus</pre>
  </section>
 </div>
 
+
+
+<div class="slide object">
+  <header><h1><code>:focus-visible</code></h1></header>
+
+ <object data="https://codepen.io/estelle/pen/oKzoPm"></object>
+ <a href="https://codepen.io/estelle/pen/oKzoPm" target="play" class="objectlink">:focus-visible</a>
+ </div>
 
 
 <!-- lang, target, anchor links

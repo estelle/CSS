@@ -3,9 +3,13 @@
 <html>
 <head>
 <style>
-ul {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; counter-reset: item;}
-li {counter-increment: item}
+ul {font-family:Verdana, Geneva, sans-serif; font-size:1.2em; counter-reset: item foo notfoo;}
+li.foo {counter-increment: foo item;}
+li:not(.foo) {counter-increment: notfoo item;}
 li::after {content: ' ' counter(item);}
+
+_li:not(.foo)::before {content: '(' counter(notfoo) ') ';}
+li.foo::before {content: '(FOO ' counter(foo) ') ';}
 body {display: flex; align-items: flex-start;}
 ul, style {flex: 1;}
 </style>
@@ -15,20 +19,26 @@ ul, style {flex: 1;}
 </head>
 
 <body>
-    <style contenteditable id="editme">li:first-child,
-li:last-child {
-  font-weight: bold;
-}
-li:nth-child(even) {
-  background-color: #CCC;
-}
-li:nth-of-type(3n-1) {
+    <style contenteditable id="editme">li:nth-child(2n of .foo) {
   text-align: right;
-}
-</style>
+  color: red;
+}</style>
 	<ul style="float: left;">
      	<li>item</li>
      	<li>item</li>
+        <li class="foo">item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li class="foo">item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li class="foo">item</li>
+        <li>item</li>
+        <li class="foo">item</li>
         <li>item</li>
         <li>item</li>
         <li>item</li>
@@ -36,6 +46,14 @@ li:nth-of-type(3n-1) {
         <li>item</li>
         <li>item</li>
         <li>item</li>
+        <li class="foo">item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li class="foo">item</li>
         <li>item</li>
         <li>item</li>
         <li>item</li>
@@ -43,22 +61,7 @@ li:nth-of-type(3n-1) {
         <li>item</li>
         <li>item</li>
         <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        <li class="foo">item</li>
         </ul>
 </body>
 </html>

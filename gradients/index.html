@@ -450,11 +450,11 @@ Twitter: @estellevw
 
 
  <!-- keyterm values -->
- <div class="slide dark object linear45" id="basiclinear">
+ <div class="slide dark object linear50" id="basiclinear">
      <header><h1>Linear Gradient: Gradient Directions</h1></header>
      <section class="content" style="margin-top:100px;">
      
-      <select style="font-size: 1em; border-radius: 0; background-color: magenta" onChange="basicGradientChange();" id="slct_basicgradient">
+      <select style="font-size: 1em;" onChange="basicGradientChange();" id="slct_basicgradient">
    		<option value=""></option>
         <option value="to top">to top</option>
         <option value="to bottom">to bottom</option>
@@ -467,7 +467,7 @@ Twitter: @estellevw
    </select>
    <pre contenteditable>
 
-background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 47%, magenta 53%);
+background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 50%, magenta 50%);
      </pre>
 
    		<pre style="float: left" contenteditable>&lt;side-or-corner&gt;
@@ -484,15 +484,15 @@ background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 47%, 
      <script defer="">
 			function basicGradientChange(event) {
 				var value = document.getElementById('slct_basicgradient').value, invertvalue;
-				console.log(value);
 				switch (value) {
-					case "top":
-					case "bottom":
+
+					case "to top":
+					case "to bottom":
 						 invertvalue = 'to left';
 						 break;
 
-					case "left":
-					case "right":
+					case "to left":
+					case "to right":
 						 invertvalue = 'to top';
 						 break;
 					case "top left":
@@ -504,12 +504,11 @@ background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 47%, 
 					case "top right":
 						 invertvalue = 'to bottom right';
 						 break;
-					default: invertvalue = '';
 				}
                 document.getElementsByClassName('basiclinearslide')[0].style.background =
                      'linear-gradient(' + value + ', transparent 49.95%, black 49.95%, black 50%, transparent 50%)';
 				document.getElementById('basiclinear').style.background =
-					 'linear-gradient(' + value + ', rebeccapurple 47%, magenta 53%)';
+					 'linear-gradient(' + value + ', rebeccapurple 50%, magenta 50%)';
 
 				if(value) {
                 	document.getElementById('basicgradient').innerHTML = value + ", ";
@@ -612,7 +611,7 @@ background: linear-gradient(<span id="basiclinearangles"></span>rebeccapurple, m
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>Angles</h1></header>
+  <header><h1>Linear Gradient Angles</h1></header>
   <section class="content">
   </section>
 </div>
@@ -681,12 +680,12 @@ background: linear-gradient(<span id="basiclinearangles2"></span>
 
 
  <!-- angels != keyterms -->
- <div class="slide dark object linear45" id="slide_anglevkeyterm">
+ <div class="slide dark object linear50" id="slide_anglevkeyterm">
      <header><h1>Angles ≠ Keyterms</h1></header>
      <section class="content" style="margin-top:100px;">
      <pre contenteditable>
 
-background: linear-gradient(<span id="anglevkeyterm"></span>rebeccapurple 45%, magenta 55%);
+background: linear-gradient(<span id="anglevkeyterm"></span>rebeccapurple 50%, magenta 50%);
 
      </pre>
    <button onClick="angleNotEqual('45deg')">45deg</button> <button onClick="angleNotEqual('to top right')"> to top right</button>
@@ -698,7 +697,7 @@ background: linear-gradient(<span id="anglevkeyterm"></span>rebeccapurple 45%, m
                 document.getElementsByClassName('slide_anglevkeyterm')[0].style.background =
                     'linear-gradient(' + angle + ', transparent 49.75%, black 49.75%, black 50%, transparent 50%)';
 				document.getElementById('slide_anglevkeyterm').style.background =
-					'linear-gradient(' + angle + ', rebeccapurple 45%, magenta 55%)';
+					'linear-gradient(' + angle + ', rebeccapurple 50%, magenta 50%)';
                 document.getElementById('anglevkeyterm').innerHTML = "<b>" + angle + "</b>, ";
               }
 	</script>
@@ -767,7 +766,7 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
       <li>don't vendor-prefix (unless you want poor mobile performance)</li>
       <li>create effects with color stops at same location</li>
         <li>create effects by adding multiple gradients, playing with position and size</li>
-        <li>learn from others: <a href="http://leaverou.me/css3patterns/">Lea Verou's Gradients</a>, <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a>, and <a href="http://www.standardista.com/CSS3gradients/flags.html">Estelle's Flags</a></li>
+        <li>learn from others: <a href="https://leaverou.github.io/css3patterns/">Lea Verou's Patterns</a>, <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a>, and <a href="http://www.standardista.com/CSS3gradients/flags.html">Estelle's Flags</a></li>
         <li>Use tools: <a href="http://westciv.com/tools/gradientsnustyle/">John Allsopp's tool</a>, <a href="http://gradients.glrzad.com/">Damian Galarza's tool</a>, <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla</a></li>
      </ul>
      </section>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+input, form {
+  margin: 4px; padding: 4px;
+}
+</style>
+  <link rel="stylesheet" href="editme.css">
+
+<title>Focus within</title>
+</head>
+
+<body>
+    <style contenteditable id="editme">form {
+  border: 1px solid;
+  color: black;
+  background-color: #efefef;
+}
+form:focus-within {
+  background: black;
+  color: white;
+}</style>
+	<p>Focus on an something focusable in the form below</p>
+
+<form>
+  <p>
+    <label for="user_name">User Name:</label>
+    <input id="user_name" type="text">
+  </p>
+  <p>
+    <label for="password">Password:</label>
+    <input id="password" type="password">
+  </p>
+  <p contenteditable>contenteditable</p>
+  <p>not editable</p>
+</form>
+</body>
+</html>
+

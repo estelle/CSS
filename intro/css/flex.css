@@ -316,6 +316,11 @@ section.content {
   overflow-y: scroll;
 }
 
+.twopart {
+  display: flex;
+  justify-content: space-around;
+}
+
 @media print {
   .slide {
     page-break-inside: avoid;

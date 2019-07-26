@@ -1,0 +1,5 @@
+Your code has no class!
+
+Pick an element, any element. Style it. Manipulate it. No IDs. No classes. No frameworks necessary. This month, SFHTML5 is taking a deep dive into features of selectors in CSS and JavaScript that enable you to select any DOM node, even imaginary DOM nodes based on attributes, relation to other elements, location in the DOM, or just an element’s mere existence (or lack thereof). We'll cover everything from the specificity of the * global selector, to parent selectors in JS without libraries, to how to pick the 5th to last default selected checkbox without adding any specificity to your CSS or characters to your markup. 
+
+From the co-author of CSS: The Definitive Guide, and the CSS teacher for FrontEnd Masters, you'll learn more than you ever wanted to know about CSS Selectors, specificity and tricks for scoping. 
