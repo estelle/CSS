@@ -615,11 +615,14 @@ function hasaclass(selector) {
   <dl>
     <dt>E[attr]</dt>
     <dd>Has the attribute <em>attr</em> with any value.
-    <pre contenteditable class="example">p[lang]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;fr-fr&quot;&gt; */ }</pre></dd>
+    <pre contenteditable class="example">p[lang]{
+  /* &lt;p lang=&quot;en-us&quot;&gt;  
+     &lt;p lang=&quot;fr-fr&quot;&gt; */
+}</pre></dd>
 
     <dt>E[attr=val]</dt>
     <dd>Has the attribute <em>attr</em> with the exact value <em>val</em>.
-      <pre contenteditable class="example">p[id=&quot;home&quot;] {...}</pre></dd>
+      <pre contenteditable class="example">p[id<b>=</b>&quot;home&quot;] {...}</pre></dd>
     
   </dl>
  </section>
@@ -636,12 +639,17 @@ function hasaclass(selector) {
     <dt>E[attr|=val]</dt>
     <dd>Attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
 
-    <pre contenteditable class="example">p[lang<b>|=</b>&quot;en&quot;]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+    <pre contenteditable class="example">p[lang<b>|=</b>&quot;en&quot;]{
+    /* &lt;p lang=&quot;en-us&quot;&gt;  
+       &lt;p lang=&quot;en-uk&quot;&gt; */ 
+}</pre>
 
     </dd>
     <dt>E[attr~=val]</dt>
     <dd>Attribute <em>attr</em> includes the full word <em>val</em>.<br />
-    <pre contenteditable  class="example">a[title<b>~=</b>"word"] {/* &lt;a title=&quot;Three word sentence&quot;&gt;*/}</pre>
+    <pre contenteditable  class="example">a[title<b>~=</b>"word"] {
+    /* &lt;a title=&quot;Three word sentence&quot;&gt;*/
+}</pre>
     </dd>
   </dl>
  </section>
@@ -655,12 +663,12 @@ function hasaclass(selector) {
   <dt>E[attr^=val]</dt>
   <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
     <pre contenteditable class="example">a[href<b>^=</b>mailto] {background-image: url(emailicon.gif);}
-a[href<b>^=</b>http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+a[href<b>^=</b>http]::after { content: &quot; (&quot; attr(href) &quot;)&quot;; }</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Attribute <em>attr</em> ends in <em>val</em> . <br />
-    <pre contenteditable class="example">a[href<b>$=</b>pdf] {background-image: url(pdficon.gif);}
-a[href<b>$=</b>pdf]::after {content: &quot; (PDF)&quot;;}</pre>
+    <pre contenteditable class="example">a[href<b>$=</b>pdf] { background-image: url(pdficon.gif); }
+a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
   </dd>
 </dl>
      </section>
@@ -672,7 +680,9 @@ a[href<b>$=</b>pdf]::after {content: &quot; (PDF)&quot;;}</pre>
      <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
      <section class="content">
       <dl>  <dt>E[attr*=val]</dt>
-  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>~=</b>"word"] {/* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/}</pre></dd>
+  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>~=</b>"word"] { 
+  /* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/ 
+}</pre></dd>
 </dl>
 
 <hr />
@@ -789,14 +799,10 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
      <header><h1>UI pseudo-classes</h1></header>
      <section class="content">
   <p>Based on current state of UI </p>
-  <pre contenteditable>
-  :enabled
-
+  <pre contenteditable>:enabled
   :disabled
-
   :checked
-
-  :indeterminate (Level 4)</pre>
+  :indeterminate <i>/* (Level 4) */<i></pre>
 <pre contenteditable class="example">input[type=checkbox]:checked + label {
   color: red;
 }</pre>
