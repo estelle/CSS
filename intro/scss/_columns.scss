@@ -13,3 +13,15 @@
 	column-count: 4;
 	line-height: 1.12;
 }
+.flex12 {
+	display: flex;
+}
+.flex12 article:first-of-type {
+	flex: 1;
+}
+.flex12 article:last-of-type {
+	flex: 2;
+	ul {
+		column-count: 2;
+	}
+}

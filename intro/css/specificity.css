@@ -395,4 +395,19 @@ section.content {
   line-height: 1.12;
 }
 
+.flex12 {
+  display: flex;
+}
+
+.flex12 article:first-of-type {
+  flex: 1;
+}
+
+.flex12 article:last-of-type {
+  flex: 2;
+}
+.flex12 article:last-of-type ul {
+  column-count: 2;
+}
+
 /*# sourceMappingURL=specificity.css.map */
