@@ -19,6 +19,10 @@ dt {
   color: blue;
 }
 style.editme {width: 100%; box-sizing: border-box;}
+
+.showexample input[type=checkbox]:checked + label {
+  color: red;
+}
 </style>
 </head>
 
@@ -806,7 +810,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <pre contenteditable class="example">input[type=checkbox]:checked + label {
   color: red;
 }</pre>
-<div style="clear:both;">
+<div style="clear:both;" class="showexample">
 <input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
 <input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
 <footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer></div>
