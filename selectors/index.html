@@ -662,7 +662,7 @@ function hasaclass(selector) {
      <dl>
   <dt>E[attr^=val]</dt>
   <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
-    <pre contenteditable class="example">a[href<b>^=</b>mailto] {background-image: url(emailicon.gif);}
+    <pre contenteditable class="example">a[href<b>^=</b>mailto] { background-image: url(emailicon.gif); }
 a[href<b>^=</b>http]::after { content: &quot; (&quot; attr(href) &quot;)&quot;; }</pre>
   </dd>
   <dt>E[attr$=val]</dt>
@@ -681,7 +681,7 @@ a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
      <section class="content">
       <dl>  <dt>E[attr*=val]</dt>
   <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>~=</b>"word"] { 
-  /* &lt;a title=&quot;Sentence with 4 words&quot;&gt;*/ 
+  /* &lt;a title=&quot;Sentence with 4 words&quot;&gt; */ 
 }</pre></dd>
 </dl>
 
@@ -765,7 +765,7 @@ E:[att$=val]  <b class="notes">/* ends with val */</b>
 E:[att*=val]  <b class="notes">/* val is anywhere as a substring */</b>
 E:[att*=VAL i]  <b class="notes">/* anywhere as a case-insenstive substring */</b>
 E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b></pre>
-<pre contenteditable style="clear:both">
+<!--<pre contenteditable style="clear:both">
 @media print{
   abbr[title]::after {
     content: "(" attr(title) ")";
@@ -773,7 +773,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   a[href^=http]::after {
     content: "(" attr(href) ")";
   }
-}</pre>
+}</pre>-->
      </section>
  </div>
 
@@ -802,7 +802,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   <pre contenteditable>:enabled
   :disabled
   :checked
-  :indeterminate <i>/* (Level 4) */<i></pre>
+  :indeterminate <i>/* (Level 4) */</i></pre>
 <pre contenteditable class="example">input[type=checkbox]:checked + label {
   color: red;
 }</pre>
