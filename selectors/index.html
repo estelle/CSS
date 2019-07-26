@@ -804,9 +804,9 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
      <section class="content">
   <p>Based on current state of UI </p>
   <pre contenteditable>:enabled
-  :disabled
-  :checked
-  :indeterminate <i>/* (Level 4) */</i></pre>
+:disabled
+:checked
+:indeterminate <i>/* (Level 4) */</i></pre>
 <pre contenteditable class="example">input[type=checkbox]:checked + label {
   color: red;
 }</pre>
@@ -818,8 +818,8 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
      <header><h1>UI pseudo-classes</h1></header>
-     <section class="content twopart" style="flex-flow: row wrap">
-  <pre contenteditable style="flex:1; margin: 20px;">:valid
+     <section class="content flex12">
+  <pre contenteditable>:valid
 :invalid
 
 :required
@@ -833,9 +833,13 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :enabled
 :disabled</pre>
-<pre contenteditable  style="flex:1;  margin: 20px;">
-:default
+<pre contenteditable>
+:enabled
+:disabled
+:checked
 :indeterminate
+
+:default
 
 :placeholder-shown
 
