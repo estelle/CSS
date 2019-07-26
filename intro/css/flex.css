@@ -397,6 +397,11 @@ section.content {
 
 .flex12 {
   display: flex;
+  justify-content: space-between;
+}
+
+.flex12 > * {
+  flex: 1;
 }
 
 .flex12 article:first-of-type {
