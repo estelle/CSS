@@ -1093,7 +1093,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :nth-last-child()
 
-:first-child<sup style="color:#C61800">*</sup>
+:first-child<sup style="color:blue">*</sup>
 
 
 :last-child
@@ -1443,7 +1443,7 @@ li:nth-child(3n+1 of .bar)</pre>
 li[role] a {}</pre>
 <p><code>:is()</code> doesn't get invalidated if a parameter is invalid.</p>
 <p><a href="
-https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility">:is() browser support</a></p>
+https://developer.mozilla.org/en-US/docs/Web/CSS/:is#Browser_compatibility" target="resource">:is() browser support</a></p>
      </section>
     </div>
 
@@ -1587,8 +1587,7 @@ ol > [hidden], <i>/* 0-1-1 */</i>
 <pre contenteditable>a:not(:hover) {
   text-decoration: none;
 }
-nav a {
-  <i>/* Has no effect */</i>
+nav a {  <i>/* has lower specificity */</i>
   text-decoration: underline;
 }</pre>
 
@@ -1597,8 +1596,7 @@ nav a {
 <pre contenteditable>a:where(:not(:hover)) {
   text-decoration: none;
 }
-nav a {
-  <i>/* Works now! */</i>
+nav a {  <i>/* has greater specificity */</i>
   text-decoration: underline;
 }</pre>
 
@@ -1913,6 +1911,7 @@ E || F
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
   <li><a href="../other">Other Features</a></li>
+  <li><a href="../houdini">Houdini</a></li>
 </ol>
   </section>
 </div>

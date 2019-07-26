@@ -15,6 +15,11 @@
 }
 .flex12 {
 	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+.flex12 > * {
+	flex: 1;
 }
 .flex12 article:first-of-type {
 	flex: 1;
