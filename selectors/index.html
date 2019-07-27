@@ -488,6 +488,36 @@ function makeActive(slctr){
         <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
         <li><code contenteditable>0-0-1</code>: Element Selector</li></ul>
 
+     </section>
+</div>
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: How it works</h1></header>
+     <section class="content">
+      
+ <pre contenteditable>body.blue div#someId a#otherId.classy {
+  color: blue;
+ }
+#myPage #mySection article.home p.important a {
+  color: red;
+}
+</pre>
+ <pre contenteditable>2-X-X
+X-2-X
+X-X-3</pre>
+</section>
+</div>
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: How it works</h1></header>
+     <section class="content">
+      <ul>
+        <li><code contenteditable>1-0-0</code>: ID selector</li>
+        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+        <li><code contenteditable>0-0-1</code>: Element Selector</li></ul>
+
  <p>The * selector, or global selector, has no weight.</p>
  <pre contenteditable>* {} 0-0-0 </pre>
 
@@ -497,6 +527,7 @@ ul li {} 0-0-2</pre>
 
      </section>
 </div>
+
 
 <!-- divider -->
 <div class="slide intro">
@@ -1808,6 +1839,7 @@ button:active:focus</pre>
 div:target::first-line {
   font-weight: bold;
 }</pre>
+<small>The :target-within pseudo-class applies to elements for which the :target pseudo class applies as well as to an element whose descendant in the flat tree (including non-element nodes, such as text nodes) matches the conditions for matching :target-within.</small>
   </section>
   </div>
 
