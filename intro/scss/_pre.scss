@@ -4,6 +4,7 @@ pre {
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
+  text-shadow: none;
   border: 1px solid $splashcolor;
   b {
     font-weight: bold;
@@ -20,6 +21,12 @@ pre {
     font-style: normal;
     color: $splashcolor;
     text-shadow: currentColor 0 0 1px;
+  }
+  a {
+    text-decoration: underline wavy #999ff133;
+  }
+  a:hover, a:active, a:focus {
+      text-decoration: underline wavy #999ff199;
   }
 }
 code i {

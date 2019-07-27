@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Screen CSS */
 
-html {
+:root {
   font-size: 18px;
 }
 body {
@@ -72,10 +72,14 @@ body {
 }
 
 .far-future.object object {display: none;}
-style[id="editme" i], style[class="editme" i] {
-    font-size: 0.8em;
+style[class="editme" i] {
+    font-size: 1em;
+    border: 1px solid $colorpop;
+    background-color: rgba(0,0,0,0.05);
+    padding: 5px 20px;
+    margin-bottom: 1em;
   }
-object[data*="exercises"] {
-  margin-top: 60px;
+object:not([data*="http"])  {
+  margin-top: 3em;
 }
   

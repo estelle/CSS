@@ -1,5 +1,5 @@
 /* Screen CSS */
-html {
+:root {
   font-size: 18px;
 }
 
@@ -79,12 +79,16 @@ body {
   display: none;
 }
 
-style[id=editme i], style[class=editme i] {
-  font-size: 0.8em;
+style[class=editme i] {
+  font-size: 1em;
+  border: 1px solid #1a26d9;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  margin-bottom: 1em;
 }
 
-object[data*=exercises] {
-  margin-top: 60px;
+object:not([data*=http]) {
+  margin-top: 3em;
 }
 
 .slide.far-past {
@@ -169,7 +173,7 @@ nav button {
   max-height: 90%;
 }
 .slide p, .slide textarea {
-  font-size: 120%;
+  font-size: 1.4rem;
 }
 
 /* Content */
@@ -215,6 +219,7 @@ pre {
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
+  text-shadow: none;
   border: 1px solid #1a26d9;
 }
 pre b {
@@ -231,6 +236,9 @@ pre em {
   font-style: normal;
   color: #1a26d9;
   text-shadow: currentColor 0 0 1px;
+}
+pre a {
+  text-decoration: underline wavy #999ff111;
 }
 
 code i {
@@ -264,7 +272,7 @@ code i {
 }
 
 .content {
-  font-size: 120%;
+  font-size: 1.4rem;
 }
 
 .content input, button {
@@ -355,6 +363,7 @@ section.content {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
   left: 0;
+  pointer-events: none;
 }
 
 .objectlink {

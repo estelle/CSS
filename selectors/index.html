@@ -52,7 +52,7 @@ style.editme {width: 100%; box-sizing: border-box;}
       <h1>CSS Selectors</h1>
      </header>
      <section>
-      <ul style="height: 70vh; overflow: scroll;">
+      <ul style="height: 70vh; overflow: scroll;" class="col2">
         <li>Overview</li>
         <li>Basic Selectors</li>
 <li>Specifications</li>
@@ -423,7 +423,7 @@ a.external:link {
 
 
 <div class="slide normal">
-  <header><h1>Selectors API</h1></header>
+  <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors">Selectors API</a></h1></header>
   <section class="content">
     <pre contenteditable>var chil = $('#bar .foo');</pre>
     <p>Natively</p>
@@ -493,7 +493,7 @@ function makeActive(slctr){
 
 <!-- Specificity Notes -->
 <div class="slide normal">
-     <header><h1>Specificity: How it works</h1></header>
+     <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>: How it works</h1></header>
      <section class="content">
       
  <pre contenteditable>body.blue div#someId a#otherId.classy {
@@ -532,6 +532,7 @@ ul li {} 0-0-2</pre>
 <!-- divider -->
 <div class="slide intro">
   <header><h1>Global selector<br/><span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span></h1></header>
+  <small><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/universal_selectors">*</a></code></small>
 </div>
 
 
@@ -623,7 +624,7 @@ function hasaclass(selector) {
 <!-- Attribute selectors-->
 <div class="slide normal">
   <header>
-    <h1>Attribute selectors</h1>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/attribute_selectors">Attribute selectors</a></h1>
   </header>
   <section class="content">
   <dl>
@@ -715,7 +716,7 @@ a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
      <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
      <section class="content">
       <dl>  <dt>E[attr*=val]</dt>
-  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>~=</b>"word"] { 
+  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>*=</b>"word"] { 
   /* &lt;a title=&quot;Sentence with 4 words&quot;&gt; */ 
 }</pre></dd>
 </dl>
@@ -734,8 +735,8 @@ a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
   </header>
   <section class="content">
 
-    <pre contenteditable>E[id="foobar" i]</pre>
-    <pre contenteditable>E[id="FooBar" i]</pre>
+    <pre contenteditable>E[title*="foobar" i]</pre>
+    <pre contenteditable>E[title*="FooBar" i]</pre>
     <pre contenteditable>input[type="checkbox"]</pre>
     <pre contenteditable>input[type="ChEcKbOx"]</pre>
 
@@ -829,23 +830,6 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 </div>
 
 
-<!-- UI pseudo-classes -->
-<div class="slide normal" id="checked">
-     <header><h1>UI pseudo-classes</h1></header>
-     <section class="content">
-  <p>Based on current state of UI </p>
-  <pre contenteditable>:enabled
-:disabled
-:checked
-:indeterminate <i>/* (Level 4) */</i></pre>
-<style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
-  color: red;
-}</style>
-<div>
-<input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
-<input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
-<footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer></div>
-
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
      <header><h1>UI pseudo-classes</h1></header>
@@ -864,35 +848,110 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :enabled
 :disabled</pre>
+<article>
 <pre contenteditable>:checked
 
 :indeterminate
 
 :default
-
+</pre><pre contenteditable>
 :placeholder-shown
 
 :blank 
 
-:user-invalid</pre>
+:user-invalid</pre></article>
   </section>
+</div>
+
+
+<!-- UI pseudo-classes -->
+<div class="slide normal" id="checked">
+     <header><h1>UI pseudo-classes</h1></header>
+     <section class="content">
+  <p>Based on the UI state of a checkbox</p>
+  <pre contenteditable>:checked
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">:default</a>
+:indeterminate
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled">:enabled</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled">:disabled</a></pre>
+<footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer>
+</div>
+
+
+<!-- UI pseudo-classes -->
+<div class="slide normal" id="checked">
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a></code></h1></header>
+     <section class="content">
+  <p>Based on the UI state of a checkbox</p>
+<style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
+  color: red;
+}</style>
+<div>
+<input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
+<input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
+</div>
+
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/yWEBOZ"></object>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">:default</a></code></h1></header>
+  <a href="https://codepen.io/estelle/pen/yWEBOZ" target="play" class="objectlink">Codepen</a>
 </div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal">
-     <header><h1>Starting with ...</h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate">:indeterminate</a></code></h1></header>
+  <section class="content"><br/>
+    <style contenteditable class="editme">[type="checkbox"]:indeterminate + label {
+  color: blue;
+}</style>
+    <p>
+      <input type="checkbox" id="indeterminate_checkbox"> <label for="indeterminate_checkbox" onclick="document.getElementById('indeterminate_checkbox').indeterminate = true; return false">Make prior checkbox indeterminate</label>
+    </p>
+    <h2>What is indeterminate?</h2>
+    <ul>
+      <li>When radio and checkbox elements are neither checked nor unchecked 
+      </li>
+      <li>progress meter when the percent completion is not known</li>
+      <li>Radio-group initialized with no pre-selected choice</li>
+</ul>
+  </section>
+</div>
+
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/wVoxpw"></object>
+     <header><h1>:indeterminate</h1></header>
+  <a href="https://codepen.io/estelle/pen/wVoxpw" target="play" class="objectlink">Codepen</a>
+</div>
+
+<div class="object slide">
+  <object data="https://codepen.io/estelle/pen/bXBjxd"></object>
+     <header><h1>:enabled &amp; :disabled</h1></header>
+  <a href="https://codepen.io/estelle/pen/bXBjxd" target="play" class="objectlink">Codepen</a>
+</div>
+
+ <div class="object slide">
+  <object data="https://codepen.io/estelle/pen/BexXbd"></object>
+     <header><h1>:enabled &amp; :disabled</h1></header>
+  <a href="https://codepen.io/estelle/pen/BexXbd" target="play" class="objectlink">Codepen</a>
+</div>
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>Next ...</h1></header>
      <section class="content">
-  <pre contenteditable>:valid
-:invalid
+  <pre contenteditable><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid">:valid</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid">:invalid</a>
 
-:required
-:optional
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required">:required</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:optional">:optional</a>
 
-:in-range
-:out-of-range
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range">:in-range</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range">:out-of-range</a>
 
-:user-invalid</pre>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-ui-invalid">:user-invalid</a></pre>
   </section>
 </div>
 
@@ -965,12 +1024,6 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   <pre contenteditable>:read-only
 :read-write
 
-:enabled
-:disabled
-
-:default
-:indeterminate
-
 :placeholder-shown
 
 :blank
@@ -979,57 +1032,31 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 </div>
 
 
+<!--Form related UI pseudo-classes -->
+<div class="slide divider">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write">:read-write</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only">:read-only</a></code></h1></header></div>
 
  <div class="object slide">
   <object data="https://codepen.io/estelle/pen/wbjVYq"></object>
-     <header><h1>:read-write &amp; :read-only</h1></header>
+     <header><h1><code>:read-write</code> &amp; <code>:read-only</code></h1></header>
   <a href="https://codepen.io/estelle/pen/wbjVYq" target="play" class="objectlink">Codepen</a>
 </div>
 
 
 
- <div class="object slide">
-  <object data="https://codepen.io/estelle/pen/BexXbd"></object>
-     <header><h1>:enabled &amp; :disabled</h1></header>
-  <a href="https://codepen.io/estelle/pen/BexXbd" target="play" class="objectlink">Codepen</a>
-</div>
 
 
 
- <div class="object slide">
-  <object data="https://codepen.io/estelle/pen/yWEBOZ"></object>
-     <header><h1>:default</h1></header>
-  <a href="https://codepen.io/estelle/pen/yWEBOZ" target="play" class="objectlink">Codepen</a>
-</div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide divider">
-  <header><h1>Other UI pseudo-classes</h1></header></div>
-
-<!--Form related UI pseudo-classes -->
-<div class="slide normal">
-  <header><h1><code>:indeterminate</code></h1></header>
-  <section class="content">
-    <pre contenteditable>[type="checkbox"]:indeterminate + label {
-  color: blue;
-}</pre>
-    <p>
-      <input type="checkbox" id="indeterminate_checkbox"> <label for="indeterminate_checkbox" onclick="document.getElementById('indeterminate_checkbox').indeterminate = true; return false">Make prior checkbox indeterminate</label>
-    </p>
-    <ul>
-      <li>When radio and checkbox elements are neither checked nor unchecked 
-      </li>
-      <li>progress meter when the percent completion is not known</li>
-      <li>Radio-group initialized with no pre-selected choice</li>
-</ul>
-  </section>
-</div>
+  <header><h1><code>:placeholder-shown</code></h1></header></div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide normal" id="phs">
-     <header><h1>:placeholder-shown</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown">:placeholder-shown</a></code></h1></header>
      <section class="content">
 <p>When the placeholder attribute value is visible</p>
 <style class="editme" contenteditable>#phs input[placeholder]:placeholder-shown {
@@ -1043,14 +1070,14 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1><code>:empty</code> &amp; <code>:blank</code></h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a></code></h1></header>
 </div>
 
 
 
  <!-- :empty pseudo-class -->
 <div class="slide normal">
-     <header><h1><code>:empty</code></h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code></h1></header>
      <section class="content">
   <pre contenteditable>E<b>:empty</b></pre>
  <pre contenteditable>&lt;E/>
@@ -1064,7 +1091,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
  <!-- :empty pseudo-class -->
 <div class="slide normal">
-     <header><h1><code>:blank<code></h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a><code></h1></header>
      <section class="content">
 <p>No browser support...
 <pre contenteditable>E<b>:blank</b></pre>
@@ -1100,6 +1127,11 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
       </section>
 </div>
 
+
+<!-- divider -->
+<div class="slide intro">
+  <header><h1>BREAK</h1></header>
+</div>
 
 
 <!-- divider -->
@@ -1157,17 +1189,17 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
      <header><h1>First, last, &amp; only</h1></header>
      <section class="content">
  <pre contenteditable>
-:first-child
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child">:first-child</a>
 
-:last-child
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child">:last-child</a>
 
-:first-of-type
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type">:first-of-type</a>
 
-:last-of-type
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type">:last-of-type</a>
 
-:only-child
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child">:only-child</a>
 
-:only-of-type
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type">:only-of-type</a>
 </pre>
 
 <p>Easier to explain <a href="exercises/12_childvtype.html"  target="play">by example</a></p>
@@ -1185,7 +1217,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!--nth pseudo-classes -->
 <div class="slide normal">
-     <header><h1>nth pseudo-classes</h1></header>
+     <header><h1><code>:nth-</code> pseudo-classes</h1></header>
      <section class="content">
 <pre contenteditable class="example">:nth-child(<b>3n</b>)
 
@@ -1194,6 +1226,17 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 :nth-of-type(<b>5</b>)
 
 :nth-last-of-type(<b>3n+1</b>) </pre>
+<p>starting from the top or bottom</p>
+</div>
+
+
+
+
+
+<!--nth pseudo-classes -->
+<div class="slide normal">
+     <header><h1><code>:nth-</code> pseudo-classes</h1></header>
+     <section class="content">
 
 <p>Target element or elements based on argument passed to the selector</p>
 <pre contenteditable>
@@ -1423,7 +1466,7 @@ li:nth-child(3n+1 of .bar)</pre>
 
 <!-- :not(s) -->
 <div class="slide normal">
-     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not">:not</a></code> -  Negation pseudo-class</h1></header>
      <section class="content">
      <pre contenteditable>E<b contenteditable="false">:not(</b>s1<b contenteditable="false">)</b></pre>
      <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe<b contenteditable="false">)</b></span></pre> 
@@ -1465,7 +1508,7 @@ li:nth-child(3n+1 of .bar)</pre>
 
 
 <div class="slide">
-  <header><h1>:is(s1, s2) <strike>:matches(s1, s2)</strike></h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:is">:is(s1, s2)</a> <strike>:matches(s1, s2)</strike></code></h1></header>
     <section class="content">
       <p>RESOLVED: Rename <i>:matches()</i> to <strong>:is()</strong> and deprecate <i>:matches()</i></p>
      <pre  contenteditable>E:is(s1, s2)</pre><hr/>
@@ -1610,7 +1653,7 @@ ol > [hidden], <i>/* 0-1-1 */</i>
 
 
 <div class="slide">
-  <header><h1>:where()</h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where">:where()</a></code></h1></header>
   <section class="content">
     <p>Same as <code>:is(s1, s2)</code>, but with no specificity</p>
 <p>Specificity sometimes makes life hard:</p>
@@ -1637,7 +1680,7 @@ nav a {  <i>/* has greater specificity */</i>
  <!-- Reference Combinator -->
 <div class="slide">
   <header>
-    <h1>Parent Selector</h1>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">:has(s1, s2)</a></code> Parent Selector</h1>
   </header>
   <section class="content">
     <p>Parent selector</p>
@@ -1653,7 +1696,10 @@ nav a {  <i>/* has greater specificity */</i>
 </div>
 
 
-
+<!-- divider -->
+<div class="slide intro">
+  <header><h1>STRETCH</h1></header>
+</div>
 
 
 <!-- divider -->
@@ -1662,17 +1708,23 @@ nav a {  <i>/* has greater specificity */</i>
 </div>
 
 <div class="slide normal">
-     <header><h1>Language Pseudo Classes</h1></header>
+     <header><h1>Language Pseudo Classes (CSS 2.1)</h1></header>
      <section class="content">
 
-  <p class="css4 temphidden">CSS 2.1</p>
-  <pre contenteditable class="double">html[lang|="en"]</pre>
-  <pre contenteditable class="double">p:lang(en)</pre>
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
-  <pre contenteditable class="double">:lang(*-ch)</pre>
+  <p>Matches if the element has the <code>lang</code> attribute</p>
+  <pre contenteditable>html[lang|="en"]</pre>
+  <p>Matches if the element is in the language, as determined by document language, headers, and lang attribute on ancestors.</p>
+  <pre contenteditable>p:lang(en)</pre>
+  </section>
+  </div>
 
-  <pre contenteditable class="double">
-:dir(ltr|rtl)</pre>
+  <div class="slide normal">
+     <header><h1>Language Pseudo Classes (level 4)</h1></header>
+     <section class="content">
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang">:lang(l1, l2)</a></code> - Matches and language common to the country. Accepts comma separated values.</p> 
+  <pre contenteditable>:lang(\*-ch, \*-be)</pre>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:dir">:dir()</a></code> -  Matches content that is left to right (<code>ltr</code>) or right to left (<code>rtl</code>) based on language, <code>dir</code> attribute, or surrounding text.</p>
+  <pre contenteditable>:dir(rtl)</pre>
   </section>
   </div>
 
@@ -1681,23 +1733,50 @@ nav a {  <i>/* has greater specificity */</i>
   <header><h1>Link, location, and user action</h1></header>
 </div>
 
+  <!-- links-->
+<div class="slide normal">
+     <header><h1>LoVe HAte</h1></header>
+     <section class="content">
+    <pre contenteditable>L   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link">:link</a>
+o
+V   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited">:visited</a>
+e
+
+H   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">:hover</a>
+A   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active">:active</a>
+t
+e
+
+F   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus">:focus</a>
+o
+r
+e
+v
+e
+r</pre>
+</section>
+</div>
+
 <!-- links-->
 <div class="slide normal">
      <header><h1>Link Pseudo Classes</h1></header>
      <section class="content">
       <p>Any element with an <code>href</code> attribute</p> 
-  <pre contenteditable class="double">:link
-:visited</pre>
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
- <pre contenteditable class="double">:any-link
-:local-link</pre>
+  <pre contenteditable>a:link        /* unvisited links */
+a:visited     /* visited links */</pre>
+  <p>CSS Selectors Level 4</p>
+ <pre contenteditable>a:any-link    /* a:link, a:visited */
+:local-link   /* target absolute URL == document URL */
+              /* :not(:local-link) == external link */</pre>
 
   </section>
   </div>
 
 
+
+
 <div class="slide normal">
-     <header><h1>:any-link</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link">:any-link</a></h1></header>
      <section class="content">
       <p>Any element with an <code>href</code> attribute:</p>
       <pre contenteditable>&lt;a>
@@ -1712,7 +1791,7 @@ nav a {  <i>/* has greater specificity */</i>
 
 
 <div class="slide">
-  <header><h1>:local-link</h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:local-link">:local-link</a></code></h1></header>
     <section class="content">
      <pre contenteditable class="example">:local-link {
   text-decoration: none;
@@ -1732,7 +1811,7 @@ a:not(:local-link) {
 <div class="slide normal">
      <header><h1>User Action Pseudo Classes</h1></header>
      <section class="content">
-  <pre contenteditable class="double">:hover
+  <pre contenteditable>:hover
 :active
 :focus</pre>
 <p>Note: always style :focus when you style :hover</p>
@@ -1743,7 +1822,7 @@ a:not(:local-link) {
   </div>
 
 <div class="slide object">
-  <header><h1><code>:focus-within</code></h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within">:focus-within</a></code></h1></header>
 
  <object data="exercises/21_focusring.html"></object>
  <a href="exercises/21_focusring.html" target="play" class="objectlink">:focus-within</a>
@@ -1754,24 +1833,24 @@ a:not(:local-link) {
 
 <!-- lang, target, anchor links-->
 <div class="slide normal">
-     <header><h1>:hover, :active, :focus</h1></header>
+     <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">:hover</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active">:active</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus">:focus</a></h1></header>
      <section class="content">
-  <pre contenteditable class="double">:hover
+  <pre contenteditable>:hover
 :active
 :focus</pre>
 
-  <pre contenteditable class="double">a:visited:hover
+  <pre contenteditable>a:visited:hover
 button:active:focus</pre>
  
   <p>Never, ever, ever do....</p>
-  <pre contenteditable class="double">*:focus { outline: none; }</pre>
+  <pre contenteditable>*:focus { outline: none; }</pre>
   </section> <p><a href="https://html.spec.whatwg.org/multipage/semantics-other.html#selector-active" target="play">elements that can be active</a></p>
   </div>
 
 
 <!-- lang, target, anchor links-->
 <div class="slide normal">
- <header><h1>:focus-visible</h1></header>
+ <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">:focus-visible</a></h1></header>
  <section class="content">
 <p>Improving accessibility:</p>
 <ul>
@@ -1827,9 +1906,9 @@ button:active:focus</pre>
 
 <!-- lang, target, anchor links-->
 <div class="slide normal">
-     <header><h1>:target</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">:target</a></code></h1></header>
      <section class="content">
-  <pre contenteditable class="double">:target
+  <pre contenteditable>:target
 :target-within</pre>
  
  <pre>myPage.html#anchor
@@ -1854,10 +1933,10 @@ div:target::first-line {
 <!-- scope-->
 
 <div class="slide normal">
-     <header><h1>:scope</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:scope">:scope</a></code></h1></header>
      <section class="content">
 
-  <pre contenteditable class="double">:scope</pre>
+  <pre contenteditable>:scope</pre>
 <p>Matches elements that are a reference point for selectors to match against.</p>
 
 <pre>/* Selects a scoped element */
@@ -1874,16 +1953,16 @@ div:target::first-line {
 <div class="slide normal">
      <header><h1>Grid-structural selectors</h1></header>
      <section class="content">
-<p>Column combinator</p>
-  <pre contenteditable class="double">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column_combinator">Column combinator</a></p>
+  <pre contenteditable>
 E || F
 </pre>
 
-  <pre contenteditable class="double">col.selected || td {
+  <pre contenteditable>col.selected || td {
   /* matches all cells within the column's scope*/
 }</pre>
-  <pre contenteditable class="double">:nth-column(An+B)
-:nth-last-column(An+B)
+  <pre contenteditable>:nth-col(An+B)
+:nth-last-col(An+B)
 </pre>
   </section>
   </div>
