@@ -3,7 +3,7 @@ body {counter-reset: pagecount;}
 .slide {counter-increment: pagecount;}
 .slide::after {
   content: counter(pagecount);
-  color: lightblue;
+  color: $colorpop;
   position: absolute;
   bottom: 2rem;
   left: 1rem;

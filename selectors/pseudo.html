@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
     <title>Pseudo Elements</title>
-    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="exercises/editme.css"/>
 <link rel="stylesheet" href="../intro/css/selectors.css"/>
 
@@ -23,6 +22,13 @@
   <div id="presentation">
    <div id="presentation-counter"></div>
    <div id="slides">
+
+<!-- divider -->
+<div class="slide intro">
+  <header><h1>Welcome back!</h1></header>
+     <section class="content">
+    <a href="index2.html#slide54">Go Back ➹</a></section>
+</div>
 
     <div class="slide intro">
      <header>
@@ -45,24 +51,27 @@
  </div>
 
 <!-- Pseudo elements -->
-<div class="slide normal thisSlide">
+<div class="slide">
      <header><h1>Pseudo elements</h1></header>
      <section class="content">
-     <pre contenteditable style="font-size: 100%;">::after (:after)
+     <pre contenteditable>::after (:after)
 ::before (:before)
 ::first-letter (:first-letter)
 ::first-line (:first-line)</pre>
-<pre contenteditable style="font-size: 100%;">::selection
+<article class="flex12"><pre contenteditable>::selection
 ::inactive-selection
 ::spelling-error 
 ::grammar-error
 ::marker 
-::placeholder
-    </pre>
+::placeholder</pre>
+<pre contenteditable>::backdrop
+::cue  
+::part()
+::slotted()</pre></article>
 </section>
 </div>
 
-<div class="slide normal thisSlide">
+<div class="slide">
      <header><h1>Pseudo elements</h1></header>
   <p><i class="imp">Pseudo-classes</i> select elements that
 
@@ -74,22 +83,33 @@ already exist.<br>
 
 
 <!-- Pseudo elements -->
-<div class="slide normal thisSlide">
+<div class="slide">
      <header><h1>Original pseudo-elements</h1></header>
      <section class="content">
-     <pre contenteditable style="font-size: 100%;">::after
-::before
-:first-letter
-:first-line</pre>
+     <pre contenteditable style="border-width: 3px; transform: scale(1.1); transform-origin: left center; width: 86%;">::after (:after)
+::before (:before)
+::first-letter (:first-letter)
+::first-line (:first-line)</pre>
 
- <small>The double colon notation was introduced to “establish a discrimination between pseudo-classes and pseudo-elements.”<br><br/>For compatibility, browsers accept the one-colon notation for pseudo-elements introduced in CSS levels 1 and 2, but not for newer pseudo-elements</small>
+
+ <p>The double colon notation was introduced to “establish a discrimination between pseudo-classes and pseudo-elements.”<br><br/>For compatibility, browsers accept the one-colon notation for pseudo-elements introduced in CSS levels 1 and 2, but not for newer pseudo-elements</p>
+ <article class="flex12"><pre contenteditable>::selection
+::inactive-selection
+::spelling-error 
+::grammar-error
+::marker 
+::placeholder</pre>
+<pre contenteditable>::backdrop
+::cue  
+::part()
+::slotted()</pre>
       </section>
     </div>
 
 
 <!-- Drop Cap -->
 <div class="slide object ">
-     <header><h1>::first-letter</h1></header>
+     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter">::first-letter</a></code></h1></header>
      <object data="exercises/20_dropcap.html">
      <section class="content">
 
@@ -102,8 +122,7 @@ already exist.<br>
 	color: hsl(205, 87%, 50%);
 	padding: 0 4px 2px 0;
 	font-weight: bold;
-}
- </pre>
+}</pre>
      </section>
      </object>
      <a href="exercises/20_dropcap.html" target="play" class="objectlink">Drop Cap</a>
@@ -113,7 +132,7 @@ already exist.<br>
 
 <!-- Drop Cap -->
 <div class="slide object ">
-     <header><h1>::first-line</h1></header>
+     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line">::first-line</a></code></h1></header>
      <object data="exercises/22_firstline.html">
      <section class="content">
 
@@ -136,14 +155,14 @@ already exist.<br>
 
 <div class="slide divider">
      <header><h1>Generated Content<br/>
-     with ::before and ::after</h1></header><section>
+     with <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before">::before</a></code> and <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after">::after</a></code></h1></header><section>
        
    
      <small>Just an intro. We'll deep dive in the next section</small>
   </section> </div>
 
 <!-- ::before and ::after  -->
-<div class="slide normal">
+<div class="slide">
      <header><h1>::before and ::after</h1></header>
 
 
@@ -185,53 +204,77 @@ p::after{
   <a class="objectlink" href="exercises/10_counting.html">Open in new page</a>
     </div>
 
-<div class="slide">
-     <header><h1>Additional Pseudo-elements</h1></header>
+
+
+<div class="slide intro">
+     <header><h1>Newer pseudo-elements</h1></header>
      <section class="content">
-<pre class="largeblock">
+     <pre contenteditable>::after (:after)
+::before (:before)
+::first-letter (:first-letter)
+::first-line (:first-line)</pre>
+<article class="flex12"><pre contenteditable style="transform: scale(1.1); transform-origin: center left; border-width: 3px; ">::selection
+::inactive-selection
+::spelling-error 
+::grammar-error
+::marker 
+::placeholder
+    </pre>
+<pre contenteditable>::backdrop
+::cue  
+::part()
+::slotted()</pre></article>
+<!--<pre contenteditable>
 ::selection
 ::inactive-selection
 ::spelling-error 
 ::grammar-error
 ::marker 
 ::placeholder</pre>
-<pre>
-::backdrop      <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">Fullscreen API</a> */</i> 
-::cue           <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">VTT - video text tracks</a> */</i>
-::part()        <i>/* <a href="https://drafts.csswg.org/css-shadow-parts/">CSS shadow parts</a> */</i>
-::slotted()     <i>/* <a href="https://drafts.csswg.org/css-scoping/#slotted-pseudo">CSS Scoping</a> */</i></pre>
+<pre contenteditable><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop">::backdrop</a>      <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">Fullscreen API</a> */</i> 
+<a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::cue">::cue</a>         <i>/* <a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">VTT - video text tracks</a> */</i>
+<a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part">::part()</a>       <i>/* <a href="https://drafts.csswg.org/css-shadow-parts/">CSS shadow parts</a> */</i>
+<a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted">::slotted()</a>    <i>/* <a href="https://drafts.csswg.org/css-scoping/#slotted-pseudo">CSS Scoping</a> */</i></pre>-->
 </section>
 </div>
 
-<!-- divider -->
-<div class="slide divider">
-  <header><h1>::selection</h1></header>
-</div>
 
 <!-- ::selection -->
 <div class="slide thisSlide">
-     <header><h1>::selection</h1></header>
-     <section class="content">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection">::selection</a></code></h1></header>
+     <section class="content"><br/>
 
-    <pre contenteditable>.thisSlide *::selection {
+    <style contenteditable class="editme">
+.thisSlide *::selection {
    background-color: #990000;
    color: #ffffff;
 }
-    </pre>
+    </style>
+    <p>Matches the part of a document highlighted by user.</p>
+    <p>limited stylability: 
+    <code>color, 
+    background-color, 
+    cursor,
+    caret-color,
+    outline,
+    text-decoration,
+    text-emphasis-color,</code> and
+    <code>text-shadow</code> can be styled. <code>background-image</code> can not.</p>
+
      </section>
     </div>
 
 
-<div class="slide normal thisSlide foo">
+<div class="slide normal noSelection">
      <header><h1>Disabling ::selection</h1></header>
      <section class="content">
 <p>For mobile but impacts desktop too:</p>
-<pre class="contenteditable">.thisSlide {
+<pre class="contenteditable">.noSelection {
   -webkit-tap-highlight-color: #bada55;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }</pre>
-<style class="editme" contenteditable style="font-size: 20px">.thisSlide.foo {
+<style class="editme">.noSelection {
   -webkit-tap-highlight-color: #bada55;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -240,10 +283,6 @@ p::after{
 </div>
 
 
-<!--  -->
-<div class="slide divider">
- <header><h1>Other pseudo-elements</h1></header>
-</div>
 
 
 <div class="slide">
@@ -254,24 +293,48 @@ p::after{
 </div>
 
 <div class="slide">
-  <header><h1>::spelling-error</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::spelling-error">::spelling-error</a></code></h1></header>
     <section class="content"> 
       <p>The portions of text that have been flagged by the user agent as misspelled.</p>  
     </section>
 </div>
 
 <div class="slide">
-  <header><h1>::grammar-error</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error">::grammar-error</a></code></h1></header>
     <section class="content">
       <p>The portions of text that have been flagged by the user agent as grammatically incorrect.</p> 
     </section>
 </div>
 
 <div class="slide">
-  <header><h1>::marker </h1></header>
+  <header><h1><code>::spelling-error</code> and <code>::grammar-error</code></h1></header>
+    <section class="content"> 
+      <p>
+Because the styling of spelling and grammar errors can leak information about the contents of a user’s dictionary (which can include the user’s name and even includes the contents of their address book!) UAs that implement <code>::spelling-error</code> and <code>::grammar-error</code> must prevent pages from being able to read the styling of such highlighted segments.
+</p>
+<p>limited stylability: </p>
+    <code><ul><li>color</li>
+    <li>background-color</li>
+    <li>cursor</li>
+    <li>caret-color</li>
+   <li> outline</li>
+    <li>text-decoration</li>
+    <li>text-emphasis-color</li>
+      <li>text-shadow</li>
+    </ul></code>
+<p>        <code>background-image</code> can not.</p>
+<p>Introduced in spec June 2016</p>
+</section>
+</div>
+
+<div class="slide marker">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">::marker</a></code> </h1></header>
     <section class="content">
       <p>The bullet, or marker, of a list item. </p>
-
+<style contenteditable class="editme">.marker ul li::marker {
+  color: blue;
+  font-size: 2.5em;
+}</style>
 <p>Currently, only limited CSS properties apply: </p>
 <ul>
     <li><code>color</code> and <code>content</code></li>
@@ -280,11 +343,131 @@ p::after{
     </section>
 </div>
 
+<div class="slide ph">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder">::placeholder</a></h1></header>
+    <section class="content">
+      <p>The placeholder text in an input field</p>
+   <style contenteditable class="editme">.ph ::placeholder {
+    color: red;
+   }</style> 
+<input type="text" placeholder="what color am i?">
+ </section>
+  
+</div>
+
+
+<div class="slide intro">
+     <header><h1>More pseudo-elements</h1></header>
+     <section class="content">
+     <pre contenteditable>::after (:after)
+::before (:before)
+::first-letter (:first-letter)
+::first-line (:first-line)</pre>
+<article class="flex12"><pre contenteditable ">::selection
+::inactive-selection
+::spelling-error 
+::grammar-error
+::marker 
+::placeholder
+    </pre>
+<pre contenteditable style="transform: scale(1.1); transform-origin: center right; border-width: 3px;" >::backdrop
+::cue  
+::part()
+::slotted()</pre></article></section>
+  
+</div>
+
+
 <div class="slide">
-  <header><h1>::placeholder</h1></header>
-    <section class="content">The placeholder text in an input field
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop">::backdrop</a></code></h1></header>
+    <section class="content"> 
+      <p>Backdrop is displayed when dialog is opened with <code>dialog.showModal()</code></p>
+<pre contenteditable>dialog::backdrop {
+  background: rgba(255,0,0,.25);
+}</pre> 
+<pre contenteditable>video::backdrop {
+  background-color: #448;
+}</pre>
+      <p><a href="https://fullscreen.spec.whatwg.org/#::backdrop-pseudo-element">Fullscreen API</a></p>
     </section>
 </div>
+
+<div class="slide">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::cue">::cue</a></code></h1></header>
+    <section class="content"> 
+      <h2>Part of the <a href="https://w3c.github.io/webvtt/#the-cue-pseudo-element">VTT - video text tracks</a> Specification</h2>
+      <p>WebVTT Node Objects that are in the past or future</p>
+      <pre contenteditable>:future
+:past</pre><p>Matches WebVTT Internal Node Objects</p>
+<pre contenteditable>::cue
+::cue(s1)</pre>
+<p>Matches any list of WebVTT region objects</p>
+<pre contenteditable>::cue-region
+::cue-region()</pre>  
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1><code>::cue / ::cue(s1)</code></h1></header>
+    <section class="content"> 
+      <p>Style captions and other cues in media with text tracks</p>
+     <p>Limited stylability:</p>
+
+    <code><ul>
+      <li>color</li>
+      <li>opacity</li>
+      <li>visibility</li>
+      <li>text-decoration</li>
+      <li>text-shadow</li>
+      <li>background /* applied to the WebVTT cue background box */</li>
+      <li>outline </li>
+      <li>font</li>
+      <li>line-height</li>
+      <li>white-space</li>
+      <li>text-combine-upright</li>
+      <li>ruby-position </li>
+  </ul></code>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part()">::part()</a></code></h1></header>
+    <section class="content"> 
+      <p>Matches element within a shadow tree that has a matching <code>part</code> attribute.</p> 
+      <pre contenteditable>custom-element-name::part(partvalue) {
+  /* Styles for node that has <em>part="partvalue"</em> set */
+}</pre>
+<pre contenteditable>&lt;custom-element-name>
+  &lt;div part="partvalue">
+    Foo Bar
+  &lt;/div>
+&lt;/custom-element-name></pre>
+      <p><a href="https://drafts.csswg.org/css-shadow-parts/">CSS shadow parts</a></p> 
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted()">::slotted()</a></code></h1></header>
+    <section class="content"> 
+      <p>eElement placed into slot in an HTML <code>template</code> </p> 
+      <pre contenteditable="">&lt;x-bar&gt;
+   &lt;div id=&quot;one&quot; slot=&quot;foo&quot; class=&quot;foo&quot;&gt;...&lt;/div&gt;   
+   &lt;div id=&quot;two&quot; slot=&quot;foo&quot;&gt;...&lt;/div&gt;   
+   &lt;div id=&quot;three&quot; class=&quot;foo&quot;&gt;
+     &lt;div id=&quot;four&quot; slot=&quot;foo&quot;&gt;...&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/x-bar&gt;</pre>
+<pre contenteditable>::slotted(*) { /* #one and #two only. 
+    #three has no slot attribute
+    #four is not a direct children of shadow host so can't have a slot */
+}
+::slotted(.foo) { /* matches #one. */ }</pre>
+      <p><a href="https://drafts.csswg.org/css-scoping/#slotted-pseudo">CSS Scoping</a></p> 
+    </section>
+</div>
+
+
+
 <!--  -->
 <div class="slide divider">
  <header><h1>Browser specific pseudo-elements</h1></header>
@@ -399,9 +582,9 @@ p::after{
 
 <!--NEXT-->
 <div class="slide">
-     <header><h1>Generated Content</h1></header>
+     <header><h1>Specificity</h1></header>
      <section class="content">
-    <h1><a href="../generated/">Next ➹</a></h1></section>
+    <h1><a href="specificity.html">Next ➹</a></h1></section>
 </div>
 
 
@@ -410,7 +593,7 @@ p::after{
   <section>
     <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
-    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>

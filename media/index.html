@@ -113,7 +113,7 @@ dt a[href*="mozilla"] {
 
 
 
-<div class="slide" style="background-image: url(images/devicesizes.jpg); background-position:bottom;">
+<div class="slide" style="background-image: url(images/devicesizes.jpg); background-position:center; background-repeat: no-repeat; background-color: white">
   <header><h1>Varied Screen Sizes</h1></header>
     <section class="content">
       <ul style="margin-top: 270px; font-size:1.1em">
@@ -145,24 +145,38 @@ dt a[href*="mozilla"] {
     background: yellow;
  <b> }</b>
 </pre>
-<hr/>
+<h1>RESIZE THE WINDOW</h1>
+</section>
+</div>
+
+
+<!-- squish the page -->
+<div class="slide">
+  <header><h1>Media Queries</h1></header>
+  <section class="content">
 <pre contenteditable><b>@media screen and (orientation: landscape)</b> {
   a[href^="mailto:"]:before {
     content: url(icons/email.gif);
   }
 <b>}</b>
   </pre>
-<h1>RESIZE THE WINDOW</h1>
     </section>
 </div>
 
 
 <!-- media queries: browser support -->
- <div class="slide normal">
-  <header><h1>media queries</h1></header>
+ <div class="slide">
+  <header><h1>Media queries</h1></header>
     <section class="content">
     <pre contenteditable>&lt;link rel='stylesheet'
-<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre>
+<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre></section>
+</div>
+
+
+<!-- squish the page -->
+<div class="slide">
+  <header><h1>Media Queries</h1></header>
+  <section class="content">
   <pre contenteditable><b>@media screen and (max-width: 480px) {</b>
   selector { /* small screen */
     property: value;
@@ -182,7 +196,7 @@ dt a[href*="mozilla"] {
 <div class="slide">
   <header><h1>Breakpoints</h1></header>
     <section class="content">
-<img src="images/aspectratio.svg">
+<img src="images/aspectratio.svg" style="height: calc(96vh - 100px); margin: 20px auto;">
 <a href="http://opensignal.com/reports/fragmentation.php">OpenSignal.com</a>
     </section>
 </div>
@@ -291,7 +305,7 @@ dt a[href*="mozilla"] {
 
 
 <!-- media queries: v 3 -->
-<div class="slide normal">
+<div class="slide">
   <header><h1>media query condition properties</h1></header>
 <section class="content largeblock">
   <p>Viewport / Page Dimensions
@@ -310,7 +324,15 @@ dt a[href*="mozilla"] {
 <ul>
   <li><em>(any)-pointer:</em> one | coarse | fine </li>
   <li><em>(any)-hover:</em> none | hover </li>
-</ul>
+</ul></section>
+</div>
+
+
+<!-- media queries: v 3 -->
+<div class="slide">
+  <header><h1>media query condition properties</h1></header>
+<section class="content largeblock">
+
 <p>Colors</p>
 <ul style="opacity: 0.3">
 <li><em>(min/max)-color:</em> </li>
@@ -319,11 +341,13 @@ dt a[href*="mozilla"] {
 <li><em>color-gamut:</em> srgb | p3 | rec2020 </li>
 </ul>
 <p>Others</p>
+<ul style="opacity: 0.3">
 <li><em>scan:</em> progressive | interlace (tv) </li>
 <li><em>grid:</em> 0 | 1 (grids (like tty) or bitmap)</li>
 <li>See <a href="https://drafts.csswg.org/mediaqueries-4/#mf-dimensions">Media Queries Spec</a></li>
 </ul>
-<ul style="float: right" class="temphidden">
+<p>Notes:</p>
+<ul>
   <li>case insensitive</li>
   <li>unknown media types  == false</li>
 </ul>
@@ -787,7 +811,7 @@ dt a[href*="mozilla"] {
 </div>
 
 <!-- media queries: browser support -->
- <div class="slide normal">
+ <div class="slide">
   <header><h1>Viewport</h1></header>
     <section class="content">
     <pre contenteditable>&lt;meta name="<strong>viewport</strong>" content="<strong>width</strong>=device-width,
@@ -803,7 +827,13 @@ dt a[href*="mozilla"] {
       <dt>minimum-scale</dt>
       <dt>user-scalable</dt>
       <dd>Are users  allowed to zoom the page</dd>
-    </dl>
+    </dl></section>
+</div>
+
+<!-- media queries: browser support -->
+ <div class="slide">
+  <header><h1>Viewport</h1></header>
+    <section class="content">
   <pre contenteditable>@viewport {
   width: device-width; zoom: 0.5;
 }</pre>
@@ -957,7 +987,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
   <section>
 <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
-    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>

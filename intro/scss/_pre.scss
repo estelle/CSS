@@ -23,10 +23,10 @@ pre {
     text-shadow: currentColor 0 0 1px;
   }
   a {
-    text-decoration: underline wavy #999ff133;
+    text-decoration: underline dotted lighten($splashcolor, 40%);
   }
   a:hover, a:active, a:focus {
-      text-decoration: underline wavy #999ff199;
+      text-decoration: underline dotted lighten($splashcolor, 10%);
   }
 }
 code i {

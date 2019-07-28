@@ -24,9 +24,9 @@ a, em {
   font-style: normal;
 }
 a {
-  text-decoration: underline wavy lighten($splashcolor, 30%);
+  text-decoration: underline dotted lighten($splashcolor, 30%);
   &:hover, &:focus {
-    text-decoration: underline wavy;
+    text-decoration: underline dotted;
   }
 }
 .imp li,

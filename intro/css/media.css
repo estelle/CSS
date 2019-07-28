@@ -128,6 +128,10 @@ nav button {
   appearance: none;
 }
 
+nav ul {
+  list-style-type: none;
+}
+
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
@@ -238,7 +242,10 @@ pre em {
   text-shadow: currentColor 0 0 1px;
 }
 pre a {
-  text-decoration: underline wavy #999ff111;
+  text-decoration: underline dotted #fbdc78;
+}
+pre a:hover, pre a:active, pre a:focus {
+  text-decoration: underline dotted #d3a307;
 }
 
 code i {
@@ -301,10 +308,10 @@ a, em {
 }
 
 a {
-  text-decoration: underline wavy #f9cf47;
+  text-decoration: underline dotted #f9cf47;
 }
 a:hover, a:focus {
-  text-decoration: underline wavy;
+  text-decoration: underline dotted;
 }
 
 .imp li,
@@ -412,6 +419,10 @@ section.content {
 
 .flex12 > * {
   flex: 1;
+}
+
+.flex12 > * + * {
+  margin-left: 1em;
 }
 
 .flex12 article:first-of-type {

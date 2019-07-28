@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Generated Content</title>
+<link rel="stylesheet" href="../selectors/exercises/editme.css"/>
    <link rel="stylesheet" href="../intro/css/generated.css"/>
-   <link rel="stylesheet" href="generated.css"/>
 
   </head>
   <body>
@@ -18,7 +18,7 @@
   </div>
 
 <div id="presentation">
-  <div id="presentation-counter"></div>
+  <div id="presentation-counter" style="display: none"></div>
   <div id="slides">
 
 
@@ -32,7 +32,7 @@
       <ul>
         <li>Generated Content</li>
         <li>Generated Content: quotes</li>
-<li>countent: &lt;image></li>
+<li>content: &lt;image></li>
 <li>Generated Content: Attribute Values</li>
 <li><code>position</code> property</li>
 <li>Generated Content: Counters</li>
@@ -150,9 +150,7 @@ element::after {
      <section class="content">
      <pre contenteditable class="largeblock">content: none;
 content: normal;
-
 content: "string of text";
-
 content: url(path/image.jpg);
 
 content: counter(mycounter, lower-roman);
@@ -164,7 +162,6 @@ content: no-open-quote;
 content: no-close-quote;</dt>
 
 content: attr(href)</dt>
-
 content: url(path/email.png) " " attr(title);
 
 content: inherit;
@@ -188,7 +185,7 @@ content: no-close-quote;</li>
     <li>content: &lt;image></li>
     <li>content: attr()</li>
     <li>content: counter()
-countent: counters()</li>
+content: counters()</li>
     <li>content: &lt;string></li>
     <li>Examples</li>
   </ol>
@@ -245,13 +242,11 @@ q::after  { content: close-quote }
 </div>
 
 
-
 <div class="slide object">
-  <header><h1>Try it out</h1></header>
+  <header><h1>Play Time</h1></header>
   <object data="exercises/03_quotes.html"></object>
   <a href="exercises/03_quotes.html" target="play" class="objectlink">Try it out</a>
 </div>
-
 
 <div class="slide object">
   <object data="https://codepen.io/estelle/full/yPbKVW/"></object>
@@ -267,7 +262,7 @@ q::after  { content: close-quote }
 
 
 <div class="slide divider">
-   <header><h1>countent: &lt;image></h1></header>
+   <header><h1>content: &lt;image></h1></header>
    <section class="content">
    </section>
 </div>
@@ -294,15 +289,15 @@ q::after  { content: close-quote }
 </div>
 
 <!-- attribute example -->
-<div class="slide">
+<div class="slide attr">
    <header><h1>Attribute Values as content</h1></header>
    <section class="content attribute">
-   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes">external link</a>.</p>
-   <pre contenteditable>a[href^=http]:hover {
+   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
+   <style contenteditable class="editme">.attr a[href^=http]:hover {
    position: relative;
 }
-a[href^=http]:hover::after {
-   <b>content: attr(href);</b>
+.attr a[href^=http]:hover::after {
+   content: attr(href);
    position: absolute;
    top: 1em;
    left: 0;
@@ -310,7 +305,29 @@ a[href^=http]:hover::after {
    color: white;
    padding: 3px 5px;
    line-height:1;
-} </pre>
+} </style>
+  </section>
+</div>
+
+
+<!-- attribute example -->
+<div class="slide attr2">
+   <header><h1>Why relative only on hover?</h1></header>
+   <section class="content attribute">
+   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
+   <style contenteditable class="editme">.attr2 a {
+   position: relative;
+}
+.attr2 a:hover::after {
+   content: attr(href);
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;
+} </style>
   </section>
 </div>
 
@@ -477,7 +494,7 @@ body {counter-reset: pagecount;}
 .slide {counter-increment: pagecount;}
 .slide::after {
   content: counter(pagecount);
-  color: pink;
+  color: red;
   position: absolute;
   bottom: 2rem;
   left: 1rem;
@@ -761,7 +778,7 @@ a[href$="vcs"]::before {
   <section>
     <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
-    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../generated">Generated Content</a></li>
     <li><a href="../media">Media Queries</a></li>

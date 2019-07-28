@@ -21,6 +21,9 @@
 .flex12 > * {
 	flex: 1;
 }
+.flex12 > * + * {
+	margin-left: 1em;
+}
 .flex12 article:first-of-type {
 	flex: 1;
 }

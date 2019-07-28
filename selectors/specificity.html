@@ -86,6 +86,47 @@ p#myP.important {
      </section>
 </div>
 
+<!-- Specificity Notes -->
+<div class="slide">
+<h2>The HTML</h2>
+<pre contenteditable>  &lt;body class="blue" id="myPage">
+    &lt;div id="someId">
+      &lt;article class="home">
+        &lt;p class="important">
+          &lt;a href="index.html" class="classy" id="anotherID">
+            Link
+          &lt;/a>
+        &lt;/p>
+      &lt;/article>
+    &lt;/div>
+  &lt;/body></pre>
+  <h2>The CSS</h2>
+   <pre contenteditable>body.blue div#someId a#otherId.classy {
+  color: blue; }
+#myPage #someId article.home p.important a {
+  color: red; }</pre>
+</section>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide">
+     <header><h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>: How it works</h1></header>
+     <section class="content">
+      
+ <pre contenteditable>body.blue div#someId a#otherId.classy {
+  color: blue; }
+#myPage #someId article.home p.important a {
+  color: red; }</pre>
+<ol>
+  <li>How many IDs in the selector?</li>
+  <li>How many class, attribute and pseudoclasses?</li>
+  <li>How many type/element or pseudo-elements?</li></ol>
+ <pre contenteditable>2-X-X
+X-2-X
+X-X-3</pre>
+</section>
+</div>
 
 
 <!-- Specificity Notes -->
@@ -134,7 +175,7 @@ a {
 
     <pre contenteditable>:where(a, .b, #c)</pre>
 
-    <pre contenteditable>:nth-child(-n + 3 of a.b#c)</pre>
+    <pre contenteditable>:nth-child(-n + 3 of a.b#c) /* 1-2-1 */</pre>
   </section>
 </div>
 
@@ -228,7 +269,7 @@ v.
   <section>
     <ol class="col2">
     <li><a href="../intro">Introduction</a></li>
-    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
     <li><a href="../selectors/specificity.html">Specificity</a></li>
     <li><a href="../selectors/pseudo.html">Pseudo-elements</a></li>
     <li><a href="../generated">Generated Content</a></li>
