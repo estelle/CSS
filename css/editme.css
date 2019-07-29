@@ -16,6 +16,7 @@ body {
 }
 style[id="editme" i],
 style[class="editme" i]  {
+	margin: 1em auto;
 	visibility: visible;
 	padding: 20px; 
 	font-family: monospace; 
@@ -23,7 +24,6 @@ style[class="editme" i]  {
 	border-radius: 10px; 
 	border: 3px solid #aaa; 
 	background-color:#dedede; 
-	margin: 0 auto;
 	width: 90vw;
 	font-family:"Courier New", Courier, monospace;
 	-moz-tab-size: 1em;

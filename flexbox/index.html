@@ -4,7 +4,18 @@
     <meta charset="utf-8" />
     <title>CSS: Flexbox</title>
    <link rel="stylesheet" href="../intro/css/flex.css"/>
-   <style>.current > header {background-color: white;}</style>
+   <style>.current > header {background-color: white;}
+  pre.showsection b {position: relative; transform-origin: left;} 
+pre.showsection b::after {
+  content: '';
+  position: absolute;
+  width: 50vw;
+  height: 110%; top: -0.5em; left: -0.25em;
+  z-index: 10;
+  border: 3px solid green;
+  border-radius: 10px;
+}
+ </style>
    
 
   </head>
@@ -43,8 +54,9 @@
 
 <div class="slide">
   <header><h1><code>float</code> property</h1></header>
-  <section class="content"><pre contenteditable>/* Keyword values */
-float: left;
+  <section class="content">
+<h2><code>float</code> property values</h2>
+    <pre contenteditable>float: left;
 float: right;
 float: none;
 float: inline-start;
@@ -62,6 +74,11 @@ float: inline-end;</pre>
 
 
 
+
+
+
+
+
 <div class="slide">
   <header><h1>float features</h1></header>
   <section class="content">
@@ -72,6 +89,7 @@ float: inline-end;</pre>
 <li>Text wraps around the float. </li>
 <li>Adjacent sibling moves up.</li>
 <li>If all children are floated, parent has no height!</li>
+<li>floated elements are at least as tall as their floated children</li>
     </ul>
   </section>
 </div>
@@ -83,7 +101,22 @@ float: inline-end;</pre>
 </div>
 
 
-
+<div class="slide">
+<header><h1>Exercise</h1></header>
+<section class="content">
+  <h2>Instructions</h2>
+  <p>Take the <a href="exercises/float_boxes.html"  target="exercise">file we just looked at</a>, editing the HTML and the CSS to do the following:
+    <ol>
+      <li>Add a caption to the image</li>
+      <li>Encase the image, along with the caption, in a box with a border.</li>
+      <li>There should be white space between all the elements and the border.</li>
+      <li>Make the text wrap around the image.</li>
+      <li>Ensure there is white space between the image and the text but not on the outside of the image.</li>
+    </ol>
+<p>
+<a href="exercises/float_boxes.html" target="exercise">Download exercise</a></p>
+</section>
+</div>
 
 <div class="slide divider">
   <header><h1>Flex "What" and "Why"</h1></header>
@@ -147,14 +180,14 @@ float: inline-end;</pre>
 <div class="slide object">
   <header><h1>Browser support <button onclick="loadCIU(this)">load CANIUSE.com</button></h1></header>
   
-  <object id="caniuse">
+  <object id="caniuse" data="https://caniuse.com/#search=flexible">
   <img src="images/caniuse.png" alt="screen shot of Can I Use showing Flexbox is supported in all browsers since IE10" style="width: 100%; margin-top: 100px" />    </object>
 <a href="http://caniuse.com/#search=flexbox" target="play" class="objectlink">↪</a>
 <script>
 // required because autofocus in caniuse breaks the presentation
 function loadCIU(e){
   var obj = document.getElementById('caniuse');
-  obj.setAttribute('data', 'http://caniuse.com/#search=flexbox');
+  obj.setAttribute('data', 'https://caniuse.com/#search=flexible');
   e.style.display = 'none';
   return false;
 }
@@ -222,7 +255,14 @@ function loadCIU(e){
 
           <dt> flex</dt>
           <dd> Shorthand for <code>[flex-basis  flex-grow, and flex-shrink</code>, or <code>none</code></dd>
+</section>
+</div>
 
+
+<div class="slide">
+  <header><h1>Flexible Box Properties</h1></header>
+    <section class="content">
+        <dl class="deprecated listed">
           <dt> flex-basis</dt>
           <dd>The basis by which the flex-items flex. default: auto</dd>
 
@@ -237,7 +277,14 @@ function loadCIU(e){
 
           <dt> flex-shrink</dt>
           <dd>Positive number determines how much flex item will shrink relative to  other flex items in flex container when negative free space is distributed. default is 1</dd>
+</section>
+</div>
 
+
+<div class="slide">
+  <header><h1>Flexible Box Properties</h1></header>
+    <section class="content">
+        <dl class="deprecated listed">
           <dt> flex-wrap</dt>
           <dd> To determine whether the boxes are single line or wrap, and the direction, use <code>nowrap</code>, <code>wrap</code> or <code>wrap-reverse</code></dd>
 
@@ -283,39 +330,46 @@ function loadCIU(e){
 </div>
 
 
+
 <div class="slide">
-  <header><h1>All the <code>display</code> properties</h1></header>
+  <header><h1>All the <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
   <section class="content">
-  <pre contenteditable>/* &lt;display-outside> values */
+    <h2><code>&lt;display-outside></code> values</h2>
+  <pre contenteditable>
 display: block;
 display: inline;
-display: run-in;
+display: run-in;</pre>
 
-/* &lt;display-inside> values */
-display: flow;
+
+    <h2><code>&lt;display-inside></code> values</h2>
+ <pre contenteditable>display: flow;
 display: flow-root;
 display: table;
 display: flex;
 display: grid;
-display: ruby;
+display: ruby;</pre>
 
-/* &lt;display-outside> plus &lt;display-inside> values */
-display: block flow;
+
+    <h2><code>&lt;display-outside></code> plus <code>&lt;display-inside></code> values</h2>
+ <pre contenteditable>display: block flow;
 display: inline table;
-display: flex run-in;
+display: flex run-in;</pre>
 
-/* &lt;display-listitem> values */
-display: list-item;
+
+
+    <h2><code>&lt;display-listitem></code> values</h2>
+ <pre contenteditable>display: list-item;
 display: list-item block;
 display: list-item inline;
 display: list-item flow;
 display: list-item flow-root;
 display: list-item block flow;
 display: list-item block flow-root;
-display: flow list-item block;
+display: flow list-item block;</pre>
 
-/* &lt;display-internal> values */
-display: table-row-group;
+
+    <h2><code>&lt;display-internal></code> values</h2>
+ <pre contenteditable>display: table-row-group;
 display: table-header-group;
 display: table-footer-group;
 display: table-row;
@@ -326,37 +380,42 @@ display: table-caption;
 display: ruby-base;
 display: ruby-text;
 display: ruby-base-container;
-display: ruby-text-container;
+display: ruby-text-container;</pre>
 
-/* &lt;display-box> values */
-display: contents;
-display: none;
 
-/* &lt;display-legacy> values */
-display: inline-block;
+    <h2><code>&lt;display-box></code> values</h2>
+ <pre contenteditable>display: contents;
+display: none;</pre>
+
+
+    <h2><code>&lt;display-legacy></code> values</h2>
+ <pre contenteditable>display: inline-block;
 display: inline-table;
 display: inline-flex;
-display: inline-grid;
+display: inline-grid;</pre>
 
-/* Global values */
-display: inherit;
+
+    <h2>global values</h2>
+ <pre contenteditable>display: inherit;
 display: initial;
 display: unset;
+display: revert;</pre>
 </pre>
   </section>
 </div>
   
   
+  
 <div class="slide">
   <header><h1>Today's <code>display</code> properties</h1></header>
   <section class="content">
-  <pre contenteditable>
+  <pre contenteditable class="showsection">
 display: block;
 display: inline;
 display: inline-block;
 display: none;
 
-<b>display: flex;
+<b>display: flex;  
 display: inline-flex;</b>
 
 display: grid;
@@ -630,32 +689,24 @@ display: unset;</pre>
 <div class="slide">
   <header><h1><code>align-items</code> property</h1></header>
     <section class="content">
-      <p>aligns flex items along the cross axis</p>
-      <pre contenteditable>/* Basic keywords */ 
-align-items: normal; 
+      <p>Aligns flex items along the cross axis</p>
+      <h2>Keyterms</h2>
+      <pre contenteditable>align-items: normal; 
 align-items: stretch; 
-
-/* Positional alignment */ 
-/* align-items does not take left and right values */
-align-items: center; /* Pack items around the center */ 
-align-items: start; /* Pack items from the start */ 
-align-items: end; /* Pack items from the end */ 
-align-items: flex-start; /* Pack flex items from the start */ 
-align-items: flex-end; /* Pack flex items from the end */ 
+align-items: center;      
+align-items: start;      
+align-items: end;         
+align-items: flex-start;  
+align-items: flex-end;   
 align-items: self-start; 
-align-items: self-end; 
-
-/* Baseline alignment */
-align-items: baseline; 
+align-items: self-end; </pre>
+<h2>Baseline alignment</h2>
+<pre contenteditable>align-items: baseline; 
 align-items: first baseline; 
-align-items: last baseline; /* Overflow alignment (for positional alignment only) */ 
+align-items: last baseline;  
 align-items: safe center; 
-align-items: unsafe center; 
-
-/* Global values */
-align-items: inherit; 
-align-items: initial; 
-align-items: unset;</pre>
+align-items: unsafe center;</pre>
+<p>does not take left and right values</p>
     </section>
 </div>
 
@@ -672,37 +723,34 @@ align-items: unset;</pre>
 <div class="slide">
   <header><h1><code>justify-content</code> property</h1></header>
     <section class="content">
-      <p>aligns flex items along the main axis</p>
-      <pre contenteditable>/* Basic keywords */
-justify-items: auto;       /* Future: legacy */
+      <p>Aligns flex items along the main axis</p>
+      <h2>Keyterms</h2>
+      <pre contenteditable>
+justify-items: auto;       
 justify-items: stretch;
-justify-items: center;     /* Pack items around the center */
-justify-items: start;      /* Pack items from the start */
-justify-items: end;        /* Pack items from the end */
-justify-items: flex-start; /* Pack flex items from the start */
-justify-items: flex-end;   /* Pack flex items from the end */
+justify-items: center;     
+justify-items: start;    
+justify-items: end;       
+justify-items: flex-start; 
+justify-items: flex-end;   
 justify-items: self-start;
-justify-items: self-end;
+justify-items: self-end;</pre>
+<h2>Baseline alignment</h2>
+<pre contenteditable>
 justify-items: baseline;
-
 justify-items: first baseline;
-justify-items: last baseline;
-
+justify-items: last baseline;</pre>
+<h2>Legacy alignment</h2>
+<pre contenteditable>
 justify-items: right;
 justify-items: left;
 justify-items: legacy right;
 justify-items: legacy left;
 justify-items: legacy center;
 justify-items: safe center;
-justify-items: unsafe center;
-
-/* Global values */
-justify-items: inherit;
-justify-items: initial;
-justify-items: unset;
-
-/* justify item value ignored in flex */
-justify-items: normal;</pre>
+justify-items: unsafe center;</pre>
+<p>justify item value ignored in flex if 
+justify-items: normal;</p>
     </section>
 </div>
 
@@ -836,7 +884,7 @@ justify-items: normal;</pre>
 <div class="slide object">
 <header><h1>&lt;nav> comes after &lt;main></h1></header>
 <object data="exercises/homepagemobile2.html"></object>
-<a href="exercises/homepagemobile.html" target="play" class="objectlink">↪</a>
+<a href="exercises/homepagemobile2.html" target="play" class="objectlink">↪</a>
 </div>
 
 

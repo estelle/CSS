@@ -839,15 +839,12 @@ dt a[href*="mozilla"] {
 }</pre>
  <dl class="deprecated">
   <dt>min-width</dt>
-  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
   <dt>max-width</dt>
-  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
   <dt>width</dt>
   <dt>min-height</dt>
-  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
   <dt>max-height</dt>
-  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
   <dt>height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
   <dt>zoom</dt>
   <dd>auto, positive number or percentage</dd>
   <dt>min-zoom</dt>
@@ -859,19 +856,18 @@ dt a[href*="mozilla"] {
   <dt>orientation</dt>
   <dd>auto, portrait or landscape.</dd>
   </dl>
-  <pre>@media screen and (max-width:400px) {
-  @-ms-viewport { width:320px; // or device-width;}
-}</pre>
+</pre>
 </section>
 </div>
 
 <div class="slide">
-  <header><h1>Viewport Sidenote</h1></header>
+  <header><h1>Viewport Sidenotes</h1></header>
     <section class="content">
-      <p>If &lt;meta&gt; is set to disable zoom, there is no delay on onClick events.<p>
-      <p class="temphidden">If &lt;meta&gt; is set to disable zoom, you're a jerk!</p>
+      <p>Notes:</p>
+<ul>      <li>If <code>&lt;meta&gt;</code> is set to disable zoom, there is no delay on <code>onClick</code> events.</li>
+<li>If <code>&lt;meta&gt;</code> is set to disable zoom, you're a jerk!</li>
     </section>
-</div>
+</div>  
 
 
 
@@ -937,16 +933,9 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 <pre contenteditable><b><strong>@supports</strong> (will-change) </b>{
   /* rules for browsers supporting improved performance */
 }</pre>
-<hr/>
-<p>Don't use</p>
-<pre contenteditable>
-@media screen and (transform-3d) {
-  .transforms {}
-}</pre>
-<hr/>
-
-</section>
+  </section>
 </div>
+
 
 <div class="slide">
   <header><h1>@supports</h1></header>
@@ -966,13 +955,30 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 </div>
 
 
+
+
 <div class="slide object">
-  <object data="exercises/supports.html"></object>
+  <header>
   <h1>What CSS does your browser support?</h1>
+</header>
+  <object data="exercises/supports.html"></object>
   <a href="exercises/supports.html" class="objectlink" target="play">Play</a>
  </div>
 
 
+<!-- media queries: tidbits -->
+<div class="slide">
+  <header><h1>Legacy Detection</h1></header>
+    <section class="content">
+
+<p>Don't use this legacy support detection:</p>
+<pre contenteditable style="opacity: 0.5" class="nope">
+@media screen and (transform-3d) {
+  .transforms {}
+}</pre>
+<small style="opacity: 0.3"> Just including it, in case you come across it</small>
+</section>
+</div>
 
 <!--NEXT-->
 <div class="slide intro">

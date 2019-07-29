@@ -3,21 +3,8 @@
 <head>
 <meta charset="utf-8" />
     <title>Units and Values</title>
+<link rel="stylesheet" href="../selectors/exercises/editme.css"/>
 <link rel="stylesheet" href="../intro/css/values.css"/>
-<style>
-style[class="editme" i]  {
-  padding: 20px; 
-  display: block;
-  font-size: 1.2em; 
-  font-family: monospace; 
-  white-space:pre; 
-  border-radius: 10px; 
-  border: 3px solid #aaa; 
-  background-color:#dedede; 
-  margin: 50px auto 20px;
-  width: 90vw;
-  font-family:"Courier New", Courier, monospace;
-}</style>
 </head>
 
 <body>
@@ -37,7 +24,7 @@ style[class="editme" i]  {
       <h1>Units &amp; Values</h1>
      </header>
      <section>
-      <ul>
+      <ul class="col2">
         <li>Numeric data types
             <ul>
               <li>Integer</li>
@@ -141,14 +128,14 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Dimension</h1></header>
   <section class="content">
-    <ul>
-     <li><code>&lt;length></code></li>
+   <h2><code>&lt;dimension></code>: <code>&lt;number></code> with a unit</h2>
+   <ul>
+    <li><code>&lt;length></code></li>
     <li><code>&lt;angle></code></li>
     <li><code>&lt;time></code></li>
     <li><code>&lt;frequency></code></li>
     <li><code>&lt;resolution></code></li>
   </ul>
-  <p>&lt;number> with a dimensional unit.</p>
   </section>
 </div>
 
@@ -157,11 +144,15 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Length</h1></header>
   <section class="content">
-    <h2>Absolute</h2>
-    <p>Actual physical measurements (that might not match a ruler)</p>
-    <h2>Relative</h2>
-    <p>Relative to some other measurement</p>
-    <p><code>px</code> v. <code>em</code></p>
+    <h2><code>&lt;length></code>
+    <h3>Absolute</h3>
+    <p>Actual physical measurements (that might not match a ruler). <br/>
+      <code>cm, mm, Q, in, pt, pc, px</code></p>
+    <h3>Relative</h3>
+    <p>Relative to some other measurement. <br/>
+      <code>em, ex, cap, ch, ic, rem, lh, rlh
+vw, vh, vi, vb, vmin, vmax</code></p>
+    
   </section>
 </div>
 
@@ -324,7 +315,7 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Angle Units</h1></header>
   <section class="content">
-    <p>Angle values are represented by &lt;angle&gt; in the spec:</p>
+    <p>Angle values are represented by <code>&lt;angle&gt;</code> in the spec:</p>
 
 <table class="standard-table">
  <thead>
@@ -366,6 +357,16 @@ pre {height: 33.33%;}</pre></li>
   <header><h1>Angle Units</h1></header>
   <object data="exercises/angle.html"></object>
   <a href="exercises/angle.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide">
+  <header><h1>Angle Units</h1></header>
+  <section class="content">
+<style style="visibility: hidden; white-space: nowrap;">.conicgrad {height: 300px;width: 300px;  border-radius: 50%; background: blue; margin: auto; background: linear-gradient(var(--conicgrad), #f69d3c 45%, 46%, #3f87a6, 54%, #ebf8e1 55%); border: 1px solid; } @supports (background-image: conic-gradient(red, blue)) {.conicgrad {background-image: conic-gradient(from var(--conicgrad), #f69d3c, #3f87a6, #ebf8e1);}}</style>
+<style contenteditable class="editme">:root { --conicgrad: 90deg; }</style>
+<div class="conicgrad">
+</section> 
 </div>
 
 <div class="slide">
@@ -414,7 +415,7 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Frequency</h1></header>
   <section class="content">
-    <p>Frequency values are represented by the type &lt;frequency&gt;. </p>
+    <p>Frequency values are represented by the type <code>&lt;frequency&gt;</code>. </p>
 
 <table class="standard-table">
  <thead>
@@ -447,7 +448,7 @@ pre {height: 33.33%;}</pre></li>
 <div class="slide">
   <header><h1>Resolution</h1></header>
   <section class="content">
-    <p>Resolution units are represented by the type &lt;resolution&gt;. </p>
+    <p>Resolution units are represented by the type <code>&lt;resolution&gt;</code>. </p>
 
 <table class="standard-table">
  <thead>
@@ -501,8 +502,9 @@ pre {height: 33.33%;}</pre></li>
 
 
 <div class="slide">
-  <header><h1>Explicit Defaulting: CSS-wide property values</h1></header>
+  <header><h1>Global property values</h1></header>
   <section class="content">
+    <h2>Explicit Defaulting: CSS-wide property values</h2>
     <dl>
     <dt>initial</dt> <dd>Sets property to its initial value.</dd>
     <dt>inherit</dt> <dd>Makes element's property the same as its parent.</dd></dd>
@@ -510,9 +512,16 @@ pre {height: 33.33%;}</pre></li>
     
  </dl>
     <p><code>all</code> property lets you reset all properties to their initial, inherited, reverted, or unset state at once.</p>
-<hr/>
-<dl><dt>none</dt> <dd>Not global, but fails if not understood, so behaves similarly</dd></dl>
-<hr />
+    
+  </section>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>New: Global property value</h1></header>
+  <section class="content">
     <dl>
 
     <dt>revert</dt> <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)
@@ -520,6 +529,17 @@ pre {height: 33.33%;}</pre></li>
 
   </section>
 </div>
+
+
+<div class="slide">
+  <header><h1>Defaulting</h1></header>
+  <section class="content">
+<dl><dt>none</dt> <dd>Not global, but fails if not understood, so behaves similarly</dd></dl>
+    
+  </section>
+</div>
+
+
 
 
 
@@ -532,7 +552,7 @@ pre {height: 33.33%;}</pre></li>
 text-align: left;            text-align: inherit;
 text-align: right;           text-align: initial;
 text-align: center;          text-align: unset;
-text-align: justify;</pre>
+text-align: justify;         text-align: revert;</pre>
 <ul><li>appear literally, without quotes</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Avoid in custom identifiers</li></ul>
   </section>
 </div>
@@ -554,15 +574,18 @@ text-align: justify;</pre>
   </section>
 </div>
 
-<div class="slide">
+<div class="slide position">
   <header><h1><code>&lt;position></code></h1></header>
-  <section class="content">
-    <pre contenteditable>background-position: bottom right;
-background-position: bottom 40px right 60px;
+  <section class="content"><br/>
+    <style contenteditable class="editme">.position { background-repeat: no-repeat;
+  background-position: bottom right;
+  background-position: bottom 40px right 60px;
 
-background-image: radial-gradient(ellipse at bottom left, red 50%, blue 50%);
-background-image: radial-gradient(ellipse at bottom left, red 50%, blue 50%);
-</pre>
+  background-image: radial-gradient(300px at bottom right, 
+    rgba(0, 0, 0, 0.2) 99%, transparent 99.1%);
+  background-image: radial-gradient(300px at 110% 110%,
+    rgba(0, 0, 0, 0.2) 99%, transparent 99.1%);
+}</style>
 
     <ul><li>position can be outside the parent</li></ul>
   </section>
@@ -576,16 +599,11 @@ background-image: radial-gradient(ellipse at bottom left, red 50%, blue 50%);
 
 <h2><code>border-width </code> property</h2>
     <code> [ &lt;length> | thick | medium | thin ]{1,4} </code>
-    <pre contenteditable>/* Keyword values */
+    <pre contenteditable>
 border-width: 1px thin;
 border-width: thick thin thin thick;
 border-width: medium;
-border-width: 5px 10px thin thick; 
-
-/* Global values */
-border-width: inherit;
-border-width: initial;
-border-width: unset;</pre>
+border-width: 5px 10px thin thick; </pre>
   </section>
 </div>
 
@@ -621,14 +639,14 @@ quotes: "«" '»' "‹" '›';</pre>
 
 
 
-<div class="slide object">
+<div class="slide">
      <header><h1>Special Character</h1></header>
      <section class="content">
-     
+     <br/>
  <style class="editme" contenteditable>#a2603::after {content: "\2603";}</style>
  <p id="a2603"></p>
      </section>
-<object data="https://estelle.github.io/CSS-JS-Entity-Calculator/"></object>
+<object data="https://estelle.github.io/CSS-JS-Entity-Calculator/" style="width: 100%; height: 50vh"></object>
  <a class="objectlink" href="https://estelle.github.io/CSS-JS-Entity-Calculator/" target="resource">Calculator</a>
  </div>
 
@@ -641,7 +659,7 @@ quotes: "«" '»' "‹" '›';</pre>
     <ul>
       <li>idents, or custom identifiers, are unquoted</li>
       <li>case-sensitive</li>
-      <li>can contain [A-Za-z0-9], hyphen (-), underscore (_), escaped character preceded by a backslash (\), unicode characters (\123)</li>
+      <li>can contain <code>[A-Za-z0-9]</code>, hyphen (<code>-</code>), underscore (<code>_</code>), escaped character preceded by a backslash (<code>\</code>), and unicode characters (<code>\123</code>)</li>
       <li>can NOT start with a digit, two hyphens, a hyphen+digit</li>
       <li>can NOT be <code>unset</code>, <code>initial</code>, <code>reset</code>, <code>inherit</code>, or <code>none</code></li>
       <li>Should not be a property name or keyword value used elsewhere in CSS</li>
@@ -661,6 +679,13 @@ grid-row-start: someGridArea;
 grid-row-end: someOtherGridArea;
 grid-column-start: anotherArea;
 grid-column-end: oneMore;</pre>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Reading the specifictions</h1></header>
 <h2>Property names as values == <code>&lt;custom-ident></code></h2>
 <pre contenteditable>will-change: transform;
 transition-property: opacity;</pre>
@@ -697,14 +722,13 @@ font-family: "Helvetica Neue";</pre>
 <div class="slide">
   <header><h1><code>&lt;url></code> function</h1></header>
   <section class="content">
-<pre contenteditable>/* Simple usage */
-url(https://example.com/images/myImg.jpg);
+    <p>Simple usage</p>
+<pre contenteditable>url(https://example.com/images/myImg.jpg);
 url(data:image/png;base64,iRxVB0…);
 url(myFont.woff);
 url(#IDofSVGpath);</pre>
-
-<pre contenteditable>/* at-rules */
-@document url("https://www.example.com/") { ... }  
+<p>at-rules</p>
+<pre contenteditable>@document url("https://www.example.com/") { ... }  
 @import url("https://www.example.com/style.css");
 @namespace url(http://www.w3.org/1999/xhtml);</pre>
   </section>
@@ -712,7 +736,7 @@ url(#IDofSVGpath);</pre>
 
 
 <div class="slide">
-  <header><h1><code>&lt;url></code> function</h1></header>
+  <header><h1>Properties accepting <code> &lt;url></code> function</h1></header>
   <section class="content">
 <pre contenteditable>background-image: url("https://mdn.mozillademos.org/files/16761/star.gif");
 list-style-image: url('../images/bullet.jpg');
@@ -730,7 +754,7 @@ mask-image: url("masks.svg#mask1");</pre>
 
 
 <div class="slide">
-  <header><h1><code>&lt;url></code> function</h1></header>
+  <header><h1>Properties accepting <code>&lt;url></code> function</h1></header>
   <section class="content">
 <pre contenteditable>background: url('https://mdn.mozillademos.org/files/16761/star.gif') bottom right repeat-x blue;
 
@@ -751,7 +775,7 @@ content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg); 
 <pre contenteditable>url(test.jpg)
 linear-gradient(blue, red)
 radial-gradient(blue, red)
-conic-gradient()
+conic-gradient(blue, red)
 repeating-linear-gradient(blue, red 20%)
 repeating-radial-gradient(blue, red 20%)
 repeating-conic-gradient(blue, red 20%)
@@ -767,7 +791,7 @@ paint(worklet)</pre>
 <div class="slide">
   <header><h1>Other CSS Functions</h1></header>
   <section class="content">
-  <article class="col3"><p style="margin-top: 0"><code>transform:</code></p>
+  <article class="col3"><code><p style="margin-top: 0">transform:</p>
 <ul>
 <li>rotate()</li>
 <li>rotate3d()</li>
@@ -791,16 +815,8 @@ paint(worklet)</pre>
 <li>translateY()</li>
 <li>translateZ()</li>
 <li>perspective()</li>
-</ul><p>variables</p>
-<ul>
-<li>env()</li>
-<li>var()</li>
-<!--<li>format()</li>
-<li>leader()</li>
-<li>local()</li>
-<li>selector()</li>-->
-</ul> 
-<p><code>content:</code></p>
+</ul>
+<p>content:</p>
 <ul>
 <li>attr()</li>
 <li>counter()</li>
@@ -820,8 +836,15 @@ paint(worklet)</pre>
 <li>invert()</li>
 <li>opacity()</li>
 <li>sepia()</li>
-</ul>
-<p><code>font-variant-alternates:</code></p>
+</ul></code></article>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Other CSS Functions</h1></header>
+  <section class="content">
+  <article class="col3"><code><p style="margin-top: 0">font-variant-alternates:</p>
 <ul>
 <li>annotation()</li>
 <li>character-variant()</li>
@@ -830,7 +853,7 @@ paint(worklet)</pre>
 <li>stylistic()</li>
 <li>swash()</li>
 </ul>
-<p><code>list-style:</code> symbols()</p>
+<p><code>list-style:</code></p><ul><li> symbols()</li></ul>
 <p><code>width/grid-template-rows:</code></p>
 <ul>
 <li>calc()</li>
@@ -863,7 +886,15 @@ paint(worklet)</pre>
 <li>cubic-bezier()</li>
 <li>steps()</li>
 </ul>
-
+</code><p>variables</p><code>
+<ul>
+<li>env()</li>
+<li>var()</li>
+<!--<li>format()</li>
+<li>leader()</li>
+<li>local()</li>
+<li>selector()</li>-->
+</ul> </code>
 </article>
   </section>
 </div>

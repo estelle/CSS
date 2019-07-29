@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+div {border: 3px solid #3b6c3b; padding: 3px; line-height: 2rem; min-height: 2rem;}
+div div {border-color: #333;}
+div>div {border-style: dotted;}
+div:nth-of-type(2){border-style: dashed;}
+.a {background-color: #fff;}
+.b {background-color: #ccc;}
+.c {background-color: #999;}
+</style>
+
+<link rel="stylesheet" href="../../css/editme.css"/>
+
+<title>Flexbox</title>
+</head>
+
+<body>
+	<div id="container">
+    <div class="box a">Alphabet</div>
+    <div class="box b">Banana</div>
+    <div class="box c">Crayons</div>
+    <div class="box a">Dinosaurs</div>
+    <div class="box b">Eggplant</div>
+    <div class="box c">Foundation</div>
+    <div class="box a">Ghosts</div>
+	</div>
+    <style contenteditable class="editme">body > div {
+  display: flex;
+  width: 600px;
+  background: green;
+  overflow-x: scroll;
+}
+div >  div {
+  flex: 15%;
+  margin:1em; padding: 1em;
+}
+body > div::after {
+    content: '';
+    padding: 0.5em;
+}
+</style>
+</body>
+</html>
+

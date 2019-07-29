@@ -336,6 +336,21 @@ section.content {
   justify-content: space-around;
 }
 
+.nope {
+  position: relative;
+}
+
+.nope::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  background: radial-gradient(circle, transparent 0 42%, red 43% 57%, transparent 58%), linear-gradient(45deg, transparent 0 44%, red 45% 55%, transparent 56%) no-repeat center;
+  background-size: 100% 100%, 50% auto;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
 @media print {
   .slide {
     page-break-inside: avoid;
