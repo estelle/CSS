@@ -11,7 +11,7 @@
 		if (typeof id == 'string') { return doc.getElementById(id); }
 		return id;
 	},
-	
+
 	query = function(query, root) {
 	  if (!query) { return []; }
 		if (typeof query != 'string') { return toArray(query); }
@@ -28,18 +28,18 @@
 			root.id = root.id || ('qUnique' + (ctr++));
 			query = '#' + root.id + ' ' + query;
 		}
-	
+
 		// don't choke on something like ".yada.yada >"
 		if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
 		return toArray(doc.querySelectorAll(query));
 	},
-	
+
 	strToArray = function(s) {
 		if (typeof s == 'string' || s instanceof String) {
 			if (s.indexOf(' ') < 0) {
 				a1[0] = s;
 				return a1;
-			} 
+			}
 			else {
 					return s.split(spaces);
 			}
@@ -51,27 +51,59 @@
 	  classStr = strToArray(classStr);
 	  var cls = ' ' + node.className + ' ';
 	  for (var i = 0, len = classStr.length, c; i < len; ++i) {
-		node.classList.add(classStr[i]);
+		c = classStr[i];
+		if (c && cls.indexOf(' ' + c + ' ') < 0) {
+		  cls += c + ' ';
+		}
 	  }
-	}, 
-	
+	  node.className = cls.trim();
+	},
+
 	removeClass = function(node, classStr) {
 		  var cls;
 		  if (classStr !== undefined) {
 			classStr = strToArray(classStr);
+			cls = ' ' + node.className + ' ';
 			for (var i = 0, len = classStr.length; i < len; ++i) {
-			  
-					node.classList.remove(classStr[i]);
+			  cls = cls.replace(' ' + classStr[i] + ' ', ' ');
 			}
+			  cls = cls.trim();
+		  } else {
+			cls = '';
 		  }
-		
+
+		  if (node.className != cls) {
+			node.className = cls;
+		  }
+
 	  },
-	
-	
+
+	  toggleClass = function(node, classStr) {
+		  var cls = ' ' + node.className + ' ';
+		  if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+			removeClass(node, classStr);
+		  } else {
+			addClass(node, classStr);
+		  }
+	  },
+
+
+
+  		ua = navigator.userAgent,
+		isFF = parseFloat(ua.split('Firefox/')[1]) || undefined,
+		isWK = parseFloat(ua.split('WebKit/')[1]) || undefined,
+		isOpera = parseFloat(ua.split('Opera/')[1]) || undefined,
+
 
 
   	 	canTransition = (function() {
-  	 		return true;
+		  var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+		  // test to determine if this browser can handle CSS transitions.
+		  var cachedCanTransition =
+
+			(isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+		  return function() { return cachedCanTransition; }
+
   		}
   )();
 
@@ -87,6 +119,7 @@ var Slide = function(node, idx) {
     addClass(this._node, 'slide distant-slide');
   }
   //this._makeCounter();
+  this._makeBuildList();
 };
 
 
@@ -95,6 +128,7 @@ Slide.prototype = {
     _node: null,
     _count: 0,
     _buildList: [],
+    _visited: false,
     _currentState: '',
     _states: [ 'distant-slide', 'far-past',
                'past', 'current', 'future',
@@ -104,10 +138,19 @@ Slide.prototype = {
       state = this._states[state];
     }
 
+    if (state == 'current' && !this._visited) {
+      this._visited = true;
+      this._makeBuildList();
+    }
+
     removeClass(this._node, this._states);
     addClass(this._node, state);
     this._currentState = state;
-    
+
+
+
+  var _t = this;
+    setTimeout(function(){ _t._runAutos(); } , 400);
   },
 
     _makeCounter: function() {
@@ -118,6 +161,57 @@ Slide.prototype = {
     c.className = 'counter';
     this._node.appendChild(c);
   },
+
+    _makeBuildList: function() {
+    this._buildList = [];
+    if (disableBuilds) { return; }
+
+      if (this._node) {
+      this._buildList = query('[data-build] > *', this._node);
+    }
+
+      this._buildList.forEach(function(el) {
+      addClass(el, 'to-build');
+    });
+  },
+
+    _runAutos: function() {
+    if (this._currentState != 'current') {
+      return;
+    }
+
+      // find the next auto, slice it out of the list, and run it
+
+      var idx = -1;
+    this._buildList.some(function(n, i) {
+      if (n.hasAttribute('data-auto')) {
+        idx = i;
+        return true;
+      }
+
+        return false;
+    });
+    if (idx >= 0) {
+      var elem = this._buildList.splice(idx, 1)[0];
+      var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+      var _t = this;
+      if (canTransition()) {
+        var l = function(evt) {
+          elem.parentNode.removeEventListener(transitionEnd, l, false);
+          _t._runAutos();
+        };
+        elem.parentNode.addEventListener(transitionEnd, l, false);
+        removeClass(elem, 'to-build');
+      } else {
+        setTimeout(function() {
+          removeClass(elem, 'to-build');
+          _t._runAutos();
+        }, 400);
+      }
+
+      }
+
+    },
 
     buildNext: function() {
     if (!this._buildList.length) {
@@ -156,8 +250,14 @@ Slide.prototype = {
   doc.addEventListener('touchstart',  function(e) { _t.handleTouchStart(e); }, false);
   doc.addEventListener('touchend', function(e) { _t.handleTouchEnd(e); }, false);
   window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
+
+if('ontouchstart' in window || 'createTouch' in document || (window.DocumentTouch && document instanceof DocumentTouch)){
+  doc.getElementById('back').addEventListener('touchend', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('touchend', function(e) {_t.next();}, false);
+}else {
   doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
   doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+}
   this._update();
 };
 
@@ -166,11 +266,15 @@ Slide.prototype = {
 SlideShow.prototype = {
   _slides: [],
 
-    _update: function() {
+    _update: function(dontPush) {
 		document.querySelector('#presentation-counter').innerText = this.current;
-		
-		history.pushState(this.current, 'Slide ' + this.current, '#slide' + this.current);
-		
+		if (history.pushState) {
+		  if (!dontPush) {
+			history.pushState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+		    }
+		} else {
+		  window.location.hash = 'flopslide' + this.current;
+		}
 	    for (var x = this.current-1; x < this.current + 7; x++) {
 		    if (this._slides[x-4]) {
 				this._slides[x-4].setState(Math.max(0, x-this.current));
@@ -181,6 +285,10 @@ SlideShow.prototype = {
     current: 0,
 
     next: function() {
+    if(document.querySelectorAll('.current .temphidden').length) {
+      document.querySelector('.current .temphidden').classList.remove('temphidden');
+      return;
+    }
 		if (!this._slides[this.current-1].buildNext()) {
 		  this.current = Math.min(this.current + 1, this._slides.length);
 		  this._update();
@@ -202,15 +310,19 @@ SlideShow.prototype = {
 
 
 
-  _notesOn: false,
-	
+  _notesOn: true,
+
  showNotes: function() {
+
     var isOn = this._notesOn = !this._notesOn;
     query('.notes').forEach(function(el) {
-      el.style.display = (isOn) ? '' : 'none';
+      el.style.display = (isOn) ? 'block' : 'none';
     });
   },
 
+    switch3D: function() {
+    toggleClass(document.body, 'three-d');
+  },
 
     handleWheel: function(e) {
     var delta = 0;
@@ -219,7 +331,7 @@ SlideShow.prototype = {
       if (isOpera) {
 			delta = -delta;
 		  }
-      } 
+      }
 	  else if (e.detail) {
         delta = -e.detail/3;
       }
@@ -233,46 +345,11 @@ SlideShow.prototype = {
 		  return;
 		}
     },
-	
-	addNotes: function(){
-		if(document.querySelector('.current textarea.mynotes')) {
-			document.querySelector('.current textarea.mynotes').classList.toggle('temphidden');
-			return;
-		}
-		var ta = document.createElement('textarea'),
-		     currentSlide = document.querySelector('.current section'),
-			 path = window.location.pathname,
-			 A = path.lastIndexOf('/') + 1, 
-			 B = path.lastIndexOf('.'),
-			 firstPartOfKey, key;
-		if(B && B > A){	 
-		    firstPartOfKey = path.substring(A, B);
-		} else {
-		    firstPartOfKey = path.substring(1, path.length-1) || 'home';	
-		}
-		//console.log(firstPartOfKey);
-		key = firstPartOfKey +  window.location.hash;
-		ta.value = window.localStorage.getItem(key) || '';
-		ta.className = 'mynotes';
-		
-		ta.addEventListener('keyup', function(){
-			//console.log(key + ' ' + ta.value)
-		    window.localStorage.setItem(key,ta.value);
-		});
-		currentSlide.appendChild(ta);
-	},
-	
-	
-	removeHidingClass: function(){
-		var paragraphToShow = document.querySelector('.current .temphidden');
-		if(paragraphToShow) {paragraphToShow.classList.remove('temphidden');}
-	
-	},
-	
+
     handleKeys: function(e) {
       // disable keys for these elements
-      if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
-	 
+      if (/^(input|textarea|pre|object|style)$/i.test(e.target.nodeName)) return;
+
 
       switch (e.keyCode) {
 		  case 37: // left arrow
@@ -282,17 +359,14 @@ SlideShow.prototype = {
 		  case 32: // space
 		  case 34: // clicker right
 			 this.next(); break;
-		  case 50: // 2
+		  case 50:  // 2
 		  case 190: // 2
-			 this.showNotes(); 
-			 this.removeHidingClass(); 
-			 break;
-	      case 52: // 4 (for taking notes with local storage (students)
-		     this.addNotes(); break;
-		     break;
+			 this.showNotes(); break;
+		  case 51: // 3
+			 this.switch3D(); break;
     	}
     },
-	
+
     _touchStartX: 0,
     handleTouchStart: function(e) {
     this._touchStartX = e.touches[0].pageX;
@@ -311,5 +385,8 @@ SlideShow.prototype = {
 
   // Initialize
   var slideshow = new SlideShow(query('.slide'));
+  slideshow.showNotes();
 })();
+
+
 

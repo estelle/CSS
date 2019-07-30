@@ -13,6 +13,21 @@ Twitter: @estellevw
    <link rel="stylesheet" href="../intro/css/gradients.css"/>
    <link rel="stylesheet" href="religion.css"/>
    <link rel="stylesheet" href="examples.css"/>
+   <style>
+style[class="editme" i]  {
+  display: block;
+  padding: 20px; 
+  font-size: 1em; 
+  font-family: monospace; 
+  white-space: pre; 
+  border-radius: 10px; 
+  border: 3px solid #aaa; 
+  background-color:#ffffffcc; 
+  margin: 100px auto;
+  width: 80vw;
+  font-family:"Courier New", Courier, monospace;
+}
+</style>
  <style>
 
  </style>
@@ -261,7 +276,8 @@ Twitter: @estellevw
       <li>Percent? relative to gradient line which is relative to image size</li>
       <li>Omitted? 0%, 100%, or evenly distibuted in between</li>
       <li>Duplicate? Hard color stop</li>
-      <li>Out of Order? previous declared value</ul>
+      <li>Out of Order? previous declared value</li>
+      <li>Only 1 color stop? Solid color box.</li></ul>
   </section>
 </div>
 
@@ -357,6 +373,27 @@ Twitter: @estellevw
 
 <!-- DIVIDER -->
 <div class="slide divider">
+  <header><h1>Double position color stops</h1></header>
+  <section class="content">
+    <p>Create a band of non-transitioning solid color between two transitions, include two positions for the color stop. </p>
+  </section>
+</div>
+
+
+<!-- Color Hints Explained -->
+<div class="slide">
+  <header><h1>Double position color stops</h1></header>
+  <section class="content">
+    <pre style="background: linear-gradient(to right, red, purple, magenta); line-height: 2.5; color: white;">linear-gradient(red, purple, magenta);</pre>
+    <pre style="background: linear-gradient(to right, red 10%, purple 30% 70%, magenta 90%);line-height: 2.5; color: white;">linear-gradient(red 10%, purple 30% 70%, magenta 90%);</pre>
+    <pre style="background: linear-gradient(to right, red 10%, purple 30% 70%, magenta 90%);line-height: 2.5; color: white;">linear-gradient(red 0 10%, purple 30% 70%, magenta 90% 100%);</pre> 
+    <pre style="background: linear-gradient(to right, red 10%, purple 10% 90%, magenta 90%);line-height: 2.5; color: white;">linear-gradient(red 10%, purple 10% 90%, magenta 90%);</pre>
+    <pre style="background: linear-gradient(to right, red 10%, purple 10% 90%, magenta 90%);line-height: 2.5; color: white;">linear-gradient(red 0 10%, purple 10% 90%, magenta 90% 100%);</pre>
+  </section>
+</div>
+
+<!-- DIVIDER -->
+<div class="slide divider">
   <header><h1>Color Hints</h1></header>
   <section class="content">
   </section>
@@ -413,6 +450,12 @@ Twitter: @estellevw
 </div>
 
 
+<!-- DIVIDER -->
+<div class="slide intro">
+  <header><h1>Linear Gradients</h1></header>
+  <section class="content">
+  </section>
+</div>
 
 <!-- DIVIDER -->
 <div class="slide divider">
@@ -424,14 +467,14 @@ Twitter: @estellevw
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>to &lt;side-or-corner&gt;</h1></header>
+  <header><h1>Keyterm Directions</h1></header>
   <section class="content">
   </section>
 </div>
 
 <!-- Corners and sides -->
 <div class="slide">
-  <header><h1>Keyterm Directions</h1></header>
+  <header><h1>to &lt;side-or-corner&gt;</h1></header>
   <section class="content">
     <pre contenteditable>linear-gradient( [&lt;angle&gt; | to <em>&lt;side-or-corner&gt;</em>, ]? 
    [ &lt;color-stop&gt; [, &lt;color-hint&gt; ]?, ]# &lt;color-stop&gt; )</pre>
@@ -465,10 +508,7 @@ Twitter: @estellevw
         <option value="to bottom left">to bottom left</option>
         <option value="to bottom right">to bottom right</option>
    </select>
-   <pre contenteditable>
-
-background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 50%, magenta 50%);
-     </pre>
+   <pre contenteditable>background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 50%, magenta 50%);</pre>
 
    		<pre style="float: left" contenteditable>&lt;side-or-corner&gt;
   to top
@@ -695,7 +735,7 @@ background: linear-gradient(<span id="anglevkeyterm"></span>rebeccapurple 50%, m
 			function angleNotEqual(angle) {
 
                 document.getElementsByClassName('slide_anglevkeyterm')[0].style.background =
-                    'linear-gradient(' + angle + ', transparent 49.75%, black 49.75%, black 50%, transparent 50%)';
+                    'linear-gradient(' + angle + ', transparent 49%, black 49 51%, transparent 51%)';
 				document.getElementById('slide_anglevkeyterm').style.background =
 					'linear-gradient(' + angle + ', rebeccapurple 50%, magenta 50%)';
                 document.getElementById('anglevkeyterm').innerHTML = "<b>" + angle + "</b>, ";
@@ -763,11 +803,11 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
      <p style="text-align:center">In the next slide edit the code to<br>
      make really ugly rainbows</p>
      <ul>
-      <li>don't vendor-prefix (unless you want poor mobile performance)</li>
+      <li>Change the direction: both magic corners and angles </li>
       <li>create effects with color stops at same location</li>
-        <li>create effects by adding multiple gradients, playing with position and size</li>
-        <li>learn from others: <a href="https://leaverou.github.io/css3patterns/">Lea Verou's Patterns</a>, <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a>, and <a href="http://www.standardista.com/CSS3gradients/flags.html">Estelle's Flags</a></li>
-        <li>Use tools: <a href="http://westciv.com/tools/gradientsnustyle/">John Allsopp's tool</a>, <a href="http://gradients.glrzad.com/">Damian Galarza's tool</a>, <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla</a></li>
+      <li>test out color hints</li>
+      <li>create effects by adding multiple gradients, playing with position and size</li>
+      <li>See more examples: <a href="https://leaverou.github.io/css3patterns/">Lea Verou's Patterns</a> and <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a></li>
      </ul>
      </section>
  </div>
@@ -784,43 +824,34 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
 <div class="slide object angledStripes" id="angledStripes">
      <header><h1>Stripes with background-size</h1></header>
      <section class="content">
-<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature01" onKeyUp="changeFeature('backgroundColor', 'feature01', 'angledStripes')" contenteditable style="color: white; background: rebeccapurple; padding: 0 5px">rebeccapurple</span>;
-background-image:
-   <span contenteditable id="colorme6"  onKeyUp="changeBackgroundGradient('angledStripes','#colorme6')">linear-gradient(135deg,
-    rgba(255, 255, 255, 0.2) 25%,
-    rgba(255, 255, 255, 0) 25%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    rgba(255, 255, 255, 0) 75%,
-    rgba(255, 255, 255, 0) 100%
-)</span>;
-background-size: <span id="feature02" onKeyUp="changeFeature('backgroundSize', 'feature02', 'angledStripes')" contenteditable>100px 100px</span>;
-background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat', 'feature03', 'angledStripes')" contenteditable>repeat</span>;
-</pre>
+<style  contenteditable class="editme">#angledStripes { 
+  background-color: rebeccapurple;
+  background-image: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.2) 0 25%,
+    rgba(255, 255, 255, 0) 25%  50%,
+    rgba(255, 255, 255, 0.2) 50%  75%,
+    rgba(255, 255, 255, 0) 75% 100%
+  );
+  background-size: 100px 100px;
+  background-repeat: repeat;
+</style>
      </section>
  </div>
 
 <div class="slide object rainbow2" id="rainbow5">
      <header><h1>Stripes</h1></header>
      <section class="content">
-<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
+<style contenteditable class="editme">#rainbow5 {
   background-image:
-    <span contenteditable="" id="colorme5" onkeyup="changeBackgroundGradient('rainbow5','#colorme5')">repeating-linear-gradient(145deg,
-      red 0,
-      red 20px,
-      orange 20px,
-      orange 40px,
-      yellow 40px,
-      yellow 60px,
-      green 60px,
-      green 80px,
-      blue 80px,
-      blue 100px,
-      purple 100px,
-      purple 120px
-    )</span>;
-}</pre>
+    repeating-linear-gradient(145deg,
+      red 0 20px,
+      orange 20px 40px,
+      yellow 40px 60px,
+      green 60px 80px,
+      blue 80px 100px,
+      purple 100px 120px
+    );
+}</style>
      </section></div>
 
 <!-- DIVIDER -->
@@ -830,26 +861,19 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   </section>
 </div>
 
-<div class="slide object" id="lg2">
+<div class="slide object" id="rainbow6">
      <header><h1>Stripes</h1></header>
      <section class="content">
-<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
-  background-image:
-    <span contenteditable id="lg2b" onkeyup="changeBackgroundGradient('lg2','#lg2b')">repeating-linear-gradient(145deg,
-      red 0,
-      red 20px,
-      orange 20px,
-      orange 40px,
-      yellow 40px,
-      yellow 60px,
-      green 60px,
-      green 80px,
-      blue 80px,
-      blue 100px,
-      purple 100px,
-      purple 120px
-    )</span>;
-}</pre>
+      <style contenteditable class="editme">#rainbow6 {
+  background-image: repeating-linear-gradient(135deg,
+      red 0 20px,
+      orange 20px 40px,
+      yellow 40px 60px,
+      green 60px 80px,
+      blue 80px 100px,
+      purple 100px 120px
+    );
+}</style>
      </section></div>
 
 
@@ -874,7 +898,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 
 <!-- play time -->
 <div class="slide object">
-  <header><h1>Repeating Linear Gradients</h1></header>
+  <header><h1>width or repeating gradient</h1></header>
  <object data="files/repeat1.html"></object>
   <a href="files/repeat1.html" class="objectlink" target="play">Try it out</a>
 </div>
@@ -887,29 +911,50 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
  </div>
 
 
+ <!-- radial gradients title-->
+ <div class="slide divider">
+     <header><h1>Radial Gradient: Syntax</h1></header>
+ </div>
+
  <!-- W3C syntax -->
  <div class="slide">
      <header><h1>Radial Gradient Syntax</h1></header>
      <section class="content">
-     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em>|| <em>&lt;size&gt;</em> at <em>&lt;position&gt;</em>]? 
+     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em> || <em>&lt;size&gt;{0,2}</em>]? [ at <em>&lt;position&gt;{1,2}</em>]?  
    [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
      <p>Things to remember:</p>
      <ol><li>Use 'at' with position</li>
-      <li>position is center of gradient</li>
+      <li>position defaults to center center</li>
+      <li>&lt;postion> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
       <li>If shape is specified as circle or omitted, the size can be a length/percent</li>
+      <li>Shape OR size, not both</li>
+      <li><code><em>&lt;size&gt;</em> == [ &lt;width-height> ] || [ &lt;width> &lt;height> ]</code><br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;         ⬆︎circle    &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp; &nbsp;   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    ⬆︎ellipse</li>
      </ol>
      </section>
  </div>
 
 
-
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial1">
      <header><h1>Radial Gradients</h1></header>
- <object data="files/radial1.html"></object>
-  <a href="files/radial1.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial1 {
+  background-image:
+    radial-gradient(ellipse at center, 
+      magenta 0%,
+      rebeccapurple 100%
+    );
+}</style>
+</section>
 </div>
 
+
+
+
+ <!-- radial gradients title-->
+ <div class="slide divider">
+     <header><h1>Radial Gradients: position</h1></header>
+ </div>
 
 <!-- position -->
 <div class="slide">
@@ -919,25 +964,41 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
       <li>same values as <code>background-position</code></li>
       <li>include 'at'</li>
 
+      <li>&lt;postion> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
+
       <li>location of gradient center point</li>
-      <li>Gradient ray, no angled gradient line</li>
+      <li>Start of gradient ray (not angled gradient line)</li>
     </ul>
   </section>
 </div>
 
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial2">
      <header><h1>Radial Gradients: position</h1></header>
- <object data="files/radial2.html"></object>
-  <a href="files/radial2.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial2 {
+  background-image:
+    radial-gradient(ellipse at 75% 95%,
+      black  10px, 
+      magenta 10px,
+      rebeccapurple 100%);
+}</style>
+</section>
 </div>
 
 
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial3">
      <header><h1>Radial Gradients: position</h1></header>
- <object data="files/radial3.html"></object>
-  <a href="files/radial3.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial3 {
+  background-image:
+    radial-gradient(ellipse at right 20px bottom 50px,
+      black  10px, 
+      magenta 10px,
+      rebeccapurple 100%);
+}</style>
+</section>
 </div>
 
 
@@ -961,43 +1022,70 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 <ul>
   <li>circle: single length value: radius</li>
   <li>ellipse: two length values: width height</li>
-  <li>percentage size only for ellipses</li>
+  <li>percentage size only for ellipses, so you have to declare two.</li>
 </ul>
      </section>
  </div>
 
 
+
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial4">
      <header><h1>Radial Gradients: shape keyterms</h1></header>
- <object data="files/radial4.html"></object>
-  <a href="files/radial4.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial4 {
+  background-image:
+    radial-gradient(ellipse,
+      black 10px, 
+      magenta 10px 50%,
+      rebeccapurple 50%);
+}</style>
+<pre>&lt;shape> == <b>ellipse</b> || circle </pre>
+</section>
 </div>
 
+
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial5">
      <header><h1>Radial Gradients: shape with lengths</h1></header>
- <object data="files/radial5.html"></object>
-  <a href="files/radial5.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial5 {
+background-image:
+    radial-gradient(640px 490px,
+      black 10px, 
+      magenta 10px 50%,
+      rebeccapurple 50%);</style>
+</section>
 </div>
+
 
 
  <!-- radial gradients -->
- <div class="slide object">
+ <div class="slide" id="radial6">
      <header><h1>Percentage only works for ellipses</h1></header>
- <object data="files/radial6.html"></object>
-  <a href="files/radial6.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial6 {
+  background-image:
+    radial-gradient(10% 50%,
+      black 10px, 
+      magenta 10px 50%,
+      rebeccapurple 50%);
+}</style>
+</section>
 </div>
+
+
 
 <!-- radial size -->
   <div class="slide object" id="radial05">
      <header><h1>Sizing With Keywords</h1></header>
      <section class="content">
-<ul>
+      <br/><br/>
+<ul style="background: #ffffffcc; padding: 20px 30px; border-radius: 10px; border: 1px solid; float: left">
 	<li>closest-side</li>
 <li>closest-corner</li>
 <li>farthest-side</li>
-<li class="imp">farthest-corner</li>
+<li><strong>farthest-corner</strong></li>
 <li><strike>contain (same as closest-side)</strike></li>
 <li><strike>cover (same as farthest-corner)</strike></li>
 </ul>
@@ -1006,12 +1094,6 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 
 
 
- <!-- radial gradients -->
- <div class="slide object">
-     <header><h1>Size with KeyTerms</h1></header>
- <object data="files/radial7.html"></object>
-  <a href="files/radial7.html" class="objectlink" target="play">Try it out</a>
-</div>
 
 <!--  -->
 <div class="slide">
@@ -1030,11 +1112,38 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   </section>
 </div>
 
+
+
+ <!-- radial gradients -->
+ <div class="slide" id="radial7">
+     <header><h1>Size with KeyTerms</h1></header>
+<section class="content">
+<style contenteditable class="editme">#radial7 {
+  background-image:
+    radial-gradient(circle farthest-corner 
+      at 40px 50px, 
+      black 10px, 
+      magenta 10px 99%,
+      rebeccapurple 99%);
+}</style>
+  <pre>closest-side | closest-corner | farthest-side | <strong>farthest-corner</strong></pre> 
+</section>
+</div>
+
 <!-- effects1 -->
-   <div class="slide object">
+   <div class="slide" id="radial8">
      <header><h1>with Background size</h1></header>
-<object data="files/radial8.html"></object>
-  <a href="files/radial8.html" class="objectlink" target="play">Try it out</a>
+     <section class="content">
+<style contenteditable class="editme">#radial8 {
+  background-image:
+    radial-gradient(
+     circle,
+      rebeccapurple 50%,
+      magenta 50%);
+  background-size: 100px 100px;
+  background-repeat: repeat;
+}</style>
+</section>
  </div>
 
 <!--  -->
@@ -1044,11 +1153,25 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   </section>
 </div>
 
- <!-- effects1 -->
-   <div class="slide object">
-     <header><h1>Try it out</h1></header>
-<object data="files/radial9.html"></object>
-  <a href="files/radial9.html" class="objectlink" target="play">Try it out</a>
+<!-- effects1 -->
+   <div class="slide" id="radial9">
+     <header><h1>Play Time</h1></header>
+     <section class="content">
+      <pre>using keywords and position, make a circle with a 100px radius</pre>
+<style contenteditable class="editme" style="margin-top: : 1em; float: left; width: auto">#radial9 {
+  background-image:
+    radial-gradient(
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      green 60%,
+      blue 80%,
+      purple 100%
+    );
+}</style>
+
+
+</section>
  </div>
 
 
@@ -1160,7 +1283,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 
   </div>
   </div>
-  <script src="../slideshow.js"></script>
+  <script src="../selectors/selectors.js"></script>
   <script>
    function changeFeature(changestyle, content, slide) {
 	   document.getElementById(slide).style[changestyle] = document.getElementById(content).innerHTML;
