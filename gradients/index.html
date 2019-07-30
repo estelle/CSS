@@ -1202,11 +1202,86 @@ background-image:
  </div>
 
 
- <!-- Repeating Radial Gradient -->
-   <div class="slide object">
+
+ <!-- radial gradients -->
+ <div class="slide" id="radial10">
      <header><h1>Repeating Radial Gradient</h1></header>
-<object data="files/radial10.html"></object>
-  <a href="files/radial10.html" class="objectlink" target="play">Try it out</a>
+<section class="content">
+  <style contenteditable class="editme">#radial10 {
+  background-image:
+    repeating-radial-gradient(circle 
+      closest-side at 100px,
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      green 60%,
+      blue 80%,
+      purple 100%
+    );
+}</style>
+</section>
+</div>
+
+
+ <!-- radial gradients -->
+ <div class="slide" id="radial11">
+     <header><h1>Repeating Radial Gradient</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#radial11 {
+  background-image:
+    repeating-radial-gradient(circle,
+      magenta 0 40px,
+      orange 40px 80px
+    );
+}</style>
+</section>
+</div>
+
+
+
+
+
+ <!-- radial gradients -->
+ <div class="slide" id="radial12">
+     <header><h1>Make your own</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#radial12 {
+  background-image:
+    repeating-radial-gradient(
+      rebeccapurple,
+      magenta
+    );
+}</style>
+</section>
+</div>
+
+
+
+<div class="slide intro">
+  <header><h1>Conic gradients</h1></header>
+</div>
+
+ <!-- radial gradients title-->
+ <div class="slide divider">
+     <header><h1>Conic Gradient: Syntax</h1></header>
+ </div>
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>Conic Gradient Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>conic-gradient([from <em>&lt;angle&gt;</em>]? [ at <em>&lt;position&gt;{1,2}</em>]?  
+   [<em>&lt;angle-color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;angle-color-stop&gt;</em>)</pre>
+     <p>Things to remember:</p>
+     <ol><li>Use 'at' with position</li>
+      <li>position defaults to center center</li>
+      <li>Use 'from' with angle</li>
+      <li>0deg points up, goes clockwise</li>
+      <li>&lt;postion> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
+      <li>color stop positions have to be angles (or percentages)</li>
+      
+     </ol>
+     </section>
  </div>
 
 <!--NEXT-->
