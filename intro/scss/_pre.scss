@@ -1,4 +1,9 @@
-pre {
+style[class="editme" i] {
+    border: 1px solid $colorpop;
+    padding: 5px 20px;
+    margin-bottom: 1em;
+  }
+pre, style[class="editme" i] {
   text-align: left;
   font-size: 1.2em;
   padding: 10px 20px;
@@ -6,6 +11,8 @@ pre {
   border-radius: 8px;
   text-shadow: none;
   border: 1px solid $splashcolor;
+}
+pre {
   b {
     font-weight: bold;
     color: $splashcolor;

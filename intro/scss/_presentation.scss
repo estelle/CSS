@@ -72,13 +72,7 @@ body {
 }
 
 .far-future.object object {display: none;}
-style[class="editme" i] {
-    font-size: 1em;
-    border: 1px solid $colorpop;
-    background-color: rgba(0,0,0,0.05);
-    padding: 5px 20px;
-    margin-bottom: 1em;
-  }
+
 object:not([data*="http"])  {
   margin-top: 3em;
 }

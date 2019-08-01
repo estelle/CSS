@@ -347,8 +347,14 @@ SlideShow.prototype = {
     },
 
     handleKeys: function(e) {
-      // disable keys for these elements
-      if (/^(input|textarea|pre|object|style)$/i.test(e.target.nodeName)) return;
+          
+      // disable keys for these elements || or if contenteditable
+      if (/^(input|textarea|pre|object|style)$/i.test(e.target.nodeName)) { 
+          return;
+        }
+      if(e.path && e.path[0] && e.path[0].hasAttribute('contenteditable')) {
+        return;
+      }
 
 
       switch (e.keyCode) {
@@ -356,7 +362,7 @@ SlideShow.prototype = {
 		  case 33: // left clicker
 			 this.prev(); break;
 		  case 39: // right arrow
-		  case 32: // space
+		  //case 32: // space
 		  case 34: // clicker right
 			 this.next(); break;
 		  case 50:  // 2

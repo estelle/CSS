@@ -80,14 +80,6 @@ body {
   display: none;
 }
 
-style[class=editme i] {
-  font-size: 1em;
-  border: 1px solid #0a6a10;
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 5px 20px;
-  margin-bottom: 1em;
-}
-
 object:not([data*=http]) {
   margin-top: 3em;
 }
@@ -218,7 +210,13 @@ nav ul {
   font-family: "sanchez", georgia, sans-serif;
 }
 
-pre {
+style[class=editme i] {
+  border: 1px solid #0a6a10;
+  padding: 5px 20px;
+  margin-bottom: 1em;
+}
+
+pre, style[class=editme i] {
   text-align: left;
   font-size: 1.2em;
   padding: 10px 20px;
@@ -227,6 +225,7 @@ pre {
   text-shadow: none;
   border: 1px solid #0a6a10;
 }
+
 pre b {
   font-weight: bold;
   color: #0a6a10;
