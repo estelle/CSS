@@ -1,0 +1,168 @@
+a[target=play] {
+position: absolute;
+top: 10px;
+left: 90%;
+background: #000;
+color: #FFF;
+height: 40px;
+width: 40px;
+line-height: 45px;
+text-align: center;
+border-radius: 50%;
+}
+.letters, .letters:after {
+  position:relative;
+  font-size: 100px;
+  color:#A9403A;
+    display:block;
+  height: 140px;
+  width: 3em;
+  line-height: 140px;
+  box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2);
+  background-color: #fff;
+  margin:10px auto;
+  text-align:center;
+  font-size: 140px;
+  outline: 1px solid;
+}
+.letters:after {
+  content:'RSVP';
+  position:absolute; top: 0; left:0;
+  box-shadow: 5px 5px 0 5px #7b9894;
+  opacity: 0.85;
+  margin: 0;
+  pointer-events: none;
+  background-color: #D6BB72;
+}
+.letters_01:after {
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(15deg);
+}
+
+.letters_02:after {
+   transform:
+     translate(100px, 100px);
+}
+
+.letters_03:after {
+   transform:
+     rotate(90deg);
+}
+
+.letters_04:after {
+   transform:
+     scale(0.25, 0.75);
+}
+.letters_05,
+.letters_05:after {
+   border-radius: 0;
+   border: 1px solid #666;
+}
+.letters_05:after {
+   transform:
+     skewX(15deg);
+}
+
+.letters_06:after {
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+}
+
+.letters_07:after {
+   transform: perspective(40px) rotateX(10deg);
+}
+
+.letters_07b:after {
+   transform: perspective(100px) rotatex(20deg);
+   transform-origin: top left;
+}
+
+.letters_07c:after {
+  transform: rotate(90deg);
+  transform-origin:  top left;
+}
+
+.letters_07d {
+  perspective: 40px;
+}
+
+.letters_07d:after {
+   transform: rotateX(10deg);
+ }
+
+.letters_07e {
+    transform: rotate3d(20deg);
+    transform-style: flat;
+}
+.letters_07e:after {
+  transform: rotate(10deg);
+}
+.letters_07f {
+    transform: rotate3d(20deg);
+    transform-style: preserve-3d;
+}
+.letters_07f:after {
+  transform: rotate(10deg);
+}
+
+.letters_08:after {
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+}
+
+.letters_09:after {
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+}
+
+.letters_10:after {
+   transform:
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+}
+section {padding-top: 20px;}
+.x {width: 75%; float:right; margin:0; position:relative;}
+.y {float: left; line-height:1.62em;}
+#ABTrasform li {float: left; clear:both; list-style-type:none; width:100%;}
+.deprecated dt {margin-bottom: 1rem; background-color: #ccc;
+    }
+.deprecated dd {display: none;}
+.deprecated dt:hover + dd {display:inherit;}
+.appearance dt {margin-bottom:0.5rem;
+    }
+.deprecated.listed dt {margin-bottom:0; margin-top:0.2rem;
+     display:block; width: 50%; padding-left: 5px;
+}
+.deprecated.listed.wide dt{width:100%;}
+
+#transformorder {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 200px auto;
+  border: 5px dotted purple;
+  position: relative; }
+  #transformorder:before, #transformorder:after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 5px dashed magenta;
+    content: "";
+    position: absolute; }
+  #transformorder:before {
+    transform: rotate(135deg) translateX(200px); }
+  #transformorder:after {
+    transform: translateX(200px) rotate(135deg);
+    border-color: teal; }
+  #transformorder .line1, #transformorder .line2 {
+    height: 1px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: -150px;
+    border-bottom: 1px solid; }
+  #transformorder .line2 {
+    transform: rotate(135deg);
+    left: -230px;
+    top: 130px; }
+
+section {min-height: 80vh}
