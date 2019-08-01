@@ -673,7 +673,7 @@ background: linear-gradient(<span id="basiclinearangles"></span>rebeccapurple, m
       </ul>
     </li>
    <li>0deg is the same as <code>to top</code></li>
-    <li><code>45%</code> is NOT the same as <code>to top right</code>
+    <li><code>45%</code> is NOT the same as <code>to top right</code></li>
     <li><code>deg</code> is required</li>
   </ul>
 
@@ -1191,6 +1191,7 @@ background-image:
 
      <p>Things to remember:</p>
      <ol>
+      <li>repeat size is the difference beween the first color stop and the last color stop.</li>
       <li>repeats the radial gradient after the 100% mark.
       </li>
       <li>Has no impact when 'furthest-corner' is used or defaults for gradient size</li>
@@ -1277,12 +1278,251 @@ background-image:
       <li>position defaults to center center</li>
       <li>Use 'from' with angle</li>
       <li>0deg points up, goes clockwise</li>
-      <li>&lt;postion> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
+      <li>&lt;position> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
       <li>color stop positions have to be angles (or percentages)</li>
       
      </ol>
      </section>
  </div>
+
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic1">
+     <header><h1>Conic Gradients</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic1 {
+  background-image:
+    conic-gradient(
+      magenta 0%,
+      rebeccapurple 100%
+    );
+}</style>
+</section>
+</div>
+
+
+
+
+ <!-- conic gradients title-->
+ <div class="slide divider">
+     <header><h1>Conic Gradients: position</h1></header>
+ </div>
+
+<!-- position -->
+<div class="slide">
+  <header><h1>position</h1></header>
+  <section class="content">
+    <ul>
+      <li>same values as <code>background-position</code></li>
+      <li>include 'at'</li>
+
+      <li>&lt;postion> is horizontal-vertical, with one value changing horizontal (left/right) only.</li>
+
+      <li>location of gradient center point</li>
+    </ul>
+  </section>
+</div>
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic2">
+     <header><h1>Conic Gradients: position</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic2 {
+  background-image:
+    conic-gradient(at 75% 95%,
+      black  1%, 
+      magenta 1%,
+      rebeccapurple 100%);
+}</style>
+</section>
+</div>
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic3">
+     <header><h1>Conic Gradients: position</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic3 {
+  background-image:
+    conic-gradient(at right 20px bottom 50px,
+      black  1deg, 
+      magenta 1deg,
+      rebeccapurple 360deg);
+}</style>
+</section>
+</div>
+
+
+ <div class="slide divider">
+     <header><h1>Conic Gradients: direction</h1></header>
+</div>
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic4">
+     <header><h1>Conic Gradients: start angle</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic4 {
+  background-image:
+    conic-gradient(from 0.1turn,
+      black 1%, 
+      magenta 1%,
+      rebeccapurple);
+}</style>
+</section>
+</div>
+
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic5">
+     <header><h1>Conic Gradients: start angle</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic5 {
+  background-image:
+    conic-gradient(from 120deg,
+      black 1%, 
+      magenta 1%,
+      rebeccapurple);
+}</style>
+</section>
+</div>
+
+
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1>conic Gradients:<br/>color-stops &amp; color-hints</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- effects1 -->
+   <div class="slide" id="conic6">
+     <header><h1>Play Time</h1></header>
+     <section class="content">
+      <pre>1) create a conic gradient with a soft transition from the 0% to the 100%
+2) Create a pie chart.</pre>
+<style contenteditable class="editme" style="margin-top: : 1em; float: left; width: auto">#conic6 {
+  background-image:
+    conic-gradient(
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      green 60%,
+      blue 80%,
+      purple 100%
+    );
+}</style>
+
+
+</section>
+ </div>
+
+
+
+<!-- effects1 -->
+   <div class="slide" id="checkers">
+     <header><h1>Checker Board</h1></header>
+     <section class="content">
+<style contenteditable class="editme" style="margin-top: : 1em; float: left; width: auto; background: white;">#checkers {
+  background-image:
+      conic-gradient(
+          #fff 0.25turn, 
+          #000 0.25turn 0.5turn, 
+          #fff 0.5turn 0.75turn, 
+          #000 0.75turn
+      );
+     background-size: 100px 100px;
+     border: 1px solid;
+}</style>
+
+
+</section>
+ </div>
+
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Repeating Conic Gradient</h1></header>
+</div>
+
+
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>repeating-conic-gradient()</h1></header>
+     <section class="content">
+    <pre contenteditable>repeating-conic-gradient([from <em>&lt;angle&gt;</em>]? [ at <em>&lt;position&gt;{1,2}</em>]?  
+   [<em>&lt;angle-color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;angle-color-stop&gt;</em>)</pre>
+
+     <p>Things to remember:</p>
+     <ol>
+      <li>repeat size is the difference beween the first color stop and the last color stop.</li>
+    
+      <li>Use 'at' with position</li>
+      <li>Use 'from' for angle</li>
+      <li>position is center of gradient</li>
+     </ol>
+     </section>
+ </div>
+
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic7">
+     <header><h1>Repeating conic Gradient</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic7 {
+  background-image:
+    repeating-conic-gradient(
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      green 60%,
+      blue 80%,
+      purple 100%
+    );
+}</style>
+</section>
+</div>
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic11">
+     <header><h1>Repeating conic Gradient</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic11 {
+  background-image:
+    repeating-conic-gradient(
+      magenta 0 4deg,
+      orange 4deg 8deg
+    );
+}</style>
+</section>
+</div>
+
+
+
+
+
+ <!-- conic gradients -->
+ <div class="slide" id="conic12">
+     <header><h1>Make your own</h1></header>
+<section class="content">
+  <style contenteditable class="editme">#conic12 {
+  background-image:
+    repeating-conic-gradient(
+      rebeccapurple,
+      magenta
+    );
+}</style>
+</section>
+</div>
+
 
 <!--NEXT-->
 <div class="slide">
