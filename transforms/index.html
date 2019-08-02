@@ -30,17 +30,79 @@
      <header><h1>Transforms</h1></header>
 </div>
 
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>2D Transform Functions</h1></header>
+  <section class="content">
+  </section>
+</div>
+
 <!-- Title Slide -->
-<div class="slide normal">
+<div class="slide">
      <header><h1>Transforming Elements</h1></header>
      <section class="content"><b class="letters letters_01">RSVP</b>
      <style class="editme" contenteditable>.letters_01:after {
 transform:
- translate(-90px, 300px) rotate(50deg) scale(.7, .9) skew(15deg);
+   translate(300px, 90px) rotate(50deg) 
+   scale(0.7, 0.9) skewX(15deg);
 }</style>
+</section>
+</div>
+
+<div class="slide">
+     <header><h1>Transform: syntax</h1></header>
+     <section class="content">
 <pre>transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];</pre>
+<pre contenteditable>transform:
+   translate(300px, 90px) rotate(50deg) 
+   scale(0.7, 0.9) skewX(15deg);
+</pre>
      </section>
 </div>
+
+
+
+
+
+
+<div class="slide">
+     <header><h1>2D Transform Functions</h1></header>
+     <section class="content">
+   <dl class="deprecated listed wide">
+
+  <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
+  <dd>specifies a 2D translation by the vector [x, y], where x is the  translation-value parameter for the x axis and y  is the optional translation value along the y axis. parameter. If <em>y</em> is not provided, y==0.</dd>
+  <dt><strong>translateX</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the X direction.</dd>
+  <dt><strong>translateY</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the Y direction.</dd>
+  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
+  <dt><strong>scaleX</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
+  <dt><strong>scaleY</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
+  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
+  <dd>Rotates an element around a fixed point on the 2D plane. specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
+  <dt><strong>rotateX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element along the horizontal or X-axis, as defined by the <em>transform-origin</em> property. For example, rotateX(90deg) would cause elements to disappear, and rotateX(180deg) would cause elements to flip horizontally around the x-axis, appearing upside down and viewed from the back.</dd>
+  <dt><strong>rotateY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element along the vertical or Y-axis, as defined by the <em>transform-origin</em> property. For example, rotateY(90deg) would cause elements to disappear, and rotateY(180deg) would cause elements to flip vertically around the x-axis, appearing backwards and viewed from the back.</dd>
+  <dt><strong>skew</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the the 2D plane.</dd>
+     
+  <dt><strong>skewX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
+  <dt><strong>skewY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
+    <dt><strong>matrix</strong>(&lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;)</dt>
+  <dd>Generally machine generated, specifies a 2D transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix <strong>[a b c d e f]</strong>.</dd>
+</dl>
+<p>We'll cover more in a bit....</p>
+     </section>
+ </div>
+
+
 
 
 <div class="slide object">
@@ -62,47 +124,24 @@ transform:
   </section>
 </div>
 
-<!-- DIVIDER -->
-<div class="slide divider">
-  <header><h1>2D Transform Functions</h1></header>
-  <section class="content">
-  </section>
-</div>
 
-
-
-<div class="slide normal">
-     <header><h1>2D Transform Functions</h1></header>
+<div class="slide">
+     <header><h1>Transform Function: Translate</h1></header>
      <section class="content">
-   <dl class="deprecated listed wide">
+   <dl>
 
-  <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate" target="resource">translate</a></strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
   <dd>specifies a 2D translation by the vector [x, y], where x is the  translation-value parameter for the x axis and y  is the optional translation value along the y axis. parameter. If <em>y</em> is not provided, y==0.</dd>
-  <dt><strong>translateX</strong>(&lt;length&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatex" target="resource">translateX</a></strong>(&lt;length&gt;)</dt>
   <dd>specifies a translation by the given amount in the X direction.</dd>
-  <dt><strong>translateY</strong>(&lt;length&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatey" target="resource">translateY</a></strong>(&lt;length&gt;)</dt>
   <dd>specifies a translation by the given amount in the Y direction.</dd>
-  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
-  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
-  <dt><strong>scaleX</strong>(&lt;number&gt;)</dt>
-  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
-  <dt><strong>scaleY</strong>(&lt;number&gt;)</dt>
-  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
-  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
-  <dt><strong>skewX</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
-  <dt><strong>skewY</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
-    <dt><strong>matrix</strong>(&lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;)</dt>
-  <dd>Generally machine generated, specifies a 2D transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix <strong>[a b c d e f]</strong>.</dd>
 </dl>
      </section>
  </div>
 
-
-<div class="slide normal">
-     <header><h1>Transform Function: Translate</h1></header>
+<div class="slide">
+     <header><h1>Transform Function: Translating</h1></header>
      <b class="letters letters_02">RSVP</b>
      <section class="content">
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translate(100px, 100px)</span>;</pre>
@@ -113,7 +152,36 @@ transform:
      </section>
  </div>
 
- <div class="slide normal">
+<div class="slide">
+<header><h1>transform: translate()</h1></header>
+<section class="content transform"><b class="letters rsvp02">RSVP</b>
+
+<style class="editme" contenteditable> .rsvp02::after {
+   _transform: translate(100px, 100px);
+   _transform: translateX(100px);
+   _transform: translateY(100px);
+   _transform: translateX(100px) translateY(100px);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+     <header><h1>Transform Functions: Rotations</h1></header>
+     <section class="content">
+    <dl><dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">rotate</a></strong>(&lt;angle&gt;)</dt>
+  <dd>Rotates an element around a fixed point on the 2D plane. specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatex" target="resource">rotateX</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element along the horizontal or X-axis, as defined by the <em>transform-origin</em> property. For example, rotateX(90deg) would cause elements to disappear, and rotateX(180deg) would cause elements to flip horizontally around the x-axis, appearing upside down and viewed from the back.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY" target="resource">rotateY</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element along the vertical or Y-axis, as defined by the <em>transform-origin</em> property. For example, rotateY(90deg) would cause elements to disappear, and rotateY(180deg) would cause elements to flip vertically around the x-axis, appearing backwards and viewed from the back.</dd>
+    </dl>
+     </section>
+ </div>
+
+ <div class="slide">
      <header><h1>Transform Function: Rotate</h1></header>
      <section class="content"> <b class="letters letters_03">RSVP</b>
 
@@ -123,7 +191,82 @@ transform:
      </section>
  </div>
 
-<div class="slide normal">
+  <div class="slide">
+     <header><h1>Transform Function: Rotate</h1></header>
+     <section class="content"> <b class="letters letters_03b">RSVP</b>
+
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03b', this.innerHTML)">rotate(90deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03b', this.innerHTML)">rotateX(90deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03b', this.innerHTML)">rotateY(90deg)</span>;</pre>
+     <p>Edit the value to set it. Mouse out to see it.</p>
+
+     </section>
+ </div>
+
+
+ <div class="slide">
+<header><h1>transform: rotate()</h1></header>
+<section class="content transform"><b class="letters rsvp03">RSVP</b>
+
+<style class="editme" contenteditable> .rsvp03::after {
+   _transform: rotate(100deg);
+   _transform: rotateY(100deg);
+   _transform: rotate(100deg, 100deg);        /* not valid */
+   _transform: rotateX(100deg) rotateY(100deg);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+<div class="slide">
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1></header>
+     <section class="content">
+    <pre>transform-origin: &lt;x-offset> [ &lt;y-offset>? ] [ &lt;z> ]?;</pre>
+    <ul>
+      <li>The point around which a transformation is applied.</li>
+      <li>Default: <code>transform-origin: 50% 50% 0;</code></li>
+      <li>offsets for X are <code>&lt;length>, &lt;percentage></code> or the <br/>keywords <code> left | center | right </code></li>
+      <li>offsets for X are <code>&lt;length>, &lt;percentage></code> or the <br/>keywords <code>  top | center | bottom</code></li>
+      <li>If 2 or 3 values and either no value is a keyword, the first value is the X-offset (horizontal) and the second is the Y-offset (vertical).</li><li>If only one keyterm, the other defaults to <code>center</code>, and <code>Z = 0</code>.</li>
+      <li>If only one length, that is the x-offset, <code>y = center</code> and <code>Z = 0</code>.</li>
+      <li><code>&lt;Z></code> can only be a length, defaulting to 0 if omitted.</li>
+    </ul>
+     </section>
+ </div>
+
+
+
+<div class="slide">
+     <header><h1><code>transform-origin</code> property</h1></header>
+     <section class="content"><b class="letters rsvp04">RSVP</b>
+
+<style class="editme" contenteditable> .rsvp04::after {
+   transform-origin: top left;
+   _transform: rotate(100deg);
+   _transform: rotateY(100deg);
+   _transform: rotateX(100deg);
+}</style>
+<p>Remove the underscores to activate. Change the transform-origin value</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+     <header><h1>Transform Function: Scaling</h1></header>
+     <section class="content">
+   <dl>
+     <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">scale</a></strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scalex" target="resource">scaleX</a></strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaley" target="resource">scaleY</a></strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
+   </dl>
+     </section>
+ </div>
+
+<div class="slide">
      <header><h1>Transform Function: Scale</h1></header>
      <section class="content"><b class="letters letters_04">RSVP</b>
 
@@ -134,8 +277,37 @@ transform:
      </section>
  </div>
 
+<div class="slide">
+     <header><h1><code>transform: scale()</code> &amp; <code>transform-origin</code> </h1></header>
+     <section class="content"><b class="letters rsvp05">RSVP</b>
 
-<div class="slide normal">
+<style class="editme" contenteditable> .rsvp05::after {
+   transform-origin: top left;
+   _transform: scale(2);
+   _transform: scaleX(2);
+   _transform: scaleY(0.5);
+   _transform: scale(0.5, 2);
+}</style>
+<p>Remove the underscores to activate. Change the transform-origin value</p>
+</section>
+</div>
+
+
+<div class="slide">
+     <header><h1>Transform Function: Skewing</h1></header>
+     <section class="content">
+    <dl>
+      <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew</strong>(&lt;angle&gt;)</a></dt>
+  <dd>specifies a skew transformation along the the 2D plane.</dd>
+      <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skewx" target="resource">skewX</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skewy" target="resource">skewY</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
+    </dl>
+     </section>
+ </div>
+
+<div class="slide">
      <header><h1>Transform Function: Skew</h1></header>
      <section class="content">
      <b class="letters letters_05">RSVP</b>
@@ -146,53 +318,131 @@ transform:
      </section>
  </div>
 
+ <div class="slide" id="fail1">
+     <header><h1>Transform Function: Skew</h1></header>
+     <section class="content">
+     <b class="letters letters_05b">RSVP</b>
 
-<div class="slide" id="gencontentlink">
+      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skewX(15deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skew(15deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skew(15deg, 15deg)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewX(15deg) skewY(15deg)</span>;</pre> 
+<p>Edit a value to set it. Mouse out of a value to see it.</p>
+     </section>
+ </div>
+
+
+  <div class="slide" id="redo">
+     <header><h1>Transform Function: Skew</h1></header>
+     <section class="content">
+     <b class="letters letters_05b">RSVP</b>
+     <style class="editme" contenteditable>#redo .letters::after {
+  _transform: skewX(15deg);
+  _transform: skew(15deg);
+  _transform: skew(15deg, 15deg);
+  _transform: skewX(15deg) skewY(15deg);
+}</style>
+<p>Remove the underscore to activate the CSS</p>
+     </section>
+ </div>
+
+
+
+  <div class="slide">
+     <header><h1><code>transform: skew()</code> &amp; <code>transform-origin</code></h1></header>
+     <section class="content">
+     <b class="letters rsvp06">RSVP</b>
+     <style class="editme" contenteditable>.rsvp06::after {
+  transform-origin: top left;
+  _transform: skewX(15deg);
+  _transform: skewY(15deg);
+  _transform: skew(15deg, 15deg);
+  _transform: skewX(15deg) skewY(15deg);
+}</style>
+<p>Remove the underscore to activate the CSS</p>
+     </section>
+ </div>
+
+<div class="slide">
 <header><h1>Multiple Tranforms</h1></header>
 <section class="content transform"><b class="letters letters_06">RSVP</b>
 
 <style class="editme" contenteditable> .letters_06::after {
-   transform: translate(-80px, 200px);
+   transform: translate(200px, -80px);
    transform: rotate(15deg);
    transform: scale(1.5, 2);
    transform: skewX(-8deg);
 }</style>
 </section>
 </div>
-  <script>
 
+
+
+
+
+<script>
+// make the above text editors work
  var temporaryStyleSheet = document.getElementById('tempstyle');
-
-
-
 
  function setTempStyle(thisclass, change){
    var temporaryStyleSheet = document.getElementById('tempstyle');
    temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {transform: '+ change +';}';
-   console.dir(temporaryStyleSheet);
  }
-
 
  var transformSpans = document.getElementById('ABTrasform').getElementsByTagName('span');
  </script>
 
 
 
-<div class="slide" id="gencontentlink">
+<div class="slide">
 <header><h1>Multiple Tranforms</h1></header>
 <section class="content transform"><b class="letters letters_06b">RSVP</b>
 
 <style class="editme" contenteditable> .letters_06b::after {
-   transform: translate(-80px, 200px) 
+   transform: translate(200px, -80px) 
               rotate(15deg)
               scale(1.5, 2)
-              skewX(-8deg)
+              skewX(-8deg);
 }</style>
 </section>
 </div>
 
 
+<div class="slide">
+<header><h1>Multiple Tranforms</h1></header>
+<section class="content transform"><b class="letters letters_06c">RSVP</b>
 
+<style class="editme" contenteditable> .letters_06c::after {
+   transform-origin: -100px -100px;
+   transform: translate(200px, -80px) 
+              rotate(15deg)
+              scale(1.5, 2)
+              skewX(-8deg);
+}</style>
+</section>
+</div>
+
+
+<div class="slide">
+     <header><h1>Transform Function: matrix</h1></header>
+     <section class="content">
+    <p><code>matrix(a, b, c, d, tx, ty)</code><br/>shorthand for<br/><code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code><br/>(which makes no sense).</p>
+    <p>Computer generated transform.</p>
+     </section>
+ </div>
+
+
+ <div class="slide">
+<header><h1><code>transform: matrix(a, b, c, d, tx, ty)</code></h1></header>
+<section class="content transform"><b class="letters rsvp_08">RSVP</b>
+
+<style class="editme" contenteditable> .rsvp_08::after {
+   transform-origin: center center;
+   _transform: matrix(1, 2, -1, 1, 80, 80);
+   _transform: matrix(-0.5, 1, 1, -0.5, 0, 0);
+   _transform: matrix(-0.5, 1, 1, -0.5, 80, 80) rotate(-15deg);
+}</style>
+</section>
+</div>
 
 <!-- DIVIDER -->
 <div class="slide divider">
@@ -230,8 +480,8 @@ transform:
 
 <div class="slide object">
   <header><h1>Funtion Order</h1></header>
-<object data="files/transforms/tOrder.html"></object>
-  <a href="files/transforms/tOrder.html" target="play" title="open resource in reused window">➹</a>
+<object data="exercises/tOrder.html"></object>
+  <a href="exercises/transforms/tOrder.html" target="play" title="open resource in reused window">➹</a>
 
 </div>
 
@@ -245,47 +495,32 @@ transform:
 
 
 <!-- 3d Transforms -->
-<div class="slide normal">
-     <header style="position:absolute;left: 0; transform: rotate(-90deg) translate(-240px, -100px);"><h1>3d Transforms</h1></header>
-     <section class="content" style="padding-top:0; margin-top:-20px">
+<div class="slide">
+     <header><h1>3d Transforms</h1></header>
+     <section class="content">
      <dl  class="deprecated listed wide">
 
-  <dt><strong>translate</strong>(&lt;x-length&gt;[, &lt;y-length&gt;])</dt>
-  <dd>specifies a 2D translation by the vector [tx, ty], where tx is the first translation-value parameter and ty is the optional second translation-value parameter. If <em>&lt;ty&gt;</em> is not provided, ty has zero as a value.</dd>
-  <dt><strong class="imp">translate3d</strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
-  <dd>specifies a 3D translation by the vector [tx,ty,tz], with tx, ty and tz being the first, second and third translation-value parameters respectively.</dd>
-  <dt><strong>translateX</strong>(&lt;x-length&gt;), <strong>translateY</strong>(&lt;y-length&gt;) </dt>
-  <dd>specifies a translation by the given amount in the X or Y direction.</dd>
-  <dt><strong class="imp">translateZ</strong>(&lt;z-value&gt;)</dt>
+  <dt><strong>translateZ</strong>(&lt;z-value&gt;)</dt>
   <dd>specifies a translation by the given amount in the Z direction. Note that percentage values are not allowed in the translateZ translation-value, and if present are evaluated as 0.</dd>
-  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
-  <dd>specifies a 2D scale operation by the [sx,sy] scaling vector described by the 2 parameters. If the second parameter is not provided, it is takes a value equal to the first.</dd>
-  <dt><strong class="imp">scale3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
-  <dd>specifies a 3D scale operation by the [sx,sy,sz] scaling vector described by the 3 parameters.</dd>
-  <dt><strong>scaleX</strong>(&lt;number&gt;), <strong>scaleY</strong>(&lt;number&gt;)</dt>
-  <dd>specifies a scale operation using the [sx,1,1] or [1,sy,1] scaling vector, where sx or sy is given as the parameter respectively.</dd>
-  <dt><strong class="imp">scaleZ</strong>(&lt;number&gt;)</dt>
+  <dt><strong>translate3d</strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
+  <dd>specifies a 3D translation by the vector [tx,ty,tz], with tx, ty and tz being the first, second and third translation-value parameters respectively.</dd>
+
+  <dt><strong>scaleZ</strong>(&lt;number&gt;)</dt>
   <dd>specifies a scale operation using the [1,1,sz] scaling vector, where sz is given as the parameter.</dd>
+  <dt><strong>scale3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
+  <dd>specifies a 3D scale operation by the [sx,sy,sz] scaling vector described by the 3 parameters.</dd>
   <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
   <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property.</dd>
-  <dt><strong class="imp">rotate3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
-  <dd>specifies a clockwise 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first 3 parameters. If the direction vector is not of unit length, it will be normalized. A direction vector that cannot be normalized, such as [0, 0, 0], will cause the rotation to not be applied. This function is equivalent to matrix3d(1 + (1-cos(angle))*(x*x-1), -z*sin(angle)+(1-cos(angle))*x*y, y*sin(angle)+(1-cos(angle))*x*z, 0, z*sin(angle)+(1-cos(angle))*x*y, 1 + (1-cos(angle))*(y*y-1), -x*sin(angle)+(1-cos(angle))*y*z, 0, -y*sin(angle)+(1-cos(angle))*x*z, x*sin(angle)+(1-cos(angle))*y*z, 1 + (1-cos(angle))*(z*z-1), 0, 0, 0, 0, 1).</dd>
-  <dt><strong>rotateX</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a clockwise rotation by the given angle about the X axis.</dd>
-  <dt><strong>rotateY</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a clockwise rotation by the given angle about the Y axis.</dd>
-  <dt><strong class="imp">rotateZ</strong>(&lt;angle&gt;)</dt>
+
+  <dt><strong>rotateZ</strong>(&lt;angle&gt;)</dt>
   <dd>specifies a clockwise rotation by the given angle about the Z axis.</dd>
-  <dt><strong>skewX</strong>(&lt;angle&gt;),<strong>skewY</strong>(&lt;angle&gt;) </dt>
-  <dd>specifies a skew transformation along the X axis or Y axis by the given angle.</dd>
-  <dt></dt>
-  <dt><strong>skew</strong>(&lt;angle&gt; [, &lt;angle&gt;])</dt>
-  <dd>specifies a skew transformation along the X and Y axes. The first angle parameter specifies the skew on the X axis. The second angle parameter specifies the skew on the Y axis. If the second parameter is not given then a value of 0 is used for the Y angle (ie. no skew on the Y axis).</dd>
+  <dt><strong>rotate3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
+  <dd>specifies a clockwise 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first 3 parameters. If the direction vector is not of unit length, it will be normalized. A direction vector that cannot be normalized, such as [0, 0, 0], will cause the rotation to not be applied. This function is equivalent to matrix3d(1 + (1-cos(angle))*(x*x-1), -z*sin(angle)+(1-cos(angle))*x*y, y*sin(angle)+(1-cos(angle))*x*z, 0, z*sin(angle)+(1-cos(angle))*x*y, 1 + (1-cos(angle))*(y*y-1), -x*sin(angle)+(1-cos(angle))*y*z, 0, -y*sin(angle)+(1-cos(angle))*x*z, x*sin(angle)+(1-cos(angle))*y*z, 1 + (1-cos(angle))*(z*z-1), 0, 0, 0, 0, 1).</dd>
     <dt><strong>matrix</strong>(&lt;number&gt;{6})</dt>
   <dd>specifies a 2D transformation in the form of a transformation matrix of six  comma separated values. matrix(a,b,c,d,e,f) is equivalent to matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, e, f, 0, 1).</dd>
-  <dt><strong class="imp">matrix3d</strong>(&lt;number&gt;{15})</dt>
+  <dt><strong>matrix3d</strong>(&lt;number&gt;{15})</dt>
   <dd>specifies a 3D transformation as a 4x4 homogeneous matrix of 16 comma separated values in column-major order.</dd>
-  <dt><strong class="imp">perspective</strong>(&lt;number&gt;)</dt>
+  <dt><strong>perspective</strong>(&lt;number&gt;)</dt>
   <dd>specifies a perspective projection matrix. This matrix maps a <em>viewing cube</em> onto a pyramid whose base is infinitely far away from the viewer and whose peak represents the viewer's position. The viewable area is the region bounded by the four edges of the viewport (the portion of the browser window used for rendering the webpage between the viewer's position and a point at a distance of infinity from the viewer). The <em>depth</em>, given as the parameter to the function, represents the distance of the z=0 letters from the viewer. Lower values give a more flattened pyramid and therefore a more pronounced perspective effect. The value is given in pixels, so a value of 1000 gives a moderate amount of foreshortening and a value of 200 gives an extreme amount. The matrix is computed by starting with an identity matrix and replacing the value at row 3, column 4 with the value -1/depth. The value for depth must be greater than zero, otherwise the function is invalid.</dd>
 </dl>
      </section>
@@ -300,6 +535,87 @@ transform:
 </div>
 
 
+<div class="slide">
+<header><h1>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatez" target="resource">translateZ()</a></h1></header>
+<section class="content transform"><b class="letters D301">RSVP</b>
+
+<style class="editme" contenteditable> .D301::after {
+   _transform: translateZ(100px);
+   _transform: perspective(500px) translateZ(100px);
+   _transform: translate3d(0, 0, 100px);
+   _transform: perspective(500px) translate3d(0, 0, 100px);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective()</a></h1></header>
+<section class="content">
+<h2><strong>perspective</strong>(&lt;number&gt;)</h2>
+  <ul><li>specifies a perspective projection.</li><li> Parameter is the <em>depth</em>, represents the distance of the viewer: <ul><li> Lower values are closer, more pronounced perspective effect</li><li>Larger values are further, less pronounced persepective</li> </ul>
+</li>
+  <li>depth must be greater than zero, otherwise invalid</li>
+  <li>depth must be greater than translateZ, or the element is behind the viewer</li>
+  <li>perspective() must be the first transform function of the list of functions</li>
+</ul>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1>transform: perspective() &amp; translateZ()</h1></header>
+<section class="content transform"><b class="letters D302">RSVP</b>
+
+<style class="editme" contenteditable> .D302::after {
+   _transform: perspective(500px) translateZ(100px);
+   _transform: perspective(200px) translateZ(100px);
+   _transform: perspective(99px)  translateZ(100px);
+   _transform: perspective(101px) translateZ(100px);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+
+
+
+<div class="slide">
+<header><h1>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d" target="resource">translate3d()</a></h1></header>
+<section class="content transform"><b class="letters D303">RSVP</b>
+
+<style class="editme" contenteditable> .D303::after {
+   _transform: perspective(200px) translateZ(100px);
+   _transform: perspective(200px) translate3d(0, 0, 100px);
+   _transform: perspective(200px) translate(0, 0) translate3d(100px);
+   _transform: perspective(200px) translate3d(100px, 100px, 100px);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scalez" target="resource">scaleZ()</a></h1></header>
+<section class="content transform"><b class="letters D304">RSVP</b>
+
+<style class="editme" contenteditable> .D304::after {
+   _transform: scaleZ(2);
+   _transform: perspective(100px) scaleZ(2);
+   _transform: scale3d(0, 0, 2);
+   _transform: perspective(100px) scale3d(0, 0, 2);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+
+
 <!-- DIVIDER -->
 <div class="slide divider">
   <header><h1>3D Transform Related Properties</h1></header>
@@ -308,7 +624,7 @@ transform:
 </div>
 
 
- <div class="slide normal">
+ <div class="slide">
      <header><h1>3D Transform related Properties</h1></header>
      <section class="content">
 <dl  class="deprecated listed wide">
