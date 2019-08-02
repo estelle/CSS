@@ -505,22 +505,19 @@ transform:
   <dt><strong>translate3d</strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
   <dd>specifies a 3D translation by the vector [tx,ty,tz], with tx, ty and tz being the first, second and third translation-value parameters respectively.</dd>
 
-  <dt><strong>scaleZ</strong>(&lt;number&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scalez" target="resource">scaleZ</a></strong>(&lt;number&gt;)</dt>
   <dd>specifies a scale operation using the [1,1,sz] scaling vector, where sz is given as the parameter.</dd>
-  <dt><strong>scale3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d" target="resource">scale3d</a></strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
   <dd>specifies a 3D scale operation by the [sx,sy,sz] scaling vector described by the 3 parameters.</dd>
-  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property.</dd>
-
-  <dt><strong>rotateZ</strong>(&lt;angle&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatez" target="resource">rotateZ</a></strong>(&lt;angle&gt;)</dt>
   <dd>specifies a clockwise rotation by the given angle about the Z axis.</dd>
-  <dt><strong>rotate3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d" target="resource">rotate3d</a></strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
   <dd>specifies a clockwise 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first 3 parameters. If the direction vector is not of unit length, it will be normalized. A direction vector that cannot be normalized, such as [0, 0, 0], will cause the rotation to not be applied. This function is equivalent to matrix3d(1 + (1-cos(angle))*(x*x-1), -z*sin(angle)+(1-cos(angle))*x*y, y*sin(angle)+(1-cos(angle))*x*z, 0, z*sin(angle)+(1-cos(angle))*x*y, 1 + (1-cos(angle))*(y*y-1), -x*sin(angle)+(1-cos(angle))*y*z, 0, -y*sin(angle)+(1-cos(angle))*x*z, x*sin(angle)+(1-cos(angle))*y*z, 1 + (1-cos(angle))*(z*z-1), 0, 0, 0, 0, 1).</dd>
-    <dt><strong>matrix</strong>(&lt;number&gt;{6})</dt>
+    <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix</a></strong>(&lt;number&gt;{6})</dt>
   <dd>specifies a 2D transformation in the form of a transformation matrix of six  comma separated values. matrix(a,b,c,d,e,f) is equivalent to matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, e, f, 0, 1).</dd>
-  <dt><strong>matrix3d</strong>(&lt;number&gt;{15})</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="resource">matrix3d</a></strong>(&lt;number&gt;{15})</dt>
   <dd>specifies a 3D transformation as a 4x4 homogeneous matrix of 16 comma separated values in column-major order.</dd>
-  <dt><strong>perspective</strong>(&lt;number&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective</a></strong>(&lt;number&gt;)</dt>
   <dd>specifies a perspective projection matrix. This matrix maps a <em>viewing cube</em> onto a pyramid whose base is infinitely far away from the viewer and whose peak represents the viewer's position. The viewable area is the region bounded by the four edges of the viewport (the portion of the browser window used for rendering the webpage between the viewer's position and a point at a distance of infinity from the viewer). The <em>depth</em>, given as the parameter to the function, represents the distance of the z=0 letters from the viewer. Lower values give a more flattened pyramid and therefore a more pronounced perspective effect. The value is given in pixels, so a value of 1000 gives a moderate amount of foreshortening and a value of 200 gives an extreme amount. The matrix is computed by starting with an identity matrix and replacing the value at row 3, column 4 with the value -1/depth. The value for depth must be greater than zero, otherwise the function is invalid.</dd>
 </dl>
      </section>
@@ -592,6 +589,72 @@ transform:
    _transform: perspective(200px) translate3d(0, 0, 100px);
    _transform: perspective(200px) translate(0, 0) translate3d(100px);
    _transform: perspective(200px) translate3d(100px, 100px, 100px);
+   _transform: perspective(200px) translate3d(100px, 100px, -100px);
+}</style>
+<p>Remove the underscores to activate.</p>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>3D Translating</h1></header>
+  <section class="content">
+    <pre contenteditable>translateZ( &lt;length> )</pre>
+    <p>Specifies a 3D translation by the vector [0, 0, tz].</p>
+    <pre contenteditable>translate3d( &lt;length-percent> , &lt;length-percent> , &lt;length> )</pre>
+    <p>Specifies a 3D translation by the vector [tx, ty, tz], in that order.</p><hr/>
+    <pre contenteditable> translateZ( 200px ) == translate3d( 0, 0, 200px )</pre>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>3D Scaling</h1></header>
+  <section class="content">
+    <pre contenteditable>scaleZ( &lt;number> )</pre>
+    <p>Specifies a 3D scale operation using the [1, 1, sz] scaling vector, where sZ is the parameter.</p>
+    <pre contenteditable>scale3d( &lt;number> , &lt;number>, &lt;number> )</pre>
+    <p>Specifies a 3D scale operation by the [sx, sy, sz] scaling vector described by the 3 parameters.</p>
+<hr/>
+    <pre contenteditable>scaleZ( 0.7 ) == scale3d( 1, 1, 0.7 )</pre>
+  </section>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>3D Rotation</h1></header>
+  <section class="content">
+    <pre contenteditable>rotate3d( &lt;number> , &lt;number> , &lt;number> , &lt;angle> )</pre>
+
+   <p>Specifies a 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first three parameters. The angle can be zero.</p>
+
+<pre contenteditable style="float: left; margin-right: 1em">rotateX( &lt;angle> )</pre> <pre contenteditable style="float: left; margin-right: 1em">rotateY( &lt;angle> ) </pre>
+
+   <p style="clear: both;">Same as <code>rotate3d(1, 0, 0, &lt;angle>)</code> or <code>rotate3d(0, 1, 0, &lt;angle>)</code>, respectively. Angle can be zero.</p>
+
+<pre contenteditable>rotateZ( &lt;angle> )</pre>
+
+   <p> same as <code>rotate3d(0, 0, 1, &lt;angle>)</code>, which is a 3d transform equivalent to the 2d transform <code>rotate(&lt;angle>)</code>.  Angle can be zero.</p>
+
+  </section>
+</div>
+
+
+
+ <div class="slide">
+<header><h1>transform: rotate()</h1></header>
+<section class="content transform"><b class="letters D307">RSVP</b>
+
+<style class="editme" contenteditable> .D307::after {
+   _transform: perspective(200px) rotate(40deg);
+   _transform: perspective(200px) rotateZ(40deg);
+   _transform: perspective(200px) rotate3d(0, 0, 40deg);
+   _transform: perspective(200px) rotateX(40deg);
+   _transform: perspective(200px) rotateY(40deg);
+   _transform: perspective(200px) rotateX(40deg) rotateY(40deg);
 }</style>
 <p>Remove the underscores to activate.</p>
 </section>
@@ -600,18 +663,49 @@ transform:
 
 
 <div class="slide">
-<header><h1>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scalez" target="resource">scaleZ()</a></h1></header>
-<section class="content transform"><b class="letters D304">RSVP</b>
+  <header><h1>3D Matrix</h1></header>
+  <section class="content">
+    <pre contenteditable>matrix3d( &lt;number>#{16} )</pre>
+    <p>specifies a 3D transformation as a matrix of 16 values </p>
+    <p><code>matrix(a, b, c, d, tx, ty)</code> is a shorthand for <br/><code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code>.
+      <hr>
+      <pre contenteditable>matrix(-0.5, 1, 1, -0.5, 20, 20)
+matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
+  </section>
+</div>
 
-<style class="editme" contenteditable> .D304::after {
-   _transform: scaleZ(2);
-   _transform: perspective(100px) scaleZ(2);
-   _transform: scale3d(0, 0, 2);
-   _transform: perspective(100px) scale3d(0, 0, 2);
+
+ <div class="slide">
+<header><h1><code>transform: matrix3d()</code></h1></header>
+<section class="content transform"><b class="letters D308">RSVP</b>
+
+<style class="editme" contenteditable> .D308::after {
+   transform-origin: center center;
+   _transform: matrix(-0.5, 1, 1, -0.5, 20, 20);
+   _transform: matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)
 }</style>
-<p>Remove the underscores to activate.</p>
 </section>
 </div>
+
+
+
+<div class="slide">
+  <header><h1>3D Transforms: Perspective</h1></header>
+  <section class="content">
+    <pre contenteditable>perspective( &lt;length> )</pre>
+   <p>Positive Z values moves away from the origin and toward the user. Negative Z values goes towards the origin, away from the user. The parameter is the distance of the z=0 plane from the viewer. Lower values have a more pronounced perspective effect.</p>
+   <p>Must be greater than zero!</p>
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
 
 
 
