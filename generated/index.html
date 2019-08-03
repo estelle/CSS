@@ -769,19 +769,38 @@ a[href$="vcs"]::before {
 <div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content">
-    <p>We created the start of our playing card art by creating some elector block. Let's add a few pseudo selectors we'll use and generate and position content on them.</p>
+    <p>Let's add a few pseudo selectors we'll use and generate and position content on them. HTML is on the next page.</p>
     <ol>
       <li>Make each card 300px tall by 200px wide.</li>
       <li>Make the face and the back the same size, and in the same spot</li>
-      <li>Create selector blocks for the following:
-        <ol>
-          <li>Add two pseudo element selectors for the face of each card</li>
-        </ol>
+      <li>Add two pseudo element selector blocks for the face of each card</li>
       <li>Add generated content: the face value</li>
-      <li>Make that content, in our current examples the "A", but this should be changeable, the appear twice on the face of the card</li>
-      <li>Place one of those As 10 pixels from the upper left hand corner.</li>
-      <li>Place the other A 10 pixels from the bottom righ hand corner</li> 
+      <li>Make that content (the "A" in our current examples, but this should be automatically set), appear twice on the face of the card</li>
+      <li>Place one of those valies 10 pixels from the upper left hand corner of the face of the card.</li>
+      <li>Place the other A 10 pixels from the bottom righ hand corner of the face of the card.</li> 
     </ol>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content">
+    <p>HTML for our code example</p>
+    <pre contenteditable>&lt;figure&gt;
+  &lt;div class=&quot;card&quot; data-type="H"&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;face&quot; data-value="A"&gt;♥&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;card&quot; data-type="C"&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;face&quot; data-value="A"&gt;♣&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;card&quot; data-type="D"&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;face&quot; data-value="A"&gt;♦&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/figure&gt;</pre>
+<p>&nbsp;</p>
   </section>
 </div>
 

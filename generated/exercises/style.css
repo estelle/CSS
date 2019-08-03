@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+
+}
+/* all the cards */
+[data-type],
+.card {
+
+}
+/* backs of the cards */
+[data-type] > :first-child,
+.back {
+
+}
+/* card faces */
+[data-value],
+.face {
+
+}
+/* first, second, and last card */
+[data-type]:first-of-type,
+.face:first-of-type {
+
+}
+[data-type]:nth-of-type(2),
+.face:nth-of-type(2) {
+
+}
+[data-type]:last-of-type,
+.face:last-of-type {
+
+}
+/* faces of first, second and last cards */
+[data-type]:first-of-type [data-value],
+.card:first-of-type .face {
+
+}
+[data-type]:nth-of-type(2) [data-value],
+.card:nth-of-type(2) .face {
+
+}
+[data-type]:last-of-type [data-value],
+.card:last-of-type  .face {
+  
+}
+/* red cards */
+[data-value="H" i],
+[data-value="D" i] {
+
+ }
+/* black cards */
+[data-value="C" i],
+[data-value="S" i] {
+
+ }
+/* hovered card */
+[data-type]:hover,
+.card:hover {
+
+} 

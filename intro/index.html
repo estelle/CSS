@@ -35,26 +35,34 @@
      <header>
       <h1>CSS Basics</h1>
      </header>
-     <section><ul>
-<li>Declarations</li>
-<li>CSS Rulesets</li>
-<li>Including CSS
+     <section>
+<div class="flex12">
   <ul>
-    <li>&lt;link></li>
-    <li>media</li>
-    <li>&lt;style></li>
-    <li>@import</li>
-    <li>inline styles</li>
-    <li>Scripting</li>
+    <li>Declarations</li>
+    <li>CSS Rulesets</li>
+    <li>Including CSS
+        <ul>
+          <li>&lt;link></li>
+          <li>media</li>
+          <li>&lt;style></li>
+          <li>@import</li>
+          <li>inline styles</li>
+          <li>Scripting</li>
+        </ul>
+    </li>
   </ul>
-</li>
-<li>Syntax</li>
-<li>White space</li>
-<li>Character declaration</li>
-<li>Comments</li>
-<li>Errors and Error Handling</li></ul>
-     <p><a href="https://estelle.github.io/CSS/intro/">estelle.github.io/CSS/intro/</a></p></li>
-    </div>
+  <ul>
+    <li>Syntax</li>
+    <li>White space</li>
+    <li>Character declaration</li>
+    <li>Comments</li>
+    <li>Errors and Error Handling</li>
+    <li>Exercise</li>
+  </ul>
+</div>
+<p><a href="https://estelle.github.io/CSS/intro/">estelle.github.io/CSS/intro/</a></p>
+</section>
+</div>
 
 
 <div class="slide">
@@ -349,6 +357,13 @@ that spans 3 lines */</i></pre>
 
 <pre contenteditable>color: <i>/* this works */</i> red;</pre>
 
+  </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Comments</h1></header>
 <p>Comments can not be nested</p>
 <pre contenteditable><i>/* this is the outer comment
     /* inner comment */</i>
@@ -373,9 +388,11 @@ that spans 3 lines */</i></pre>
   groot: green; <i>/* not a valid property */</i>
   font-weight: bold; <i>/* will not ignore this */</i>
 }</pre>
-
-</section>
+  </section>
 </div>
+
+
+
 
 
 
@@ -405,6 +422,84 @@ p.valid {
 }</pre>
 <p><i>If there is an invalid pseudo-element or pseudo-class within in a chain or group of selectors, the whole selector list is invalid. If a pseudo-element (but not pseudo-class) has a -webkit- prefix, webkit and mozilla will not invalidate the selector list.</i>
   </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Forgiving yet strict: Comments</h1></header>
+ <section class="content">
+  <p>Can be used to comment out lines of CSS as you test</p>
+  <pre contenteditable>p {
+  color: red; <i>/* won't be overwritten */</i>
+  //color: green; <i>/* ignored */</i>
+  _color: blue; <i>/* ignored */</i>
+  font-weight: bold; <i>/* valid */</i>
+}</pre>
+<p>The underscore is used in many of our "try it" pages</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>The cascade</h1></header>
+ <section class="content">
+  <p>The C in CSS stands for "Cascade"</p>
+  <pre contenteditable>p {
+  color: red; 
+  color: green; 
+  color: blue; 
+}</pre>
+<p>Will be blue</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content">
+    <p>There will be several exercises in each section. We'll also be creating 3 cards that we can flip as an example throughout the day or week. Let's start by:</p>
+    <ol>
+      <li>Create an HTML page</li>
+      <li>Declare the language</li>
+      <li>Include the character set</li>
+      <li>Include a <code>&lt;title></code></li>
+      <li>Add a link to an external stylesheet</li>
+      <li>Create your external stylesheet</li>
+      <li>Include the character set</li>
+      <li>Save it</li>
+    </ol>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+    <h2>HTML document</h2>
+    <pre contenteditable>&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en-us&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;/&gt;
+  &lt;title&gt;CSS is fun&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;/> 
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</pre>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+<h2>CSS file</h2>
+<pre contenteditable>@charset "UTF-8";
+/* CSS Document */</pre>
+<p>Saves as <code>style.css</code></p>
+</section>
 </div>
 
 

@@ -1,14 +1,53 @@
-/* <figure>
-  <div data-type="H">
-    <div></div>
-    <div data-value="A">♥</div>
-  </div>
-  <div data-type="C">
-    <div></div>
-    <div data-value="A">♣</div>
-  </div>
-  <div data-type="D">
-    <div></div>
-   <div data-value="A">♦</div>
-  </div>
-</figure>*/
+@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+
+}
+/* all the cards */
+[data-type] {
+
+}
+/* backs of the cards */
+[data-type] > :first-child {
+
+}
+/* card faces */
+[data-value] {
+
+}
+/* first, second, and last card */
+[data-type]:first-of-type {
+
+}
+[data-type]:nth-of-type(2) {
+
+}
+[data-type]:last-of-type {
+
+}
+/* faces of first, second and last cards */
+[data-type]:first-of-type [data-value]{
+
+}
+[data-type]:nth-of-type(2) [data-value] {
+
+}
+[data-type]:last-of-type [data-value] {
+  
+}
+/* red cards */
+[data-value="H" i],
+[data-value="D" i] {
+
+ }
+/* black cards */
+[data-value="C" i],
+[data-value="S" i] {
+
+ }
+/* hovered card */
+[data-type]:hover {
+
+} 

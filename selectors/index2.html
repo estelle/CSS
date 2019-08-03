@@ -929,6 +929,7 @@ E || F
 <div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content">
+    <p>This is the HTML for our CSS exercise</p>
     <pre contenteditable>&lt;figure&gt;
   &lt;div data-type="H"&gt;
     &lt;div&gt;&lt;/div&gt;
@@ -950,21 +951,21 @@ E || F
 <div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content" style="height: 80vh; overflow: scroll">
-    <p>We're going to target every element. These are three playing cards, each with a front and back, inside a figure container. For right now they're all Aces.</p>
+    <p>There are three playing cards, each with a face side and a back, all inside a <code>&lt;figure></code> container. For right now every card is an ace.</p>
     <ol>
       <li>Create an HTML page with the previous slide's markup. </li>
       <li>Create selector blocks for the following:
         <ol>
           <li>The figure</li>
           <li>The cards</li>
-          <li>The front of each card (as a group)</li>
+          <li>The back of each card (as a group)</li>
           <li>The face of each card (as a group)</li>
-          <li>The hearts and diamonds and the clubs and spades (2 blocks)</li>
-          <li>Any card being hovered</li>
           <li>The first card</li>
           <li>The second card</li>
           <li>The last card</li>
           <li>The face of each of those cards, individually (3 blocks)</li>
+          <li>The hearts and diamonds and the clubs and spades (2 blocks)</li>
+          <li>Any card being hovered</li>
         </ol>
       </li>
     </ol>
@@ -974,20 +975,23 @@ E || F
 <div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content">
+    <p>Now that we know how to target cards without classes, let's add some classes to make our code easier to discuss.</p>
     <pre contenteditable>&lt;figure&gt;
   &lt;div class=&quot;card&quot; data-type="H"&gt;
-    &lt;div class=&quot;front&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;face&quot; data-value="A"&gt;♥&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;card&quot; data-type="C"&gt;
-    &lt;div class=&quot;front&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;face&quot; data-value="A"&gt;♣&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;card&quot; data-type="D"&gt;
-    &lt;div class=&quot;front&quot;&gt;&lt;/div&gt;
-   &lt;div class=&quot;face&quot;  data-value="A"&gt;♦&lt;/div&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;face&quot; data-value="A"&gt;♦&lt;/div&gt;
   &lt;/div&gt;
 &lt;/figure&gt;</pre>
+<p>Your original selectors still all work.</p>
+<p>&nbsp;</p>
   </section>
 </div>
 
