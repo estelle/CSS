@@ -460,4 +460,32 @@ style[class=editme i] {
   font-family: "Courier New", Courier, monospace;
 }
 
+.perspective article {
+  display: flex;
+  justify-content: center;
+}
+.perspective article div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  line-height: 150px;
+  font-size: 50px;
+  background-color: palegoldenrod;
+  margin: 10px;
+  color: #A9403A;
+  border: 1px dashed;
+  text-align: center;
+  transform: perspective(400px) rotatex(25deg);
+}
+.perspective article:last-of-type {
+  perspective: 400px;
+}
+.perspective article:last-of-type div {
+  transform: rotatex(25deg);
+}
+
+.pOrigin article {
+  perspective-origin: 0 0;
+}
+
 /*# sourceMappingURL=transforms.css.map */

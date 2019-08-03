@@ -20,4 +20,26 @@ $colorpop: #A9403A;
 @import "object";
 @import "columns";
 
-@import "styleme";
+@import "styleme";    
+
+.perspective article {
+	 display: flex; 
+	 justify-content: center;
+   div {
+     width: 150px; height: 150px; display: inline-block; line-height: 150px; font-size: 50px; background-color:palegoldenrod; margin: 10px; 
+     color: #A9403A;
+     border: 1px dashed; 
+     text-align: center;
+     transform: perspective(400px) rotatex(25deg);
+   }
+   &:last-of-type {
+     perspective: 400px;
+     div {
+       transform: rotatex(25deg);
+     }
+   }  
+}  
+.pOrigin article {
+   perspective-origin: 0 0;
+}
+

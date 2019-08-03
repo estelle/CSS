@@ -157,7 +157,7 @@ transform:
 <section class="content transform"><b class="letters rsvp02">RSVP</b>
 
 <style class="editme" contenteditable> .rsvp02::after {
-   _transform: translate(100px, 100px);
+    transform: translate(100px, 100px);
    _transform: translateX(100px);
    _transform: translateY(100px);
    _transform: translateX(100px) translateY(100px);
@@ -318,17 +318,6 @@ transform:
      </section>
  </div>
 
- <div class="slide" id="fail1">
-     <header><h1>Transform Function: Skew</h1></header>
-     <section class="content">
-     <b class="letters letters_05b">RSVP</b>
-
-      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skewX(15deg)</span>;</pre>
-     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skew(15deg)</span>;</pre>
-     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05b', this.innerHTML)">skew(15deg, 15deg)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewX(15deg) skewY(15deg)</span>;</pre> 
-<p>Edit a value to set it. Mouse out of a value to see it.</p>
-     </section>
- </div>
 
 
   <div class="slide" id="redo">
@@ -422,6 +411,13 @@ transform:
 </div>
 
 
+<div class="slide object">
+  <header><h1>Check it out</h1></header>
+  <object data="https://css-transform.moro.es/"></object>
+  <a href="https://css-transform.moro.es/" class="objectlink">Go</a>
+</div>
+
+
 <div class="slide">
      <header><h1>Transform Function: matrix</h1></header>
      <section class="content">
@@ -443,6 +439,14 @@ transform:
 }</style>
 </section>
 </div>
+
+
+<div class="slide object">
+  <header><h1>transform: matrix()</h1></header>
+  <object data="https://css-transform.moro.es/"></object>
+  <a href="https://css-transform.moro.es/" class="objectlink">Go</a>
+</div>
+
 
 <!-- DIVIDER -->
 <div class="slide divider">
@@ -500,19 +504,30 @@ transform:
      <section class="content">
      <dl  class="deprecated listed wide">
 
-  <dt><strong>translateZ</strong>(&lt;z-value&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatez" target="resource">translateZ</a></strong>(&lt;z-value&gt;)</dt>
   <dd>specifies a translation by the given amount in the Z direction. Note that percentage values are not allowed in the translateZ translation-value, and if present are evaluated as 0.</dd>
-  <dt><strong>translate3d</strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d" target="resource">translate3d</a></strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
   <dd>specifies a 3D translation by the vector [tx,ty,tz], with tx, ty and tz being the first, second and third translation-value parameters respectively.</dd>
 
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scalez" target="resource">scaleZ</a></strong>(&lt;number&gt;)</dt>
   <dd>specifies a scale operation using the [1,1,sz] scaling vector, where sz is given as the parameter.</dd>
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d" target="resource">scale3d</a></strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
   <dd>specifies a 3D scale operation by the [sx,sy,sz] scaling vector described by the 3 parameters.</dd>
-  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatez" target="resource">rotateZ</a></strong>(&lt;angle&gt;)</dt>
-  <dd>specifies a clockwise rotation by the given angle about the Z axis.</dd>
+
+
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">rotate</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a&nbsp;2D rotation&nbsp;by the angle specified in the parameter about the origin of the element, as defined by the&nbsp;<em>transform-origin</em>&nbsp;property.</dd>
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d" target="resource">rotate3d</a></strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
   <dd>specifies a clockwise 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first 3 parameters. If the direction vector is not of unit length, it will be normalized. A direction vector that cannot be normalized, such as [0, 0, 0], will cause the rotation to not be applied. This function is equivalent to matrix3d(1 + (1-cos(angle))*(x*x-1), -z*sin(angle)+(1-cos(angle))*x*y, y*sin(angle)+(1-cos(angle))*x*z, 0, z*sin(angle)+(1-cos(angle))*x*y, 1 + (1-cos(angle))*(y*y-1), -x*sin(angle)+(1-cos(angle))*y*z, 0, -y*sin(angle)+(1-cos(angle))*x*z, x*sin(angle)+(1-cos(angle))*y*z, 1 + (1-cos(angle))*(z*z-1), 0, 0, 0, 0, 1).</dd>
+
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatex" target="resource">rotateX</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the X axis.</dd>
+  <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatey" target="resource">rotateY</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the Y axis.</dd>
+<dt><strong class="imp"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatez" target="resource">rotateZ</a></strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the Z axis.</dd>
+
+
     <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix</a></strong>(&lt;number&gt;{6})</dt>
   <dd>specifies a 2D transformation in the form of a transformation matrix of six  comma separated values. matrix(a,b,c,d,e,f) is equivalent to matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, e, f, 0, 1).</dd>
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="resource">matrix3d</a></strong>(&lt;number&gt;{15})</dt>
@@ -645,13 +660,13 @@ transform:
 
 
  <div class="slide">
-<header><h1>transform: rotate()</h1></header>
+<header><h1>transform: rotate3d()</h1></header>
 <section class="content transform"><b class="letters D307">RSVP</b>
 
 <style class="editme" contenteditable> .D307::after {
    _transform: perspective(200px) rotate(40deg);
    _transform: perspective(200px) rotateZ(40deg);
-   _transform: perspective(200px) rotate3d(0, 0, 40deg);
+   _transform: perspective(200px) rotate3d(0, 0, 1, 40deg);
    _transform: perspective(200px) rotateX(40deg);
    _transform: perspective(200px) rotateY(40deg);
    _transform: perspective(200px) rotateX(40deg) rotateY(40deg);
@@ -693,15 +708,20 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
   <header><h1>3D Transforms: Perspective</h1></header>
   <section class="content">
     <pre contenteditable>perspective( &lt;length> )</pre>
-   <p>Positive Z values moves away from the origin and toward the user. Negative Z values goes towards the origin, away from the user. The parameter is the distance of the z=0 plane from the viewer. Lower values have a more pronounced perspective effect.</p>
+   <ul>
+    <li>Positive Z values moves away from the origin and toward the user.</li> 
+    <li>The greater the value, the further away from the z=0 plane</li>
+    <li>Lower values have a more pronounced perspective effect.</li>
+     </ul>
+    <p>The parameter is the distance of the z=0 plane from the viewer. </p>
    <p>Must be greater than zero!</p>
   </section>
 </div>
 
 
 
-<div class="slide">
-  <header><h1></h1></header>
+<div class="slide divider">
+  <header><h1>This page intentionally<br/> left blank</h1></header>
   <section class="content">
   </section>
 </div>
@@ -770,36 +790,27 @@ Screens are flat. 3D requires perspective.
      </section>
  </div>
 
-<div class="slide object">
+
+
+<div class="slide">
   <header><h1><code>perspective</code> Property</h1></header>
-  <object data="files/transforms/perspective.html"></object>
-  <a href="files/transforms/perspective.html" target="play" title="open resource in reused window">➹</a>
-    </section>
+<section class="content transform">
+  <div class="initial parent">RSVP<b class="child">RSVP</b></div>
+
+<style class="editme" contenteditable>.child {
+  transform: rotateX(10deg);
+}
+.parent {
+   perspective: 40px;
+}</style>
+<p>Edit the above to see what happens.</p>
+</section>
 </div>
+
 
 
 <!--  -->
 <div class="slide">
-  <style>
-    .perspective article {display: flex; justify-content: center;}
-    .perspective article div {
-      width: 150px; height: 150px; display: inline-block; line-height: 150px; font-size: 50px; background-color:palegoldenrod; margin: 10px; 
-        color: #A9403A;
-        border: 1px dashed; 
-        text-align: center;
-        transform: perspective(400px) rotatex(25deg);
-    }
-
-    .perspective article:last-of-type div {
-        transform: rotatex(25deg);
-    }
-    .perspective article:last-of-type {
-      perspective: 400px;
-    }
-    .pOrigin article {
-      perspective-origin: 0 0;
-    }
-  </style>
   <header><h1><code>transform: perspective(400px)</code> v. <code>perspective: 400px</code></h1></header>
   <section class="content perspective">
     <p><code>transform: perspective(400px)</code> on children</p>
@@ -828,7 +839,9 @@ Screens are flat. 3D requires perspective.
    <ul>
     <li>Property on parent element</li>
     <li>Positions the perspective relative to parent, defining the origin for the <code>perspective</code> property. </li>
-    <li>Sets the X and Y position at which the viewer appears to be looking at the children of the element.
+    <li>Sets the X and Y position at which the viewer appears to be looking at the children of the element.</li>
+    <li>Determines the position at which the viewer is looking.</li>
+    <li>Used as the vanishing point by the <code>perspective</code> property</li>
   </section>
 </div>
 
@@ -851,6 +864,14 @@ Screens are flat. 3D requires perspective.
 </div>
 
 
+<div class="slide object">
+  <header><h1><code>perspective-origin</code> Property</h1></header>
+    <object data="https://codepen.io/estelle/pen/RXLGRg"></object>
+<a href="https://codepen.io/estelle/pen/RXLGRg" target="play" class="objectlink">➹</a>
+</div>
+
+
+
 <!-- divider -->
 <div class="slide divider">
   <header><h1>transform-origin</h1></header>
@@ -859,35 +880,31 @@ Screens are flat. 3D requires perspective.
 </div>
 
 <div class="slide">
-  <header><h1>transform-origin property</h1></header>
-    <section class="content">
-      <b class="letters letters_07b">RSVP</b>
-     <section class="content">
-     <pre>transform:<span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform')"> perspective(40px) rotateX(10deg);
-transform-origin: top left;</span></pre>
-
-<p style="font-size: 2rem">Specifies the x and y position of the origin, relative to the transform object.</p>
-</section>
-</div>
-<div class="slide">
-  <header><h1>transform-origin property</h1></header>
-
-      <b class="letters letters_07c">RSVP</b>
-     <section class="content">
-     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07c', this.innerHTML)">rotate(90deg);
-transform-origin:  top left</span>;</pre>
-<ul style="font-size: 1.7rem">
+  <header><h1><code>transform-origin</code> property</h1></header>
+  <section class="content">
+    <p>Specifies the x and y position of the origin, relative to the transform object.</p>
+  <ul>
     <li>Keyword positions: left, right, bottom, top, center</li>
     <li>Length values</li>
     <li>Percentage values </li>
     <li>default is 50% 50% (or center center)</li>
     <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+  </ul>
     </section>
 </div>
 
+<div class="slide">
+  <header><h1><code>transform-origin</code> property</h1></header>
+<section class="content">
+  <b class="letters D310">RSVP</b>
 
-
-
+<style class="editme" contenteditable> .D310::after {
+  transform: rotate(90deg);
+  transform-origin:  top left;
+}</style>
+<p>change the values</p>
+</section>
+</div>
 
 
 <!-- divider -->
@@ -933,9 +950,15 @@ transform-origin:  top left</span>;</pre>
 
 
 <div class="slide object">
-  <header><h1>transform-style Property</h1></header>
+  <header><h1><code>transform-style</code> Property</h1></header>
     <object data="files/transforms/tStyle.html"></object>
 <a href="files/transforms/tStyle.html" target="play" class="objectlink">➹</a>
+</div>
+
+<div class="slide object">
+  <header><h1><code>transform-style</code> Property</h1></header>
+    <object data="https://codepen.io/estelle/pen/RXLGRg"></object>
+<a href="https://codepen.io/estelle/pen/RXLGRg" target="play" class="objectlink">➹</a>
 </div>
 
 
@@ -949,28 +972,72 @@ transform-origin:  top left</span>;</pre>
 
 
 <div class="slide object">
-  <header><h1>backface-visibility Property</h1></header>
+  <header><h1><code>backface-visibility</code> Property</h1></header>
     <object data="files/transforms/backfacevisibility.html"></object>
 <a href="files/transforms/backfacevisibility.html" target="play" class="objectlink">➹</a>
 </div>
 
 <!-- transform box -->
 <div class="slide">
-  <header><h1>transform-box property</h1></header>
+  <header><h1><code>transform-box</code> property</h1></header>
   <section class="content">
-    <p>Future: Defines the layout box, to which the <code>transform</code> and <code>transform-origin</code> properties relate to. <small>(FF, Ch 64, O 51)</small></p>
-    <dl>
- <dt><code>border-box</code></dt>
- <dd>border box as reference box.</dd>
- <dt><code>fill-box</code></dt>
- <dd>Uses the object bounding box as reference box.</dd>
- <dt><code>view-box</code></dt>
- <dd>Nearest SVG viewport as reference box. If <code>viewBox</code> attribute exists, the reference box is at the <code>viewBox</code> 0 0, and the width and height are those of the <code>viewBox</code> attribute.</dd>
+    <p>Defines the layout box, to which the <code>transform</code> and <code>transform-origin</code> properties relate to.</p>
+    <pre contenteditable>content-box | border-box | fill-box | stroke-box | view-box</pre>
+    <dl style="height: 53vh; overflow-y: scroll;">
+<dt><code>content-box</code>
+  <dd>content box as reference box</dd>
+<dt><code>border-box</code></dt>
+  <dd>border box as reference box.</dd>
+<dt><code>fill-box</code></dt>
+  <dd>Uses the object bounding box as reference box.</dd>
+<dt><code>stroke-box</code></dt>
+  <dd>stroke bounding box as reference box.</dd>
+<dt><code>view-box</code></dt>
+  <dd>Nearest SVG viewport as reference box. If <code>viewBox</code> attribute exists, the reference box is at the <code>viewBox</code> 0 0, and the width and height are those of the <code>viewBox</code> attribute.</dd>
 </dl>
   </section>
 </div>
 
 
+
+
+<div class="slide">
+  <header><h1><code>transform-box</code> property</h1></header>
+<section class="content">
+  <pre contenteditable style="float: right;">content-box | border-box | fill-box | 
+  stroke-box | view-box </pre>
+  <style>.transformbox  {
+    position: relative;
+    fill: white;
+    border: 1px solid;
+    padding: 10px;
+    background-clip: content-box;
+    box-sizing: border-box;
+    margin: auto; width: 200px; height: 200px; }
+
+  rect {    width: 100px;
+    height: 100px;
+  }
+  rect.transformed {
+    fill: pink;
+  }
+  </style>
+  <svg class="transformbox">
+  <g>
+    <rect class="basic" />
+    <rect class="transformed" />
+  </g>
+</svg>
+
+<style class="editme" contenteditable>.transformed {
+  transform-box: fill-box;
+  transform: rotate(60deg);
+  transform-origin: center center;}
+g {
+  transform: translate3d(50px, 50px, 50px);}</style>
+<p>change the values</p>
+</section>
+</div>
 
 <!-- NEXT -->
 <div class="slide divider">
