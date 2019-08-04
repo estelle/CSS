@@ -286,12 +286,16 @@ q::after  { content: close-quote }
   <header>
     <h1>Generated Content: Attribute Values</h1>
   </header>
+  <section class="content">
+      <pre>content: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr" target="resource">attr( attrname );</a></pre>
+  </section>
 </div>
 
 <!-- attribute example -->
 <div class="slide attr">
    <header><h1>Attribute Values as content</h1></header>
    <section class="content attribute">
+ 
    <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
    <style contenteditable class="editme">.attr a[href^=http]:hover {
    position: relative;
@@ -408,37 +412,72 @@ width: attr(data-count em, auto);</pre>
 
 <div class="slide">
   <header>
-    <h1><code>position</code> property</h1>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="resource">position</a></code> property</h1>
   </header>
   <section class="content">
-    <pre contenteditable><b>position: static;</b>
-position: relative;
-position: absolute;
-position: fixed;
-position: sticky;</pre>
+<p>Sets how an element is positioned in a document. <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties determine the final location of <em>positioned</em> (non static) elements.</p>
+    <pre contenteditable><b>static</b> | relative | absolute | fixed | sticky</pre>
+<dl>
+<dl class="deprecated listed wide"> 
+<dt>static</dt>
+  <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
+<dt>relative</dt>
+  <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
+<dt>absolute</dt>
+    <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
+<dt>fixed</dt>
+    <dd>Like <code>absolute</code>, element is removed from the normal document flow, positioned relative to the initial containing block established by the viewport, except when one of its ancestors has a <code>transform, perspective</code>, or <code>filter</code> property set. Position is determined by <code>top, right, bottom</code>, and <code>left</code>. When printed, it's placed in the same spot on every page.</dd>
+<dt>sticky</dt>
+    <dd>Positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), based on the values of <code>top, right, bottom</code>, and <code>left</code>. Creates a new stacking context. It "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor.</dd>
+  </dl>
   </section>
 </div>
-
 
 <div class="slide">
   <header>
     <h1><code>position</code> property</h1>
   </header>
   <section class="content">
-      <ul>
-        <li>If not <code>static</code>, element is considered "positioned"</li>
-        <li>If positioned, it has it's own stacking context</li>
-        <li>If <code>absolute</code> or <code>fixed</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties specify offsets from the edges of the element's containing block.</li>
+    <dl>
+    <dt>static</dt>
+  <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
+<dt>relative</dt>
+  <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
+<dt>absolute</dt>
+    <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
+</dl>
+  </section>
+</div>
 
-        <li>containing block is the nearest "positioned" ancestor</li>
-        <li>if no <code>height/width</code> declared, <code>top: 0; bottom: 0; left: 0; right: 0</code> will make it the size of it's parent </li>
+<div class="slide">
+  <header>
+    <h1><code>position</code> property</h1>
+  </header>
+  <section class="content">
+    <p>We're interested in <code>absolute, static &amp; relative</code> for right now</p>
+      <ul>
+        <li>If not <code>static</code>, element is considered <em>positioned</em></li>
+        <li>If <em>positioned</em>, it has it's own stacking context</li>
+        <li>If <code>absolute</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties specify offsets from the edges of the element's containing block.</li>
+
+        <li>Containing block is the nearest "positioned" ancestor, or the <code>&lt;body></code></li>
+        <li>If no <code>height/width</code> declared on absolute, <code>top: 0; bottom: 0; left: 0; right: 0</code> will make it the size of it's parent </li>
         <li>else, <code>top</code> overrides <code>bottom</code> and <code>left</code> overrides <code>right</code>.</li>
-        <li><code>sticky</code> is similar to fixed, until containing block 
-        </li>
       </ul>
   </section>
 </div>
 
+<div class="slide">
+ <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top" target="resource">top</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom" target="resource">bottom</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="left">left</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="right">right</a></code> properties</h1>  </header>
+  <section class="content">
+<pre contenteditable>&lt;length> | &lt;percentage> | auto</pre>
+<p><code>position: absolute;</code><br/>Vertical and horizontal positions of element relative to positioned containing block ancestor</p>
+<p><code>position: relative;</code><br/>Vertical and horizontal positions of element compared to where it would have been otherwise positioned.</p>
+<p><code>position: static;</code><br/>Has no impact.</p>
+
+</section>
+</div>
 
 <div class="slide object">
   <header><h1><code>position</code> property</h1></header>
@@ -462,7 +501,7 @@ position: sticky;</pre>
 </div>
 
 <div class="slide">
-  <header><h1>counter() &amp; counters() styles</h1></header>
+  <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter" target="resource">counter()</a> &amp; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counters" target="resource">counters()</a> styles</h1></header>
   <section class="content">
 
     <pre contenteditable>counter: counter(counter, style)</pre>

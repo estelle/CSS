@@ -25,7 +25,7 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: #eeee1f;
+  background-color: #2d2d03;
 }
 
 [id=info] {
@@ -130,7 +130,7 @@ nav ul {
   background: radial-gradient(ellipse at 100% 20%, #a8a807 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: radial-gradient(ellipse at 100% 20%, #a8a807 48%, #ffffff 48%, 52%, #eeee1f 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, #a8a807 48%, #ffffff 48%, 52%, #2d2d03 52%, 54%, transparent 54%);
 }
 
 #back {
@@ -139,7 +139,7 @@ nav ul {
   background: radial-gradient(ellipse at 0% 20%, #a8a807 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: radial-gradient(ellipse at 0% 20%, #a8a807 48%, #ffffff 48%, 52%, #eeee1f 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, #a8a807 48%, #ffffff 48%, 52%, #2d2d03 52%, 54%, transparent 54%);
 }
 
 .slide {

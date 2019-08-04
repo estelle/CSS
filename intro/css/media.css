@@ -65,7 +65,7 @@ body {
 }
 
 .counter {
-  color: #a27d05;
+  color: #846604;
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;
@@ -114,7 +114,7 @@ nav button {
   padding: 10px 20px;
   font-size: 90%;
   color: #ffffff;
-  background-color: #a27d05;
+  background-color: #846604;
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -127,19 +127,19 @@ nav ul {
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
-  background: radial-gradient(ellipse at 100% 20%, #a27d05 48%, transparent 48%);
+  background: radial-gradient(ellipse at 100% 20%, #846604 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: radial-gradient(ellipse at 100% 20%, #a27d05 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, #846604 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
 }
 
 #back {
   left: 0;
   padding: 10px 50px 40px 0px;
-  background: radial-gradient(ellipse at 0% 20%, #a27d05 48%, transparent 48%);
+  background: radial-gradient(ellipse at 0% 20%, #846604 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: radial-gradient(ellipse at 0% 20%, #a27d05 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, #846604 48%, #ffffff 48%, 52%, #ecbf2b 52%, 54%, transparent 54%);
 }
 
 .slide {
@@ -183,7 +183,7 @@ nav ul {
   margin-bottom: 0px;
   font-family: "sanchez", georgia, sans-serif;
   font-weight: bold;
-  color: #a27d05;
+  color: #846604;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .slide header h2 {
@@ -210,7 +210,7 @@ nav ul {
 }
 
 style[class=editme i] {
-  border: 1px solid #a27d05;
+  border: 1px solid #846604;
   padding: 5px 20px;
   margin-bottom: 1em;
 }
@@ -222,29 +222,29 @@ pre, style[class=editme i] {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   text-shadow: none;
-  border: 1px solid #a27d05;
+  border: 1px solid #846604;
 }
 
 pre b {
   font-weight: bold;
-  color: #a27d05;
+  color: #846604;
   display: inline-block;
 }
 pre b:hover {
   transform: scale(1.2);
-  color: #a27d05;
+  color: #846604;
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #a27d05;
+  color: #846604;
   text-shadow: currentColor 0 0 1px;
 }
 pre a {
-  text-decoration: underline dotted #fbdc78;
+  text-decoration: underline dotted #fad55a;
 }
 pre a:hover, pre a:active, pre a:focus {
-  text-decoration: underline dotted #d3a307;
+  text-decoration: underline dotted #b68c06;
 }
 
 code i {
@@ -259,7 +259,7 @@ code i {
 }
 
 .code:hover {
-  color: #a27d05;
+  color: #846604;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -302,12 +302,12 @@ footer {
 }
 
 a, em {
-  color: #a27d05;
+  color: #846604;
   font-style: normal;
 }
 
 a {
-  text-decoration: underline dotted #f9cf47;
+  text-decoration: underline dotted #f9c829;
 }
 a:hover, a:focus {
   text-decoration: underline dotted;
@@ -321,7 +321,7 @@ b.imp {
 .imp li:hover,
 b.imp:hover {
   transform: scale(1.2);
-  color: #a27d05;
+  color: #846604;
   transform-origin: left;
 }
 
@@ -392,7 +392,7 @@ section.content {
   top: 0;
   right: 5em;
   color: #ffffff;
-  background-color: #a27d05;
+  background-color: #846604;
   padding: 3px 5px;
   border: 3px solid;
   border-radius: 50%;

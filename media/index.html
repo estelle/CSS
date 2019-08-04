@@ -132,7 +132,7 @@ dt a[href*="mozilla"] {
 
 <!-- squish the page -->
 <div class="slide">
-  <header><h1>Media Queries</h1></header>
+  <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="resource">Media Queries</a></h1></header>
   <section class="content">
    
   <pre contenteditable=""><b>@media screen and (max-width: 600px) {</b>
@@ -367,8 +367,7 @@ dt a[href*="mozilla"] {
 <div class="slide">
   <header><h1>Media Features</h1></header>
   <section class="content">
-      <p>Viewport / Page Dimensions
-  </p>
+      <h2>Viewport / Page Dimensions</h2>
 <dl>
    <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width"><code>width</code></a></dt>
 <dd>Width of the viewport</dd>
@@ -385,8 +384,7 @@ dt a[href*="mozilla"] {
 <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation"><code>orientation</code></a></dt>
 <dd>Orientation of the viewport</dd>
   </dl>
-  <p>Display quality
-  </p>
+  <h2>Display quality</h2>
   <dl> 
 
 <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution"><code>resolution</code></a></dt>
@@ -812,7 +810,7 @@ dt a[href*="mozilla"] {
 
 <!-- media queries: browser support -->
  <div class="slide">
-  <header><h1>Viewport</h1></header>
+  <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts" target="resource">Viewport</h1></header>
     <section class="content">
     <pre contenteditable>&lt;meta name="<strong>viewport</strong>" content="<strong>width</strong>=device-width,
             <strong>initial-scale</strong>=1, <strong>maximum-scale</strong>=1"/&gt;</pre>
@@ -897,8 +895,9 @@ dt a[href*="mozilla"] {
 
 
 <div class="slide">
-  <header><h1>touch-action</h1></header>
+  <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action" target="resource">touch-action</a></h1></header>
   <section class="content">
+    <p>sets how an element's region can be manipulated by a touchscreen user</p>
     <pre contenteditable>touch-action: auto;
 touch-action: none; <i>/* disables gestures */</i>
 touch-action: pan-x;
@@ -911,6 +910,69 @@ touch-action: pinch-zoom;
 touch-action: manipulation; <i>/* removes click event delay */</i></pre>
   </section>
 </div>
+
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action" target="resource">touch-action</a></code> property</h1></header>
+  <section class="content">
+    <pre contenteditable>auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation</pre>
+    <p>Specified as the keywords <code>auto, none, manipulation</code>, OR
+    one of the keywords <code>pan-x, pan-left, pan-right</code>, and/or one of the keywords <code>pan-y, pan-up, pan-down</code>, plus optionally the keyword <code>pinch-zoom</code>.</p>
+    <ul>
+      <li>Multiple directions can be combined</li>
+      <li><code>pan-left pan-right</code> is not valid (use <code>pan-x</code>).</li>
+      <li><code>pan-up pan-down</code> is not valid (use <code>pan-y</code>).</li>
+    </ul>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action" target="resource">touch-action</a></code> property</h1></header>
+  <section class="content">
+    <dl>
+
+<dt>auto</dt>
+    <dd>Enable all panning and zooming gestures.</dd>
+<dt>none</dt>
+    <dd>Disable all panning and zooming gestures.</dd>
+<dt>pan-x</dt>
+    <dd>Enables single-finger horizontal panning. Can be combined with <code>pan-y, pan-up, pan-down</code> and/or <code>pinch-zoom</code>.</dd>
+<dt>pan-y</dt>
+    <dd>Enables single-finger vertical panning. Can be combined with <code>pan-x, pan-left, pan-right</code> and/or <code>pinch-zoom</code>.</dd>
+<dt>manipulation</dt>
+    <dd>Alias for "pan-x pan-y pinch-zoom". Enables panning and pinch zoom. Disables non-standard gestures like double-tap to zoom, which removes delay of tap click events. </dd>
+
+<dt>pan-left, pan-right, pan-up, pan-down</dt>
+    <dd>Enables single-finger gestures that begin by scrolling in the given direction(s). Once scrolling has started, the direction may still be reversed. Note that scrolling "up" (pan-up) means that the user is dragging their finger downward on the screen surface, and likewise pan-left means the user is dragging their finger to the right. </dd>
+<dt>pinch-zoom</dt>
+    <dd>Enables multi-finger panning and zooming. Can be combined with any <code>pan-</code> values. </dd>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select" target="resource">user-select</a></code> property</h1></header>
+  <section class="content">
+    <p>Controls whether the user can select text.</p>
+    <pre contenteditable>auto | text | none | contain | all</pre>
+    <dl>
+      <dt>none</dt>
+      <dd>Element and its sub-elements are not selectable</dd>
+      <dt>text</dt>
+      <dd>text can be selected by the user.</dd>
+      <dt>all</dt>
+      <dd>In an HTML editor, if a double-click or context-click occurred in sub-elements, the highest ancestor with this value will be selected.</dd>
+<dt>auto</dt>
+<dd>
+<ul>
+  <li>::before and ::after pseudo elements same as <code>none</code></li>
+  <li>On editable element, same as <code>contain</code></li>
+  <li>If parent's user-select is <code>all</code> or <code>none</code>, it's the same</li>
+  <li>Otherwise, <code>text</code>
+  </li></ul></dd></dl>
+   </section>
+</div>
+
+
 
 
 <!-- divider -->
@@ -938,7 +1000,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 
 
 <div class="slide">
-  <header><h1>@supports</h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports" target="resource">@supports</a></code></h1></header>
     <section class="content">
       <p> <code>or</code> and <code>()</code></p>
 <pre contenteditable>@supports <b>(</b>(transition-property: color) <b>or</b> (animation-name: foo)<b>) and</b>

@@ -24,7 +24,8 @@
       <h1>Units &amp; Values</h1>
      </header>
      <section>
-      <ul class="col2">
+      <div class="flex12">
+      <ul>
         <li>Numeric data types
             <ul>
               <li>Integer</li>
@@ -40,7 +41,8 @@
                   </ul>
                </li>
              </ul>
-        </li>
+        </li></ul>
+        <ul>
         <li>non-numeric data types
             <ul>
               <li>Keywords</li>
@@ -50,6 +52,7 @@
             </ul>
         </li>
       </ul>
+    </div>
      <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
    </section>
     </div>
@@ -477,7 +480,7 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 </div>
 
 <div class="slide object">
-  <header><h1>Timing units</h1></header>
+  <header><h1>Resolution units</h1></header>
   <object data="exercises/resolution.html"></object>
   <a href="exercises/resolution.html" target="play" class="objectlink">Try it out</a>
 </div>
@@ -506,13 +509,30 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <h2>Explicit Defaulting: CSS-wide property values</h2>
     <dl>
-    <dt>initial</dt> <dd>Sets property to its initial value.</dd>
-    <dt>inherit</dt> <dd>Makes element's property the same as its parent.</dd></dd>
-    <dt>unset</dt><dd>Resets to inherited value if it inherits from its parent. Otherwise, set to initial value.</dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial" target="resource">initial</a></dt> <dd>Sets property to its initial value.</dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inherit" target="resource">inherit</a></dt> <dd>Makes element's property the same as its parent.</dd></dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset" target="resource">unset</a></dt><dd>Resets to inherited value if it inherits from its parent. Otherwise, set to initial value.</dd>
     
- </dl>
-    <p><code>all</code> property lets you reset all properties to their initial, inherited, reverted, or unset state at once.</p>
-    
+ </dl></section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1><code>all</code> property</h1></header>
+  <section class="content">
+    <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource">all</a></code> property lets you reset all properties to their initial, inherited, reverted, or unset state at once.</p>
+    <pre contenteditable>all: initial | inherit | unset | revert</pre>
+    <p>cascade matters!</p>
+    <pre contenteditable>p {
+  color: red;
+  all: unset;
+}
+div {
+  all: unset;
+  color: blue;
+}</pre>
+<p>Impacts all properties except <code>unicode-bidi</code> and <code>direction</code>.</p>
   </section>
 </div>
 
@@ -524,7 +544,7 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <dl>
 
-    <dt>revert</dt> <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert" target="resource">revert</a></dt> <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)
     </dd>
 
   </section>

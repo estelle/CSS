@@ -47,13 +47,13 @@ figure {
   
 }
 /* red cards */
-[data-value="H" i],
-[data-value="D" i] {
+[data-type="H" i],
+[data-type="D" i] {
 
  }
 /* black cards */
-[data-value="C" i],
-[data-value="S" i] {
+[data-type="C" i],
+[data-type="S" i] {
 
  }
 /* hovered card */
