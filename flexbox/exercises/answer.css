@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+  position: relative;
+  margin: auto;
+}
+/* all the cards */
+.card {
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  border-radius: 10px;
+}
+.back,
+.face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:0;
+  border-radius: 10px;
+}
+/*just to test */
+.card, .back, .face {border-radius: 10px;}
+/* backs of the cards */
+.back {
+  border: 10px solid red;
+  background-color: blue;
+}
+/* card faces */
+.face {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.face::after {
+  content: attr(data-value);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+/* first, second, and last card */
+.card:first-of-type {
+
+}
+.card:nth-of-type(2) {
+  left: 20px;
+}
+.card:last-of-type {
+  left: 40px;
+}
+/* faces of first, second and last cards */
+.card:first-of-type .face {
+
+}
+.card:nth-of-type(2) .face {
+
+}
+.card:last-of-type  .face {
+  
+}
+/* red cards */
+[data-type="H" i],
+[data-type="D" i] {
+   color: red;
+ }
+/* black cards */
+[data-type="C" i],
+[data-type="S" i] {
+   color: black;
+ }
+/* hovered card */
+.card:hover {
+
+} 

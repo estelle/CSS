@@ -147,6 +147,88 @@ caption-side: inline-end;</pre>
   <object data="files/caption.html"></object>
 </div>
 
+<!-- style the caption -->
+<div class="slide">
+  <header><h1><code>&lt;caption></code>  notes</h1></header>
+  <section class="content">
+    <p><code>caption-side: bottom; text-align: right;</code> can look good on short tables: similar to a figure caption.</p>
+  </section>
+</div>
+
+
+<!-- text-transform -->
+<div class="slide divider">
+  <header><h1><code>text-align</code> &amp; <code>text-transform</code> properties</h1></header>
+</div>
+
+
+<div class="slide">
+ <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-align">text-align</a></code> property</h1></header>  
+ <section class="content">
+<pre>left | right | center | justify | <br/><em>start</em> | end | match-parent | justify-all | &lt;string></pre>
+<dl style="height: 55vh; overflow: scroll; border: 1px solid #ddd; border-radius: 5px">
+  <dt><code>start </code></dt>
+    <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
+    <dt><code>end </code></dt>
+    <dd>Same as <code>right</code> if direction is LTR and <code>left</code> if direction is RTL.</dd>
+    <dt><code>left</code></dt>
+    <dd>Aligned to the left.</dd>
+    <dt><code>right</code></dt>
+    <dd>Aligned to the right</dd>
+    <dt><code>center</code></dt>
+    <dd>Centered within the line box.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Justified. Text is spaced to line up to both the left and right edges,  except the last line.</dd>
+    <dt>justify-all </code></dt>
+    <dd>Same as <code>justify</code>, but the last line is justified too.</dd>
+    <dt>match-parent </code></dt>
+    <dd>Similar to <code>inherit</code>, but the start and end match the parent's <code>direction</code>.</dd>
+    <dt><code>&lt;string&gt; </code></dt>
+    <dd>No support yet. Can specify an alignment character.</dd>
+</dl>
+  </section>
+</div>
+
+<!-- text-transform -->
+<div class="slide divider">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-align">text-align</a></code> property</h1></header>
+  <style>
+    .textalign {display: flex; flex-flow: wrap row; height: 50vh;  overflow: scroll; border: 1px solid #ddd; border-radius: 5px}
+    .textalign div {padding: 5px; border: 1px solid; margin: 5px; font-size: 1rem; flex: 22%; box-sizing: border-box;}
+  </style>
+<section class="content">
+
+<pre style="overflow: scroll">text-align: left | right | center | justify | <br/>start | end | match-parent | justify-all | &lt;string>; </pre>
+<p>Not all new values are supported.</p>
+<article class="textalign">
+<div style="text-align: left;"><h2>left</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: center;"><h2>center</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: right;"><h2>right</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: justify;"><h2>justify</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: start;"><h2>start</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: match-parent;"><h2>match-parent</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: end;"><h2>end</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: justify-all;"><h2>justify-all</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+</article>
+</section>
+</div>
+
 
 <!-- text-transform -->
 <div class="slide divider">
@@ -157,13 +239,9 @@ caption-side: inline-end;</pre>
 <!-- text-transform -->
 <div class="slide">
   <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
-  <section>
-    <pre contenteditable>text-transform: capitalize;
-text-transform: uppercase;
-text-transform: lowercase;
-text-transform: none;
-text-transform: full-width;
-text-transform: full-size-kana;</pre>
+  <section class="content">
+    <pre contenteditable>text-transform: capitalize;</pre>
+<pre contenteditable>capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
 <ul>
   <li>Takes into account language-specific case mapping rules</li>
   <li>First unicode letter or number. Initial punctuations of words are ignored</li>
@@ -175,7 +253,7 @@ text-transform: full-size-kana;</pre>
 
 <!-- style the caption -->
 <div class="slide object">
-  <header><h1><code>text-transform</code>  property</h1></header>
+  <header><h1><code>text-align</code> &amp; <code>text-transform</code></h1></header>
   <object data="files/text-transform.html"></object>
 </div>
 
@@ -191,7 +269,7 @@ text-transform: full-size-kana;</pre>
   <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a></code></h1></header>
   <section class="content">
     <pre><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a>: <em>separate</em> | collapse | inherit</pre>
-    <p>When the borders are collapsed <code>border-spacing</code> is relevant.</p>  
+    <p>When the borders are collapsed <code>border-spacing</code> is irrelevant. When <code>separate</code>, it matters!</p>  
   </section>
 </div>
 
@@ -221,7 +299,7 @@ table {border-spacing: 5px 10px;}</pre>
 
 <!-- style the caption -->
 <div class="slide object">
-  <header><h1>table spacing</h1></header>
+  <header><h1>table spacing to improve legibility</h1></header>
   <object data="files/padding.html"></object>
 </div>
 
@@ -291,6 +369,79 @@ sub | super | text-top | text-bottom | &lt;percentage> | &lt;length></pre>
 </div>
 
 
+<div class="slide">
+  <header><h1>All the <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
+  <section class="content" style="overflow: scroll; height: 80vh;">
+    <h2><code>&lt;display-outside></code> values</h2>
+  <pre contenteditable>
+display: block;
+display: inline;
+display: run-in;</pre>
+
+
+    <h2><code>&lt;display-inside></code> values</h2>
+ <pre contenteditable>display: flow;
+display: flow-root;
+display: table;
+display: flex;
+display: grid;
+display: ruby;</pre>
+
+
+    <h2><code>&lt;display-outside></code> plus <code>&lt;display-inside></code> values</h2>
+ <pre contenteditable>display: block flow;
+display: inline table;
+display: flex run-in;</pre>
+
+
+
+    <h2><code>&lt;display-listitem></code> values</h2>
+ <pre contenteditable>display: list-item;
+display: list-item block;
+display: list-item inline;
+display: list-item flow;
+display: list-item flow-root;
+display: list-item block flow;
+display: list-item block flow-root;
+display: flow list-item block;</pre>
+
+
+    <h2><code>&lt;display-internal></code> values</h2>
+ <pre contenteditable>display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;</pre>
+
+
+    <h2><code>&lt;display-box></code> values</h2>
+ <pre contenteditable>display: contents;
+display: none;</pre>
+
+
+    <h2><code>&lt;display-legacy></code> values</h2>
+ <pre contenteditable>display: inline-block;
+display: inline-table;
+display: inline-flex;
+display: inline-grid;</pre>
+
+
+    <h2>global values</h2>
+ <pre contenteditable>display: inherit;
+display: initial;
+display: unset;
+display: revert;</pre>
+</pre>
+  </section>
+</div>
+
 <!--  -->
 <div class="slide">
   <header><h1><code>display</code> property</h1></header>
@@ -315,6 +466,41 @@ display: table-caption;</pre>
   </section>
 </div>
 
+
+<div class="slide">
+  <header><h1>Related <code>display</code> values</h1></header>
+  <section class="content"><dl class="wide">
+  <dt><code>table-row-group</code></dt>
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody" title="The HTML Table Body element (<tbody>) encapsulates a set of table rows (<tr> elements), indicating that they comprise the body of the table (<table>).">&lt;tbody&gt;</a> element.</dd>
+  <dt><code>table-header-group</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead" title="The HTML <thead> element defines a set of rows defining the head of the columns of the table.">&lt;thead&gt;</a> element.</dd>
+
+  <dt><code>table-footer-group</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot" title="The HTML <tfoot> element defines a set of rows summarizing the columns of the table.">&lt;tfoot&gt;</a> element.</dd>
+
+  <dt><code>table-row</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr" title="The HTML <tr> element defines a row of cells in a table. The row's cells can then be established using a mix of <td> (data cell) and <th> (header cell) elements.The HTML <tr> element specifies that the markup contained inside the <tr> block comprises one row of a table, inside which the <th> and <td> elements create header and data cells, respectively, within the row.">&lt;tr&gt;</a> element.</dd>
+
+  <dt><code>table-cell</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td" title="The HTML <td> element defines a cell of a table that contains data. It participates in the table model.">&lt;td&gt;</a> element.</dd>
+
+  <dt><code>table-column-group</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup" title="The HTML <colgroup> element defines a group of columns within a table.">&lt;colgroup&gt;</a> element.</dd>
+
+  <dt><code>table-column</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col" title="The HTML <col> element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a <colgroup> element.">&lt;col&gt;</a> element.</dd>
+
+  <dt><code>table-caption</code></dt>
+
+  <dd>Behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption" title="The HTML Table Caption element (<caption>) specifies the caption (or title) of a table, and if used is always the first child of a <table>.">&lt;caption&gt;</a> element.</dd>
+</dl></section></div>
+
 <!-- divider -->
 <div class="slide intro">
   <header><h1>columns</h1></header>
@@ -337,7 +523,15 @@ display: table-caption;</pre>
   &lt;col class="goals"/>
   &lt;col class="assists"/>
   &lt;/colgroup></em>
-&lt;thead>....</pre>
+&lt;thead>....</pre> 
+</section>
+  </div>
+  
+  <!--  -->
+  <div class="slide">
+    <header><h1>&lt;col> Styling</h1></header>
+    
+  <section class="content">
 <p>limited stylability</p>
 <pre>border: <i>/* if table { border-collapse: collapse;} is set */</i>
 background:
@@ -380,15 +574,10 @@ visibility: /* collapse value only */</pre>
 </div>
 
 
-<!-- Style a Table -->
-<div class="slide object">
-  <header><h1>Styling Tables for legibility</h1></header>
-    <object data="files/styled.html"></object>
-</div>
 
 <!-- Style a Table -->
 <div class="slide">
-  <header><h1><a href="files/play.html">Try it out!</a></h1></header>
+  <header><h1><a href="files/play.html">Exercise: style for legibility</a></h1></header>
   <section class="content">
     <pre>display:
 caption-side:
@@ -421,6 +610,18 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
   </section>
 </div>
 
+
+<!-- Style a Table -->
+<div class="slide intro">
+  <header><h1>Intentionally left blank</h1></header>
+  <section class="content">No cheating!</section>
+</div>
+
+<!-- Style a Table -->
+<div class="slide object">
+  <header><h1>Solution</h1></header>
+    <object data="files/styled.html"></object>
+</div>
 
 
 <!-- Style a Table -->
@@ -472,6 +673,23 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
 </div>
 
 
+<div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content">
+    <p>Let's change our card example just a bit.</p>
+    <ol>
+      <li>Center the heart, spade, diamond, or club that is the text node in your card using table features instead of flexbox features from the last chapter.</li>
+    </ol>
+    <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+    <a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a>
+  </section>
+</div>
 
 <!--NEXT-->
 <div class="slide">
