@@ -977,6 +977,63 @@ Screens are flat. 3D requires perspective.
 <a href="files/transforms/backfacevisibility.html" target="play" class="objectlink">➹</a>
 </div>
 
+
+<div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content">
+    <p>Here's where all the magic happens! Let's make all the cards slightly off-center so each can be hovered individually. We hide the face of the cards, making the card flip, making the face visible on hover but the back disappear. </p>
+    <ol>
+      <li></li>
+    </ol>
+    <p>In the next section, we'll and a transition, to make the flip / motion visible.</p>
+    <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+    <a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+<pre contenteditable>.card {
+  perspective: 600px;
+}
+.card .front {
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card .back {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.card:hover .back {
+  transform: rotateY(0);
+}
+.card:first-of-type {
+  transform: rotate(-5deg);
+}
+.card:nth-of-type(2):hover {
+  transform: rotate(0) translatex(120px);
+}
+.card:last-of-type {
+  transform: rotate(5deg);
+}
+.card:first-of-type:hover {
+  transform: rotate(10deg) translatey(180px);
+}</pre>
+</section>
+</div>
+
 <!-- transform box -->
 <div class="slide">
   <header><h1><code>transform-box</code> property</h1></header>
