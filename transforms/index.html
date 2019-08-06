@@ -983,7 +983,11 @@ Screens are flat. 3D requires perspective.
   <section class="content">
     <p>Here's where all the magic happens! Let's make all the cards slightly off-center so each can be hovered individually. We hide the face of the cards, making the card flip, making the face visible on hover but the back disappear. </p>
     <ol>
-      <li></li>
+      <li>Add a fairly distant perspective to each card.</li>
+      <li>Flip just the face of each card, ensuring the children are flipped too, and we don't see 'thru' the back of the front of the card.</li>
+      <li>When the card is hovered, flip it back so we see the face.</li>
+      <li>The back of the card should be visible when not hovered, but rotated to the back when the card is flipped, so we see the face of the card only at that point.</li>
+      <li>Move each card a little bit so we can see the top card as well as a bit of the 2nd and third card in the default state, seeing a bit more of the 2nd and 3rd cards when they're flipped.</li>
     </ol>
     <p>In the next section, we'll and a transition, to make the flip / motion visible.</p>
     <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
