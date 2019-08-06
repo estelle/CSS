@@ -325,6 +325,14 @@ margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
   <object data="exercises/collapse_ends2.html"></object>
   <a href="exercises/collapse_ends2.html" target="play" class="objectlink">Try it out</a>
 </div>
+
+
+
+<div class="slide divider">
+  <header><h1>Block Formatting Context</h1></header>
+</div>
+
+
 <div class="slide">
   <header><h1>Block Formatting Context</h1></header>
 
@@ -333,9 +341,9 @@ margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
    <code><ul> 
   <li>display: inline-block;</li>
   <li>display: flow-root;</li>
-  <li>display: table;     <i>/* any anonymous table cell */</i></li>
-  <li>display: grid; <div style="background: white; padding: 20px; float: right; border: solid; border-radius: 5px; width: 45%">A block formatting context is a part of a visual CSS rendering of a web page. It's the region in which the layout of block boxes occurs and in which floats interact with other elements.</div></li>
-  <li>display: inline-flex;</li>
+  <li>display: table;     <i>/* all other table values */</i></li>
+  <li>display: grid | inline-grid; <div style="background: white; padding: 20px; float: right; border: solid; border-radius: 5px; width: 45%">A block formatting context is a part of a visual CSS rendering of a web page. It's the region in which the layout of block boxes occurs and in which floats interact with other elements.</div></li>
+  <li>display: flex | inline-flex;</li>
   <li>float: left;        <i>/* or right */</i></li>
   <li>position: absolute;</li>
   <li>position: fixed;</li>
@@ -620,22 +628,162 @@ outline-color: red;</pre>
 
 <div class="slide">
   <header><h1><code>line-height</code> property</h1></header>
+  <section class="content" id="lh2">
+    <style>#lh {display: flex; justify-content: space-around; height: auto;}
+    #lh div { flex: 0 0 30%; outline: 1px solid; box-sizing: border-box;padding: 5px; }
+    #lh2 #lh {align-items: baseline; padding-bottom: 100px;}
+  </style>
+  <style contenteditable class="editme">#lh2 div.one {line-height: 2;}
+#lh2 div.two {line-height: 4;}
+#lh2 div.three {line-height: 8;}</style>
+    
+    <article id="lh" contenteditable>
+      <div class="one"><h3>Centered</h3>
+      </div>
+      <div class="two"><h3>Vertically</h3>
+      </div>
+      <div class="three"><h3>Three Words Here</h3>
+      </div>
+    </article>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>line-height</code> property</h1></header>
   <section class="content">
+    <style>#lh {display: flex; justify-content: space-around; height: auto;}
+    #lh div { flex: 0 0 30%; outline: 1px solid; box-sizing: border-box;padding: 5px; }
+  </style>
+  <style contenteditable class="editme">#lh .one {line-height: 1;}
+#lh .two {line-height: 1em;}
+#lh .three {line-height: 100%;}</style>
+    
+    <article id="lh">
+      <div class="one"><h2>Here is some text over a few lines. The class is the number 1 written out</h2><p>Here is some text over a few lines. The class is the number 1 written out</p>
+      </div>
+      <div class="two"><h2>Here is some text over a few lines. The class is the number 2 written out</h2><p>Here is some text over a few lines. The class is the number 2 written out</p>
+      </div>
+      <div class="three"><h2>Here is some text over a few lines. The class is the number 3 written out</h2><p>Here is some text over a few lines. The class is the number 3 written out</p>
+      </div>
+    </article>
   </section>
 </div>
 
 <div class="slide">
   <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/z-index">z-index</a></code></h1></header>
   <section class="content">
+    <p>Sets the z-order of positioned elements and their descendants</p>
+    <p>For a positioned box, the 'z-index' property specifies:</p>
+
+    <ul>
+      <li>The stack level of the box in the current stacking context.</li>
+      <li>Whether the box establishes a stacking context.</li>
+    </ul>
+    <pre contenteditable>z-index: <em>auto</em> | &lt;number></pre>
+    <p>The value can be auto, a positive or negative integer, or 0.</p>
   </section>
 </div>
+
 
 <div class="slide">
   <header><h1><code>z-index</code></h1></header>
   <section class="content">
+    <style contenteditable class="editme" style="max-height: 25vh; overflow: scroll;">#abs1 { z-index: 5; position: absolute; }
+#rel1 { z-index: 3; position: relative; }
+#rel2 { z-index: 2; position: relative; }
+#abs2 { z-index: 1; position: absolute; }
+#sta1 { z-index: 8; }</style>
+<div  id="bm">
+<div id="abs1">
+  <b>DIV #1</b>
+  <br />position: absolute;
+  <br />z-index: 5;
+</div>
+
+<div id="rel1">
+  <b>DIV #2</b>
+  <br />position: relative;
+  <br />z-index: 3;
+</div>
+
+<div id="rel2">
+  <b>DIV #3</b>
+  <br />position: relative;
+  <br />z-index: 2;
+</div>
+
+<div id="abs2">
+  <b>DIV #4</b>
+  <br />position: absolute;
+  <br />z-index: 1;
+</div>
+
+<div id="sta1">
+  <b>DIV #5</b>
+  <br />no positioning
+  <br />z-index: 8;
+</div>
+</div>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>stacking context</code></h1></header>
+  <section class="content">
+
+<p>The stacking context is a 3-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. HTML elements occupy this space in priority order based on element attributes.</p>
+<p>Properties which cause elements to form a <em>stacking context</em>.</p>
+<ul>
+  <li>&lt;html&gt; (document root)</li>
+  <li><code>position: absolute | relative; z-index: !=auto</code></li>
+  <li><code>position: fixed | sticky;</code>.</li>
+  <li>flex items and grid items if  <code>z-index: != auto</code></li>
+  <li><code>opacity &lt; 1</code></li>
+  <li><code>mix-blend-mode: != normal</code></li>
+  <li><code>transform: != none</code></li>
+  <li><code>filter: != none</code></li>
+  <li><code>perspective: != none</code></li>
+  <li><code>clip-path: != none</code></li>
+  <li><code>mask</code> / <code>mask-image</code> / <code>mask-border: != none</code> </li>
+  <li><code>isolation: isolate</code> value isolate.</li>
+  <li><code>-webkit-overflow-scrolling: touch;</code></li>
+  <li><code>will-change</code>: above properties</li>
+  <li><code>contain: layout | contain; </code></li>
+</ul>
+<p>The z-index  value of elements only have meaning in it's ancestor's stacking context. </p>
+<ul>
+  <li>Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.</li>
+  <li>Each stacking context is completely independent of its siblings:  only descendant elements are considered when stacking is processed.</li>
+  <li>Each stacking context is self-contained: after the element's  contents are stacked, the whole element is considered in the stacking  order of the parent stacking context.</li>
+</ul>
+
   </section>
 </div>
 
+<div class="slide divider">
+  <header><h1>Stacking context</h1></header>
+  <section class="content">
+  </section>
+</div>
+<div class="slide">
+  <header><h1>Stacking context</h1></header>
+  <section class="content">
+    <p>Each box belongs to one <strong>stacking context</strong>. Each positioned box in a given stacking context has an integer stack level, which is its position on the z-axis relative other stack levels within the same stacking context. Boxes with greater stack levels are always formatted in front of boxes with lower stack levels.  Boxes may have negative stack levels.  Boxes with the same stack level in a stacking context are stacked back-to-front according to document tree order. </p>
+<p> The root element forms the root stacking context. Other stacking  contexts are generated by any positioned element (including  relatively positioned elements) having a computed value of 'z-index'  other than 'auto'. Stacking contexts are not necessarily related to  containing blocks. In future levels of CSS, other properties may  introduce stacking contexts, for example <code>opacity</code></p>
+<p>Within each stacking context, the following layers are painted in back-to-front order: </p>
+<ol>
+  <li>the background and borders of the element forming the stacking   context. </li>
+  <li>the child stacking contexts with negative stack levels (most   negative first). </li>
+  <li>the in-flow, non-inline-level, non-positioned descendants. </li>
+  <li>the non-positioned floats. </li>
+  <li>the in-flow, inline-level, non-positioned descendants, including   inline tables and inline blocks. </li>
+  <li>the child stacking contexts with stack level 0 and the   positioned descendants with stack level 0. </li>
+  <li>the child stacking contexts with positive stack levels (least   positive first). </li>
+</ol>
+  </section>
+</div>
 
 
 

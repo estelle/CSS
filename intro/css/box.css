@@ -498,7 +498,7 @@ style[class=editme i] {
   border: 3px solid #aaa;
   background-color: #dedede;
   margin: 50px auto 20px;
-  width: 90vw;
+  width: 80vw;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -526,6 +526,55 @@ style[class=editme i] {
   border: 10px inset #71c6aa;
   float: left;
   margin-left: 10px;
+}
+
+#bm {
+  position: relative;
+}
+#bm div {
+  padding: 10px;
+  opacity: 0.7;
+  text-align: center;
+}
+#bm b {
+  font-family: sans-serif;
+}
+#bm #abs1 {
+  width: 150px;
+  height: 350px;
+  top: 10px;
+  left: 10px;
+  border: 1px dashed #900;
+  background-color: #fdd;
+}
+#bm #rel1 {
+  height: 100px;
+  top: 30px;
+  border: 1px dashed #696;
+  background-color: #cfc;
+  margin: 0px 50px 0px 50px;
+}
+#bm #rel2 {
+  height: 100px;
+  top: 15px;
+  left: 20px;
+  border: 1px dashed #696;
+  background-color: #cfc;
+  margin: 0px 50px 0px 50px;
+}
+#bm #abs2 {
+  width: 150px;
+  height: 350px;
+  top: 10px;
+  right: 10px;
+  border: 1px dashed #900;
+  background-color: #fdd;
+}
+#bm #sta1 {
+  height: 70px;
+  border: 1px dashed #996;
+  background-color: #ffc;
+  margin: 0px 50px 0px 50px;
 }
 
 /*# sourceMappingURL=box.css.map */
