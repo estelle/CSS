@@ -3,6 +3,8 @@
 
 /* the container */
 figure {
+  height: 300px;
+  width: 200px;
   position: relative;
   margin: auto;
 }
@@ -32,18 +34,22 @@ figure {
 /* card faces */
 .face {
   font-size: 2em;
+  line-height: 300px; /* extra credit. temporary */
+  text-align: center;
 }
 .face::before {
   content: attr(data-value);
   position: absolute;
   top: 10px;
   left: 10px;
+  line-height: 1.4; /* extra credit. temporary */
 }
 .face::after {
   content: attr(data-value);
   position: absolute;
   bottom: 10px;
   right: 10px;
+  line-height: 1.4; /* extra credit. temporary */
 }
 /* first, second, and last card */
 .card:first-of-type {

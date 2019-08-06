@@ -3,6 +3,8 @@
 
 /* the container */
 figure {
+  height: 300px;
+  width: 200px;
   position: relative;
   margin: auto;
 }

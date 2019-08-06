@@ -693,7 +693,8 @@ outline-color: red;</pre>
 #rel1 { z-index: 3; position: relative; }
 #rel2 { z-index: 2; position: relative; }
 #abs2 { z-index: 1; position: absolute; }
-#sta1 { z-index: 8; }</style>
+#sta1 { z-index: 8; }
+#child {z-index: 100; position: absolute;}</style>
 <div  id="bm">
 <div id="abs1">
   <b>DIV #1</b>
@@ -723,6 +724,11 @@ outline-color: red;</pre>
   <b>DIV #5</b>
   <br />no positioning
   <br />z-index: 8;
+  <div id="child">
+    <b>#Child</b><br/>
+    position: absolute;<br/>
+    z-index: 100;
+  </div>
 </div>
 </div>
 </section>
@@ -1047,9 +1053,9 @@ display: unset;</pre>
       <li>Round the corners</li>
       <li>Add a decorative border on the back of the card.</li>
       <li>Stack all the cards into a pack (one on top of the other)</li>
-      <li>Move them around a little bit so you can see a bit of each</li>
-      <li>Center the whole thing</li>
+      <li>Move them around a little bit so you can see a bit of each</li><li>Center the whole thing</li>
     </ol>
+    <p>Extra credit: vertically center the ♥, ♣, and ♦</p>
     <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
   </section>
 </div>
@@ -1063,15 +1069,99 @@ display: unset;</pre>
 
 
 
- <!-- 
+
 <div class="slide">
-  <header><h1></h1></header>
-  <section class="content">
+  <header><h1>Solution</h1></header>
+  <section class="content"><pre contenteditable>@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  <b>margin: auto;</b>
+}
+/* all the cards */
+.card {
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  <b>border-radius: 10px;</b>
+}
+.back,
+.face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:0;
+  <b>border-radius: 10px;</b>
+}
+/* backs of the cards */
+.back {
+  <b>border: 10px solid red;</b>
+  background-color: blue;
+}
+/* card faces */
+.face {
+  font-size: 2em;
+  <b>line-height: 300px; /* extra credit. temporary */
+  text-align: center;</b>
+}
+.face::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  <b>line-height: 1; /* extra credit. temporary */</b>
+}
+.face::after {
+  content: attr(data-value);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  <b>line-height: 1; /* extra credit. temporary */</b>
+}
+/* first, second, and last card */
+.card:first-of-type {
+
+}
+.card:nth-of-type(2) {
+  <b>left: 20px; /* temporary */</b>
+}
+.card:last-of-type {
+  <b>left: 40px; /* temporary */</b>
+}
+/* faces of first, second and last cards */
+.card:first-of-type .face {
+
+}
+.card:nth-of-type(2) .face {
+
+}
+.card:last-of-type  .face {
+  
+}
+/* red cards */
+[data-type="H" i],
+[data-type="D" i] {
+   color: red;
+ }
+/* black cards */
+[data-type="C" i],
+[data-type="S" i] {
+   color: black;
+ }
+/* hovered card */
+.card:hover {
+
+} </pre>
   
   </section>
 </div>
   
-  
+  <!--  
 <div class="slide">
   <header><h1></h1></header>
   <section class="content">
