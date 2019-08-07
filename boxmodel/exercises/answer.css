@@ -14,6 +14,7 @@ figure {
   width: 200px;
   position: absolute;
   border-radius: 10px;
+  border: 2px solid #ccc;
 }
 .back,
 .face {
@@ -57,9 +58,11 @@ figure {
 }
 .card:nth-of-type(2) {
   left: 20px;
+  top: 20px;
 }
 .card:last-of-type {
   left: 40px;
+  top: 40px;
 }
 /* faces of first, second and last cards */
 .card:first-of-type .face {

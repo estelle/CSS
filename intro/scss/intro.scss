@@ -1,22 +1,14 @@
 @charset "UTF-8";
 
-$font: 'SanchezSlab Semibold', Georgia, serif;
-$splashcolor: #d926d9;
-$text: #333333;
-$textsecondary: #4d4d4d;
-$invertedtext: #ffffff;
-$header_bg: #ffffff;
-$light_bg: #f4f4f4;
-$dark_bg: #570057;
-$colorpop: #d926d9;
-
-@import "presentation";
-@import "deck_functionality";
-@import "buttons";
-@import "slide";
-@import "heading";
-@import "content";
-@import "print";
-@import "object";
-@import "columns";
-@import "ex_cards";
+:root { 
+	--font: 'SanchezSlab Semibold', Georgia, serif;
+	--splashcolor: #d926d9;
+	--lightsplash: #f7d4f7;
+	--text: #333333;
+	--textsecondary: #4d4d4d;
+	--invertedtext: #ffffff;
+	--header_bg: #ffffff;
+	--light_bg: #f4f4f4;
+	--dark_bg: #570057;
+	--colorpop: #d926d9;
+}

@@ -14,7 +14,7 @@ body {
   height: 100%;
   position: absolute;
   left: 0px; top: 0px;
-  color: $text;
+  color: var(--text);
 }
 [id="presentation"] {
   position: absolute;
@@ -24,7 +24,7 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: $dark_bg;
+  background-color: var(--dark_bg);
 }
 [id="info"] {
   font-size: small;
@@ -33,7 +33,7 @@ body {
   left: 40%;
   z-index: 500;
   > *, a {
-    color: $invertedtext;
+    color: var(--invertedtext);
   }
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .counter {
-  color: $splashcolor;
+  color: var(--splashcolor);
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;

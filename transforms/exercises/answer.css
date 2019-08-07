@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+  height: 300px;
+  width: 200px;
+  position: relative;
+  margin: auto;
+}
+/* all the cards */
+.card {
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  perspective: 600px;
+}
+.back,
+.face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:0;
+  border-radius: 10px;
+}
+/* backs of the cards */
+.back {
+  border: 10px solid white;
+  background: 
+    linear-gradient(-45deg, rgb(59, 108, 59) 25%, transparent 25% 75%, rgb(59, 108, 59) 75%) 0 0, 
+    linear-gradient(-45deg, rgb(59, 108, 59) 25%, transparent 25% 75%, rgb(255, 255, 255) 75%) 1em 1em, 
+    linear-gradient(45deg, rgb(59, 108, 59) 17%, transparent 17% 25%, rgb(59, 108, 59) 25% 36%, transparent 36% 64%, rgb(59, 108, 59) 64% 75%, transparent 75% 83%, rgb(59, 108, 59) 83%) 1em 1em;
+  background-size: 3em 3em;
+  background-color: white;
+  z-index: 100;
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  z-index: 100;
+}
+/* card faces */
+.face {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  z-index: 50;
+  background-color: white;
+}
+.face::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.face::after {
+  content: attr(data-value);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+/* first, second, and last card */
+.card:first-of-type {
+  transform: rotate(-5deg); 
+}
+.card:first-of-type:hover {
+  transform: rotate(10deg) translatey(180px);
+}
+.card:nth-of-type(2) { 
+  transform: rotate(0) translatex(120px);
+}
+.card:last-of-type { 
+  transform: rotate(5deg);
+}
+
+/* faces of first, second and last cards */
+.card:first-of-type .face {
+
+}
+.card:nth-of-type(2) .face {
+
+}
+.card:last-of-type  .face {
+  
+}
+/* red cards */
+[data-type="H" i],
+[data-type="D" i] {
+   color: red;
+ }
+/* black cards */
+[data-type="C" i],
+[data-type="S" i] {
+   color: black;
+ }
+/* hovered card */
+.card:hover {
+
+} 
+.card:hover .back {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  z-index: 50;
+}
+.card:hover .face {
+  transform: rotateY(0);
+  z-index: 110;
+}

@@ -3,6 +3,8 @@
 
 /* the container */
 figure {
+  height: 300px;
+  width: 200px;
   position: relative;
   margin: auto;
 }
@@ -12,6 +14,7 @@ figure {
   width: 200px;
   position: absolute;
   border-radius: 10px;
+  border: 2px solid #ccc;
 }
 .back,
 .face {
@@ -26,12 +29,18 @@ figure {
 .card, .back, .face {border-radius: 10px;}
 /* backs of the cards */
 .back {
-  border: 10px solid red;
-  background-color: blue;
+  border: 10px solid white;
+  background-image: 
+    linear-gradient(-45deg, 
+      rgb(52, 19, 85) 25%, transparent 25%, transparent 75%, rgb(52, 19, 85) 75%, rgb(52, 19, 85));
+  z-index: 100;
 }
 /* card faces */
 .face {
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .face::before {
   content: attr(data-value);
@@ -51,9 +60,11 @@ figure {
 }
 .card:nth-of-type(2) {
   left: 20px;
+  top: 20px;
 }
 .card:last-of-type {
   left: 40px;
+  top: 40px;
 }
 /* faces of first, second and last cards */
 .card:first-of-type .face {

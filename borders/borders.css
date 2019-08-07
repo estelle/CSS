@@ -9,7 +9,7 @@
 	margin: 20px;
  }
  .bgimage {
-	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70%,#58ADE3 85%,transparent  85% );
+	background-image: radial-gradient(50px, transparent 70%, #808080 70% 85%,transparent  85% );
 	background-size: 95px 95px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -17,7 +17,7 @@
 
  }
  .bgimagebk {
-	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70%,#58ADE3 85%,transparent  85% ), linear-gradient(#58ADE3, transparent);
+	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70% 85%,transparent  85% ), linear-gradient(#58ADE3, transparent);
 }	
  #bgattachment {width:300px; height:300px; overflow:scroll; border: 1px solid #58ADE3; float:right; top:0; left:0;}
  .backgroundclip {
@@ -67,8 +67,8 @@
 	width: 400px;
 	
 	background-image:
-		linear-gradient(#71c6aa 5px, transparent 5px, transparent 245px, #71c6aa 245px),
-		linear-gradient(left, #71c6aa 5px, transparent 5px, transparent 245px, #71c6aa 245px),
+		linear-gradient(#71c6aa 5px, transparent 5px 245px, #71c6aa 245px),
+		linear-gradient(left, #71c6aa 5px, transparent 5px 245px, #71c6aa 245px),
 		linear-gradient(#58ADE3, #71c6aa, #58ADE3);
 	background-size: 400px 250px, 250px 400px, 350px 350px;
 	background-position: center;

@@ -1,5 +1,5 @@
 style[class="editme" i] {
-    border: 1px solid $colorpop;
+    border: 1px solid var(--colorpop);
     padding: 5px 20px;
     margin-bottom: 1em;
   }
@@ -10,30 +10,34 @@ pre, style[class="editme" i] {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   text-shadow: none;
-  border: 1px solid $splashcolor;
+  white-space: pre;
+  border: 1px solid var(--splashcolor);
+}
+.current .editme {
+  display: block;
 }
 pre {
   b {
     font-weight: bold;
-    color: $splashcolor;
+    color: var(--splashcolor);
     display:inline-block;
   }
   b:hover {
     transform:scale(1.2);
-    color: $splashcolor;
+    color: var(--splashcolor);
   }
 
   em {
     font-weight: normal;
     font-style: normal;
-    color: $splashcolor;
+    color: var(--splashcolor);
     text-shadow: currentColor 0 0 1px;
   }
   a {
-    text-decoration: underline dotted lighten($splashcolor, 40%);
+    text-decoration: underline dotted var(--lightsplash);
   }
   a:hover, a:active, a:focus {
-      text-decoration: underline dotted lighten($splashcolor, 10%);
+      text-decoration: underline dotted var(--splashcolor);
   }
 }
 code i {

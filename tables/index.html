@@ -3,7 +3,8 @@
 <head> 
 <meta charset="utf-8" />
     <title>HTML Tables and CSS</title>
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="../intro/css/main.css"/>
+<link rel="stylesheet" href="../intro/css/tables.css"/>
 </head> 
 
 <body> 
@@ -577,15 +578,17 @@ visibility: /* collapse value only */</pre>
 
 <!-- Style a Table -->
 <div class="slide">
-  <header><h1><a href="files/play.html">Exercise: style for legibility</a></h1></header>
+  <header><h1><a href="files/play.html">Exercise</a></h1></header>
   <section class="content">
-    <pre>display:
+    <p>Style the USNWT table for legibility
+    <pre><strike>display:</strike>
 caption-side:
 border-collapse:
 border-spacing:
 empty-cells:
 table-layout:
-vertical-align:</pre>
+vertical-align:
+text-align:</pre>
 <div style="display: flex; gap: 1em;">
 <pre style="flex: 1; height: 8em; overflow-y: scroll">table
 colgroup
@@ -606,7 +609,7 @@ col.goals {}
 col.assists {}
 caption {}
 thead {}
-tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></p>
+tbody {}</pre></div><p><a href="files/play.html" target="play" class="objectlink">Open in browser</a></p>
   </section>
 </div>
 
@@ -673,23 +676,7 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
 </div>
 
 
-<div class="slide">
-  <header><h1>Exercise</h1></header>
-  <section class="content">
-    <p>Let's change our card example just a bit.</p>
-    <ol>
-      <li>Center the heart, spade, diamond, or club that is the text node in your card using table features instead of flexbox features from the last chapter.</li>
-    </ol>
-    <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
-  </section>
-</div>
 
-<div class="slide">
-  <header><h1>Solution</h1></header>
-  <section class="content">
-    <a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a>
-  </section>
-</div>
 
 <!--NEXT-->
 <div class="slide">
@@ -742,7 +729,10 @@ tbody {}</pre></div><p><a href="files/play.html" target="play">Try it out!</a></
    
 <header>
     <nav>
-        <button class="cancel" id="back">Back</button><button class="done" id="next">Next</button>
+      <ul>
+        <li><button class="cancel" id="back">Back</button></li>
+        <li><button class="done" id="next">Next</button></li>
+      </ul>
     </nav>
 </header>
 </div>

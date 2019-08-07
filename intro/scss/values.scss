@@ -1,26 +1,17 @@
 @charset "UTF-8";
 
-$font: 'SanchezSlab Semibold', Georgia, serif;
-$splashcolor: #a8a807;
-$text: #333333;
-$textsecondary: #4d4d4d;
-$invertedtext: #ffffff;
-$header_bg: #ffffff;
-$light_bg: #f4f4f4;
-$dark_bg: rgb(45, 45, 3);
-$colorpop: #a8a807;
-
-@import "presentation";
-@import "deck_functionality";
-@import "buttons";
-@import "slide";
-@import "heading";
-@import "content";
-@import "print";
-@import "object";
-@import "columns";
-@import "lists";
-@import "ex_cards";
+:root { 
+	--font: 'SanchezSlab Semibold', Georgia, serif;
+	--splashcolor: #a8a807;
+	--lightsplash: #fafa81;
+	--text: #333333;
+	--textsecondary: #4d4d4d;
+	--invertedtext: #ffffff;
+	--header_bg: #ffffff;
+	--light_bg: #f4f4f4;
+	--dark_bg: rgb(45, 45, 3);
+	--colorpop: #a8a807;
+}
 
 table.standard-table {
 	border: none;

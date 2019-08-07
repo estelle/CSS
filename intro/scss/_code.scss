@@ -1,12 +1,12 @@
 
 .code {
-   color: $text;
+   color: var(--text);
    font-size: 85%;
    background-color: rgba(255,255,255,0.4);
    transition: all 2s ease-in 50ms;
 }
 .code:hover {
-   color: $splashcolor;
+   color: var(--splashcolor);
    background-color: rgba(255,255,255,0.9);
 }
 .code:not(.code2):hover {

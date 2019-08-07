@@ -18,8 +18,8 @@ style:not(#editme) {
 	white-space: pre; 
 	font-family: monospace; 
 	border-radius: 5px; 
-	border: 1px solid $splashcolor; 
-	background-color:$light_bg; 
+	border: 1px solid var(--splashcolor); 
+	background-color: var(--light_bg); 
 	margin: 20px;  
 	font-family:"Courier New", Courier, monospace; 
 	visibility: visible;

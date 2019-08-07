@@ -1,0 +1,14 @@
+html {
+  --font: "SanchezSlab Semibold", Georgia, serif;
+  --splashcolor: #e359dc;
+  --lightsplash: rebeccapurple;
+  --text: #333333;
+  --textsecondary: #4d4d4d;
+  --invertedtext: #ffffff;
+  --header_bg: #ffffff;
+  --light_bg: #f4f4f4;
+  --dark_bg: #333333;
+  --colorpop: #e359dc;
+}
+
+/*# sourceMappingURL=animation.css.map */

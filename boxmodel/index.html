@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8" />
     <title>Box Model</title>
+    
+<link rel="stylesheet" href="../intro/css/main.css"/>
 <link rel="stylesheet" href="../intro/css/box.css"/>
 </head>
 
@@ -1087,7 +1089,8 @@ figure {
   height: 300px;
   width: 200px;
   position: absolute;
-  <b>border-radius: 10px;</b>
+  <b>border-radius: 10px;
+  border: 2px solid #ccc;</b>
 }
 .back,
 .face {
@@ -1128,10 +1131,12 @@ figure {
 
 }
 .card:nth-of-type(2) {
-  <b>left: 20px; /* temporary */</b>
+  <b>left: 20px; /* temporary */
+  top: 20px;</b>
 }
 .card:last-of-type {
-  <b>left: 40px; /* temporary */</b>
+  <b>left: 40px; /* temporary */
+  top: 20px;</b>
 }
 /* faces of first, second and last cards */
 .card:first-of-type .face {

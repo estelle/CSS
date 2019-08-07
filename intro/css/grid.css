@@ -1,0 +1,45 @@
+:root {
+  --font: "SanchezSlab Semibold", Georgia, serif;
+  --splashcolor: #0000cc;
+  --lightsplash: #99f;
+  --text: #333333;
+  --textsecondary: #4d4d4d;
+  --invertedtext: #ffffff;
+  --header_bg: #ffffff;
+  --light_bg: #f4f4f4;
+  --dark_bg: #333;
+  --colorpop: #0000cc;
+  --alert: #cc0000;
+}
+
+.gridlines > div {
+  width: 460px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.gridlines article {
+  display: flex;
+}
+.gridlines article > div {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  position: relative;
+  top: -10px;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.gridlines table, .gridlines table td, .gridlines table th {
+  border: 5px solid var(--alert);
+  border-collapse: collapse;
+  padding: 20px;
+}
+.gridlines table div {
+  height: 100px;
+  width: 100px;
+  border: 3px solid var(--colorpop);
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=grid.css.map */

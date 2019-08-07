@@ -11,8 +11,8 @@
 .objectlink {
   position:absolute;
   top:0; right:5em;
-  color: $invertedtext;
-  background-color: $colorpop;
+  color: var(--invertedtext);
+  background-color: var(--colorpop);
   padding: 3px 5px;
   border: 3px solid;
   border-radius: 50%;

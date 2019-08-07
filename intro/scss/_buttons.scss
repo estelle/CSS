@@ -4,8 +4,8 @@ nav button {
 	top:0; 
 	padding: 10px 20px;
 	font-size: 90%;
-	color: $invertedtext;
-	background-color: $colorpop;
+	color: var(--invertedtext);
+	background-color: var(--colorpop);
 	border: none;
 	-webkit-appearance: none;
 	appearance: none;
@@ -16,16 +16,16 @@ nav ul {
 #next {
    right: 0;
    padding: 10px 0 40px 50px;
-   background: radial-gradient(ellipse at 100% 20%, $colorpop 48%, transparent 48%);
+   background: radial-gradient(ellipse at 100% 20%, var(--colorpop) 48%, transparent 48%);
    &:hover, &:focus {
-   	background: radial-gradient(ellipse at 100% 20%, $colorpop 48%, $invertedtext 48%, 52%, $dark_bg 52%, 54%, transparent 54%);
+   	background: radial-gradient(ellipse at 100% 20%, var(--colorpop) 48%, var(--invertedtext) 48%, 52%, var(--dark_bg) 52%, 54%, transparent 54%);
    }
 
 }
 #back {
 	left:0;   
 	padding: 10px 50px 40px 0px;
-   background: radial-gradient(ellipse at 0% 20%, $colorpop 48%, transparent 48%);
+   background: radial-gradient(ellipse at 0% 20%, var(--colorpop) 48%, transparent 48%);
    &:hover, &:focus {
-   	background: radial-gradient(ellipse at 0% 20%, $colorpop 48%, $invertedtext 48%, 52%, $dark_bg 52%, 54%, transparent 54%);}
+   	background: radial-gradient(ellipse at 0% 20%, var(--colorpop) 48%, var(--invertedtext) 48%, 52%, var(--dark_bg) 52%, 54%, transparent 54%);}
 }

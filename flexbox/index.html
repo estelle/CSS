@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Flexbox</title>
+   <link rel="stylesheet" href="../intro/css/main.css"/>
    <link rel="stylesheet" href="../intro/css/flex.css"/>
    <style>.current > header {background-color: white;}
   pre.showsection b {position: relative; transform-origin: left;} 
@@ -421,46 +422,8 @@ display: revert;</pre>
 <div class="slide">
   <header><h1>Today's <code>display</code> properties</h1></header>
   <section class="content">
-  <pre contenteditable class="showsection">
-display: block;
-display: inline;
-display: inline-block;
-display: none;
-
-<b>display: flex;  
-display: inline-flex;</b>
-
-display: grid;
-display: inline-grid;
-
-display: run-in;
-display: list-item;
-
-display: flow;
-display: flow-root;
-display: contents;
-
-display: table;
-display: inline-table;
-display: table-row-group;
-display: table-header-group;
-display: table-footer-group;
-display: table-row;
-display: table-cell;
-display: table-column-group;
-display: table-column;
-display: table-caption;
-
-display: ruby;
-display: ruby-base;
-display: ruby-text;
-display: ruby-base-container;
-display: ruby-text-container;
-
-/* Global values */
-display: inherit;
-display: initial;
-display: unset;</pre>
+    <br/>
+  <code contenteditable><strong>display</strong>: block | inline | run-in | flow | flow-root | table | <strong>flex</strong> | grid | ruby | block flow | inline table | flex run-in | list-item | list-item block | list-item inline | list-item flow | list-item flow-root | list-item block flow | list-item block flow-root | flow list-item block | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | inline-block | inline-table | <strong>inline-flex</strong> | inline-grid | inherit | initial | unset | revert;</code>
   </section>
 </div>
 
@@ -1002,8 +965,28 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 
 
 <div class="slide">
-  <header><h1>Exercise</h1></header>
+  <header><h1>DevTools</h1></header>
   <section class="content">
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content exercisecards">
+  <figure>
+  <div class="card" data-type="H">
+    <div class="back"></div>
+    <div class="face" data-value="A">♥</div>
+  </div>
+  <div class="card" data-type="C">
+    <div class="back"></div>
+    <div class="face" data-value="A">♣</div>
+  </div>
+  <div class="card" data-type="D">
+    <div class="back"></div>
+   <div class="face" data-value="A">♦</div>
+  </div>
+</figure>
     <p>Let's continue on with our card example just a bit.</p>
     <ol>
       <li>Center the heart, spade, diamond, or club that is the text node in your card.</li>
@@ -1019,6 +1002,99 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
   </section>
 </div>
 
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content"><pre contenteditable>
+@charset "UTF-8";
+/* CSS Document */
+
+/* the container */
+figure {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+/* all the cards */
+.card {
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  border-radius: 10px;
+}
+.back,
+.face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:0;
+  border-radius: 10px;
+}
+/*just to test */
+.card, .back, .face {border-radius: 10px;}
+/* backs of the cards */
+.back {
+  border: 10px solid red;
+  background-color: blue;
+}
+/* card faces */
+.face {
+  font-size: 2em;
+  <b>display: flex;
+  justify-content: center;
+  align-items: center;</b>
+}
+.face::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.face::after {
+  content: attr(data-value);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+/* first, second, and last card */
+.card:first-of-type {
+
+}
+.card:nth-of-type(2) {
+  left: 20px;
+  top: 20px;
+}
+.card:last-of-type {
+  left: 40px;
+  top: 40px;
+}
+/* faces of first, second and last cards */
+.card:first-of-type .face {
+
+}
+.card:nth-of-type(2) .face {
+
+}
+.card:last-of-type  .face {
+  
+}
+/* red cards */
+[data-type="H" i],
+[data-type="D" i] {
+   color: red;
+ }
+/* black cards */
+[data-type="C" i],
+[data-type="S" i] {
+   color: black;
+ }
+/* hovered card */
+.card:hover {
+
+} </pre>
+</section>
+</div>
 
 <div class="slide divider">
      <header><h1>Tables</h1></header>

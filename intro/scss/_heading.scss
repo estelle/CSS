@@ -1,6 +1,6 @@
 /* Content */
 .slide header {
-  background-color: $header_bg;
+  background-color: var(--header_bg);
   margin: -20px;
   padding: 10px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
@@ -8,7 +8,7 @@
 	  margin-bottom: 0px;
 	  font-family: 'sanchez', georgia, sans-serif;
 	  font-weight: bold;
-	  color: $splashcolor;
+	  color: var(--splashcolor);
 	  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	}
 

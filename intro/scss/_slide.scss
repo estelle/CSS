@@ -16,7 +16,7 @@
   transform: scale(1);
   padding-left: 20px;
   padding-top: 10px;
-  background-color: $light_bg;
+  background-color: var(--light_bg);
 
   li {
     margin-bottom: 10px;

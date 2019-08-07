@@ -1,6 +1,6 @@
 .count li {display: inline-block; text-align:center; outline: 1px solid black;}
 .count li:nth-of-type(even) {background-color: white;}
-.count li:nth-of-type(odd){background-color: $splashcolor; color: $invertedtext;}
+.count li:nth-of-type(odd){background-color: var(--splashcolor); color: var(--invertedtext);}
 .count li:first-of-type:last-of-type{width: 100%;}
 .count li:nth-of-type(1):nth-last-of-type(2),
 .count li:nth-of-type(2):nth-last-of-type(1){width: 50%;}

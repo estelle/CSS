@@ -20,11 +20,11 @@ footer {
   margin: 20px 0 0 30px;
 }
 a, em {
-  color: $splashcolor;
+  color: var(--splashcolor);
   font-style: normal;
 }
 a {
-  text-decoration: underline dotted lighten($splashcolor, 30%);
+  text-decoration: underline dotted var(--lightsplash);
   &:hover, &:focus {
     text-decoration: underline dotted;
   }
@@ -36,7 +36,7 @@ b.imp {
 .imp li:hover, 
 b.imp:hover {
   transform:scale(1.2);
-  color: $splashcolor;
+  color: var(--splashcolor);
   transform-origin: left;
 }
 section.content {

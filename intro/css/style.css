@@ -1,3 +1,16 @@
+:root {
+  --font: "SanchezSlab Semibold", Georgia, serif;
+  --splashcolor: #1a26d9;
+  --lightsplash: #c7caf8;
+  --text: #333333;
+  --textsecondary: #4d4d4d;
+  --invertedtext: #ffffff;
+  --header_bg: #ffffff;
+  --light_bg: #f4f4f4;
+  --dark_bg: #1a0057;
+  --colorpop: #1a26d9;
+}
+
 /* Screen CSS */
 :root {
   font-size: 18px;
@@ -14,7 +27,7 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  color: #333333;
+  color: var(--text);
 }
 
 [id=presentation] {
@@ -25,7 +38,7 @@ body {
   top: 0px;
   display: block;
   overflow: hidden;
-  background-color: #1a0057;
+  background-color: var(--dark_bg);
 }
 
 [id=info] {
@@ -36,7 +49,7 @@ body {
   z-index: 500;
 }
 [id=info] > *, [id=info] a {
-  color: #ffffff;
+  color: var(--invertedtext);
 }
 
 [id=topinfo] {
@@ -65,7 +78,7 @@ body {
 }
 
 .counter {
-  color: #1a26d9;
+  color: var(--splashcolor);
   font-size: 70%;
   letter-spacing: 1px;
   position: absolute;
@@ -113,8 +126,8 @@ nav button {
   top: 0;
   padding: 10px 20px;
   font-size: 90%;
-  color: #ffffff;
-  background-color: #1a26d9;
+  color: var(--invertedtext);
+  background-color: var(--colorpop);
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -127,19 +140,19 @@ nav ul {
 #next {
   right: 0;
   padding: 10px 0 40px 50px;
-  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, transparent 48%);
+  background: radial-gradient(ellipse at 100% 20%, var(--colorpop) 48%, transparent 48%);
 }
 #next:hover, #next:focus {
-  background: radial-gradient(ellipse at 100% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 100% 20%, var(--colorpop) 48%, var(--invertedtext) 48%, 52%, var(--dark_bg) 52%, 54%, transparent 54%);
 }
 
 #back {
   left: 0;
   padding: 10px 50px 40px 0px;
-  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, transparent 48%);
+  background: radial-gradient(ellipse at 0% 20%, var(--colorpop) 48%, transparent 48%);
 }
 #back:hover, #back:focus {
-  background: radial-gradient(ellipse at 0% 20%, #1a26d9 48%, #ffffff 48%, 52%, #1a0057 52%, 54%, transparent 54%);
+  background: radial-gradient(ellipse at 0% 20%, var(--colorpop) 48%, var(--invertedtext) 48%, 52%, var(--dark_bg) 52%, 54%, transparent 54%);
 }
 
 .slide {
@@ -160,7 +173,7 @@ nav ul {
   transform: scale(1);
   padding-left: 20px;
   padding-top: 10px;
-  background-color: #f4f4f4;
+  background-color: var(--light_bg);
 }
 .slide li {
   margin-bottom: 10px;
@@ -174,7 +187,7 @@ nav ul {
 
 /* Content */
 .slide header {
-  background-color: #ffffff;
+  background-color: var(--header_bg);
   margin: -20px;
   padding: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -183,7 +196,7 @@ nav ul {
   margin-bottom: 0px;
   font-family: "sanchez", georgia, sans-serif;
   font-weight: bold;
-  color: #1a26d9;
+  color: var(--splashcolor);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .slide header h2 {
@@ -210,7 +223,7 @@ nav ul {
 }
 
 style[class=editme i] {
-  border: 1px solid #1a26d9;
+  border: 1px solid var(--colorpop);
   padding: 5px 20px;
   margin-bottom: 1em;
 }
@@ -222,29 +235,34 @@ pre, style[class=editme i] {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   text-shadow: none;
-  border: 1px solid #1a26d9;
+  white-space: pre;
+  border: 1px solid var(--splashcolor);
+}
+
+.current .editme {
+  display: block;
 }
 
 pre b {
   font-weight: bold;
-  color: #1a26d9;
+  color: var(--splashcolor);
   display: inline-block;
 }
 pre b:hover {
   transform: scale(1.2);
-  color: #1a26d9;
+  color: var(--splashcolor);
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #1a26d9;
+  color: var(--splashcolor);
   text-shadow: currentColor 0 0 1px;
 }
 pre a {
-  text-decoration: underline dotted #c7caf8;
+  text-decoration: underline dotted var(--lightsplash);
 }
 pre a:hover, pre a:active, pre a:focus {
-  text-decoration: underline dotted #3e49e8;
+  text-decoration: underline dotted var(--splashcolor);
 }
 
 code i {
@@ -252,14 +270,14 @@ code i {
 }
 
 .code {
-  color: #333333;
+  color: var(--text);
   font-size: 85%;
   background-color: rgba(255, 255, 255, 0.4);
   transition: all 2s ease-in 50ms;
 }
 
 .code:hover {
-  color: #1a26d9;
+  color: var(--splashcolor);
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -302,12 +320,12 @@ footer {
 }
 
 a, em {
-  color: #1a26d9;
+  color: var(--splashcolor);
   font-style: normal;
 }
 
 a {
-  text-decoration: underline dotted #999ff3;
+  text-decoration: underline dotted var(--lightsplash);
 }
 a:hover, a:focus {
   text-decoration: underline dotted;
@@ -321,7 +339,7 @@ b.imp {
 .imp li:hover,
 b.imp:hover {
   transform: scale(1.2);
-  color: #1a26d9;
+  color: var(--splashcolor);
   transform-origin: left;
 }
 
@@ -391,8 +409,8 @@ section.content {
   position: absolute;
   top: 0;
   right: 5em;
-  color: #ffffff;
-  background-color: #1a26d9;
+  color: var(--invertedtext);
+  background-color: var(--colorpop);
   padding: 3px 5px;
   border: 3px solid;
   border-radius: 50%;
@@ -487,7 +505,7 @@ section.content {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: all 0.4s ease-in-out;
-  background: linear-gradient(-45deg, #1a26d9 25%, transparent 25%, transparent 75%, #1a26d9 75%, #1a26d9) 0 0, linear-gradient(-45deg, #1a26d9 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em, linear-gradient(45deg, #1a26d9 17%, transparent 17%, transparent 25%, #1a26d9 25%, #1a26d9 36%, transparent 36%, transparent 64%, #1a26d9 64%, #1a26d9 75%, transparent 75%, transparent 83%, #1a26d9 83%) 1em 1em;
+  background: linear-gradient(-45deg, var(--splashcolor) 25%, transparent 25%, transparent 75%, var(--splashcolor) 75%, var(--splashcolor)) 0 0, linear-gradient(-45deg, var(--splashcolor) 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em, linear-gradient(45deg, var(--splashcolor) 17%, transparent 17%, transparent 25%, var(--splashcolor) 25%, var(--splashcolor) 36%, transparent 36%, transparent 64%, var(--splashcolor) 64%, var(--splashcolor) 75%, transparent 75%, transparent 83%, var(--splashcolor) 83%) 1em 1em;
   background-color: white;
   background-size: 2em 2em;
   background-position: -1em -1em;
