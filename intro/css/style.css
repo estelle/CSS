@@ -237,6 +237,7 @@ pre, style[class=editme i] {
   text-shadow: none;
   white-space: pre;
   border: 1px solid var(--splashcolor);
+  font-family: monospace;
 }
 
 .current .editme {
@@ -413,7 +414,7 @@ section.content {
   background-color: var(--colorpop);
   padding: 3px 5px;
   border: 3px solid;
-  border-radius: 50%;
+  border-radius: 1em;
 }
 
 .slide.object {

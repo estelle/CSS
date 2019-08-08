@@ -160,6 +160,8 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 </div>
 
 
+
+
 <div class="slide">
   <header><h1>Absolute units of length</h1></header>
   <section class="content">
@@ -266,6 +268,19 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 
 
 <div class="slide">
+  <header><h1>viewport lengths</h1></header>
+    <section class="content">
+<pre contenteditable>vw | vh | vmin | vmax</pre>
+    <pre contenteditable>
+<b>5vw</b>     /* 5% of the width of the viewport */
+<b>7vh</b>     /* 7% of the height of the viewport */
+<b>4vmin</b>   /* 4% of the viewport height or width, whichever is smaller */
+<b>8vmax</b>   /* 8% of the viewport height or width, whichever is larger */</pre>
+
+    </section>
+</div>
+
+<div class="slide">
   <header><h1>Relative units of length</h1></header>
   <section class="content">
     <table class="standard-table">
@@ -303,6 +318,9 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   </tbody>
 </table>
 
+<p>Newer values</p>
+<pre><b>2vi</b>     /* 1% of containing block, in the direction of the root element’s inline axis.
+<b>4vb</b>     /* 4% of the containing block, in the direction of the root element’s block axis.</pre>
   </section>
 </div>
 
@@ -366,9 +384,10 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 <div class="slide">
   <header><h1>Angle Units</h1></header>
   <section class="content">
-<style style="visibility: hidden; white-space: nowrap;">.conicgrad {height: 300px;width: 300px;  border-radius: 50%; background: blue; margin: auto; background: linear-gradient(var(--conicgrad), #f69d3c 45%, 46%, #3f87a6, 54%, #ebf8e1 55%); border: 1px solid; } @supports (background-image: conic-gradient(red, blue)) {.conicgrad {background-image: conic-gradient(from var(--conicgrad), #f69d3c, #3f87a6, #ebf8e1);}}</style>
-<style contenteditable class="editme">:root { --conicgrad: 90deg; }</style>
-<div class="conicgrad">
+<style style="visibility: hidden; white-space: nowrap;">.gradangle {height: 300px;width: 300px;  border-radius: 50%; background: blue; margin: auto; background: linear-gradient(var(--gradangle), #f69d3c 45%, 46%, #3f87a6, 54%, #ebf8e1 55%); border: 1px solid; } @supports (background-image: conic-gradient(red, blue)) {.gradangle {background-image: conic-gradient(from var(--gradangle), #f69d3c, #3f87a6, #ebf8e1);}}</style>
+<style contenteditable class="editme">:root { --gradangle: 90deg; }</style>
+<div class="gradangle"></div>
+<p>conic in supporting browsers</p>
 </section> 
 </div>
 
@@ -566,13 +585,16 @@ div {
 <div class="slide">
   <header><h1>Keyword values</h1></header>
   <section class="content">
-<h2><code>text-align</code> property</h2>
-<code>left | right | center | justify </code>
+<h2><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> property</h2>
+<code>left | right | center | justify | start | end | match-parent </code>
     <pre contenteditable>/* Keyword values */         /* Global values */
 text-align: left;            text-align: inherit;
 text-align: right;           text-align: initial;
 text-align: center;          text-align: unset;
-text-align: justify;         text-align: revert;</pre>
+text-align: justify;         text-align: revert;
+text-align: start;
+text-align: end;
+text-align: match-parent;</pre>
 <ul><li>appear literally, without quotes</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Avoid in custom identifiers</li></ul>
   </section>
 </div>
@@ -960,6 +982,7 @@ paint(worklet)</pre>
     <li><a href="../media">Media Queries</a></li>
     <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../fonts/">Fonts and Text</a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>

@@ -1,0 +1,809 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Fonts</title>
+<link rel="stylesheet" href="../intro/css/main.css"/> 
+<style>
+	:root { 
+	--font: 'SanchezSlab Semibold', Georgia, serif;
+	--splashcolor: #008800;
+	--lightsplash: #33cc33;
+	--text: #333333;
+	--textsecondary: #4d4d4d;
+	--invertedtext: #ffffff;
+	--header_bg: #ffffff;
+	--light_bg: #f4f4f4;
+	--dark_bg: #666;
+	--colorpop: #008800;
+}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+<div class="slide intro">
+<header><h1>Font Properties</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="mdn">font-family</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="mdn">font-family</a></code> property</h1></header>
+<section class="content">
+	<pre contenteditable>font-family: [ &lt;family-name> | &lt;generic-family> ]#</pre>
+	<p>Specifies a comma-separated &lt;idents> list of fonts in priority order.</p>
+	<pre contenteditable>.newspaper {
+  font-family: Times, Times New Roman, Georgia, serif;
+}
+.marketing {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+code {
+  font-family: Lucida Console, Courier, monospace;
+}</pre></section>
+</div>
+
+
+<div class="slide">
+<header><h1>Generic font families</h1></header>
+<section class="content">
+	<dl>
+  <dt>serif</dt>
+  <dd>Glyphs with finishing strokes, flared or tapering ends, or have actual serifed endings</dd>
+  <dt>sans-serif</dt>
+  <dd>Glyphs have stroke endings that are plain.</dd>
+  <dt>monospace</dt>
+  <dd>All glyphs have the same fixed width. Good for code.</dd>
+  <dt>cursive</dt>
+  <dd>Glyphs with joining strokes, connected letters</dd>
+  <dt>fantasy</dt>
+  <dd>Decorative, playful fonts</dd>
+  <dt>system-ui</dt>
+  <dd>Default user interface font on a given  platform. Because typographic traditions vary widely across the world,  this generic is provided for typefaces that don't map cleanly into the  other generics.</dd>
+  <dt>math</dt>
+  <dd>Includes superscript and subscript, brackets that cross several  lines, nesting expressions, and double struck glyphs for math.</dd>
+  <dt>emoji</dt>
+  <dd>Fonts that render emoji.</dd>
+  <dt>fangsong</dt>
+  <dd>A Chinese font between  serif-style Song and cursive-style Kai forms often used  for government documents</dd>
+</dl>
+</section>
+</div>
+
+<div class="slide" id="fontfamily">
+<header><h1><code>font-family</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">.fontfamily {
+   _font-family: serif;
+   _font-family: sans-serif;
+   _font-family: monospace;
+   _font-family: cursive;
+   _font-family: fantasy;
+   _font-family: emoji;
+}</style>
+</section>
+<p class="fontfamily">This typeface is the font listed above</p>
+<p>This is a paragraph of defaul text for comparison</p>
+</div>
+
+
+<div class="slide">
+<header><h1><code>font-family</code> property</h1></header>
+<section class="content">
+<ul>
+	<li>Separated the font-family names with a comma</li>
+	<li>Quotes around family names are optional, but puncuation characters and words that start with a number must be escaped or quoted.</li>
+	<li>Browser displays the first font that is installed or will be downloaded (see @font-face in a bit)</li>
+	<li>Include a generic family name as a fallback in a font-family list in case the specified fonts aren't available</li>
+<li>If the main rendered font is missing characters, chars will be pulled from the next font-family in the list that has that character.</li>
+<li>When a font is available but not in the style or variant declared, next font may be used</li>
+</ul>
+</section>
+</div>
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight" target="mdn">font-weight</a></code> property</h1></header>
+<section class="content">
+
+
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight" target="mdn">font-weight</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the boldness of the font</p>
+	<pre contenteditable>normal | bold | bolder | lighter | &lt;number></pre>
+	<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Value</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>normal</code></td>
+   <td>400</td>
+  </tr>
+  <tr>
+   <td><code>bold</code></td>
+   <td>700</td>
+  </tr>  <tr>
+   <td><code>bolder</code></td>
+   <td>inherit + 1 weight (900, 700 or 400)</td>
+  </tr>  <tr>
+   <td><code>lighter</code></td>
+   <td>inherit - 1 weight (100, 400, or 700)</td>
+  </tr>
+
+ </tbody>
+</table>
+	<p>Number used to be <code>100 | 200 | 300 | 400 | 500| 600 | 700</code>, but with variable fonts (discussed later), it's now any number 1 - 1000.</p>
+</section>
+</div>
+
+<div class="slide" id="fontweight">
+<header><h1><code>font-weight</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#fontweight { _font-family: adapter pe, serif;} .fontweight {
+   _font-weight: 100;
+   _font-weight: normal;
+   _font-weight: bold;
+   _font-weight: bolder;
+   _font-weight: lighter;
+   _font-weight: 900;
+}</style>
+<p class="fontweight">This typeface is not necessarily the weight 'as described'.</p>
+<p>Comparison paragraph of text</p>
+</section>
+</div>
+
+
+
+
+
+<div class="slide object">
+<header><h1><code>font-weight</code> property</h1></header>
+<object data="https://v-fonts.com/" ><section class="content">Site does not permit cross-origin framing</section>
+</object>
+<a class="objectlink" href="https://v-fonts.com/" target="play">v-fonts.com</a>
+</div>
+
+
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" target="mdn">font-stretch</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" target="mdn">font-stretch</a></code> property</h1></header>
+<section class="content">
+	<p>selects a normal, condensed, or expanded face from a font.</p>
+	<pre contenteditable>font-stretch:  &lt;percentage> (50% - 200%) |  ultra-condensed (50%) | 
+  extra-condensed (62.5%) | condensed (75%) | 
+  semi-condensed (88.5%)  | <b>normal</b> (100%)   | 
+  semi-expanded (112.5%)  | expanded (125%) | 
+  extra-expanded (150%)   | ultra-expanded (200%)</pre>
+	<p>Most fonts have one or two values, but this comes into play with variable fonts </p>
+</section>
+</div>
+
+<div class="slide" id="fontstretch">
+<header><h1><code>font-stretch</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#fontstretch { _font-family: League Mono Variable, Helvetica Neue, serif;} .fontstretch {
+   _font-stretch: 50%; 
+   _font-stretch: ultra-condensed;
+   _font-stretch: condensed;
+   _font-stretch: normal;
+   _font-stretch: expanded;
+   _font-stretch: ultra-expanded;
+}</style>
+</section>
+<p class="fontstretch">Note the width of each character.</p>
+<p>Comparison paragraph of text</p>
+<a href="https://tylerfinck.com/leaguemonovariable/" target="play">Install the font</a>
+</div>
+
+
+
+
+
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style" target="mdn">font-style</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style" target="mdn">font-style</a></code> property</h1></header>
+<section class="content"><p> sets whether a font should be styled with a normal, italic, or oblique face from its font-family.</p>
+	<pre contenteditable>normal | italic | oblique &lt;angle>?</pre>
+<ul>
+	<li>By angle, -90deg to 90deg. Otherwise invalid.</li>
+	<li>Italic forms are generally cursive.</li>
+	<li>Font matching selects a font closest to the requested angle.</li>
+	<li>If no italic or oblique font, regular face may be used and sloped</li>
+	<li>use <code>font-synthesis</code> to control sloping behavior</li>
+	 <li>For variable <code>.ttf</code> &amp; <code>.otf</code>, use <code>slnt</code> for oblique and <code>ital=1</code> for italic as <code>font-variation-settings</code>.</li>
+	 <li>Note: OpenType <code>slnt</code> axis is defined with a positive angle meaning a counter-colockwise slant, the opposite direction to CSS.</li></ul>
+
+ 
+</section>
+</div>
+
+
+<div class="slide" id="fontstyle">
+<header><h1><code>font-style</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#fontstyle { _font-family: League Mono Variable, Helvetica Neue, serif;} .fontstyle {
+   _font-style: normal; 
+   _font-style: italic;
+   _font-style: oblique;
+   _font-style: oblique -30deg;
+}</style>
+</section>
+<p class="fontstyle">Note the angle of the vertical part of the glyphs.</p>
+<p>Comparison paragraph of text</p>
+<a href="https://tylerfinck.com/leaguemonovariable/" target="play">Install the font</a>
+</div>
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size" target="mdn">font-size</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size" target="mdn">font-size</a></code> property</h1></header>
+<section class="content"><p>Sets the size of the font. Also used to compute the size of <code>em</code>, <code>ex</code>, and other char based <code>&lt;length></code> units.</p>
+	<pre contenteditable style="text-align: center">xx-small | x-small | small | <b>medium</b> | large | x-large | xx-large  
+larger | smaller | &lt;length> | &lt;percentage></pre>
+	<ul>
+		<li>Default is <code>medium</code></li>
+		<li><code>em, ex</code>, and <code>%</code> are relative to current parent's font size</li>
+		<li>Keyterms are good / accessible. Declaring on body and going larger and smaller works</li>
+		<li><code>px</code> and other absolute values are bad for a11y, including viewport units</li>
+		<li><code>em</code> can be hard to control due to compounding. Opt for <code>rem</code> instead.</li>
+	</ul>
+</section>
+</div>
+
+
+<div class="slide" id="fontsize">
+<header><h1><code>font-size</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#fontsize { _font-family: League Mono Variable, Helvetica Neue, serif;} 
+.fontsize * {
+   _font-size: 2rem;
+   _font-size: 2em;
+   _font-size: 200%;
+   _font-size: 2vmin;
+}</style>
+</section>
+<div class="fontsize">
+<div>Every <span>word's <i>is <a href="">nested</a></i></span></div>
+<div>Comparison paragraph of text with no nesting</div>
+</div>
+</div>
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust" target="mdn">font-size-adjust</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+
+
+
+
+
+<div class="slide divider">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" target="mdn">font-variant</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" target="mdn">font-variant</a></code> property</h1></header>
+<section class="content">
+	<h2>CSS Level 2.1</h2>
+	<p>Selects the font that is small caps or not</p>
+	<pre contenteditable>font-variant: normal | small-caps;</pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" target="mdn">font-variant</a></code> shorthand property</h1></header>
+<section class="content">
+	<h2>CSS Fonts Module Level 3</h2>
+	<p>Shorthand for <code>font-variant-caps</code>, <code>font-variant-numeric</code>, f<code>ont-variant-alternates</code>, <code>font-variant-ligatures</code>, and <code>font-variant-east-asian</code>.</p>
+	<pre contenteditable>normal | none | [ &lt;common-lig-values> || &lt;discretionary-lig-values> || 
+&lt;historical-lig-values> || &lt;contextual-alt-values> || 
+[ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || 
+&lt;numeric-figure-values> || &lt;numeric-spacing-values> || &lt;numeric-fraction-values> || 
+ordinal || slashed-zero || &lt;east-asian-variant-values> || 
+&lt;east-asian-width-values> || ruby || [ sub | super ] ] </pre><p>&nbsp;</p>
+</section>
+</div>
+
+
+
+<div class="slide" id="fontvariant">
+<header><h1>CSS 2 <code>font-variant</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#fontvariant p { 
+   _font-family: adapter pe, georgia, helvetica, papyrus, serif, sans-serif;
+   text-transform: capitalize;
+} 
+.fontvariant {
+   _font-variant: normal;
+   _font-variant: small-caps;
+}</style>
+<p class="fontvariant">This typeface is not necessarily the variant 'as described'.</p>
+<p>Comparison paragraph of text</p>
+</section>
+</div>
+
+<div class="slide" id="font-variant">
+<header><h1>CSS 2 & 3 <code>font-variant</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#font-variant { 
+   _font-family: adapter pe, papyrus, serif;
+} 
+.font-variant {
+   _font-variant: normal /* small-caps /* all-small-caps /* petite-caps /* all-petite-caps */ ;
+   _font-variant: super /*  sub /* unicase /* titling-caps /* none */ ;
+}</style>
+<p class="font-variant">This paragraph will change based on the font-variant value.</p>
+<p>Comparison paragraph of text</p>
+</section>
+</div>
+
+
+
+
+<div class="slide divider">
+  <header><h1><code>line-height</code> property</h1></header>
+</div>
+
+
+<div class="slide">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/line-height">line-height</a></code> property</h1></header>
+  <section class="content">
+    <p>Sets the height of a line box, or the distance between lines of text.</p>
+<pre contenteditable><em>normal</em> | &lt;number> | &lt;length> | &lt;percentage></pre>
+<dl>
+  <dt>normal</dt>
+  <dd>Default, usually 1.2, depending on font-family.</dd>
+  <dt>&lt;number>(unitless)</dt>
+  <dd>Line Height = value * font size. <strong>Use this!</strong></dd>
+  <dt>&lt;length></dt>
+  <dd>Uses the length provided as the line height. Not as good as an idea as you would think. </dd>
+  <dt>&lt;percentage></dt>
+  <dd>Relative to the font size on the element on which it was declared (not the element's font).</dd>
+</dl>
+<p>useful to vertically center a single line of text</p>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1><code>line-height</code> property</h1></header>
+  <section class="content" id="lh2">
+    <style>#lh {display: flex; justify-content: space-around; height: auto;}
+    #lh div { flex: 0 0 30%; outline: 1px solid; box-sizing: border-box;padding: 5px; }
+    #lh2 #lh {align-items: baseline; padding-bottom: 100px;}
+  </style>
+  <style contenteditable class="editme">#lh2 div.one {line-height: 2;}
+#lh2 div.two {line-height: 4;}
+#lh2 div.three {line-height: 8;}</style>
+    
+    <article id="lh" contenteditable>
+      <div class="one"><h3>Centered</h3>
+      </div>
+      <div class="two"><h3>Vertically</h3>
+      </div>
+      <div class="three"><h3>Three Words Here</h3>
+      </div>
+    </article>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>line-height</code> property</h1></header>
+  <section class="content">
+    <style>#lh {display: flex; justify-content: space-around; height: auto;}
+    #lh div { flex: 0 0 30%; outline: 1px solid; box-sizing: border-box;padding: 5px; }
+  </style>
+  <style contenteditable class="editme">#lh .one {line-height: 1;}
+#lh .two {line-height: 1em;}
+#lh .three {line-height: 100%;}</style>
+    
+    <article id="lh">
+      <div class="one"><h2>Here is some text over a few lines. The class is the number 1 written out</h2><p>Here is some text over a few lines. The class is the number 1 written out</p>
+      </div>
+      <div class="two"><h2>Here is some text over a few lines. The class is the number 2 written out</h2><p>Here is some text over a few lines. The class is the number 2 written out</p>
+      </div>
+      <div class="three"><h2>Here is some text over a few lines. The class is the number 3 written out</h2><p>Here is some text over a few lines. The class is the number 3 written out</p>
+      </div>
+    </article>
+  </section>
+</div>
+
+
+
+
+<div class="slide divider">
+<header><h1>Shorthand <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font" target="mdn">font</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font" target="mdn">font</a></code> property</h1></header>
+<section class="content">
+	<p>Shorthand for  <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-stretch</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>.</p>
+  <pre contenteditable>font: italic small-caps bold condensed 1.7rem/1.6 papyrus, serif;</pre>
+	<ul>
+  <li>it must include values for <code>font-size</code>
+and <code>font-family</code> </li>
+  <li>it may optionally include values for <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-stretch</code>, and <code>line-height</code> </li>
+  <li><code>font-style</code>, <code>font-variant</code> and <code>font-weight</code> must precede <code>font-size</code></li>
+  <li><code>font-variant</code> can only be <code>normal</code> or <code>small-caps</code></li>
+  <li><code>font-stretch</code> can only be a single keyword value (no percentages).</li>
+  <li><code>line-height</code>, if included, must immediately follow <code>font-size</code> and be preceded by "/"</li>
+  <li><code>font-family</code> must be the last value specified.</li>
+</ul>
+</section>
+</div>
+
+
+
+<div class="slide" id="fontshorhand">
+<header><h1><code>font</code> shortand</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.fontshorhand {
+   _font: italic small-caps bold condensed 1.7rem/1.6 papyrus, fantasy, cursive;
+   _font: oblique -20deg 2rem/6rem papyrus;
+}</style>
+<p class="fontshorhand">Did the font features described above get applied to this paragraph? Did all of them get applied? What if we stick in an error? </p>
+<p>Note it's fairly forgiving for a shorthand.</p>
+</section>
+</div>
+
+<div class="slide">
+<header><h1>System font <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font" target="mdn">font</a></code> declaration</h1></header><section class="content">
+  <p>If declared as a single keyword, that keyword can be a system font</p>
+  <pre contenteditable>caption | icon | menu | message-box | small-caption | status-bar</pre>
+
+<dl>
+  <dt>caption</dt>
+  <dd>System font used for captioned controls (e.g., buttons, drop-downs, etc.).</dd>
+  <dt>icon</dt>
+  <dd>System font used to label icons.</dd>
+  <dt>menu</dt>
+  <dd>System font used in menus (e.g., dropdown menus and menu lists).</dd>
+  <dt>message-box</dt>
+  <dd>System font used in dialog boxes.</dd>
+  <dt>small-caption</dt>
+  <dd>System font used for labeling small controls.</dd>
+  <dt>status-bar</dt>
+  <dd>System font used in window status bars.</dd>
+</dl>
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust" target="mdn">font-size-adjust</a></code> property</h1></header>
+<section class="content">
+	<p>sets how the font size should be chosen based on height of lowercase rather than capital letters</p>
+<pre contenteditable>font-size: none | &lt;number></pre>
+	<ul>
+		<li>Useful is keeping the layout approximately as expected when first expected font is not available.</li></ul>
+
+		<pre contenteditable>font-size: 20px;  
+font-size-adjust: 0.5;</pre>
+<p>Means make the lowercase letters 10px tall</p>
+</section>
+</div>
+
+
+<div class="slide" id="fontsizeadjust">
+<header><h1><code>font-size-adjust</code> property</h1></header>
+<section class="content fontsizeadjust">
+	<style contenteditable class="editme">.fontsizeadjust p {  
+  font-family: Times, serif;
+  font-size: 40px; }
+.fontsizeadjust p:first-of-type {
+  font-size-adjust: 0.58;
+}</style>
+<p>This paragraph is adjusted</p>
+<p>This paragraph for comparison</p>
+</div>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis" target="mdn">font-synthesis</a></code> property</h1></header>
+<section class="content"><p>Controls which missing typefaces, bold or italic, may be synthesized by the browser.</p>
+  <pre>font-synthesis: none | weight | style | weight style</pre>
+<p>Gives you control: Chinese, Japanese, Korean and logographic scripts tend not to include bold or italic variants, and synthesizing them may impede the legibility</p>
+<ul>
+<li><strong>none:</strong> neither bold nor italic typeface may be synthesized.</li>
+<li><strong>weight:</strong> synthesize bold typeface</li>
+<li><strong>style:</strong> synthesize italic typeface</li>
+<li><strong>weight style:</strong> synthesize both</li>
+  </ul>
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1><code>@font-face</code></h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face" target="mdn">@font-face</a></code> at-rule</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code>font-family</code> descriptor</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code>src</code> descriptor</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code>font-style</code>, <code>font-weight</code> and <code>font-stretch</code> descriptors</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code>unicode-range</code> descriptor</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>Character ranges</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code>font-feature-settings</code> descriptor</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>font issues</h1></header>
+<section class="content">
+	Loading
+	Legal ownership
+	Performance
+	Font loading guidelines
+4.9. Font fetching requirements
+5. Font Matching Algorithm
+5.1. Case sensitivity of font family names
+5.2. Matching font styles
+5.3. Cluster matching
+5.4. Character handling issues
+5.5. Font matching changes since CSS 2.1
+5.6. Font matching examples
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-display" target="mdn">font-display</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>Font Squirrel</h1></header>
+<section class="content">
+	
+</section>
+</div>
+
+<div class="slide">
+<header><h1>Google Fonts</h1></header>
+<section class="content">
+	
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>Icon Fonts</h1></header>
+<section class="content">
+	
+</section>
+</div>
+
+<div class="slide">
+<header><h1>Material Design Icons</h1></header>
+<section class="content">
+	
+</section>
+</div>
+
+
+
+<div class="slide intro">
+<header><h1>Variable Fonts</h1></header>
+<section class="content">
+	
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings" target="mdn">font-variation-settings</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning" target="mdn">font-kerning</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternatives" target="mdn">font-variant-alternatives</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-emoji" target="mdn">font-variant-emoji</a></code> property</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide divider">
+     <header><h1>Box Model</h1></header>
+    <h1><a href="../boxmodel">Next ➹</a></h1>
+    </div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="col2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
+    <li><a href="../selectors/specificity.html">Specificity</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudo-elements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../fonts/">Fonts and Text</a></li>
+    <li><a href="../boxmodel">Box Model</a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    <li><a href="../tables">Tables</a></li>
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+  <li><a href="../houdini">Houdini</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>   <li><a href="https://drafts.csswg.org/css-fonts-4/" title="The 'CSS Fonts Module Level&nbsp;3' specification">CSS Fonts Module Level&nbsp;4</a></li>
+  <li><a href="https://drafts.csswg.org/css-fonts-3/" title="The 'CSS Fonts Module Level&nbsp;3' specification">CSS Fonts Module Level&nbsp;3</a></li>
+  
+  <li><a href="https://www.w3.org/TR/CSS2/" title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification">CSS Level&nbsp;2 (Revision&nbsp;1)</a></li>
+  <li><a href="https://www.w3.org/TR/CSS1/" title="The 'CSS Level&nbsp;1' specification">CSS Level&nbsp;1</a></li>
+      </ul>
+    </section>
+</div>
+
+<div class="slide divider">
+<header><h1><code></code></h1></header>
+<section class="content">
+</section>
+</div>
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
+<script src="../slideshow.js"></script>
+  </body>
+
+</html>

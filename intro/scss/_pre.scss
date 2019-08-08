@@ -12,6 +12,7 @@ pre, style[class="editme" i] {
   text-shadow: none;
   white-space: pre;
   border: 1px solid var(--splashcolor);
+  font-family: monospace;
 }
 .current .editme {
   display: block;

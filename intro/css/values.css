@@ -11,21 +11,6 @@
   --colorpop: #a8a807;
 }
 
-table.standard-table {
-  border: none;
-  border-spacing: 10px 10px;
-  border-collapse: separate;
-}
-table.standard-table th, table.standard-table td {
-  border: none;
-  padding: 3px;
-  vertical-align: top;
-  text-align: left;
-}
-table.standard-table thead, table.standard-table tr > :first-child {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
 pre {
   font-size: 1.2em;
 }

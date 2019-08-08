@@ -1,0 +1,33 @@
+.slide {
+  position: absolute;
+  overflow: hidden;
+  height: 100vw;
+  width: 1px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: none;
+  &.past, &.current, &.future, &.far-past, &.far-future {
+    visibility: visible;
+    padding: 10px;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    overflow: initial;
+    transform: scale(1);
+    transform-origin: center;
+  }
+  &.past {
+    transform: translatex(-100vw) scale(1);
+  }
+
+  &.current {
+    transform: translatex(0vw) scale(1);
+    transition: transform 0.1s;
+  }
+
+  &.future {
+    transform: translatex(100vw) scale(1);
+  }
+}

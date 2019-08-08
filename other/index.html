@@ -4,9 +4,21 @@
 
     <meta charset="utf-8" />
     <title>Other Features</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet'>
-   <link rel="stylesheet" href="../tables/style.css"/>
+
+   <link rel="stylesheet" href="../intro/css/main.css"/>
  <style>
+  html { 
+  --font: 'SanchezSlab Semibold', Georgia, serif;
+  --splashcolor: #cc0000;
+  --lightsplash: #ff9999;
+  --text: #333333;
+  --textsecondary: #4d4d4d;
+  --invertedtext: #ffffff;
+  --header_bg: #ffffff;
+  --light_bg: #f4f4f4;
+  --dark_bg: #666666;
+  --colorpop: #aa0000;
+}
  .cursors li {
 	width: 170px; height: 70px; line-height:70px;
 	float: left; margin: 0 15px 15px 0;
@@ -73,68 +85,11 @@ display: -moz-box;
             font-size: 15px;
 			font-family:Arial, Helvetica, sans-serif;
           }
-/* Flexible Box Model */
-#box-orient-example {
-  height: 220px;
-  display: -webkit-box; -webkit-box-orient: horizontal;
-  display: -moz-box; -moz-box-orient: horizontal;
-}
-#box-orient-example div:nth-child(1) {
-  background: white; padding: 10px; -webkit-box-flex: 1;
-  -moz-box-flex: 1; text-align: center;
-}
-#box-orient-example div:nth-child(2) {
-  background: #ddd; padding: 10px; -webkit-box-flex: 1;
-  -moz-box-flex: 1; text-align: center;
-}
-#box-orient-example div:nth-child(3) {
-  background: white; padding: 10px; -webkit-box-flex: 3;
-  -moz-box-flex: 3; text-align: center;
-}
-
- #box-orient-example-2 {
-	height: 200px;
-	display: -moz-box;
-	-moz-box-pack: center;
-	-moz-box-align: center;
-	-moz-box-orient: horizontal;
-
-	display: -webkit-box;
-	-webkit-box-pack: center;
-	-webkit-box-align: center;
-	-webkit-box-orient: horizontal;
-
-	display: -ms-box;
-	-ms-box-pack: center;
-	-ms-box-align: center;
-	-ms-box-orient: horizontal;
-}
-#box-orient-example-2 div, #box-orient-example-2 textarea {
-	background: #ddd;
-	padding: 10px;
-	width: 200px;
-	font-size: 14px;
-}
 
             .textwrap{width: 94%; height: 1.1em;
  height: 1.1em; overflow: hidden; line-height: 1.1em; margin:0.2em 0}
 
- #origin {
-    -webkit-flow-into: name_of_my_flow;
-    /* style of content */
-    font-size: 0.8rem;
-
-}
-.destination {
-    -webkit-flow-from: name_of_my_flow;
-    /* style of the boxes */
-    width: 50%;
-    border: 1px solid red;
-    box-sizing: border-box;
-    padding: 5px;
-    height: 120px;
-    float: left;
-}
+ 
 .codelike.codelike.codelike {
   font-size: 1.5rem;
 }
@@ -144,19 +99,19 @@ display: -moz-box;
   </head>
   <body>
 
-  <div id="topinfo">
-<nav>
-        <ul>
-            <li class="button cancel" id="back">Back</li>
-            <li class="button done" id="next">Next</li>
-        </ul>
+<header>
+    <nav>
+      <ul>
+        <li><button class="cancel" id="back">Back</button></li>
+        <li><button class="done" id="next">Next</button></li>
+      </ul>
     </nav>
-  </div>
+</header>
 
   <div id="info">
     <p>
     <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
-    <span class="key">2</span> for comments. <a href="http://estelle.github.com/cssmastery">estelle.github.com/cssmastery</a>
+    <span class="key">2</span> for comments. <a href="http://estelle.github.com/CSS">estelle.github.com/CSS</a>
     </p>
   </div>
 
@@ -204,12 +159,9 @@ display: -moz-box;
               document.getElementById('colwidth').textContent = columnwidth;
               document.getElementById('colcnt').textContent = count;
               var example = document.getElementById('columnsslide');
-              example.style.webkitColumnCount = count;
-              example.style.MozColumnCount = count;
-              example.style.webkitColumnGap = columngaps + "em";
-              example.style.MozColumnGap = columngaps + "em";
-              example.style.webkitColumnWidth = columnwidth + "em";
-              example.style.MozColumnWidth = columnwidth + "em";
+              example.style.columnCount = count;
+              example.style.columnGap = columngaps + "em";
+              example.style.columnWidth = columnwidth + "em";
             }
 			function roundNumber(num, dec) {
 				var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
@@ -605,26 +557,7 @@ small {
 </div>
 
 
-<div class="slide">
-  <header><h1>viewport width</h1></header>
-    <section class="content">
-<p>vw | vh | vmin | vmax</p>
-    <pre contenteditable>
-5vw = 5% of the width of the viewport
-7vh = 7% of the height of the viewport
-4vmin = 4% of the viewport height or width, whichever is smaller
-8vmax = 8% of the viewport height or width, whichever is larger</pre>
 
-<p>under consideration</p>
-<pre><code>vi</code>
-1% of containing block, in the direction of the root 
-element’s inline axis.
-
-<code>vb</code> 
-1% of the containing block, in the direction of the root 
-element’s block axis.</pre>
-    </section>
-</div>
 
 
 
@@ -690,6 +623,6 @@ element’s block axis.</pre>
 
 
   </div>
-  <script src="../animations/static/js/slides.js"></script>
+  <script src="../slideshow.js"></script>
   </body>
 </html>

@@ -224,6 +224,7 @@ pre, style[class=editme i] {
   text-shadow: none;
   white-space: pre;
   border: 1px solid var(--splashcolor);
+  font-family: monospace;
 }
 
 .current .editme {
@@ -400,7 +401,7 @@ section.content {
   background-color: var(--colorpop);
   padding: 3px 5px;
   border: 3px solid;
-  border-radius: 50%;
+  border-radius: 1em;
 }
 
 .slide.object {
@@ -491,6 +492,21 @@ dl.inline dt {
 dl dt {
   padding: 0 8px;
   border: 1px solid #ccc;
+}
+
+table.standard-table {
+  border: none;
+  border-spacing: 10px 10px;
+  border-collapse: separate;
+}
+table.standard-table th, table.standard-table td {
+  border: none;
+  padding: 3px;
+  vertical-align: top;
+  text-align: left;
+}
+table.standard-table thead, table.standard-table tr > :first-child {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .exercisecards ol {

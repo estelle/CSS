@@ -1095,6 +1095,7 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 &lt;E title="this is an empty element"/></pre>
 <p>Changed to be like <code>-moz-only-whitespace</code></p>
  <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
+ <p>Use case: empty JS content hooks, hide the bullet from empty list items, removing box-model values for margins collapsing,</p>
 </section>
 </div>
 
@@ -1121,6 +1122,9 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
      <section class="content">
         <style class="editme" contenteditable>#blank {display: flex; justify-content: space-around;}
 #blank > * {border: 3px double; padding: 5px;}
+#blank > *:-moz-only-whitespace {
+  background-color: pink;
+}
 #blank > *:empty { /* supported */
   background-color: lightgreen;
 }
