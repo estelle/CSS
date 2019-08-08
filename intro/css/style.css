@@ -240,7 +240,9 @@ pre, style[class=editme i] {
   font-family: monospace;
 }
 
-.current .editme {
+.current .editme,
+.future .editme,
+.past .editme {
   display: block;
 }
 

@@ -5,6 +5,9 @@
     <title>Fonts</title>
 <link rel="stylesheet" href="../intro/css/main.css"/> 
 <style>
+  style {
+    margin-top: 20px;
+  }
 	:root { 
 	--font: 'SanchezSlab Semibold', Georgia, serif;
 	--splashcolor: #008800;
@@ -16,6 +19,11 @@
 	--light_bg: #f4f4f4;
 	--dark_bg: #666;
 	--colorpop: #008800;
+}
+
+@font-face {
+  font-family: 'variableFont';
+  src: local("adapter pe");
 }
 </style>
 </head>
@@ -166,7 +174,7 @@ code {
 <div class="slide" id="fontweight">
 <header><h1><code>font-weight</code> property</h1></header>
 <section class="content">
-	<style contenteditable class="editme">#fontweight { _font-family: adapter pe, serif;} .fontweight {
+	<style contenteditable class="editme">#fontweight { _font-family: variablefont, serif;} .fontweight {
    _font-weight: 100;
    _font-weight: normal;
    _font-weight: bold;
@@ -362,7 +370,7 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
 <header><h1>CSS 2 <code>font-variant</code> property</h1></header>
 <section class="content">
 	<style contenteditable class="editme">#fontvariant p { 
-   _font-family: adapter pe, georgia, helvetica, papyrus, serif, sans-serif;
+   _font-family: variablefont, georgia, helvetica, papyrus, serif, sans-serif;
    text-transform: capitalize;
 } 
 .fontvariant {
@@ -378,7 +386,7 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
 <header><h1>CSS 2 & 3 <code>font-variant</code> property</h1></header>
 <section class="content">
 	<style contenteditable class="editme">#font-variant { 
-   _font-family: adapter pe, papyrus, serif;
+   _font-family: variablefont, papyrus, serif;
 } 
 .font-variant {
    _font-variant: normal /* small-caps /* all-small-caps /* petite-caps /* all-petite-caps */ ;
@@ -581,29 +589,98 @@ font-size-adjust: 0.5;</pre>
 </div>
 
 <div class="slide">
+<header><h1><code>@font-face</code></h1></header>
+<section class="content">
+  <p>Enables using custom fonts on the web.</p>
+  <p>The feature that enables us to not be reliant only on "web-safe" fonts</p>
+  <h2>Caveats</h2>
+  <ul>
+    <li>CORS: font files must be on the same domain as the page using them</li>
+    <li>Lots of fonts can lead to slow load (limit # of fonts)</li>
+    <li>Lots of characters can lead to large font files (limit character set)</li>
+    <li>Slow load can lead to FOUT (swap)</li>
+    <li>Don't use if you don't need to! (use system fonts)</li>
+  </ul>
+</section>
+</div>
+
+<div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face" target="mdn">@font-face</a></code> at-rule</h1></header>
 <section class="content">
+  <p>Specifies a font which can then be used as a <code>font-family</code> value</p>
+  <pre>@font-face {
+   font-family: &lt;family-name>; 
+   src: &lt;src>; 
+   unicode-range: &lt;unicode-range>; 
+   font-variant: &lt;font-variant>; 
+   font-feature-settings: &lt;font-feature-settings>; 
+   font-variation-settings: &lt;font-variation-settings>;
+   font-stretch: &lt;font-stretch>; 
+   font-weight: &lt;font-weight>; 
+   font-style: &lt;font-style>; 
+}</pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code>@font-face</code></h1></header>
+<section class="content"><p>Start with:</p>
+  <pre contenteditable>@font-face {
+   font-family: 'Name of your font'; 
+   src: ;
+}</pre>
 </section>
 </div>
 
 <div class="slide">
 <header><h1><code>font-family</code> descriptor</h1></header>
-<section class="content">
+<section class="content"><p>Required value. Specifies the name you will be referencing when you include the font in a font list.</p>
+  <pre contenteditable>@font-face {
+  font-family: My Font Name;
+  src: local('font name on my system') url('path/fontFileName.ttf');
+}</pre>
+<p>Doesn't need to be quoted unless there's punctuation or a word starts with a number. Though, quoting makes it easier to read.</p>
+  <pre contenteditable>@font-face {
+  font-family: "Cool Font";
+  src: local('Times New Roman') url('path/unrelatedName.ttf');
+}</pre>
+<p>The name you give isn't restricted by other values.</p>
 </section>
 </div>
 
 <div class="slide">
 <header><h1><code>src</code> descriptor</h1></header>
-<section class="content">
+<section class="content"><p>Specifies the resource containing font data</p>
+<pre contenteditable>
+src: local(Acme Font),
+     url(path/to/acme.woff) format("woff"),
+     url(path/to/acme.otf) format("opentype"), 
+     url(path/to/acme.svg) format("svg");</pre>
+  <p>Use both <code>local()</code> and <code>url()</code></p> <p>If the user has the font installed, use that and save time/bytes.  If not, download the font file.</p>
 </section>
 </div>
 
-<div class="slide">
+<div class="slide divider">
 <header><h1><code>font-style</code>, <code>font-weight</code> and <code>font-stretch</code> descriptors</h1></header>
 <section class="content">
 </section>
 </div>
 
+
+
+<div class="slide">
+<header><h1><code>font-style</code>, <code>font-weight</code> and <code>font-stretch</code> descriptors</h1></header>
+<section class="content">
+  <p>Allows authors to specify the font styles, weights, and stretch for the font specified in the @font-face rule.</p>
+  <pre contenteditable>@font-face {
+  font-family: groovyFont;
+  src: url('groovy-italic.ttf');
+  font-style: italic;
+  font-weight: 300 500;
+  font-stretch: 75% 150%;
+}
+</section>
+</div>
 
 
 <div class="slide">

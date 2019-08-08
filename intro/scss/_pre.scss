@@ -14,7 +14,9 @@ pre, style[class="editme" i] {
   border: 1px solid var(--splashcolor);
   font-family: monospace;
 }
-.current .editme {
+.current .editme,
+.future .editme,
+.past .editme {
   display: block;
 }
 pre {
