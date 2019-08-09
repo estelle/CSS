@@ -215,7 +215,7 @@ style[class=editme i] {
   margin-bottom: 1em;
 }
 
-pre, style[class=editme i] {
+pre, style[class=editme i], code.pre {
   text-align: left;
   font-size: 1.2em;
   padding: 10px 20px;
@@ -225,6 +225,12 @@ pre, style[class=editme i] {
   white-space: pre;
   border: 1px solid var(--splashcolor);
   font-family: monospace;
+}
+
+code.pre {
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 1em;
 }
 
 .current .editme,

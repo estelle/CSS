@@ -14,6 +14,16 @@ pre, style[class="editme" i] {
   border: 1px solid var(--splashcolor);
   font-family: monospace;
 }
+code {
+  background: rgba(255, 255, 255, 0.3);
+  text-shadow: none;
+ &.pre { 
+  padding: 2px 4px; 
+  border-radius: 4px; 
+  font-size: 1em; 
+  text-shadow: none;
+ }
+}
 .current .editme,
 .future .editme,
 .past .editme {
