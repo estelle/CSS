@@ -21,11 +21,7 @@
 	--colorpop: #008800;
 }
 
-@font-face {
-  font-family: 'variableFont';
-  src: local("adapter pe");
-  font-feature-settings: "ss07" on;
-}
+
 </style>
 </head>
 
@@ -42,11 +38,44 @@
    <div id="slides">
 
 <div class="slide intro">
+<header><h1>Fonts</h1></header>
+<section class="content">
+
+   <p><a href="https://estelle.github.io/CSS/fonts/">estelle.github.io/CSS/fonts/</a></p>
+</section>
+</div>
+
+
+<div class="slide intro">
 <header><h1>Font Properties</h1></header>
 <section class="content">
 </section>
 </div>
 
+<div class="slide">
+<header><h1>Some styles</h1></header>
+<section class="content"><style contenteditable class="editme">@font-face {
+  font-family: 'variableFont';
+  src: local("adapter pe");
+}
+@font-face {
+  font-family: 'variableFont2';
+  src: local('League Mono Variable');
+}
+@font-face {
+  font-family: 'adapter';
+  src: local("adapter pe");
+}
+@font-face {
+  font-family: 'acme';
+  src: local('acme');
+}
+@font-face {
+  font-family: 'soulcraft';
+  src: url('fonts/Soulcraft.ttf') ;
+}</style>
+</section>
+</div>
 
 <div class="slide divider">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="mdn">font-family</a></code> property</h1></header>
@@ -111,7 +140,7 @@ code {
 }</style>
 </section>
 <p class="fontfamily">This typeface is the font listed above</p>
-<p>This is a paragraph of defaul text for comparison</p>
+<p>Comparison text: note if declaration fails, it goes to initial not inherited.</p>
 </div>
 
 
@@ -123,6 +152,7 @@ code {
 	<li>Quotes around family names are optional, but puncuation characters and words that start with a number must be escaped or quoted.</li>
 	<li>Browser displays the first font that is installed or will be downloaded (see @font-face in a bit)</li>
 	<li>Include a generic family name as a fallback in a font-family list in case the specified fonts aren't available</li>
+  <li>If declaration is invalide, it goes to <code>initial</code>, it's not inherited <code>inherit</code>).</li>
 <li>If the main rendered font is missing characters, chars will be pulled from the next font-family in the list that has that character.</li>
 <li>When a font is available but not in the style or variant declared, next font may be used</li>
 </ul>
@@ -175,7 +205,7 @@ code {
 <div class="slide" id="fontweight">
 <header><h1><code>font-weight</code> property</h1></header>
 <section class="content">
-	<style contenteditable class="editme">#fontweight { _font-family: variablefont, serif;} .fontweight {
+	<style contenteditable class="editme">#fontweight { font-family: variablefont, serif;} .fontweight {
    _font-weight: 100;
    _font-weight: normal;
    _font-weight: bold;
@@ -184,7 +214,7 @@ code {
    _font-weight: 900;
 }</style>
 <p class="fontweight">This typeface is not necessarily the weight 'as described'.</p>
-<p>Comparison paragraph of text</p>
+<p>Comparison. Demonstrate variable versus regular fonts.</p>
 </section>
 </div>
 
@@ -193,7 +223,7 @@ code {
 
 
 <div class="slide object">
-<header><h1><code>font-weight</code> property</h1></header>
+<header><h1>Variable v. distinct font weights</h1></header>
 <object data="https://v-fonts.com/" ><section class="content">Site does not permit cross-origin framing</section>
 </object>
 <a class="objectlink" href="https://v-fonts.com/" target="play">v-fonts.com</a>
@@ -212,11 +242,12 @@ code {
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" target="mdn">font-stretch</a></code> property</h1></header>
 <section class="content">
 	<p>selects a normal, condensed, or expanded face from a font.</p>
-	<pre contenteditable>font-stretch:  &lt;percentage> (50% - 200%) |  ultra-condensed (50%) | 
-  extra-condensed (62.5%) | condensed (75%) | 
-  semi-condensed (88.5%)  | <b>normal</b> (100%)   | 
-  semi-expanded (112.5%)  | expanded (125%) | 
-  extra-expanded (150%)   | ultra-expanded (200%)</pre>
+	<pre contenteditable>font-stretch:
+  &lt;percentage> (50% - 200%) |  <b>normal</b> (100%)
+  ultra-condensed (50%)     |  semi-expanded (112.5%)
+  extra-condensed (62.5%)   |  expanded (125%)
+  condensed (75%)           |  extra-expanded (150%)
+  semi-condensed (88.5%)    |  ultra-expanded (200%)</pre>
 	<p>Most fonts have one or two values, but this comes into play with variable fonts </p>
 </section>
 </div>
@@ -225,7 +256,7 @@ code {
 <header><h1><code>font-stretch</code> property</h1></header>
 <section class="content">
 	<style contenteditable class="editme">#fontstretch { _font-family: League Mono Variable, Helvetica Neue, serif;} .fontstretch {
-   _font-stretch: 50%; 
+   _font-stretch: 50%; _font-stretch: 55%;
    _font-stretch: ultra-condensed;
    _font-stretch: condensed;
    _font-stretch: normal;
@@ -260,8 +291,8 @@ code {
 	<li>Font matching selects a font closest to the requested angle.</li>
 	<li>If no italic or oblique font, regular face may be used and sloped</li>
 	<li>use <code>font-synthesis</code> to control sloping behavior</li>
-	 <li>For variable <code>.ttf</code> &amp; <code>.otf</code>, use <code>slnt</code> for oblique and <code>ital=1</code> for italic as <code>font-variation-settings</code>.</li>
-	 <li>Note: OpenType <code>slnt</code> axis is defined with a positive angle meaning a counter-colockwise slant, the opposite direction to CSS.</li></ul>
+	 <li>For variable <code>.ttf</code> &amp; <code>.otf</code>, use <code>"slnt"</code> for oblique and <code>"ital" 1</code> for italic as <code>font-variation-settings</code>.</li>
+	 <li>Note: OpenType <code>"slnt"</code> axis is defined with a positive angle meaning a counter-colockwise slant, the opposite direction to CSS.</li></ul>
 
  
 </section>
@@ -310,7 +341,7 @@ larger | smaller | &lt;length> | &lt;percentage></pre>
 <header><h1><code>font-size</code> property</h1></header>
 <section class="content">
 	<style contenteditable class="editme">#fontsize { _font-family: League Mono Variable, Helvetica Neue, serif;} 
-.fontsize * {
+.fontsize * { line-height: 0.75;
    _font-size: 2rem;
    _font-size: 2em;
    _font-size: 200%;
@@ -318,6 +349,7 @@ larger | smaller | &lt;length> | &lt;percentage></pre>
 }</style>
 <div class="fontsize">
 <div>Every <span>word's <i>is <a href="">nested</a></i></span></div>
+<br/>
 <div>Comparison paragraph of text with no nesting</div>
 </div>
 </section>
@@ -377,6 +409,250 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
 
 
 
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</h1></header>
+<section class="content">
+  <p>Controls the use of alternate glyphs for capital letters.</p>
+  <pre contenteditable style="text-align: center;">normal | small-caps  all-small-caps | petite-caps |
+   all-petite-caps | unicase | titling-caps</pre>
+  <dl>
+  <dt>normal</dt>
+  <dd>Deactivates of the use of alternate glyphs.</dd>
+  <dt>small-caps</dt>
+  <dd>Enables display of small capitals (OpenType feature: <strong>smcp</strong>). Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters.</dd>
+  <dt>all-small-caps</dt>
+  <dd>Enables display of small capitals for both upper and lowercase letters (OpenType features: <strong>c2sc, smcp</strong>).</dd>
+  <dt>petite-caps</dt>
+  <dd>Enables display of petite capitals (OpenType feature: <strong>pcap</strong>).</dd>
+  <dt>all-petite-caps</dt>
+  <dd>Enables display of petite capitals for both upper and lowercase letters (OpenType features: <strong>c2pc, pcap</strong>).</dd>
+  <dt>unicase</dt>
+  <dd>Enables display of mixture of small capitals for uppercase letters with normal lowercase letters (OpenType feature: <strong>unic</strong>).</dd>
+  <dt>titling-caps</dt>
+  <dd>Enables display of titling capitals (OpenType feature: <strong>titl</strong>).  Uppercase letter glyphs are often designed for use with lowercase  letters. When used in all uppercase titling sequences they can appear  too strong. Titling capitals are designed specifically for this  situation.</dd>
+</dl>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property</h1></header>
+<section class="content">
+  <p>Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.</p>
+  <pre contenteditable>normal | ordinal | slashed-zero | lining-nums | proportional-nums | 
+oldstyle-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre><dl>
+  <dt>normal</dt>
+  <dd>This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+  <dt>ordinal</dt>
+  <dd>This keyword forces the use of special glyphs for the ordinal markers, like 1st, 2nd, 3rd, 4th in English or a 1a in Italian. OpenType:s <strong>ordn</strong>.</dd>
+  <dt>slashed-zero</dt>
+  <dd>This keyword forces the use of a 0 with a slash; this is useful  when a clear distinction between O and 0 is needed. It corresponds to  the OpenType values <strong>zero</strong>.</dd>
+  <dt>&lt;numeric-figure-values&gt;</dt>
+  <dd>These values control the figures used for numbers. Two values are possible:
+    <ul>
+      <li><code class="pre">lining-nums</code> activating the set of figures where numbers are all lying on the baseline. OpenType:s <strong>lnum</strong>.</li>
+      <li><code class="pre">oldstyle-nums</code> activating the set of figures where some numbers, like 3, 4, 7, 9 have descenders. OpenType:s <strong>onum</strong>.</li>
+    </ul>
+  </dd>
+  <dt>&lt;numeric-spacing-values&gt;</dt>
+  <dd>These values controls the sizing of figures used for numbers. Two values are possible:
+    <ul>
+      <li><code class="pre">proportional-nums</code> activating the set of figures where numbers are not all of the same size. OpenType:s <strong>pnum</strong>.</li>
+      <li><code class="pre">tabular-nums</code> activating the set of figures where  numbers are all of the same size, allowing them to be easily aligned  like in tables. OpenType:s <strong>tnum</strong>.</li>
+    </ul>
+  </dd>
+  <dt>&lt;numeric-fraction-values&gt;</dt>
+  <dd>These values controls the glyphs used to display fractions. Two values are possible:
+    <ul>
+      <li><code class="pre">diagonal-fractions</code> activating the set of figures  where the numerator and denominator are made smaller and separated by a  slash. OpenType:s <strong>frac</strong>.</li>
+      <li><code class="pre">stacked-fractions</code> activating the set of figures where  the numerator and denominator are made smaller, stacked and separated  by a horizontal line. OpenType:s <strong>afrc</strong>.</li>
+    </ul>
+  </dd>
+</dl>
+</section>
+</div>
+
+
+
+<div class="slide ffs4">
+<header><h1><code>font-variant-numeric</code></h1></header>
+<section class="content">
+
+<style contenteditable class="editme">@font-face {
+  font-family: 'variableFont4';
+  src: local("adapter pe");
+}
+.ffs4 p {
+  font-family: variableFont4, League Mono Variable, serif; 
+  font-variant: slashed-zero  tabular-nums; /* oldstyle-nums; */
+}</style>
+<p contenteditable>The 700 club is xenophobic!</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property</h1></header>
+<section class="content"><p>Controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text</p>
+
+  <pre contenteditable>normal | none | (no-)contextual | (no-)common-ligatures | 
+ (no-)discretionary-ligatures | (no-)historical-ligatures;</pre>
+ <dl><dt>normal</dt>
+  <dd>This keyword leads to the activation of the usual ligatures and  contextual forms needed for correct rendering. The ligatures and forms  activated depend on the font, language and kind of script. This is the  default value.</dd>
+  <dt>none</dt>
+  <dd>This keyword specifies that all ligatures and contextual forms are disabled, even common ones.</dd>
+  <dt>&lt;common-lig-values&gt;</dt>
+  <dd>These values control the most common ligatures, like for <code>fi, ffi, th</code> or similar. They correspond to the OpenType values <code>"liga"</code> and <code>"clig"</code>. Two values are possible:
+    <ul>
+      <li><code><b>common-ligatures</b></code> Default. Activates common ligatures.</li>
+      <li><code>no-common-ligatures</code> deactivates common ligatures.</li>
+    </ul>
+  </dd>
+  <dt>&lt;discretionary-lig-values&gt;</dt>
+  <dd>These values control specific ligatures, specific to the font and  defined by the type designer. They correspond to the OpenType values <code>"dlig"</code>. Two values are possible:
+    <ul>
+      <li><code>discretionary-ligatures</code> activates these ligatures.</li>
+      <li><code><b>no-discretionary-ligatures</b></code> Default. Deactivates the ligatures. </li>
+    </ul>
+  </dd>
+  <dt>&lt;historical-lig-values&gt;</dt>
+  <dd>These values control the ligatures used historically, in old books,  like the German <code>tz</code> digraph being displayed <code>ß</code>. They correspond to the  OpenType values <code>"hlig"</code>. Two values are possible:
+    <ul>
+      <li><code>historical-ligatures</code> Activates these ligatures.</li>
+      <li><code><b>no-historical-ligatures</b></code> Default. Deactivates the ligatures.</li>
+    </ul>
+  </dd>
+  <dt>&lt;contextual-alt-values&gt;</dt>
+  <dd>These values control whether letters adapt to their context—that  is, whether they adapt to the surrounding letters. These values  correspond to the OpenType values <code>"calt"</code>. Two values are possible:
+    <ul>
+      <li><code><b>contextual</b></code> Default. Specifies that the contextual alternates are to be used.</li>
+      <li><code>no-contextual</code> prevents their use.</li>
+    </ul>
+  </dd>
+</dl>
+<p>The bolds are the default.
+</section>
+</div>
+
+
+
+<div class="slide ffs5">
+<header><h1><code>font-variant-ligatures</code></h1></header>
+<section class="content">
+
+<style contenteditable class="editme">
+.ffs5 p {
+  font-size: 3rem;
+  font-family: serif; 
+  font-variant: common-ligatures;
+}</style>
+<p contenteditable>Is this difficult to understand?</p>
+</section>
+</div>
+
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian" target="mdn">font-variant-east-asian</a></code> property</h1></header>
+<section class="content">
+
+  <pre contenteditable>font-variant-east-asian: ruby full-width jis83;</pre>
+  <p>Controls the use of alternate glyphs for East Asian scripts, like Japanese and Chinese</p>
+  <pre contenteditable style="text-align: center">normal | jis78 | jis83 | jis90 | jis04 | simplified 
+traditional | full-width | proportional-width | ruby</pre>
+  <dl>
+  <dt>normal</dt>
+  <dd>This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+  <dt>ruby</dt>
+  <dd>This keyword forces the use of special glyphs for ruby characters.  As these are usually smaller, font creators often designs specific  forms, usually slightly bolder to improve the contrast. This keyword  corresponds to the OpenType values ruby.</dd>
+  <dt>&lt;east-asian-variant-values&gt;</dt>
+  <dd>These values specify a set of logographic glyph variants which should be used for display. Possible values are:
+    <table>
+      <tbody>
+        <tr>
+          <th>Keyword</th>
+          <th>Standard defining the glyphs</th>
+          <th>OpenType equivalent</th>
+        </tr>
+        <tr>
+          <td>jis78</td>
+          <td>JIS X 0208:1978</td>
+          <td>jp78</td>
+        </tr>
+        <tr>
+          <td>jis83</td>
+          <td>JIS X 0208:1983</td>
+          <td>jp83</td>
+        </tr>
+        <tr>
+          <td>jis90</td>
+          <td>JIS X 0208:1990</td>
+          <td>jp90</td>
+        </tr>
+        <tr>
+          <td>jis04</td>
+          <td>JIS X 0213:2004</td>
+          <td>jp04</td>
+        </tr>
+        <tr>
+          <td>simplified</td>
+          <td>None, use the simplified Chinese glyphs</td>
+          <td>smpl</td>
+        </tr>
+        <tr>
+          <td>traditional</td>
+          <td>None, use the traditional Chinese glyphs</td>
+          <td>trad</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+  <dt>&lt;east-asian-width-values&gt;</dt>
+  <dd>These values control the sizing of figures used for East Asian characters. Two values are possible:
+    <ul>
+      <li>proportional-width activating the set of East Asian characters which vary in width. OpenType:s pwid.</li>
+      <li>full-width activating the set of East Asian  characters which are all of the same, roughly square, width metric. It  corresponds to the OpenType values fwid.</li>
+    </ul>
+  </dd>
+</dl>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates" target="mdn">font-variant-alternates</a></code> property</h1></header>
+<section class="content">
+  <p>Controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in <code>@font-feature-values</code>.
+
+  <pre contenteditable style="text-align: center">normal | stylistic() | historical-forms | styleset() 
+character-variant() | swash() | ornaments() | annotation()</pre>
+<dl>
+<dt>normal</dt>
+    <dd>This keyword deactivates alternate glyphs.</dd>
+<dt>historical-forms</dt>
+    <dd>This keyword enables historical forms — glyphs that were common in the past but not today. OpenType: <code>"hist"</code>.</dd>
+<dt>stylistic()</dt>
+    <dd>This function enables stylistic alternates for individual characters. The parameter is a font-specific name mapped to a number. OpenType: <code>"salt"</code>.</dd>
+<dt>styleset()</dt>
+    <dd>This function enables stylistic alternatives for sets of characters. The parameter is a font-specific name mapped to a number. OpenType: <code>"ssXY"</code>, like <code>"ss02"</code>.</dd>
+<dt>character-variant()</dt>
+    <dd>This function enables specific stylistic alternatives for characters. It is similar to styleset(), but doesn't create coherent glyphs for a set of characters; individual characters will have independent and not necessarily coherent styles. The parameter is a font-specific name mapped to a number. OpenType: <code>"cvXY"</code>, like <code>"cv02"</code>.</dd>
+<dt>swash()</dt>
+    <dd>This function enables swash glyphs. The parameter is a font-specific name mapped to a number. OpenType: <code>"swsh"</code> and <code>"cswh"</code>, like <code>swsh 2</code> and <code>cswh 2</code>.</dd>
+<dt>ornaments()</dt>
+    <dd>This function enables ornaments, like fleurons and other dingbat glyphs. The parameter is a font-specific name mapped to a number. OpenType: <code>"ornm"</code>, like <code>ornm 2</code>.</dd>
+<dt>annotation()</dt>
+    <dd>This function enables annotations, like circled digits or inverted characters. The parameter is a font-specific name mapped to a number. OpenType: <code>"nalt"</code>, like <code>nalt 2</code>.</dd>
+
+
+
+</section>
+</div>
+
+
 <div class="slide" id="fontvariant">
 <header><h1>CSS 2 <code>font-variant</code> property</h1></header>
 <section class="content">
@@ -400,7 +676,7 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
    _font-family: variablefont, papyrus, serif;
 } 
 .font-variant {
-   _font-variant: normal /* small-caps /* all-small-caps /* petite-caps /* all-petite-caps */ ;
+   font-variant: normal /* small-caps /* all-small-caps /* petite-caps /* all-petite-caps */ ;
    _font-variant: super /*  sub /* unicase /* titling-caps /* none */ ;
 }</style>
 <p class="font-variant">This paragraph will change based on the font-variant value.</p>
@@ -515,8 +791,8 @@ and <code>font-family</code> </li>
    _font: italic small-caps bold condensed 1.7rem/1.6 papyrus, fantasy, cursive;
    _font: oblique -20deg 2rem/6rem papyrus;
 }</style>
-<p class="fontshorhand">Did the font features described above get applied to this paragraph? Did all of them get applied? What if we stick in an error? </p>
-<p>Note it's fairly forgiving for a shorthand.</p>
+<p class="fontshorhand">Did the font features described above get applied to this paragraph? Did all of them get applied? What if we stick in an error? not capital.</p>
+<p>How forgiving is the shorthand? </p>
 </section>
 </div>
 
@@ -756,11 +1032,14 @@ src: local(Acme Font),
 
 
 
+
+
+
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style" target="mdn">font-style</a></code> descriptor</h1></header>
 <section class="content">
 <pre>auto | normal | italic | oblique [ &lt;angle> | &lt;angle> &ltangle> ] ?</pre>
-<p style="max-width: 25em; float: right; clear:right">Use <code>slnt</code> variation for oblique OR <code>ital=1</code> for italic. Not both.</p>
+<p style="max-width: 25em; float: right; clear:right">Use <code>"slnt"</code> variation for oblique OR <code>ital=1</code> for italic. Not both.</p>
   <dl>
   <dt>normal</dt>
   <dd>Used for normal version of the font-family. <code class="pre">font-style: normal;</code></dd>
@@ -781,7 +1060,7 @@ src: local(Acme Font),
 <div class="slide ">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight" target="mdn">font-weight</a></code> descriptor</h1></header>
 <section class="content"><pre contenteditable style="float: right;">auto |normal | bold | &lt;number>{1,2}</pre>
-  <p style="width: 25em; float: right; clear:right"> There are generally limited weights available for a font family. When specified weight doesn't exist, a nearby weight is used. <br/><br/>Fonts lacking bold are often synthesized by browser. To prevent this, use <code>font-synthesis</code> property.<br/><br/>Use <code>wght</code> variation for font-weights</p> 
+  <p style="width: 25em; float: right; clear:right"> There are generally limited weights available for a font family. When specified weight doesn't exist, a nearby weight is used. <br/><br/>Fonts lacking bold are often synthesized by browser. To prevent this, use <code>font-synthesis</code> property.<br/><br/>Use <code>"wght"</code> variation for font-weights</p> 
   <table class="standard-table">
   <thead><tr><th>Value</th><th>Mapping</th></tr></thead>
 <tbody>  <tr><th>1 </th><td> lowest valid value</td></tr>
@@ -801,11 +1080,50 @@ src: local(Acme Font),
 </div>
 
 
+
+<div class="slide">
+<header><h1>Some styles</h1></header>
+<section class="content"><style contenteditable class="editme" style="height: 60vh; overflow: scroll;">@font-face {
+  font-family: 'boldish';
+  src: local("adapter pe");
+  font-weight: 0 100;
+}
+@font-face {
+  font-family: 'boldish';
+  src: local('League Mono Variable');
+  font-weight: 100 250
+}
+@font-face {
+  font-family: 'boldish';
+  src: local("adapter pe");
+  font-weight: 250 450;
+}
+@font-face {
+  font-family: 'boldish';
+  src: local('acme');
+  font-weight: 450 675;
+}
+@font-face {
+  font-family: 'boldish';
+  src: url('fonts/Soulcraft.ttf') ;
+  font-weight: 675 1000;
+}
+p.fwd { font-size: 2.5rem;
+  font-family: boldish;
+  font-weight: 50;
+}
+</style>
+<p class="fwd">Class is fwd</p>
+</section>
+</div>
+
+
+
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch" target="mdn">font-stretch</a></code> descriptor</h1></header>
 <section class="content">
 
-  <p style="width: 25em; float: right; clear:right"> For variable fonts, the <code>wdth</code> variation is used to implement varying widths.</p> 
+  <p style="width: 25em; float: right; clear:right"> For variable fonts, the <code>"wdth"</code> variation is used to implement varying widths.</p> 
   <table  class="standard-table">
   <thead>
     <tr>
@@ -993,7 +1311,7 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
     </tr>
   </tbody>
 </table>
-  <p>Use the font-variant shorthand property or an associated longhand property such as <code>font-variant-ligatures, font-variant-caps, font-variant-east-asian, font-variant-alternates, font-variant-numeric</code> or <code>font-variant-position.</code></p>
+  <p>Use the <code>font-variant</code> shorthand property or an associated longhand property such as <code>font-variant-ligatures, font-variant-caps, font-variant-east-asian, font-variant-alternates, font-variant-numeric</code> or <code>font-variant-position.</code></p>
   <ul>
     <li>Must be 4 characters.</li>
     <li>&lt;string>, not an &lt;ident></li>
@@ -1008,12 +1326,12 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 <section class="content">
 
 <style contenteditable class="editme">@font-face {
-  font-family: 'variableFont';
+  font-family: 'variableFont3';
   src: local("adapter pe");
   font-feature-settings: "tnum" on, "zero" on;
 }
 .ffs p {
-  font-family: variableFont, serif; 
+  font-family: variableFont3, serif; 
 }</style>
 <p contenteditable>Lashana Lynch as 007 will be fantastic!.</p>
 </section>
@@ -1034,9 +1352,34 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
     <li>Flash of Invisible Text: Hides the text until custom font loaded</li>
   </ul>
   </li>
+  <li>Don't forget <code>font-synthesis: none;</code></li>
 </ol>
 </section>
 </div>
+
+
+
+
+<div class="slide ffs2">
+<header><h1><code>font-feature-settings</code></h1></header>
+<section class="content">
+
+<style contenteditable class="editme">@font-face {
+  font-family: 'variableFont';
+  src: local("adapter pe");
+  font-feature-settings: "tnum" on, "zero" on;
+}
+.ffs2 p {
+  font-family: variableFont, serif; 
+  font-weight: bold;
+  _font-synthesis: none;
+}</style>
+<p contenteditable>Lashana Lynch as 007 will be fantastic!.</p>
+</section>
+</div>
+
+
+
 
 
 <div class="slide">
@@ -1107,6 +1450,7 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 <header><h1>Icon Fonts</h1></header>
 <section class="content">
   <h1 style="font-size: 12vw; text-align: center">Use SVG</h1>
+  <p style="text-align: center">with CurrentColor</p>
 </section>
 </div>
 
@@ -2148,57 +2492,84 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
     </tr>
   </tbody>
 </table>
-
 </section>
 </div>
 
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning" target="mdn">font-kerning</a></code> property</h1></header>
-<section class="content">
-</section>
-</div>
+
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings" target="mdn">font-variation-settings</a></code> property</h1></header>
 <section class="content">
+<style contenteditable class="editme">@font-face {
+  font-family: 'Handjet';
+  src: local('Handjet'), url('fonts/Handjet-VF.ttf');
+  font-weight: 1 1000;
+}p.vf1 { font-size: 3em;
+  font-family: Handjet, variableFont, serif; 
+  font-variation-settings: 'wght' 20;
+}</style>
+<p class="vf1">Font weight is set with font-variation-settings value.</p>
+<p>Comparison paragraph of text</p>
 </section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings" target="mdn">font-variation-settings</a></code> property</h1></header>
+<section class="content">
+<style contenteditable class="editme">@font-face {
+  font-family: 'OtherVF';
+  src: url(fonts/SourceSansVariable-Italic.ttf);
+  font-weight: 1 1000;
+}p.vf2 { font-size: 3em;
+  font-family: OtherVF, variableFont, serif; 
+  font-variation-settings: 'wght' 200;
+}</style>
+<p class="vf2">This paragraph will change based on the font-variant value.</p>
+<p>Comparison paragraph of text</p>
+</section>
+</div>
+
+
+<div class="slide object">
+  <header>
+    <h1>Font Style Matcher</h1>
+  </header>
+  <object data="https://meowni.ca/font-style-matcher/"></object>
+  <a href="https://meowni.ca/font-style-matcher/" class="objectlink" target="resource">meowni.ca</a>
 </div>
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</h1></header>
+<header><h1>More....</h1></header>
 <section class="content">
+  <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning" target="mdn">font-kerning</a></code> property</p>
+  <pre contenteditable>font-kerning: auto | normal | none;</pre>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property
+</p>
+  <pre contenteditable>normal | none | (no-)contextual | (no-)common-ligatures | 
+ (no-)discretionary-ligatures | (no-)historical-ligatures;</pre>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</p>
+<pre contenteditable>normal | small-caps | all-small-caps | petite-caps |
+all-petite-caps | unicase | titling-caps</pre>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property: either <code>normal</code> or one or more of the other space-separated values</p>
+<pre contenteditable>normal | ordinal | slashed-zero | lining-nums | oldstyle-nums | proportional-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternatives" target="mdn">font-variant-alternatives</a></code> property</p>
+<p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-emoji" target="mdn">font-variant-emoji</a></code> property</p>
 </section>
 </div>
 
 
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property</h1></header>
-<section class="content">
-</section>
-</div>
 
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternatives" target="mdn">font-variant-alternatives</a></code> property</h1></header>
-<section class="content">
-</section>
-</div>
-
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-emoji" target="mdn">font-variant-emoji</a></code> property</h1></header>
-<section class="content">
-</section>
-</div>
 
 
 
 <!--NEXT-->
 <div class="slide divider">
-     <header><h1>Box Model</h1></header>
-    <h1><a href="../boxmodel">Next ➹</a></h1>
+     <header><h1>Text</h1></header>
+    <h1><a href="../text">Next ➹</a></h1>
     </div>
 
 <div class="slide dots">
@@ -2213,7 +2584,8 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
     <li><a href="../media">Media Queries</a></li>
     <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
-    <li><a href="../fonts/">Fonts and Text</a></li>
+    <li><a href="../fonts/">Fonts</a></li>
+    <li><a href="../text/">Text</a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>

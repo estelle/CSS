@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Text</title>
+<link rel="stylesheet" href="../intro/css/main.css"/> 
+<style>
+  style {
+    margin-top: 20px;
+  }
+	:root { 
+	--font: 'SanchezSlab Semibold', Georgia, serif;
+	--splashcolor: #000088;
+	--lightsplash: #3333cc;
+	--text: #333333;
+	--textsecondary: #4d4d4d;
+	--invertedtext: #ffffff;
+	--header_bg: #ffffff;
+	--light_bg: #f4f4f4;
+	--dark_bg: #666;
+	--colorpop: #000088;
+}
+
+@font-face {
+  font-family: 'variableFont';
+  src: local("adapter pe");
+  font-feature-settings: "ss07" on;
+}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+<div class="slide intro">
+<header><h1>CSS Text</h1></header>
+<section class="content">
+
+   <p><a href="https://estelle.github.io/CSS/fonts/">estelle.github.io/CSS/text/</a></p>
+</section>
+</div>
+
+
+<div class="slide intro">
+<header><h1>Text Properties</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the horizontal alignment of a block element or table-cell box. This means it works like vertical-align but in the horizontal direction</p>
+  <pre contenteditable>start | end | left | right | center | justify | match-parent | justify-all</pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify" target="mdn">text-justify</a></code> property</h1></header>
+<section class="content">
+  <p>Sets what type of justification should be applied to text when text-align: justify; is set </p>   
+  <pre contenteditable>auto | none | inter-word | inter-character</pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-all" target="mdn">text-align-all</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>start | end | left | right | center | justify | match-parent</pre>
+</section>
+</div>
+
+  
+
+ 
+
+
+  
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-last" target="mdn">text-align-last</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how the last line of a block or a line, right before a forced line break, is aligned.</p>
+  <pre contenteditable>auto | start | end | left | right | center | justify | match-parent </pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent" target="mdn">text-indent</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the length of empty space (indentation) that is put before lines of text.</p>
+  <pre contenteditable>[ &lt;length-percentage> ] && hanging? && each-line?  </pre>
+</section>
+</div>
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size" target="mdn">tab-size</a></code> property</h1></header>
+<section class="content">
+  <p>Customize the width of a tab (U+0009) character.</p>
+  <pre contenteditable>&lt;number> | &lt;length></pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="mdn">overflow-wrap</a></code> property</h1></header>
+<section class="content">
+  <p>applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
+  <pre contenteditable>normal | break-word | anywhere </pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-break" target="mdn">line-break</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.</p>
+  <pre contenteditable>auto | loose | normal | strict | anywhere</pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing" target="mdn">letter-spacing</a></code> property</h1></header>
+<section class="content">
+  <p>sets the spacing behavior between text characters.</p>
+  <pre contenteditable>normal | &lt;length> </pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens" target="mdn">hyphens</a></code> property</h1></header>
+<section class="content">
+  <p>Specifies how words should be hyphenated when text wraps across multiple lines. </p>
+  <pre contenteditable>none | manual | auto</pre>
+  <p>You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.</p>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation" target="mdn">hanging-punctuation</a></code> property</h1></header>
+<section class="content">
+  <p>specifies whether a punctuation mark should hang at the start or end of a line of text. </p>
+  <pre contenteditable>none | [ first || [ force-end | allow-end ] || last ] </pre>
+  <p>Hanging punctuation may be placed outside the line box.</p>
+</section>
+</div>
+
+ 
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space" target="mdn">white-space</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how white space inside an element is handled.</p>
+  <pre contenteditable>normal | pre | nowrap | pre-wrap | break-spaces | pre-line</pre>
+</section>
+</div>
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing" target="mdn">word-spacing</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the length of space between words and between tags.</p>
+  <pre contenteditable>normal | &lt;length></pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-wrap" target="mdn">word-wrap</a></code> property</h1></header>
+<section class="content">
+  <p>Now <code>overflow-wrap. applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
+  <pre contenteditable>normal | break-word | anywhere</pre>
+</section>
+</div> 
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="mdn">word-break</a></code> property</h1></header>
+<section class="content">
+  <p>sets whether line breaks appear wherever the text would otherwise overflow its content box.</p>
+  <pre contenteditable>normal | keep-all | break-all | break-word </pre>
+</section>
+</div>
+
+<!--NEXT-->
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform" target="mdn">text-transform</a></code> property</h1></header>
+<section class="content">
+<p>Specifies how to capitalize an element's text. </p>
+  <pre contenteditable>none | [capitalize | uppercase | lowercase ] || full-width || full-size-kana</pre>
+  <p>It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.</p>
+</section>
+</div> 
+
+
+<!---->
+<div class="slide intro">
+<header><h1>Text Decoration</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line" target="mdn">text-decoration-line</a></code> property</h1></header>
+<section class="content">
+  <p>sets the kind of decoration that is used on text in an element, such as an underline, line-thru, overline, or all three.</p>
+  <pre contenteditable>none | [ underline || overline || line-through || blink ]</pre>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style" target="mdn">text-decoration-style</a></code> property</h1></header>
+<section class="content">
+  <p>sets the style of the lines specified by text-decoration-line. The style applies to all lines that are set with text-decoration-line.</p>
+  <pre contenteditable>solid | double | dotted | dashed | wavy</pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color" target="mdn">text-decoration-color</a></code> property</h1></header>
+<section class="content">
+  <p>sets the color of decorations added to text by text-decoration-line.</p>
+  <pre contenteditable>currentColor | &lt;color></pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="mdn">text-decoration</a></code> shorthand property</h1></header>
+<section class="content">
+  <p>Shorthand for text-decoration-line, text-decoration-color, and text-decoration-style.</p>
+  <pre contenteditable></pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position" target="mdn">text-underline-position</a></code> property</h1></header>
+<section class="content">
+  <p>Specifies the position of the underline which is set using the text-decoration property's underline value.</p>
+  <dl>
+  <dt>auto</dt>
+
+  <dd>The browser will use its own algorithm to place the line at or under the alphabetic baseline.</dd>
+
+  <dt>under</dt>
+
+  <dd>Forces the line to be set below the alphabetic baseline, at a  position where it won't cross any descenders. This is useful for  ensuring legibility with chemical and mathematical formulas, which make a  large use of subscripts.</dd>
+
+  <dt>left</dt>
+
+  <dd>In vertical writing-modes, this keyword forces the line to be placed on the <em>left</em> side of the text. In horizontal writing-modes, it is a synonym of under.</dd>
+
+  <dt>right</dt>
+
+  <dd>In vertical writing-modes, this keyword forces the line to be placed on the <em>right</em> side of the text. In horizontal writing-modes, it is a synonym of under.</dd>
+</dl>
+</section>
+</div>
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset" target="mdn">text-underline-offset</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the offset distance for any underline.</p>
+  <pre contenteditable>text-underline-offset: 0.3em;</pre>
+  <dl>
+  <dt>auto</dt>
+  <dd>The browser chooses the appropriate offset for underlines.</dd>
+  <dt>from-font</dt>
+  <dd>If the font file includes information about a preferred offset, use that value. If the font file doesn't, as if set to auto with the browser choosing the appropriate offset</dd>
+  <dt>&lt;length&gt;</dt>
+  <dd>Specifies the offset of underlines as a &lt;length&gt;,  overriding the font file suggestion or the browser default. It is  recommended to use em units so the offset scales with the font size.</dd>
+</dl>
+<p>Text-underline-offset is not part of the text-decoration shorthand. While an element can have multiple text decoration lines, as the name suggests, text-underline-offset only impacts underlining, and not other lines set by the text-decoration-line property, like overline or line-through.</p> 
+</section>
+</div>
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style" target="mdn">text-emphasis-style</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable></pre>
+</section>
+</div>
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color" target="mdn">text-emphasis-color</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable></pre>
+</section>
+</div>
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis" target="mdn">text-emphasis</a></code> shorthand property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable></pre>
+</section>
+</div>
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position" target="mdn">text-emphasis-position</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable></pre>
+</section>
+</div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow" target="mdn">text-shadow</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable></pre>
+</section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>Text</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+<!--NEXT-->
+<div class="slide divider">
+     <header><h1>Box Model</h1></header>
+    <h1><a href="../boxmodel">Next ➹</a></h1>
+    </div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="col2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a>: <a href="../selectors/index.html">Part 1</a>, <a href="../selectors/index2.html">Part 2</a>, <a href="../selectors/pseudo.html">Pseudo-Elements</a></li>
+    <li><a href="../selectors/specificity.html">Specificity</a></li>
+    <li><a href="../selectors/pseudo.html">Pseudo-elements</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../values">Units &amp; Values </a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../fonts/">Fonts</a></li>
+    <li><a href="../text/">Text</a></li>
+    <li><a href="../boxmodel">Box Model</a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    <li><a href="../tables">Tables</a></li>
+    <li><a href="../grid">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+  <li><a href="../houdini">Houdini</a></li>
+</ol>
+  </section>
+</div>
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>   <li><a href="https://drafts.csswg.org/css-fonts-4/" title="The 'CSS Fonts Module Level&nbsp;3' specification">CSS Fonts Module Level&nbsp;4</a></li>
+  <li><a href="https://drafts.csswg.org/css-fonts-3/" title="The 'CSS Fonts Module Level&nbsp;3' specification">CSS Fonts Module Level&nbsp;3</a></li>
+  
+  <li><a href="https://www.w3.org/TR/CSS2/" title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification">CSS Level&nbsp;2 (Revision&nbsp;1)</a></li>
+  <li><a href="https://www.w3.org/TR/CSS1/" title="The 'CSS Level&nbsp;1' specification">CSS Level&nbsp;1</a></li>
+      </ul>
+    </section>
+</div>
+
+<div class="slide divider">
+<header><h1><code></code></h1></header>
+<section class="content">
+</section>
+</div>
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">&laquo; Back</button></li>
+            <li><button class="button done" id="next">Next &raquo; </button></li>
+        </ul>
+    </nav>
+</header>
+<script src="../slideshow.js"></script>
+  </body>
+
+</html>

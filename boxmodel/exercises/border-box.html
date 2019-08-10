@@ -19,15 +19,14 @@ outline: 1px dotted red;
 	}
 	.outer {.outline: 1px dotted;}
 </style>
-<style contenteditable class="editme">.inner {}
-.outer {}
-.box {
-	border-style: dashed;
-	border-width: 20px 20px;
-	margin: 30px 30px;
-	padding: 40px 40px; 
-	width: 300px;
-	height: 100px;
+<style contenteditable class="editme">.box {
+	border-style: dashed; border-width: 20px 20px;
+	margin: 30px 30px; padding: 40px 40px; 
+	width: 300px; height: 100px;
+    background:
+	    linear-gradient(#c00,#a00) content-box,
+	    linear-gradient(270deg, #fff, #ddd) padding-box,
+	    linear-gradient(90deg, #ccc, #bbb) border-box;
 	box-sizing: border-box;
 }
 </style>
