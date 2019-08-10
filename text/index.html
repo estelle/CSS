@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en-us">
 <head>
 <meta charset="utf-8" />
     <title>Text</title>
@@ -20,12 +20,8 @@
 	--dark_bg: #666;
 	--colorpop: #000088;
 }
-
-@font-face {
-  font-family: 'variableFont';
-  src: local("adapter pe");
-  font-feature-settings: "ss07" on;
-}
+strike {text-decoration: red line-through wavy; text-decoration-thickness: 3px;}
+section p:first-child + pre {text-align: center;}
 </style>
 </head>
 
@@ -59,12 +55,71 @@
 
 
 
-<!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> property</h1></header>
+ <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-align">text-align</a></code> property</h1></header>  
+ <section class="content">
+  <p>Shorthand for <code>text-align-all</code> and <code>text-align-last</code>. Sets the horizontal alignment.</p> 
+<pre>left | right | center | justify | <br/><em>start</em> | end | match-parent | justify-all | &lt;string></pre>
+<dl style="height: 55vh; overflow: scroll; border: 1px solid #ddd; border-radius: 5px">
+  <dt><code>start </code></dt>
+    <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
+    <dt><code>end </code></dt>
+    <dd>Same as <code>right</code> if direction is LTR and <code>left</code> if direction is RTL.</dd>
+    <dt><code>left</code></dt>
+    <dd>Aligned to the left.</dd>
+    <dt><code>right</code></dt>
+    <dd>Aligned to the right</dd>
+    <dt><code>center</code></dt>
+    <dd>Centered within the line box.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Justified. Text is spaced to line up to both the left and right edges,  except the last line.</dd>
+    <dt>justify-all </code></dt>
+    <dd>Same as <code>justify</code>, but the last line is justified too.</dd>
+    <dt>match-parent </code></dt>
+    <dd>Similar to <code>inherit</code>, but the start and end match the parent's <code>direction</code>.</dd>
+    <dt><code>&lt;string&gt; </code></dt>
+    <dd>No support yet. Can specify an alignment character.</dd>
+</dl>
+  </section>
+</div>
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-align">text-align</a></code> property</h1></header>
+  <style>
+    .textalign {display: flex; flex-flow: wrap row; height: 50vh;  overflow: scroll; border: 1px solid #ddd; border-radius: 5px}
+    .textalign div {padding: 5px; border: 1px solid; margin: 5px; font-size: 1rem; flex: 22%; box-sizing: border-box;}
+  </style>
 <section class="content">
-  <p>Sets the horizontal alignment of a block element or table-cell box. This means it works like vertical-align but in the horizontal direction</p>
-  <pre contenteditable>start | end | left | right | center | justify | match-parent | justify-all</pre>
+
+<pre style="overflow: scroll">text-align: left | right | center | justify | <br/>start | end | match-parent | justify-all | &lt;string>; </pre>
+<p>Not all new values are supported.</p>
+<article class="textalign">
+<div style="text-align: left;"><h2>left</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: center;"><h2>center</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: right;"><h2>right</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: justify;"><h2>justify</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: start;"><h2>start</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: match-parent;"><h2>match-parent</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: end;"><h2>end</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+<div style="text-align: justify-all;"><h2>justify-all</h2>
+  <p>The <code>text-align</code> property sets the horizontal alignment of a block element or table-cell box</p>
+</div>
+</article>
 </section>
 </div>
 
@@ -73,47 +128,176 @@
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify" target="mdn">text-justify</a></code> property</h1></header>
 <section class="content">
-  <p>Sets what type of justification should be applied to text when text-align: justify; is set </p>   
+  <p>Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set </p>   
   <pre contenteditable>auto | none | inter-word | inter-character</pre>
+  <dl>
+
+<dt>
+none</dt>
+    <dd>Turns off justifcation, as if <code>text-align</code> were set to <code>initial</code>.</dd>
+<dt>auto</dt>
+    <dd>Default. The browser chooses the best type of justification based on performance, quality, and language.</dd>
+<dt>inter-word</dt>
+    <dd>Justified by adding space between words. Good for languages that separate words using spaces, like English or Korean.</dd>
+<dt>inter-character</dt>
+    <dd>Justified by adding space between characters (effectively varying letter-spacing). Good for languages like Japanese.</dd>
 </section>
 </div>
+
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-justify</code> property</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.textjustify div {
+   text-align: justify;
+}</style>
+<article class="textalign textjustify">
+<div style="text-justify: auto;"><h2>auto</h2>
+  <p>The <code>text-justify</code> property Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set.</p>
+</div>
+<div style="text-justify: none;"><h2>none</h2>
+  <p>The <code>text-justify</code> property Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set.</p>
+</div>
+<div style="text-justify: inter-word;"><h2>inter-word</h2>
+  <p>The <code>text-justify</code> property Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set.</p>
+</div>
+<div style="text-justify: inter-character;"><h2>inter-character</h2>
+  <p>The <code>text-justify</code> property Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set.</p>
+</div>
+</article>
+</section>
+</div>
+
 
 
 <!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-all" target="mdn">text-align-all</a></code> property</h1></header>
+<header><h1><code><a href="https://drafts.csswg.org/css-text-3/#text-align-all-property" target="spec"><strike>text-align-all</strike></a></code> property</h1></header>
 <section class="content">
-  <p></p>
+  <p>Not supported on it's own, it's part of the text-align shorthand</p>
   <pre contenteditable>start | end | left | right | center | justify | match-parent</pre>
+  <dl>
+  <dt><code>start </code></dt>
+    <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
+    <dt><code>end </code></dt>
+    <dd>Same as <code>right</code> if direction is LTR and <code>left</code> if direction is RTL.</dd>
+    <dt><code>left</code></dt>
+    <dd>Aligned to the left.</dd>
+    <dt><code>right</code></dt>
+    <dd>Aligned to the right</dd>
+    <dt><code>center</code></dt>
+    <dd>Centered within the line box.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Justified. Text is spaced to line up to both the left and right edges,  except the last line.</dd>
+     <dt>match-parent </code></dt>
+    <dd>Similar to <code>inherit</code>, but the start and end match the parent's <code>direction</code>.</dd>
+</dl>
 </section>
 </div>
 
-  
 
- 
-
-
-  
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-last" target="mdn">text-align-last</a></code> property</h1></header>
 <section class="content">
-  <p>Sets how the last line of a block or a line, right before a forced line break, is aligned.</p>
+  <p>Part of the text-align shorthand, and supported, it sets how the last line of a block or a line, right before a forced line break, is aligned.</p>
   <pre contenteditable>auto | start | end | left | right | center | justify | match-parent </pre>
+  <dl>
+  <dt><code>start </code></dt>
+    <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
+    <dt><code>end </code></dt>
+    <dd>Same as <code>right</code> if direction is LTR and <code>left</code> if direction is RTL.</dd>
+    <dt><code>left</code></dt>
+    <dd>Aligned to the left.</dd>
+    <dt><code>right</code></dt>
+    <dd>Aligned to the right</dd>
+    <dt><code>center</code></dt>
+    <dd>Centered within the line box.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Justified. Text is spaced to line up to both the left and right edges,  except the last line.</dd>
+     <dt>match-parent </code></dt>
+    <dd>Similar to <code>inherit</code>, but the start and end match the parent's <code>direction</code>.</dd>
+</dl>
 </section>
 </div>
+
+
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-align-last</code> property</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.textalignlast div {
+   text-align: justify; _text-justify: inter-character;
+}</style>
+<article class="textalign textalignlast">
+<div style="text-align-last: start;"><h2>start</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: end;"><h2>end</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: center;"><h2>center</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: justify;"><h2>justify</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: match-parent;"><h2>match-parent</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: auto;"><h2>auto</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: left;"><h2>left</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+<div style="text-align-last: right;"><h2>right</h2>
+  <p>The <code>text-align-last</code> property sets the alignment of the last line before a break by end of block element or forced break.</p>
+</div>
+</article>
+</section>
+</div>
+
+
 
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent" target="mdn">text-indent</a></code> property</h1></header>
 <section class="content">
   <p>Sets the length of empty space (indentation) that is put before lines of text.</p>
-  <pre contenteditable>[ &lt;length-percentage> ] && hanging? && each-line?  </pre>
+  <pre contenteditable>[ &lt;length-percentage> ] <strike>&& hanging? && each-line?</strike>  </pre>
+  <pre contenteditable>text-indent: 2em hanging;</pre>
+<dl>
+<dt>&lt;length></dt>
+    <dd>Indentation is specified as an absolute &lt;length>. Negative values are allowed. </dd>
+<dt>&lt;percentage></dt>
+    <dd>Indentation is a &lt;percentage> of the containing block's width.</dd>
+<dt><strike>each-line</strike></dt>
+    <dd>Indents first line of block container and each line after a forced line break.</dd>
+<dt><strike>hanging</strike></dt>
+    <dd>Inverts indenting: all lines except first are indented.</dd>
+    </dl> 
 </section>
 </div>
 
 
 
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-indent</code> property</h1></header>
+<section class="content textindent">
+  <style contenteditable class="editme">.textindent p {
+   font-size: 2rem;
+   text-indent:  -3em;
+   padding-left: 3em;
+}</style>
+<p>Our daughters can contribute just as much to society as our sons, and our common prosperity will be advanced by allowing all humanity - men and women - to reach their full potential.</p>
+<p>If there's a senior citizen somewhere who can't pay for their prescription drugs, and has to choose between medicine and the rent, that makes my life poorer, even if it's not my grandparent. Because whether it's poverty or racism, the uninsured or the unemployed, war or peace, the challenges we face today are not simply technical problems in search of the perfect ten-point plan. In the white community, the path to a more perfect union means acknowledging that what ails the African-American community does not just exist in the minds of black people; that the legacy of discrimination - and current incidents of discrimination, while less overt than in the past - are real and must be addressed. I get it. Finally, the Arab States must recognize that the Arab Peace Initiative was an important beginning, but not the end of their responsibilities. </p>
+<p>--Obama</p>
+</section>
+</div>
 
 <!---->
 <div class="slide">
@@ -121,6 +305,18 @@
 <section class="content">
   <p>Customize the width of a tab (U+0009) character.</p>
   <pre contenteditable>&lt;number> | &lt;length></pre>
+  <dl>
+<dt>&lt;number></dt>
+<dd>    The number of spaces in a tab. Must be nonnegative.
+</dd><dt>&lt;length>
+   </dt> <dd>The width of a tab. Must be nonnegative. 
+</dd></dl>
+  <style contenteditable class="editme" id="tabsize">#tabsize {
+	tab-size: 3;
+	tab-size: 3ex;
+ 	tab-size: 5;
+ 	-moz-tab-size: 3vw;
+}</style>
 </section>
 </div>
 
@@ -128,8 +324,54 @@
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="mdn">overflow-wrap</a></code> property</h1></header>
 <section class="content">
-  <p>applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
+  <p>Applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
   <pre contenteditable>normal | break-word | anywhere </pre>
+  <dl>
+<dt>normal</dt>
+   <dd>Lines may only break at normal word break points, like spaces.</dd>
+<dt>anywhere</dt>
+    <dd>To prevent overflow, an otherwise unbreakable string of characters — like a long word or URL — may be broken at any point if there are no otherwise-acceptable break points in the line. No hyphenation character is inserted at the break point. Soft wrap opportunities introduced by the word break are considered when calculating min-content intrinsic sizes.</dd>
+<dt>break-word</dt>
+    <dd>The same as the anywhere value, with normally unbreakable words allowed to be broken at arbitrary points if there are no otherwise acceptable break points in the line, but soft wrap opportunities introduced by the word break are NOT considered when calculating min-content intrinsic sizes.</dd> </dl>
+    <ul>
+    	<li>overflow-wrap only creates a break if an entire word cannot be placed on its own line without overflowing - unlike word-break</li>
+<li>Orignially called <code>word-wrap</code>.</li></ul>
+</section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><code>overflow-wrap</code> property</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.overflowwrap div {
+   _flex: 0 0 min-content;
+	width: min-content; 
+	_min-width: 4em; 
+}</style>
+<article class="textalign overflowwrap">
+<div style="overflow-wrap: normal;"><h2>normal</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+</div>
+<div style="overflow-wrap: break-word;"><h2>break-word</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+</div>
+<div style="overflow-wrap: anywhere;"><h2>anywhere</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+</div>
+
+</article>
+</section>
+</div>
+
 </section>
 </div>
 
@@ -139,6 +381,16 @@
 <section class="content">
   <p>Sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.</p>
   <pre contenteditable>auto | loose | normal | strict | anywhere</pre>
+  <dl>
+  <dt>auto</dt>
+  <dd>Break text using the default line break rule.</dd>
+  <dt>loose</dt>
+  <dd>Break text using the least restrictive line break rule. Typically used for short lines, such as in newspapers.</dd>
+  <dt>normal</dt>
+  <dd>Break text using the most common line break rule.</dd>
+  <dt>strict</dt>
+  <dd>Break text using the most stringent line break rule.</dd>
+</dl>
 </section>
 </div>
 
@@ -148,6 +400,71 @@
 <section class="content">
   <p>sets the spacing behavior between text characters.</p>
   <pre contenteditable>normal | &lt;length> </pre>
+  <dl>
+<dt>normal</dt>
+    <dd>The normal letter spacing for the current font. Unlike a value of 0, this keyword allows the user agent to alter the space between characters in order to justify text.</dd>
+<dt>&lt;length></dt>
+    <dd>Specifies extra inter-character space <b>in addition</b> to the default space between characters. Values can be negative. </dd>
+ </dl>
+ <ul>
+ 	<li>This space is in addition to the space already between characters.</li>
+ 	<li>Browsers shouldn't further increase or decrease inter-character space to justify text.</li>
+ </ul>
+</section>
+</div>
+
+
+<div class="slide fontstretch">
+<header><h1><code>letter-spacing</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">.fontstretch { font-family: League Mono Variable, Helvetica Neue, serif;} 
+.fontstretch p {
+   _font-stretch: ultra-condensed;
+   _font-stretch: ultra-expanded;
+   _letter-spacing: 2px;
+   _letter-spacing: 0.1em;
+}</style>
+</section>
+<p class="fontstretch">There are those who are asking the devotees of civil rights, "When will you be satisfied?" We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality. We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities. We cannot be satisfied as long as the negro's basic mobility is from a smaller ghetto to a larger one. We can never be satisfied as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: "For Whites Only." We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote. No, no, we are not satisfied, and we will not be satisfied until "justice rolls down like waters, and righteousness like a mighty stream." -MLK</p>
+</div>
+
+
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-align-last</code> with <code>letter-spacing</code> </h1></header>
+<section class="content">
+  <style contenteditable class="editme">.textalignlast2 div {
+   text-align: justify; 
+   text-justify: inter-character;
+   letter-spacing: 0.1px;
+}</style>
+<article class="textalign textalignlast2">
+<div style="text-align-last: start;"><h2>start</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: end;"><h2>end</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks.</p>
+</div>
+<div style="text-align-last: center;"><h2>center</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: justify;"><h2>justify</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: match-parent;"><h2>match-parent</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: auto;"><h2>auto</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: left;"><h2>left</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+<div style="text-align-last: right;"><h2>right</h2>
+  <p>"Sometimes people try to destroy you, precisely because they recognize your power - not because they don't see it, but because they see it and they don't want it to exist." &mdashBell Hooks</p>
+</div>
+</article>
 </section>
 </div>
 
@@ -157,9 +474,39 @@
 <section class="content">
   <p>Specifies how words should be hyphenated when text wraps across multiple lines. </p>
   <pre contenteditable>none | manual | auto</pre>
-  <p>You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.</p>
+
+<dl>
+	<dt>none</dt>
+<dd>Prevent hyphenation entirely</dd>
+<dt>manual</dt>
+    <dd>Words are broken for line-wrapping only where characters, like hyphens and <code>&amp;shy;</code>, suggest line break opportunities. </dd>
+<dt>auto</dt><dd>
+    Browser will automatically break words at appropriate hyphenation points, following whatever rules it chooses to use with preference for suggested line break opportunities. Specify the language!</dd>
+</dl>
+<p>Words will be broken by &lt;wbr> but no hyphen will be added.</p>
+
 </section>
 </div>
+
+
+<!---->
+<div class="slide">
+<header><h1><code>hyphens</code> property</h1></header>
+<section class="content">
+	<style>
+		#hyphenBox, #hangingBox, #lyrics {border: 3px solid rgba(0,0,0,0.2); padding: 5px;}
+	</style>
+	<style contenteditable class="editme">#hyphenBox {
+   width: 300px;
+   hyphens: auto;
+} /* declare the language or this doesn't work!!! */</style>
+<div id="hyphenBox">
+	<p>“I tell my students, 'When you get these jobs that you have been so brilliantly trained for, just remember that your real job is that if you are free, you need to free somebody else. If you have some power, then your job is to empower somebody else. This is not just a grab-bag candy game.”
+― Toni Morrison </p>
+</div>
+</section>
+</div>
+
 
 <!---->
 <div class="slide">
@@ -167,9 +514,43 @@
 <section class="content">
   <p>specifies whether a punctuation mark should hang at the start or end of a line of text. </p>
   <pre contenteditable>none | [ first || [ force-end | allow-end ] || last ] </pre>
-  <p>Hanging punctuation may be placed outside the line box.</p>
+  <p>Hanging punctuation - brackets, quotes, comma, stops - may be placed outside the line box. Only works in Safari.</p>
+<pre contenteditable>hanging-punctuation: last;
+hanging-punctuation: last allow-end;
+hanging-punctuation: first force-end last;</pre>
+<dl>
+<dt>none</dt>
+    <dd>Default. No character hangs.</dd>
+<dt>first</dt>
+    <dd>An opening bracket or quote at the start of the first formatted line of an element hangs.</dd>
+<dt>last</dt>
+    <dd>A closing bracket or quote at the end of the last formatted line of an element hangs.</dd>
+<dt>force-end</dt>
+    <dd>A stop or comma at the end of a line hangs.</dd>
+<dt>allow-end</dt>
+    <dd>A stop or comma at the end of a line hangs if it does not otherwise fit prior to justification.</dd>
+</dl>
 </section>
 </div>
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code>hanging-punctuation</code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#hangingBox {
+   width: 300px; font-family: monospace; margin: auto;
+   hanging-punctuation: first force-end last;
+} /* Only works in Safari, but text-justify doesn't */</style>
+<div id="hangingBox">
+	<p contenteditable>
+“I tell my students, 'When you get these jobs that you have been so brilliantly trained for, just remember that your real job is that if you are free, you need to free somebody else. If you have some power, then your job is to empower somebody else. This is not just a grab-bag candy game.”
+― Toni Morrison </p>
+</div>
+</section>
+</div>
+
 
  
 <!---->
@@ -178,9 +559,83 @@
 <section class="content">
   <p>Sets how white space inside an element is handled.</p>
   <pre contenteditable>normal | pre | nowrap | pre-wrap | break-spaces | pre-line</pre>
+  <dl>
+  <dt>normal</dt>
+  <dd>Default, except for in <code>&lt;pre></code>. White space is collapsed, newlines are white space, and lines wrap.</dd>
+  <dt>nowrap</dt>
+  <dd>Collapses white space like <code>normal</code>, but doesn't text wrap.</dd>
+  <dt>pre</dt>
+  <dd>White space and line breaks are preserved.</dd>
+  <dt>pre-wrap</dt>
+  <dd>White space are preserved. Lines are broken as necessary to fill line boxes.</dd>
+  <dt>pre-line</dt>
+  <dd>like <code>pre-wrap</code>, but white space is collapsed.</dd>
+  <dt>break-spaces</dt>
+  <dd>The behavior is identical to that of <code>pre-wrap</code>, except whlie  white space is preserved even at line end, it will wrap when needed within those white spaces.</dd>
+</dl>
 </section>
 </div>
 
+
+
+ 
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space" target="mdn">white-space</a></code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#lyrics { width: 18em;
+   _white-space: normal;     _white-space: nowrap;
+   _white-space: pre;        _white-space: pre-wrap;
+   _white-space: pre-line;   _white-space: break-spaces;
+}</style>
+<blockquote cite="https://www.youtube.com/watch?v=bWXazVhlyxQ" id="lyrics"><p>Killing in the name of
+
+    Some of those that were forces are the same that burn crosses (4x)
+
+Killing in the name of, killing in the name of
+
+    And now you do what they told ya (12x)
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died                 
+Wearing the badge, they're the chosen whites
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died
+
+    Some of those that burn crosses are the same that hold office (4x)
+
+Killing in the name of, killing in the name of
+
+    And now you do what they told ya (4x)
+
+    And now you do what they told ya, now you're under control (6x)
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died                 
+Wearing the badge, they're the chosen whites
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died
+Wearing the badge, they're the chosen whites
+
+Come on
+
+    Fuck you, I won't do what you tell me (14x)
+
+Motherfucker</p>
+<cite><a href="https://www.youtube.com/watch?v=bWXazVhlyxQ">- Rage Against the Machine</a></cite>
+</blockquote>
+</section>
+</div>
 
 
 
@@ -192,6 +647,110 @@
   <pre contenteditable>normal | &lt;length></pre>
 </section>
 </div>
+
+
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space" target="mdn">white-space</a></code> property</h1></header>
+<section class="content">
+	<style contenteditable class="editme">#lyrics2 { width: 18em; word-spacing: 1em;
+   _white-space: normal;     _white-space: nowrap;
+   _white-space: pre;        _white-space: pre-wrap;
+   _white-space: pre-line;   _white-space: break-spaces;
+}</style>
+<blockquote cite="https://www.youtube.com/watch?v=bWXazVhlyxQ" id="lyrics2"><p>Killing in the name of
+
+    Some of those that were forces are the same that burn crosses (4x)
+
+Killing in the name of, killing in the name of
+
+    And now you do what they told ya (12x)
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died                 
+Wearing the badge, they're the chosen whites
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died
+
+    Some of those that burn crosses are the same that hold office (4x)
+
+Killing in the name of, killing in the name of
+
+    And now you do what they told ya (4x)
+
+    And now you do what they told ya, now you're under control (6x)
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died                 
+Wearing the badge, they're the chosen whites
+
+Those who died are justified                
+Wearing the badge, they're the chosen whites
+
+You justify those that died
+Wearing the badge, they're the chosen whites
+
+Come on
+
+    Fuck you, I won't do what you tell me (14x)
+
+Motherfucker</p>
+<cite><a href="https://www.youtube.com/watch?v=bWXazVhlyxQ">- Rage Against the Machine</a></cite>
+</blockquote>
+</section>
+</div>
+
+
+
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-align</code> with <code>word-spacing</code> </h1></header>
+<section class="content">
+  <style contenteditable class="editme">.wordspacing div {
+   text-align: set-on-each; 
+   text-justify: inter-word;
+   word-spacing: 1em;
+}</style>
+<article class="textalign wordspacing">
+<div style="text-align: start;"><h2>start</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: end;"><h2>end</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: center;"><h2>center</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: justify;"><h2>justify</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: match-parent;"><h2>match-parent</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: auto;"><h2>auto</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: left;"><h2>left</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+<div style="text-align: right;"><h2>right</h2>
+  <p>"For me, forgiveness and compassion are always linked: how do we hold people accountable for wrongdoing and yet at the same time remain in touch with their humanity enough to believe in their capacity to be transformed?" &mdash;Bell Hooks</p>
+</div>
+</article>
+</section>
+</div>
+
 
 <!---->
 <div class="slide">
@@ -221,6 +780,21 @@
   <p>It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.</p>
 </section>
 </div> 
+
+
+<!-- text-transform -->
+<div class="slide">
+  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
+  <section class="content">
+    <pre contenteditable>text-transform: capitalize;</pre>
+<pre contenteditable>capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
+<ul>
+  <li>Takes into account language-specific case mapping rules</li>
+  <li>First unicode letter or number. Initial punctuations of words are ignored</li>
+  <li><code>uppercase</code> can be hard to read.</li>
+</ul>
+  </section>
+</div>
 
 
 <!---->
