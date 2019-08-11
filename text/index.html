@@ -20,8 +20,12 @@
 	--dark_bg: #666;
 	--colorpop: #000088;
 }
-strike {text-decoration: red line-through wavy; text-decoration-thickness: 3px;}
+strike {text-decoration: green line-through wavy; text-decoration-thickness: 3px;}
+strike.deprecated {
+	text-decoration-color: red;
+}
 section p:first-child + pre {text-align: center;}
+section {overflow-y: scroll; max-height: calc(98vh - 100px);}
 </style>
 </head>
 
@@ -287,15 +291,18 @@ none</dt>
 <!-- text-align -->
 <div class="slide">
   <header><h1><code>text-indent</code> property</h1></header>
+
 <section class="content textindent">
-  <style contenteditable class="editme">.textindent p {
+<style contenteditable class="editme">.textindent p {
    font-size: 2rem;
    text-indent:  -3em;
    padding-left: 3em;
 }</style>
+<article>
 <p>Our daughters can contribute just as much to society as our sons, and our common prosperity will be advanced by allowing all humanity - men and women - to reach their full potential.</p>
 <p>If there's a senior citizen somewhere who can't pay for their prescription drugs, and has to choose between medicine and the rent, that makes my life poorer, even if it's not my grandparent. Because whether it's poverty or racism, the uninsured or the unemployed, war or peace, the challenges we face today are not simply technical problems in search of the perfect ten-point plan. In the white community, the path to a more perfect union means acknowledging that what ails the African-American community does not just exist in the minds of black people; that the legacy of discrimination - and current incidents of discrimination, while less overt than in the past - are real and must be addressed. I get it. Finally, the Arab States must recognize that the Arab Peace Initiative was an important beginning, but not the end of their responsibilities. </p>
 <p>--Obama</p>
+</article>
 </section>
 </div>
 
@@ -424,8 +431,8 @@ Supercalifragilisticexpialidocious</p>
    _letter-spacing: 2px;
    _letter-spacing: 0.1em;
 }</style>
-</section>
 <p class="fontstretch">There are those who are asking the devotees of civil rights, "When will you be satisfied?" We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality. We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities. We cannot be satisfied as long as the negro's basic mobility is from a smaller ghetto to a larger one. We can never be satisfied as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: "For Whites Only." We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote. No, no, we are not satisfied, and we will not be satisfied until "justice rolls down like waters, and righteousness like a mighty stream." -MLK</p>
+</section>
 </div>
 
 
@@ -661,51 +668,20 @@ Motherfucker</p>
    _white-space: pre;        _white-space: pre-wrap;
    _white-space: pre-line;   _white-space: break-spaces;
 }</style>
-<blockquote cite="https://www.youtube.com/watch?v=bWXazVhlyxQ" id="lyrics2"><p>Killing in the name of
-
-    Some of those that were forces are the same that burn crosses (4x)
-
-Killing in the name of, killing in the name of
-
-    And now you do what they told ya (12x)
-
-Those who died are justified                
-Wearing the badge, they're the chosen whites
-
-You justify those that died                 
-Wearing the badge, they're the chosen whites
-
-Those who died are justified                
-Wearing the badge, they're the chosen whites
-
-You justify those that died
-
-    Some of those that burn crosses are the same that hold office (4x)
-
-Killing in the name of, killing in the name of
-
-    And now you do what they told ya (4x)
-
-    And now you do what they told ya, now you're under control (6x)
-
-Those who died are justified                
-Wearing the badge, they're the chosen whites
-
-You justify those that died                 
-Wearing the badge, they're the chosen whites
-
-Those who died are justified                
-Wearing the badge, they're the chosen whites
-
-You justify those that died
-Wearing the badge, they're the chosen whites
-
-Come on
-
-    Fuck you, I won't do what you tell me (14x)
-
-Motherfucker</p>
-<cite><a href="https://www.youtube.com/watch?v=bWXazVhlyxQ">- Rage Against the Machine</a></cite>
+<blockquote id="lyrics2"><p>”Pretty women wonder where my secret lies.
+ I'm not cute or built to suit a fashion model's size
+  But when I start to tell them,
+   They think I'm telling lies.
+    I say,
+     It's in the reach of my arms
+       The span of my hips,
+       The stride of my step,
+       The curl of my lips.
+     I'm a woman
+   Phenomenally.
+ Phenomenal woman,
+That's me.”</p>
+<cite>― Maya Angelou</cite>
 </blockquote>
 </section>
 </div>
@@ -754,46 +730,119 @@ Motherfucker</p>
 
 <!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-wrap" target="mdn">word-wrap</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="mdn">word-break</a></code> property</h1></header>
 <section class="content">
-  <p>Now <code>overflow-wrap. applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
-  <pre contenteditable>normal | break-word | anywhere</pre>
+  <p>Sets whether line breaks appear wherever the text would otherwise overflow its content box.</p>
+  <pre contenteditable>normal | keep-all | break-all | break-word </pre>
+  <dl>
+  <dt>normal</dt>
+  <dd>Use the default line break rule.</dd>
+  <dt>break-all</dt>
+  <dd>To prevent overflow, word breaks should be inserted between any two characters (excluding Chinese/Japanese/Korean text).</dd>
+  <dt>keep-all</dt>
+  <dd>Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text behavior is the same as for normal.</dd>
+  <dt>break-word</dt>
+  <dd>Has the same effect as word-break: normal and overflow-wrap: anywhere, regardless of the actual value of the <code>overflow-wrap</code> property.</dd>
+</dl>
+  <p><strong>Note:</strong> In contrast to word-break: break-word and overflow-wrap: break-word (see overflow-wrap), word-break: break-all  will create a break at the exact place where text would otherwise  overflow its container (even if putting an entire word on its own line  would negate the need for a break).</p>
+
 </section>
-</div> 
+</div>
 
 
 <!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="mdn">word-break</a></code> property</h1></header>
+<header><h1><code>word-break</code> property</h1></header>
 <section class="content">
-  <p>sets whether line breaks appear wherever the text would otherwise overflow its content box.</p>
-  <pre contenteditable>normal | keep-all | break-all | break-word </pre>
+  <style contenteditable class="editme">.wordbreak div {
+   max-width: 22vw; 
+}</style>
+<article class="textalign wordbreak">
+<div style="word-break: normal;"><h2>normal</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+<p>次の単語グレートブリテンおよび北アイルラン</p>
+</div>
+<div style="word-break: keep-all;"><h2>keep-all</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+<p>次の単語グレートブリテンおよび北アイルラン</p>
+</div>
+<div style="word-break: break-all;"><h2>break-all</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+<p>次の単語グレートブリテンおよび北アイルラン</p>
+</div>
+<div style="word-break: break-word;"><h2>break-word</h2>
+  <p>Oh, supercalifragilisticexpialidocious
+Even though the sound of it is something quite atrocious
+If you say it loud enough, you'll always sound precocious
+Supercalifragilisticexpialidocious</p>
+<p>次の単語グレートブリテンおよび北アイルラン</p>
+</div>
+
+</article>
 </section>
 </div>
 
-<!--NEXT-->
-<div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform" target="mdn">text-transform</a></code> property</h1></header>
-<section class="content">
-<p>Specifies how to capitalize an element's text. </p>
-  <pre contenteditable>none | [capitalize | uppercase | lowercase ] || full-width || full-size-kana</pre>
-  <p>It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.</p>
-</section>
-</div> 
 
 
 <!-- text-transform -->
 <div class="slide">
   <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
-  <section class="content">
-    <pre contenteditable>text-transform: capitalize;</pre>
+  <section class="content"><p>Specifies how to capitalize an element's text. </p>
 <pre contenteditable>capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
+<p>It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.</p>
+
+<dl>
+<dt>capitalize</dt>
+  <dd>Converts only the first <em>letter</em> of each word to uppercase. Punctuation marks or symbols at the beginning of a word should be ignored.</p>
+</dd>
+  <dt>uppercase</dt>
+  <dd>Converts ALL characters to uppercase.</dd>
+  <dt>lowercase</dt>
+  <dd>Should converts all characters to lowercase.</dd>
+  <dt>none</dt>
+  <dd>Is a keyword that prevents the case of all characters from being changed.</dd>
+  <dt>full-width</dt>
+  <dd>Forces the writing of a character — mainly ideograms and Latin scripts — inside a square, allowing them to b aligned in the usual East Asian scripts (like Chinese or Japanese).</dd>
+  <dt>full-size-kana</dt>
+  <dd>Generally used for &lt;ruby&gt; annotation text: converts small Kana characters to the  equivalent full-size Kana, to compensate for legibility issues at the  small font sizes typically used in ruby.</dd>
+</dl>
+<p>Notes:</p>
 <ul>
   <li>Takes into account language-specific case mapping rules</li>
   <li>First unicode letter or number. Initial punctuations of words are ignored</li>
   <li><code>uppercase</code> can be hard to read.</li>
 </ul>
   </section>
+</div>
+
+
+
+
+<!-- text-align -->
+<div class="slide">
+  <header><h1><code>text-transform</code> property</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.texttransform p {
+  _text-transform: none;
+  _text-transform: capitalize;
+  _text-transform: uppercase;
+  _text-transform: lowercase;
+  _text-transform: full-width;
+  _text-transform: full-size-kana;
+}</style>
+<article class="textalign texttransform"><p>
+HELPED are those who love the Earth, their mother, and who willingly suffer that she may not die; in their grief over her pain they will weep rivers of blood, and in their joy in her lively response to love, they will converse with the trees. &mdash;Alice Walker</p>
+</article>
+</section>
 </div>
 
 
@@ -811,8 +860,26 @@ Motherfucker</p>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line" target="mdn">text-decoration-line</a></code> property</h1></header>
 <section class="content">
-  <p>sets the kind of decoration that is used on text in an element, such as an underline, line-thru, overline, or all three.</p>
-  <pre contenteditable>none | [ underline || overline || line-through || blink ]</pre>
+  <p>Sets the kind of decoration that is used on text in an element, such as an underline, line-thru, overline, or all three.</p>
+  <pre contenteditable>none | underline | overline | line-through | blink </pre>
+  <p>Either <code>none</code> or any combination of the other four values</p>
+  <dl class="tdl">
+  <dt style="text-decoration-line: none">none</dt>
+  <dd>Produces no text decoration.</dd>
+  <dt style="text-decoration-line: underline">underline</dt>
+  <dd>Each line of text has a decorative line beneath it.</dd>
+  <dt style="text-decoration-line: overline">overline</dt>
+  <dd>Each line of text has a decorative line above it.</dd>
+  <dt style="text-decoration-line: line-through">line-through</dt>
+  <dd>Each line of text has a decorative line going through its middle.</dd>
+  <dt><strike class="deprecated" style="text-decoration-line: blink line-through">blink</strike></dt>
+  <dd>The text blinks (alternates between visible and invisible). Conforming user agents may simply not blink the text. This value is <strong>deprecated</strong> in favor of CSS animations.</dd>
+</dl>
+<style contenteditable class="editme">.tdl dt {
+   text-decoration-color: currentColor;
+   text-decoration-style: wavy;
+   text-decoration-thickness: 2px;
+}</style>
 </section>
 </div>
 
@@ -820,8 +887,34 @@ Motherfucker</p>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style" target="mdn">text-decoration-style</a></code> property</h1></header>
 <section class="content">
-  <p>sets the style of the lines specified by text-decoration-line. The style applies to all lines that are set with text-decoration-line.</p>
+  <p>Sets the style of the lines specified by text-decoration-line. The style applies to all lines that are set with text-decoration-line.</p>
   <pre contenteditable>solid | double | dotted | dashed | wavy</pre>
+  <dl class="tds">
+  <dt style="text-decoration-style: solid">solid</dt>
+
+  <dd>Draws a single line.</dd>
+
+  <dt style="text-decoration-style: double">double</dt>
+
+  <dd>Draws a double line.</dd>
+
+  <dt style="text-decoration-style: dotted">dotted</dt>
+
+  <dd>Draws a dotted line.</dd>
+
+  <dt style="text-decoration-style: dashed">dashed</dt>
+
+  <dd>Draws a dashed line.</dd>
+
+  <dt style="text-decoration-style: wavy">wavy</dt>
+
+  <dd>Draws a wavy line.</dd>
+</dl>
+<style contenteditable class="editme">.tds dt {
+   text-decoration-color: currentColor;
+   text-decoration-line: underline;
+   text-decoration-thickness: 2px;
+}</style>
 </section>
 </div>
 
@@ -830,18 +923,80 @@ Motherfucker</p>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color" target="mdn">text-decoration-color</a></code> property</h1></header>
 <section class="content">
-  <p>sets the color of decorations added to text by text-decoration-line.</p>
+  <p>Sets the color of decorations added to text by text-decoration-line.</p>
   <pre contenteditable>currentColor | &lt;color></pre>
+  <style contenteditable class="editme">.tdc dt {
+   text-decoration-color: currentColor;
+   text-decoration-line: underline;
+   text-decoration-thickness: 2px;
+}</style>
+    <dl class="tdc">
+  <dt style="text-decoration-style: solid">solid</dt>
+
+
+  <dt style="text-decoration-style: double">double</dt>
+
+
+  <dt style="text-decoration-style: dotted">dotted</dt>
+
+
+  <dt style="text-decoration-style: dashed">dashed</dt>
+
+
+  <dt style="text-decoration-style: wavy">wavy</dt>
+
+</dl>
+
 </section>
 </div>
 
+
+
+
+<!---->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness" target="mdn">text-decoration-thickness</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the thickness of the text-decoration-line(s).</p>
+  <pre contenteditable>currentColor | &lt;color></pre>
+  <style contenteditable class="editme">.tdt dt {
+   text-decoration-color: currentColor;
+   text-decoration-line: underline;
+   text-decoration-thickness: 2px;
+}</style>
+    <dl class="tdt">
+  <dt style="text-decoration-style: solid">solid</dt>
+
+
+  <dt style="text-decoration-style: double">double</dt>
+
+
+  <dt style="text-decoration-style: dotted">dotted</dt>
+
+
+  <dt style="text-decoration-style: dashed">dashed</dt>
+
+
+  <dt style="text-decoration-style: wavy">wavy</dt>
+
+</dl>
+<p> Currently behind a flag in FF. May change names. That's being decided this week.</p>
+</section>
+</div>
 
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="mdn">text-decoration</a></code> shorthand property</h1></header>
 <section class="content">
-  <p>Shorthand for text-decoration-line, text-decoration-color, and text-decoration-style.</p>
-  <pre contenteditable></pre>
+  <p>Shorthand for <code>text-decoration-line</code>, <code>text-decoration-color</code>, and <code>text-decoration-style</code>.</p>
+    <style contenteditable class="editme">.tdshorthand q {
+   text-decoration: wavy currentColor underline;
+   text-decoration-thickness: 2px;
+}</style>
+<blockquote  class="tdshorthand">
+	<p><q>Guilt is not a response to anger; it is a response to one’s own actions or lack of action. If it leads to change then it can be useful, since it is then no longer guilt but the beginning of knowledge. Yet all too often, guilt is just another name for impotence, for defensiveness destructive of communication; it becomes a device to protect ignorance and the continuation of things the way they are, the ultimate protection for changelessness.</q></p>
+<p>― Audre Lorde</p>
+</blockquote>
 </section>
 </div>
 
@@ -879,6 +1034,7 @@ Motherfucker</p>
 <section class="content">
   <p>Sets the offset distance for any underline.</p>
   <pre contenteditable>text-underline-offset: 0.3em;</pre>
+  <p>Only works on underline. Not other positions.</p>
   <dl>
   <dt>auto</dt>
   <dd>The browser chooses the appropriate offset for underlines.</dd>
@@ -892,112 +1048,223 @@ Motherfucker</p>
 </div>
 
 
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="mdn">text-underline-offset</a></code></h1></header>
+<section class="content">
+    <style contenteditable class="editme">.tdo q {
+   text-decoration: wavy currentColor underline;
+   text-decoration-thickness: 2px;
+   text-underline-offset: 2em;
+}</style>
+<blockquote  class="tdo">
+	<p><q>
+Challenging power structures from the inside, working the cracks within the system, however, requires learning to speak multiple languages of power convincingly.
+ </q></p>
+<p>― Patricia Hill Collins</p>
+</blockquote>
+</section>
+</div>
+
 
 
 <!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style" target="mdn">text-emphasis-style</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip" target="mdn"><strike>text-decoration-skip</strike></a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable></pre>
-</section>
+  <p>Sets what parts of an element’s content any text decoration must skip over. It controls text decoration lines drawn by the element and its ancestors.</p>
+  <pre contenteditable>none | objects | spaces | leading-spaces | 
+  trailing-spaces | edges | box-decoration</pre>
+  </style>
+ <dl>
+  <dt>none</dt>
+  <dd>Nothing is skipped.</dd>
+  <dt>objects</dt>
+  <dd>The entire margin box of the element is skipped if it is an atomic inline such as an image or inline-block.</dd>
+  <dt>spaces</dt>
+  <dd>All letter spacing and word spacing</dd>
+  <dt>leading-spaces</dt>
+  <dd>The same as spaces, except that only leading spaces are skipped.</dd>
+  <dt>trailing-spaces</dt>
+  <dd>The same as spaces, except that only trailing spaces are skipped.</dd>
+  <dt>edges</dt>
+  <dd>The start and end of the text decoration is inset slightly from the content edge of the decorating box so adjacent elements receive separate underlines.</dd>
+  <dt>box-decoration</dt>
+  <dd>Inherited text decoration is skipped over the box's margin, border, and  padding areas.</dd>
+</dl>
+<pre contenteditable style="text-decoration: red dotted underline"><span style="text-decoration-skip: edges;">text-decoration-skip: edges;</span>
+<span style="text-decoration-skip: leading-spaces trailing-spaces;">text-decoration-skip: leading-spaces trailing-spaces;</span>
+<span style="text-decoration-skip: objects edges box-decoration;">text-decoration-skip: objects edges box-decoration;</span></pre>
+ </section>
 </div>
+
+
+
 <!---->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color" target="mdn">text-emphasis-color</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink" target="mdn">text-decoration-skip-ink</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable></pre>
-</section>
+  <p>specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.</p>
+  <pre contenteditable>none | auto</pre>
+  </style>
+ <dl>
+  <dt>none</dt>
+  <dd>Nothing is skipped.</dd>
+  <dt>auto</dt>
+  <dd>default. Underlines and overlines are only drawn where they do not touch or closely approach a glyph.</dd>
+</dl>
+<pre contenteditable style="text-decoration: red dotted underline"><span style="text-decoration-skip-ink: none;">text-decoration-skip-ink: none;</span>
+<span style="text-decoration-skip-ink: auto;">text-decoration-skip-ink: auto;</span></pre>
+ </section>
 </div>
+
+
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis" target="mdn">text-emphasis</a></code> shorthand property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable></pre>
+	<p>Applies emphasis marks to text (except spaces and control characters)</p>
+<dl>
+	<dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style" target="mdn">text-emphasis-style</a></dt>
+  <dd>Sets the appearance of emphasis marks. It can also be set, and reset, using the text-emphasis shorthand.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color" target="mdn">text-emphasis-color</a></dt>
+  <dd>Sets the color of emphasis marks.</dd>
+  <pre contenteditable style="text-emphasis: open triangle #D55;">text-emphasis: open triangle #D55;</pre>
+<ul><li>inherited (unlike text-decoration), so you can change descendant marks</li>
+	<li>applied to parts of element  (unlike text-decoration)</li>
+	<li>size is about half of font, so may effect line height.</li>
+	<li>doesn't reset the value of text-emphasis-position.</li></ul>
+
 </section>
 </div>
+
+
+
+
+
+
+<!--NEXT-->
+<div class="slide">
+<header><h1>text-emphasis-style</h1></header>
+<section class="content">
+	<p>Sets the appearance of emphasis marks</p>
+	<pre contenteditable>none | &lt;string> 
+filled | open | dot | circle | double-circle | triangle | sesame </pre>
+<dl>
+  <dt>none</dt>
+  <dd>No emphasis marks.</dd>
+  <dt>filled</dt>
+  <dd>The shape is filled with solid color. If neither filled nor open is present, this is the default.</dd>
+  <dt>open</dt>
+  <dd>The shape is hollow.</dd>
+  <dt>dot</dt>
+  <dd>Display small circles as marks. The filled dot is '•' (U+2022), and the open dot is '◦' (U+25E6).</dd>
+  <dt>circle</dt>
+  <dd>Display large circles as marks. The filled circle is '●' (U+25CF), and the open circle is '○' (U+25CB).</dd>
+  <dt>double-circle</dt>
+  <dd>Display double circles as marks. The filled double-circle is '◉' (U+25C9), and the open double-circle is '◎' (U+25CE).</dd>
+  <dt>triangle</dt>
+  <dd>Display triangles as marks. The filled triangle is '▲' (U+25B2), and the open triangle is '△' (U+25B3).</dd>
+  <dt>sesame</dt>
+  <dd>Display sesames as marks. The filled sesame is '﹅' (U+FE45), and the open sesame is '﹆' (U+FE46).</dd>
+  <dt>&lt;string&gt;</dt>
+  <dd>Display the given string as marks. Authors should not specify more than one<em> character</em> in &lt;string&gt;. The UA may truncate or ignore strings consisting of more than one grapheme cluster.</dd>
+</dl>
+
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="mdn">text-emphasis</a></code></h1></header>
+<section class="content">
+    <style contenteditable class="editme">.te q {
+   font-size: 2em;
+   text-emphasis: open circle currentColor;
+}</style>
+<blockquote  class="te">
+<p><q>
+Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.</q>
+<p>― Audre Lorde </p>
+</blockquote>
+</section>
+</div>
+
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position" target="mdn">text-emphasis-position</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable></pre>
+  <p>Sets where emphasis marks are drawn. If there isn't enough room for emphasis marks, the line height is increased.</p>
+  <pre contenteditable>[ over | under ] && [ right | left ]</pre>
+  <dl>
+  <dt>over</dt>
+  <dd>Draw marks over the text in horizontal writing mode.</dd>
+  <dt>under</dt>
+  <dd>Draw marks under the text in horizontal writing mode.</dd>
+  <dt>right</dt>
+  <dd>Draws marks to the right of the text in vertical writing mode.</dd>
+  <dt>left</dt>
+  <dd>Draw marks to the left of the text in vertical writing mode.</dd>
+</dl>
+<pre contenteditable style="text-emphasis: open sesame blue; text-emphasis-position: under right;">text-emphasis: open sesame blue;
+text-emphasis-position: under right;</pre>
 </section>
 </div>
 
+
+
+<div class="slide">
+<header><h1><code>text-emphasis-position</code></h1></header>
+<section class="content">
+    <style contenteditable class="editme">.tep q {
+   font-size: 2em;
+   text-emphasis: open circle currentColor;
+   text-emphasis-position: right under;
+}</style>
+<blockquote  class="tep">
+<p><q>
+Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.</q>
+<p>― Audre Lorde </p>
+</blockquote>
+</section>
+</div>
 
 <!---->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow" target="mdn">text-shadow</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable></pre>
+  <p>Adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its decorations. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.</p>
+  <pre contenteditable style="text-shadow: var(--colorpop) 3px 3px 5px;">text-shadow: var(--colorpop) 3px 3px 5px;</pre>
+<dl>
+<dt>&lt;color></dt>
+    <dd>Optional. The color of the shadow. It can be specified either before or after the offset values. If unspecified, the color's value is left up to the user agent, so when consistency across browsers is desired you should define it explicitly.</dd>
+<dt>&lt;offset-x> &lt;offset-y></dt>
+    <dd>Required. These &lt;length> values specify the shadow's distance from the text. &lt;offset-x> specifies the horizontal distance; a negative value places the shadow to the left of the text. &lt;offset-y> specifies the vertical distance; a negative value places the shadow above the text. If both values are 0, the shadow is placed directly behind the text, although it may be partly visible due to the effect of &lt;blur-radius>.</dd>
+<dt>&lt;blur-radius></dt>
+    <dd>Optional &lt;length> value. The higher the value, the bigger the blur; the shadow becomes wider and lighter. If not specified, it defaults to 0. 
+  <p>Unlike box-shadow, the shadow is behind the text too.</p>
+</dd>
+</dl>
 </section>
 </div>
 
 
-
-<!--NEXT-->
 <div class="slide">
-<header><h1>Text</h1></header>
+<header><h1><code>text-shadow</code></h1></header>
 <section class="content">
-
+    <style contenteditable class="editme">.shadow q {
+   color: var(--invertedtext);
+   font-size: 2em;
+   text-shadow: var(--colorpop) 0px 0px 5px;
+}</style>
+<blockquote  class="shadow">
+<p><q>
+Challenging power structures from the inside, working the cracks within the system, however, requires learning to speak multiple languages of power convincingly</q>
+<p>― Patricia Hill Collins </p>
+</blockquote>
 </section>
 </div>
 
-
-
-<!--NEXT-->
-<div class="slide">
-<header><h1>Text</h1></header>
-<section class="content">
-
-</section>
-</div>
-
-
-
-<!--NEXT-->
-<div class="slide">
-<header><h1>Text</h1></header>
-<section class="content">
-
-</section>
-</div>
-
-
-!--NEXT-->
-<div class="slide">
-<header><h1>Text</h1></header>
-<section class="content">
-
-</section>
-</div>
-
-<!--NEXT-->
-<div class="slide">
-<header><h1>Text</h1></header>
-<section class="content">
-
-</section>
-</div>
-
-
-
-<!--NEXT-->
-<div class="slide">
-<header><h1>Text</h1></header>
-<section class="content">
-
-</section>
-</div>
-
-
-
-
-
+ 
 
 
 
