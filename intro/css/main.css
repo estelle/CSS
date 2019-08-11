@@ -1,3 +1,16 @@
+:root {
+  --font: "SanchezSlab Semibold", Georgia, serif;
+  --splashcolor: #646405;
+  --text: #333333;
+  --textsecondary: #4d4d4d;
+  --invertedtext: #ffffff;
+  --header_bg: #ffffff;
+  --light_bg: #f4f4f4;
+  --dark_bg: #800420;
+  --colorpop: #646405;
+  --alert: #cc0000;
+}
+
 /* Screen CSS */
 :root {
   font-size: 18px;
@@ -215,7 +228,7 @@ style[class=editme i] {
   margin-bottom: 1em;
 }
 
-pre, style[class=editme i], code.pre {
+pre, style[class=editme i] {
   text-align: left;
   font-size: 1.2em;
   padding: 10px 20px;
@@ -227,10 +240,15 @@ pre, style[class=editme i], code.pre {
   font-family: monospace;
 }
 
+code {
+  background: rgba(255, 255, 255, 0.3);
+  text-shadow: none;
+}
 code.pre {
   padding: 2px 4px;
   border-radius: 4px;
   font-size: 1em;
+  text-shadow: none;
 }
 
 .current .editme,
