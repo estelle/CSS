@@ -7,7 +7,7 @@
   font-size: 120%;
 }
 .content td {
-   border: 1px solid black;
+   border: 1px solid;
 }
 section, footer {
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
@@ -40,7 +40,7 @@ b.imp:hover {
   transform-origin: left;
 }
 section.content {
-  max-height: calc(98vh - 3.5em); 
+  max-height: calc(90vh - 3.5em); 
   overflow-y: scroll;
 }
 .twopart {

@@ -8,14 +8,8 @@
    <link rel="stylesheet" href="../intro/css/main.css"/>
  <style>
   html { 
-  --font: 'SanchezSlab Semibold', Georgia, serif;
   --splashcolor: #cc0000;
   --lightsplash: #ff9999;
-  --text: #333333;
-  --textsecondary: #4d4d4d;
-  --invertedtext: #ffffff;
-  --header_bg: #ffffff;
-  --light_bg: #f4f4f4;
   --dark_bg: #666666;
   --colorpop: #aa0000;
 }
@@ -124,12 +118,105 @@ display: -moz-box;
 
 <div class="slide intro">
     <header>
-    	<h1>CSS Mastery: Other Features</h1>
+    	<h1>CSS: Other Features</h1>
     </header>
      </section>
     </div>
 
 
+<div class="slide intro"><header><h1>Web Performance</h1></header></div> 
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>GPU accelerants</h1></header>
+   <section class="content">
+    <p>Properties that will lead to compositing include:</p>
+    <ul><li>3D transforms (<code>transform: translateZ(), rotate3d()</code>, etc.)</li>
+    <li>animating <code>transform</code> and <code>opacity</code></li>
+    <li><code>position: fixed</code></li>
+    <li><code>will-change:</code></li>
+      <li><code>filter:</code></li>
+  </ul>
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1><code><a href="" target="mdn">will-change</a></code> property</h1></header>
+   <section class="content">
+    <p>Hints how an element is expected to change so browser can optimize for change before an element is happens. Can increase the responsiveness of a page by doing expensive work before its required.</p>
+    <pre contenteditable>auto | scroll-position | contents | &lt;ident></pre>
+
+<dl><dt>auto</dt>
+    <dd>Tells the browser "You do you", which it was going to do anyway.</dd>
+
+<dt>scroll-position</dt>
+    <dd>Tells the browser "The scroll position will change or be animated soon"</dd>
+<dt>contents</dt>
+    <dd>Tells the browser "something about contents will animate or change soon."</dd>
+<dt>&lt;ident></dt>
+<dd>    A property or several properties that will animate or change soon. A shorthand indicates that all the longhands will participate.<br>Can't be set to: <code>unset, initial, inherit, will-change, auto, scroll-position, or contents</code>.  </dd></dl>
+    <p>Chromes establishes a new compositing layer or a new stacking context for each element with this property set to anything but auto.</p>
+    <ul>
+      <li>Avoid using!</li>
+      <li>Don't apply will-change to too many elements.</li>
+    </ul>
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain" target="mdn">contain</a></code> property</h1></header>
+   <section class="content">
+    <pI>Indicates an element and its contents are, as much as possible, independent of the rest of the document tree, allowing independent recalculations of layout, style, paint, and size for a limited area of the DOM</p>
+    <pre contenteditable>none | strict | content | [ size || layout || style || paint ]</pre>
+    <dl>
+  <dt>none</dt>
+  <dd>Indicates the element renders as normal, with no containment applied.</dd>
+  <dt>strict</dt>
+  <dd>Indicates that all containment rules except style are applied to the element. This is equivalent to contain: size layout paint.</dd>
+  <dt>content</dt>
+  <dd>Indicates that all containment rules except size and style are applied to the element. This is equivalent to contain: layout paint.</dd>
+  <dt>size</dt>
+  <dd>Indicates that the element can be sized without the need to examine its descendants for size changes.</dd>
+  <dt>layout</dt>
+  <dd>Indicates that nothing outside the element may affect its internal layout and vice versa.</dd>
+  <dt>style</dt>
+  <dd>Indicates that, for properties that can have effects on more than  just an element and its descendants, those effects don't escape the  containing element.</dd>
+  <dt>paint</dt>
+  <dd>Indicates that descendants of the element don't display outside its  bounds. If an element is off-screen or otherwise not visible, its  descendants are also guaranteed to not be visible.</dd>
+</dl>
+<p>If applied (with value: <code>paint, strict</code> or <code>content</code>):</p>
+<ul>
+    <li>New stacking context.</li>
+    <li>New block formatting context.</li>
+    <li>New containing block (for the descendants which position property is absolute or fixed).</li>
+</ul>
+  </section>
+</div>
+
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Preventing render blocking</h1></header>
+   <section class="content">
+    <p>Browser blocks rendering until all styles are parsed. It does not block on styles it knows it will not use.</p>
+    <ul>
+      <li>Use media queries so it knows when to block.</li> 
+      <li>Move not-immediately used styles, such as print styles, into separate files.
+      </li>
+      <li>This makes 'needed' CSS file much smaller</li>
+
+<pre  contenteditable>
+&lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- blocking --&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt; &lt;!-- not blocking --&gt; 
+&lt;link rel="stylesheet" href="mobile.css" media="screen and (max-width: 480px)"&gt; &lt;!-- not blocking on large screens --&gt;</pre>
+
+<p>Browser does download not-needed-now stylesheets, but doesn't render block. By separating out the CSS into multiple files, the main render-blocking file is much smaller reducing the time that rendering is blocked.</p>
+  </section>
+</div>
 
 
  <div class="slide" id="columnpage">
@@ -389,49 +476,8 @@ widows</pre>
 
 
 
-<div class="slide">
-	<header><h1>text-overflow: ellipsis</h1></header>
-    <section class="content">
-          <section>
-            <pre contenteditable>p {
-  text-overflow: ellipsis; <input type="range" min="0" max="100" value="94" onChange="changeWrapping(event)" style="float:right">
-  white-space: nowrap;
-  overflow: hidden;
-}</pre>
 
-            <div id="textwraps">
-              <p class="textwrap codelike">
-                overflow-hidden only: Play with the slider to see what happens at the end of the line
-              </p>
-              <p style=" white-space:nowrap" class="textwrap codelike">
-                white-space: nowrap, overflow: hidden: Play with the slider to see what happens at the end of the line
-              </p>
-              <p style="text-overflow: ellipsis;  white-space: nowrap; " class="textwrap codelike">
-                text-overflow: ellipsis;  white-space: nowrap; and overflow: hidden: Play with the slider to see what happens at the end of the line
-              </p>
-            </div>
-            <p class="notes">Needs nowrap and overflow:hidden (anything other than visible) to work.</p>
 
-          </section>
-
-          <script defer="">
-            function changeWrapping(event) {
-              document.getElementById('textwraps').style.width = event.target.value + '%';
-            }
-          </script>
-    </section>
-</div>
-
-<div class="slide">
-	<header><h1>word-wrap: breakword</h1></header>
-    <section class="content">
-    <pre contenteditable>word-wrap:  normal | break-word</pre>
-    <div style="width: 10em; word-wrap:break-word;" class="codelike">
-    Despite the old adage, smiles is not longer than supercalifragilisticexpialidocious.
-    </div>
-
-    </section>
-</div>
 
 
 <div class="slide">

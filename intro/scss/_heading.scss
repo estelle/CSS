@@ -6,7 +6,7 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	h1 {
 	  margin-bottom: 0px;
-	  font-family: 'sanchez', georgia, sans-serif;
+	  font-family: var(--font);
 	  font-weight: bold;
 	  color: var(--splashcolor);
 	  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
@@ -31,5 +31,5 @@
   text-align: center;
   padding: 100px;
   font-size: 1.8rem;
-  font-family: 'sanchez', georgia, sans-serif;
+  font-family: var(--font);
 }

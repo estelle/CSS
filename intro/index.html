@@ -10,7 +10,7 @@
     </style>
   </head>
 
-  <body style="">
+  <body>
 
 <!-- Top instructions -->
 <div id="topinfo"></div>
@@ -445,6 +445,24 @@ p.valid {
 </section>
 </div>
 
+<div class="slide">
+  <header><h1>CSS can be difficult</h1></header>
+  <section class="content">
+    <p>Paragraph will be blue</p>
+<pre contenteditable>body { color: red; } 
+p { color: blue; } 
+p { color: 16px; }</pre>
+
+    <p>Paragraph will be red</p>
+<pre contenteditable>:root {--size: 16px;}
+body { color: red; } 
+p { color: blue; } 
+p { color: var(--size); }</pre>
+</section>
+<p>The former is a syntax error, which is ignored. The latter is an invalid: custom property values that are invalid are not ignored.
+  </section>
+</div>
+
 
 
 <div class="slide">
@@ -551,6 +569,7 @@ p.valid {
     <li><a href="../media">Media Queries</a></li>
     <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
     <li><a href="../boxmodel">Box Model</a></li>

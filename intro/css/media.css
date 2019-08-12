@@ -1,8 +1,8 @@
 :root {
-  --splashcolor: rgb(132, 102, 4);
+  --splashcolor: #5b4601;
   --lightsplash: #fad55a;
-  --dark_bg: #ecbf2b;
-  --colorpop: rgb(132, 102, 4);
+  --dark_bg: #ecd68c;
+  --colorpop: #5b4601;
 }
 
 /*# sourceMappingURL=media.css.map */

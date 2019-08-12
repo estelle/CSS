@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>CSS Mastery: Media Queries</title>
+    <title>CSS: Media Queries</title>
     <style></style>
 <link rel="stylesheet" href="../intro/css/main.css"/>
 <link href="../intro/css/media.css" rel="stylesheet">
@@ -60,7 +60,7 @@ dt a[href*="mozilla"] {
 <li>Display, Color &amp; Interaction features</li> 
    <li>Accessibility &amp; VR Features</li> 
    <li>Exercises</li>
-   <li>Use Cases</li>
+   <li>In SVG</li>
    <li>viewport</li>
    <li>Mobile &amp; Touch</li>
    <li>@supports</li></ul>
@@ -722,7 +722,7 @@ dt a[href*="mozilla"] {
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>Use Cases</h1></header>
+  <header><h1>In SVG</h1></header>
   <section class="content">
   </section>
 </div>
@@ -980,6 +980,23 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 </div>
 
 
+<div class="slide">
+  <header><h1>user-select</h1></header><!-- /header -->
+<section class="content">
+  <style contenteditable class="editme">
+.p::before, .p::after {
+  user-select: text;
+}
+.p::before {
+  content: 'grab me';  
+}
+.p::after {
+  content: 'if you can';  
+}
+</style>
+<p class="p"> - Generate Text - </p>
+
+</section>
 
 
 <!-- divider -->
@@ -1068,6 +1085,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
     <li><a href="../media">Media Queries</a></li>
     <li><a href="../values">Units &amp; Values </a></li>
     <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
     <li><a href="../boxmodel">Box Model</a></li>

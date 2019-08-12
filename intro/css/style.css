@@ -1,5 +1,5 @@
 :root {
-  --font: "SanchezSlab Semibold", Georgia, serif;
+  --font: Book Antiqua, Georgia, serif;
   --splashcolor: #1a26d9;
   --lightsplash: #c7caf8;
   --text: #333333;
@@ -194,7 +194,7 @@ nav ul {
 }
 .slide header h1 {
   margin-bottom: 0px;
-  font-family: "sanchez", georgia, sans-serif;
+  font-family: var(--font);
   font-weight: bold;
   color: var(--splashcolor);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -219,7 +219,7 @@ nav ul {
   text-align: center;
   padding: 100px;
   font-size: 1.8rem;
-  font-family: "sanchez", georgia, sans-serif;
+  font-family: var(--font);
 }
 
 style[class=editme i] {
@@ -318,7 +318,7 @@ code i {
 }
 
 .content td {
-  border: 1px solid black;
+  border: 1px solid;
 }
 
 section, footer {
@@ -358,7 +358,7 @@ b.imp:hover {
 }
 
 section.content {
-  max-height: calc(98vh - 3.5em);
+  max-height: calc(90vh - 3.5em);
   overflow-y: scroll;
 }
 

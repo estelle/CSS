@@ -9,14 +9,8 @@
     margin-top: 20px;
   }
 	:root { 
-	--font: 'SanchezSlab Semibold', Georgia, serif;
 	--splashcolor: #000088;
 	--lightsplash: #3333cc;
-	--text: #333333;
-	--textsecondary: #4d4d4d;
-	--invertedtext: #ffffff;
-	--header_bg: #ffffff;
-	--light_bg: #f4f4f4;
 	--dark_bg: #666;
 	--colorpop: #000088;
 }
@@ -894,6 +888,62 @@ Supercalifragilisticexpialidocious</p>
 HELPED are those who love the Earth, their mother, and who willingly suffer that she may not die; in their grief over her pain they will weep rivers of blood, and in their joy in her lively response to love, they will converse with the trees. &mdash;Alice Walker</p>
 </article>
 </section>
+</div>
+
+<!---->
+<div class="slide">
+<header><h1><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow" target="mdn">text-overflow</a></code> property</h1></h1></header>
+<section class="content">
+  <p>Sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('…'), or display a custom string.</p>
+  <pre contenteditable> clip | ellipsis | &lt;string> </pre>
+  <p>If one value, it's the end of the line. In FF, when 2 values set, the first is start, the second is end</p>
+  <pre contenteditable>white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;</pre>
+<p><code>white-space</code> and <code>overflow</code> must be set for <code>text-overflow</code> to have any effect</p>
+  <dl>
+    <dt>clip</dt>
+    <dd>Default. Truncates text at the limit of the content area.</dd>
+<dt>ellipsis</dt>
+    <dd>Display an ellipsis ('…', U+2026 Horizontal Ellipsis) to represent clipped text.</dd>
+<dt>&lt;string></dt>
+    <dd>Displays the provided string to represent clipped text.</dd>
+    </dl>
+
+  <p>Clipping characters are displayed inside the content area, decreasing the amount of text displayed. If there is not enough space to display the clipping characters, they will be clipped.</p>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>text-overflow: ellipsis</h1></header>
+    <section class="content">
+          <section>
+            <style contenteditable class="editme">.textOverflow {width: 40%;}
+.textOverflow p { /* see each example below */
+  outline: 1px dotted;
+ }</style>
+
+            <div id="textwraps" class="textOverflow">
+              
+              <p style="overflow: hidden; white-space:nowrap">
+                <code>white-space: nowrap, overflow: hidden;</code> Change the parent width to see what happens at the end of the line
+              </p>
+              <p style="text-overflow: ellipsis; overflow: hidden; white-space:nowrap">
+                <code>text-overflow: ellipsis;</code>  white-space: nowrap; and overflow: hidden: Change the parent width to see what happens at the end of the line
+              </p>
+              <p style="text-overflow: clip; overflow: hidden; white-space:nowrap">
+                <code>text-overflow: clip;</code> white-space: nowrap; and overflow: hidden: Change the parent width to see what happens at the end of the line
+              </p>
+               <p style="text-overflow: '[more ....]'; overflow: hidden; white-space:nowrap">
+                <code>text-overflow: '[more ....]';</code> overflow: hidden; white-space:nowrap: Change the parent width to see what happens at the end of the line
+              </p>
+              <p style="overflow: hidden;">
+                <code>overflow: hidden</code> only: Change the parent width to see what happens at the end of the line
+              </p>
+            </div>
+            <p class="notes">Needs nowrap and overflow:hidden (anything other than visible) to work.</p>
+    </section>
 </div>
 
 
