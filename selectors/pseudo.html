@@ -187,12 +187,7 @@ p::after{
 <a href="exercises/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
 </div>
 
-<div class="slide">
-<header><h1>DevTools</h1></header>
-<section class="content">
-<p>You can inspect pseudo-elements like<code>::first-letter</code>, <code>::first-line</code>, <code>::before</code>, <code>::after</code>, <code>::cue</code>, <code>::marker</code>, and <code>::backdrop</code>, and browser specific pseudo-elements like<code>::-moz-progress-bar</code> in DevTools</p>
-</section>
-</div>
+
 
 <!-- UI selectors -->
 <div class="slide object">
@@ -351,7 +346,7 @@ Because the styling of spelling and grammar errors can leak information about th
 </div>
 
 <div class="slide ph">
-  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder">::placeholder</a></h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder">::placeholder</a></code></h1></header>
     <section class="content">
       <p>The placeholder text in an input field</p>
    <style contenteditable class="editme">.ph ::placeholder {
@@ -456,7 +451,7 @@ Because the styling of spelling and grammar errors can leak information about th
 <div class="slide">
   <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted()">::slotted()</a></code></h1></header>
     <section class="content"> 
-      <p>eElement placed into slot in an HTML <code>template</code> </p> 
+      <p>Element placed into slot in an HTML <code>template</code> </p> 
       <pre contenteditable="">&lt;x-bar&gt;
    &lt;div id=&quot;one&quot; slot=&quot;foo&quot; class=&quot;foo&quot;&gt;...&lt;/div&gt;   
    &lt;div id=&quot;two&quot; slot=&quot;foo&quot;&gt;...&lt;/div&gt;   
@@ -473,7 +468,16 @@ Because the styling of spelling and grammar errors can leak information about th
     </section>
 </div>
 
-
+<div class="slide">
+<header><h1>DevTools</h1></header>
+<section class="content">
+<p>You can inspect pseudo-elements like<code>::first-letter</code>, <code>::first-line</code>, <code>::before</code>, <code>::after</code>, <code>::cue</code>, <code>::marker</code>, and <code>::backdrop</code>, and browser specific pseudo-elements like<code>::-moz-progress-bar</code> in DevTools</p>
+<ul>
+  <li>pseudo elements appear in the element inspector</li>
+  <li>styles appear in the pseudo-element pane in style rules</li>
+</ul>
+</section>
+</div>
 
 <!--  -->
 <div class="slide divider">

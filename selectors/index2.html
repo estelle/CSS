@@ -740,17 +740,12 @@ a:not(:local-link) {
 <pre>:focus-visible
 :focus-within</pre>
 <small><code>:-moz-focusring</code> </small>
-
+<p>You can toggle <code>:hover</code>, <code>:active</code>, <code>:focus</code>, and <code>:focus-within</code> in DevTools</p>
   </section>
   </div>
 
 
-<div class="slide">
-<header><h1>DevTools</h1></header>
-<section class="content">
-<p>You can toggle <code>:hover</code>, <code>:active</code>, <code>:focus</code>, and <code>:focus-within</code> in DevTools</p>
-</section>
-</div>
+
 
 
 <div class="slide object">
@@ -945,6 +940,25 @@ E || F
 
 
 <div class="slide">
+<header><h1>DevTools</h1></header>
+<section class="content">
+<p>There are lots of Developer Tool featues related to selectors, including pseudo classes.</p>
+<ul>
+<li>It's possible to toggle <code>:hover</code>, <code>:active</code>, <code>:visited</code>, <code>:focus</code>, and <code>:focus-within</code>.</li>
+<li>Open the <a href="https://wapo.com">Washington Post</a> to follow along with these feature explanations:
+<ol>
+<li>Inspect an element</li>
+<li>Inspect the selectors impacting that element (in rules and computed)</li>
+<li>See how many elements are being impacted by that selector</li>
+<li>Create a selector block</li>
+</ol>
+</li>
+</ul>
+
+</section>
+</div>
+
+<div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content">
     <p>Add this HTML to the <a href="../intro/exercises/cards.html">page you created in the intro</a></p>
@@ -969,6 +983,7 @@ E || F
 <div class="slide">
   <header><h1>Exercise</h1></header>
   <section class="content" style="height: 80vh; overflow: scroll">
+    <h2>Targeting without IDs or Classes</h2>
     <p>There are three playing cards, each with a face side and a back, all inside a <code>&lt;figure></code> container. For right now every card is an ace.</p>
     <p>Create the following selector blocks in <a href="../intro/exercises/style.css">your css file</a>:</p>
     <ol>
@@ -984,6 +999,45 @@ E || F
       <li>Any card being hovered</li>
     </ol>
   </section>
+</div>
+
+<div class="slide">
+<header><h1>Intentionally left blank</h1></header>
+<section class="content">
+</section>
+</div>
+
+<div class="slide ">
+<header><h1>solution</h1></header>
+<section class="content">
+
+
+<p>The figure</p>
+<pre contenteditable>figure {}</pre>
+<p>all the cards</p>
+<pre contenteditable>[data-type] {}</pre>
+ <p>backs of the cards</p> 
+ <pre contenteditable>[data-type] > :first-child</pre>
+ <p>card faces  </p>
+ <pre contenteditable>[data-value] </pre>
+<p>first, second, and last card </p>
+ <pre contenteditable>[data-type]:first-of-type {}
+[data-type]:nth-of-type(2) {}
+[data-type]:last-of-type {}</pre>
+
+<p>faces of first, second and last cards </p>
+ <pre contenteditable>[data-type]:first-of-type [data-value]{}
+[data-type]:nth-of-type(2) [data-value] {}
+[data-type]:last-of-type [data-value] {}</pre>
+<p>red cards  </p>
+ <pre contenteditable>[data-type="H" i],
+[data-type="D" i] {}</pre>
+<p>black cards</p>
+ <pre contenteditable>[data-type="C" i],
+[data-type="S" i] {}</pre>
+<p>hovered card</p>  
+ <pre contenteditable>[data-type]:hover {}</pre>
+</section>
 </div>
 
 <div class="slide">
