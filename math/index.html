@@ -276,7 +276,7 @@ p { color: var(--pooperscooper); }</pre>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all">all</a></code> property</h1></header>
 <section class="content"><p>Custom properties are not reset by the all property</p>
-<pre contenteditable>initial | inherit | unset | revert</pre>
+<pre contenteditable class="multi">initial | inherit | unset | revert</pre>
   <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
 <dl>
   <dt>initial</dt>
@@ -423,6 +423,18 @@ hypot()</section>
 </div>
 
 
+<div class="slide">
+<header><h1>Useful Math!</h1></header>
+<section class="content">
+  <p>Responsive font equation</p>
+<pre contenteditable>font-size: 
+  calc( var(--min_font) + 
+  (var(--max_font) - var(--min_font)) * ( (100vw - var(--min_width)) / 
+  ( var(--max_width) - var(--min_width)) ));</pre>
+</section>
+</div>
+
+
 <!--NEXT-->
 <div class="slide divider">
      <header><h1>Fonts</h1></header>
@@ -444,11 +456,11 @@ hypot()</section>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
     <li><a href="../grid">Grids</a></li>
-    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>

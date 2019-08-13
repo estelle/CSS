@@ -177,7 +177,7 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify" target="mdn">text-justify</a></code> property</h1></header>
 <section class="content">
   <p>Sets what type of justification should be applied to text when <code>text-align: justify;</code> is set </p>   
-  <pre contenteditable>auto | none | inter-word | inter-character</pre>
+  <pre contenteditable class="multi">auto | none | inter-word | inter-character</pre>
   <dl>
 
 <dt>
@@ -224,7 +224,7 @@ none</dt>
 <header><h1><code><a href="https://drafts.csswg.org/css-text-3/#text-align-all-property" target="spec"><strike>text-align-all</strike></a></code> property</h1></header>
 <section class="content">
   <p>Not supported on it's own, it's part of the text-align shorthand</p>
-  <pre contenteditable>start | end | left | right | center | justify | match-parent</pre>
+  <pre contenteditable class="multi">start | end | left | right | center | justify | match-parent</pre>
   <dl>
   <dt><code>start </code></dt>
     <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
@@ -250,7 +250,7 @@ none</dt>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-last" target="mdn">text-align-last</a></code> property</h1></header>
 <section class="content">
   <p>Part of the text-align shorthand, and supported, it sets how the last line of a block or a line, right before a forced line break, is aligned.</p>
-  <pre contenteditable>auto | start | end | left | right | center | justify | match-parent </pre>
+  <pre contenteditable class="multi">auto | start | end | left | right | center | justify | match-parent </pre>
   <dl>
   <dt><code>start </code></dt>
     <dd>Same as <code>left</code> if direction is LTR and <code>right</code> if direction is RTL.</dd>
@@ -376,7 +376,7 @@ none</dt>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="mdn">overflow-wrap</a></code> property</h1></header>
 <section class="content">
   <p>Applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.</p>
-  <pre contenteditable>normal | break-word | anywhere </pre>
+  <pre contenteditable class="multi">normal | break-word | anywhere </pre>
   <dl>
 <dt>normal</dt>
    <dd>Lines may only break at normal word break points, like spaces.</dd>
@@ -431,7 +431,7 @@ Supercalifragilisticexpialidocious</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-break" target="mdn">line-break</a></code> property</h1></header>
 <section class="content">
   <p>Sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.</p>
-  <pre contenteditable>auto | loose | normal | strict | anywhere</pre>
+  <pre contenteditable class="multi">auto | loose | normal | strict | anywhere</pre>
   <dl>
   <dt>auto</dt>
   <dd>Break text using the default line break rule.</dd>
@@ -450,7 +450,7 @@ Supercalifragilisticexpialidocious</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing" target="mdn">letter-spacing</a></code> property</h1></header>
 <section class="content">
   <p>sets the spacing behavior between text characters.</p>
-  <pre contenteditable>normal | &lt;length> </pre>
+  <pre contenteditable class="multi">normal | &lt;length> </pre>
   <dl>
 <dt>normal</dt>
     <dd>The normal letter spacing for the current font. Unlike a value of 0, this keyword allows the user agent to alter the space between characters in order to justify text.</dd>
@@ -524,7 +524,7 @@ Supercalifragilisticexpialidocious</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens" target="mdn">hyphens</a></code> property</h1></header>
 <section class="content">
   <p>Specifies how words should be hyphenated when text wraps across multiple lines. </p>
-  <pre contenteditable>none | manual | auto</pre>
+  <pre contenteditable class="multi">none | manual | auto</pre>
 
 <dl>
 	<dt>none</dt>
@@ -564,7 +564,7 @@ Supercalifragilisticexpialidocious</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation" target="mdn">hanging-punctuation</a></code> property</h1></header>
 <section class="content">
   <p>specifies whether a punctuation mark should hang at the start or end of a line of text. </p>
-  <pre contenteditable>none | [ first || [ force-end | allow-end ] || last ] </pre>
+  <pre contenteditable class="multi">none | [ first || [ force-end | allow-end ] || last ] </pre>
   <p>Hanging punctuation - brackets, quotes, comma, stops - may be placed outside the line box. Only works in Safari.</p>
 <pre contenteditable>hanging-punctuation: last;
 hanging-punctuation: last allow-end;
@@ -609,7 +609,7 @@ hanging-punctuation: first force-end last;</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space" target="mdn">white-space</a></code> property</h1></header>
 <section class="content">
   <p>Sets how white space inside an element is handled.</p>
-  <pre contenteditable>normal | pre | nowrap | pre-wrap | break-spaces | pre-line</pre>
+  <pre contenteditable class="multi">normal | pre | nowrap | pre-wrap | break-spaces | pre-line</pre>
   <dl>
   <dt>normal</dt>
   <dd>Default, except for in <code>&lt;pre></code>. White space is collapsed, newlines are white space, and lines wrap.</dd>
@@ -695,7 +695,7 @@ Motherfucker</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing" target="mdn">word-spacing</a></code> property</h1></header>
 <section class="content">
   <p>Sets the length of space between words and between tags.</p>
-  <pre contenteditable>normal | &lt;length></pre>
+  <pre contenteditable class="multi">normal | &lt;length></pre>
 </section>
 </div>
 
@@ -778,7 +778,7 @@ That's me.”</p>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="mdn">word-break</a></code> property</h1></header>
 <section class="content">
   <p>Sets whether line breaks appear wherever the text would otherwise overflow its content box.</p>
-  <pre contenteditable>normal | keep-all | break-all | break-word </pre>
+  <pre contenteditable class="multi">normal | keep-all | break-all | break-word </pre>
   <dl>
   <dt>normal</dt>
   <dd>Use the default line break rule.</dd>
@@ -842,7 +842,7 @@ Supercalifragilisticexpialidocious</p>
 <div class="slide">
   <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
   <section class="content"><p>Specifies how to capitalize an element's text. </p>
-<pre contenteditable>capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
+<pre contenteditable class="multi">capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
 <p>It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.</p>
 
 <dl>
@@ -962,7 +962,7 @@ text-overflow: ellipsis;</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line" target="mdn">text-decoration-line</a></code> property</h1></header>
 <section class="content">
   <p>Sets the kind of decoration that is used on text in an element, such as an underline, line-thru, overline, or all three.</p>
-  <pre contenteditable>none | underline | overline | line-through | blink </pre>
+  <pre contenteditable class="multi">none | underline | overline | line-through | blink </pre>
   <p>Either <code>none</code> or any combination of the other four values</p>
   <dl class="tdl">
   <dt style="text-decoration-line: none">none</dt>
@@ -989,7 +989,7 @@ text-overflow: ellipsis;</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style" target="mdn">text-decoration-style</a></code> property</h1></header>
 <section class="content">
   <p>Sets the style of the lines specified by text-decoration-line. The style applies to all lines that are set with text-decoration-line.</p>
-  <pre contenteditable>solid | double | dotted | dashed | wavy</pre>
+  <pre contenteditable class="multi">solid | double | dotted | dashed | wavy</pre>
   <dl class="tds">
   <dt style="text-decoration-style: solid">solid</dt>
 
@@ -1025,7 +1025,7 @@ text-overflow: ellipsis;</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color" target="mdn">text-decoration-color</a></code> property</h1></header>
 <section class="content">
   <p>Sets the color of decorations added to text by text-decoration-line.</p>
-  <pre contenteditable>currentColor | &lt;color></pre>
+  <pre contenteditable class="multi">currentColor | &lt;color></pre>
   <style contenteditable class="editme">.tdc dt {
    text-decoration-color: currentColor;
    text-decoration-line: underline;
@@ -1059,7 +1059,7 @@ text-overflow: ellipsis;</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness" target="mdn">text-decoration-thickness</a></code> property</h1></header>
 <section class="content">
   <p>Sets the thickness of the text-decoration-line(s).</p>
-  <pre contenteditable>currentColor | &lt;color></pre>
+  <pre contenteditable class="multi">currentColor | &lt;color></pre>
   <style contenteditable class="editme">.tdt dt {
    text-decoration-color: currentColor;
    text-decoration-line: underline;
@@ -1173,7 +1173,7 @@ Challenging power structures from the inside, working the cracks within the syst
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip" target="mdn"><strike>text-decoration-skip</strike></a></code> property</h1></header>
 <section class="content">
   <p>Sets what parts of an element’s content any text decoration must skip over. It controls text decoration lines drawn by the element and its ancestors.</p>
-  <pre contenteditable>none | objects | spaces | leading-spaces | 
+  <pre contenteditable class="multi">none | objects | spaces | leading-spaces | 
   trailing-spaces | edges | box-decoration</pre>
   </style>
  <dl>
@@ -1205,7 +1205,7 @@ Challenging power structures from the inside, working the cracks within the syst
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink" target="mdn">text-decoration-skip-ink</a></code> property</h1></header>
 <section class="content">
   <p>specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.</p>
-  <pre contenteditable>none | auto</pre>
+  <pre contenteditable class="multi">none | auto</pre>
   </style>
  <dl>
   <dt>none</dt>
@@ -1259,7 +1259,7 @@ Challenging power structures from the inside, working the cracks within the syst
 <header><h1>text-emphasis-style</h1></header>
 <section class="content">
 	<p>Sets the appearance of emphasis marks</p>
-	<pre contenteditable>none | &lt;string> 
+	<pre contenteditable class="multi">none | &lt;string> 
 filled | open | dot | circle | double-circle | triangle | sesame </pre>
 <dl>
   <dt>none</dt>
@@ -1401,11 +1401,11 @@ Challenging power structures from the inside, working the cracks within the syst
     <li><a href="../colors">Colors &amp; Transparency </a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
     <li><a href="../grid">Grids</a></li>
-    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>

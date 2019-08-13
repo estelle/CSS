@@ -1,3 +1,80 @@
+.medexampleshell {
+	display: grid; 
+	grid-template-columns: repeat(3, 1fr); 
+	grid-template-rows: repeat(2, 200px); gap: 1em;
+}
+ .medexample {  
+ 	text-align: center; 
+ 	list-style-type: none;
+    padding: 60px 0; 
+    box-sizing: border-box; 
+    font-size: 1.2em;
+}
+.medexample code {
+	background-color: #ffffff99;
+}
+
+    .multiplebg {
+	background-image: linear-gradient(gold, magenta), linear-gradient(rebeccapurple,rebeccapurple);
+	background-size: 180px 180px;
+	background-repeat: no-repeat;
+	background-position: 0 0, 20px 20px;
+
+ }
+ .bgimage {
+	background-image: radial-gradient(50% 50%, circle closest-side, transparent 70%, magenta 70%,gold 85%,transparent  85% );
+	background-size: 190px 190px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+
+
+ }
+ .linear {
+background-image:
+		linear-gradient(to left,
+			var(--splashcolor) 8%,
+			var(--dark_bg) 24%);
+}
+ .linrepeat {
+background-image:
+		repeating-linear-gradient(to left,
+			var(--splashcolor) 8%,
+			var(--dark_bg) 24%);
+}
+  .radial {
+background-image:
+		radial-gradient(circle 200px at 20% 20%,
+			var(--splashcolor),
+			white 8%,
+			var(--dark_bg) 16%);
+}
+  .conic {
+background-image:
+    conic-gradient(
+      var(--splashcolor),
+      white 24%,
+      var(--dark_bg) 48%);
+}
+ .radrepeat {
+background-image:
+		repeating-radial-gradient(circle at 40px 40px,
+			var(--splashcolor),
+			white 8%,
+			var(--dark_bg) 16%);
+}
+ .conrepeat {
+background-image:
+    repeating-conic-gradient(
+      var(--splashcolor),
+      white 8%,
+      var(--dark_bg) 16%);
+}
+
+
+
+
+
+
  .multiplebg {
 	background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(#58ADE3,#58ADE3);
 	background-size: 100px 100px;

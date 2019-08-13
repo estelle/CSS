@@ -172,7 +172,7 @@ code {
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight" target="mdn">font-weight</a></code> property</h1></header>
 <section class="content">
   <p>Sets the boldness of the font</p>
-	<pre contenteditable>normal | bold | bolder | lighter | &lt;number></pre>
+	<pre contenteditable class="multi">normal | bold | bolder | lighter | &lt;number></pre>
 	<table class="standard-table">
  <thead>
   <tr>
@@ -284,7 +284,7 @@ code {
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style" target="mdn">font-style</a></code> property</h1></header>
 <section class="content"><p> sets whether a font should be styled with a normal, italic, or oblique face from its font-family.</p>
-	<pre contenteditable>normal | italic | oblique &lt;angle>?</pre>
+	<pre contenteditable class="multi">normal | italic | oblique &lt;angle>?</pre>
 <ul>
 	<li>By angle, -90deg to 90deg. Otherwise invalid.</li>
 	<li>Italic forms are generally cursive.</li>
@@ -335,6 +335,27 @@ larger | smaller | &lt;length> | &lt;percentage></pre>
 	</ul>
 </section>
 </div>
+
+
+
+
+<div class="slide">
+  <header><h1>rem</h1></header>
+    <section class="content">
+    <pre contenteditable>html {
+    font-size: 62.5%;
+}
+p {
+    font-size: 13px;
+    font-size: 1.3rem;
+}
+small {
+    font-size: 11px;
+    font-size: 1.1rem;
+}</pre>
+    </section>
+</div>
+
 
 
 <div class="slide" id="fontsize">
@@ -398,7 +419,7 @@ larger | smaller | &lt;length> | &lt;percentage></pre>
 <section class="content">
 	<h2>CSS Fonts Module Level 3</h2>
 	<p>Shorthand for <code>font-variant-caps</code>, <code>font-variant-numeric</code>, f<code>ont-variant-alternates</code>, <code>font-variant-ligatures</code>, and <code>font-variant-east-asian</code>.</p>
-	<pre contenteditable>normal | none | [ &lt;common-lig-values> || &lt;discretionary-lig-values> || 
+	<pre contenteditable class="multi">normal | none | [ &lt;common-lig-values> || &lt;discretionary-lig-values> || 
 &lt;historical-lig-values> || &lt;contextual-alt-values> || 
 [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || 
 &lt;numeric-figure-values> || &lt;numeric-spacing-values> || &lt;numeric-fraction-values> || 
@@ -413,7 +434,7 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</h1></header>
 <section class="content">
   <p>Controls the use of alternate glyphs for capital letters.</p>
-  <pre contenteditable style="text-align: center;">normal | small-caps  all-small-caps | petite-caps |
+  <pre contenteditable class="multi">normal | small-caps  all-small-caps | petite-caps |
    all-petite-caps | unicase | titling-caps</pre>
   <dl>
   <dt>normal</dt>
@@ -440,7 +461,7 @@ ordinal || slashed-zero || &lt;east-asian-variant-values> ||
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property</h1></header>
 <section class="content">
   <p>Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.</p>
-  <pre contenteditable>normal | ordinal | slashed-zero | lining-nums | proportional-nums | 
+  <pre contenteditable class="multi">normal | ordinal | slashed-zero | lining-nums | proportional-nums | 
 oldstyle-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre><dl>
   <dt>normal</dt>
   <dd>This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
@@ -497,7 +518,7 @@ oldstyle-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre><dl>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property</h1></header>
 <section class="content"><p>Controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text</p>
 
-  <pre contenteditable>normal | none | (no-)contextual | (no-)common-ligatures | 
+  <pre contenteditable class="multi">normal | none | (no-)contextual | (no-)common-ligatures | 
  (no-)discretionary-ligatures | (no-)historical-ligatures;</pre>
  <dl><dt>normal</dt>
   <dd>This keyword leads to the activation of the usual ligatures and  contextual forms needed for correct rendering. The ligatures and forms  activated depend on the font, language and kind of script. This is the  default value.</dd>
@@ -799,7 +820,7 @@ and <code>font-family</code> </li>
 <div class="slide">
 <header><h1>System font <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font" target="mdn">font</a></code> declaration</h1></header><section class="content">
   <p>If declared as a single keyword, that keyword can be a system font</p>
-  <pre contenteditable>caption | icon | menu | message-box | small-caption | status-bar</pre>
+  <pre contenteditable class="multi">caption | icon | menu | message-box | small-caption | status-bar</pre>
 
 <dl>
   <dt>caption</dt>
@@ -2533,6 +2554,17 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 </div>
 
 
+
+<div class="slide object">
+  <header>
+    <h1>Variable Fonts</h1>
+  </header>
+  <object data="https://www.axis-praxis.org/specimens/__DEFAULT__"></object>
+  <a href="https://www.axis-praxis.org/specimens/__DEFAULT__" class="objectlink" target="resource">axis-praxis.org</a>
+</div>
+
+
+
 <div class="slide object">
   <header>
     <h1>Font Style Matcher</h1>
@@ -2549,13 +2581,13 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
   <pre contenteditable>font-kerning: auto | normal | none;</pre>
 <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures" target="mdn">font-variant-ligatures</a></code> property
 </p>
-  <pre contenteditable>normal | none | (no-)contextual | (no-)common-ligatures | 
+  <pre contenteditable class="multi">normal | none | (no-)contextual | (no-)common-ligatures | 
  (no-)discretionary-ligatures | (no-)historical-ligatures;</pre>
 <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps" target="mdn">font-variant-caps</a></code> property</p>
-<pre contenteditable>normal | small-caps | all-small-caps | petite-caps |
+<pre contenteditable class="multi">normal | small-caps | all-small-caps | petite-caps |
 all-petite-caps | unicase | titling-caps</pre>
 <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric" target="mdn">font-variant-numeric</a></code> property: either <code>normal</code> or one or more of the other space-separated values</p>
-<pre contenteditable>normal | ordinal | slashed-zero | lining-nums | oldstyle-nums | proportional-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre>
+<pre contenteditable class="multi">normal | ordinal | slashed-zero | lining-nums | oldstyle-nums | proportional-nums | tabular-nums | diagonal-fractions | stacked-fractions</pre>
 <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternatives" target="mdn">font-variant-alternatives</a></code> property</p>
 <p><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-emoji" target="mdn">font-variant-emoji</a></code> property</p>
 </section>
@@ -2587,11 +2619,11 @@ all-petite-caps | unicase | titling-caps</pre>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
     <li><a href="../grid">Grids</a></li>
-    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>

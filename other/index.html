@@ -21,53 +21,9 @@
 	box-shadow: 3px 3px 3px rgba(0,0,0,0.3), inset 1px 1px #fff;
 	list-style-type: none;
  }
- .cursors ul:last-of-type li {
-
+.cursors ul:last-of-type li {
 	background: linear-gradient(rgba(200, 0, 0, .2), rgba(200, 0, 0, .4));
  }
- div.example {
-display: block;
-padding: 0 10px;
-background: rgba(255, 255, 255, 0.4);
--moz-border-radius: 8px;
-border-radius: 8px;
-font-size:14px;
-border: 1px solid rgba(0, 0, 0, 0.2);
-column-rule: 1px solid #bbb;
-margin-bottom: -15px;
-}
-.boxsizing div {
-width: 200px;
-height: 100px;
-padding: 20px;
-border: 5px dashed #C7573A;
-margin: 20px;
-text-align: center;
-background-color: rgba(255, 255, 255, 0.5);
--webkit-box-sizing: content-box;
--moz-box-sizing: content-box;
-box-sizing: content-box;
-white-space: nowrap;
-}.boxsizing:first-of-type {
-margin: 0 10px 0 0;
-}
-.boxsizing {
-float: left;
-border: 1px solid #C7573A;
-margin: 20px 0 20px 20px;
-}
-.boxsizing div.bb {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-#box-orient-example {
-height: 220px;
-display: -webkit-box;
--webkit-box-orient: horizontal;
-display: -moz-box;
--moz-box-orient: horizontal;
-}
 	/* COLUMNS*/
 
 	#columnsslide {
@@ -88,7 +44,6 @@ display: -moz-box;
   font-size: 1.5rem;
 }
 
-.object > a {position: absolute; top: 10px; right: 10px;}
  </style>
   </head>
   <body>
@@ -146,7 +101,7 @@ display: -moz-box;
   <header><h1><code><a href="" target="mdn">will-change</a></code> property</h1></header>
    <section class="content">
     <p>Hints how an element is expected to change so browser can optimize for change before an element is happens. Can increase the responsiveness of a page by doing expensive work before its required.</p>
-    <pre contenteditable>auto | scroll-position | contents | &lt;ident></pre>
+    <pre contenteditable class="multi">auto | scroll-position | contents | &lt;ident></pre>
 
 <dl><dt>auto</dt>
     <dd>Tells the browser "You do you", which it was going to do anyway.</dd>
@@ -170,7 +125,7 @@ display: -moz-box;
   <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain" target="mdn">contain</a></code> property</h1></header>
    <section class="content">
     <pI>Indicates an element and its contents are, as much as possible, independent of the rest of the document tree, allowing independent recalculations of layout, style, paint, and size for a limited area of the DOM</p>
-    <pre contenteditable>none | strict | content | [ size || layout || style || paint ]</pre>
+    <pre contenteditable class="multi">none | strict | content | [ size || layout || style || paint ]</pre>
     <dl>
   <dt>none</dt>
   <dd>Indicates the element renders as normal, with no containment applied.</dd>
@@ -218,6 +173,13 @@ display: -moz-box;
   </section>
 </div>
 
+
+
+<div class="slide intro">
+<header><h1>Multi Column Layout</h1></header>
+<section class="content">
+</section>
+</div>
 
  <div class="slide" id="columnpage">
           <header> <h1>Columns</h1></header>
@@ -479,38 +441,6 @@ widows</pre>
 
 
 
-
-<div class="slide">
-	<header><h1>calc()</h1></header>
-    <section class="content">
-<pre contenteditable>.colA {
-  width:50%;
-  margin-right: 1em;
-}
-.colB {
-  width: calc(50% - 1em);
-}</pre>
-     <small>+, -, *, /, mod, min, and max operators.</small>
-     	
-    </section>
-</div>
-
-<div class="slide">
-	<header><h1>rem</h1></header>
-    <section class="content">
-    <pre contenteditable>html {
-    font-size: 62.5%;
-}
-p {
-    font-size: 13px;
-    font-size: 1.3rem;
-}
-small {
-    font-size: 11px;
-    font-size: 1.1rem;
-}</pre>
-    </section>
-</div>
 
 
 

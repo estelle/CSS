@@ -14,6 +14,9 @@ pre, style[class="editme" i] {
   border: 1px solid var(--splashcolor);
   font-family: monospace;
 }
+section .editme:first-child {
+  margin-top: 1.7em;
+}
 code {
   background: rgba(255, 255, 255, 0.3);
   text-shadow: none;
@@ -56,3 +59,4 @@ pre {
 code i {
   opacity: 50%;
 }
+pre.multi { text-align: center; }

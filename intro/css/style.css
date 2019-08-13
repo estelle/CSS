@@ -240,6 +240,10 @@ pre, style[class=editme i] {
   font-family: monospace;
 }
 
+section .editme:first-child {
+  margin-top: 1.7em;
+}
+
 code {
   background: rgba(255, 255, 255, 0.3);
   text-shadow: none;
@@ -281,6 +285,10 @@ pre a:hover, pre a:active, pre a:focus {
 
 code i {
   opacity: 50%;
+}
+
+pre.multi {
+  text-align: center;
 }
 
 .code {
@@ -416,6 +424,9 @@ section.content {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
   left: 0;
+}
+
+.object:not[onclick] header {
   pointer-events: none;
 }
 

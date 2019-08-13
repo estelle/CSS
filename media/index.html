@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Media Queries</title>
-    <style></style>
 <link rel="stylesheet" href="../intro/css/main.css"/>
 <link href="../intro/css/media.css" rel="stylesheet">
 <style>
@@ -921,7 +920,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 <div class="slide">
   <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action" target="resource">touch-action</a></code> property</h1></header>
   <section class="content">
-    <pre contenteditable>auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation</pre>
+    <pre contenteditable class="multi">auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation</pre>
     <p>Specified as the keywords <code>auto, none, manipulation</code>, OR
     one of the keywords <code>pan-x, pan-left, pan-right</code>, and/or one of the keywords <code>pan-y, pan-up, pan-down</code>, plus optionally the keyword <code>pinch-zoom</code>.</p>
     <ul>
@@ -960,7 +959,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
   <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select" target="resource">user-select</a></code> property</h1></header>
   <section class="content">
     <p>Controls whether the user can select text.</p>
-    <pre contenteditable>auto | text | none | contain | all</pre>
+    <pre contenteditable class="multi">auto | text | none | contain | all</pre>
     <dl>
       <dt>none</dt>
       <dd>Element and its sub-elements are not selectable</dd>
@@ -968,6 +967,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
       <dd>text can be selected by the user.</dd>
       <dt>all</dt>
       <dd>In an HTML editor, if a double-click or context-click occurred in sub-elements, the highest ancestor with this value will be selected.</dd>
+      <dt><strike>contain</strike></dt><dd>Enables selection to start within the element; however, the selection will be contained by the bounds of that element.</dd>
 <dt>auto</dt>
 <dd>
 <ul>
@@ -983,6 +983,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 <div class="slide">
   <header><h1>user-select</h1></header><!-- /header -->
 <section class="content">
+  <p>Not fully supported</p>
   <style contenteditable class="editme">
 .p::before, .p::after {
   user-select: text;
@@ -997,7 +998,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 <p class="p"> - Generate Text - </p>
 
 </section>
-
+</div>
 
 <!-- divider -->
 <div class="slide divider">
@@ -1088,11 +1089,11 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
     <li><a href="../grid">Grids</a></li>
-    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
@@ -1127,7 +1128,7 @@ touch-action: manipulation; <i>/* removes click event delay */</i></pre>
 </ul>
 </nav>
 </header>
- <footer>
+ <footer id="info">
 <p style="float:right"><a href="http://www.twitter.com/estellevw">@estellevw</a> &middot; Press <span>&rarr;</span> key to advance. &middot;<a href="http://estelle.github.com/CSS/">Estelle.Github.com/CSS/</a></p>
 </footer>
   <script src="../slideshow.js"></script>

@@ -12,48 +12,21 @@ Twitter: @estellevw
 -->
    <link rel="stylesheet" href="../intro/css/main.css"/>
    <link rel="stylesheet" href="../intro/css/gradients.css"/>
-   <link rel="stylesheet" href="religion.css"/>
    <link rel="stylesheet" href="examples.css"/>
-   <style>
-style[class="editme" i]  {
-  display: block;
-  padding: 20px; 
-  font-size: 1em; 
-  font-family: monospace; 
-  white-space: pre; 
-  border-radius: 10px; 
-  border: 3px solid #aaa; 
-  background-color:#ffffffcc; 
-  margin: 100px auto;
-  width: 80vw;
-  font-family:"Courier New", Courier, monospace;
-}
-</style>
- <style>
 
- </style>
-  </head>
-  <body> <header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">Back</button></li>
-            <li><button class="button done" id="next">Next</button></li>
-        </ul>
-    </nav>
-</header>
+ </head>
+<body>
+
 
   <div id="presentation">
-
    <div id="presentation-counter"></div>
-
    <div id="slides">
 
 
+       
 
-
-
-<!-- library examples -->
-
+                 
+<!--  -->
 <div class="slide intro">
      <header><h1>CSS Gradients </h1></header>
      <section class="content">
@@ -62,82 +35,6 @@ style[class="editme" i]  {
  </div>
 
 
-
-
-
-<!-- library examples -->
-<div class="slide normal greenbean grad1" id="slide1">
-     <header><h1>Plaid</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide1').style.backgroundColor = this.value;">
-     </section>
- </div>
-
-
-<!-- library examples -->
-<div class="slide normal metal grad1"  id="slide2">
-     <header><h1>Metal Grid</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide2').style.backgroundColor = this.value;">
-     </section>
- </div>
-
-
-<!-- library examples -->
-<div class="slide normal classic grad1"  id="slide3">
-     <header><h1>Classic</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide3').style.backgroundColor = this.value;">
-     </section>
- </div>
-
-
-<!-- library examples -->
-<div class="slide normal inverse1 grad1"  id="slide4">
-     <header><h1>Disco Ball</h1></header>
-     <section class="content">
-     <input type="range" min="5" max="50" onChange="document.getElementById('slide4').style.backgroundSize = this.value + 'px,' + this.value + 'px,100%';">
-     </section>
- </div>
-
-<!-- library examples -->
-<div class="slide normal tiltdavid grad1"  id="slide5">
-     <header><h1>Star of David</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide5').style.backgroundColor = this.value;">
-     </section>
- </div>
-
- <!-- library examples -->
-<div class="slide normal retro67 grad1"  id="slide6">
-     <header><h1>Retro 1967</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide6').style.backgroundColor = this.value;">
-     </section>
- </div>
-
- <!-- library examples -->
-<div class="slide normal blurry grad1"  id="slide7">
-     <header><h1>Seat Cushion</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide7').style.backgroundColor = this.value;">
-     </section>
- </div>
- <!-- library examples -->
-<div class="slide normal bradybunch grad1"  id="slide9">
-     <header><h1>Brady Brunch</h1></header>
-     <section class="content">
-     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide9').style.backgroundColor = this.value;">
-     <input type="range" min="10" max="210" step="10" onChange="alter(this.value)">
-     <script>
-	 function alter(sz) {
-		 sz2 = sz +"px "
-		 	document.getElementById('slide9').style.backgroundSize = sz2 + sz2;
-			document.getElementById('slide9').style.backgroundPosition = "0 0, " + sz/2 + 'px ' + sz/2 + 'px';
-	 }
-	 </script>
-     </section>
- </div>
 
 <!-- 4 kind of radients -->
 <div class="slide">
@@ -161,29 +58,6 @@ style[class="editme" i]  {
      </section>
  </div>
 
-
-<!--  
-<div class="slide">
-  <header><h1>conical gradient</h1></header>
-  <section class="content">
-    <ul class="medexampleshell" id="lgresize">
-      <li class="medexample" style="background: conic-gradient(from 45deg, white, black, white);">conic-gradient()</li>
-    <li class="medexample" style="background: conic-gradient(red, magenta, blue, aqua, lime, yellow, red); border-radius: 50%;">conic-gradient()</li>
-      <li class="medexample" style="
-    background: repeating-conic-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));">repeating-conic-gradient()</li>
-      <li class="medexample" style="
-    background: repeating-conic-gradient(rgba(0,0,0,0.5) 0deg 25%, rgba(0,0,0,0.1) 0deg 50%);">repeating-conic-gradient()</li>
-      <li class="medexample" style="
-    background: repeating-conic-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1) 20deg );">repeating-conic-gradient()</li>
-  </ul>
-  </section>
-</div>-->
-
-<div class="slide object">
-<object data="https://caniuse.com/#search=gradient"></object>
-  <a href="https://caniuse.com/#search=gradient" target="play" title="open resource in new window">➹</a>
-
-</div>
 
 
 <!--  -->
@@ -802,7 +676,7 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
      <header><h1>Edit the backgrounds</h1></header>
      <section class="content">
      <p style="text-align:center">In the next slide edit the code to<br>
-     make really ugly rainbows</p>
+     make a background gradients.</p>
      <ul>
       <li>Change the direction: both magic corners and angles </li>
       <li>create effects with color stops at same location</li>
@@ -810,6 +684,7 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
       <li>create effects by adding multiple gradients, playing with position and size</li>
       <li>See more examples: <a href="https://leaverou.github.io/css3patterns/">Lea Verou's Patterns</a> and <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a></li>
      </ul>
+     <p>Would this be an effective background image for content?</p>
      </section>
  </div>
 
@@ -1584,11 +1459,11 @@ background-image:
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>
     <li><a href="../grid">Grids</a></li>
-    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
@@ -1598,68 +1473,23 @@ background-image:
   </section>
 </div>
 
-
-<!-- TOC -->
-<div class="slide">
-  <header><h1>Links</h1></header>
-    <section class="content">
-      <ul>
-      </ul>
-    </section>
-</div>
- <!--
- <div class="slide" id="">
-      <header><h1>Estelle Weyl</header>
-      <section class="content">
-      <ul>
-          <li>@estellevw</li>
-          <li>@standardista</li>
-          <li>http://www.standardista.com</li>
-      </ul>
-
-
-      <p>CSS Deep Dive</p>
-       <ul>
-        <li><a href="index.html">TOC</a></li>
-        <li><a href="selectors.html">Selectors</a></li>
-        <li><a href="transforms.html">Transforms</a></li>
-        <li><a href="animation.html">Transition &amp; Animation</a></li>
-        <li><a href="flexbox.html">Flexbox</a></li>
-        <li><a href="/gradients/">Gradients</a></li>
-        <li><a href="/snow/">Summary</a></li>
-        <li><a href="/doyouknowcss/">CSS? WTF!</a></li>
-
-
-             </ul>
-      <p>
-        <li>CSS Workshop -> <a href="../CSS-Workshop/part_10_transforms.html">Transforms</a></li>
-      </p>
-
-      </section>
-  </div>-->
-
-
   </div>
   </div>
-  <script src="../selectors/selectors.js"></script>
-  <script>
-   function changeFeature(changestyle, content, slide) {
-	   document.getElementById(slide).style[changestyle] = document.getElementById(content).innerHTML;
-   }
-
-
-
-   function changeBackgroundGradient (pageID, changedText) {
-      document.getElementById(pageID).style.backgroundImage = document.querySelector(changedText).innerHTML;
-   }
-
-   var els = document.querySelectorAll('[data-function=changebg]');
-   for(var i = 0; i < els.count; i++) {
-      els[i].addEventListener('keyup', function (e) {
-        console.log(e.target);
-      });
-   }
-   </script>
+<header>
+<nav>
+<ul>
+  <li><button class="button cancel" id="back">Back</button></li>
+  <li><button class="button done" id="next">Next</button></li>
+</ul>
+</nav>
+</header>
+ <footer id="info">
+<p style="float:right"><a href="http://www.twitter.com/estellevw">@estellevw</a> &middot; Press <span>&rarr;</span> key to advance. &middot;<a href="http://estelle.github.com/CSS/">Estelle.Github.com/CSS/</a></p>
+</footer>
+  <script src="../slideshow.js"></script>
 
   </body>
+
 </html>
+
+

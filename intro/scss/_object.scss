@@ -6,6 +6,8 @@
   text-align:center;
   background-color: rgba(255,255,255,0.9);
   left:0;
+}
+.object:not[onclick] header {
   pointer-events: none;
 }
 .objectlink {
