@@ -401,6 +401,23 @@ image(ltr 'leftarrow.png');</pre>
 </section>
 </div>
 
+
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API" target="mdn">paint()</a></code> function</h1></header>
+<section class="content">
+  <p>Enables pulling in JavaScript drawing directly into an element's background, border, or content.</p>
+  <pre contenteditable>background-image: paint(myJSDrawing);</pre>
+<p>To programmatically create a CSS image with JavaScript:
+<ol>
+  <li>Define a paint worklet using the <code>registerPaint()</code> function</li>
+<li>Register the worklet</li>
+<li>Include the <code>paint()</code> CSS function</li></ol>
+</section>
+</div>
+
 <div class="slide">
   <header><h1>A JS Worklet</h1></header>
   <section>
@@ -489,19 +506,6 @@ h6 { --myColor: hsla(355, 90%, 60%, 0.3); }
 </div>
 
 
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API" target="mdn">paint()</a></code> function</h1></header>
-<section class="content">
-  <p>Enables pulling in JavaScript drawing directly into an element's background, border, or content.</p>
-  <pre contenteditable>background-image: paint(myJSDrawing);</pre>
-<p>To programmatically create a CSS image with JavaScript:
-<ol>
-  <li>Define a paint worklet using the <code>registerPaint()</code> function</li>
-<li>Register the worklet</li>
-<li>Include the <code>paint()</code> CSS function</li></ol>
-</section>
-</div>
 
 <div class="slide">
 <header><h1></h1></header>
