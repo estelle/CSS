@@ -9,19 +9,71 @@
   --dark_bg: #707070;
   --colorpop: #58ADE3; 
   --lightsplash: #58ade3aa; 
-}</style>
-   <link rel="stylesheet" href="borders.css"/>
+}
+.medexampleshell {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, 200px); gap: 1em;
+}
+
+
+ .medexample {  
+  text-align: center; 
+  list-style-type: none;
+    padding: 60px 0; 
+    box-sizing: border-box; 
+    font-size: 1.2em;
+}
+.medexample code {
+  background-color: #ffffff99;
+}
+
+ .linear {
+background-image:
+    linear-gradient(to left,
+      var(--splashcolor) 8%,
+      var(--dark_bg) 24%);
+}
+ .linrepeat {
+background-image:
+    repeating-linear-gradient(to left,
+      var(--splashcolor) 8%,
+      var(--dark_bg) 24%);
+}
+  .radial {
+background-image:
+    radial-gradient(circle 200px at 20% 20%,
+      var(--splashcolor),
+      white 8%,
+      var(--dark_bg) 16%);
+}
+  .conic {
+background-image:
+    conic-gradient(
+      var(--splashcolor),
+      white 24%,
+      var(--dark_bg) 48%);
+}
+ .radrepeat {
+background-image:
+    repeating-radial-gradient(circle at 40px 40px,
+      var(--splashcolor),
+      white 8%,
+      var(--dark_bg) 16%);
+}
+ .conrepeat {
+background-image:
+    repeating-conic-gradient(
+      var(--splashcolor),
+      white 8%,
+      var(--dark_bg) 16%);
+}
+
+
+</style>
   </head>
   <body>
 
-<header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">Back</button></li>
-            <li><button  class="button done" id="next">Next</button></li>
-        </ul>
-    </nav>
-</header>
 
   <div id="info">
     <p>
@@ -293,7 +345,7 @@ offset-path: url(#path);</pre>
 
 
 <div class="slide divider">
-<header><h1><code>image()</h1></header>
+<header><h1><code>image()</code></h1></header>
 <section class="content">
 </section>
 </div>
@@ -345,16 +397,109 @@ image(ltr 'leftarrow.png');</pre>
 <div class="slide divider">
 <header><h1><code>paint()</code></h1></header>
 <section class="content">
+  <h1 style="text-align: center;">a.k.a. &ldquo;Houdini&rdquo;</h1>
 </section>
 </div>
+
+<div class="slide">
+  <header><h1>A JS Worklet</h1></header>
+  <section>
+    <pre contenteditable>registerPaint(<b>'nameOfMyworklet'</b>, class {
+  // use this function to retrieve any custom props defined for the element, 
+  // return them in the specified array
+  static get inputProperties() { return ['--myColor']; }
+
+  // Input arguments that can be passed to the `paint` function
+  // static get inputArguments() { return ['<color>']; }
+  // Whether Alpha is allowed? - This is set to true by default, 
+  // if it is set to false all colours used on the canvas will have full opacity, or alpha of 1.0
+  static get contextOptions() { return {alpha: true}; }
+
+  paint(ctx, size, props) {
+    // ctx -> drawing context
+    // size -> size of the box being painted
+    // props -> list of custom properties available to the element
+
+    // set where to start the highlight & dimensions
+    const x = 0;
+    const y = size.height * 0.3;
+    const blockWidth = size.width * 0.33;
+    const highlightHeight = size.height * 0.85;
+
+    // Paint uses Typed OM to retireve the custom property 
+    // value, so we have to use the get method on it
+    ctx.fillStyle = props.get( '--myColor' );
+
+    // block
+    ctx.beginPath();
+    ctx.moveTo( x, y);
+    ctx.lineTo( blockWidth, y );
+    ctx.lineTo( blockWidth + highlightHeight, highlightHeight );
+    ctx.lineTo( x, highlightHeight );
+    ctx.lineTo( x, y );
+    ctx.closePath();
+    ctx.fill();
+    // dashes
+    for ( let i = 0; i < 4; i++ ) {
+      let start = i * 2;
+      ctx.beginPath();
+      ctx.moveTo( ( blockWidth ) + ( start * 10 ) + 10, y );
+      ctx.lineTo( ( blockWidth ) + ( start * 10 ) + 20, y );
+      ctx.lineTo( ( blockWidth ) + ( start * 10 ) + 20 + (highlightHeight ), highlightHeight );
+      ctx.lineTo( ( blockWidth ) + (start * 10 ) + 10 + ( highlightHeight ), highlightHeight );
+      ctx.lineTo( ( blockWidth ) + ( start * 10 ) + 10, y );
+      ctx.closePath();
+      ctx.fill();
+    }
+  } // paint
+});    </color>
+  </section>
+</div>
+
+
+<div class="slide">
+<header><h1>Register the worklet</h1></header>
+<section class="content">
+  <p>Add the module, or "register" the worklet</p>
+  <pre contenteditable>CSS.paintWorklet.addModule('houdini.js');</pre>
+  <p>Now it can be referenced with the <code>paint()</code> function with the name of the worklet</p>
+  <pre contenteditable=""> element {
+  background-image: paint(nameOfMyworklet);
+}
+h1 { --myColor: hsla(155, 90%, 60%, 0.7); }
+h3 { --myColor: hsla(255, 90%, 60%, 0.5); }
+h6 { --myColor: hsla(355, 90%, 60%, 0.3); }
+</section>
+</div>
+
+<div class="slide houdini">
+<header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API/Guide" target="mdn">CSS Painting API</a></h1></header>
+<section class="content">
+ <style contenteditable class="editme">
+.houdini section * {background-image: paint(nameOfMyworklet);}
+h1 { --myColor: hsla(155, 90%, 60%, 0.7); }
+h3 { --myColor: hsla(255, 90%, 60%, 0.5); }
+h6 { --myColor: hsla(355, 90%, 60%, 0.3); }
+</style>
+<h1>This is a header</h1>
+<h3>This is a heading level 3 with more text than the h1</h3>
+<h6>Hello H6</h6>
+<script>CSS.paintWorklet.addModule('houdini.js');</script>
+</section>
+</div>
+
 
 
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API" target="mdn">paint()</a></code> function</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Enables pulling in JavaScript drawing directly into an element's background, border, or content.</p>
+  <pre contenteditable>background-image: paint(myJSDrawing);</pre>
+<p>To programmatically create a CSS image with JavaScript:
+<ol>
+  <li>Define a paint worklet using the <code>registerPaint()</code> function</li>
+<li>Register the worklet</li>
+<li>Include the <code>paint()</code> CSS function</li></ol>
 </section>
 </div>
 
@@ -423,8 +568,16 @@ image(ltr 'leftarrow.png');</pre>
 </div>
 
 
+<header>
+    <nav>
+        <ul>
+            <li><button class="button cancel" id="back">Back</button></li>
+            <li><button  class="button done" id="next">Next</button></li>
+        </ul>
+    </nav>
+</header>
 
   </div>
-  <script src="slides.js"></script>
+  <script src="../slideshow.js"></script>
   </body>
 </html>
