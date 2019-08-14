@@ -229,6 +229,26 @@ offset-path: url(#path);</pre>
 </div>
 
 
+<div class="slide">
+     <header><h1>url() values</h1></header>
+     <section class="content">
+<pre style="line-height:1; white-space:pre-wrap; word-break:break-all">url(singleImage.png)
+
+url(SVGImages.<strong>svg</strong>);
+
+url(sprite.png<strong>#xywh=40,0,20,20</strong>)
+
+url(<strong>data:</strong>image/gif;<strong>base64</strong>,fOulrS123hEAAa517sdfQfdafsPFRjuy187xxRM221...)
+
+url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'>&lt;circle cx='55' cy='190' r='25' fill='#FFF' />^lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/>&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/>&lt;/svg>"); <a href="http://jsfiddle.net/estelle/sTd62/embedded/result/" target="play">SVG Example</a>
+</pre>
+<p>Media fragment will not break backwards... hash will be ignored</p>
+ </section>
+ </div>
+
+
+
+
 <div class="slide url">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/url()" target="mdn">url()</a></code> Example</h1></header>
 <section class="content">
@@ -299,6 +319,13 @@ offset-path: url(#path);</pre>
 </div>
 
 
+<div class="slide object">
+  <header onclick="setData('cf');"><h1>Browser support: <code>cross-fade()</code> image value</h1></header>
+<object id="cf" data-data="https://caniuse.com/#search=cross-fade"></object>
+  <a href="https://caniuse.com/#search=cross-fade" target="play" title="open resource in new window">Open</a>
+</div>
+
+
 <div class="slide divider">
 <header><h1><code>element()</code></h1></header>
 <section class="content">
@@ -308,10 +335,12 @@ offset-path: url(#path);</pre>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/element" target="mdn">element()</a></code> function</h1></header>
 <section class="content">
-  <p>Defines an <code>&lt;image></code> value generated from an HTML element.</p>
+  <p>Defines an <code>&lt;image></code> value generated from an HTML element. Allows the use of any element, including &lt;canvas&gt; anywhere CSS images can be used (since FF4).</p>
   <pre contenteditable>element(#someID)</pre>
   <p>Pass the ID of an element 
 
+<pre contenteditable>background-image: -moz-element('#someID');
+background-image: element('#someID')</pre>
   <p>This image is live: if the HTML changes, the image is automatically updated.</p>
   <p>Works prefixed. In FF only</p>
 </section>
@@ -358,7 +387,8 @@ offset-path: url(#path);</pre>
   <pre contenteditable>image( &lt;direction>? [ &lt;image-src>? , &lt;color>? ]! )</pre>
   <dl>
 <dt>direction</dt>
-    <dd>Optional, either ltr  or rtl</dd>
+    <dd>Optional, either ltr  or rtl 
+<code class="pre">image(sprite.png<strong>#xywh=40,0,20,20</strong>);</code></dd>
 <dt>image-src</dt> 
     <dd>Zero or more &lt;url>s or &lt;string>s specifying the image sources, with optional image fragment identifiers.</dd>
 <dt>color</dt>
@@ -368,6 +398,24 @@ image(ltr 'leftarrow.png');</pre>
 </section>
 </div>
 
+
+
+
+<div class="slide">
+     <header><h1>More on <code>image()</code></h1></header>
+       <section class="content">
+<p>Define which portion of the image to show:</p>
+<pre contenteditable>background-image:
+    -moz-image-rect(url(ico_sprite.jpg), 32, 64, 16, 16);
+background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
+<p>Fallback in case your images doesn't load:</p>
+
+<pre contenteditable>background-image:
+     image("try1.svg", "try2.png", "try3.gif", blue)</pre>
+<p>Flip the image if the direction is rtl.</p>
+<pre contenteditable>background-image: image("arrow.png" rtl)</pre>
+     </section>
+ </div>
 
 
 <div class="slide divider">
@@ -392,6 +440,13 @@ image(ltr 'leftarrow.png');</pre>
     <li>Can not be nested inside another image-set() function.</li>
   </ul>
 </section>
+</div>
+
+
+<div class="slide object">
+  <header onclick="setData('is');"><h1>Browser support: <code>image-set()</code> image value</h1></header>
+<object id="is" data-data="https://caniuse.com/#search=image-set"></object>
+  <a href="https://caniuse.com/#search=image-set" target="play" title="open resource in new window">Open</a>
 </div>
 
 <div class="slide divider">
@@ -508,6 +563,13 @@ h6 { --myColor: hsla(355, 90%, 60%, 0.3); width: 50%;}
 
 
 
+<div class="slide object">
+  <header onclick="setData('pf');"><h1>Browser support: <code>paint()</code> image value</h1></header>
+<object id="pf" data-data="https://caniuse.com/#search=paint"></object>
+  <a href="https://caniuse.com/#search=paint" target="play" title="open resource in new window">Open</a>
+</div>
+
+
 <!--NEXT-->
 <div class="slide">
      <header><h1>Gradients</h1></header>
@@ -569,5 +631,13 @@ h6 { --myColor: hsla(355, 90%, 60%, 0.3); width: 50%;}
 </header>
   </div>
   <script src="../slideshow.js"></script>
+  <script>
+    function setData(id) {
+      let el = document.getElementById(id),
+        data = el.getAttribute('data-data');
+      el.setAttribute('data', data);
+
+    }
+  </script>
   </body>
 </html>
