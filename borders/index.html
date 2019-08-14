@@ -5,10 +5,10 @@
     <title>Backgrounds &amp; Borders: </title>
 <link rel="stylesheet" href="../intro/css/main.css"/>
    <style>:root {
-  --splashcolor: #58ADE3;
+  --splashcolor: #E358AD;
   --dark_bg: #707070;
-  --colorpop: #58ADE3; 
-  --lightsplash: #58ade3aa; 
+  --colorpop: #E358AD; 
+  --lightsplash: #e358adaa; 
 }</style>
    <link rel="stylesheet" href="borders.css"/>
   </head>
@@ -39,7 +39,7 @@
 
 
 <div class="slide intro">
-     <header><h1>Images, Backgrounds &amp; Borders</h1></header>
+     <header><h1>Backgrounds &amp; Borders</h1></header>
      <p><a href="https://estelle.github.io/CSS/borders">https://estelle.github.io/CSS/borders</a></p>
      <p>Due to CanIUse quirks, please click on headers that read "Browser support:" to load caniuse</p>
 </div>
@@ -52,11 +52,10 @@
     <header><h1>Backgrounds and Borders</h1></header>
     <section class="content">
          <ul style="float: left; width:45%;">
-    <li>CSS Images</li>
     <li>Background properties
       <ul>
         <li>background-color</li>
-        <li>background-image'</li>
+        <li>background-image</li>
         <li>background-repeat</li>
         <li>background-attachment</li>
         <li>background-position</li>
@@ -91,319 +90,6 @@
   </ul>
     </section>
 </div>
-
-
-
-<!-- SECTION: Background -->
-<div class="slide intro">
-    <header><h1>CSS Images</h1></header>
-</div>
-
-<div class="slide intro">
-<header><h1><code>&lt;image></code> functions</h1></header>
-<section class="content">
-</section>
-</div>
-
-
-
-<div class="slide">
-  <header><h1><code>&lt;image></code> functions</h1></header>
-  <section class="content">
-<pre contenteditable>url(test.jpg)
-linear-gradient(blue, red)
-radial-gradient(blue, red)
-conic-gradient(blue, red)
-repeating-linear-gradient(blue, red 20%)
-repeating-radial-gradient(blue, red 20%)
-repeating-conic-gradient(blue, red 20%)
-cross-fade(url(twenty.png) 20%, url(eighty.png)) 
-element(#realid)
-image(ltr 'arrow.png#xywh=0,0,16,16', red) 
-image-set('test.jpg' 1x, 'test-2x.jpg' 2x)
-paint(worklet)</pre>
-  </section>
-</div>
-
-
-<div class="slide">
-<header><h1>Where <code>&lt;image></code> is used.</h1></header>
-<section class="content">
-  <p></p>
-  <pre contenteditable>background-image:
-list-style-image:
-border-image-source:
-mask-image:
-shape-outside:
-mask-border-source:
-symbols: /* for @counter-style */
-content:  /* for ::after and ::before pseudo elements (/)
--webkit-box-reflect:</pre>
-</section>
-</div>
-
-
-
-<div class="slide">
-<header><h1>Default image sizes</h1></header>
-<section class="content">
-  <p>Some images have default sizes when used:</p>
-  <table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Kind of Object (CSS Property)</th>
-   <th scope="col">Default object size</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>background-image</code></td>
-   <td>The size of the element's background positioning area</td>
-  </tr>
-  <tr>
-   <td><code>list-style-image</code></td>
-   <td>The size of a <code>1em</code> character</td>
-  </tr>
-  <tr>
-   <td><code>border-image-source</code></td>
-   <td>The size of the element's border image area</td>
-  </tr>
-  <tr>
-   <td><code>cursor</code>*</td>
-   <td>The browser-defined size matching the usual cursor size on the client's system</td>
-  </tr>
-  <tr>
-    <td><code>symbols</code> for @counter-style</td>
-    <td>The usual cursor size on the client's system</td>
-  </tr>
-  <tr>
-   <td><code>content</code> for a pseudo-element (<code>::after</code>/<code>::before</code>)</td>
-   <td>A 300px × 150px rectangle</td>
-  </tr>
- </tbody>
-</table>
-
-<p>The <code>cursor</code> takes an <code>url()</code> with an <code>.cur</code> file, but no other type of image.</p>
-
-</section>
-</div>
-
-
-
-<div class="slide divider">
-<header><h1><code>url()</code></h1></header>
-<section class="content">
-</section>
-</div>
-
-
-<div class="slide">
-  <header><h1><code>url()</code> function</h1></header>
-  <section class="content">
-<p>The <code>url()</code> function for images works wherever the image value works. It is the only global image function right now.</p>
-<pre contenteditable>background-image: url("https://mdn.mozillademos.org/files/16761/star.gif");
-list-style-image: url('../images/bullet.jpg');
-content: url("pdficon.jpg");
-border-image-source: url(/media/diamonds.png);
-mask-image: url("masks.svg#mask1");</pre>
-<p>The <code>url()</code> function is not just for images</p>
-<pre contenteditable>cursor: url(mycursor.cur);
-src: url('fantasticfont.woff');
-offset-path: url(#path);</pre>
-  </section>
-</div>
-
-
-<div class="slide url">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/url()" target="mdn">url()</a></code> Example</h1></header>
-<section class="content">
-  <style contenteditable class="editme">.url {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='45'%3E%3Cpath d='M10 10h60' stroke='%2300F' stroke-width='5'/%3E%3Cpath d='M10 20h60' stroke='%230F0' stroke-width='5'/%3E%3Cpath d='M10 30h60' stroke='red' stroke-width='5'/%3E%3C/svg%3E");
-      background-image: url(../images/star.svg);
-      background-image: url(../images/istanbul.jpg);
-    }</style>
-</section>
-</div>
-
-
-
-
-<div class="slide divider">
-<header><h1>Gradient Functions</h1></header>
-<section class="content">
-</section>
-</div>
-
-<div class="slide">
-<header><h1>Gradients</h1></header>
-<section class="content">
-  <p>They get their own chapter</p>
-  <p>6 Gradient Types</p><code>
-     <ul class="medexampleshell" id="lgresize">
-      <li class="medexample linear"><code>linear-gradient();</code></li>
-      <li class="medexample radial"><code>radial-gradient();</code></li>
-      <li class="medexample conic"><code>conic-gradient();</code></li>
-      <li class="medexample linrepeat"><code>repeating-linear-gradient()</code></li>
-      <li class="medexample radrepeat"><code>repeating-radial-gradient()</code></li>
-      <li class="medexample conrepeat"><code>repeating-conic-gradient()</code></li>
-     </ul></code>
-</section>
-</div>
-
-<div class="slide divider">
-<header><h1><code>cross-fade()</code></h1></header>
-<section class="content">
-</section>
-</div>
-
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade" target="mdn">cross-fade()</a></code> function</h1></header>
-<section class="content">
-  <p>Used to blend two or more images at a defined transparency.</p>
-  <pre contenteditable>cross-fade( [&lt;percentage>? && [ &lt;image> | &ltcolor> ] ]# )</pre>
-  <p>the cross-fade() image function takes other image functions as a parameter</p>
-  <pre contenteditable>cross-fade(40% url(image1.jpg), 
-           30% url(image2.jpg), 
-           35% url(image3.jpg))</pre>
-  <p>If any %s are omitted, the missing split the difference up to a total of 100%.</p>
-  <p>This syntax is not yet supported anywhere.</p>
-</section>
-</div>
-
-<div class="slide crossfade">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade()" target="mdn">cross-fade()</a></code> Example</h1></header>
-<section class="content">
-  <style contenteditable class="editme">.crossfade {
-    background: 
-      -webkit-cross-fade( url('../images/woc.jpg'),
-                          url('../images/brazil.jpg'), 75%);
-    background-size: cover; 
-}</style>
-</section>
-</div>
-
-
-<div class="slide divider">
-<header><h1><code>element()</code></h1></header>
-<section class="content">
-</section>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/element" target="mdn">element()</a></code> function</h1></header>
-<section class="content">
-  <p>Defines an <code>&lt;image></code> value generated from an HTML element.</p>
-  <pre contenteditable>element(#someID)</pre>
-  <p>Pass the ID of an element 
-
-  <p>This image is live: if the HTML changes, the image is automatically updated.</p>
-  <p>Works prefixed. In FF only</p>
-</section>
-</div>
-
-
-<div class="slide element">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/element" target="mdn">element()</a></code> Example</h1></header>
-<section class="content">
-  <style contenteditable class="editme">.element {
-    background:-moz-element(#myButton);
-    background:-moz-element(#forElementFunctionExample);
-}</style>
-<input type="button" value="BUTTON" id="myButton">
-</section>
-</div>
-
-
-<div class="slide" id="forElementFunctionExample">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/element" target="mdn">element()</a></code> Example</h1></header>
-<section class="content foobar">
-  <style contenteditable class="editme">#forElementFunctionExample {
-    background: url(../images/seoul.jpg);
-    transform: rotate(15deg);
-    background-size: contain;
-}</style>
-</section>
-</div>
-
-
-
-
-<div class="slide divider">
-<header><h1><code>image()</h1></header>
-<section class="content">
-</section>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/imagefunction" target="mdn">image()</a></code> function</h1></header>
-<section class="content">
-  <h2>Not supported anywhere yet!</h2>
-  <p>Similar to url() but with additional features, including directionality,  fallback image, fallback color, and image fragments.</p>
-  <pre contenteditable>image( &lt;direction>? [ &lt;image-src>? , &lt;color>? ]! )</pre>
-  <dl>
-<dt>direction</dt>
-    <dd>Optional, either ltr  or rtl</dd>
-<dt>image-src</dt> 
-    <dd>Zero or more &lt;url>s or &lt;string>s specifying the image sources, with optional image fragment identifiers.</dd>
-<dt>color</dt>
-    <dd>Optional solid color fallback. </dd>
-    <pre contenteditable>image("sprite.webp#xywh=0,20,40,60", red);
-image(ltr 'leftarrow.png');</pre>
-</section>
-</div>
-
-
-
-<div class="slide divider">
-<header><h1>image-set()</h1></header>
-<section class="content">
-</section>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-set" target="mdn">image-set()</a></code> function</h1></header>
-<section class="content">
-  <p>Provide a set of images and information, allowing the browser to pick the most appropriate option.</p>
-  <pre contenteditable>image-set( &lt;image> &lt;resolution># ) </pre>
-
-  <p>General goal is serving high resolution images.</p>
-  <pre contenteditable>background-image: image-set( "cat.png" 1x,
-   "cat-2x.png" 2x,
-   "cat-print.png" 600dpi);</pre>
-  <ul>
-    <li>Resolution in  <code>x</code> or <code>dppx, dpi</code>, or <code>dpcm</code></li> 
-    <li>Every image within an image-set() must have a unique resolution.</li>
-    <li>Can not be nested inside another image-set() function.</li>
-  </ul>
-</section>
-</div>
-
-<div class="slide divider">
-<header><h1><code>paint()</code></h1></header>
-<section class="content">
-</section>
-</div>
-
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API" target="mdn">paint()</a></code> function</h1></header>
-<section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
-</section>
-</div>
-
-<div class="slide">
-<header><h1></h1></header>
-<section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
-</section>
-</div>
-
 
 
 
@@ -1229,6 +915,7 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../images/index.html">Images</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
@@ -1238,8 +925,8 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
   <li><a href="../other">Other Features</a></li>
-  <li><a href="../houdini">Houdini</a></li>
-</ol>
+
+<p></ol>
   </section>
 </div>
 

@@ -33,6 +33,31 @@
 
 
 <div class="slide intro">
+<header><h1>CSS Math &amp; Variables</h1></header>
+<section class="content">
+<ul>
+  <li>CSS Custom Properities</li>
+<ul>
+<li>Creating custom properties <code>--*</code></li>
+<li>Using custom properties <code>var(--*)</a></code> function</li>
+</ul>
+</li>
+
+<li>Evironmental Variables
+  <ul><li><code>env()</a></code> function</li></ul>
+</li>
+<li>Math
+  <ul>
+<li>calc()</li>
+<li>min(), max(), clamp()</li>
+<li>Other "math" functions</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+
+<div class="slide intro">
 <header><h1>CSS Custom Properties</h1></header>
 <section class="content">
 </section>
@@ -243,7 +268,8 @@ body { color: red; }
 p { color: blue; } 
 p { color: var(--pooperscooper); }</pre>
 </section>
-<p>If the value doesn't exist, it is invalid, and fails too. Not just invalid values, but non-existant properties.
+<p>If the value doesn't exist, it is invalid, and fails too. Not just invalid values, but non-existant properties.</p>
+<p>SpecSpeak: Value computation (where variable references are resolved) happens after applying the cascade, which means that the `color: blue` declaration was already eliminated in favor of the variable reference.</p>
   </section>
 </div>
 
@@ -268,28 +294,11 @@ p { color: var(--pooperscooper); }</pre>
 
 
 <p>While a syntax error in a CSS property / value pair will lead to the line being ignored, using a cascaded value, invalid substitution -- using a custom property value that is invalid -- is not ignored.</p>
+<p>Variable references are resolved after applying the cascade, so a valid declaration may have been eliminated in favor of a variable reference without checking validity of that reference.</p>
 
 </section>
 </div>
 
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all">all</a></code> property</h1></header>
-<section class="content"><p>Custom properties are not reset by the all property</p>
-<pre contenteditable class="multi">initial | inherit | unset | revert</pre>
-  <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
-<dl>
-  <dt>initial</dt>
-  <dd>Specifies that all the element's properties should be changed to their initial values.</dd>
-  <dt>inherit</dt>
-  <dd>Specifies that all the element's properties should be changed to their inherited values.</dd>
-  <dt>unset</dt>
-  <dd>Specifies that all the element's properties should be changed to  their inherited values if they inherit by default, or to their initial  values if not.</dd>
-  <dt>revert</dt>
-  <dd>Specifies behavior that depends on the stylesheet origin to which the declaration belongs</dd>
-</dl>
-</section>
-</div>
 
 <div class="slide">
 <header><h1>Custom Properties and JavaScript</h1></header>
@@ -305,6 +314,34 @@ let headingColor =
    <p>You can also use .style to read or write on an inline style, but since inline styles are not what I recommend, 😝</p>
 </section>
 </div>
+
+
+
+
+<div class="slide intro">
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="mdn" oncl>env()</a></code> function</h1></header>
+</div>
+
+
+<div class="slide object">
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="mdn" oncl>env()</a></code> function</h1></header>
+  <object data="https://webkit.org/blog/7929/designing-websites-for-iphone-x/"></object>
+  <a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/" target="play" class="objectlink">iPhone example</a>
+</div>
+
+<div class="slide">
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="mdn" oncl>env()</a></code> function</h1></header>
+  <section>
+<img src="img/env.png" alt="three iphone layouts demonstrating use of env() function" style="height: 80vh; float: left; margin-right: 2em;"><p>For inserting browser environment variable values</p><pre contenteditable style="float: left">body {
+  padding:
+    env(safe-area-inset-top, 20px)
+    env(safe-area-inset-right, 20px)
+    env(safe-area-inset-bottom, 20px)
+    env(safe-area-inset-left, 20px);
+}</pre>
+  </section>
+</div>
+
 
 
 
@@ -456,6 +493,7 @@ hypot()</section>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../images/index.html">Images</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
@@ -465,8 +503,8 @@ hypot()</section>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
   <li><a href="../other">Other Features</a></li>
-  <li><a href="../houdini">Houdini</a></li>
-</ol>
+
+<p></ol>
   </section>
 </div>
 <!-- TOC -->

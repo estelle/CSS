@@ -255,13 +255,12 @@ code {
 <div class="slide" id="fontstretch">
 <header><h1><code>font-stretch</code> property</h1></header>
 <section class="content">
-	<style contenteditable class="editme">#fontstretch { _font-family: League Mono Variable, Helvetica Neue, serif;} .fontstretch {
-   _font-stretch: 50%; _font-stretch: 55%;
-   _font-stretch: ultra-condensed;
-   _font-stretch: condensed;
-   _font-stretch: normal;
-   _font-stretch: expanded;
-   _font-stretch: ultra-expanded;
+	<style contenteditable class="editme">#fontstretch { 
+    _font-family: League Mono Variable, Helvetica Neue, serif;} 
+.fontstretch {                     _font-stretch: normal;
+   _font-stretch: 50%;             _font-stretch: 55%;
+   _font-stretch: ultra-condensed; _font-stretch: condensed;
+   _font-stretch: expanded;        _font-stretch: ultra-expanded;
 }</style>
 </section>
 <p class="fontstretch">Note the width of each character.</p>
@@ -346,11 +345,11 @@ larger | smaller | &lt;length> | &lt;percentage></pre>
     font-size: 62.5%;
 }
 p {
-    font-size: 13px;
+    <strike>font-size: 13px;</strike>
     font-size: 1.3rem;
 }
 small {
-    font-size: 11px;
+    <strike>font-size: 11px;</strike>
     font-size: 1.1rem;
 }</pre>
     </section>
@@ -1299,37 +1298,26 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
   </thead>
   <tbody>
     <tr>
-      <th>"smcp" on </th>
-      <td>Small Caps on</td>
-    </tr>
-    <tr>
-      <th>"c2sc" </th>
-      <td>Enable Caps to Small Caps </td>
-    </tr>
-    <tr>
-      <th>"zero" </th>
-      <td>Use zero with slash </td>
-    </tr>
-    <tr>
-      <th>"tnum" </th>
-      <td>monospaced numbers </td>
-    </tr>
-    <tr>
-      <th>"frac" </th>
-      <td>automatic fractions </td>
-    </tr>
-    <tr>
-      <th>"ss07" </th>
-      <td>Stylistic Set 7</td>
-    </tr>
-    <tr>
-      <th>"liga"</th>
-      <td>"liga" 0 turns off ligatures</td>
-    </tr>
-    <tr>
-      <th>"hist" </th>
-      <td>enable historical forms </td>
-    </tr>
+<tr><th>"c2sc"</th><td>Small Capitals From Capitals</td></tr>
+<tr><th>"calt"</th><td>Contextual Alternates</td></tr>
+<tr><th>"case"</th><td>Case-Sensitive Forms</td></tr>
+<tr><th>"dnom"</th><td>Denominators</td></tr>
+<tr><th>"frac"</th><td>Fractions</td></tr>
+<tr><th>"hist" </th><td>enable historical forms </td></tr>
+<tr><th>"liga"</th><td>Standard Ligatures</td></tr>
+<tr><th>"lnum"</th><td>Lining Figures</td></tr>
+<tr><th>"locl"</th><td>Localized Forms</td></tr>
+<tr><th>"numr"</th><td>Numerators</td></tr>
+<tr><th>"onum"</th><td>Oldstyle Figures</td></tr>
+<tr><th>"pnum"</th><td>Proportional Figures</td></tr>
+<tr><th>"sinf"</th><td>Scientific Inferiors</td></tr>
+<tr><th>"smcp"</th><td>Small Capitals</td></tr>
+<tr><th>"ss01"</th><td>Stylistic Set 1 (Numero correct)</td></tr>
+<tr><th>"ss07" </th> <td>Stylistic Set 7</td></tr>
+<tr><th>"subs"</th><td>Subscript</td></tr>
+<tr><th>"sups"</th><td>Superscript</td></tr>
+<tr><th>"tnum"</th><td>Tabular Figures</td></tr>
+<tr><th>"zero"</th><td>Slashed Zero</td></tr>
   </tbody>
 </table>
   <p>Use the <code>font-variant</code> shorthand property or an associated longhand property such as <code>font-variant-ligatures, font-variant-caps, font-variant-east-asian, font-variant-alternates, font-variant-numeric</code> or <code>font-variant-position.</code></p>
@@ -1353,8 +1341,23 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 }
 .ffs p {
   font-family: variableFont3, serif; 
+  font-feature-settings: "tnum" on, "zero" on;
 }</style>
 <p contenteditable>Lashana Lynch as 007 will be fantastic!.</p>
+</section>
+</div>
+
+
+
+<div class="slide ffs">
+<header><h1><code>font-feature-settings</code></h1></header>
+<section class="content">
+<pre contenteditable> {
+   font-feature-settings: 
+        "c2sc", "calt", "case", "dnom", "frac", "liga", "lnum", 
+        "locl", "numr", "onum", "pnum", "sinf", "smcp", "ss01", 
+        "ss07", "subs", "sups", "tnum", "zero";
+}</pre>
 </section>
 </div>
 
@@ -1382,26 +1385,43 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 
 
 <div class="slide ffs2">
-<header><h1><code>font-feature-settings</code></h1></header>
+<header><h1>How many font files do you need?</h1></header>
 <section class="content">
 
-<style contenteditable class="editme">@font-face {
-  font-family: 'variableFont';
-  src: local("adapter pe");
-  font-feature-settings: "tnum" on, "zero" on;
-}
-.ffs2 p {
-  font-family: variableFont, serif; 
+<style contenteditable class="editme">.ffs2 p {
+  font-family: variableFont, acme, serif; 
   font-weight: bold;
-  _font-synthesis: none;
+  font-style: italic;
+  font-synthesis: none;
 }</style>
 <p contenteditable>Lashana Lynch as 007 will be fantastic!.</p>
+<ul>
+<li>try <code>bold, italic</code> and <code>normal</code> </li>
+<li>try <code>font-synthesis: none, weight</code> and <code>style</code></li>
+<li>Try each combo for all the fonts</li>
+</ul>
 </section>
 </div>
 
 
+<div class="slide">
+<header><h1>Developer Tools</h1></header>
+<section class="content">
+<p>The developer tools for fonts are AWESOME!</p>
+<ul>
+  <li>See the 
+        applied font (used for rendering) in rules view (it's underlined)</li>
+  <li>Discover the Fonts Panel</li>
+  <li>See a list of all used fonts used in a document</li><
+  <li>
+        on hover of the font family, highlight where the font is used to render content (this is great for showing subsets)
+        editor area, works for both non-varialbe and variable fonts (will show all custom axis)
+        editor can convert units if you switch them
+        at the bottom, list of all fonts used on page incl. hover functionality mentioned above</li>
+      </ul>
 
-
+</section>
+</div>
 
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display" target="mdn">font-display</a></code> descriptor</h1></header>
@@ -2490,7 +2510,8 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
       <th scope="col">CSS Property</th>
     </tr>
   </thead>
-  <tbody>
+
+  <tbody style="height: 300px; overflow: scroll;">
     <tr>
       <td>&quot;wght&quot;</td>
       <td>font-weight</td>
@@ -2510,12 +2531,11 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
     <tr>
       <td>&quot;opsz&quot;</td>
       <td><p>font-optical-sizing</p></td>
-    </tr>
+    </tr><tr><td>c2sc</td><td>Small Capitals From Capitals</td></tr>
   </tbody>
 </table>
 </section>
 </div>
-
 
 
 
@@ -2619,6 +2639,7 @@ all-petite-caps | unicase | titling-caps</pre>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../images/index.html">Images</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
@@ -2628,8 +2649,8 @@ all-petite-caps | unicase | titling-caps</pre>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
   <li><a href="../other">Other Features</a></li>
-  <li><a href="../houdini">Houdini</a></li>
-</ol>
+
+<p></ol>
   </section>
 </div>
 <!-- TOC -->

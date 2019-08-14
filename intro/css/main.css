@@ -390,6 +390,10 @@ section.content {
   position: absolute;
 }
 
+strike {
+  text-decoration-color: var(--alert);
+}
+
 @media print {
   .slide {
     page-break-inside: avoid;

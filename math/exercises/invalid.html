@@ -4,18 +4,19 @@
 <title>invalid variable values</title>
   <link rel="stylesheet" href="../../selectors/exercises/editme.css">
 <style>
-body {font-family:Verdana, Geneva, sans-serif; font-size:1.75em;}
+body {font-family:Verdana, Geneva, sans-serif; font-size: unset;}
 </style>
-<style contenteditable class="editme">
-:root {--size: 16px;}
-body { color: red; } 
+<style contenteditable class="editme">:root {--size: 16px; --color: green;}
+body { color: red; font-size: 2rem; } 
 p { color: blue; } 
 p { color: 16px; }
-delete p {color: var(--size);}
-delete p {color: var(--pooperscooper);}
+X p {color: var(--size);}
+X p {color: var(--pooperscooper);}
 </style>
 </head>
 
 <body><p>This is a paragraph of text</p>
+	<ul><li>This is a list item.</li>
+	<li>Play with colors, sizes, and role over the values in dev tools</li></ul>
 </body>
 </html>

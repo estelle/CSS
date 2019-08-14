@@ -573,20 +573,38 @@ div {
 <div class="slide">
   <header><h1>Defaulting</h1></header>
   <section class="content">
-<dl><dt>none</dt> <dd>Not global, but fails if not understood, so behaves similarly</dd></dl>
+<dl><dt>none / 0</dt> <dd>Often seen in the wild. Valid when valid, but better to use <code>initial</code> to undo instead.</dd></dl>
     
   </section>
 </div>
 
 
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="mdn">all</a></code> property</h1></header>
+<section class="content"><p>Custom properties are not reset by the all property</p>
+<pre contenteditable class="multi">initial | inherit | unset | revert</pre>
+  <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
+<dl>
+  <dt>initial</dt>
+  <dd>Specifies that all the element's properties should be changed to their initial values.</dd>
+  <dt>inherit</dt>
+  <dd>Specifies that all the element's properties should be changed to their inherited values.</dd>
+  <dt>unset</dt>
+  <dd>Specifies that all the element's properties should be changed to  their inherited values if they inherit by default, or to their initial  values if not.</dd>
+  <dt>revert</dt>
+  <dd>Specifies behavior that depends on the stylesheet origin to which the declaration belongs</dd>
+</dl>
+</section>
+</div>
 
 
 
 <div class="slide">
   <header><h1>Keyword values</h1></header>
   <section class="content">
-<h2><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> property</h2>
+<p>Supported <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> values</p>
 <code>left | right | center | justify | start | end | match-parent </code>
+
     <pre contenteditable>/* Keyword values */         /* Global values */
 text-align: left;            text-align: inherit;
 text-align: right;           text-align: initial;
@@ -985,6 +1003,7 @@ paint(worklet)</pre>
     <li><a href="../math">Math &amp; Variables</a></li>
     <li><a href="../fonts/">Fonts</a></li>
     <li><a href="../text/">Text</a></li>
+    <li><a href="../images/index.html">Images</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
@@ -994,8 +1013,8 @@ paint(worklet)</pre>
     <li><a href="../transforms">Transforms</a></li>
     <li><a href="../animations">Transitions &amp; Animation</a></li>
   <li><a href="../other">Other Features</a></li>
-  <li><a href="../houdini">Houdini</a></li>
-</ol>
+
+<p></ol>
   </section>
 </div>
 <!-- TOC -->
