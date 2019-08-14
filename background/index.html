@@ -39,8 +39,8 @@
 
 
 <div class="slide intro">
-     <header><h1>Backgrounds &amp; Borders</h1></header>
-     <p><a href="https://estelle.github.io/CSS/borders">https://estelle.github.io/CSS/borders</a></p>
+     <header><h1>Backgrounds</h1></header>
+     <p><a href="https://estelle.github.io/CSS/borders">https://estelle.github.io/CSS/background</a></p>
      <p>Due to CanIUse quirks, please click on headers that read "Browser support:" to load caniuse</p>
 </div>
 
@@ -49,9 +49,9 @@
 
 
 <div class="slide">
-    <header><h1>Backgrounds and Borders</h1></header>
+    <header><h1>Backgrounds</h1></header>
     <section class="content">
-         <ul style="float: left; width:45%;">
+    <ul>
     <li>Background properties
       <ul>
         <li>background-color</li>
@@ -66,28 +66,6 @@
       </ul>
     </li>
     </ul>
-
-         <ul style="float: left; overflow:hidden; width: 45%;">
-    <li>Border properties
-      <ul>
-        <li>border-color</li>
-        <li>border-style</li>
-        <li>border-width</li>
-        <li>border shorthand</li>
-        <li>border-radius </li>
-      </ul>
-    </li>
-    <li>Border Images
-      <ul>
-        <li>border-image-source</li>
-        <li>border-image-slice</li>
-        <li>border-image-width</li>
-        <li>border-image-outset</li>
-        <li>border-image-repeat</li>
-        <li>border-image shorthand</li>
-      </ul>
-    </li>
-  </ul>
     </section>
 </div>
 
@@ -106,6 +84,19 @@
   <section class="content">
   </section>
 </div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color" target="mdn">background-color</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the background color of an element.</p>
+  <pre contenteditable>rgb() | rgba() | hsl()> | hsla() | &lt;hex-color> | &lt;named-color> | currentcolor</pre>
+  <p>Unlike the other <code>background</code> longhand properties, this one takes only a single value.</p>
+  <p>The uniform color of the background is rendered behind any specified background-images and may be visible through any transparency in the images.</p>
+</section>
+</div>
+
 
 
 <!--background-color -->
@@ -348,6 +339,20 @@ Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
 
      </section>
  </div>
+
+
+<div class="slide repeat">
+<header><h1>Understand <code>background-repeat</code></h1></header>
+<section class="content">
+  <p>Test out <code>repeat | round | space</code></p>
+ <style contenteditable class="editme">.repeat {
+  background-color: var(--colorpop);
+  background-image: url(img/shark.gif); 
+  background-image: url(img/aria.jpg);
+  background-repeat: space;
+}</style>
+</section>
+</div>
 
 
 
@@ -744,7 +749,19 @@ I rise..
   </script>
 </div>
 
-
+<div class="slide size">
+<header><h1>Understand <code>background-size</code></h1></header>
+<section class="content">
+  <p style="background-color: var(--invertedtext);">Test out <code>cover | contain | auto | &lt;length-percent>{1,2}</code></p>
+ <style contenteditable class="editme">.size {
+  background-color: var(--colorpop);
+  background-image: url(img/shark.gif); 
+  background-image: url(img/aria.jpg);
+  background-repeat: space;
+  background-size: 50px 100%;
+}</style>
+</section>
+</div>
 
 <!--  -->
 <div class="slide divider">
@@ -780,8 +797,10 @@ I rise..
 <div class="slide sharks">
 <header><h1>Play with background shorthand</h1></header>
 <section class="content">
+   <p style="background-color: var(--invertedtext);">Test out <code>'img/shark.gif' |  'img/aria.jpg'</code></p>
  <style contenteditable class="editme">.sharks {
-  background: url(img/shark.gif) 
+  background: linear-gradient(45deg, 
+    red, transparent, yellow)
     0 0 / 30px 30px repeat scroll 
     border-box content-box white;
 }</style>
@@ -789,253 +808,38 @@ I rise..
 </div>
 
 
-<!--Border properties -->
-<div class="slide intro">
-     <header><h1>Border properties</h1></header>
- </div>
-
- <!--border-color -->
-<div class="slide">
-     <header><h1>border-color</h1></header>
-     <section class="content">
- <ul>
- 	<li>Use any of the color types</li>
-    <li>Nothing really new here</li>
- </ul>
- <pre contenteditable>  border-color: white;
-  border-color: #fff;
-  border-color: #FFFFFF;
-  border-color: #FFFFFFFF;
-  border-color: rgb(255,255,255);
-  border-color: rgb(100%,100%,100%);
-  border-color: rgba(255,255,255,1);
-  border-color: rgba(100%,100%,100%, 1);
-  border-color: hsl(0, 100%, 100%);
-  border-color: hsla(0, 100%, 100%, 1);
-  border-color: transparent;
-  border-color: <span class="imp">currentColor</span>; /* default */</pre>
-     </section>
- </div>
-
- <!--border-style -->
-<div class="slide borderstyle">
-     <header><h1>border-style</h1></header>
-     <section class="content">
-     <dl class="deprecated">
-  <dt style="border-style:none;" class="imp">none</dt>
-  <dd style="width: 50%">No border. As if border-width: 0; except with border-image</dd>
-  <dt style="border-style: hidden;">hidden</dt>
-  <dd style="width: 50%">Same as none, but relevant in border-collapsed tables</dd>
-  <dt style="border-style:dotted;">dotted</dt>
-  <dd> Round dots.</dd>
-  <dt style="border-style:dashed;">dashed</dt>
-  <dd>Square-ended dashes.</dd>
-  <dt style="border-style:solid;">solid</dt>
-  <dd>a single solid line.</dd>
-  <dt style="border-style:double;">double</dt>
-  <dd>Two parallel solid lines. Only relevant if border-width &gt;= 3px. line + space + line = border-width value. </dd>
-  <dt style="border-style:groove;">groove</dt>
-  <dd>Shadow effect using  two colors on each side, with a slightly lighter and darker than the border-color value. Top / left half of each side darker.</dd>
-  <dt style="border-style:ridge;">ridge</dt>
-  <dd>Looks as if it were coming out of the canvas.  Bottom / Right darker</dd>
-  <dt style="border-style:inset;">inset</dt>
-  <dd>Looks sunken into page. Top and left border are made darker, bottom and right are lighter.. Treated as ridge in border-collapsed tables.</dd>
-  <dt style="border-style:outset;">outset</dt>
-  <dd>Looks as if popping out of page. Bottom and right are darker. Top and left border are lighter.. Treated as groove in border-collapsed tables. </dd>
-</dl>
-     </section>
- </div>
-
- <!-- border-width-->
-<div class="slide">
-     <header><h1>border-width</h1></header>
-     <section class="content">
-     <pre contenteditable>border-width: (length) | thin | <span class="imp">medium</span> | thick | inherit {1,4};</pre>
-     <ul>
-     <li>Up to 4 values (TRouBLe)</li>
-     <li>Nothing new here</li>
-     </ul>
-     </section>
- </div>
-
- <!-- border shorthand-->
-<div class="slide">
-     <header><h1>border shorthand</h1></header>
-     <section class="content">
-     <pre contenteditable>border: width style color;</pre>
-     <pre contenteditable>border-left: width style color;</pre>
-     <pre contenteditable>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
-     <ul>
-     <li>style is REQUIRED.</li>
-     <li>width defaults to <span class="imp">medium</span></li>
-     <li>color defaults to <span class="imp">currentColor</span></li>
-     </ul>
-     </section>
- </div>
-
-
-
-<!--Border properties -->
-<div class="slide intro">
-     <header><h1>border-radius</h1></header>
- </div>
-
-
-
-
-
- <!--border-radius -->
-<div class="slide">
-<header><h1>border-radius</h1></header>
+<div class="slide ugly">
+<header><h1>Play with background shorthand</h1></header>
 <section class="content">
-<div class="radius">
-	<div><pre contenteditable>border-radius: 0;</pre> <b></b>
-    </div>
-    <div><pre contenteditable>border-radius: 20px;</pre><b style="border-radius: 20px"></b>
-    </div>
-    <div><pre contenteditable>border-radius: 50%;</pre><b style="border-radius: 50%"></b>
-    </div>
-</div>
-  <pre contenteditable style="float: left; margin-right: 40px;">border-top-left-radius
-border-top-right-radius
-border-bottom-right-radius
-border-bottom-left-radius</pre>
-
-<p style="clear:both;">DO NOT PREFIX</p>
+   <p style="background-color: var(--invertedtext);">Remove the color? Change all the properties?</p>
+ <style contenteditable class="editme">.ugly {
+  background: url(img/shark.gif) 
+    40px 400px / 80px 130px repeat-x scroll 
+    border-box content-box,
+    url(img/aria.jpg) 
+    0 0 / 120px 100px repeat-y scroll 
+    border-box content-box var(--colorpop);
+}</style>
 </section>
 </div>
 
-
- <!--border-radius -->
-<div class="slide">
-<header><h1>border-radius</h1></header>
+<div class="slide beautiful">
+<header><h1>Play with longhand properties</h1></header>
 <section class="content">
-<div class="radius">
-	<div><pre contenteditable>.circle {border-radius: 50%;}</pre> <b style="border-radius: 50%;"></b></div>
-	<div><pre contenteditable>.oval { border-radius: 50%;}</pre> <b style="border-radius: 50%; width: 100px;"></b></div>
-	<div><pre contenteditable>.different { border-radius: 10px 30px;}</pre> <b style="border-radius: 10px 30px; "></b></div>
-	<div><pre contenteditable>.elliptical { border-radius: 10px / 30px;}</pre> <b style="border-radius: 10px / 30px;"></b></div>
-	<div><pre contenteditable>.uglier {
-  border-radius: 10px 35px 20px 15px /
-                 30px 35px 5px 5px;}</pre> <b style="border-radius: 10px 35px 20px 15px / 30px 35px 5px 5px; width: 75px; height: 75px;"></b></div>
- </div>
-
+   <p style="background-color: var(--invertedtext);">Is using longhand values less confusing?</code></p>
+ <style contenteditable class="editme">.beautiful {
+  background-image:;
+}</style>
 </section>
 </div>
 
 
-<div class="slide object">
-<header><h1>Play with border-radius</h1></header>
-<object data="files/82_borderradius.html"></object>
-<a href="files/82_borderradius.html" target="play" class="objectlink">Try it out</a>
-</div>
-
-
-<!-- Border Images-->
 <div class="slide intro">
-     <header><h1>Border Images</h1></header>
- </div>
-
-
-<!-- what is -->
-<div class="slide">
-     <header><h1>What is Border Image</h1></header>
-     <section class="content">
-
-     <div class="whatisborderimage">
-
-     </div>
-     </section>
- </div>
-
-
-
-<div class="slide object">
-  <header onclick="setData('bi');"><h1>Browser support: <code>border-image</code> property</h1></header>
-<object id="bi" data-data="https://caniuse.com/#search=border-image"></object>
-  <a href="https://caniuse.com/#search=border-image" target="play" title="open resource in new window">Open</a>
+     <header><h1>Gradients</h1></header>
+    <h1><a href="../gradients/intro.html">Next ➹</a></h1>
 </div>
 
 
-
- <!-- -->
- <div class="slide">
-	<header><h1>border-image</h1></header>
-    <section class="content">
-<pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
-
-    <h1 style="text-align:left">Underlying Properties</h1>
-    <ul style="float:right">
-    <li>Syntax for non-prefixed differs</li>
-    <li>Must also declare <code>border-style</code></li>
-    <li><a href="http://border-image.com/">Border image tool</a></li>
-    <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
-    <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li>
-    </ul>
-      <ul>
-        <li>border-image-source</li>
-        <li>border-image-slice</li>
-        <li>border-image-width</li>
-        <li>border-image-outset</li>
-        <li>border-image-repeat</li>
-        <li class="imp">border-image</li>
-      </ul>
-     </section>
- </div>
-
-
- <div class="slide">
-	<header><h1>border-image</h1></header>
-    <section class="content">
-<pre contenteditable>
-<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
-
-<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
-
-<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
-
-<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}
-
-<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round {1,2}
-
-</pre>
-<pre contenteditable style="float:right; margin-bottom:40px;">
-S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
-W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
-<select id="repeat" onChange="changeBorderImage();"><option value="stretch" selected>stretch</option><option value="repeat">repeat</option><option value="round">round</option></select> </pre>
-
-<div id="boderimage"></div>
-
-
-<pre contenteditable style="clear:both;">border-image: url(gradient.png) <b id="sliceval">34</b> / <b id="widthval">34</b><b>px</b> <b id="repeatval">stretch</b>;</pre>
-</section>
-<script defer="">
-  function changeBorderImage(){
-    var slice = document.getElementById('slice').value;
-    var width = document.getElementById('width').value;
-    var repeat = document.getElementById('repeat');
-    repeat = repeat.options[repeat.selectedIndex].text;
-    document.getElementById('boderimage').style.webkitBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
-    document.getElementById('boderimage').style.mozBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
-    document.getElementById('sliceval').innerHTML = slice;
-    document.getElementById('widthval').innerHTML = width;
-
-    document.getElementById('repeatval').innerHTML = repeat;
-  }
-</script>
-</div>
-
- <div class="slide object">
-<header><h1>Play with border-image</h1></header>
-<object data="files/83_longcat.html"></object>
-<a href="files/83_longcat.html" target="play" class="objectlink">Try it out</a>
-</div>
-
-
-<div class="slide intro">
-     <header><h1>Box Model</h1></header>
-    <h1><a href="../boxmodel/">Next ➹</a></h1>
-</div>
 
 
     

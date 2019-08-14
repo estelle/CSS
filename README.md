@@ -18,8 +18,9 @@
     <li><a href="fonts">Fonts</a></li>
     <li><a href="text">Text</a></li>
     <li><a href="images">Images</a></li>
+    <li><a href="background">Backgrounds</a></li>
     <li><a href="gradients">Gradients</a></li>
-    <li><a href="borders">Backgrounds &amp; Borders </a> - Not finished</li>
+    <li><a href="borders">Borders &amp; Border Images </a> - Not finished</li>
     <li><a href="boxmodel">Box Model</a></li>
     <li><a href="flexbox">Flexbox</a> - Not finished</li>
     <li><a href="tables">Tables</a></li>

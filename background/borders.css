@@ -9,7 +9,7 @@
 	margin: 20px;
  }
  .bgimage {
-	background-image: radial-gradient(circle, transparent 70%, #808080cc 70% 85%,transparent  85% );
+	background-image: radial-gradient(circle, transparent 60%, #808080cc 60% 70%,transparent  70% );
 	background-size: 95px 95px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
