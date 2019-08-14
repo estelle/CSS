@@ -17,7 +17,7 @@
 
 
  .multiplebg {
-	background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(#58ADE3,#58ADE3);
+	background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(var(--colorpop),var(--colorpop));
 	background-size: 100px 100px;
 	background-repeat: no-repeat;
 	background-position: 0 0, 20px 20px;
@@ -35,15 +35,15 @@
 
  }
  .bgimagebk {
-	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70% 85%,transparent  85% ), linear-gradient(#58ADE3, transparent);
+	background-image: radial-gradient(50px, transparent 70%, var(--colorpop) 70% 85%,transparent  85% ), linear-gradient(var(--colorpop), transparent);
 }	
- #bgattachment {width:300px; height:300px; overflow:scroll; border: 1px solid #58ADE3; float:right; top:0; left:0;}
+ #bgattachment {width:300px; height:300px; overflow:scroll; border: 1px solid var(--colorpop); float:right; top:0; left:0;}
  .backgroundclip {
 	width: 150px;
 	height: 150px;
 	border: 20px dotted rgba(128, 128, 128, 0.8);
 	padding: 20px; margin: 20px;
-	background-color: #58ADE3;
+	background-color: var(--colorpop);
 	float:left;
 	text-align:center;
 }
@@ -87,7 +87,7 @@
 	background-image:
 		linear-gradient(#71c6aa 5px, transparent 5px 245px, #71c6aa 245px),
 		linear-gradient(left, #71c6aa 5px, transparent 5px 245px, #71c6aa 245px),
-		linear-gradient(#58ADE3, #71c6aa, #58ADE3);
+		linear-gradient(var(--colorpop), #71c6aa, var(--colorpop));
 	background-size: 400px 250px, 250px 400px, 350px 350px;
 	background-position: center;
 	background-position: no-repeat;
