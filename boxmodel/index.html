@@ -143,7 +143,21 @@
   <div class="slide divider">
   <header><h1><code>box-sizing</code> property</h1></header>
 <section class="content">
-  <a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/box-sizing">Reference</a>
+  
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/box-sizing">box-sizing</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how the total width and height of an element is calculated</p>
+  <pre contenteditable>content-box | border-box <strike class="deprecated">| padding-box</strike></pre>
+  <dl>
+<dt>content-box</dt>
+    <dd>Default (exceptin in old IE). The <code>width</code> and <code>height</code> properties include the content, but do not include the <code>padding, border</code>, or <code>margin</code>. <code class="pre">.box {width: 350px; border: 10px solid black;}</code> is 370px wide. <br/><code>width</code> = width of the content. <br/><code>height</code> = height of the content. <br/>(Borders and padding are not included in the calculation.)</dd>
+<dt>border-box</dt>
+    <dd>The <code>width</code> and <code>height</code> properties include the content, <code>padding</code>, and <code>border</code>, but do not include the <code>margin</code>. Padding and border will be inside of the box. <code class="pre">.box {width: 350px; border: 10px solid black;}</code> renders a box that is 350px wide, with the area for content being 330px wide. The content box is floored at 0. Dimensions of element are: <br/><code>width</code> = border + padding + width of the content. <br/><code>height</code> = border + padding + height of the content. </dd>
+  </dl>
 </section>
 </div>
 
@@ -190,6 +204,29 @@
 </section>
 </div>
 
+<div class="slide">
+<header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/padding">padding</a></code> properties</h1></header>
+<section class="content">
+  <p>Shorthand for <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code>, it sets the padding area on all four sides of an element. Padding is spacing between border and content.</p>
+  <pre contenteditable>[ &lt;length> | &lt;percentage> ]{1,4}</pre>
+  <p>Specified one, two, three, or four  &lt;length&gt; or &lt;percentage&gt;values. Negative values are not valid.</p>
+<table class="standard-table">
+  <thead>
+    <tr><th># of values</th><th>Assignment of each value</th></tr>
+  </thead>
+  <tbody>
+
+  <tr><th>1</th><td>Applies the same padding to <strong>all four sides</strong>.</td></tr>
+  <tr><th>2</th><td>The first padding applies to the <strong>top and bottom</strong>, the second to the <strong>left and right</strong>.</td></tr>
+  <tr><th>3</th><td>The first padding applies to the <strong>top</strong>, the second to the <strong>left and right</strong>, the third to the <strong>bottom</strong>.</td></tr>
+  <tr><th>4</th><td>The paddings apply clockwise in <strong>TR</strong>ou<strong>BL</strong>e order: <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong>, and <strong>left</strong>.</td></tr>
+</tbody>
+</table>
+
+
+</section>
+</div>
+
 
 <div class="slide">
   <header><h1>padding</h1></header>
@@ -213,96 +250,236 @@ padding: 10px 20px 30px 40px; <i>/* TRouBLe */</i></pre>
 </div>
 
 
+
 <div class="slide">
-  <header><h1>margin</h1></header>
+<header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/margin">margin</a></code> properties</h1></header>
+<section class="content">
+  <p>Shorthand for <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code>, it sets the margin area on all four sides of an element. Margin is spacing on the outside of the border of an element, sometimes collapsing between adjacent elements</p>
+  <pre contenteditable>[ &lt;length> | &lt;percentage> | auto ]{1,4}</pre>
+  <p>Specified one, two, three, or four <code>&lt;length&gt;</code> or &lt;<code>percentage&gt;</code> values, or the <code>auto</code> keyword. </p>
+<table class="standard-table">
+  <thead>
+    <tr><th># of values</th><th>Assignment of each value</th></tr>
+  </thead>
+  <tbody>
+
+  <tr><th>1</th><td>Applies the same margin to <strong>all four sides</strong>.</td></tr>
+  <tr><th>2</th><td>The first margin applies to the <strong>top and bottom</strong>, the second to the <strong>left and right</strong>.</td></tr>
+  <tr><th>3</th><td>The first margin applies to the <strong>top</strong>, the second to the <strong>left and right</strong>, the third to the <strong>bottom</strong>.</td></tr>
+  <tr><th>4</th><td>The margins apply clockwise in <strong>TR</strong>ou<strong>BL</strong>e order: <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong>, and <strong>left</strong>.</td></tr>
+</tbody>
+</table>
+<p>Negative values ARE valid.</p>
+<p>Setting left and right to 'auto' will center the element</p>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>margin (and padding)</h1></header>
   <section class="content">
-    <code>
-      <p>margin: 10px;</p>
-      <ul>
-        <li>margin-top: 10px;</li>
-        <li>margin-right: 10px;</li>
-        <li>margin-bottom: 10px;</li>
-        <li>margin-left: 10px;</li>
-      </ul>
-      </code>
+<p style="font-size: 200%">Margins create extra space <strong>around</strong> an element.</p>
+<p style="font-size: 200%">Padding creates extra space <strong>within</strong> an element.</p>
+</section>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>margin (and padding)</h1></header>
+  <section class="content">
+    <pre contenteditable style="float: left; margin-right: 3em;">margin: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;</pre>
+    <pre contenteditable style="float: left; margin-right: 3em;">padding: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;</pre>
+ <div class="goonyContainer mv1">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
   </section>
 </div>
 
 <div class="slide">
-  <header><h1>margin</h1></header>
+  <header><h1>margin (and padding)</h1></header>
   <section class="content">
-    <code>
-      <p>margin: 10px 20px;</p>
-      <ul>
-        <li>margin-top: 10px;</li>
-        <li>margin-right: 20px;</li>
-        <li>margin-bottom: 10px;</li>
-        <li>margin-left: 20px;</li>
-      </ul>
-      </code>
+    <pre contenteditable style="float: left; margin-right: 3em;">margin: 10px 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        margin-left: 20px;</pre>
+    <pre contenteditable style="float: left; margin-right: 3em;">padding: 10px 20px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-left: 20px;</pre>
+        <div class="goonyContainer mv2">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
   </section>
 </div>
 
 <div class="slide">
-  <header><h1>margin</h1></header>
+  <header><h1>margin (and padding)</h1></header>
   <section class="content">
-    <code>
-      <p>margin: 10px 20px 30px;</p>
-      <ul>
-        <li>margin-top: 10px;</li>
-        <li>margin-right: 20px;</li>
-        <li>margin-bottom: 30px;</li>
-        <li>margin-left: 20px;</li>
-      </ul>
-      </code>
-  </section>
+    <pre contenteditable style="float: left; margin-right: 3em;">margin: 10px 20px 30px;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        margin-left: 20px;</pre>
+          <pre contenteditable style="float: left; margin-right: 3em;">padding: 10px 20px 30px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        padding-left: 20px;</pre>
+  <div class="goonyContainer mv3">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+</section>
 </div>
 
 <div class="slide">
-  <header><h1>margin</h1></header>
+  <header><h1>margin (and padding)</h1></header>
   <section class="content">
-    <code>
-      <p>margin: 10px 20px 30px 40px;</p>
-      <ul>
-        <li>margin-top: 10px;</li>
-        <li>margin-right: 20px;</li>
-        <li>margin-bottom: 30px;</li>
-        <li>margin-left: 40px;</li>
-      </ul>
-    </code>
+    <pre contenteditable style="float: left; margin-right: 3em;">margin: 10px 20px 30px 40px;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        margin-left: 40px;</pre>
+    <pre contenteditable style="float: left; margin-right: 3em;">padding: 10px 20px 30px 40px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        padding-left: 40px;</pre>
+  <div class="goonyContainer mv4">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
     </section>
 </div>
 
 <div class="slide">
-  <header><h1>margin</h1></header>
+  <header><h1>margin (and padding)</h1></header>
   <section class="content">
     <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
     <pre contenteditable>margin: 10px;                /* 10px all sides */
 margin: 10px 20px;           /* 10px top and bottom, 20px right and left */
 margin: 10px 20px 30px;      /* 10px top and bottom, 20px right, 30px left */
 margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
+
+<pre contenteditable>padding: 10px;                /* 10px all sides */
+padding: 10px 20px;           /* 10px top and bottom, 20px right and left */
+padding: 10px 20px 30px;      /* 10px top and bottom, 20px right, 30px left */
+padding: 10px 20px 30px 40px; /* TRouBLe */</pre>
 </section>
 </div>
 
 
   
 <div class="slide">
-  <header><h1>Collapsing margins</h1></header>
+  <header><h1>Margins: how they work</h1></header>
 
   <section class="content">
-    <p>Margin collapsing also occurs only between blocks that belong to the same block formatting context (BFC).</p>
+
+<h3>Margin collapsing</h3>
+<p>When top and bottom margins collapse, the margin is the larger of two margin, or the difference if one is negative.</p>
+<ul>
+  <li>Margin collapsing occurs only between blocks that belong to the same block formatting context (BFC).</li>
+  <li>Margins of floated and absolutely positioned elements don't collapse.</li>
+</ul>
+<p>Note that 1-13 are floated, the rest are not.</p>
+
+<div class="goonyContainer m5">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+
+  </section>
+</div>
+
+
+
   
+<div class="slide">
+  <header><h1>Margins: negative margins</h1></header>
+
+  <section class="content">
+
+<h3>Margin collapsing</h3>
+<p>When top and bottom margins collapse, the margin is the <b>larger of two margins</b>, or the difference if one is negative.</p>
+<ul>
+  <li>Margin collapsing occurs only between blocks that belong to the same block formatting context (BFC).</li>
+  <li>Margins of floated and absolutely positioned elements don't collapse.</li>
+</ul>
+<p>Note all have negative margines. The first 13 are floated, the rest are not.</p>
+
+<div class="goonyContainer mv6">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+
+  </section>
+</div>
+
+
+
+  
+<div class="slide">
+  <header><h1>Margins: how they work</h1></header>
+
+  <section class="content">
+  <h3>Inline elements</h3>
+<p>Top and bottom margins have no effect on non-replaced inline elements like <code>&lt;span></code>.</p>
+
+  
+<p>Note the first 3 are floated left, so being inline is moot. The rest are inline, with <code class="pre">margin: 20px; padding: 20px;</code> set.</p>
+<ul><li>Inline: Top/bottom ignored, left/right don't collapse</li></ul>
+
+<div class="goonyContainer mv7">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div> 
+</section>
+</div>
+
+
+
+  
+<div class="slide">
+  <header><h1>Margins: how they work</h1></header>
+  <section class="content">
+    <h3><code>margin: auto</code></h3>
+    <pre contenteditable>div {
+   margin: auto;
+}</pre>
+    <p>Centers horizontally</p>
+    <div class="goonyContainer auto1">
+<div></div>
+</div>
+<br>
+  </section>
+</div>
+
+
+
+
+
+
+  
+<div class="slide">
+  <header><h1>Margins: how they work</h1></header>
+
+  <section class="content">
 <p>Block: Adjacent margins <a target="mdn" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="reference">collapse</a>, except if <code>absolute</code> or <code>float</code>, and <code>auto</code> centers horizontally</p>
 <ul>
     <li>Adjacent siblings</li>
     <li>Completely empty boxes</li>
     <li>Parent and first or last child element</li>
   </ul>
-<p>Inline: Top/bottom ignored, left/right don't collapse</p>
-  </section>
+
+ </section>
 </div>
-
-
   
 <div class="slide object">
   <header><h1>Collapsing margins: adjacent siblings</h1></header>
@@ -372,12 +549,11 @@ margin: 10px 20px 30px 40px; /* TRouBLe */</pre>
   <header><h1>border-width</h1></header>
   <section class="content">
     <code>
-      <p>border-width: 10px 20px 30px 40px;</p>
-      <ul>
-        <li>border-width-top: 10px;</li>
-        <li>border-width-right: 20px;</li>
-        <li>border-width-bottom: 30px;</li>
-        <li>border-width-left: 40px;</li>
+      <p>border-width: 10px 20px 30px 40px;
+        border-width-top: 10px;
+        border-width-right: 20px;
+        border-width-bottom: 30px;
+        border-width-left: 40px;</li>
       </ul>
     </code>
     <p>TRouBLe remembering? Top, Right, Bottom, Left</p>
