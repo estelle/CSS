@@ -79,6 +79,126 @@
     </div>
 
 
+<div class="slide">
+    <header><h1>Border Images</h1></header>
+    <section class="content">
+    <li>Border Images
+      <ul>
+        <li>border-image-source</li>
+        <li>border-image-slice</li>
+        <li>border-image-width</li>
+        <li>border-image-outset</li>
+        <li>border-image-repeat</li>
+        <li>border-image shorthand</li>
+      </ul>
+    </li>
+  </ul>
+    </section>
+</div>
+
+
+<!-- Border Images-->
+<div class="slide intro">
+     <header><h1>Border Images</h1></header>
+ </div>
+
+
+<!-- what is -->
+<div class="slide">
+     <header><h1>What is Border Image</h1></header>
+     <section class="content">
+
+     <div class="whatisborderimage">
+
+     </div>
+     </section>
+ </div>
+
+
+
+<div class="slide object">
+  <header onclick="setData('bi');"><h1>Browser support: <code>border-image</code> property</h1></header>
+<object id="bi" data-data="https://caniuse.com/#search=border-image"></object>
+  <a href="https://caniuse.com/#search=border-image" target="play" title="open resource in new window">Open</a>
+</div>
+
+
+
+ <!-- -->
+ <div class="slide">
+  <header><h1>border-image</h1></header>
+    <section class="content">
+<pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
+
+    <h1 style="text-align:left">Underlying Properties</h1>
+    <ul style="float:right">
+    <li>Syntax for non-prefixed differs</li>
+    <li>Must also declare <code>border-style</code></li>
+    <li><a href="http://border-image.com/">Border image tool</a></li>
+    <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
+    <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li>
+    </ul>
+      <ul>
+        <li>border-image-source</li>
+        <li>border-image-slice</li>
+        <li>border-image-width</li>
+        <li>border-image-outset</li>
+        <li>border-image-repeat</li>
+        <li class="imp">border-image</li>
+      </ul>
+     </section>
+ </div>
+
+
+ <div class="slide">
+  <header><h1>border-image</h1></header>
+    <section class="content">
+<pre contenteditable>
+<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
+
+<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
+
+<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
+
+<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}
+
+<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round {1,2}
+
+</pre>
+<pre contenteditable style="float:right; margin-bottom:40px;">
+S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+<select id="repeat" onChange="changeBorderImage();"><option value="stretch" selected>stretch</option><option value="repeat">repeat</option><option value="round">round</option></select> </pre>
+
+<div id="boderimage"></div>
+
+
+<pre contenteditable style="clear:both;">border-image: url(gradient.png) <b id="sliceval">34</b> / <b id="widthval">34</b><b>px</b> <b id="repeatval">stretch</b>;</pre>
+</section>
+<script defer="">
+  function changeBorderImage(){
+    var slice = document.getElementById('slice').value;
+    var width = document.getElementById('width').value;
+    var repeat = document.getElementById('repeat');
+    repeat = repeat.options[repeat.selectedIndex].text;
+    document.getElementById('boderimage').style.webkitBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+    document.getElementById('boderimage').style.mozBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+    document.getElementById('sliceval').innerHTML = slice;
+    document.getElementById('widthval').innerHTML = width;
+
+    document.getElementById('repeatval').innerHTML = repeat;
+  }
+</script>
+</div>
+
+ <div class="slide object">
+<header><h1>Play with border-image</h1></header>
+<object data="files/83_longcat.html"></object>
+<a href="files/83_longcat.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
 <div class="slide intro"><header><h1>Web Performance</h1></header></div> 
 
 
