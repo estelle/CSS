@@ -83,14 +83,22 @@
   text-align: center;
 }
 
-.radius pre {float: left; width:70%;}
-.radius b {
+.radius {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 1em;
+  align-items: center;
+ b {
   display: inline-block;
   height:50px;
   width: 50px;
-  border: 10px inset #71c6aa;
-  float:left;
-  margin-left: 10px;
+  border: 10px solid;
+  border-color: var(--splashcolor) var(--lightsplash) ;
+ }
+ pre {
+  margin: 0;
+ }
 }
 
 #bm {

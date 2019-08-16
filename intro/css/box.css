@@ -106,18 +106,22 @@
   text-align: center;
 }
 
-.radius pre {
-  float: left;
-  width: 70%;
+.radius {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 1em;
+  align-items: center;
 }
-
 .radius b {
   display: inline-block;
   height: 50px;
   width: 50px;
-  border: 10px inset #71c6aa;
-  float: left;
-  margin-left: 10px;
+  border: 10px solid;
+  border-color: var(--splashcolor) var(--lightsplash);
+}
+.radius pre {
+  margin: 0;
 }
 
 #bm {
