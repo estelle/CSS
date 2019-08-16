@@ -25,6 +25,6 @@
     <li><a href="tables">Tables</a></li>
     <li><a href="grid">Grids</a> - Not finished</li>
     <li><a href="transforms">Transforms</a></li>
-    <li><a href="animations">Transitions &amp; Animation</a> - needs update</li>
+    <li><a href="animations">Transitions &amp; Animation</a></li>
   <li><a href="other">Other Features</a> - A mess</li>
 </ol>

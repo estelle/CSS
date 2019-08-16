@@ -4,7 +4,14 @@
 <meta charset="utf-8" />
     <title>HTML Tables and CSS</title>
 <link rel="stylesheet" href="../intro/css/main.css"/>
-<link rel="stylesheet" href="../intro/css/tables.css"/>
+<style>
+  :root { 
+  --splashcolor: #cc0000;
+  --lightsplash: #ff9999;
+  --dark_bg: #000000;
+  --colorpop: #cc0000;
+}
+</style>
 </head> 
 
 <body> 
@@ -110,7 +117,7 @@
 
 <!-- cpation side -->
 <div class="slide divider">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
 </div>
 
 
@@ -118,7 +125,7 @@
 
 <!-- cpation side -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/caption-side">caption-side</a></code> property</h1></header>
   <section class="content" style="overflow-y: scroll; max-height: 80vh">
 <p>Put on the <code>&lt;table></code>, not the <code>&lt;caption></code>.</p>
 <p>supported</p><pre>caption-side: top; 
@@ -166,7 +173,7 @@ caption-side: inline-end;</pre>
 
 <!-- text-transform -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/text-transform">text-transform</a></code> property</h1></header>
   <section class="content">
     <pre contenteditable>text-transform: capitalize;</pre>
 <pre contenteditable class="multi">capitalize | uppercase | lowercase | <em>none</em> | full-width | full-size-kana;</pre>
@@ -194,16 +201,16 @@ caption-side: inline-end;</pre>
 
 <!-- border-collapse -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a></code></h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a></code></h1></header>
   <section class="content">
-    <pre><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a>: <em>separate</em> | collapse | inherit</pre>
+    <pre><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/border-collapse">border-collapse</a>: <em>separate</em> | collapse | inherit</pre>
     <p>When the borders are collapsed <code>border-spacing</code> is irrelevant. When <code>separate</code>, it matters!</p>  
   </section>
 </div>
 
 <!-- border-spacing -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/border-spacing">border-spacing</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/border-spacing">border-spacing</a></code> property</h1></header>
   <section class="content">
     <pre>border-spacing: &lt;length> &lt;length>?;</pre>
     <p>The look you want is probably:</p>
@@ -236,7 +243,7 @@ table {border-spacing: 5px 10px;}</pre>
 </div>
 <!--  -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/empty-cells">empty-cells</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/empty-cells">empty-cells</a></code> property</h1></header>
   <section class="content">
     <pre>empty-cells: show | hide</pre>
     <p>Similar to:</p>
@@ -266,9 +273,9 @@ table {border-spacing: 5px 10px;}</pre>
 
 <!--  -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a></code> property</h1></header>
   <section class="content">
-    <pre contenteditable><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a>: baseline | top | bottom | middle |
+    <pre contenteditable><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/vertical-align">vertical-align</a>: baseline | top | bottom | middle |
 sub | super | text-top | text-bottom | &lt;percentage> | &lt;length></pre>
                   <p>applied to thead, tfoot, tbody, tr, td, th, but not table.</p>
     <ul style="height: 58vh; overflow: scroll">
@@ -294,7 +301,7 @@ sub | super | text-top | text-bottom | &lt;percentage> | &lt;length></pre>
 
 
 <div class="slide">
-  <header><h1>All the <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
+  <header><h1>All the <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
   <section class="content" style="overflow: scroll; height: 80vh;">
     <h2><code>&lt;display-outside></code> values</h2>
   <pre contenteditable>
@@ -477,7 +484,7 @@ visibility: /* collapse value only */</pre>
 
 <!-- table layout -->
 <div class="slide">
-  <header><h1><code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/table-layout">table-layout</a></code> property</h1></header>
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/table-layout">table-layout</a></code> property</h1></header>
   <section class="content">
     <pre contenteditable>table-layout: <em>auto</em> | fixed</pre>
     <ul>
@@ -576,7 +583,7 @@ tbody {}</pre></div><p><a href="files/play.html" target="play" class="objectlink
     <ul>
       <li>Use proportional rather than absolute sizing</li>
       <li><code>display:</code> other than <code>table</code> removes the table semantics</li>
-      <li>if you do convert to <code>grid</code>, use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role" target="mdn"><code>aria-role</code>s</a>. </li>
+      <li>if you do convert to <code>grid</code>, use <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role" target="resource"><code>aria-role</code>s</a>. </li>
       <li>If table maintains selection state, has two-dimensional navigation, or allows cell rearrangement use grid or treegrid roles instead.</li>
       </ul> 
   </section>

@@ -15,8 +15,13 @@ Twitter: @estellevw
    <link rel="stylesheet" href="../intro/css/main.css"/>
    <link rel="stylesheet" href="../intro/css/animation.css"/>
    <link rel="stylesheet" href="static/css/animation.css"/>
-   <style>
-
+<style>
+:root { 
+  --splashcolor: #e359dc;
+  --lightsplash: rebeccapurple;
+  --dark_bg: #333333;
+  --colorpop: #e359dc;
+}
 </style>
 
   </head>
@@ -30,9 +35,7 @@ Twitter: @estellevw
 </header>
 
   <div id="presentation">
-
    <div id="presentation-counter"></div>
-
    <div id="slides">
 
 
@@ -40,18 +43,29 @@ Twitter: @estellevw
 <!-- Title Slide -->
 <div class="slide intro">
      <header>
-     	<h1>Animation</h1>
+     	<h1>Animations &amp; Transitions</h1>
      </header>
 
       <h2><a href="http://estelle.github.io/CSS/animations">estelle.github.io/CSS/animations/</a></h2>
       <div class="homepencil">✎</div>
 </div>
 
+
+<!-- TOC -->
+<div class="slide">
+     <header>
+      <h1>Animations &amp; Transitions</h1>
+     </header>
+     <section class="content">
+       
+     </section>
+</div>
+
 <!-- Overview -->
 <div class="slide divider">
-  <header><h1>Transitions Overview</h1></header>
+  <header><h1>Transitions</h1></header>
   <section class="content">
-  </section>
+     </section>
 </div>
 
 <!-- Simplest Transition -->
@@ -72,7 +86,7 @@ a:hover {
 
 <!-- CSS3 Transition -->
  <div class="slide normal">
-     <header><h1>CSS3 Transition</h1></header>
+     <header><h1>CSS Transition</h1></header>
      <section class="content">
      <pre style="font-size:140%;">a {
   color: green;
@@ -96,18 +110,102 @@ a:hover {
 
  <!-- property overview -->
 <div class="slide">
-<header><h1>transitions</h1></header>
+<header><h1>Transitions Properties</h1></header>
 <section class="content">
-<p>Enables the transition of properties from one state to the next over a defined length of time</p>
+<p>Pprovide a way to control the animation when changing CSS property values. Instead of instaneous changes from one value to the next, the value can transition over a period of time, following an acceleration curve, the start of which can be delayed. </p>
 <ul>
-<li><em>transition-property:</em> properties (or 'all') that transition</li>
-<li><em>transition-duration:</em> s or ms it takes to transition</li>
-<li><em>transition-timing-function:</em> bezier curve of transition</li>
-<li><em>transition-delay:</em> s or ms before transition starts</li>
-<li><em>transition:</em> shorthand for 4  transition properties</li>
+<li><code class="pre">transition-property:</code> properties that transition</li>
+<li><code class="pre">transition-duration:</code> time it takes to transition</li>
+<li><code class="pre">transition-timing-function:</code> bezier curve or steps of transition</li>
+<li><code class="pre">transition-delay:</code> time delay before transition starts</li>
+<li><code class="pre">transition:</code> shorthand for the four transition properties</li>
 </ul>
+<p>These enable customization of the delay, timing, and duration of the transition between the two values of the property that is being changed.</p>
 </section>
 </div>
+
+
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition" target="resource">transition</a></code> property</h1></header>
+<section class="content">
+  <p>Shorthand property for <code>transition-property, transition-duration, transition-timing-function</code>, and <code>transition-delay</code>.</p>
+  <pre contenteditable> none | [ &lt;property> ] || &lt;duration> || &lt;timing-function> || &lt;delay> ]#</pre>
+  <p>One or more single-property transitions, separated by commas.</p>
+  <pre contenteditable>li ul:hover {
+     transition: transform 200ms ease-in 50ms,
+                 color 50ms linear;
+  }</pre>
+  <p>Transition between two states of an element, like default and :hover or :invalid, or between a JS toggling of a class name.</p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property" target="resource">transition-property</a></code> property</h1></header>
+<section class="content">
+  <p>CSS properties to which a transition effect should be applied</p>
+  <pre contenteditable>none | all | &lt;custom-ident>#</pre>
+  <p>Either <code>none</code>, or <code>all</code> and / or a comma-separated list</p>
+  <dl>
+    <dt>none</dt>
+    <dd>No properties will transition.</dd>
+    <dt>all</dt>
+    <dd>All properties that can transition will.</dd>
+    <dt>&lt;custom-ident></dt>
+    <dd>The comma-separated properties to which a transition effect should be applied</dd>
+  </dl><pre contenteditable>transition-duration: transform, color;</pre>
+  <p>If using all with other properties, define <code>all</code> first.</p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration" target="resource">transition-duration</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the length of time a transition animation should take to complete.</p>
+  <pre contenteditable>&lt;time>#</pre>
+  <dl><dt>&lt;time></dt>
+    <dd>In s for seconds or ms for milliseconds, set the amount of time the transition will take to go from the old value of a property to the new value should take, after it starts. A time of 0s indicates that no transition will happen, that is the switch between the two states will be instantaneous. Negative values are invalid.</dd>
+    </dl> 
+    <pre contenteditable>transition-duration: 200ms, 50ms;</pre>
+  <p>Each duration is applied to the corresponding property as specified by the <code>transition-property</code> property. If there are fewer durations than properties the duration list is repeated. Too many is OK too.</p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function" target="resource">transition-timing-function</a></code> property</h1></header>
+<section class="content">
+  <p>Provide an acceleration curve to control the speed of the transition over its duration.</p>
+  <pre contenteditable class="multi">linear | ease | ease-in | ease-out | ease-in-out | start | end
+cubic-bezier( n1, n2, n3, n4 ) | step-start | step-end  
+steps(&lt;int>, &lt;pos>) | jump-start | jump-end | jump-none | jump-both </pre>
+  <p>These will be described in huge detail in the animation section</p>
+     <pre contenteditable>transition-timing-function: ease-in, linear;</pre>
+   <p>Each timing function is applied to the corresponding property as specified by the <code>transition-property</code> property. If there are fewer timing functions than properties the timing function list is repeated. </p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay" target="resource">transition-delay</a></code> property</h1></header>
+<section class="content">
+  <p>Specifies the time to wait before starting a property's transition effect when its value changes.</p>
+  
+  <pre contenteditable>&lt;time>#</pre>
+  <p>Specifies the amount of time to wait between a property's value changing and the start of the transition effect.</p> <ul><li>The value can be negative.</li> 
+    <li>If negative the transition starts part of the way thru the transition. </li><li>There will be no visible transition if the delay is longer than the duration.</li></ul>
+        <pre contenteditable>transition-duration: 50ms, 0ms;</pre>
+
+   <p>Each delay is applied to the corresponding property as specified by the <code>transition-property</code> property. If there are fewer delays than properties, the delay list is repeated.</p>
+</section>
+</div>
+
+
+
 
 <!-- font transition example -->
 <div class="slide">
@@ -125,7 +223,7 @@ code:hover {
    background-color: rgba(255,255,255,0.8);
 }
 </pre>
-<pre contenteditable>code {
+<pre contenteditable class="code">code {
    transition:
       color, font-size, background-color 2s ease-in 50ms;
 }</pre>
@@ -150,9 +248,8 @@ code:hover {
    background-color: rgba(255,255,255,0.8);
 }
 </pre>
-<pre contenteditable>code {
-   transition:
-      transform 2s ease-in 50ms;
+<pre contenteditable class="code code2">code {
+   transition: transform 2s ease-in 50ms;
 }</pre>
 </section>
 </div>
@@ -224,44 +321,105 @@ code:hover {
 
 <!-- list of tranisitionable properties -->
  <div class="slide normal">
-     <header><h1>Transitionable Properties</h1></header>
-     <section class="content">
-     <ul class="columns">
-        <li>background-color</li>
-        <li>background-position</li>
-        <li>border-color</li>
-        <li>border-width</li>
-        <li>border-spacing</li>
-        <li>bottom</li>
-        <li>clip</li>
-        <li>color</li>
-        <li>crop</li>
-        <li>font-size</li>
-        <li>font-weight</li>
-        <li>height</li>
-        <li>left</li>
-        <li>letter-spacing</li>
-        <li>line-height</li>
-        <li>margin</li>
-        <li>max-height</li>
-        <li>max-width</li>
-        <li>min-height</li>
-        <li>min-width</li>
-        <li>opacity</li>
-        <li>outline-color</li>
-        <li>outline-offset</li>
-        <li>outline-width</li>
-        <li>padding</li>
-        <li>right</li>
-        <li>text-indent</li>
-        <li>text-shadow</li>
-        <li>top</li>
-        <li>vertical-align</li>
-        <li>visibility</li>
-        <li>width</li>
-        <li>word-spacing</li>
-        <li>z-index</li>
-     </ul>
+     <header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="resource">Transitionable Properties</a></h1></header>
+     <section class="content" style="display: flex; flex-flow: wrap column; max-height: 85vh;list-style-type: none; margin-left: -10px; gap: 0 10px; font-family: monospace; font-size: 1.2rem;">
+    <span>all</span>
+    <span>backdrop-filter</span>
+    <span>background-color</span>
+    <span>background-position</span>
+    <span>background-size</span>
+    <span>border-color</span>
+    <span>border-radius</span>
+    <span>border-width</span>
+    <span>bottom</span>
+    <span>box-shadow</span>
+    <span>caret-color</span>
+    <span>clip</span>
+    <span>clip-path</span>
+    <span>color</span>
+    <span>column-count</span>
+    <span>column-gap</span>
+    <span>column-rule-color</span>
+    <span>column-rule-width</span>
+    <span>column-width</span>
+    <span>filter</span>
+    <span>flex-basis</span>
+    <span>flex-grow</span>
+    <span>flex-shrink</span>
+    <span>font-size</span>
+    <span>font-size-adjust</span>
+    <span>font-stretch</span>
+    <span>font-variation-settings</span>
+    <span>font-weight</span>
+    <span>gap</span>
+    <span>grid-column-gap</span>
+    <span>grid-gap</span>
+    <span>grid-row-gap</span>
+    <span>grid-template-columns</span>
+    <span>grid-template-rows</span>
+    <span>height</span>
+    <span>inset</span>
+    <span>inset-block</span>
+    <span>inset-block-end</span>
+    <span>inset-block-start</span>
+    <span>inset-inline</span>
+    <span>inset-inline-end</span>
+    <span>inset-inline-start</span>
+    <span>left</span>
+    <span>letter-spacing</span>
+    <span>line-clamp</span>
+    <span>line-height</span>
+    <span>margin</span>
+    <span>mask</span>
+    <span>mask-border</span>
+    <span>mask-position</span>
+    <span>mask-size</span>
+    <span>max-height</span>
+    <span>max-lines</span>
+    <span>max-width</span>
+    <span>min-height</span>
+    <span>min-width</span>
+    <span>object-position</span>
+    <span>offset-anchor</span>
+    <span>offset-distance</span>
+    <span>offset-path</span>
+    <span>offset-position</span>
+    <span>offset-rotate</span>
+    <span>opacity</span>
+    <span>order</span>
+    <span>outline-color</span>
+    <span>outline-offset</span>
+    <span>outline-width</span>
+    <span>padding</span>
+    <span>perspective</span>
+    <span>perspective-origin</span>
+    <span>right</span>
+    <span>rotate</span>
+    <span>row-gap</span>
+    <span>scale</span>
+    <span>scroll-margin</span>
+    <span>scroll-padding</span>
+    <span>scroll-snap-coordinate</span>
+    <span>scroll-snap-destination</span>
+    <span>scrollbar-color</span>
+    <span>shape-image-threshold</span>
+    <span>shape-margin</span>
+    <span>shape-outside</span>
+    <span>tab-size</span>
+    <span>text-decoration-color</span>
+    <span>text-emphasis-color</span>
+    <span>text-indent</span>
+    <span>text-shadow</span>
+    <span>top</span>
+    <span>transform</span>
+    <span>transform-origin</span>
+    <span>translate</span>
+    <span>vertical-align</span>
+    <span>visibility</span>
+    <span>width</span>
+    <span>word-spacing</span>
+    <span>z-index</span>
+    <span>zoom</span>
      </section>
  </div>
 
@@ -274,14 +432,22 @@ code:hover {
 </div>
 
 
-<!-- transitioning placement -->
-<div class="slide object">
-  <header><h1>Transition placement</h1></header>
-    <object data="files/transitionplacement.html"></object>
-<a href="files/transitionplacement.html" target="play" class="objectlink">Try it out!</a>
+<div class="slide">
+<section class="content" style="max-height: unset">
+ <style contenteditable class="editme">input:valid {
+    background-color: green;
+}
+input:invalid {
+    background-color: red;
+    transition: 3s steps(3, end);
+}
+input:focus {   
+    background-color: yellow;
+}</style>
+<div><label>Number: <input type="number" min="0" max="10" step="2"></label></div>
+<pre>&lt;input type=number min=0 max=10 step=2></pre>
+</section>
 </div>
-
-
 
 <!-- Tranform Features (or Limitations) -->
   <div class="slide normal">
@@ -298,7 +464,7 @@ code:hover {
  </div>
 
 <!-- divider -->
-<div class="slide">
+<div class="slide divider">
   <header><h1>Events</h1></header>
   <section class="content">
   </section>
@@ -405,7 +571,7 @@ nav li:hover ul {
  </div>
 
 
-<div class="slide">
+<div class="slide divider">
   <header><h1>Exercise</h1></header>
   <section class="content">
   </section>

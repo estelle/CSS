@@ -4,7 +4,17 @@
 <meta charset="utf-8" />
     <title>Units and Values</title>
 <link rel="stylesheet" href="../intro/css/main.css"/>
-<link rel="stylesheet" href="../intro/css/values.css"/>
+<style>
+  :root { 
+  --splashcolor: #a8a807;
+  --lightsplash: #fafa81;
+  --dark_bg: rgb(45, 45, 3);
+  --colorpop: #a8a807;
+}
+pre {
+  font-size: 1.2em;
+}
+</style>
 </head>
 
 <body>
@@ -600,7 +610,7 @@ div {
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="mdn">all</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource">all</a></code> property</h1></header>
 <section class="content"><p>Custom properties are not reset by the all property</p>
 <pre contenteditable class="multi">initial | inherit | unset | revert</pre>
   <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
@@ -622,7 +632,7 @@ div {
 <div class="slide">
   <header><h1>Keyword values</h1></header>
   <section class="content">
-<p>Supported <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="mdn">text-align</a></code> values</p>
+<p>Supported <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="resource">text-align</a></code> values</p>
 <code>left | right | center | justify | start | end | match-parent </code>
 
     <pre contenteditable>/* Keyword values */         /* Global values */
