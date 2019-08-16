@@ -1,11 +1,4 @@
-:root {
-  --splashcolor: #7b9894;
-  --lightsplash: #eef1f1;
-  --dark_bg: #7b9894;
-  --colorpop: #A9403A;
-}
-
-style[class=editme i] {
+style[class~=editme i] {
   display: block;
   font-family: monospace;
   white-space: pre;

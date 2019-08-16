@@ -13,10 +13,11 @@ border-radius: 50%;
 .initial,
 .child,
 .letters, 
-.letters:after {
+.letters:after,
+.letters i {
   position:relative;
   font-size: 100px;
-  color:#A9403A;
+  color:var(--love);
     display:block;
   height: 140px;
   width: 3em;
@@ -28,21 +29,16 @@ border-radius: 50%;
   font-size: 140px;
   outline: 1px solid;
 }
-.letters:after, .child {
-  content:'RSVP';
+.letters:after, .letters i, .child {
+  _content:'LOVE';
   position:absolute; top: 0; left:0;
-  box-shadow: 5px 5px 0 5px #7b9894;
+  box-shadow: 5px 5px 0 5px var(--offshadows);
   opacity: 0.85;
   margin: 0;
   pointer-events: none;
-  background-color: #D6BB72;
+  background-color: var(--transform_bg);
 }
-/*
-.letters_01:after {
-   transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(15deg);
-}
-*/
+
 .letters_02:after {
    transform:
      translate(100px, 100px);
@@ -57,80 +53,22 @@ border-radius: 50%;
 .letters_04:after {
    transform:
      scale(0.25, 0.75);
-}/*
-.letters_05,
-.letters_05:after {
-   border-radius: 0;
-   border: 1px solid #666;
-}*/
+}
  
 .letters_05:after {
    transform:
      skewX(5deg);
 }
-/*
-.letters_06:after {
-   transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
-}
-*/
+
 .letters_07:after {
    transform: perspective(40px) rotateX(10deg);
 }
-/*
-.letters_07b:after {
-   transform: perspective(100px) rotatex(20deg);
-   transform-origin: top left;
-}
 
-.letters_07c:after {
-  transform: rotate(90deg);
-  transform-origin:  top left;
-}
-
-.letters_07d {
-  perspective: 40px;
-}
-
-.letters_07d:after {
-   transform: rotateX(10deg);
- }
-
-.letters_07e {
-    transform: rotate3d(20deg);
-    transform-style: flat;
-}
-.letters_07e:after {
-  transform: rotate(10deg);
-}
-.letters_07f {
-    transform: rotate3d(20deg);
-    transform-style: preserve-3d;
-}
-.letters_07f:after {
-  transform: rotate(10deg);
-}
-
-.letters_08:after {
-   transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
-}
-
-.letters_09:after {
-   transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
-}
-
-.letters_10:after {
-   transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
-}
-*/
 section {padding-top: 20px;}
 .x {width: 75%; float:right; margin:0; position:relative;}
 .y {float: left; line-height:1.62em;}
 #ABTrasform li {float: left; clear:both; list-style-type:none; width:100%;}
-.deprecated dt {margin-bottom: 1rem; background-color: #ccc;
+/*.deprecated dt {margin-bottom: 1rem; background-color: #ccc;
     }
 .deprecated dd {display: none;}
 .deprecated dt:hover + dd {display:inherit;}
@@ -140,7 +78,7 @@ section {padding-top: 20px;}
      display:block; width: 50%; padding-left: 5px;
 }
 .deprecated.listed.wide dt{width:100%;}
-
+*/
 #transformorder {
   width: 200px;
   height: 200px;

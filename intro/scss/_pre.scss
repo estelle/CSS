@@ -1,9 +1,9 @@
-style[class="editme" i] {
+style[class~="editme" i] {
     border: 1px solid var(--colorpop);
     padding: 5px 20px;
     margin-bottom: 1em;
   }
-pre, style[class="editme" i] {
+pre, style[class~="editme" i] {
   text-align: left;
   font-size: 1.2em;
   padding: 10px 20px;

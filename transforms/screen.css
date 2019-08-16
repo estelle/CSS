@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* CSS Document
-#A9403A: C7573A
+var(--love): C7573A
 blue: BDD9D5;
 */
 div, li, a, p, pre {
@@ -16,7 +16,6 @@ body {
   height: 100%;
   position: absolute;
   left: 0px; top: 0px;
-  background-color: #7b9894;
 }
 .figure .content,
 .figure figure,
@@ -53,7 +52,8 @@ figure {margin: 0;}
   background: white;
 }
 
-#next, #back {z-index: 1000; position: absolute; top:0; left:0; list-style-type:none;}
+#next, #back {z-index: 1000; 
+  position: absolute; top:0; left:0; list-style-type:none;}
 #next {left:auto; right: 0;}
 #presentation {
   position: absolute;
@@ -93,14 +93,14 @@ figure {margin: 0;}
   transform: scale(1);
   padding-left: 20px;
   padding-top: 10px;
-  border: 1px solid #A9403A;
+  border: 1px solid var(--love);
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
   border-radius: 15px;
   background-clip: border-box;
 }
 .button {
-	background-color: #A9403A;
-	color: #7b9894;
+	background-color: var(--love);
+	color: var(--var(--offshadows));
 	border: 1px solid;
 	padding: 3px 15px;
 	margin: 5px;
@@ -111,8 +111,8 @@ figure {margin: 0;}
 .slide.divider, .slide.intro {
   text-align: center;
   font-size: 200%;
-  color: #A9403A;
-  background: linear-gradient(to top,#7b9894cc, 90%, #A9403A) white;
+  color: var(--love);
+  background: linear-gradient(to top,var(--var(--offshadows))cc, 90%, var(--love)) white;
 
 }
 
@@ -225,11 +225,11 @@ header {
 h1 {
   font-size: 140%;
   margin-bottom: 0px;
-  color: #A9403A;
+  color: var(--love);
   text-align:center;
 }
 header h1 {
-	background-color: #7b989466; margin-left: -20px;
+	background-color: var(--var(--offshadows))66; margin-left: -20px;
 }
 
 h2 {
@@ -253,11 +253,11 @@ footer {
 }
 
 a {
-  color: #A9403A;
+  color: var(--love);
   display: inline-block;
   text-decoration: none;
   line-height: 110%;
-  border-bottom: 2px dotted #A9403A;
+  border-bottom: 2px dotted var(--love);
 }
 
 pre, .ex, .pre, .codelike {
@@ -285,8 +285,8 @@ pre, .ex, .pre, .codelike {
 
 pre b, .pre b, .imp {
   font-weight: normal;
-  color: #A9403A;
-  text-shadow: #7b9894 0 0 1px;
+  color: var(--love);
+  text-shadow: var(--var(--offshadows)) 0 0 1px;
   /*letter-spacing: -1px;*/
 }
 
@@ -294,14 +294,14 @@ pre b, .pre b, .imp {
   float: left;
   padding: 5px 10px;
   border-radius: 5px;
-  color: #A9403A;
-  background: #7b9894;
+  color: var(--love);
+  background: var(--var(--offshadows));
 }
 
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #A9403A;
+  color: var(--love);
   text-shadow: rgba(0,0,0,0.3) 1px 1px 2px;
   font-weight: bold;
 }
@@ -340,7 +340,7 @@ div:not(.current).reduced {
 dt {
 	font-weight: bold;
 	margin-top: 0.5em;
-	background-color: #7b9894cc;
+	background-color: var(--var(--offshadows))cc;
 	display:inline-block;
   padding: 0 3px;
 	margin-bottom: 2px;
@@ -367,7 +367,7 @@ dl.inline dd {
 }
 
 .new:not(li) {
-	color: #A9403A; 
+	color: var(--love); 
 	background-color: #fff; 
 	padding: 3px 8px;
 }
@@ -384,7 +384,7 @@ ul.columns {
 .play {text-align: center;}
 .columns2 {
 	columns: 2 1em;
-	column-rule: 1px solid #A9403A;
+	column-rule: 1px solid var(--love);
 }
 
 /* OBJECTS */

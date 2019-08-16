@@ -1,19 +1,15 @@
 @charset "UTF-8";
 
-:root { 
-  --splashcolor: #7b9894;
-  --lightsplash: #eef1f1;
-  --dark_bg: #7b9894;
-  --colorpop: #A9403A;
-}
-
 @import "styleme";    
 
 .perspective article {
 	 display: flex; 
 	 justify-content: center;
    div {
-     width: 150px; height: 150px; display: inline-block; line-height: 150px; font-size: 50px; background-color:palegoldenrod; margin: 10px; 
+     width: 150px; height: 150px; 
+     display: inline-block; line-height: 150px; 
+     font-size: 50px; background-color: palegoldenrod; 
+     margin: 10px; 
      color: #A9403A;
      border: 1px dashed; 
      text-align: center;
