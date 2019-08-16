@@ -1583,9 +1583,22 @@ available | min-content | max-content | fit-content | auto</pre>
 <div class="slide">
 <header><h1> <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Sts whether an element is treated as a block or inline element and the layout used for its children, such as grid or flex.
+
+  <pre contenteditable>contents | none | block | inline | run-in | inline-block ...</pre>
+<p> Some values of display will be fully defined in their own sectionss.</p>
+<dl><dt>none</dt>
+  <dd>Element is completely removed from the page flow, as if the element and all it's descendants did not exist.</dd>
+  <dt>inline</dt>
+  <dd>Default for all elements, though user agent style sheets usually set this value for many elements.  Creates an inline-level box.</dd>
+  <dt>block</dt>
+  <dd>Generates a block-level box for the element. Often used as the opposite of <code>display: none;</code>. Don't do that. Use initial to make an element visible again.</dd>
+  <dt>inline-block</dt>
+  <dd>Similar to the inline box, but you can height and width values for the element. Value for <code>&lt;img</code>.</dd>
+  <dt>list-item</dt>
+  <dd>Similar to block-level with an inline box for the <code>::marker</code>.</dd></dl>
+  <p>We'll handle the others as they come into play.</p>   
+  <p>Formally, the display property sets an element's inner and outer display types. The outer type sets an element's participation in flow layout; the inner type sets the layout of children.</p>
 </section>
 </div>
 
@@ -1725,11 +1738,27 @@ display: unset;</pre>
 </div>
 
 <div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+ <section class="content">
+  <h3><code>display: none;</code>, an interpretive dance</h3>
+</section>
+</div>
+
+
+<div class="slide">
 <header><h1> <code><a target="mdn" href="https://developer.mozilla.org/en-US/docs/web/css/visibility">visibility</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Shows or hides an element without changing the layout of a document. Also hide rows or columns in tables.</p>
+  <pre contenteditable>visible | hidden | collapse</pre>
+  <dl><dt>visible</dt>
+    <dd>Default. The element box is visible.</dd>
+<dt>hidden</dt>
+    <dd>The element box is invisible (not drawn), but still affects layout as normal. <B>MAINTAINS SPACE!</B> Doesn't receive focus. Descendants of the element will be visible if they have visibility set to visible. </dd>
+<dt>collapse</dt>
+    <dd>Same as hidden, except for table rows, columns, column groups, and row groups, which are hidden and space removed as if <code>display: none</code> were applied. The size of other rows and columns is still calculated as though the cells in the collapsed row(s) or column(s) are present.<sup>*</sup> Collapsed flex items are hidden, and the space they would have occupied is removed.</dd>
+<p>Will discuss futher in animation and tables sections</p>
+<p><sup>*</sup> Allows for removal of a table row or column without a reflow for the entire table.</p>
+
 </section>
 </div>
 
@@ -1756,6 +1785,7 @@ display: unset;</pre>
       <li>Add border around the cards </li>
       <li>Round the corners</li>
       <li>Add a decorative border on the back of the card.</li>
+      <li>Add a shadow to the back and front of each card.</li>
       <li>Stack all the cards into a pack (one on top of the other)</li>
       <li>Move them around a little bit so you can see a bit of each</li><li>Center the whole thing</li>
     </ol>
@@ -1801,7 +1831,8 @@ figure {
   top: 0;
   bottom: 0;
   right:0;
-  <b>border-radius: 10px;</b>
+  <b>border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);</b>
 }
 /* backs of the cards */
 .back {
