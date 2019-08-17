@@ -17,6 +17,7 @@ pre, style[class~="editme" i] {
 section .editme:first-child {
   margin-top: 1.7em;
 }
+style.editme.mini {margin-top: 10px; margin-bottom: 10px; font-size: 1em;}
 code {
   background: rgba(255, 255, 255, 0.3);
   text-shadow: none;

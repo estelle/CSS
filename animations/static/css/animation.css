@@ -161,7 +161,7 @@ i.origin {
   width: 100%;
   margin: 20px -40px;
   padding: 0 40px;
-  background-color: #58ADE3;
+  background-color: var(--dark_bg);
   border: 1px solid #fff;
 }
 .slide nav ul,
@@ -175,7 +175,7 @@ i.origin {
 }
 .slide nav ul li {
   list-style-type: none;
-  background-color: #58ADE3;
+  background-color: var(--dark_bg);
   color: white;
   margin: 0;
   padding: 3px 5px;
@@ -284,7 +284,7 @@ i.origin {
   }
 }
 .pencil {
-  color: #58ADE3;
+  color: var(--dark_bg);
   height: 140px;
   width: 140px;
   margin: 10px auto;
@@ -456,7 +456,9 @@ i.origin {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: all 0.4s ease-in-out;
-  background: linear-gradient(-45deg, #58ADE3 25%, transparent 25%, transparent 75%, #58ADE3 75%, #58ADE3) 0 0, linear-gradient(-45deg, #58ADE3 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em, linear-gradient(45deg, #58ADE3 17%, transparent 17%, transparent 25%, #58ADE3 25%, #58ADE3 36%, transparent 36%, transparent 64%, #58ADE3 64%, #58ADE3 75%, transparent 75%, transparent 83%, #58ADE3 83%) 1em 1em;
+  background: linear-gradient(-45deg, var(--dark_bg) 25%, transparent 25% 75%, var(--dark_bg) 75%) 0 0, 
+    linear-gradient(-45deg, var(--dark_bg) 25%, transparent 25% 75%, white 75%) 1em 1em, 
+    linear-gradient(45deg, var(--dark_bg) 17%, transparent 17% 25%, var(--dark_bg) 25% 36%, transparent 36% 64%, var(--dark_bg) 64% 75%, transparent 75% 83%, var(--dark_bg) 83%) 1em 1em;
   background-color: white;
   background-size: 2em 2em;
   background-position: -1em -1em;
@@ -601,7 +603,7 @@ table.icons * {
 .spinbox {
   position: relative;
   font-size: 100px;
-  color: #58ADE3;
+  color: var(--dark_bg);
   display: block;
   height: 140px;
   width: 140px;
@@ -651,7 +653,7 @@ pre u {
   top: 20px;
   width: 50px;
   height: 50px;
-  background-color: #58ADE3;
+  background-color: var(--dark_bg);
   animation: showme 5s linear 5s 1;
   animation-play-state: paused;
   transform-origin: 50% 100%;
@@ -676,5 +678,70 @@ span.afmboth {
 #animfillmodeall4.animationon .box span {
   animation: none;
 }
+
+article {height: 10px;
+  background: var(--splashcolor);
+  background: linear-gradient(to right, black 10%, white 10%);
+  background-size: 50px 10px;
+  margin: 20px 0;
+  position: relative;
+}
+article:after {
+  content: '';
+  height: 10px;
+  width: 5px;
+  position: absolute;
+  left: 498px;
+  background-color:  var(--splashcolor);
+}
+
+
+
+div:nth-of-type(1){border-color:  var(--splashcolor);}
+div:nth-of-type(1){animation-iteration-count: 0.0000001;}
+div:nth-of-type(2){animation-iteration-count: 0.025;}
+div:nth-of-type(3){animation-iteration-count: 0.05;}
+div:nth-of-type(4){animation-iteration-count: 0.075;}
+div:nth-of-type(5){animation-iteration-count: 0.1;}
+div:nth-of-type(6){animation-iteration-count: 0.125;}
+div:nth-of-type(7){animation-iteration-count: 0.15;}
+div:nth-of-type(8){animation-iteration-count: 0.175;}
+div:nth-of-type(9){animation-iteration-count: 0.2;}
+div:nth-of-type(10){animation-iteration-count: 0.225;}
+div:nth-of-type(11){animation-iteration-count: 0.250;}
+div:nth-of-type(12){animation-iteration-count: 0.275;}
+div:nth-of-type(13){animation-iteration-count: 0.3;}
+div:nth-of-type(14){animation-iteration-count: 0.325;}
+div:nth-of-type(15){animation-iteration-count: 0.35;}
+div:nth-of-type(16){animation-iteration-count: 0.375;}
+div:nth-of-type(17){animation-iteration-count: 0.4;}
+div:nth-of-type(18){animation-iteration-count: 0.425;}
+div:nth-of-type(19){animation-iteration-count: 0.45;}
+div:nth-of-type(20){animation-iteration-count: 0.475;}
+div:nth-of-type(21){animation-iteration-count: 0.5; 
+div:nth-of-type(22){animation-iteration-count: 0.525;}
+div:nth-of-type(23){animation-iteration-count: 0.55;}
+div:nth-of-type(24){animation-iteration-count: 0.575;}
+div:nth-of-type(25){animation-iteration-count: 0.6;}
+div:nth-of-type(26){animation-iteration-count: 0.625;}
+div:nth-of-type(27){animation-iteration-count: 0.65;}
+div:nth-of-type(28){animation-iteration-count: 0.675;}
+div:nth-of-type(29){animation-iteration-count: 0.7;}
+div:nth-of-type(30){animation-iteration-count: 0.725;}
+div:nth-of-type(31){animation-iteration-count: 0.750;}
+div:nth-of-type(32){animation-iteration-count: 0.775;}
+div:nth-of-type(33){animation-iteration-count: 0.8;}
+div:nth-of-type(34){animation-iteration-count: 0.825;}
+div:nth-of-type(35){animation-iteration-count: 0.85;}
+div:nth-of-type(36){animation-iteration-count: 0.875;}
+div:nth-of-type(37){animation-iteration-count: 0.9;}
+div:nth-of-type(38){animation-iteration-count: 0.925;}
+div:nth-of-type(39){animation-iteration-count: 0.95;}
+div:nth-of-type(40){animation-iteration-count: 0.975;}
+div:nth-of-type(41){animation-iteration-count: 1; border-color:  var(--splashcolor);}
+div:nth-of-type(n+42) {display: none;}
+article:after,article:before  {height: 300px !important;opacity: 0.25; content: "";}
+
+article:before {position:absolute; left: 100px; width: 5px; background-color: black;}
 
 /*# sourceMappingURL=animation.css.map */

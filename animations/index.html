@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="utf-8" />
-    <title>Animations Deep Dive</title>
+    <title>Transitions &amp; Animations</title>
 <!--
 
 Author: Estelle Weyl
@@ -13,15 +13,15 @@ Twitter: @estellevw
 -->
      
    <link rel="stylesheet" href="../intro/css/main.css"/>
-   <link rel="stylesheet" href="../intro/css/animation.css"/>
    <link rel="stylesheet" href="static/css/animation.css"/>
 <style>
 :root { 
   --splashcolor: #e359dc;
   --lightsplash: rebeccapurple;
-  --dark_bg: #333333;
+  --dark_bg: #434;
   --colorpop: #e359dc;
 }
+
 </style>
 
   </head>
@@ -442,10 +442,15 @@ code:hover {
 <p>If a property is the list is invalid, but the syntax is correct, the property will be kept in the list so other properties align correctly.</p>
 <p>Use <code>transition-delay</code> to chain transitions</p>
 <p>The order is important: The duration must come before the delay!</p>
+<p>Avoid transitioning to <code>auto</code></p>
      </section>
  </div>
 
-
+<div class="slide">
+<header><h1>Discrete</h1></header>
+<section class="content"><code>visibility</code>
+</section>
+</div>
 
 <div class="slide">
 <section class="content" style="max-height: unset">
@@ -670,8 +675,8 @@ nav li:hover ul {
  <header>
     <h1>Animation Essentials</h1>
  </header>
- <section class="content">
-     <ul class="imp">
+ <section class="content"><code>
+     <ul>
         <li>@keyframes</li>
         <li>animation-name</li>
         <li>animation-duration</li>
@@ -681,7 +686,7 @@ nav li:hover ul {
         <li>animation-play-state</li>
         <li>animation-delay</li>
         <li>animation-fill-mode</li>
-        <li>animation (shorthand)</li>
+        <li>animation </code>(shorthand)</li>
       </ul>
  </section>
 </div>
@@ -697,6 +702,21 @@ nav li:hover ul {
 
 
 
+ <div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" target="resource">@keyframes</a></code> at-rule</h1></header>
+<section class="content">
+  <p>An at-rule that controls the intermediate steps in a CSS animation sequence by defining styles for keyframes along the animation sequence. </p>
+  <pre contenteditable>@keyframes &lt;name> {
+  [ &lt;keyframe-selector># {
+    &lt;property-value-list>
+  }]#
+}</pre>
+<p>JavaScript can access via the <code>CSSKeyframesRule</code> interface.</p>
+  <p>Provides more control over transitions: alllow for intermediate steps</p>
+</section>
+</div>
+
+
  <div class="slide intro">
      <header><h1>@Keyframes</h1></header>
      <section class="content">
@@ -704,29 +724,49 @@ nav li:hover ul {
      </section>
  </div>
 
+
+
 <div class="slide">
   <header><h1>Name your keyframe animation</h1></header>
     <section class="content">
     <pre contenteditable>@keyframes <b>clever_name_here</b> ...
 </pre>
       <ul>
-        <li>Identifier
-        <li>Unquoted
-        <li>Characters [a-zA-Z0-9], -, _ and ISO 10646 characters U+00A0 and higher
-        <li>ISO 10646 = Universal Character Set = Unicode standard
-        <li>[-_a-zA-Z0-9\u00A0-\u10FFFF]
-        <li>Can't start [0-9], -- , or hyphen+digit
-        <li>Can contain escaped: <br/>Q&A! may be written as Q\&A\! or Q\26 A\21
+        <li>Identifier or string</li>
+        <li><strike>Unquoted</strike> Can now be!</li>
+        <li>If unquoted:
+  <ul>        <li>Characters [a-zA-Z0-9], -, _ and ISO 10646 characters U+00A0 and higher</li>
+        <li>ISO 10646 = Universal Character Set = Unicode standard</li>
+        <li>[-_a-zA-Z0-9\u00A0-\u10FFFF]</li>
+        <li>Can't start [0-9], -- , or hyphen+digit</li>
+        <li>Can contain escaped: <br/>Q&A! may be written as Q\&A\! or Q\26 A\21</li></ul></li><li>Avoid using CSS property names or keyword values</li>
+        <li>Each animation should have a different name!</li>
       </ul>
-<p>Don't use keyterms!</p>
     </section>
 </div>
 
-<div class="slide object">
+<div class="slide">
   <header><h1>What's in a name?</h1></header>
-    <object data="files/name.html"></object>
-<a href="files/name.html" target="play" class="objectlink">Try it out!</a>
-</div>
+  <section class="content"><style contenteditable class="editme">.keyframeName {
+  animation: ✎🥳 infinite 3s alternate;
+}
+@keyframes ✎🥳 {
+  from, 30% { background-color: #030; }
+  to { background-color: #393; }
+}</style>
+    <div class="keyframeName">Identifier: unquoted characters [a-zA-Z0-9] and ISO 10646 characters U+00A0 and higher, plus the hyphen (-) and the underscore (_). Try name, paused, Q&A!, Q\&A\!, Q\26 A\21 and âœŽ</div>
+<style>
+.keyframeName {
+  padding: 20px; margin: 20px;
+  border: 5px black solid !important;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+</style>
+  </section>
+    </div>
 
 
  <div class="slide">
@@ -738,24 +778,51 @@ nav li:hover ul {
      </section>
  </div>
 
+
+
+
+<div class="slide divider">
+<header><h1>Keyframe Selectors</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>Keyframe Selectors</h1></header>
+<section class="content">
+  <p>Specifies percentages along the animation when the keyframe occurs.</p>
+  <pre contenteditable>[ from | to | &lt;percentage> ]</pre>
+  <dl>
+    <dt>from</dt>
+    <dd>0%</dd>
+    <dt>to</dt>
+    <dd>100%</dd>
+    <dt>&lt;percentage></dt>
+    <dd>A percentage of the time through the animation sequence at which the specified keyframe should occur.</dd>
+  </dl>
+  <ul>
+  <li>Multiple percentage values for a keyframe block are separated by commas</li>
+  <li>They don't have to be in ascending order, but it helps make it more readable</li>
+  <li>Cascades like the rest of CSS</li>
+</ul>
+</section>
+</div>
+
 <div class="slide">
      <header><h1>Keyframes</h1></header>
      <section class="content">
      <b class="pencil pencil_01">✎</b>
      <pre contenteditable>@keyframes writing {
-
     <b>from</b> {
       <i>left: 0;</i>
     }
-
     <b>to</b> {
       <i>left: 100%;</i>
     }
 }</pre>
 </section>
 </div>
-
-
 
 
 
@@ -774,16 +841,35 @@ nav li:hover ul {
 }</pre>
 
 	<p>Don't forget the <b class="imp" style="border-bottom:double 3px;">%</b></p>
-    <p>Don't quote the animation name</p>
+    <p>Quote on the animation name are optional in most cases</p>
      </section>
 </div>
 
 
-<div class="slide object">
-  <header><h1>0% and 100%</h1></header>
-    <object data="files/no0or100.html"></object>
-<a href="files/no0or100.html" target="play" class="objectlink">Try it out!</a>
+
+<div class="slide">
+<header><h1>No 0% or 100%</h1></header>
+<section class="content">
+ <style contenteditable class="editme mini">.no0or100 {
+  animation: no0or100 infinite 10s alternate;
+  background-color: red;  border: 1px black solid;
+}
+@keyframes no0or100 {
+  45% { background-color: green; border-width: 10px;}
+  55% { background-color: blue; border-width: 20px;}
+}</style>
+<pre class="no0or100" style="color: var(--invertedtext)">@keyframes no0or100 {
+  0% { background-color: red; border-width: 1px;}
+  45% { background-color: green; border-width: 10px; }
+  55% { background-color: blue;  border-width: 20px;}
+  100% { background-color: red; border-width: 1px;}
+}</pre>
+</section>
 </div>
+
+
+
+
 <!-- writing while tired -->
 <div class="slide">
     <header>
@@ -809,14 +895,56 @@ nav li:hover ul {
 </div>
 
 
+<div class="slide">
+<header><h1>Duplicate Keyframes?</h1></header>
+<section class="content">
+ <style contenteditable class="editme">.duplicatesNoProblem {
+  animation: duplicate infinite 7s alternate;
+  background-color: red; opacity: 1;
+}
+@keyframes duplicate {
+  45% { background-color: green; }
+  45% { opacity: .5;}
+  55% { background-color: blue; }
+  55% { opacity: .7;}
+  }</style>
+</section>
+<pre class="duplicatesNoProblem" style="color: var(--invertedtext);" contenteditable>@keyframes duplicate {
+  45% { background-color: green; 
+        opacity: .5; }
+  55% { background-color: blue; 
+        opacity: .7; }
+  }</pre>
+</div>
+
+
+<div class="slide divider">
+<header><h1>Properties</h1></header>
+<section class="content">
+</section>
+</div>
 
 
 
-
-<div class="slide object">
-  <header><h1>!important it isn't</h1></header>
-    <object data="files/important.html"></object>
-<a href="files/important.html" target="play" class="objectlink">Try it out!</a>
+<div class="slide">
+<header><h1>Declarating List</h1></header>
+<section class="content">
+  <p>Every keyframe selector list has an associated &lt;property-value-list>, better known as the declaration list</p>
+  <pre contenteditable>@keyframes 'myUniqueAnimation' {
+  from {        <i>/* 0% property: values */</i>
+    opacity: 1.0; color: red;     
+  }
+  25%, 75% {    <i>/* values for both the 25 and 75% keyframe */</i>
+    opacity: 0.5; color: blue;
+  }
+  75% {         <i>/* values unique to 75% */</i>
+    color: green;   <i>/* overrides the blue */</i>              
+  }
+  to {          <i>/* 100% property: values */</i>
+    opacity: 0.9; color: orange;  
+  }
+}</pre>
+</section>
 </div>
 
 
@@ -847,12 +975,6 @@ nav li:hover ul {
 </div>
 
 
-<div class="slide object">
-  <header><h1>Duplicated Keyframes?</h1></header>
-    <object data="files/repeated_keyframe.html"></object>
-<a href="files/repeated_keyframe.html" target="play" class="objectlink">Try it out!</a>
-</div>
-
 <!-- 3d transofmr -->
 <div class="slide" id="acsst">
     <header>
@@ -876,11 +998,30 @@ nav li:hover ul {
   }
 }
 </pre>
-
-
 </section>
 </div>
 
+
+<div class="slide">
+<header><h1><code>!important</code> it isn't</h1></header>
+<section class="content">
+ <style contenteditable class="editme mini">.notImportant {
+  animation: important infinite 10s alternate;
+  background: red;   border: 5px black solid;
+}
+@keyframes important {
+  45% { background: green; }
+  55% { background: blue !important; border-width: 20px !important;
+  }
+}</style>
+
+<pre class="notImportant mini" style="color: var(--invertedtext)"> @keyframes important {
+  0% { background-color: red;}
+  45% { background-color: green; }
+  100% { background-color: red;}
+}</pre>
+</section>
+</div>
 
 
 
@@ -892,22 +1033,25 @@ animated yet!</h1></header>
 
 
 
+
+
+
+
 <!-- base CSS -->
  <div class="slide normal">
      <header><h1>Base CSS</h1></header>
      <section class="content"><div class="pencilanim pencil" style="position: absolute;"></div>
-     <pre contenteditable style="line-height: 1.1"><b>   .pencil {
-     width:100px;
-     text-align: right;
-     border-bottom: 10px solid;
-   }
-   .pencil::after {
-	content: '✎';
-	position: absolute;
-	bottom: -20px;
-	right: -10px;
-   }
-</b></pre>
+<pre contenteditable style="line-height: 1.1"><b>.pencil {
+    width:100px;
+    text-align: right;
+    border-bottom: 10px solid;
+}
+.pencil::after {
+  	content: '✎';
+  	position: absolute;
+  	bottom: -20px;
+  	right: -10px;
+}</b></pre>
 <pre contenteditable>@keyframes drawALine {
   0%{
     width:0;
@@ -918,20 +1062,53 @@ animated yet!</h1></header>
     color:blue;
   }
 }</pre>
-
-     </section>
+</section>
  </div>
 
 
+ <div class="slide divider">
+  <header>
+      <h1>Minimum requirements: <br/>name and duration</h1>
+    </header>
+  </div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name" target="resource">animation-name</a></code> property</h1></header>
+<section class="content">
+  <p>Sets one or more animations to apply to an element.</p>
+  <pre contenteditable>[ none | &lt;keyframes-name> ]#</pre>
+  <p>Each name is an <code>@keyframes</code> at-rule that sets the property values for the animation sequence.</p>
+  <pre contenteditable>animation-name: red, blue, green, green, green;}</pre>
+  <ul>
+  <li>You can set the same animation on an element more than once</li>
+  <li>Comma separate the animation names</li>
+  <li>If "none" or no animation name is set, there will be no animation</li>
+  <li>You can quote the names, but if it is a valid &lt;ident>, you don't have to.</li>
+</ul>
+</section>
+</div>
 
 
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration" target="resource">animation-duration</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the length of time that an animation takes to complete one cycle.</p>
+  <pre contenteditable>&lt;time>#</pre>
+  <p>A comma separated list of times in seconds (s) or milliseconds (ms).</p>
+  <pre contenteditable>animation-duration: 200ms, 300ms, 2s, 200ms, 200ms;</pre>
+  <p>If there are more animation names than durations, the list will repeat. If there are more durations than animation, the extra durations will be ignored.</p>
+  <p>Negative values are ignored.</p>
+  <p>You must include the unit, even if the value is zero.</p>
+</section>
+</div>
 
 
 <!-- Name and duration -->
  <div class="slide" id="animdur">
 
 	<header>
-     	<h1>animation name and duration</h1>
+     	<h1><code>animation-name</code> and <code>animation-duration</code></h1>
     </header>
     <section class="content"><div id="animationduration" class="pencil pencilanim"></div>
 	<pre contenteditable>.pencil { <input type="range" value="3" min="1" max="15" step="1" id="speedrange"/>
@@ -960,26 +1137,155 @@ animated yet!</h1></header>
 </div>
 
 
-<div class="slide object">
+<div class="slide">
   <header><h1>Order of Precedence</h1></header>
-    <object data="files/specificity2.html"></object>
-<a href="files/specificity2.html" target="play" class="objectlink">Try it out!</a>
+<section class="content">
+ <style contenteditable class="editme">.order {
+  animation:5s 1 forwards;
+  animation-name: red, green, blue;
+ }</style>
+<div class="order"><p>Whichever animation happens last is the background-color I will permanently be</p></div>
+</section>
+</div>
+
+<style>
+.order {
+  padding: 20px;
+  border: 5px var(--colorpop) solid;
+  color: var(--invertedtext);
+  text-align: center;
+}
+
+#blue {
+  float: right;
+  width: 20%;
+  margin-right: 20px; 
+  padding: 20px;
+}
+
+@keyframes red {
+  from, 30%{
+    background-color: #fdd;
+  }
+  to {
+    background-color: #f33;
+  }
+}
+
+@keyframes green {
+  from, 30%{
+    background-color: #dfd;
+  }
+  to {
+    background-color: #393;
+  }
+}
+
+@keyframes blue {
+  from, 30%{
+    background-color: #ddf;
+  }
+  to {
+    background-color: #33f;
+  }
+}</style>
+
+
+<div class="slide">
+<header><h1>Specificity</h1></header>
+<section class="content" style="display: flex; justify-content: space-around; align-items: flex-start; padding-top: 1em">
+
+
+<style contenteditable class="editme" class="">#blue {
+  background-color: #9999ff;
+  color: var(--invertedtext);
+}
+[id="blue"] {
+  border: 5px black solid !important;
+  background-color: var(--colorpop) !important;
+  animation: 3s 1 green forwards;
+}</style>
+<div id="blue"><p>Based on important, I should be the same color as the header. Based on ID I should be blue. Based on animation, green. </p>
+<p>Some browsers override erroneously override !important. This is against the specification</p>
+<p>Based on the spec I should be the !important color from the non-animated state. If no important is set, I should be the animation's color.</div>
+</section>
+</div>
+
+<div class="slide divider">
+<header><h1><code>animation-timing-function</code></h1></header>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function" target="resource">animation-timing-function</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how the animation progresses through the duration of a full animation iteration.</p>
+  <pre contenteditable class="multi">linear | ease | ease-in | ease-out | ease-in-out | start | end
+cubic-bezier( n1, n2, n3, n4 ) | step-start | step-end  
+steps(&lt;int>, &lt;pos>) | jump-start | jump-end | jump-none | jump-both </pre>
+   <p>The non-step keyword values are actually cubic Bézier curves with predefined four point values. Use the <code>cubic-bezier()</code> function for non-predefined values.</p><p> The step timing functions divide the input time into a specified number of intervals that are equal in length, with a number of steps and a step position.</p>
+
+
+     <pre contenteditable="">animation-timing-function: ease-in, linear;</pre>
+     <p>Each timing function is applied to the corresponding animation as specified by the <code>animation-name</code> property. If there are fewer timing functions than animations the timing function list is repeated. </p>
+</section>
 </div>
 
 
 
-<div class="slide object">
-  <header><h1>Specificity</h1></header>
-    <object data="files/specificity.html"></object>
-<a href="files/specificity.html" target="play" class="objectlink">Try it out!</a>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function" target="resource">animation-timing-function</a></code> bezier curves</h1></header>
+<section class="content">
+<dl>
+  <dt>ease</dt>
+    <dd>Equal to cubic-bezier(0.25, 0.1, 0.25, 1.0), the default value, increases in velocity towards the middle of the animation, slowing back down at the end.</dd>
+<dt>linear</dt>
+    <dd>Equal to cubic-bezier(0.0, 0.0, 1.0, 1.0), animates at an even speed.</dd>
+<dt>ease-in</dt>
+    <dd>Equal to cubic-bezier(0.42, 0, 1.0, 1.0), starts off slowly, with the speed of the transition of the animating properting increasing until complete.</dd>
+<dt>ease-out</dt>
+    <dd>Equal to cubic-bezier(0, 0, 0.58, 1.0), starts quickly, slowing down the animation continues.</dd>
+<dt>ease-in-out</dt>
+    <dd>Equal to cubic-bezier(0.42, 0, 0.58, 1.0), with the animating properties slowly transitioning, speeding up, and then slowing down again.</dd>
+<dt>cubic-bezier(p1, p2, p3, p4)</dt>
+    <dd>An author defined cubic-bezier curve, where the p1 and p3 values must be in the range of 0 to 1.</dd>
+</dl>
+</section>
 </div>
 
 
-<div class="slide object">
-  <header><h1>!important it isn't</h1></header>
-    <object data="files/important.html"></object>
-<a href="files/important.html" target="play" class="objectlink">Try it out!</a>
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function" target="resource">animation-timing-function</a></code> non-bezier values</h1></header>
+<section class="content">
+
+<dl>
+<dt>steps(n, &lt;jumpterm>)</dt>
+    <dd>Displays an animation iteration along n stops along the transition, displaying each stop for equal lengths of time. For example, if n is 5,  there are 5 steps. Whether the animation holds temporarily at 0%, 20%, 40%, 60% and 80%, on the 20%, 40%, 60%, 80% and 100%, or makes 5 stops between the 0% and 100% along the animation, or makes 5 stops including the 0% and 100% marks (on the 0%, 25%, 50%, 75%, and 100%) depends on which of the following jump terms is used:</dd>
+    <dl>
+    <dt>jump-start</dt>
+        <dd>Denotes a left-continuous function, so that the first jump happens when the animation begins;</dd>
+    <dt>jump-end</dt>
+        <dd>Denotes a right-continuous function, so that the last jump happens when the animation ends;</dd>
+    <dt>jump-none</dt>
+        <dd>There is no jump on either end. Instead, holding at both the 0% mark and the 100% mark, each for 1/n of the duration.</dd>
+    <dt>jump-both</dt>
+        <dd>Includes pauses at both the 0% and 100% marks, effectively adding a step during the animation iteration.</dd>
+    <dt>start</dt>
+        <dd>Same as jump-start.</dd>
+    <dt>end</dt>
+        <dd>Same as jump-end.</dd>
+    </dl>
+  </dd>
+<dt>step-start</dt>
+    <dd>Equal to steps(1, jump-start)</dd>
+<dt>step-end</dt>
+    <dd>Equal to steps(1, jump-end)</dd>
+</dl>
+
+</section>
 </div>
+
 
 
  <!-- timing function -->
@@ -1085,6 +1391,32 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
 <a href="files/bike.html" target="play" class="objectlink">Try it out!</a>
 </div>
 
+
+ <div class="slide divider">
+    <header>
+      <h1>animation-iteration-count</h1>
+    </header>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count" target="resource">animation-iteration-count</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the number of times an animation cycle should be played before ending the animation.</p>
+  <pre contenteditable>[ infinite | &lt;number> ]#</pre>
+  <p>A comma-seperated list of interations, where the value is <code>infinite</code> or a number greater than or equal to zero. Doesn't need to be an interger.</p>
+  <dl><dt>infinite</dt>
+    <dd>Animation repeats forever</dd>
+<dt>&lt;number></dt>
+    <dd>Default is 1. The number of times the animation will repeat. Non-integers mean "play part of an animation cycle. 1.5 will play the animation one and a half times (unless the delay is negative). Negative values are not valid.</dd>
+    </dl> 
+  <pre contenteditable>animation-iteration-count: infinite, 3, 3, 1, 1, 1;</pre>
+  <p>Each entry is matched up with an animation name. If there are too few, the list repeats, if there are too many, the last ones are ignored.</p>
+  <p>If 0, the animation still happens. Goes directly to the end.</p>
+</section>
+</div>
+
+
  <!-- count -->
  <div class="slide" id="animic">
 
@@ -1120,6 +1452,30 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
 <a href="files/nointerations.html" target="play" class="objectlink">Try it out!</a>
 </div>
 
+<div class="slide divider">
+<header><h1><code>animation-delay</code></h1></header>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay" target="resource">animation-delay</a></code> property</h1></header>
+<section class="content">
+  <p>Sets when an animation starts. The animation can start immediately from its beginning or midway thru, or it can wait until a timer expires before starting from the beginning.</p>
+  <pre contenteditable>&lt;time>#</pre>
+  <p>A comma-seperated list of times, where each time is matched with an animation name. If there aren't enough delays listed, the list repeats. Extra are ignored</p>
+  <pre contenteditable>animation-delay: 0, 0, 0, 200ms, 2500ms, 5000ms;</pre>
+  <ul>
+    <li>The delay clock starts counting down when the animation is applied to the element. </li>
+    <li>The unit is required; specified in seconds (s) or milliseconds (ms).</li> 
+    <li>The default is 0, meaning the animation should start immediately.</li>
+    <li>Negative values cause the animation to begin immediately, partway through an iteration. If an animation is 4second, occurs 3 times, if the delay is -6s, the animation will start immediately, half way thru the second iteration.</li>
+    <li>A positive value indicates that the animation should begin after the specified amount of time has elapsed. </li>
+    <li>If the delays have elapsed before the page has finished loading, while the main thread is occupied, the animations will start when they can.</li></ul>
+
+    
+
+</section>
+</div>
+
 <!-- animation delay -->
  <div class="slide" id="animdelay">
     <header style="position:absolute; width:100%;">
@@ -1148,6 +1504,7 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
 	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
 	 var el = document.getElementById('animationdelayi');
 		el.style.animation  = "drawALine 8s ease-in-out " + speed + 's 2';
+    el.style.animationDelay = speed+'s';
 	 var seconds = document.querySelectorAll("#animdelay span.changer");
 	 for(var i = 0, j = seconds.length; i < j; i++){
 		 seconds[i].innerHTML = speed;
@@ -1156,8 +1513,29 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
 </script>
 </div>
 
+<div class="slide divider">
+<header><h1>animation-direction</h1></header>
+<section class="content">
+</section>
+</div>
 
-
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction" target="resource">animation-direction</a></code> property</h1></header>
+<section class="content">
+  <p>Sets whether an animation should play forwards, backwards, or alternating back and forth.</p>
+  <pre contenteditable>normal | reverse | alternate | alternate-reverse</pre>
+  <dl>
+<dt>normal</dt>
+    <dd>The animation plays forwards each cycle. In other words, each time the animation cycles, the animation will reset to the beginning state and start over again. This is the default value.</dd>
+<dt>reverse</dt>
+    <dd>The animation plays backwards each cycle. In other words, each time the animation cycles, the animation will reset to the end state and start over again. Animation steps are performed backwards, and timing functions are also reversed. For example, an ease-in timing function becomes ease-out.</dd>
+<dt>alternate</dt>
+    <dd>The animation reverses direction each cycle, with the first iteration being played forwards. The count to determine if a cycle is even or odd starts at one.</dd>
+<dt>alternate-reverse</dt>
+    <dd>The animation reverses direction each cycle, with the first iteration being played backwards. The count to determinate if a cycle is even or odd starts at one. </dd>
+  </dl>
+</section>
+</div>
 
 
 <!-- animation direction -->
@@ -1176,7 +1554,7 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
   <u></u>animation-iteration-count: 5;
   <b><u></u>animation-direction: <span id="dir_direction" class="linky">normal</span></b>
 }</pre>
-<p>values: <span data-dir="normal" class="directionChanger">normal</span> | <span class="directionChanger" data-dir="alternate">alternate</span> | <span class="directionChanger" data-dir="reverse">reverse</span> | <span class="directionChanger" data-dir="alternate-reverse">alternate-reverse</span>;</p>
+<p>values: <code> <span data-dir="normal" class="directionChanger">normal</span> | <span class="directionChanger" data-dir="alternate">alternate</span> | <span class="directionChanger" data-dir="reverse">reverse</span> | <span class="directionChanger" data-dir="alternate-reverse">alternate-reverse</span>; </code>  </p>
 <pre contenteditable><b><u></u>animation-direction: <span  class="linky directionChanger">alternate</span>;</b></pre>
 
 </section>
@@ -1189,7 +1567,7 @@ for (var q = 0; q < _directionChangers.length; q++){
 
   var el = document.getElementById('animationdir');
   _direction = e.target.getAttribute('data-dir');
-  document.getElementById('dir_direction').text = _direction;
+  document.getElementById('dir_direction').innerHTML = _direction;
 
   el.style.animation = 'none';
 
@@ -1206,6 +1584,30 @@ for (var q = 0; q < _directionChangers.length; q++){
 
 
 
+<div class="slide divider">
+<header><h1><code>animation</code> shorthand</h1></header>
+<section class="content">
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation" target="resource">animation</a></code> shorthand property</h1></header>
+<section class="content">
+  <p>Shorthand for <code>animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode</code>, and <code>animation-play-state</code>. Well cover teh last two in a few minutes.</p>
+  <pre contenteditable>&lt;time-duration> &lt;timing-function> &lt;time-delay> &lt;iteration-count> 
+    &lt;direction> &lt;fill-mode> &lt;play-state> &lt;keyframes-name> | none</pre>
+<p>A comma separated list of any or all those values.</p>
+<pre contenteditable>animation: 200ms ease-in 100ms alternate infinite red,
+           300ms linear 2s reverse 3 blue;</pre>
+<p>Order of properties matters to some extent:</p>
+  <ul>
+    <li>ALWAYS put the duration before the delay.</li>
+    <li>First time a value makes sense as a longhand value, it will be used, so good idea to put the <code>animation-name</code> value last.</li>
+    <li>If you omit values, they default.</li>
+  </ul>
+</section>
+</div>
 
 
 <!-- shorthand -->
@@ -1312,7 +1714,29 @@ for (var q = 0; q < _directionChangers.length; q++){
 
 
 
+<div class="slide divider">
+<header><h1>Before and After</h1></header>
+<section class="content">
+</section>
+</div> 
 
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode" target="resource">animation-fill-mode</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how a CSS animation applies the keyframe styles to the animated element before the animation starts and after it ends.</p>
+  <pre contenteditable><strong>none</strong> | forwards | backwards | both #</pre>
+  <dl>
+    <dt>none</dt>
+    <dd>Default. No keyframe styles are applied while the animation is not executing. The element will instead be displayed using any other CSS rules applied to it. </dd>
+    <dt>forwards</dt>
+    <dd>The computed values at the keyframe when the animation ended is maintained. The relevant keyframe depends on the value of <code>animation-direction</code> and <code>animation-iteration-count</code></dd>
+    <dt>backwards</dt>
+    <dd>The properties as defined in the 0% keyframe in the case of <code>animation-direction: normal</code> or <code>alternate</code> and the properties defined in the 100% keyframe in the case of <code>animation-direction: reverse</code> or <code>alternate-reverse</code> will be applied from the moment the animation is applied to an element until the delay expires an the animation starts iterating.</dd>
+    <dt>both</dt>
+    <dd>both <code>forwards</code> and <code>backwards</code> are applied</dd>
+    </dl> 
+</section>
+</div>
 
 
 
@@ -1321,26 +1745,29 @@ for (var q = 0; q < _directionChangers.length; q++){
 <header  style="position:absolute; width:100%;"><h1>&lsquo;animation-fill-mode&rsquo;</h1></header>
 <b id="animationfm" class="pencil pencilanim"></b>
 <section class="content">
+
 <pre contenteditable onMouseDown="document.getElementById('animationfm').style.animation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
+<pre contenteditable>
+.pencil {
+  animation: gettingThePencil 3s ease-in-out 1s <b id="fmitcountres"></b> <b id="fmsh">forwards</b>;
+}</pre>
 <pre contenteditable>.pencil {
+ <b><u></u>animation-fill-mode: <span id="oobey">forwards</span>;</b>
   <u></u>animation-name: gettingThePencil;
   <u></u>animation-duration: 3s;
   <u></u>animation-timing-function: ease-in-out;
   <u></u>animation-iteration-count: <span contenteditable id="fmitcount" onchange="document.getElementById('fmitcountres').innerHTML = this.innerHTML" style="background-color:#eee;">1</span>;
   <u></u>animation-delay: 2s;
- <b><u></u>animation-fill-mode: none;</b>
 }</pre>
-<pre contenteditable>
-.pencil {
-  animation: gettingThePencil 3s ease-in-out 1s <b id="fmitcountres"></b> <b id="fmsh">forwards</b>;
-}</pre>
+
 
 </section>
 <script>
 	function changeFillMode(fillMode){
 		var iteration = document.getElementById('fmitcount').innerHTML;
 		console.log(iteration);
-		document.getElementById('fmsh').innerHTML = fillMode;
+    document.getElementById('fmsh').innerHTML = fillMode;
+    document.getElementById('oobey').innerHTML = fillMode;
 
 		var el = document.getElementById('animationfm');
 		
@@ -1376,6 +1803,18 @@ for (var q = 0; q < _directionChangers.length; q++){
 <a href="file_fillmode.html" target="play" class="objectlink">Try it out!</a>
 </div>
 
+
+
+<div class="slide divider">
+<header><h1>animation-play-state</h1></header>
+<section class="content">
+</section>
+</div> 
+
+
+
+
+
  <div class="slide">
 <header><h1>Can you stop an animation?</h1></header>
 <section class="content">
@@ -1384,7 +1823,22 @@ for (var q = 0; q < _directionChangers.length; q++){
 </div>
 
 
-
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state" target="resource">animation-play-state</a></code> property</h1></header>
+<section class="content">
+  <p>Sets whether an animation is running or paused.</p>
+  <pre contenteditable>running | paused #</pre>
+  <p>Resuming a paused animation will start the animation from where it left off at the time it was paused, rather than starting over from the beginning of the animation sequence.</p>
+<pre contenteditable>animation-play-state: play, play, pause;</pre>
+<dl>
+<dt>running</dt>
+<dd>    The animation is currently playing.</dd>
+<dt>paused</dt>
+<dd>    The animation is currently paused. </dd>
+</dl>
+<p>While paused, the delay does not count down</p>
+</section>
+</div>
 
 
 <div class="slide" id="animps">
@@ -1412,6 +1866,9 @@ for (var q = 0; q < _directionChangers.length; q++){
 </div>
 
 
+
+
+
 <div class="slide">
 <header><h1>&lsquo;animation-play-state&rsquo;</h1></header>
 <section class="content">
@@ -1425,6 +1882,11 @@ for (var q = 0; q < _directionChangers.length; q++){
 
 
 
+<div class="slide divider">
+<header><h1>Events</h1></header>
+<section class="content">
+</section>
+</div> 
 
 
 
