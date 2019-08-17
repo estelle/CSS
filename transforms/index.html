@@ -422,7 +422,6 @@ transform:
 
 
 
-
 <script>
 // make the above text editors work
  var temporaryStyleSheet = document.getElementById('tempstyle');
@@ -452,7 +451,7 @@ transform:
 
 
 <div class="slide">
-<header><h1>Multiple Tranforms</h1></header>
+<header><h1>Multiple Tranforms with <code>transform-origin</code></h1></header>
 <section class="content transform"><b class="letters letters_06c">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .letters_06c i {
@@ -464,6 +463,22 @@ transform:
 }</style>
 </section>
 </div>
+
+
+
+<div class="slide">
+<header><h1>Developer Tools</h1></header>
+<section class="content transform"><b class="letters letters_06d">LOVE<i>LOVE</i></b>
+
+<style class="editme" contenteditable> .letters_06d i {
+   transform: translate(200px, -80px) 
+              rotate(15deg) /* developer tools */
+              scale(1.5, 2)
+              skewX(-8deg);
+}</style>
+</section>
+</div>
+
 
 
 <div class="slide object">

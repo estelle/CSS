@@ -158,6 +158,7 @@ a:hover {
     <dd>The comma-separated properties to which a transition effect should be applied</dd>
   </dl><pre contenteditable>transition-duration: transform, color;</pre>
   <p>If using all with other properties, define <code>all</code> first.</p>
+  <p>If a property is the list is invalid, but the syntax is correct, the property will be kept in the list so other properties align correctly</p>
 </section>
 </div>
 
@@ -424,12 +425,26 @@ code:hover {
  </div>
 
 
-<!-- Properties -->
-<div class="slide divider">
-  <header><h1>Tips &amp; Tricks</h1></header>
-  <section class="content">
-  </section>
-</div>
+
+<!-- Tranform Features (or Limitations) -->
+  <div class="slide normal">
+     <header><h1>Notes</h1></header>
+     <section class="content">
+<h3>Transition Features (or Limitations)</h3>
+<ul>
+  <li>Single Iteration</li>
+    <li>Reverse goes to initial state</li>
+    <li>No granular control</li>
+    <li>Limited methods of initiation</li>
+    <li>Can't force them to finish</li>
+</ul>
+<h3>Tips</h3>
+<p>If a property is the list is invalid, but the syntax is correct, the property will be kept in the list so other properties align correctly.</p>
+<p>Use <code>transition-delay</code> to chain transitions</p>
+<p>The order is important: The duration must come before the delay!</p>
+     </section>
+ </div>
+
 
 
 <div class="slide">
@@ -449,19 +464,7 @@ input:focus {
 </section>
 </div>
 
-<!-- Tranform Features (or Limitations) -->
-  <div class="slide normal">
-     <header><h1>Transition Features (or Limitations)</h1></header>
-     <section class="content">
-<ul>
-  <li>Single Iteration</li>
-    <li>Reverse goes to initial state</li>
-    <li>No granular control</li>
-    <li>Limited methods of initiation</li>
-    <li>Can't force them to finish</li>
-</ul>
-     </section>
- </div>
+
 
 <!-- divider -->
 <div class="slide divider">
