@@ -865,9 +865,76 @@ border-top-width: 1px;</pre><br><br/>
   <li>Each stacking context is completely independent of its siblings:  only descendant elements are considered when stacking is processed.</li>
   <li>Each stacking context is self-contained: after the element's  contents are stacked, the whole element is considered in the stacking  order of the parent stacking context.</li>
 </ul>
-
   </section>
 </div>
+
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/isolation" target="resource">isolation</a></code> property</h1></header>
+<section class="content">
+  <p>Determines whether an element must create a new stacking context.</p>
+  <pre contenteditable>auto | isolate</pre>
+  <p>Use case: Prevent elements from blending with their backdrops.</p>
+  <dl><dt>auto</dt>
+    <dd>A new stacking context is created only if one of the properties applied to the element requires it.</dd>
+    <dt>isolate</dt>
+    <dd>A new stacking context must be created. Also prevents an element from blending into other elements that are in the backdrop.</dd>
+    </dl> 
+</section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/will-change" target="resource">will-change</a></code> property</h1></header>
+   <section class="content">
+    <p>Hints how an element is expected to change so browser can optimize for change before an element is happens. Can increase the responsiveness of a page by doing expensive work before its required.</p>
+    <pre contenteditable class="multi">auto | scroll-position | contents | &lt;ident></pre>
+
+<dl><dt>auto</dt>
+    <dd>Tells the browser "You do you", which it was going to do anyway.</dd>
+
+<dt>scroll-position</dt>
+    <dd>Tells the browser "The scroll position will change or be animated soon"</dd>
+<dt>contents</dt>
+    <dd>Tells the browser "something about contents will animate or change soon."</dd>
+<dt>&lt;ident></dt>
+<dd>    A property or several properties that will animate or change soon. A shorthand indicates that all the longhands will participate.<br>Can't be set to: <code>unset, initial, inherit, will-change, auto, scroll-position, or contents</code>.  </dd></dl>
+    <p>Chromes establishes a new compositing layer or a new stacking context for each element with this property set to anything but auto.</p>
+    <ul>
+      <li>Avoid using!</li>
+      <li>Don't apply will-change to too many elements.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain" target="resource">contain</a></code> property</h1></header>
+   <section class="content">
+    <pI>Indicates an element and its contents are, as much as possible, independent of the rest of the document tree, allowing independent recalculations of layout, style, paint, and size for a limited area of the DOM</p>
+    <pre contenteditable class="multi">none | strict | content | [ size || layout || style || paint ]</pre>
+    <dl>
+  <dt>none</dt>
+  <dd>Indicates the element renders as normal, with no containment applied.</dd>
+  <dt>strict</dt>
+  <dd>Indicates that all containment rules except style are applied to the element. This is equivalent to contain: size layout paint.</dd>
+  <dt>content</dt>
+  <dd>Indicates that all containment rules except size and style are applied to the element. This is equivalent to contain: layout paint.</dd>
+  <dt>size</dt>
+  <dd>Indicates that the element can be sized without the need to examine its descendants for size changes.</dd>
+  <dt>layout</dt>
+  <dd>Indicates that nothing outside the element may affect its internal layout and vice versa.</dd>
+  <dt>style</dt>
+  <dd>Indicates that, for properties that can have effects on more than  just an element and its descendants, those effects don't escape the  containing element.</dd>
+  <dt>paint</dt>
+  <dd>Indicates that descendants of the element don't display outside its  bounds. If an element is off-screen or otherwise not visible, its  descendants are also guaranteed to not be visible.</dd>
+</dl>
+<p>If applied (with value: <code>paint, strict</code> or <code>content</code>):</p>
+<ul>
+    <li>New stacking context.</li>
+    <li>New block formatting context.</li>
+    <li>New containing block (for the descendants which position property is absolute or fixed).</li>
+</ul>
+  </section>
+</div>
+
 
 <div class="slide">
   <header><h1>Stacking context</h1></header>
