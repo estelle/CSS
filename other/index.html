@@ -43,7 +43,36 @@
 .codelike.codelike.codelike {
   font-size: 1.5rem;
 }
+body {background-repeat: no-repeat; background-size: cover;}
+.filter {
+    background-size: cover;
+}
+.filter section {
 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "style      style"
+    "paragraph  image"
+}
+.filter p {
+  grid-area: paragraph;
+  align-self: start;
+  background-color: #fffb;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.filter style {
+  grid-area: style;
+  margin: 10px;
+}
+.filter img {
+  grid-area: image;
+  margin: 10px;
+  border: 3px solid var(--colorpop);
+  max-height: 100%;
+  max-width: 100%;
+}
  </style>
   </head>
   <body>
@@ -82,6 +111,7 @@
 <div class="slide">
     <header><h1>Border Images</h1></header>
     <section class="content">
+  <ul>
     <li>Border Images
       <ul>
         <li>border-image-source</li>
@@ -92,6 +122,11 @@
         <li>border-image shorthand</li>
       </ul>
     </li>
+    <li>Web performance</li>
+    <li>Multi column layout</li>
+    <li>Art direction</li>
+    <li>Cursors</li>
+    <li>Other features</li>
   </ul>
     </section>
 </div>
@@ -202,31 +237,51 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
 <div class="slide intro"><header><h1>Web Performance</h1></header></div> 
 
 <div class="slide">
-<header><h1>isolate</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/isolation" target="resource">isolation</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Determines whether an element must create a new stacking context.</p>
+  <pre contenteditable>auto | isolate</pre>
+  <p>Use case: Prevent elements from blending with their backdrops.</p>
+  <dl><dt>auto</dt>
+    <dd>A new stacking context is created only if one of the properties applied to the element requires it.</dd>
+    <dt>isolate</dt>
+    <dd>A new stacking context must be created. Also prevents an element from blending into other elements that are in the backdrop.</dd>
+    </dl> 
 </section>
 </div>
 
+
 <div class="slide">
-<header><h1>will-change</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/contain" target="resource">contain</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Allows you to say an element and its contents are, as much as possible, independent of the rest of the document tree.</p>
+  <pre contenteditable>none | strict | content |  size | layout | style | paint</pre>
+  <p>Enables the browser to recalculate layout, style, paint, and size for a limited area of the DOM and not the entire page.</p>
+  <pre contenteditable>contain: size paint;</pre>
+  <dl>
+  <dt>none</dt>
+  <dd>Element renders as normal, with no containment applied.</dd>
+  <dt>strict</dt>
+  <dd>All containment rules except style are applied. Same as <code>contain: size layout paint;</code>.</dd>
+  <dt>content</dt>
+  <dd>All containment rules except size and style are applied to the element. Same as <code>contain: layout paint</code>.</dd>
+  <dt>size</dt>
+  <dd>Element can be sized without reflowing its descendants. No need to check them for size changes.</dd>
+  <dt>layout</dt>
+  <dd>Nothing outside the element may affect its internal layout, and nothing inside the element may effect the external layout.</dd>
+  <dt>style</dt>
+  <dd>For properties that can effect more than just an element and its descendants, those effects don't escape the containing element.</dd>
+  <dt>paint</dt>
+  <dd>Descendants of the element don't display outside its bounds. If an element is off-screen or otherwise not visible, its descendants are also guaranteed to not be visible.</dd>
+</dl>
+  <p><code>paint, strict</code> and <code>content</code> creates a new stacking context, a new block formatting context and, new
+containing blocks for the descendants which position property is absolute or fixed.</p>
 </section>
 </div>
 
-<div class="slide">
-<header><h1>contain</h1></header>
-<section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
-</section>
-</div>
+
+
+
 <!--  -->
 <div class="slide">
   <header><h1>GPU accelerants</h1></header>
@@ -243,7 +298,7 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
 
 <!--  -->
 <div class="slide">
-  <header><h1><code><a href="" target="resource">will-change</a></code> property</h1></header>
+  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/will-change" target="resource">will-change</a></code> property</h1></header>
    <section class="content">
     <p>Hints how an element is expected to change so browser can optimize for change before an element is happens. Can increase the responsiveness of a page by doing expensive work before its required.</p>
     <pre contenteditable class="multi">auto | scroll-position | contents | &lt;ident></pre>
@@ -265,36 +320,6 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
   </section>
 </div>
 
-<!--  -->
-<div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain" target="resource">contain</a></code> property</h1></header>
-   <section class="content">
-    <pI>Indicates an element and its contents are, as much as possible, independent of the rest of the document tree, allowing independent recalculations of layout, style, paint, and size for a limited area of the DOM</p>
-    <pre contenteditable class="multi">none | strict | content | [ size || layout || style || paint ]</pre>
-    <dl>
-  <dt>none</dt>
-  <dd>Indicates the element renders as normal, with no containment applied.</dd>
-  <dt>strict</dt>
-  <dd>Indicates that all containment rules except style are applied to the element. This is equivalent to contain: size layout paint.</dd>
-  <dt>content</dt>
-  <dd>Indicates that all containment rules except size and style are applied to the element. This is equivalent to contain: layout paint.</dd>
-  <dt>size</dt>
-  <dd>Indicates that the element can be sized without the need to examine its descendants for size changes.</dd>
-  <dt>layout</dt>
-  <dd>Indicates that nothing outside the element may affect its internal layout and vice versa.</dd>
-  <dt>style</dt>
-  <dd>Indicates that, for properties that can have effects on more than  just an element and its descendants, those effects don't escape the  containing element.</dd>
-  <dt>paint</dt>
-  <dd>Indicates that descendants of the element don't display outside its  bounds. If an element is off-screen or otherwise not visible, its  descendants are also guaranteed to not be visible.</dd>
-</dl>
-<p>If applied (with value: <code>paint, strict</code> or <code>content</code>):</p>
-<ul>
-    <li>New stacking context.</li>
-    <li>New block formatting context.</li>
-    <li>New containing block (for the descendants which position property is absolute or fixed).</li>
-</ul>
-  </section>
-</div>
 
 
 
@@ -307,7 +332,7 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
       <li>Use media queries so it knows when to block.</li> 
       <li>Move not-immediately used styles, such as print styles, into separate files.
       </li>
-      <li>This makes 'needed' CSS file much smaller</li>
+      <li>This makes 'needed' CSS file much smaller</li></ul>
 
 <pre  contenteditable>
 &lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- blocking --&gt;
@@ -319,6 +344,26 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
 </div>
 
 
+
+<div class="slide">
+<header><h1>Selector performance</h1></header>
+<section class="content">
+  <h3>There are lower hanging fruit!</h3>
+  <p>Optimize a single image. You've saved more bytes, times, and CPU than micromanaging selectors</p>
+  <details><summary>Allegedly, there is the order</summary>
+  <pre>ID, e.g. #header
+Class, e.g. .promo
+Type, e.g. div
+Adjacent sibling, e.g. h2 + p
+Child, e.g. li > ul
+Descendant, e.g. ul a
+Universal, i.e. *
+Attribute, e.g. [type=”text”]
+Pseudo-classes/-elements, e.g. a:hover</pre>
+</details>
+<p>Read <a href="https://meiert.com/en/blog/performance-of-css-selectors-2/">Performance of CSS Selectors is Still Irrelevant</a></p>
+</section>
+</div>
 
 <div class="slide intro">
 <header><h1>Multi Column Layout</h1></header>
@@ -364,6 +409,9 @@ W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange
           </script>
 </div>
 
+
+
+
 <!-- columns -->
 <div class="slide">
   <header><h1>Multi Column Layout Properties</h1></header>
@@ -407,9 +455,167 @@ widows</pre>
 
 
 <div class="slide object">
-<header><h1>Shaders</h1></header>
+<header><h1>Filters</h1></header>
 <object data="http://html5-demos.appspot.com/static/css/filters/index.html"></object>
 <a href="http://html5-demos.appspot.com/static/css/filters/index.html" target="play" class="objectlink">Visit Site</a>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="resource">filter</a></code> property</h1></header>
+<section class="content">
+  <p>Applies graphical effects like blur or color shift to an element.</p>
+  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
+  <p>Applies the effects to a foreground element.</p>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="resource">backdrop-filter</a></code> property</h1></header>
+<section class="content">
+  <p>Apply graphical effects to the area behind an element. </p>
+  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
+  </pre>
+  <p>Applicable to a background (v. <code>filter</code> which is foreground)</p>
+  <pre contenteditable>backdrop-filter: url(image.svg#focus) blur(6px) saturate(50%);</pre>
+  <p>To see the effect you must make the element or its background at least partially transparent because it applies to everything behind the element.</p>
+  <p>Prefixed in safari. New to Chrome and Edge. Not in FF</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter_functions" target="resource">&lt;filter></a></code> functions</h1></header>
+<section class="content">
+
+  <p>The &lt;filter-function&gt; data type is specified using  one of the filter functions listed below. Each function requires an  argument which, if invalid, results in no filter being applied.</p>
+  <pre contenteditable>
+  </pre>
+<dl>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></dt>
+  <dd>Blurs the image.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></dt>
+  <dd>Makes the image brighter or darker.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></dt>
+  <dd>Increases or decreases the image's contrast.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></dt>
+  <dd>Applies a drop shadow behind the image.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale()</a></dt>
+  <dd>Converts the image to grayscale.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a>​​​​​​​​​​​​​​</dt>
+  <dd>Changes the overall hue of the image.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert"  target="resource">invert()</a></dt>
+  <dd>Inverts the colors of the image.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity" target="resource">opacity()</a></dt>
+  <dd>Makes the image transparent.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></dt>
+  <dd>Super-saturates or desaturates the input image.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></dt>
+  <dd>Converts the image to sepia.</dd>
+</dl>
+</section>
+</div>
+
+
+
+<div class="slide" style="background-color: var(--light_bg);">
+<header><h1>Filter Activation!</h1></header>
+<section class="content">
+  <p>Change the background of the deck so we can see filter-backdrop in action</p>
+  <p>remember how an invalid pseudoclass ruins everything?</p>
+ <style contenteditable class="editme">#presentation:NOTVALID{}
+#presentation, 
+.slide.slide.slide, 
+#slides#slides { 
+  background:unset;
+} </style>
+<p>In the next slides, change <code>.body</code> to <code>body</code></p>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<!-- blur() -->
+<div class="slide filter blur">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></code> function</h1></header>
+<section class="content">
+  <p>Applies a Gaussian blur set in <code>&lt;length></code>. <br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/charlotte.jpg);}
+.blur { backdrop-filter: blur(10px);}
+.blur img { filter: blur(2px);}</style>
+  <img src="../images/charlotte.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+
+
+<!-- brightness() -->
+<div class="slide filter brightness">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></code> function</h1></header>
+<section class="content">
+  <p>Applies a linear multiplier, making it appear brighter or darker. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are black. 200% and 2 doubles the brightness. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/berlin.jpg);}
+.brightness {backdrop-filter: brightness(200%);}
+.brightness img { filter: brightness(0.3);}</style>
+  <img src="../images/berlin.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+
+<!-- contrast() -->
+<div class="slide filter contrast">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></code> function</h1></header>
+<section class="content">
+  <p>Adjusts the contrast of the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. A value under 100% decreases the contrast, while a value over 100% increases it. 0% and 0 will be completely grey. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/brazil.jpg);}
+.contrast {backdrop-filter: contrast(200%);}
+.contrast img { filter: contrast(0.3);}</style>
+  <img src="../images/brazil.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+<!-- grayscale() -->
+<div class="slide filter grayscale">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale</a></code> function</h1></header>
+<section class="content">
+  <p> converts the input image to grayscale. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% and 1 (and higher) are completely greyscale.  0% and 0 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/seoul.jpg);}
+.grayscale { backdrop-filter: grayscale(90%);}
+.grayscale img { filter: grayscale(0.5);}</style>
+  <img src="../images/seoul.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+<div class="slide filter dropshadow">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></code> function</h1></header>
+<section class="content">
+  <p>applies a drop shadow effect to the input image. Syntax is the same as <code>box-shadow</code>, written as <code>drop-shadow(offset-x offset-y blur-radius spread-radius color)</code>, but spread radius is not supported.<br/><br/>It follows the image :D.</p>
+  <style contenteditable class="editme">.body {background-image: none;}
+.dropshadow {backdrop-filter: drop-shadow(-37px -37px 20px var(--colorpop));}
+.dropshadow img { filter: drop-shadow(30px 30px 0 var(--colorpop));}</style>
+  <img src="../images/star.svg" alt="A star"/>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1>Filter DeActivation!</h1></header>
+<section class="content">
+  <p>Revert the unset</p>
+ <style contenteditable class="editme">#presentation:NOTVALID,
+#slides#slides {background-color: #dedede;} 
+.slide.slide.slide:NOTVALID { 
+  background: var(--light_bg);
+} </style>
+</section>
 </div>
 
 <div class="slide object">
@@ -533,12 +739,33 @@ widows</pre>
 </pre></div>
 
 
-<!--  -->
-<div class="slide intro">
-  <header><h1>Other Stuff</h1></header>
-  <section class="content">
-  </section>
+
+
+<div class="slide divider">
+<header><h1>Cursors</h1></header>
+<section class="content">
+</section>
+</div> 
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="resource">cursor</a></code> property</h1></header>
+<section class="content">
+  <p>Sets the type of cursor, if any, to show when the mouse pointer is over an element.</p>
+  <pre contenteditable class="multi">
+auto | default | none | context-menu | help | pointer 
+progress | wait | cell | crosshair | text | vertical-text 
+alias | copy | move | no-drop | not-allowed | &lt;dir>-resize 
+col-resize | row-resize | all-scroll | zoom-in | zoom-out 
+grab | grabbing |  [ &lt;url> [ &lt;x> <&lt;y> ]? , ]* </pre>
+
+<p>Where <code>&lt;dir>-resize</code> can be <code>n-, ne-, nw-, s-, se-,
+sw-, w-, ew-, ns-, nesw-</code>, or <code>nwse-</code></p>
+<p>If importing an image via <code>url()</code> it takes comma-separated URLS followed by one of the keywords above. Optionally, followed by a pair of space-separated x- and y- coordinates setting the cursor's hotspot relative to the top-left corner of the image.</p>
+<pre>cursor: url(hat.svg), url(hat.cur) 2 5, grabbing;</pre>
+<p>That said, don't use custom cursors.</p>
+</section>
 </div>
+
 
 <div class="slide normal cursors" style="padding: 0">
      <header><h1>Cursors</h1></header>
@@ -556,6 +783,10 @@ widows</pre>
 				<li  style="cursor:sw-resize">sw-resize</li>
 				<li  style="cursor:s-resize">s-resize</li>
 				<li  style="cursor:w-resize">w-resize</li>
+        <li  style="cursor:ns-resize">ns-resize</li>
+        <li  style="cursor:ew-resize">ew-resize</li>
+        <li  style="cursor:nesw-resize">nesw-resize</li>
+        <li  style="cursor:nwse-resize;">nwse-resize</li>
 				<li  style="cursor:text">text</li>
 				<li  style="cursor:wait">wait</li>
 				<li  style="cursor:progress">progress</li>
@@ -573,7 +804,9 @@ widows</pre>
 				<li  style="cursor:row-resize">row-resize</li>
 				<li  style="cursor:all-scroll">all-scroll</li>
 				<li  style="cursor:zoom-in">zoom-in</li>
-				<li  style="cursor:zoom-out">zoom-out</li>
+        <li  style="cursor:zoom-out">zoom-out</li>
+        <li  style="cursor:grab">grab</li>
+        <li  style="cursor:grabbing">grabbing</li>
 			</ul>
      </section>
  </div>
@@ -581,11 +814,25 @@ widows</pre>
 
 
 
+<div class="slide">
+<header><h1>Cursors</h1></header>
+<section class="content">
+ <style contenteditable class="editme thisStyleBlock">.thisStyleBlock {
+    cursor: url(images/plus.gif), 
+            url(images/cursor.cur) 5 5, 
+            help;
+ }</style>
+</section>
+</div>
 
 
 
-
-
+<!--  -->
+<div class="slide intro">
+  <header><h1>Other Stuff</h1></header>
+  <section class="content">
+  </section>
+</div>
 
 
 
@@ -608,13 +855,18 @@ widows</pre>
 
 
   <div class="slide normal">
-     <header><h1>-webkit-user-modify</h1></header>
+     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-modify" target="resource">-webkit-user-modify</a></code></h1></header>
      <section class="content">
-<p>Related to <em>contentEditable</em>: Determines whether content of an element is editable.
+<p>Related to <em>contentEditable</em>: Determines whether content of an element is editable. Deprecated</p>
 
 <pre contenteditable>
 -webkit-user-modify: read-only | read-write | read-write-plaintext-only;
 -moz-user-modify: read-only | read-write | write-only;</pre>
+<p>This deck used this for pasting without rich text features in -webkit- supporting browsers</p>
+
+<style contenteditable class="editme">pre, style, code {
+  -webkit-user-modify: read-write-plaintext-only;
+}</style>
 <dl>
 <dt>read-only</dt>
 <dd>The content is read-only.</dd>
@@ -632,7 +884,7 @@ widows</pre>
  </div>
 
 
-<!--  -->
+
 <div class="slide">
   <header><h1>Links</h1></header>
   <section class="content">
