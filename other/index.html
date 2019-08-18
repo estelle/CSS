@@ -674,7 +674,7 @@ widows</pre>
 </div>
 
 
-
+<!-- column-count -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-count" target="resource">column-count</a></code> property</h1></header>
 <section class="content">
@@ -692,6 +692,9 @@ widows</pre>
 </section>
 </div>
 
+
+
+<!-- column-width -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-width" target="resource">column-width</a></code> property</h1></header>
 <section class="content">
@@ -712,6 +715,8 @@ widows</pre>
 </section>
 </div>
 
+
+<!-- columns -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns" target="resource">columns</a></code> shorthand property</h1></header>
 <section class="content">
@@ -724,18 +729,27 @@ widows</pre>
 <p>But there is something that I must say to my people who stand on the warm threshold which leads into the palace of justice. In the process of gaining our rightful place we must not be guilty of wrongful deeds. Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred. We must forever conduct our struggle on the high plane of dignity and discipline. We must not allow our creative protest to degenerate into physical violence. Again and again we must rise to the majestic heights of meeting physical force with soul force.</p>
 
 <p>The marvelous new militancy which has engulfed the Negro community must not lead us to a distrust of all white people, for many of our white brothers, as evidenced by their presence here today, have come to realize that their destiny is tied up with our destiny. And they have come to realize that their freedom is inextricably bound to our freedom. We cannot walk alone.</p>
-
-
   </div>
 </section>
 </div>
 
+
+
+<!-- column-fill -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-fill" target="resource">column-fill</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Sets how the contents are balanced when broken into multiple columns. Does it make all the columns equally tall? Or fill the first column first.</p>
+  <pre contenteditable>auto | balance | balance-all</pre>
+  <p>When height limit is set, should it balance or fill column 1 first? If height is auto, will it ever fill up a second column?</p>
+  <dl>
+    <dt>auto</dt>
+    <dd>Columns are filled sequentially. Content takes up only the room it needs.</dd>
+    <dt>balance</dt>
+    <dd>Content is equally divided between columns. In paged media, only the last page is balanced.</dd>
+    <dt>balance-all</dt>
+    <dd>Content is equally divided between columns. In paged media, all pages are balanced.</dd>
+    </dl> 
   <style contenteditable class="editme">.cFill {column-fill: balance;
   height: 100vh;
   columns: 6 12em;}</style>
@@ -749,12 +763,12 @@ widows</pre>
 <p>We cannot be satisfied as long as the Negro's basic mobility is from a smaller ghetto to a larger one.</p>
 
 <p>We can never be satisfied as long as our chlidren are stripped of their selfhood and robbed of their dignity by signs stating "for whites only."</p>
-
-
   </div>
 </section>
 </div>
 
+
+<!-- column-gap -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap" target="resource">column-gap</a></code> property</h1></header>
 <section class="content">
@@ -781,6 +795,8 @@ widows</pre>
 </section>
 </div>
 
+
+<!-- column-span -->
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-span" target="resource">column-span</a></code> property</h1></header>
 <section class="content">
@@ -815,14 +831,39 @@ widows</pre>
 </div>
 
 
+
+<!-- column-rule (and style, width, color) -->
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule" target="resource">column-rule</a></code> property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule" target="resource">column-rule</a></code> shorthand property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>sets the width, style, and color of the line drawn between columns in a multi-column layout.</p> 
+  <pre contenteditable>&lt;rule-width> &lt;rule-style> &lt;rule-color></pre>
+<p>Shorthand for <code>column-rule-width</code>, <code>column-rule-style</code>, and <code>column-rule-color</code></p>
+
+<dl>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width" target="resource">column-rule-width</a></dt>
+  <dd>Same sytnax as a single valued <code>border-width</code>, with values being <code class="pre">&lt;length> | thin | medium | thick</code>. Sets the width of the line drawn between columns.</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-style" target="resource">column-rule-style</a></dt>
+  <dd>Same sytnax as a single valued <code>border-style</code>, with values being <code class="pre">none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</code>. Sets the style of the line drawn between columns</dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color" target="resource">column-rule-color</a></dt>
+  <dd>Same sytnax as a single valued <code>border-color</code>, or just <code>color</code>, with values being any valid color.</dd>
+</dl>
+<pre contenteditable>column-rule-width: 3px;
+  column-rule-style: ridge;
+  column-rule-color: var(--colorspalsh);</pre>
+
+<pre contenteditable>column-rule: 3px ridge var(--colorspalsh);</pre>
+</section>
+</div>
+
+
+
+<!-- column-rule (and style, width, color) -->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule" target="resource">column-rule</a></code> shorthand property</h1></header>
+<section class="content">
   <style contenteditable class="editme">.cRule { columns: 6 12em;
-   column-rule: 1px dashed var(--colorpop); 
+   column-rule: 3px ridge var(--colorspalsh); 
  }</style>
   <div class="dream cRule">
 
@@ -840,6 +881,7 @@ widows</pre>
 <p>Let freedom ring from every hill and molehill of Mississippi. From every mountainside, let freedom ring.
 </p>
 <p>And when this happens, and when we allow freedom ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual, "Free at last! Free at last! Thank God Almighty, we are free at last!"</p>
+<p><cite>Martin Luther King's "I have a dream speech: August 28 1963</cite>
   </div>
 </section>
 </div>
