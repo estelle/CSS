@@ -1,4 +1,5 @@
- .multiplebg {
+ .multiplebg,
+ .bbm li {
 	background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(#58ADE3,#58ADE3);
 	background-size: 100px 100px;
 	background-repeat: no-repeat;

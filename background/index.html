@@ -54,17 +54,18 @@
     <ul>
     <li>Background properties
       <ul>
-        <li>background-color</li>
-        <li>background-image</li>
-        <li>background-repeat</li>
-        <li>background-attachment</li>
-        <li>background-position</li>
-        <li>background-clip</li>
-        <li>background-origin</li>
-        <li>background-size</li>
-        <li>background shorthand</li>
+        <li><code>background-color</code></li>
+        <li><code>background-image</code></li>
+        <li><code>background-repeat</code></li>
+        <li><code>background-attachment</code></li>
+        <li><code>background-position</code></li>
+        <li><code>background-clip</code></li>
+        <li><code>background-origin</code></li>
+        <li><code>background-size</code></li>
+        <li><code>background</code> shorthand</li>
       </ul>
     </li>
+    <li><code>background-blend-mode</code></li>
     </ul>
     </section>
 </div>
@@ -830,6 +831,77 @@ I rise..
  <style contenteditable class="editme">.beautiful {
   background-image:;
 }</style>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode" target="resource">background-blend-mode</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how an element's background images should blend with each other and with the element's background color.</p>
+  <pre contenteditable class="multi">normal | multiply | screen | overlay | darken | lighten | color-dodge 
+color-burn | hard-light | soft-light | difference | exclusion
+hue | saturation | color | luminosity</pre>
+<p>Blending modes should be defined in the same order as the background-image property. If the blending modes' and background images' list lengths are not equal, it will be repeated and/or truncated until lengths match.</p>
+<pre contenteditable>background-blend-mode: screen, multiply;</pre>
+</section>
+</div>
+
+
+<div class="slide bbm">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode" target="resource">background-blend-mode</a></code></h1></header>
+<style>
+.bbm ul {
+  display: flex;
+  gap: 1em;
+  flex-flow: row wrap;
+}
+.bbm li { 
+    flex: 200px;
+    list-style-type: none;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+.bbm .magic {visibility: hidden;}
+</style>
+<section class="content">
+<ul>
+  <li style="background-blend-mode: color;">color</li>
+  <li style="background-blend-mode: color-burn;">color-burn</li>
+  <li style="background-blend-mode: color-dodge;">color-dodge</li>
+  <li style="background-blend-mode: darken;">darken</li>
+  <li style="background-blend-mode: difference;">difference</li>
+  <li style="background-blend-mode: exclusion;">exclusion</li>
+  <li style="background-blend-mode: hard-light;">hard-light</li>
+  <li style="background-blend-mode: hue;">hue</li>
+  <li style="background-blend-mode: lighten;">lighten</li>
+  <li style="background-blend-mode: luminosity;">luminosity</li>
+  <li style="background-blend-mode: multiply;">multiply</li>
+  <li style="background-blend-mode: normal;">normal</li>
+  <li style="background-blend-mode: overlay;">overlay</li>
+  <li style="background-blend-mode: saturation;">saturation</li>
+  <li style="background-blend-mode: screen;">screen</li>
+  <li style="background-blend-mode: soft-light;">soft-light</li>
+
+  <li style="background-blend-mode: darken, multiply;">darken, multiply</li>
+  <li style="background-blend-mode: difference, overlay;">difference, overlay</li>
+  <li style="background-blend-mode: luminosity, saturation;">luminosity, saturation</li>
+  <li style="background-blend-mode: hue, screen;">hue, screen</li>
+  <li style="background-blend-mode: exclusion, soft-light;">exclusion, soft-light</li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+</ul>
+<style class="editme" contenteditable>.bbm li {
+  background-image: url(../images/star.svg), linear-gradient(yellow, red); 
+  background-position: center;
+  background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(#58ADE3,#58ADE3);
+  background-size: 150px 150px;
+  background-position: 0 0, 20px 20px; }</style>
 </section>
 </div>
 
