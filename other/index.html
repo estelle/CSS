@@ -448,7 +448,7 @@ widows</pre>
 
 <!--  -->
 <div class="slide intro">
-  <header><h1>Art Direction</h1></header>
+  <header><h1>Filter functions</h1></header>
   <section class="content">
   </section>
 </div>
@@ -523,8 +523,7 @@ widows</pre>
 <section class="content">
   <p>Change the background of the deck so we can see filter-backdrop in action</p>
   <p>remember how an invalid pseudoclass ruins everything?</p>
- <style contenteditable class="editme">#presentation:NOTVALID{}
-#presentation, 
+ <style contenteditable class="editme">#presentation:NOTVALID, 
 .slide.slide.slide, 
 #slides#slides { 
   background:unset;
@@ -593,6 +592,9 @@ widows</pre>
 </section>
 </div>
 
+
+
+<!-- drop-shadow -->
 <div class="slide filter dropshadow">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></code> function</h1></header>
 <section class="content">
@@ -603,6 +605,59 @@ widows</pre>
   <img src="../images/star.svg" alt="A star"/>
 </section>
 </div>
+
+
+<!-- hue-rotate -->
+<div class="slide filter hue-rotate">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a></code> function</h1></header>
+<section class="content">
+  <p> rotates the hue of an element and its contents. Set as as <code>&lt;angle></code>. A positive angle increases the hue value. A negative rotation decreases the hue value. The values reset at 360deg, as if <code>angle = &lt;angle> % 360</code>.<br/><br/><code>hue-rotate(-180deg)</code> and <code>hue-rotate(180deg)</code> end up being the same, completely rotated. Even the border!</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/womensmarch.webp);}
+.hue-rotate {backdrop-filter: hue-rotate(-45deg);}
+.hue-rotate img { filter: hue-rotate(-180deg);}</style>
+  <img src="../images/womensmarch.webp" alt="women protesting"/>
+</section>
+</div>
+
+<!-- invert() -->
+<div class="slide filter invert">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert" target="resource">invert()</a></code> function</h1></header>
+<section class="content">
+  <p>inverts the color samples in the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% or 1 is completely inverted. 0% leaves or 0 makes no change. Values between 0% and 100% and 0 and 1 are linear multipliers on the effect.<br/><br/>Negative values are not valid. Check out the difference betweetn inverting the slide v. the body.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/istanbul.jpg);}
+.invert {backdrop-filter: invert(10%);}
+.invert img { filter: invert(1);}</style>
+  <img src="../images/istanbul.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+<!-- sepia() -->
+
+<div class="slide filter sepia">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></code> function</h1></header>
+<section class="content">
+  <p>converts the input image to sepia, giving it a more yellow/brown antique appearance. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely sepia. 200% and 2 doubles the sepia. 0% and 0 don't change the image's appearance.<br/><br/>Negative values are not valid. Change the effect from the slide to the body.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/woc.jpg);}
+.sepia {backdrop-filter: sepia(50%);}
+.sepia img { filter: sepia(1);}</style>
+  <img src="../images/woc.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+<!-- saturate() -->
+<div class="slide filter saturate">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></code> function</h1></header>
+<section class="content">
+  <p>Super-saturates or desaturates the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely unsatured: black and white. 200% and 2 doubles the saturation. 100% and 1 have no effect. Greater numbers create modern art.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/xl.jpg);}
+.saturate {backdrop-filter: saturate(200%);}
+.saturate img { filter: saturate(0.3);}</style>
+  <img src="../images/xl.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
 
 
 
@@ -618,8 +673,29 @@ widows</pre>
 </section>
 </div>
 
+<!--  -->
+<div class="slide intro">
+  <header><h1>More art direction</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode" target="resource">background-blend-mode</a></code> property</h1></header>
+<section class="content">
+  <p>Sets how an element's background images should blend with each other and with the element's background color.</p>
+  <pre contenteditable class="multi">normal | multiply | screen | overlay | darken | lighten | color-dodge 
+color-burn | hard-light | soft-light | difference | exclusion
+hue | saturation | color | luminosity</pre>
+<p>Blending modes should be defined in the same order as the background-image property. If the blending modes' and background images' list lengths are not equal, it will be repeated and/or truncated until lengths match.</p>
+<pre contenteditable>background-blend-mode: screen, multiply;</pre>
+</section>
+</div>
+
+
 <div class="slide object">
-<header><h1>background-blend-mode</h1></header>
+<header><h1><code>background-blend-mode</code></h1></header>
 <object data="files/blendmode.html"></object>
   <a href="files/blendmode.html" target="play" title="open code example in new window">↪</a>
 </div>
@@ -864,7 +940,7 @@ sw-, w-, ew-, ns-, nesw-</code>, or <code>nwse-</code></p>
 -moz-user-modify: read-only | read-write | write-only;</pre>
 <p>This deck used this for pasting without rich text features in -webkit- supporting browsers</p>
 
-<style contenteditable class="editme">pre, style, code {
+<style contenteditable class="editme">section pre, section style, section code {
   -webkit-user-modify: read-write-plaintext-only;
 }</style>
 <dl>
