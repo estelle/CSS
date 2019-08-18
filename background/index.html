@@ -50,7 +50,7 @@
 
 <div class="slide">
     <header><h1>Backgrounds</h1></header>
-    <section class="content">
+    <section class="content flex12">
     <ul>
     <li>Background properties
       <ul>
@@ -66,6 +66,27 @@
       </ul>
     </li>
     <li><code>background-blend-mode</code></li>
+  </ul>
+  <ul>
+    <li>CSS Filters
+      <ul>
+        <li><code>filter</code> </li>
+        <li><code>backdrop-filter</code> </li>
+        <li><code>&lt;filter></code> functions
+          <ul>
+            <li><code> blur()</code> </li>
+            <li><code> brightness()</code> </li>
+            <li><code> contrast()</code> </li>
+            <li><code> grayscale()</code> </li>
+            <li><code> drop-shadow</code> </li>
+            <li><code> hue-rotate</code> </li>
+            <li><code> invert()</code> </li>
+            <li><code> sepia()</code> </li>
+            <li><code> saturate()</code> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     </ul>
     </section>
 </div>
@@ -906,6 +927,228 @@ hue | saturation | color | luminosity</pre>
 </div>
 
 
+<!--  -->
+<div class="slide intro">
+  <header><h1>Filter functions</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide object">
+<header><h1>Filters</h1></header>
+<object data="http://html5-demos.appspot.com/static/css/filters/index.html"></object>
+<a href="http://html5-demos.appspot.com/static/css/filters/index.html" target="play" class="objectlink">Visit Site</a>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="resource">filter</a></code> property</h1></header>
+<section class="content">
+  <p>Applies graphical effects like blur or color shift to an element.</p>
+  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
+  <p>Applies the effects to a foreground element.</p>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="resource">backdrop-filter</a></code> property</h1></header>
+<section class="content">
+  <p>Apply graphical effects to the area behind an element. </p>
+  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
+  </pre>
+  <p>Applicable to a background (v. <code>filter</code> which is foreground)</p>
+  <pre contenteditable>backdrop-filter: url(image.svg#focus) blur(6px) saturate(50%);</pre>
+  <p>To see the effect you must make the element or its background at least partially transparent because it applies to everything behind the element.</p>
+  <p>Prefixed in safari. New to Chrome and Edge. Not in FF</p>
+</section>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter_functions" target="resource">&lt;filter></a></code> functions</h1></header>
+<section class="content">
+
+  <p>The <code>&lt;filter-function&gt;</code> data type is specified using  one of the filter functions listed below. Each function requires an  argument which, if invalid, results in no filter being applied.</p>
+<dl>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></dt>
+  <dd>Blurs the image. <code>&lt;length></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></dt>
+  <dd>Makes the image brighter or darker. <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></dt>
+  <dd>Increases or decreases the image's contrast. <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></dt>
+  <dd>Applies a drop shadow behind the image.  <code>&lt;x-y-blur-spread-color></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale()</a></dt>
+  <dd>Converts the image to grayscale.  <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a>​​​​​​​​​​​​​​</dt>
+  <dd>Changes the overall hue of the image. <code>&lt;angle></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert"  target="resource">invert()</a></dt>
+  <dd>Inverts the colors of the image. <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity" target="resource">opacity()</a></dt>
+  <dd>Makes the image transparent. <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></dt>
+  <dd>Super-saturates or desaturates the input image. <code>&lt;number-percent></code></dd>
+  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></dt>
+  <dd>Converts the image to sepia. <code>&lt;number-percent></code></dd>
+</dl>
+</section>
+</div>
+
+
+
+<div class="slide" style="background-color: var(--light_bg);">
+<header><h1>Filter Activation!</h1></header>
+<section class="content">
+  <p>Change the background of the deck so we can see filter-backdrop in action</p>
+  <p>remember how an invalid pseudoclass ruins everything?</p>
+ <style contenteditable class="editme">#presentation:NOTVALID, 
+.slide.slide.slide, 
+#slides#slides { 
+  background:unset;
+} </style>
+<p>In the next slides, change <code>.body</code> to <code>body</code></p>
+</section>
+</div>
+
+
+
+
+<!-- blur() -->
+<div class="slide filter blur">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></code> function</h1></header>
+<section class="content">
+  <p>Applies a Gaussian blur set in <code>&lt;length></code>. <br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/charlotte.jpg);}
+.blur { backdrop-filter: blur(10px);}
+.blur img { filter: blur(2px);}</style>
+  <img src="../images/charlotte.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+
+
+<!-- brightness() -->
+<div class="slide filter brightness">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></code> function</h1></header>
+<section class="content">
+  <p>Applies a linear multiplier, making it appear brighter or darker. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are black. 200% and 2 doubles the brightness. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/berlin.jpg);}
+.brightness {backdrop-filter: brightness(200%);}
+.brightness img { filter: brightness(0.3);}</style>
+  <img src="../images/berlin.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+
+<!-- contrast() -->
+<div class="slide filter contrast">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></code> function</h1></header>
+<section class="content">
+  <p>Adjusts the contrast of the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. A value under 100% decreases the contrast, while a value over 100% increases it. 0% and 0 will be completely grey. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/brazil.jpg);}
+.contrast {backdrop-filter: contrast(200%);}
+.contrast img { filter: contrast(0.3);}</style>
+  <img src="../images/brazil.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+<!-- grayscale() -->
+<div class="slide filter grayscale">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale</a></code> function</h1></header>
+<section class="content">
+  <p> converts the input image to grayscale. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% and 1 (and higher) are completely greyscale.  0% and 0 have no effect.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/seoul.jpg);}
+.grayscale { backdrop-filter: grayscale(90%);}
+.grayscale img { filter: grayscale(0.5);}</style>
+  <img src="../images/seoul.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+
+<!-- drop-shadow -->
+<div class="slide filter dropshadow">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></code> function</h1></header>
+<section class="content">
+  <p>applies a drop shadow effect to the input image. Syntax is the same as <code>box-shadow</code>, written as <code>drop-shadow(offset-x offset-y blur-radius spread-radius color)</code>, but spread radius is not supported.<br/><br/>It follows the image :D.</p>
+  <style contenteditable class="editme">.body {background-image: none;}
+.dropshadow {backdrop-filter: drop-shadow(-37px -37px 20px var(--colorpop));}
+.dropshadow img { filter: drop-shadow(30px 30px 0 var(--colorpop));}</style>
+  <img src="../images/star.svg" alt="A star"/>
+</section>
+</div>
+
+
+<!-- hue-rotate -->
+<div class="slide filter hue-rotate">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a></code> function</h1></header>
+<section class="content">
+  <p> rotates the hue of an element and its contents. Set as as <code>&lt;angle></code>. A positive angle increases the hue value. A negative rotation decreases the hue value. The values reset at 360deg, as if <code>angle = &lt;angle> % 360</code>.<br/><br/><code>hue-rotate(-180deg)</code> and <code>hue-rotate(180deg)</code> end up being the same, completely rotated. Even the border!</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/womensmarch.webp);}
+.hue-rotate {backdrop-filter: hue-rotate(-45deg);}
+.hue-rotate img { filter: hue-rotate(-180deg);}</style>
+  <img src="../images/womensmarch.webp" alt="women protesting"/>
+</section>
+</div>
+
+<!-- invert() -->
+<div class="slide filter invert">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert" target="resource">invert()</a></code> function</h1></header>
+<section class="content">
+  <p>inverts the color samples in the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% or 1 is completely inverted. 0% leaves or 0 makes no change. Values between 0% and 100% and 0 and 1 are linear multipliers on the effect.<br/><br/>Negative values are not valid. Check out the difference betweetn inverting the slide v. the body.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/istanbul.jpg);}
+.invert {backdrop-filter: invert(10%);}
+.invert img { filter: invert(1);}</style>
+  <img src="../images/istanbul.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+<!-- sepia() -->
+
+<div class="slide filter sepia">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></code> function</h1></header>
+<section class="content">
+  <p>converts the input image to sepia, giving it a more yellow/brown antique appearance. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely sepia. 200% and 2 doubles the sepia. 0% and 0 don't change the image's appearance.<br/><br/>Negative values are not valid. Change the effect from the slide to the body.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/woc.jpg);}
+.sepia {backdrop-filter: sepia(50%);}
+.sepia img { filter: sepia(1);}</style>
+  <img src="../images/woc.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+<!-- saturate() -->
+<div class="slide filter saturate">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></code> function</h1></header>
+<section class="content">
+  <p>Super-saturates or desaturates the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely unsatured: black and white. 200% and 2 doubles the saturation. 100% and 1 have no effect. Greater numbers create modern art.<br/><br/>Negative values are not valid.</p>
+  <style contenteditable class="editme">.body {background-image: url(../images/xl.jpg);}
+.saturate {backdrop-filter: saturate(200%);}
+.saturate img { filter: saturate(0.3);}</style>
+  <img src="../images/xl.jpg" alt="woman protesting"/>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>Filter DeActivation!</h1></header>
+<section class="content">
+  <p>Revert the unset</p>
+ <style contenteditable class="editme">#presentation:NOTVALID,
+#slides#slides {background-color: #dedede;} 
+.slide.slide.slide:NOTVALID { 
+  background: var(--light_bg);
+} </style>
+</section>
+</div>
+
+
+
+
+
 <div class="slide intro">
      <header><h1>Gradients</h1></header>
     <h1><a href="../gradients/intro.html">Next ➹</a></h1>
@@ -932,7 +1175,7 @@ hue | saturation | color | luminosity</pre>
     <li><a href="../text/">Text</a></li>
     <li><a href="../images">Images</a></li>
     <li><a href="../background">Backgrounds</a></li>
-    <li><a href="../gradients/intro.html">Gradients</a></li>
+    <li><a href="../gradients/">Gradients</a></li>
     <li><a href="../boxmodel">Box Model</a></li>
     <li><a href="../flexbox">Flexbox</a></li>
     <li><a href="../tables">Tables</a></li>

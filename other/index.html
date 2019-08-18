@@ -73,6 +73,26 @@ body {background-repeat: no-repeat; background-size: cover;}
   max-height: 100%;
   max-width: 100%;
 }
+.borderimageexamples {
+  max-width: 50%;
+  margin: auto;
+  padding: 5px;
+  border: 10px solid;
+  white-space: pre;
+  overflow: scroll;
+}
+.slicing {
+margin: 1em auto;
+height: 400px;
+width: 400px;
+background-image: 
+  linear-gradient(to bottom, var(--colorpop) 5px, transparent 5px 245px, var(--colorpop) 245px), 
+  linear-gradient(to left, var(--colorpop) 5px, transparent 5px 245px, var(--colorpop) 245px), 
+  linear-gradient(to bottom,transparent -3%, var(--dark_bg), transparent 103%);
+background-size: 400px 250px, 250px 400px, 90% 90%;
+background-position: center;
+background-repeat: no-repeat;
+}
  </style>
   </head>
   <body>
@@ -111,19 +131,45 @@ body {background-repeat: no-repeat; background-size: cover;}
 <div class="slide">
     <header><h1>Border Images</h1></header>
     <section class="content">
-  <ul>
+  <ul class="col3" style="column-rule: none">
     <li>Border Images
       <ul>
+       <code> <li>border-image shorthand</li>
         <li>border-image-source</li>
         <li>border-image-slice</li>
         <li>border-image-width</li>
         <li>border-image-outset</li>
-        <li>border-image-repeat</li>
-        <li>border-image shorthand</li>
+        <li>border-image-repeat</li></code>
+        <li>Putting it all together</li>
       </ul>
     </li>
     <li>Web performance</li>
-    <li>Multi column layout</li>
+    <li>Multi column layout
+      <ul><code>
+        <li>column-count</li>
+        <li>column-fill</li>
+        <li>column-rule
+          <ul>
+            <li>column-rule-color</li>
+            <li>column-rule-style</li>
+            <li>column-rule-width</li>
+          </ul>
+        </li>
+        <li>column-span</li>
+        <li>column-width</li>
+        <li>columns</li></code>
+        <li>Related Properties
+          <ul>
+           <code> <li>break-after</li>
+            <li>break-before</li>
+            <li>break-inside</li>
+            <li>orphans</li>
+            <li>widows</li></code>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
     <li>Art direction</li>
     <li>Cursors</li>
     <li>Other features</li>
@@ -142,14 +188,33 @@ body {background-repeat: no-repeat; background-size: cover;}
 <div class="slide">
      <header><h1>What is Border Image</h1></header>
      <section class="content">
-
-     <div class="whatisborderimage">
-
-     </div>
+  <div class="whatisborderimage"></div>
+  <div class="slicing"></div>
      </section>
  </div>
 
 
+<!-- border-image shorthand-->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image</a></code> shorthand property</h1></header>
+<section class="content">
+  <p>Shorthand for <code>border-image-source, border-image-slice, border-image-width, border-image-outset</code>, and <code>border-image-repeat</code>. Omitted sub-values are set to initial.</p>
+  <pre contenteditable>&lt;source> &lt;slice> / &lt;width> / &lt;outset> &lt;repeat></pre>
+  <dl>
+  <dt>border-image-source</dt>
+  <dd>The source image.</dd>
+  <dt>border-image-slice</dt>
+  <dd>The dimensions for slicing the source image into regions.{1,4}</dd>
+  <dt>border-image-width</dt>
+  <dd>The width of the border image.{1,4}</dd>
+  <dt>border-image-outset</dt>
+  <dd>The distance of the border image from the element's outside edge. Up to four values may be specified. {1,4}</dd>
+  <dt>border-image-repeat</dt>
+  <dd>Defines how the top and bottom and left and right edge regions of the source image are adjusted to  fit the dimensions of the border image.{1,2}</dd>
+</dl>
+
+</section>
+</div>
 
 <div class="slide object">
   <header onclick="setData('bi');"><h1>Browser support: <code>border-image</code> property</h1></header>
@@ -169,17 +234,27 @@ body {background-repeat: no-repeat; background-size: cover;}
 
 
 <!-- border-image-source-->
-<div class="slide">
+
+
+<div class="slide bisrc">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-source</a></code> property</h1></header>
 <section class="content">
   <p>Sets the source image used to create the border image.</p>
   <pre contenteditable>none | &lt;image></pre>
   <p>The image type can be any of the image types we covered in the images section</p>
+
+  <style contenteditable class="editme">.bisrc div {
+    border-image-source: url(img/dots.png);
+}</style>
+<div class="borderimageexamples">
+  border: 10px solid;
+  border-image-source: url(img/dots.png);</div>
+  <p>No border image will appear if there is no border width set either thru border-width or border-image-width, described shortly.</p>
 </section>
 </div>
 
 <!-- border-image-slice-->
-<div class="slide">
+<div class="slide bislice">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-slice</a></code> property</h1></header>
 <section class="content">
   <p>Divides the background image file into regions. These regions form the components of an element's border image.</p>
@@ -190,79 +265,168 @@ body {background-repeat: no-repeat; background-size: cover;}
     <dd>The edge offset in pixels or percentages for raster images and coordinates for vector images. For vector images, the number is relative to the element's size, not the size of the source image, so percentages are generally preferable in these cases.</dd>
     <dt>fill</dt>
     <dd>Preserves the middle image region and displays it like a background image, but stacked above the actual background. Its width and height are sized to match the top and left image regions, respectively.</dd>
-    </dl>
+    </dl></section>
+</div>
+
+<!-- border-image-slice-->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-slice</a></code> property</h1></header>
+<section class="content">
+  <div class="slicing"></div>
+</section>
+</div>
+
+<!-- border-image-slice-->
+<div class="slide bislice">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-slice</a></code> property</h1></header>
+<section class="content">
+      <style contenteditable class="editme">.bislice div {
+    border-image-source: url(img/dots.png);
+    border-image-slice: 20 fill;
+}</style>
+<div class="borderimageexamples">  border: 10px solid;
+  border-image-source: url(img/dots.png);
+  border-image-slice: 20 fill;</div>
 </section>
 </div>
 
 
 
 <!-- border-image-width-->
-<div class="slide">
+<div class="slide biwidth">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-width</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Sets the width of an element's border image.</p>
+  <pre contenteditable>&lt;length-percentage> | &lt;number> | auto {1,4}</pre>
+  <p>If this property's value is greater than the element's border-width, the border image will extend beyond the padding (and/or content) edge.</p>
+
+  <p>Takes up to four values, in TRouBLe order<sup>*</sup> </p>
+<dl>
+  <dt>&lt;length-percentage></dt>
+    <dd>Defines the width of the border, like <code>border-width</code>. Percents are supported, and are relative to the border image offsets. Can't be negative.</dd>
+  <dt>&lt;number></dt>
+    <dd>Unitless multiple of the corresponding border-width. Can't be negative.</dd>
+  <dt>auto</dt>
+    <dd>Same as <code>border-image-slice</code>, or <code>border-width</code> if <code>border-image-slice</code> dimensions weren't defined.</dd>
+
+    <p><small>* TRouBLe order as described in <code>border, padding</code>, and <code>margin</code></small></p></section>
+</div>
+
+
+
+<!-- border-image-width-->
+<div class="slide biwidth">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-width</a></code> property</h1></header>
+<section class="content">
+          <style contenteditable class="editme">.biwidth div {
+    border-image-source: url(img/dots.png);
+    border-image-slice: 20 fill;
+    border-image-width: 20px;
+}</style>
+<div class="borderimageexamples">  border: 10px solid;
+  border-image-source: url(img/dots.png);
+  border-image-slice: 20px;
+  border-image-width: 20 fill;</div>
 </section>
 </div>
 
 
 
 <!-- border-image-outset-->
-<div class="slide">
+<div class="slide bioutset">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-outset</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>The border-image-outset CSS property sets the distance by which an element's border image is set out from its border box.</p>
+  <pre contenteditable> &lt;length> | &lt;number> {1,4}</pre>
+  <p>Takes up to four values, in TRouBLe order<sup>*</sup> </p>
+<p>Either takes a <code>&lt;length></code> dimension, or the number is a multiple of the element's corresponding border-widths. 
+<pre contenteditable>border-width: 1em 2px 0 1.5rem;
+border-image-outset: 2;
+border-image-outset: 2em 4px 0 3rem</pre> 
+ <p>The parts of the border image that are rendered outside the element's border box with border-image-outset do not trigger overflow scrollbars and don't capture mouse events</p>
+  <p><small>* TRouBLe order as described in <code>border, padding</code>, and <code>margin</code></small></p></section>
+</div>
+
+
+
+<!-- border-image-outset-->
+<div class="slide bioutset">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-outset</a></code> property</h1></header>
+<section class="content">
+  <style contenteditable class="editme">.bioutset div {
+    border-image-source: url(img/dots.png);
+    border-image-slice: 20;
+    border-width: 20px;
+    border-image-outset: 2;
+}</style>
+<div class="borderimageexamples">don't see all of me?
+Maybe add a margin!
+Outset doesn't impact box model.
+But takes up space like outline and box-shadow.</div>
 </section>
 </div>
 
 
 
 <!-- border-image-repeat-->
-<div class="slide">
+<div class="slide birepeat">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-repeat</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
-</section>
+  <p>Defines how the edge regions of the image (the non corner parts) are handled in filling those regions.</p>
+  <pre contenteditable>stretch | repeat | round | space {1,2}</pre>
+  <dl>
+  <dt>stretch</dt>
+  <dd>Middle parts are stretched to fill the borders between each corner.</dd>
+  <dt>repeat</dt>
+  <dd>Middle parts are tiled (repeated) to fill the borders between each corner. A tile may be clipped to fit.</dd>
+  <dt>round</dt>
+  <dd>Middle parts are tiled (repeated) to fill the borders between each corner. Tiles may be stretched to fit.</dd>
+  <dt>space</dt>
+  <dd>Middle parts are tiled (repeated) to fill the borders between each corner. Not tile will be clipped or stretched. Rather, space will be distributed between  tiles if necessary.</dd>
+</dl></section>
 </div>
 
 
-<!-- border-image shorthand-->
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image</a></code> shorthand property</h1></header>
+
+<!-- border-image-repeat-->
+<div class="slide birepeat">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource">border-image-repeat</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+<style contenteditable class="editme">.birepeat div { margin-bottom: 100px;
+    border-image-source: repeating-linear-gradient(45deg, var(--colorpop), #ccc, var(--dark_bg) 30px);
+    border-image-source: url(img/dots.png);
+    border-image-slice: 20;
+    border-width: 20px;
+    border-image-outset: 2;
+    border-image-repeat: repeat space;
+}</style>
+<div class="borderimageexamples" contenteditable="">Change the border-image-repeat value to see the different effect. 
+Edit this text to grow/shrink this element.</div>
 </section>
 </div>
+
+
+
 
  <!-- -->
  <div class="slide">
-  <header><h1>border-image</h1></header>
+  <header><h1>border image recap</h1></header>
     <section class="content">
 <pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
 
-    <h1 style="text-align:left">Underlying Properties</h1>
-    <ul style="float:right">
+<pre contenteditable><b>border-style</b>: 
+<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
+<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
+<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
+<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}
+<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round | space{1,2}</pre>
+    <ul>
     <li>Syntax for non-prefixed differs</li>
     <li>Must also declare <code>border-style</code></li>
+    <li>Declaring <code>border</code> overrides it, but not any of the long-hand properties
     <li><a href="http://border-image.com/">Border image tool</a></li>
-    <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
-    <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li>
-    </ul>
-      <ul>
-        <li>border-image-source</li>
-        <li>border-image-slice</li>
-        <li>border-image-width</li>
-        <li>border-image-outset</li>
-        <li>border-image-repeat</li>
-        <li class="imp">border-image</li>
-      </ul>
+  border-image browser support</a></li>
+</ul>
      </section>
  </div>
 
@@ -270,18 +434,6 @@ body {background-repeat: no-repeat; background-size: cover;}
  <div class="slide">
   <header><h1>border-image</h1></header>
     <section class="content">
-<pre contenteditable>
-<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
-
-<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
-
-<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
-
-<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}
-
-<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round {1,2}
-
-</pre>
 <pre contenteditable style="float:right; margin-bottom:40px;">
 S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
 W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
@@ -453,6 +605,11 @@ Pseudo-classes/-elements, e.g. a:hover</pre>
 </section>
 </div>
 
+
+
+
+
+
  <div class="slide" id="columnpage">
           <header> <h1>Columns</h1></header>
           <section class="content" style="margin-top:0">
@@ -518,6 +675,176 @@ widows</pre>
 
 
 
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-count" target="resource">column-count</a></code> property</h1></header>
+<section class="content">
+  <p>"max-count" for columns. Sets the maximum number of columns in a multi-column layout. </p>
+  <pre contenteditable>&lt;integer> | auto</pre>
+<p>The number of columns will not exceed the number listed, but may be fewer, if the width of each column would be less than the minimum width set by the <code>column-width</code> property</p>
+<style contenteditable class="editme">.cCount {column-count: 25;}</style>
+<div class="dream cCount"><p>I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.</p>
+
+<p>Five score years ago, a great American, in whose symbolic shadow we stand today, signed the Emancipation Proclamation. This momentous decree came as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice. It came as a joyous daybreak to end the long night of captivity.</p>
+
+<p>But one hundred years later, the Negro still is not free. One hundred years later, the life of the Negro is still sadly crippled by the manacles of segregation and the chains of discrimination. One hundred years later, the Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity. One hundred years later, the Negro is still languished in the corners of American society and finds himself in exile in his own land. So we have come here today to dramatize an shameful condition.</p>
+
+<p>In a sense we've come to our nation's Capital to cash a check. When the architects of our republic wrote the magnificent words of the Constitution and the Declaration of Independence, they were signing a promissory note to which every American was to fall heir.</p></div>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-width" target="resource">column-width</a></code> property</h1></header>
+<section class="content">
+  <p>"min-width" for columns. Sets the ideal or 'minimum' column width in a multi-column layout. </p>
+  <pre contenteditable>&lt;length> | auto</pre>
+  <p>If the container is narrower, the single column's width will be 100%. Otherwise, it will have up to the column-count number of columns, as long as each is at least column-width wide. </p>
+  <style contenteditable class="editme">.cWidth {column-width: 3em;}</style>
+  <div class="dream cWidth"><p>This note was a promise that all men, yes, black men as well as white men, would be guaranteed the unalienable rights of life, liberty, and the pursuit of happiness.</p>
+
+<p>It is obvious today that America has defaulted on this promissory note insofar as her citizens of color are concerned. Instead of honoring this sacred obligation, America has given the Negro people a bad check; a check which has come back marked "insufficient funds."</p>
+
+<p>But we refuse to believe that the bank of justice is bankrupt. We refuse to believe that there are insufficient funds in the great vaults of opportunity of this nation. So we have come to cash this check- a check that will give us upon demand the riches of freedom and the security of justice.</p>
+
+<p>We have also come to this hallowed spot to remind America of the fierce urgency of now. This is no time to engage in the luxury of cooling off or to take the tranquilizing drug of gradualism.</p>
+
+<p>Now is the time to make real the promises of democracy. Now is the time to rise from the dark and desolate valley of segregation to the sunlit path of racial justice. Now is the time to lift our nation from the quicksands of racial injustice to the solid rock of brotherhood. Now is the time to make justice a reality for all of God's children.</p>
+</div>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns" target="resource">columns</a></code> shorthand property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+  <style contenteditable class="editme">.cColumns {columns: 6 12em;}</style>
+  <div class="dream cColumns"><p>It would be fatal for the nation to overlook the urgency of the moment. This sweltering summer of the Negro's legitimate discontent will not pass until there is an invigorating autumn of freedom and equality. Nineteen sixty-three is not an end, but a beginning. Those who hope that the Negro needed to blow off steam and will now be content will have a rude awakening if the nation returns to business as usual. There will be neither rest nor tranquility in America until the Negro is granted his citizenship rights. The whirlwinds of revolt will continue to shake the foundations of our nation until the bright day of justice emerges.</p>
+
+<p>But there is something that I must say to my people who stand on the warm threshold which leads into the palace of justice. In the process of gaining our rightful place we must not be guilty of wrongful deeds. Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred. We must forever conduct our struggle on the high plane of dignity and discipline. We must not allow our creative protest to degenerate into physical violence. Again and again we must rise to the majestic heights of meeting physical force with soul force.</p>
+
+<p>The marvelous new militancy which has engulfed the Negro community must not lead us to a distrust of all white people, for many of our white brothers, as evidenced by their presence here today, have come to realize that their destiny is tied up with our destiny. And they have come to realize that their freedom is inextricably bound to our freedom. We cannot walk alone.</p>
+
+
+  </div>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-fill" target="resource">column-fill</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+  <style contenteditable class="editme">.cFill {column-fill: balance;
+  height: 100vh;
+  columns: 6 12em;}</style>
+  <div class="dream cFill">
+<p>And as we walk, we must make the pledge that we shall march ahead. We cannot turn back. There are those who are asking the devotees of civil rights, "When will you be satisfied?"</p>
+
+<p>We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality.</p>
+
+<p>We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities.</p>
+
+<p>We cannot be satisfied as long as the Negro's basic mobility is from a smaller ghetto to a larger one.</p>
+
+<p>We can never be satisfied as long as our chlidren are stripped of their selfhood and robbed of their dignity by signs stating "for whites only."</p>
+
+
+  </div>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap" target="resource">column-gap</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+  <style contenteditable class="editme">.cGap {
+  column-gap: 5em;
+  columns: 6 12em;
+}</style>
+  <div class="dream cGap">
+<p>We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote.</p>
+
+<p>No, no, we are not satisfied, and we will not be satisfied until justice rolls down like waters and righteousness like a mighty stream.</p>
+
+<p>I am not unmindful that some of you have come here out of great trials and tribulations. Some of you have come fresh from narrow jail cells. Some of you have come from areas where your quest for freedom left you battered by the storms of persecution and staggered by the winds of police brutality. You have been the veterans of creative suffering. Continue to work with the faith that unearned suffering is redemptive.</p>
+
+<p>Go back to Mississippi, go back to Alabama, go back to South Carolina, go back to Georgia, go back to Louisiana, go back to the slums and ghettos of our northern cities, knowing that somehow this situation can and will be changed. Let us not wallow in the valley of despair.</p>
+
+<p>I say to you today, my friends, so even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream.</p>
+
+<p>I have a dream that one day this nation will rise up and live out the true meaning of its creed: "We hold these truths to be self-evident; that all men are created equal."</p>
+</div>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-span" target="resource">column-span</a></code> property</h1></header>
+<section class="content">
+  <p>Makes it possible for an element to span across all columns when its value is set to <code>all</code>.</p>
+  <pre contenteditable>none | all</pre></pre>
+  <dl>
+    <dt>none</dt>
+    <dd>Deafault. The element does not span multiple columns.</dd>
+    <dt>all</dt>
+    <dd>The element spans across all columns. Content in the normal flow that appears before the element is automatically balanced across all columns before the element appears. The element establishes a new block formatting context. </dd>
+  </dl>
+  <style contenteditable class="editme">.cSpan {columns: 6 12em;}
+.cSpan .spanner { 
+   column-span: all; 
+}</style>
+<div class="dream cSpan">
+<p>I have a dream that one day on the red hills of Georgia the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</p>
+
+<p>I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.</p>
+
+<p>I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.</p>
+
+<p class="spanner">I have a dream today.</p>
+
+<p>I have a dream that one day down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of interposition and nullification, that one day right down in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.</p>
+
+<p class="spanner">I have a dream today.
+</p>
+<p>I have a dream that one day every valley shall be exhalted, every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight, and the glory of the Lord shall be revealed, and all flesh shall see it together.</p>
+</div>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule" target="resource">column-rule</a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+  <style contenteditable class="editme">.cRule { columns: 6 12em;
+   column-rule: 1px dashed var(--colorpop); 
+ }</style>
+  <div class="dream cRule">
+
+
+<p>This is our hope. This is the faith that I will go back to the South with. With this faith we will be able to hew out of the mountain of despair a stone of hope. With this faith we will be able to transform the jangling discords of our nation into a beautiful symphony of brotherhood.
+</p>
+<p>With this faith we will be able to work together, to pray together, to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day.
+</p>
+<p>This will be the day when all of God's children will be able to sing with new meaning, "My country 'tis of thee, sweet land of liberty, of thee I sing. Land where my fathers died, land of the Pilgrims' pride, from every mountainside, let freedom ring."
+</p>
+<p>And if America is to be a great nation, this must become true. So let freedom ring from the prodigious hilltops of New Hampshire. Let freedom ring from the mighty mountains of New York. Let freedom ring from the heightening Alleghenies of Pennsylvania.
+</p>
+<p>Let freedom ring from the snow-capped Rockies of Colorado. Let freedom ring from the curvaceous slopes of California. But not only that; let freedom ring from the Stone Mountain of Georgia. Let freedom ring from Lookout Mountain of Tennessee.
+</p>
+<p>Let freedom ring from every hill and molehill of Mississippi. From every mountainside, let freedom ring.
+</p>
+<p>And when this happens, and when we allow freedom ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual, "Free at last! Free at last! Thank God Almighty, we are free at last!"</p>
+  </div>
+</section>
+</div>
+
+
 <!-- columns -->
 <div class="slide object">
   <header><h1>columns</h1></header>
@@ -528,232 +855,43 @@ widows</pre>
 
 
 
-<!--  -->
-<div class="slide intro">
-  <header><h1>Filter functions</h1></header>
-  <section class="content">
-  </section>
-</div>
-
-
-<div class="slide object">
-<header><h1>Filters</h1></header>
-<object data="http://html5-demos.appspot.com/static/css/filters/index.html"></object>
-<a href="http://html5-demos.appspot.com/static/css/filters/index.html" target="play" class="objectlink">Visit Site</a>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="resource">filter</a></code> property</h1></header>
+<div class="slide divider">
+<header><h1>Column related properties</h1></header>
 <section class="content">
-  <p>Applies graphical effects like blur or color shift to an element.</p>
-  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
-  <p>Applies the effects to a foreground element.</p>
-</section>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="resource">backdrop-filter</a></code> property</h1></header>
-<section class="content">
-  <p>Apply graphical effects to the area behind an element. </p>
-  <pre contenteditable class="multi">none | blur() | brightness() | contrast() <br/>grayscale() | drop-shadow() | hue-rotate() | invert()<br/> saturate() | opacity() | sepia() | url()</pre>
-  </pre>
-  <p>Applicable to a background (v. <code>filter</code> which is foreground)</p>
-  <pre contenteditable>backdrop-filter: url(image.svg#focus) blur(6px) saturate(50%);</pre>
-  <p>To see the effect you must make the element or its background at least partially transparent because it applies to everything behind the element.</p>
-  <p>Prefixed in safari. New to Chrome and Edge. Not in FF</p>
-</section>
-</div>
-
-
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter_functions" target="resource">&lt;filter></a></code> functions</h1></header>
-<section class="content">
-
-  <p>The &lt;filter-function&gt; data type is specified using  one of the filter functions listed below. Each function requires an  argument which, if invalid, results in no filter being applied.</p>
+  <p></p>
   <pre contenteditable>
   </pre>
-<dl>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></dt>
-  <dd>Blurs the image.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></dt>
-  <dd>Makes the image brighter or darker.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></dt>
-  <dd>Increases or decreases the image's contrast.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></dt>
-  <dd>Applies a drop shadow behind the image.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale()</a></dt>
-  <dd>Converts the image to grayscale.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a>​​​​​​​​​​​​​​</dt>
-  <dd>Changes the overall hue of the image.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert"  target="resource">invert()</a></dt>
-  <dd>Inverts the colors of the image.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity" target="resource">opacity()</a></dt>
-  <dd>Makes the image transparent.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></dt>
-  <dd>Super-saturates or desaturates the input image.</dd>
-  <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></dt>
-  <dd>Converts the image to sepia.</dd>
-</dl>
 </section>
 </div>
-
-
-
-<div class="slide" style="background-color: var(--light_bg);">
-<header><h1>Filter Activation!</h1></header>
-<section class="content">
-  <p>Change the background of the deck so we can see filter-backdrop in action</p>
-  <p>remember how an invalid pseudoclass ruins everything?</p>
- <style contenteditable class="editme">#presentation:NOTVALID, 
-.slide.slide.slide, 
-#slides#slides { 
-  background:unset;
-} </style>
-<p>In the next slides, change <code>.body</code> to <code>body</code></p>
-</section>
-</div>
-
-
-
-
-
-
-
-
-<!-- blur() -->
-<div class="slide filter blur">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></code> function</h1></header>
-<section class="content">
-  <p>Applies a Gaussian blur set in <code>&lt;length></code>. <br/><br/>Negative values are not valid.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/charlotte.jpg);}
-.blur { backdrop-filter: blur(10px);}
-.blur img { filter: blur(2px);}</style>
-  <img src="../images/charlotte.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-
-
-
-<!-- brightness() -->
-<div class="slide filter brightness">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness" target="resource">brightness()</a></code> function</h1></header>
-<section class="content">
-  <p>Applies a linear multiplier, making it appear brighter or darker. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are black. 200% and 2 doubles the brightness. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/berlin.jpg);}
-.brightness {backdrop-filter: brightness(200%);}
-.brightness img { filter: brightness(0.3);}</style>
-  <img src="../images/berlin.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-
-
-<!-- contrast() -->
-<div class="slide filter contrast">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast" target="resource">contrast()</a></code> function</h1></header>
-<section class="content">
-  <p>Adjusts the contrast of the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. A value under 100% decreases the contrast, while a value over 100% increases it. 0% and 0 will be completely grey. 100% and 1 have no effect.<br/><br/>Negative values are not valid.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/brazil.jpg);}
-.contrast {backdrop-filter: contrast(200%);}
-.contrast img { filter: contrast(0.3);}</style>
-  <img src="../images/brazil.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-<!-- grayscale() -->
-<div class="slide filter grayscale">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale" target="resource">grayscale</a></code> function</h1></header>
-<section class="content">
-  <p> converts the input image to grayscale. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% and 1 (and higher) are completely greyscale.  0% and 0 have no effect.<br/><br/>Negative values are not valid.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/seoul.jpg);}
-.grayscale { backdrop-filter: grayscale(90%);}
-.grayscale img { filter: grayscale(0.5);}</style>
-  <img src="../images/seoul.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-
-
-<!-- drop-shadow -->
-<div class="slide filter dropshadow">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow" target="resource">drop-shadow()</a></code> function</h1></header>
-<section class="content">
-  <p>applies a drop shadow effect to the input image. Syntax is the same as <code>box-shadow</code>, written as <code>drop-shadow(offset-x offset-y blur-radius spread-radius color)</code>, but spread radius is not supported.<br/><br/>It follows the image :D.</p>
-  <style contenteditable class="editme">.body {background-image: none;}
-.dropshadow {backdrop-filter: drop-shadow(-37px -37px 20px var(--colorpop));}
-.dropshadow img { filter: drop-shadow(30px 30px 0 var(--colorpop));}</style>
-  <img src="../images/star.svg" alt="A star"/>
-</section>
-</div>
-
-
-<!-- hue-rotate -->
-<div class="slide filter hue-rotate">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate" target="resource">hue-rotate()</a></code> function</h1></header>
-<section class="content">
-  <p> rotates the hue of an element and its contents. Set as as <code>&lt;angle></code>. A positive angle increases the hue value. A negative rotation decreases the hue value. The values reset at 360deg, as if <code>angle = &lt;angle> % 360</code>.<br/><br/><code>hue-rotate(-180deg)</code> and <code>hue-rotate(180deg)</code> end up being the same, completely rotated. Even the border!</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/womensmarch.webp);}
-.hue-rotate {backdrop-filter: hue-rotate(-45deg);}
-.hue-rotate img { filter: hue-rotate(-180deg);}</style>
-  <img src="../images/womensmarch.webp" alt="women protesting"/>
-</section>
-</div>
-
-<!-- invert() -->
-<div class="slide filter invert">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert" target="resource">invert()</a></code> function</h1></header>
-<section class="content">
-  <p>inverts the color samples in the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 100% or 1 is completely inverted. 0% leaves or 0 makes no change. Values between 0% and 100% and 0 and 1 are linear multipliers on the effect.<br/><br/>Negative values are not valid. Check out the difference betweetn inverting the slide v. the body.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/istanbul.jpg);}
-.invert {backdrop-filter: invert(10%);}
-.invert img { filter: invert(1);}</style>
-  <img src="../images/istanbul.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-
-<!-- sepia() -->
-
-<div class="slide filter sepia">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia" target="resource">sepia()</a></code> function</h1></header>
-<section class="content">
-  <p>converts the input image to sepia, giving it a more yellow/brown antique appearance. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely sepia. 200% and 2 doubles the sepia. 0% and 0 don't change the image's appearance.<br/><br/>Negative values are not valid. Change the effect from the slide to the body.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/woc.jpg);}
-.sepia {backdrop-filter: sepia(50%);}
-.sepia img { filter: sepia(1);}</style>
-  <img src="../images/woc.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-<!-- saturate() -->
-<div class="slide filter saturate">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate" target="resource">saturate()</a></code> function</h1></header>
-<section class="content">
-  <p>Super-saturates or desaturates the input image. Set as a <code>&lt;percentage></code> or <code>&lt;number></code>. 0% and 0 are completely unsatured: black and white. 200% and 2 doubles the saturation. 100% and 1 have no effect. Greater numbers create modern art.<br/><br/>Negative values are not valid.</p>
-  <style contenteditable class="editme">.body {background-image: url(../images/xl.jpg);}
-.saturate {backdrop-filter: saturate(200%);}
-.saturate img { filter: saturate(0.3);}</style>
-  <img src="../images/xl.jpg" alt="woman protesting"/>
-</section>
-</div>
-
-
-
 
 
 <div class="slide">
-<header><h1>Filter DeActivation!</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
 <section class="content">
-  <p>Revert the unset</p>
- <style contenteditable class="editme">#presentation:NOTVALID,
-#slides#slides {background-color: #dedede;} 
-.slide.slide.slide:NOTVALID { 
-  background: var(--light_bg);
-} </style>
+  <p></p>
+  <pre contenteditable>
+  </pre>
 </section>
 </div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>
+  </pre>
+</section>
+</div>
+
 
 <!--  -->
 <div class="slide intro">
