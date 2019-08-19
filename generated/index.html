@@ -598,22 +598,22 @@ body {counter-reset: pagecount;}
   &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
   &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
 &lt;/blockquote&gt;</pre>
-<pre contenteditable style="float: left; position:relative; margin-right: 50px;">
-blockquote p::before,
-blockquote p::after {
-  font-size: 2em;
+<style contenteditable class="editme" style="float: left; width:50%;position:relative; margin-right: 50px;">
+blockquote.gc p::before,
+blockquote.gc p::after {
+  font-size: 3em;
   color: #C7573A;
   line-height: 0;
   vertical-align: middle;
 }
-blockquote p:first-child::before {
+blockquote.gc p:first-child::before {
   content: "\275D";
   margin: 0 5px 0 -40px;
 }
-blockquote p:last-child::after {
+blockquote.gc p:last-child::after {
   content: "\275E";
   margin: 0 -40px 0 5px;
-}</pre>
+}</style>
 <blockquote class="gc"><p>With generated content you can created text effects.</p><p>We'll cover other uses next.</p></blockquote>
 </section>
 </div>
