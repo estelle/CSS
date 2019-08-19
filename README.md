@@ -21,10 +21,10 @@
     <li><a href="background">Backgrounds</a></li>
     <li><a href="gradients">Gradients</a></li>
     <li><a href="boxmodel">Box Model</a></li>
-    <li><a href="flexbox">Flexbox</a> - needs review</li>
+    <li><a href="flexbox">Flexbox</a></li>
     <li><a href="tables">Tables</a></li>
-    <li><a href="grid">Grids</a> - Needs review. subgrid.</li>
+    <li><a href="grid">Grids</a></li>
     <li><a href="transforms">Transforms</a></li>
     <li><a href="animations">Transitions &amp; Animation</a></li>
-  <li><a href="other">Other Features</a> - Some sections need work</li>
+  <li><a href="other">Other Features</a></li>
 </ol>
