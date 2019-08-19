@@ -93,6 +93,11 @@ background-size: 400px 250px, 250px 400px, 90% 90%;
 background-position: center;
 background-repeat: no-repeat;
 }
+.dream {
+  font-family: serif; 
+  text-shadow: none;
+  background-color: white;
+}
  </style>
   </head>
   <body>
@@ -218,8 +223,8 @@ background-repeat: no-repeat;
 
 <div class="slide object">
   <header onclick="setData('bi');"><h1>Browser support: <code>border-image</code> property</h1></header>
-<object id="bi" data-data="https://caniuse.com/#search=border-image"></object>
-  <a href="https://caniuse.com/#search=border-image" target="play" title="open resource in new window">Open</a>
+<object id="bi" data="https://caniuse.com/#search=border-image"></object>
+  <a href="https://caniuse.com/#search=border-image" target="play" title="open resource in new window" class="objectlink">Open</a>
 </div>
 
 
@@ -433,31 +438,13 @@ Edit this text to grow/shrink this element.</div>
 
  <div class="slide">
   <header><h1>border-image</h1></header>
-    <section class="content">
-<pre contenteditable style="float:right; margin-bottom:40px;">
-S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
-W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
-<select id="repeat" onChange="changeBorderImage();"><option value="stretch" selected>stretch</option><option value="repeat">repeat</option><option value="round">round</option></select> </pre>
-
-<div id="boderimage"></div>
-
-
-<pre contenteditable style="clear:both;">border-image: url(gradient.png) <b id="sliceval">34</b> / <b id="widthval">34</b><b>px</b> <b id="repeatval">stretch</b>;</pre>
+    <section class="content"><br/>
+<div id="border-image" contenteditable>&lt;div id="border-image"></div><br/>
+<style contenteditable class="editme">#border-image {
+  border-image: url(img/gradient.png) 3 / 3px stretch;
+}</style>
 </section>
-<script defer="">
-  function changeBorderImage(){
-    var slice = document.getElementById('slice').value;
-    var width = document.getElementById('width').value;
-    var repeat = document.getElementById('repeat');
-    repeat = repeat.options[repeat.selectedIndex].text;
-    document.getElementById('boderimage').style.webkitBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
-    document.getElementById('boderimage').style.mozBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
-    document.getElementById('sliceval').innerHTML = slice;
-    document.getElementById('widthval').innerHTML = width;
 
-    document.getElementById('repeatval').innerHTML = repeat;
-  }
-</script>
 </div>
 
  <div class="slide object">
@@ -606,7 +593,11 @@ Pseudo-classes/-elements, e.g. a:hover</pre>
 </div>
 
 
-
+<div class="slide object">
+  <header onclick="setData('bi');"><h1>Browser support: Columns</h1></header>
+<object id="bi" data="https://caniuse.com/#search=columns"></object>
+  <a href="https://caniuse.com/#columns" target="play" title="open resource in new window" class="objectlink">Open</a>
+</div>
 
 
 
@@ -681,7 +672,7 @@ widows</pre>
   <p>"max-count" for columns. Sets the maximum number of columns in a multi-column layout. </p>
   <pre contenteditable>&lt;integer> | auto</pre>
 <p>The number of columns will not exceed the number listed, but may be fewer, if the width of each column would be less than the minimum width set by the <code>column-width</code> property</p>
-<style contenteditable class="editme">.cCount {column-count: 25;}</style>
+<style contenteditable class="editme">.cCount {column-count: 8;}</style>
 <div class="dream cCount"><p>I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.</p>
 
 <p>Five score years ago, a great American, in whose symbolic shadow we stand today, signed the Emancipation Proclamation. This momentous decree came as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice. It came as a joyous daybreak to end the long night of captivity.</p>
@@ -701,7 +692,7 @@ widows</pre>
   <p>"min-width" for columns. Sets the ideal or 'minimum' column width in a multi-column layout. </p>
   <pre contenteditable>&lt;length> | auto</pre>
   <p>If the container is narrower, the single column's width will be 100%. Otherwise, it will have up to the column-count number of columns, as long as each is at least column-width wide. </p>
-  <style contenteditable class="editme">.cWidth {column-width: 3em;}</style>
+  <style contenteditable class="editme">.cWidth {column-width: 10em;}</style>
   <div class="dream cWidth"><p>This note was a promise that all men, yes, black men as well as white men, would be guaranteed the unalienable rights of life, liberty, and the pursuit of happiness.</p>
 
 <p>It is obvious today that America has defaulted on this promissory note insofar as her citizens of color are concerned. Instead of honoring this sacred obligation, America has given the Negro people a bad check; a check which has come back marked "insufficient funds."</p>
@@ -720,9 +711,8 @@ widows</pre>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns" target="resource">columns</a></code> shorthand property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>sets the column width and column count of an element.</p>
+  <pre contenteditable>&lt;max-column-count> &lt;min-column-width></pre>
   <style contenteditable class="editme">.cColumns {columns: 6 12em;}</style>
   <div class="dream cColumns"><p>It would be fatal for the nation to overlook the urgency of the moment. This sweltering summer of the Negro's legitimate discontent will not pass until there is an invigorating autumn of freedom and equality. Nineteen sixty-three is not an end, but a beginning. Those who hope that the Negro needed to blow off steam and will now be content will have a rude awakening if the nation returns to business as usual. There will be neither rest nor tranquility in America until the Negro is granted his citizenship rights. The whirlwinds of revolt will continue to shake the foundations of our nation until the bright day of justice emerges.</p>
 
@@ -749,7 +739,15 @@ widows</pre>
     <dd>Content is equally divided between columns. In paged media, only the last page is balanced.</dd>
     <dt>balance-all</dt>
     <dd>Content is equally divided between columns. In paged media, all pages are balanced.</dd>
-    </dl> 
+    </dl> </section>
+</div>
+
+
+
+<!-- column-fill -->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-fill" target="resource">column-fill</a></code> property</h1></header>
+<section class="content">
   <style contenteditable class="editme">.cFill {column-fill: balance;
   height: 100vh;
   columns: 6 12em;}</style>
@@ -772,9 +770,17 @@ widows</pre>
 <div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap" target="resource">column-gap</a></code> property</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Sets the size of the gap (gutter) between an element's columns.</p>
+  <pre contenteditable>normal | &lt;length-percentage></pre>
+  <p>Normal is 1em.</p>
+  <p>Column-gap is now specified in Box Alignment, it may be used in Multi-column, Flexible Box, and Grid layouts. (supported in FF)</p></section>
+</div>
+
+
+<!-- column-gap -->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap" target="resource">column-gap</a></code> property</h1></header>
+<section class="content">
   <style contenteditable class="editme">.cGap {
   column-gap: 5em;
   columns: 6 12em;
@@ -807,10 +813,19 @@ widows</pre>
     <dd>Deafault. The element does not span multiple columns.</dd>
     <dt>all</dt>
     <dd>The element spans across all columns. Content in the normal flow that appears before the element is automatically balanced across all columns before the element appears. The element establishes a new block formatting context. </dd>
-  </dl>
+  </dl></section>
+</div>
+
+
+<!-- column-span -->
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-span" target="resource">column-span</a></code> property</h1></header>
+<section class="content">
+
   <style contenteditable class="editme">.cSpan {columns: 6 12em;}
 .cSpan .spanner { 
-   column-span: all; 
+   column-span: all;
+   background: pink; 
 }</style>
 <div class="dream cSpan">
 <p>I have a dream that one day on the red hills of Georgia the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</p>
@@ -848,11 +863,11 @@ widows</pre>
   <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color" target="resource">column-rule-color</a></dt>
   <dd>Same sytnax as a single valued <code>border-color</code>, or just <code>color</code>, with values being any valid color.</dd>
 </dl>
-<pre contenteditable>column-rule-width: 3px;
+<pre contenteditable>column-rule-width: 45px;
   column-rule-style: ridge;
-  column-rule-color: var(--colorspalsh);</pre>
+  column-rule-color: var(--colorpop);</pre>
 
-<pre contenteditable>column-rule: 3px ridge var(--colorspalsh);</pre>
+<pre contenteditable>column-rule: 45px ridge var(--colorpop);</pre>
 </section>
 </div>
 
@@ -863,7 +878,7 @@ widows</pre>
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule" target="resource">column-rule</a></code> shorthand property</h1></header>
 <section class="content">
   <style contenteditable class="editme">.cRule { columns: 6 12em;
-   column-rule: 3px ridge var(--colorspalsh); 
+   column-rule: 45px ridge var(--colorpop); 
  }</style>
   <div class="dream cRule">
 
@@ -897,41 +912,115 @@ widows</pre>
 
 
 
-<div class="slide divider">
+<div class="slide">
 <header><h1>Column related properties</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+  <p>Element boundaries are affected by three properties: the <code>break-after</code> value of the previous element, the <code>break-before</code> value of the next element, and it's own <code>break-inside</code> value.
+          <ul>
+           <code> <li>break-after</li>
+            <li>break-before</li>
+            <li>break-inside</li>
+            <li>orphans</li>
+            <li>widows</li></code>
+          </ul>
 </section>
 </div>
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
+  <section class="content">
+
+<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-after" target="resource">break-after</a></code> property</h3>
+  <p>Sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.</p>
+  <pre contenteditable class="multi">auto | avoid | always | all | avoid-page | page | left 
+right | recto | verso | avoid-column | column 
+ avoid-region | region</pre>
+
+<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-before" target="resource">break-before</a></code> property</h3>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
-</section>
+  <p>sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.</p>
+<pre contenteditable class="multi">auto | avoid | always | all | avoid-page 
+page | left | right | recto | verso 
+avoid-column | column | avoid-region | region</pre>
+<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside" target="resource">break-inside</a></code> property</h3>
+  <p>how page, column, or region breaks should behave inside a generated box. </p>
+  <pre contenteditable>auto | avoid | avoid-page | avoid-column | avoid-region</pre>
+<p>If there is no generated box, these properties are ignored.</p></section>
 </div>
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
+<header><h1>Values</h1></header>
 <section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+<h4 id="Generic_break_values">Generic break values</h4>
+<dl>
+  <dt>auto</dt>
+  <dd>Allows, but does not force, any break (page, column, or region) to be inserted right after the principal box.</dd>
+  <dt>avoid</dt>
+  <dd>Avoids any break (page, column, or region) from being inserted right after the principal box.</dd>
+  <dt>always</dt>
+  <dd>Forces a page break right after the principal box. The type of this  break is that of the immediately-containing fragmentation context. If  we are inside a multicol container then it would force a column break,  inside paged media (but not inside a multicol container) a page break.</dd>
+  <dt>all</dt>
+  <dd>Forces a page break right after the principal box. Breaking through  all possible fragmentation contexts. So a break inside a multicol  container, which was inside a page container would force a column and  page break.</dd>
+</dl>
+<h4 id="Page_break_values">Page break values</h4>
+<dl>
+  <dt>avoid-page</dt>
+  <dd>Avoids any page break right after the principal box.</dd>
+  <dt>page</dt>
+  <dd>Forces a page break right after the principal box.</dd>
+  <dt>left</dt>
+  <dd>Forces one or two page breaks right after the principal box, whichever will make the next page into a left page.</dd>
+  <dt>right</dt>
+  <dd>Forces one or two page breaks right after the principal box, whichever will make the next page into a right page.</dd>
+  <dt>recto</dt>
+  <dd>Forces one or two page breaks right after the principal box,  whichever will make the next page into a recto page. (A recto page is a  right page in a left-to-right spread or a left page in a right-to-left  spread.)</dd>
+  <dt>verso</dt>
+  <dd>Forces one or two page breaks right after the principal box,  whichever will make the next page into a verso page. (A verso page is a  left page in a left-to-right spread or a left right in a right-to-left  spread.)</dd>
+</dl>
+<h4 id="Column_break_values">Column break values</h4>
+<dl>
+  <dt>avoid-column</dt>
+  <dd>Avoids any column break right after the principal box.</dd>
+  <dt>column</dt>
+  <dd>Forces a column break right after the principal box.</dd>
+</dl>
+<h4 id="Region_break_values">Region break values</h4>
+<dl>
+  <dt>avoid-region</dt>
+  <dd>Avoids any region break right after the principal box.</dd>
+  <dt>region</dt>
+  <dd>Forces a region break right after the principal box.</dd>
+</dl>
 </section>
 </div>
 
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="resource"></a></code> property</h1></header>
-<section class="content">
-  <p></p>
-  <pre contenteditable>
-  </pre>
+<div class="slide"><section class="content">
+<h2><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/orphans" target="resource">orphans</a></code> property</h3>
+
+  <p>Sets the minimum number of lines in a block container that must be shown at the bottom of a page, region, or column.</p>
+  <pre contenteditable>&lt;integer></pre>
+
+<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/widows" target="resource">widows</a></code> property</h3>
+  <p>Sets the minimum number of lines in a block container that must be shown at the top of a page, region, or column.</p>
+ <pre contenteditable>&lt;integer></pre>
 </section>
+</div>
+
+
+ <div class="slide">
+  <header><h1>Exercise</h1></header>
+  <section class="content">
+
+    <p>Open the <a href="../ihaveadream.html">I have a Dream</a></p>
+    <p>Make the </p>
+    <ul>
+      <li>line height</li>
+      <li>font face</li>
+      <li>justification</li>
+      <li>spacing</li>
+      <li>Make the blockquotes and headings stand out.</li></ul>
+      <p>Try to do it without looking at the example a few slides back.</p>
+  </section>
 </div>
 
 
@@ -952,6 +1041,65 @@ color-burn | hard-light | soft-light | difference | exclusion
 hue | saturation | color | luminosity</pre>
 <p>Blending modes should be defined in the same order as the background-image property. If the blending modes' and background images' list lengths are not equal, it will be repeated and/or truncated until lengths match.</p>
 <pre contenteditable>background-blend-mode: screen, multiply;</pre>
+</section>
+</div>
+
+
+<div class="slide bbm">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode" target="resource">background-blend-mode</a></code></h1></header>
+<style>
+.bbm ul {
+  display: flex;
+  gap: 1em;
+  flex-flow: row wrap;
+}
+.bbm li { 
+    flex: 200px;
+    list-style-type: none;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+.bbm li span {background-color: rgba(255,255,255,0.8);}
+.bbm .magic {visibility: hidden;}
+</style>
+<section class="content">
+<ul>
+  <li style="background-blend-mode: color;"><span>color</span></li>
+  <li style="background-blend-mode: color-burn;"><span>color-burn</span></li>
+  <li style="background-blend-mode: color-dodge;"><span>color-dodge</span></li>
+  <li style="background-blend-mode: darken;"><span>darken</span></li>
+  <li style="background-blend-mode: difference;"><span>difference</span></li>
+  <li style="background-blend-mode: exclusion;"><span>exclusion</span></li>
+  <li style="background-blend-mode: hard-light;"><span>hard-light</span></li>
+  <li style="background-blend-mode: hue;"><span>hue</span></li>
+  <li style="background-blend-mode: lighten;"><span>lighten</span></li>
+  <li style="background-blend-mode: luminosity;"><span>luminosity</span></li>
+  <li style="background-blend-mode: multiply;"><span>multiply</span></li>
+  <li style="background-blend-mode: normal;"><span>normal</span></li>
+  <li style="background-blend-mode: overlay;"><span>overlay</span></li>
+  <li style="background-blend-mode: saturation;"><span>saturation</span></li>
+  <li style="background-blend-mode: screen;"><span>screen</span></li>
+  <li style="background-blend-mode: soft-light;"><span>soft-light</span></li>
+
+  <li style="background-blend-mode: darken, multiply;"><span>darken, multiply</span></li>
+  <li style="background-blend-mode: difference, overlay;"><span>difference, overlay</span></li>
+  <li style="background-blend-mode: luminosity, saturation;"><span>luminosity, saturation</span></li>
+  <li style="background-blend-mode: hue, screen;"><span>hue, screen</span></li>
+  <li style="background-blend-mode: exclusion, soft-light;"><span>exclusion, soft-light</span></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+  <li class="magic"></li>
+</ul>
+<style class="editme" contenteditable>.bbm li {
+  background-image: url(img/coffee.jpg), 
+  linear-gradient(yellow, red); 
+  background-position: center;
+  background-size:cover;
+}</style>
 </section>
 </div>
 
