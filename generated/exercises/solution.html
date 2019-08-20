@@ -18,7 +18,7 @@ https://estelle.github.io/CSS/generated/exercises/img/rss.png
 https://estelle.github.io/CSS/generated/exercises/img/linkedin.png */
 
 
-/* create a selector for linkedin, and add the linkedin icon before the content, and "(Linked Profile)" after the link*/
+/* create a selector for linkedin, and add the linkedin icon before the content, and "(LinkedIn Profile)" after the link*/
 a[href*="/in/"][href*=".linkedin.com/"]::before { 
   content: url(https://estelle.github.io/CSS/generated/exercises/img/linkedin.png);
   position: relative; top: 4px;
@@ -47,7 +47,7 @@ a[href*="facebook.com"]::before {
 }
 
 a[href*="facebook.com"]::after{
-  content: " - (Corrupt mega corp)";
+  content: " - (Unethical mega corp)";
 }
 
 /* create a selector for twitter, and add the twitter icon before the content */
@@ -58,7 +58,7 @@ a[href*="twitter.com/"]::before {
 }
 
 a[href*="twitter.com/"]::after{
-  content: " - (Linked Profile)";
+  content: " - (LinkedIn Profile)";
 }
 
 
