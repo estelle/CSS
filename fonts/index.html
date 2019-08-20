@@ -1439,6 +1439,29 @@ I'm sure those windmills will keep them cool. This is the worst part. The calm b
 
 
 
+<div class="slide">
+<header><h1>Font Notes</h1></header>
+<section class="content">
+If a font family match occurs, the user agent assembles the set of font faces in that family and then narrows the set to a single face using other font properties in the order given below. A group of faces defined via @font-face rules with identical font descriptor values but differing ‘unicode-range’ values are considered to be a single composite face for this step:
+<ol>
+   <li> ‘font-stretch’ is tried first. If the matching set contains faces with width values matching the ‘font-stretch’ value, faces with other width values are removed from the matching set. If there is no face that exactly matches the width value the nearest width is used instead. If the value of ‘font-stretch’ is ‘normal’ or one of the condensed values, narrower width values are checked first, then wider values. If the value of ‘font-stretch’ is one of the expanded values, wider values are checked first, followed by narrower values. Once the closest matching width has been determined by this process, faces with other widths are removed from the matching set.</li>
+<li>    ‘font-style’ is tried next. If the value of ‘font-style’ is ‘italic’, italic faces are checked first, then oblique, then normal faces. If the value is ‘oblique’, oblique faces are checked first, then italic faces and then normal faces. If the value is ‘normal’, normal faces are checked first, then oblique faces, then italic faces. Faces with other style values are excluded from the matching set. User agents are permitted to distinguish between italic and oblique faces within platform font families but this is not required, so all italic or oblique faces may be treated as italic faces. However, within font families defined via @font-face rules, italic and oblique faces must be distinguished using the value of the ‘font-style’ descriptor. For families that lack any italic or oblique faces, user agents may create artificial oblique faces, if this is permitted by the value of the ‘font-synthesis’ property.</li>
+<li>    ‘font-weight’ is matched next, so it will always reduce the matching set to a single font face. If bolder/lighter relative weights are used, the effective weight is calculated based on the inherited weight value, as described in the definition of the ‘font-weight’ property. Given the desired weight and the weights of faces in the matching set after the steps above, if the desired weight is available that face matches. Otherwise, a weight is chosen using the rules below:<ol>
+  <li>
+        If the desired weight is less than 400, weights below the desired weight are checked in descending order followed by weights above the desired weight in ascending order until a match is found.</li><li>
+        If the desired weight is greater than 500, weights above the desired weight are checked in ascending order followed by weights below the desired weight in descending order until a match is found.</li><li>
+        If the desired weight is 400, 500 is checked first and then the rule for desired weights less than 400 is used.
+        If the desired weight is 500, 400 is checked first and then the rule for desired weights less than 400 is used.
+        </li>
+        </ol>
+        </li> 
+   <li> ‘font-size’ must be matched within a UA-dependent margin of tolerance. (Typically, sizes for scalable fonts are rounded to the nearest whole pixel, while the tolerance for bitmapped fonts could be as large as 20%.) Further computations, e.g., by ‘em’ values in other properties, are based on the ‘font-size’ value that is used, not the one that is specified. </li>
+ </li>
+</ol>
+</section>
+</div>
+
+
 <div class="slide ffs2">
 <header><h1>How many font files do you need?</h1></header>
 <section class="content">

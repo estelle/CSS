@@ -859,11 +859,69 @@ a[href$="vcs"]::before {
   </section>
 </div>
 
+
+<!--blank-->
+<div class="slide">
+     <header><h1>This page intentionally left blank</h1></header>
+     <section class="content"></section>
+</div>
+
+
+<!--blank-->
+<div class="slide">
+     <header><h1>Solution</h1></header>
+<section class="content">
+<p>Make each card 300px tall by 200px wide.</p>
+<pre contenteditable>.card {
+  <i>height: 300px;
+  width: 300px;</i>
+}</pre>
+<p>Make the face and the back the same size, and in the same spot</p>
+<pre contenteditable>.card {
+  height: 300px;
+  width: 300px;
+  <i>position: relative;</i>
+}</pre>
+<p>Add two pseudo element selector blocks for the face of each card</p>
+<pre contenteditable>
+  .face, 
+  .back {
+    <i>position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;</i>
+}
+</pre>
+<p>Add generated content: the face value</p>
+
+<p>Make that content (the "A" in our current examples, but this should be automatically set), appear twice on the face of the card</p>
+
+<p>Place one of those valies 10 pixels from the upper left hand corner of the face of the card.</p>
+<p>Place the other A 10 pixels from the bottom righ hand corner of the face of the card.</p>
+<pre contenteditable>[data-value]:after,
+[data-value]:before {
+  content: attr(data-value);
+  position: absolute;
+}
+.face::before {
+  top: 10px;
+  left: 10px;
+}
+.face::after {
+  bottom: 10px;
+  right: 10px;
+}</pre>
+
+
+
+     </section>
+</div>
+
+
+
 <!--NEXT-->
 <div class="slide intro">
      <header><h1>Media Queries</h1></header>
      <section class="content">
-    <h1><a href="../media/">Next ➹</a></h1></section>
+    <h1><a href="../media/index.html">Next ➹</a></h1></section>
 </div>
 
 
