@@ -1024,6 +1024,113 @@ avoid-column | column | avoid-region | region</pre>
 </div>
 
 
+
+
+
+
+
+
+
+
+<!-- Lists -->
+<div class="slide intro">
+  <header><h1>Lists</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<div class="slide">
+<header><h1>Related Properties</h1></header>
+<section class="content">
+<ul>
+  <li>unordered
+   <ol>
+     <li>ordered</li>
+     <li>ordered</li>
+   </ol>
+  </li>
+  <li>unordered</li>
+</ul>
+    <dl>
+      <dt><code>list-style-type</code></dt> <dd>Sets the type of bullets to use for the list, for example, square or circle bullets for an unordered list, or numbers, letters or roman numerals for an ordered list.</dd>
+    <dt><code>list-style-position</code></dt> <dd>Sets whether the bullets appear inside the list items, or outside them before the start of each item.</dd>
+    <dt><code>list-style-image</code></dt> <dd>Allows you to use a custom image for the bullet, rather than a simple square or circle.</dd>
+  </dl>
+
+</section>
+</div>
+
+<div class="slide">
+<header><h1>The markup</h1></header>
+<section class="content">
+    <pre>&lt;ul>
+  &lt;li>
+    unordered
+    &lt;ol>
+      &lt;li>ordered&lt;/li>
+      &lt;li>ordered&lt;/li>
+    &lt;/ol>
+  &lt;/li>
+  &lt;li>unordered&lt;/li>
+&lt;/ul></pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type" target="resource">list-style-type</code></h1></header>
+<section class="content">
+  <p>Sets the type of bullets to use for the list, for example, square or circle bullets for an unordered list, or numbers, letters or roman numerals for an ordered list.</p>
+  <pre contenteditable>
+  </pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position" target="resource">list-style-position</code></h1></header>
+<section class="content">
+  <p>Sets whether the bullets appear inside the list items, or outside them before the start of each item.</p>
+  <pre contenteditable>
+  </pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image" target="resource">list-style-image</code></h1></header>
+<section class="content">
+  <p>Allows you to use a custom image for the bullet, rather than a simple square or circle.</p>
+  <pre contenteditable>
+  </pre>
+</section>
+</div>
+
+<div class="slide">
+<header><h1>User Agent</h1></header>
+<section class="content">
+  <p></p>
+  <pre contenteditable>li {
+    display: list-item;
+    text-align: match-parent;
+}
+ul, ol, menu {
+    counter-reset: list-item;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+}
+::marker {
+    text-align: end;
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+}
+</pre>
+</section>
+</div>
+
+
 <!--  -->
 <div class="slide intro">
   <header><h1>More art direction</h1></header>
