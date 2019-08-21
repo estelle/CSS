@@ -3,17 +3,15 @@
 
 /* the container */
 figure {
-  height: 300px;
-  width: 200px;
   position: relative;
-  margin: auto;
 }
 /* all the cards */
 .card {
   height: 300px;
   width: 200px;
-  position: absolute;
-  border-radius: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .back,
 .face {
@@ -22,21 +20,16 @@ figure {
   top: 0;
   bottom: 0;
   right:0;
-  border-radius: 10px;
 }
 /*just to test */
-.card, .back, .face {border-radius: 10px;}
+.card, .back, .face {outline: 1px dashed blue;}
 /* backs of the cards */
 .back {
-  border: 10px solid red;
-  background-color: blue;
+
 }
 /* card faces */
 .face {
   font-size: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .face::before {
   content: attr(data-value);
@@ -55,12 +48,10 @@ figure {
 
 }
 .card:nth-of-type(2) {
-  left: 20px;
-  top: 20px;
+
 }
 .card:last-of-type {
-  left: 40px;
-  top: 40px;
+
 }
 /* faces of first, second and last cards */
 .card:first-of-type .face {

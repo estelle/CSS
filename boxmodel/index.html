@@ -868,6 +868,7 @@ border-top-width: 1px;</pre><br><br/>
   </section>
 </div>
 
+<div class="slide">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/css/isolation" target="resource">isolation</a></code> property</h1></header>
 <section class="content">
   <p>Determines whether an element must create a new stacking context.</p>
@@ -1861,15 +1862,14 @@ display: unset;</pre>
 </figure>
     <p>Let's continue on with our card example just a bit.</p>
     <ol>
-      <li>Remove the outline (if you added one earlier)</li>
-      <li>Add border around the cards </li>
+      <li>Add a border around the cards </li>
       <li>Round the corners</li>
       <li>Add a decorative border on the back of the card.</li>
       <li>Add a shadow to the back and front of each card.</li>
       <li>Stack all the cards into a pack (one on top of the other)</li>
       <li>Move them around a little bit so you can see a bit of each</li><li>Center the whole thing</li>
     </ol>
-    <p>Extra credit: vertically center the ♥, ♣, and ♦</p>
+    <p>Extra credit: vertically center the ♥, ♣, and ♦. (You have to remove the visibility hidden to see the face to do this.)</p>
     <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
   </section>
 </div>
@@ -1886,95 +1886,55 @@ display: unset;</pre>
 
 <div class="slide">
   <header><h1>Solution</h1></header>
-  <section class="content"><pre contenteditable>@charset "UTF-8";
-/* CSS Document */
-
-/* the container */
+  <section class="content">
+<p>center the whole card</p>
+<pre contenteditable>
 figure {
-  width: 200px;
-  height: 300px;
+  <i>width: 200px;
+  height: 300px;</i>
   position: relative;
-  <b>margin: auto;</b>
-}
-/* all the cards */
+  <i>margin: auto;</i>
+}</pre>
+<p>Add border around the cards</p>
+<pre contenteditable>
 .card {
   height: 300px;
   width: 200px;
   position: absolute;
-  <b>border-radius: 10px;
-  border: 2px solid #ccc;</b>
+  <i>border-radius: 10px;
+  border: 2px solid #ccc;</i>
 }
-.back,
+</pre>
+<p>Round the corners<br/>
+Add a decorative border on the back of the card.</p>
+<pre contenteditable>.back,
 .face {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right:0;
-  <b>border-radius: 10px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);</b>
-}
-/* backs of the cards */
+  ....
+  <i>border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);</i>
+}</pre>
+
+<pre contenteditable>
 .back {
-  <b>border: 10px solid red;</b>
-  background-color: blue;
-}
-/* card faces */
+  ....
+  <b>border: 10px solid white;</b>
+}</pre>
+<p>Extra credit: vertically center the ♥, ♣, and ♦</p>
+<pre contenteditable>
 .face {
   font-size: 2em;
   <b>line-height: 300px; /* extra credit. temporary */
   text-align: center;</b>
-}
-.face::before {
-  content: attr(data-value);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  <b>line-height: 1; /* extra credit. temporary */</b>
-}
-.face::after {
-  content: attr(data-value);
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  <b>line-height: 1; /* extra credit. temporary */</b>
-}
-/* first, second, and last card */
-.card:first-of-type {
-
-}
-.card:nth-of-type(2) {
+}</pre>
+<p>Move them around a bit so they're not all on top of each other</p>
+<pre contenteditable>.card:nth-of-type(2) {
   <b>left: 20px; /* temporary */
   top: 20px;</b>
 }
 .card:last-of-type {
   <b>left: 40px; /* temporary */
   top: 20px;</b>
-}
-/* faces of first, second and last cards */
-.card:first-of-type .face {
-
-}
-.card:nth-of-type(2) .face {
-
-}
-.card:last-of-type  .face {
-  
-}
-/* red cards */
-[data-type="H" i],
-[data-type="D" i] {
-   color: red;
- }
-/* black cards */
-[data-type="C" i],
-[data-type="S" i] {
-   color: black;
- }
-/* hovered card */
-.card:hover {
-
-} </pre>
+}</pre>
   
   </section>
 </div>

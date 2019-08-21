@@ -713,12 +713,14 @@ I rise..
     <div id="bcksizeexample" class="bgimage bgimagebk">
     <input type="range" min="50" max="150" step="5" value="70" id="bcksizechange" onChange="changeBackSide(this)" style="position:relative; top: -30px;"/>
     </div><ul>
-    	  <li>Use for creating gradients backgrounds
-            <li>note 2 length values needed to constrain a gradient</li>
-        </li>
+
         <li>Needed for hiDPI images</li>
         <li>&lsquo;contain&rsquo; grows/shrinks to fully fit - may have 'white space', but no clipping.</li>
         <li>&lsquo;cover&rsquo; grows to min size that covers 100% of height &amp; width - no white space, but might clip.</li>
+        <li>Note: Use for creating gradients backgrounds<ul>
+            <li>note 2 length values needed to constrain a gradient</li>
+          </ul>
+        </li>
     </ul>
 
     </section>
@@ -848,7 +850,7 @@ I rise..
 <div class="slide beautiful">
 <header><h1>Play with longhand properties</h1></header>
 <section class="content">
-   <p style="background-color: var(--invertedtext);">Is using longhand values less confusing?</code></p>
+   <p style="background-color: var(--invertedtext);">Is using longhand values less confusing? I got you started....</p>
  <style contenteditable class="editme">.beautiful {
   background-image:;
 }</style>
@@ -887,28 +889,28 @@ hue | saturation | color | luminosity</pre>
 </style>
 <section class="content">
 <ul>
-  <li style="background-blend-mode: color;">color</li>
-  <li style="background-blend-mode: color-burn;">color-burn</li>
-  <li style="background-blend-mode: color-dodge;">color-dodge</li>
-  <li style="background-blend-mode: darken;">darken</li>
-  <li style="background-blend-mode: difference;">difference</li>
-  <li style="background-blend-mode: exclusion;">exclusion</li>
-  <li style="background-blend-mode: hard-light;">hard-light</li>
-  <li style="background-blend-mode: hue;">hue</li>
-  <li style="background-blend-mode: lighten;">lighten</li>
-  <li style="background-blend-mode: luminosity;">luminosity</li>
-  <li style="background-blend-mode: multiply;">multiply</li>
-  <li style="background-blend-mode: normal;">normal</li>
-  <li style="background-blend-mode: overlay;">overlay</li>
-  <li style="background-blend-mode: saturation;">saturation</li>
-  <li style="background-blend-mode: screen;">screen</li>
-  <li style="background-blend-mode: soft-light;">soft-light</li>
+  <li style="background-blend-mode: color;"><span>color</span></li>
+  <li style="background-blend-mode: color-burn;"><span>color-burn</span></li>
+  <li style="background-blend-mode: color-dodge;"><span>color-dodge</span></li>
+  <li style="background-blend-mode: darken;"><span>darken</span></li>
+  <li style="background-blend-mode: difference;"><span>difference</span></li>
+  <li style="background-blend-mode: exclusion;"><span>exclusion</span></li>
+  <li style="background-blend-mode: hard-light;"><span>hard-light</span></li>
+  <li style="background-blend-mode: hue;"><span>hue</span></li>
+  <li style="background-blend-mode: lighten;"><span>lighten</span></li>
+  <li style="background-blend-mode: luminosity;"><span>luminosity</span></li>
+  <li style="background-blend-mode: multiply;"><span>multiply</span></li>
+  <li style="background-blend-mode: normal;"><span>normal</span></li>
+  <li style="background-blend-mode: overlay;"><span>overlay</span></li>
+  <li style="background-blend-mode: saturation;"><span>saturation</span></li>
+  <li style="background-blend-mode: screen;"><span>screen</span></li>
+  <li style="background-blend-mode: soft-light;"><span>soft-light</span></li>
 
-  <li style="background-blend-mode: darken, multiply;">darken, multiply</li>
-  <li style="background-blend-mode: difference, overlay;">difference, overlay</li>
-  <li style="background-blend-mode: luminosity, saturation;">luminosity, saturation</li>
-  <li style="background-blend-mode: hue, screen;">hue, screen</li>
-  <li style="background-blend-mode: exclusion, soft-light;">exclusion, soft-light</li>
+  <li style="background-blend-mode: darken, multiply;"><span>darken, multiply</span></li>
+  <li style="background-blend-mode: difference, overlay;"><span>difference, overlay</span></li>
+  <li style="background-blend-mode: luminosity, saturation;"><span>luminosity, saturation</span></li>
+  <li style="background-blend-mode: hue, screen;"><span>hue, screen</span></li>
+  <li style="background-blend-mode: exclusion, soft-light;"><span>exclusion, soft-light</span></li>
   <li class="magic"></li>
   <li class="magic"></li>
   <li class="magic"></li>
@@ -1012,8 +1014,11 @@ hue | saturation | color | luminosity</pre>
 </div>
 
 
-
-
+<style>
+  .filter p {
+    background-color: #ffffff88;
+  }
+</style>
 <!-- blur() -->
 <div class="slide filter blur">
 <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur" target="resource">blur()</a></code> function</h1></header>

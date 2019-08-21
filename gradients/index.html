@@ -1460,7 +1460,11 @@ background-image:
 </figure>
     <p>Let's design the back of our playing cards.</p>
     <ol>
-      <li>Create a gradient design for your deck.</li>
+      <li>Hide the face with <code>visibility: hidden</code> temporarily, so you can see the back of your cards.</li>
+      <li>Create a gradient design for your deck. All cards are the same (this is a deck!)</li>
+      <li>Use background properties as needed</li>
+      <li>If you have theme color(s) for your cards, use custom properties</li>
+
     </ol>
     <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
   </section>
@@ -1472,6 +1476,46 @@ background-image:
     <p><a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a></p>
     <p>There is no "correct" solution...
       <br/>... or all solutions are correct</p>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+  <section class="content">
+    <ul>
+    <li>Hide the face with <code>visibility: hidden</code> temporarily, so you can see the back of your cards.
+      <pre contenteditable>face {
+  font-size: 2em;
+  <i>visibility: hidden;</i>
+}</pre>
+    </li><li>If you have theme color(s) for your cards, use custom properties
+
+      <pre contenteditable><i>:root {
+  --theme: red;
+}</i></pre>
+      </li>
+      <li>Create a gradient design for your deck. All cards are the same (this is a deck!)
+
+      <pre contenteditable><i>background-image: 
+     linear-gradient(-45deg, var(--theme) 25%, transparent 25% 75%, var(--theme) 75%), 
+     linear-gradient(-45deg, var(--theme) 25%, transparent 25% 75%, rgb(255, 255, 255) 75%), 
+     linear-gradient(45deg, var(--theme) 17%, transparent 17% 25%, var(--theme) 25% 36%, transparent 36% 64%, var(--theme) 64% 75%, transparent 75% 83%, var(--theme) 83%);</i>
+</pre>
+      </li>
+      <li>Use background properties as needed
+
+      <pre contenteditable>.back {
+  background-image: 
+     linear-gradient(-45deg, var(--theme) 25%, transparent 25% 75%, var(--theme) 75%), 
+     linear-gradient(-45deg, var(--theme) 25%, transparent 25% 75%, rgb(255, 255, 255) 75%), 
+     linear-gradient(45deg, var(--theme) 17%, transparent 17% 25%, var(--theme) 25% 36%, transparent 36% 64%, var(--theme) 64% 75%, transparent 75% 83%, var(--theme) 83%);
+  <i>background-color: rgb(255, 255, 255);
+  background-size: 2em 2em;
+  background-position: -1em -1em;</i>
+}</pre>
+      </li>
+      
+    </ul>
   </section>
 </div>
 

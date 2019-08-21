@@ -46,9 +46,9 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
 <div class="slide intro">
 	<header><h1>CSS Text Related Properties</h1></header>
 	<section class="content">
-		<ol class="col3">
+		<ol class="col3" style="margin-left: 1em">
     <li>Text Properties
-    	<ul style="margin-left: -2.8em;">
+    	<ul style="margin-left: -1em; margin-bottom: 1em;">
      <li><code>text-align</code> </li> 
    <li><code>text-justify</code> </li>
    <li><code>text-align-last</code> </li>
@@ -63,7 +63,7 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
    <li><code>word-spacing</code> </li>
    <li><code>word-break</code> </li>
      <li><code>text-transform</code> </li></ul></li>
-   <li>Text Decoration<ul style="margin-left: -2.8em;">
+   <li>Text Decoration<ul style="margin-left: -1em; margin-bottom: 1em">
    <li><code>text-decoration-line</code> </li>
    <li><code>text-decoration-style</code> </li>
    <li><code>text-decoration-color</code> </li>
@@ -76,7 +76,7 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
 </ul>
 </li>
   <li>Text Emphasis
-  	<ul style="margin-left: -2.8em;">
+  	<ul style="margin-left: -1em;margin-bottom: 1em">
   <li><code>text-emphasis</code> </li>
   <li><code>text-emphasis-style</code></li>
   <li><code>text-emphasis-position</code></li></ul> </li>
@@ -87,7 +87,7 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
 
 
 <div class="slide intro">
-<header><h1>CSS Text</h1></header>
+<header><h1>CSS Text Properties</h1></header>
 <section class="content">
 </section>
 </div>
@@ -114,7 +114,7 @@ section {overflow-y: scroll; max-height: calc(98vh - 100px);}
     <dt><code>justify</code></dt>
     <dd>Justified. Text is spaced to line up to both the left and right edges,  except the last line.</dd>
     <dt>justify-all </code></dt>
-    <dd>Same as <code>justify</code>, but the last line is justified too.</dd>
+    <dd>No support yet. Same as <code>justify</code>, but the last line is justified too.</dd>
     <dt>match-parent </code></dt>
     <dd>Similar to <code>inherit</code>, but the start and end match the parent's <code>direction</code>.</dd>
     <dt><code>&lt;string&gt; </code></dt>
@@ -269,7 +269,8 @@ none</dt>
   <header><h1><code>text-align-last</code> property</h1></header>
 <section class="content">
   <style contenteditable class="editme">.textalignlast div {
-   text-align: justify; _text-justify: inter-character;
+   text-align: justify; 
+   text-justify: inter-character;
 }</style>
 <article class="textalign textalignlast">
 <div style="text-align-last: start;"><h2>start</h2>
@@ -315,9 +316,9 @@ none</dt>
 <dt>&lt;percentage></dt>
     <dd>Indentation is a &lt;percentage> of the containing block's width.</dd>
 <dt><strike>each-line</strike></dt>
-    <dd>Indents first line of block container and each line after a forced line break.</dd>
+    <dd>Not supported yet. Indents first line of block container and each line after a forced line break.</dd>
 <dt><strike>hanging</strike></dt>
-    <dd>Inverts indenting: all lines except first are indented.</dd>
+    <dd>Not supported yet. Inverts indenting: all lines except first are indented.</dd>
     </dl> 
 </section>
 </div>
@@ -457,16 +458,17 @@ Supercalifragilisticexpialidocious</p>
 </div>
 
 
-<div class="slide fontstretch">
+<div class="slide ">
 <header><h1><code>letter-spacing</code> property</h1></header>
 <section class="content">
 	<style contenteditable class="editme">.fontstretch { font-family: League Mono Variable, Helvetica Neue, serif;} 
-.fontstretch p {
+.fontstretch {
    _font-stretch: ultra-condensed;
    _font-stretch: ultra-expanded;
    _letter-spacing: 2px;
    _letter-spacing: 0.1em;
 }</style>
+<h3 class="fontstretch">“I Have a Dream” speech: the oft forgotten part</h3>
 <p class="fontstretch">There are those who are asking the devotees of civil rights, "When will you be satisfied?" We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality. We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities. We cannot be satisfied as long as the negro's basic mobility is from a smaller ghetto to a larger one. We can never be satisfied as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: "For Whites Only." We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote. No, no, we are not satisfied, and we will not be satisfied until "justice rolls down like waters, and righteousness like a mighty stream." -MLK</p>
 </section>
 </div>
@@ -526,7 +528,7 @@ Supercalifragilisticexpialidocious</p>
 <dt>auto</dt><dd>
     Browser will automatically break words at appropriate hyphenation points, following whatever rules it chooses to use with preference for suggested line break opportunities. Specify the language!</dd>
 </dl>
-<p>Words will be broken by &lt;wbr> but no hyphen will be added.</p>
+<p>Note: Words will be broken by <code>&lt;wbr></code> but no hyphen will be added.</p>
 
 </section>
 </div>
@@ -633,14 +635,14 @@ hanging-punctuation: first force-end last;</pre>
 }</style>
 <blockquote cite="https://www.youtube.com/watch?v=bWXazVhlyxQ" id="lyrics"><p>Killing in the name of
 
-    Some of those that were forces are the same that burn crosses (4x)
+    Some of those that were forces are the same that burn crosses                (4x)
 
 Killing in the name of, killing in the name of
 
-    And now you do what they told ya (12x)
+    And now you do what they told ya      (12x)
 
 Those who died are justified                
-Wearing the badge, they're the chosen whites
+Wearing the badge, they're the chosen whites   
 
 You justify those that died                 
 Wearing the badge, they're the chosen whites
@@ -650,13 +652,13 @@ Wearing the badge, they're the chosen whites
 
 You justify those that died
 
-    Some of those that burn crosses are the same that hold office (4x)
+    Some of those that burn crosses are the same that hold office                  (4x)
 
 Killing in the name of, killing in the name of
 
-    And now you do what they told ya (4x)
+    And now you do what they told ya       (4x)
 
-    And now you do what they told ya, now you're under control (6x)
+    And now you do what they told ya, now you're under control                   (6x)
 
 Those who died are justified                
 Wearing the badge, they're the chosen whites
@@ -688,6 +690,7 @@ Motherfucker</p>
 <section class="content">
   <p>Sets the length of space between words and between tags.</p>
   <pre contenteditable class="multi">normal | &lt;length></pre>
+  <p>Always consider legibility, especially for those with cognitive disabilities, when formatting text.</p>
 </section>
 </div>
 
@@ -1205,7 +1208,7 @@ Challenging power structures from the inside, working the cracks within the syst
   <dt>auto</dt>
   <dd>default. Underlines and overlines are only drawn where they do not touch or closely approach a glyph.</dd>
 </dl>
-<pre contenteditable style="text-decoration: red dotted underline"><span style="text-decoration-skip-ink: none;">text-decoration-skip-ink: none;</span>
+<pre contenteditable style="text-decoration: green dotted underline"><span style="text-decoration-skip-ink: none;">text-decoration-skip-ink: none;</span>
 <span style="text-decoration-skip-ink: auto;">text-decoration-skip-ink: auto;</span></pre>
  </section>
 </div>
@@ -1382,7 +1385,7 @@ Challenging power structures from the inside, working the cracks within the syst
       <li>spacing</li>
       <li>Make the blockquotes and headings stand out.</li>
     </ul>
-
+ <p><a href="../ihaveadream.html">Download</a></p>
   </section>
 </div>
 
