@@ -26,12 +26,46 @@ pre.showsection b::after {
    <div id="slides">
 
 <div class="slide divider">
-  <header><h1>CSS: Flexbox</h1></header>
+  <header><h1>Floats &amp; Flexbox</h1></header>
   <section class="content">
-    <ul>
-      <li>Overview</li>
-      <li><code>float</code> property</li></ul>
-  <p><a href="https://estelle.github.io/CSS/flexbox/">estelle.github.io/CSS/flexbox/</a></p></section>
+  </section>
+</div>
+
+<div class="slide divider">
+  <header><h1>Floats &amp; Flexbox</h1></header>
+  <section class="content">
+    <ul class="col3">
+      <li>Intro to Floats</li>
+      <li><code>float</code> property</li>
+      <li>Exercise/Solution</li>
+      <li>Intro to flex</li>
+      <li>Flexible Box Properties</li>
+      <li><code>display</code> property</li>
+      <li>Impacted CSS Properties</li>
+      <li><code>flex-direction</code> property</li>
+      <li>understanding axes</li>
+      <li><code>flex-wrap</code> property</li>
+      <li><code>flex-flow</code> property</li>
+      <li>The Flex Container</li>
+      <li><code>place|align|justify-items</a></code> properties</li>
+      <li>Impact of <code>visibility collapse</code></li>
+      <li><code>place|align|justify-content</a></code> properties</li>
+      <li>Flex Items</li>
+      <li><code>place|align|justify-self</code> properties</li>
+      <li><code>align-self</code> property</li>
+      <li><code>order</code> property</li>
+      <li>Accessibility</li>
+      <li>Flexibility</li>
+      <li><code>flex</code> shorthand</li>
+      <li>Examples </li>
+      <li>DevTools</li>
+      <li>Exercise/Solution</li>
+      <li>Solution</li>
+    </ul>
+    <p>
+      <a href="https://estelle.github.io/CSS/flexbox/">estelle.github.io/CSS/flexbox/</a>
+    </p>
+  </section>
 </div>
 
 
@@ -101,6 +135,15 @@ float: inline-end;</pre>
 <a href="exercises/float_images.html" target="play" class="objectlink">↪</a>
 </div>
 
+<div class="slide">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/clear">clear</a></code> property</h1></header>
+  <section class="content">
+    <p>Sets whether an element must be moved below (cleared) floating elements that precede it.</p> 
+<h2><code>clear</code> property values</h2>
+    <pre contenteditable>none | both | left | right | inline-start | inline-end</pre>
+  </section>
+</div>
+
 
  <div class="slide">
   <header><h1>Exercise</h1></header>
@@ -135,8 +178,53 @@ float: inline-end;</pre>
 </section>
 </div>
 
+
+<div class="slide">
+  <header><h1>Solution</h1></header>
+<section class="content">
+  <p>
+    Text - <a href="solution.html" target="play">solution</a>
+  </p>
+
+<pre contenteditable>:root {
+  font-family: georgia,new times roman, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}</pre>
+<p>Images Solution</p>
+<pre contenteditable>body {
+  max-width: 50em;
+  margin: auto;
+}
+blockquote {
+  border: 1px solid #ccc;
+  border-width: 1px 0;
+}
+figure {
+  float: left;
+  width: 40%;
+  min-width: 300px;
+  padding: 2px 1em 1em 2px;
+  margin: 0 1em 1em 0;
+  border-right: 1px solid #ccc;
+}
+img {
+  width: 100%
+}
+figcaption {
+  font-style: italic;
+}</pre>
+
+</section>
+</div>
+
+
 <div class="slide divider">
-  <header><h1>Flex "What" and "Why"</h1></header>
+  <header><h1>Flexbox</h1></header>
+</div>
+
+<div class="slide divider">
+  <header><h1>"What" and "Why"</h1></header>
   <section class="content">
   </section>
 </div>
@@ -182,17 +270,11 @@ float: inline-end;</pre>
 
 
 <div class="slide object">
-<header><h1>Flex Box</h1></header>
+<header><h1>Inline Flex</h1></header>
 <object data="exercises/button.html"></object>
 <a href="exercises/button.html" target="play" class="objectlink">↪</a>
 </div>
 
-
-<!-- divider -->
-<div class="slide divider">
-<header><h1>Browser Support</h1></header>
-<section class="content"><a href="http://dev.w3.org/csswg/css-flexbox/">Candidate Recommendation: Jan-05-2016</a></section>
-</div>
 
 <!-- General Browser Support -->
 <div class="slide object">
@@ -255,13 +337,13 @@ function loadCIU(e){
           <dd>Values include <code>flex</code> and <code>inline-flex</code>. Used on parent to create the flex container.</dd>
 
           <dt> align-content</dt>
-          <dd>flex-start | flex-end | center | space-between | space-around | <code>stretch</code> | space-evenly</dd>
+          <dd><code>flex-start | flex-end | center | space-between | space-around | <strong>stretch</strong> | space-evenly</code></dd>
 
           <dt> align-items</dt>
-          <dd>flex-start | flex-end | center | baseline | <code>stretch</code></dd>
+          <dd><code>flex-start | flex-end | center | baseline | <strong>stretch</strong></code></dd>
 
           <dt> align-self</dt>
-          <dd><code>auto</code> | flex-start | flex-end | center | baseline | stretch</dd>
+          <dd><code><strong>auto</strong> | flex-start | flex-end | center | baseline | stretch</code></dd>
 
           <dt> flex</dt>
           <dd> Shorthand for <code>[flex-basis  flex-grow, and flex-shrink</code>, or <code>none</code></dd>
@@ -274,7 +356,7 @@ function loadCIU(e){
     <section class="content">
         <dl class="deprecated listed">
           <dt> flex-basis</dt>
-          <dd>The basis by which the flex-items flex. default: auto</dd>
+          <dd>The basis by which the flex-items flex. default: <code>auto</code></dd>
 
           <dt> flex-direction</dt>
           <dd> Set the containers axis for its children with <code>row</code>, <code>row-reverse</code>, <code>column</code> or <code>columns-reverse</code> on the parent</dd>
@@ -283,10 +365,10 @@ function loadCIU(e){
           <dd>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code> properties.</dd>
 
           <dt> flex-grow</dt>
-          <dd>Positive number determines how much flex item will grow relative to  other flex items in flex container when positive free space is distributed. default is 1 for container.  0 for children. Positive only</dd>
+          <dd>Positive number determines how much flex item will grow relative to  other flex items in flex container when positive free space is distributed. Positive only</dd>
 
           <dt> flex-shrink</dt>
-          <dd>Positive number determines how much flex item will shrink relative to  other flex items in flex container when negative free space is distributed. default is 1</dd>
+          <dd>Positive number determines how much flex item will shrink relative to  other flex items in flex container when negative free space is distributed.</dd>
 </section>
 </div>
 
@@ -363,97 +445,12 @@ function loadCIU(e){
 <div class="slide">
   <header><h1>All the <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/display">display</a></code> properties</h1></header>
   <section class="content">
-    <h2><code>&lt;display-outside></code> values</h2>
-  <pre contenteditable>
-display: block;
-display: inline;
-display: run-in;</pre>
-
-
-    <h2><code>&lt;display-inside></code> values</h2>
- <pre contenteditable>display: flow;
-display: flow-root;
-display: table;
-display: flex;
-display: grid;
-display: ruby;</pre>
-
-
-    <h2><code>&lt;display-outside></code> plus <code>&lt;display-inside></code> values</h2>
- <pre contenteditable>display: block flow;
-display: inline table;
-display: flex run-in;</pre>
-
-
-
-    <h2><code>&lt;display-listitem></code> values</h2>
- <pre contenteditable>display: list-item;
-display: list-item block;
-display: list-item inline;
-display: list-item flow;
-display: list-item flow-root;
-display: list-item block flow;
-display: list-item block flow-root;
-display: flow list-item block;</pre>
-
-
-    <h2><code>&lt;display-internal></code> values</h2>
- <pre contenteditable>display: table-row-group;
-display: table-header-group;
-display: table-footer-group;
-display: table-row;
-display: table-cell;
-display: table-column-group;
-display: table-column;
-display: table-caption;
-display: ruby-base;
-display: ruby-text;
-display: ruby-base-container;
-display: ruby-text-container;</pre>
-
-
-    <h2><code>&lt;display-box></code> values</h2>
- <pre contenteditable>display: contents;
-display: none;</pre>
-
-
-    <h2><code>&lt;display-legacy></code> values</h2>
- <pre contenteditable>display: inline-block;
-display: inline-table;
-display: inline-flex;
-display: inline-grid;</pre>
-
-
-    <h2>global values</h2>
- <pre contenteditable>display: inherit;
-display: initial;
-display: unset;
-display: revert;</pre>
-</pre>
-  </section>
-</div>
-  
-  
-  
-<div class="slide">
-  <header><h1>Today's <code>display</code> properties</h1></header>
-  <section class="content">
-    <br/>
+  <br/>
   <code contenteditable><strong>display</strong>: block | inline | run-in | flow | flow-root | table | <strong>flex</strong> | grid | ruby | block flow | inline table | flex run-in | list-item | list-item block | list-item inline | list-item flow | list-item flow-root | list-item block flow | list-item block flow-root | flow list-item block | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | inline-block | inline-table | <strong>inline-flex</strong> | inline-grid | inherit | initial | unset | revert;</code>
   </section>
 </div>
 
 
-<!--
-<div class="slide">
-  <header><h1><code>display</code> property</h1></header>
-    <section class="content">
-      <p><code style="color: inherit">
-          inline | block | list-item | inline-list-item | inline-block | <strong>flex | inline-flex</strong> | grid | inline-grid | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | flow | flow-root</code>
-     </p>
-
-    </section>
-</div>-->
 
 
 
@@ -470,14 +467,6 @@ display: revert;</pre>
       <p>inline-level flex container box</p>
 
     </section>
-</div>
-
-
-
-<div class="slide  object">
-<header><h1>Is Flexbox supported in your browser?</h1></header>
-<object data="exercises/supportsflex.html"></object>
-<a href="exercises/supportsflex.html" target="play" class="objectlink">↪</a>
 </div>
 
 
@@ -687,6 +676,7 @@ display: revert;</pre>
   <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/place-items">place-items</a></code> property</h1></header>
   <section class="content">
     <p><code>place-items</code> is shorthand for <code>align-items</code> and <code>justify-items</code></p>
+    <p>Think of it as aligning within each flex line.</p>
   </section>
 </div> 
 
@@ -696,22 +686,11 @@ display: revert;</pre>
   <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/align-items">align-items</a></code> property</h1></header>
     <section class="content">
       <p>Aligns flex items along the cross axis</p>
-      <h2>Keyterms</h2>
-      <pre contenteditable>align-items: normal; 
-align-items: stretch; 
-align-items: center;      
-align-items: start;      
-align-items: end;         
-align-items: flex-start;  
-align-items: flex-end;   
-align-items: self-start; 
-align-items: self-end; </pre>
-<h2>Baseline alignment</h2>
-<pre contenteditable>align-items: baseline; 
-align-items: first baseline; 
-align-items: last baseline;  
-align-items: safe center; 
-align-items: unsafe center;</pre>
+<pre contenteditable>normal | center | start | end | self-start | self-end | flex-start | flex-end</pre>
+<p>Baseline alignment</p>
+<pre contenteditable>align-items: baseline | first baseline | last baseline</pre>
+<p>Overflow alignment</p>
+<pre contenteditable>safe center | unsafe center</pre>
 <p>does not take left and right values</p>
     </section>
 </div>
@@ -731,47 +710,22 @@ align-items: unsafe center;</pre>
     <section class="content">
       <p>Defines the default justify-self for all the flex items, justifying items along axis.</p>
       <h2>Keyterms</h2>
-      <pre contenteditable>
-justify-items: auto;
-justify-items: normal;
-justify-items: stretch;
-justify-items: center;
-justify-items: start;
-justify-items: end;
-justify-items: flex-start;
-justify-items: flex-end;
-justify-items: self-start;
-justify-items: self-end;
-justify-items: left;
-justify-items: right;</pre>
+      <pre contenteditable class="multi">auto |  normal |  stretch |  center |  start |  end |  flex-start
+flex-end |  self-start |  self-end |  left |  right</pre>
 <h2>Baseline alignment</h2>
-<pre contenteditable>
-justify-items: baseline;
-justify-items: first baseline;
-justify-items: last baseline;</pre>
+<pre contenteditable>baseline |  first baseline |  last baseline</pre>
 
 <h2>Overflow alignment</h2> 
-<pre contenteditable>justify-items: safe center;
-justify-items: unsafe center;</pre>
+<pre contenteditable>justify-items: safe center |  unsafe center</pre>
 
 <h2>Legacy alignment</h2>
-<pre contenteditable>
-justify-items: legacy right;
-justify-items: legacy left;
-justify-items: legacy center;</pre>
+<pre contenteditable> legacy right |  legacy left |  legacy center</pre>
 
 <p>justify item value ignored in flex if 
 justify-items: normal;</p>
     </section>
 </div>
 
-
-
-<div class="slide object">
-<header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/justify-items">justify-items</a></code> property</h1></header>
-<object data="exercises/justify.html"></object>
-<a href="exercises/justify.html" target="play" class="objectlink">↪</a>
-</div>
 
 
 
@@ -815,6 +769,8 @@ justify-items: normal;</p>
         <li><code><strong>stretch</strong></code></li>
         <li><code>space-evenly</code></li></ul>
 <p>Only applies to multi-line flex containers.</p>
+
+      <p>Think of it as aligning between multiple lines</p>
     </section>
 </div>
 
@@ -825,7 +781,29 @@ justify-items: normal;</p>
 <a href="exercises/aligncontent.html" target="play" class="objectlink">↪</a>
 </div>
 
+<div class="slide">
+  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/justify-content">justify-content</a></code> property</h1></header>
+    <section class="content">
+      <pre contenteditable>justify-content: center;     /* Pack items around the center */
+justify-content: start;      /* Pack items from the start */
+justify-content: end;        /* Pack items from the end */
+justify-content: flex-start; /* Pack flex items from the start */
+justify-content: flex-end;   /* Pack flex items from the end */
+justify-content: left;       /* Pack items from the left */
+justify-content: right;      /* Pack items from the right */
+justify-content: normal;
+justify-content: space-between; /* Evenly, w/ first item at start, last at end */
+justify-content: space-around;  /* Evenly. Half the space on ends */
+justify-content: space-evenly;  /* Evenly, with equal space on ends */
+justify-content: stretch;       /* Evenly. Stretch 'auto'-sized fit container */</pre>
+    </section>
+</div>
 
+<div class="slide object">
+<header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/web/css/justify-content">justify-content</a></code> property</h1></header>
+<object data="exercises/justify.html"></object>
+<a href="exercises/justify.html" target="play" class="objectlink">↪</a>
+</div>
 <!-- divider -->
 <div class="slide divider">
 <header><h1>Flex Items</h1></header>
@@ -982,7 +960,7 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
 
 <div class="slide">
   <header><h1>DevTools</h1></header>
-  <section class="content">
+  <section class="content">Check out the flex box inspector</section>
   </section>
 </div>
 
@@ -1003,118 +981,25 @@ distributed. length value, content or <code>auto</code> . If set to <code>auto</
    <div class="face" data-value="A">♦</div>
   </div>
 </figure>
-    <p>Let's continue on with our card example just a bit.</p>
+    <p>Let's edit our card example just a bit.</p>
     <ol>
       <li>Center the heart, spade, diamond, or club that is the text node in your card.</li>
     </ol>
-    <a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a>
-  </section>
-</div>
-
-<div class="slide">
-  <header><h1>Solution</h1></header>
-  <section class="content">
-    <a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a>
-  </section>
-</div>
-
-<div class="slide">
-  <header><h1>Solution</h1></header>
-  <section class="content"><pre contenteditable>
-@charset "UTF-8";
-/* CSS Document */
-
-/* the container */
-figure {
-  width: 200px;
-  height: 300px;
-  position: relative;
-  margin: auto;
-}
-/* all the cards */
-.card {
-  height: 300px;
-  width: 200px;
-  position: absolute;
-  border-radius: 10px;
-}
-.back,
-.face {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right:0;
-  border-radius: 10px;
-}
-/*just to test */
-.card, .back, .face {border-radius: 10px;}
-/* backs of the cards */
-.back {
-  border: 10px solid red;
-  background-color: blue;
-}
+    <p><a href="exercises/cards.html" target="exercise">HTML</a> | <a href="exercises/style.css" target="css">CSS</a></p>
+    <pre contenteditable style="float: left">
 /* card faces */
 .face {
   font-size: 2em;
   <b>display: flex;
   justify-content: center;
   align-items: center;</b>
-}
-.face::before {
-  content: attr(data-value);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.face::after {
-  content: attr(data-value);
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-/* first, second, and last card */
-.card:first-of-type {
-
-}
-.card:nth-of-type(2) {
-  left: 20px;
-  top: 20px;
-}
-.card:last-of-type {
-  left: 40px;
-  top: 40px;
-}
-/* faces of first, second and last cards */
-.card:first-of-type .face {
-
-}
-.card:nth-of-type(2) .face {
-
-}
-.card:last-of-type  .face {
-  
-}
-/* red cards */
-[data-type="H" i],
-[data-type="D" i] {
-   color: red;
- }
-/* black cards */
-[data-type="C" i],
-[data-type="S" i] {
-   color: black;
- }
-/* hovered card */
-.card:hover {
-
-} </pre>
+}</pre>
 </section>
 </div>
 
 <div class="slide divider">
      <header><h1>Tables</h1></header>
-    <h1><a href="../tables">Next ➹</a></h1>
+    <h1><a href="../tables/index.html">Next ➹</a></h1>
     </div>
 
     

@@ -3,30 +3,24 @@
 <head>
 	<link rel="stylesheet" href="../../css/editme.css"/>
 <style>
-.container {background-color: darkgreen;
+.container {background-color: darkgreen; margin-top: -1em;
   display: flex;}
-div {border: 3px solid darkgreen; padding: 3px; line-height: 1.6rem;}
+div {border: 3px solid darkgreen; padding: 3px; line-height: 1.4rem;}
 p { text-align: left}
 h1 {
-	border: 1px solid rgba(0,0,0,0.2);
+	border: 1px solid rgba(0,0,0,0.2); margin: 0.5em 0;
 }
 
 .a {background-color: #fff;}
 .b {background-color: #ccc;}
 .c {background-color: #999;}
-.c h1 {line-height: 2;}
+.c h1 {line-height: 1.6;}
 .item {
 	flex: 1;
 }
 </style>
 
-<style contenteditable class="editme">.container{
-  align-items: center;
-}
-.b {
-	align-self: stretch;
-}
-</style>
+
 <title>Flexbox</title>
 </head>
 
@@ -37,6 +31,8 @@ h1 {
 		<div class="item c"><h1>C: Header with line height</h1><p>Yummy ipsum lorem kitten, bacon and mushroom. Rainbows rainbows pigeon wereunicorn app surprise, kittens pegasus delight unicorn wereunicorn rainbows. Pigeon unicorn surprise pony pigeon wereunicorn app app.</p></div>
 	</div>
   <code>auto | flex-start | flex-end | center | baseline | stretch</code>
+  <style contenteditable class="editme">.container{ align-items: center; }
+.b { align-self: stretch; }</style>
 </body>
 </html>
 

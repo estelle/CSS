@@ -2,20 +2,13 @@
 <html>
 <head>
 <style>
+  :root {font-size: 12px;}
 html {min-height:100%;}
 .container {background-color: #9de89d; position: relative}
-.item {border: 1px solid #9de89d; padding: 3px; line-height: 1.6rem; box-sizing: border-box;
+.item {border: 1px solid #9de89d; padding: 3px; line-height: 1.6; box-sizing: border-box; 
   letter-spacing: 2px;
  }
-.e:before, .f:before, .k:before,
-.e:after, .f:after, .k:after {
-	position: absolute; width: 300px; left: 0; height: 5px; background-color: rgba(255,255,0,0); content: '';
-box-shadow: 0 -4px 0px 0 yellow;
-}
-
-.e:after, .f:after, .k:after {
-	background-color: rgba(255,0,0,0);
-box-shadow: 0 1.5em 0px 0 red;}
+ .c, .d, .j {font-size: 1.4em;}
 </style>
 
 <link rel="stylesheet" href="../../css/editme.css"/>
@@ -24,6 +17,17 @@ box-shadow: 0 1.5em 0px 0 red;}
 </head>
 
 <body>
+  <style contenteditable class="editme" style="float: right; width: auto">.container{
+  align-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 27em; width: 16em;
+}
+.item {
+  outline: 1px solid;
+}</style>
 <div class="container">
   <div class="item a">A</div>
   <div class="item b">BB<br/>BB</div>
@@ -38,18 +42,7 @@ box-shadow: 0 1.5em 0px 0 red;}
   <div class="item k">K</div>
 </div>
   <code>flex-start | flex-end | center | baseline | stretch | space-between | space-around | space-evenly</code>
-  <style contenteditable class="editme">.container{
-  align-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 500px; width: 300px;
-}
-.item {
-  border: 1px solid;
-}</style>
-<p style="position: absolute; top: 30%; left: 340px; width: 200px; font-size: 2em; font-family: georgia; background-color: yellow; border-radius: 5px; padding: 5px; text-align: center">Note: Example doesn't work for stretch</p>
+  
 </body>
 </html>
 

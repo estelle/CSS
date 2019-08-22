@@ -2,68 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Power Grid home page example</title> <style>
-  html {background-color: #333;}
-      
- header, footer { 
-  text-align: center; 
-  background: #151; 
-  color: white;
-} 
-main {
-  background-color: white;
-}
-footer {
-  padding: 5px;
-}
-    body, main {
-      display: flex;
-    }
-    body {
-      flex-direction: column; 
-      background-color: white; 
-      margin: 5px;
-    }
-
-    nav {
-      display: flex; 
-      padding: 5px 2px; 
-      background-color: #9de89d; 
-      border-top: 1px solid #333;
-    }
-    nav a {
-      flex: 1 0; 
-      margin: 0 5px; 
-      background-color: 
-      white; color:  #151; 
-      padding: 5px 0; 
-      text-align: center; 
-      text-decoration: none; 
-      border: 1px solid #333;
-    }
-main {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid;
-  border-width: 1px 0 0 1px;
-}
-div { border: 1px solid;
-  padding: 10px;
-  box-sizing: border-box;
-  flex: 1 0 ;
-  max-width: 300px;
-  min-width: 200px;
-  border-width: 0 1px 1px 0;
-}
-.foo {
-  visibility: hidden; 
-  padding-top: 0; 
-  padding-bottom: 0;
-}
-img {
-  width: 100%;
-}
-  </style>
+  <link rel="stylesheet" href="../../css/editme.css">
+  <title>Power Grid home page example</title> 
 </head>
 <body>
   <header><h1>flex-wrap</h1></header>
@@ -154,6 +94,63 @@ xxg/280/200">
       
   </main>
   <footer>Copyright &copy; 2019</footer>
-   
+   <style contenteditable class="editme">html {
+  background-color: #333;
+}
+header, 
+footer { 
+  text-align: center; 
+  background: #151; 
+  color: white;
+} 
+main {
+  background-color: white;
+}
+footer {
+  padding: 5px;
+}
+body, main {
+  display: flex;
+}
+body {
+  flex-direction: column; 
+  background-color: white; 
+  margin: 5px;
+}
+
+nav {
+  display: flex; 
+  padding: 5px 2px; 
+  background-color: #9de89d; 
+  border-top: 1px solid #333;
+}
+nav a {
+  _flex: 1 0; 
+  margin: 0 5px; 
+  background-color: 
+  white; color:  #151; 
+  padding: 5px 0; 
+  text-align: center; 
+  text-decoration: none; 
+  border: 1px solid #333;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid;
+  border-width: 1px 0 0 1px;
+}
+div { 
+  border: 1px solid;
+  padding: 10px;
+  box-sizing: border-box;
+  _flex: 1 0;
+  max-width: 300px;
+  min-width: 200px;
+  border-width: 0 1px 1px 0;
+}
+img {
+  width: 100%;
+}</style>
 </body>
 </html>

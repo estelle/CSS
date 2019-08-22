@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/><title>Power Grid home page example</title><link rel="stylesheet" href="../../css/editme.css"></head>
 <body>
-  <header><h1>Power Grid: Store or Homepage</h1></header>
+  <header><h1>Store or Homepage</h1></header>
   <nav>
       <a href="#1">Home</a>
       <a href="#2">About</a>
@@ -29,14 +29,42 @@
       </article>
   </main>
   <footer>Copyright &copy; 2019</footer>
-  <style contenteditable class="editme" style="max-height: 40vh; overflow: scroll">html {
+  <style contenteditable class="editme" style="max-height: 40vh; overflow: scroll">body, 
+nav, 
+main, 
+article {
+  display: flex;
+}
+body, article {
+  flex-direction: column; 
+}
+article {
+  flex: 1 1 33%;
+}
+p {
+  flex: 1 0 auto;
+}
+nav {
+  display: flex; 
+}
+nav a {
+  flex: 1 0; 
+}
+/* additional css */
+html {
   background-color: #333;
   padding-top: 1em;
+  font-family: georgia, serif;
 }
 body > *, 
 main > * {
   outline: 1px #ccc solid;
 } 
+body, article {
+  flex-direction: column; 
+  background-color: white; 
+  margin: 5px;
+}
 * { 
   margin: 10px;
   padding: 10px;
@@ -53,20 +81,7 @@ footer {
 main {
   background-color: grey;
 }
-body, 
-nav, 
-main, 
-article {
-  display: flex;
-}
-body, article {
-  flex-direction: column; 
-  background-color: white; 
-  margin: 5px;
-}
-article {
-  flex: 1 1 33%;
-}
+
 img {
   width: 100%; 
   background-color: #ccc;
@@ -90,16 +105,11 @@ nav a {
   text-align: center; 
   text-decoration: none; 
   border: 1px solid #333;
-}  
-
-
-
-
-
-
-
-
-
+} 
+button {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
 </style>
 </body>
 </html>

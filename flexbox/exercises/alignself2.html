@@ -7,15 +7,6 @@ html {min-height:100%;}
 .item {border: 1px solid #9de89d; padding: 3px; line-height: 1.6rem; box-sizing: border-box;
   letter-spacing: 2px;
  }
-.e:before, .f:before, .k:before,
-.e:after, .f:after, .k:after {
-	position: absolute; width: 300px; left: 0; height: 5px; background-color: rgba(255,255,0,0); content: '';ckground-color: rgba(255,0,0,0);
-box-shadow: 0 -4px 0px 0 yellow;
-}
-
-.e:after, .f:after, .k:after {
-	background-color: rgba(255,0,0,0);
-box-shadow: 0 1.5em 0px 0 red;}
 </style>
 
 <link rel="stylesheet" href="../../css/editme.css"/>
@@ -23,7 +14,21 @@ box-shadow: 0 1.5em 0px 0 red;}
 <title>Flexbox</title>
 </head>
 
-<body>
+<body><style contenteditable class="editme" style="float: right; width: auto">.h {
+  align-self: stretch; 
+  background-color: white;
+}
+.container{
+  align-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 18em; width: 11em;
+}
+.item {
+  border: 1px solid;
+}</style>
 <div class="container">
   <div class="item a">A</div>
   <div class="item b">BB<br/>BB</div>
@@ -43,22 +48,7 @@ flex-end |
 center |
 baseline |
 stretch</code>
-  <style contenteditable class="editme">.h {
-  align-self: stretch; 
-  background-color: white;
-}
-.container{
-  align-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 500px; width: 300px;
-}
-.item {
-  border: 1px solid;
-}</style>
-<p style="position: absolute; top: 30%; left: 340px; width: 12em; font-size: 2em; font-family: georgia; background-color: yellow; border-radius: 5px; padding: 5px; text-align: center">Example doesn't work for align&#8209;content:&nbsp;stretch</p>
+  
 </body>
 </html>
 
