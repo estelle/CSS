@@ -1147,29 +1147,35 @@ Screens are flat. 3D requires perspective.
   transform: rotateX(0deg) rotateY(0deg);
   transform-style: preserve-3d;
   backface-visibility: hidden;
-}
-.card:hover .front {
-  transform: rotateY(180deg);
-}
-.card .back {
-  transform: rotateY(-180deg);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-.card:hover .back {
-  transform: rotateY(0);
-}
+}/* non-hovered card */
 .card:first-of-type {
-  transform: rotate(-5deg);
+  transform: rotate(-10deg);
+}
+.card:nth-of-type(2) { 
+  transform: rotate(15deg) translatex(5px);
+}
+.card:last-of-type { 
+  transform: rotate(0deg);
+}
+
+/* on hover */
+.card:first-of-type:hover {
+  transform: translatex(-200px) rotate(10deg);
 }
 .card:nth-of-type(2):hover {
-  transform: rotate(0) translatex(120px);
+  transform: translatex(200px) rotate(0);
 }
-.card:last-of-type {
-  transform: rotate(5deg);
+.card:last-of-type:hover {
+  transform: translatey(200px) rotate(5deg);
 }
-.card:first-of-type:hover {
-  transform: rotate(10deg) translatey(180px);
+
+/* cardFlip */
+.card:hover .front {
+    transform: rotateY(0);
+}
+.card:hover .back {
+    transform: rotateY(180deg);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }</pre>
 </section>
 </div>

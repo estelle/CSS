@@ -16,6 +16,8 @@ figure {
   border-radius: 10px;
   border: 2px solid #ccc;
   perspective: 600px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: all 25ms;
 }
 .back,
 .face {
@@ -26,6 +28,8 @@ figure {
   right:0;
   border-radius: 10px;
 }
+
+
 /* backs of the cards */
 .back {
   border: 10px solid white;
@@ -47,10 +51,12 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotateY(180deg);
   backface-visibility: hidden;
   z-index: 50;
   background-color: white;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 .face::before {
   content: attr(data-value);
@@ -64,30 +70,6 @@ figure {
   bottom: 10px;
   right: 10px;
 }
-/* first, second, and last card */
-.card:first-of-type {
-  transform: rotate(-5deg); 
-}
-.card:first-of-type:hover {
-  transform: rotate(10deg) translatey(180px);
-}
-.card:nth-of-type(2) { 
-  transform: rotate(0) translatex(120px);
-}
-.card:last-of-type { 
-  transform: rotate(5deg);
-}
-
-/* faces of first, second and last cards */
-.card:first-of-type .face {
-
-}
-.card:nth-of-type(2) .face {
-
-}
-.card:last-of-type  .face {
-  
-}
 /* red cards */
 [data-type="H" i],
 [data-type="D" i] {
@@ -98,16 +80,33 @@ figure {
 [data-type="S" i] {
    color: black;
  }
-/* hovered card */
-.card:hover {
-
-} 
-.card:hover .back {
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  z-index: 50;
+/* non-hovered card */
+.card:first-of-type {
+  transform: rotate(-10deg);
 }
-.card:hover .face {
-  transform: rotateY(0);
-  z-index: 110;
+.card:nth-of-type(2) { 
+  transform: rotate(15deg) translatex(5px);
+}
+.card:last-of-type { 
+  transform: rotate(0deg);
+}
+
+/* on hover */
+.card:first-of-type:hover {
+  transform: translatex(-200px) rotate(10deg);
+}
+.card:nth-of-type(2):hover {
+  transform: translatex(200px) rotate(0);
+}
+.card:last-of-type:hover {
+  transform: translatey(200px) rotate(5deg);
+}
+
+/* cardFlip */
+.card:hover .front {
+    transform: rotateY(0);
+}
+.card:hover .back {
+    transform: rotateY(180deg);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
