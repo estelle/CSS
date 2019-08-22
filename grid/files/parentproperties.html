@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Grid</title>
-	<link rel="stylesheet" href="../files.css">
+	
+  <link rel="stylesheet" href="../files.css">
 <style>
 .container {
 	display: grid;
@@ -16,13 +17,14 @@ div:nth-of-type(4n) {font-size: 2em;}
 
 <style contenteditable id="editme">.container { 
   grid-template-columns: repeat(5, 150px);
-  justify-items: 
-} 
-</style>
+  justify-items: ;
+} </style>
 <title>Simple Grid</title>
 </head>
 
-<body>
+<body><div style="float: right; width: 25%; font-family: monospace"> normal | stretch | baseline | start |  end | center | flex-end |
+  flex-start | legacy | safe | unsafe |
+  left | right | center | self-end | self-start | start | stretch | unset </div>
 <article class="container">
   <div class="item a">A</div>
   <div class="item b">BB<br/>BB</div>
@@ -37,5 +39,5 @@ div:nth-of-type(4n) {font-size: 2em;}
   <div class="item k">K</div>
 </article>
 	
-</body>
+<br><br><br></body>
 </html>
