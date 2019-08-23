@@ -24,8 +24,47 @@
      <header>
       <h1>Grids</h1>
      </header>
+     <section class="content">estelle.github.io/CSS/grid</section>
     </div> 
     
+
+
+    <div class="slide divider">
+     <header>
+      <h1>Grids</h1>
+     </header>
+
+     <section class="content">
+      <ul class="col3"><li>Overview/intro</li>
+<li>Terminology</li>
+<li>Browser Support</header>
+<li>Property overview</li>
+<li>display property</li>
+<li>grid-template-columns</li>
+<li>grid-template-rows</li>
+<li>Naming Grid Lines</li>
+<li>fr and repeat()</li>
+<li>Grid gutters</li>
+<li>Placing items in a grid</li>
+<li>Grid Lines</li>
+<li>item positioning properties</li>
+<li>Grid Item Properties</li>
+<li>Placing an item again</li>
+<li>Template Areas</li>
+<li>Alignment</li>
+<li>Row alignment 
+<li>Column alignment 
+<li><code>justify-content</code></li>
+<li><code>align-content</code></li>
+<li>Implicit grids</li>
+<li>White Space</li>
+<li>minmax( min, max ) function</li>
+<li>Intrinsic Sizing</li>
+<li>Developer Tools</li></ul>
+     <p><a href="https://estelle.github.io/CSS/grid">estelle.github.io/CSS/grid</a></p>
+   </section>
+    </div> 
+
 
 <!-- Flexbox -->
 <div class="slide object">
@@ -83,6 +122,12 @@
 </section>
 </div>
 
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Terminology</h1></header>
+  <object data="files/grid3.html"></object>
+</div>
+
 <!-- can i use -->
 <div class="slide object">
   <header><h1>Is it ready?</h1><button onclick="loadCIU('css-grid', 'cssGrid', this)">load</button></header>
@@ -126,8 +171,8 @@ grid-template-areas
 grid-template (shorthand)
 grid-column-gap
 grid-row-gap
-grid-gap ( gap )</pre>
-<pre>place-items      ( justify-items | align-items )
+grid-gap ( gap )
+place-items      ( justify-items | align-items )
 place-content   (justify-content | align-content)
 grid-auto-columns
 grid-auto-rows
@@ -167,7 +212,7 @@ grid</pre>
 <div class="slide">
   <header><h1>Columns and Rows</h1></header>
   <section class="content">
-<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" target="resource">grid-template-columns</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="resource">grid-template-rows</a></code></h3>
+<h3>Explicit grids: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" target="resource">grid-template-columns</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="resource">grid-template-rows</a></code></h3>
 <p>Defines the columns and rows of the grid with a space-separated list of values representing the track size</p>
     <pre>grid-template-columns: none | &lt;track-list> | &lt;auto-track-list>
 grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
@@ -181,6 +226,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 
   </section>
 </div>
+
+
+
+
+
 
 
 <!-- Flexbox -->
@@ -230,6 +280,92 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 </div>
 
 
+<div class="slide divider">
+<header><h1>Implicit grids</h1></header>
+<section class="content">
+</section>
+</div> 
+
+<!-- implicit track sizing -->
+<div class="slide">
+  <header><h1>Implicit track sizing </h1></header>
+  <section class="content">
+<p>When items are placed outside of the tracks defined by <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="resource">grid-template-rows</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="resource">grid-template-columns</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-areas" target="resource">grid-template-areas</a></code>, implicit grid tracks by added. These properties size those tracks</p>
+<pre>grid-auto-columns: 
+grid-auto-rows:
+grid-auto-flow:</pre>
+  </section>
+</div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Automatic flow</h1></header>
+  <object data="files/extracols3.html"></object>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>automatic flow</h1></header>
+  <object data="files/extracols.html"></object>
+</div>
+
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>White Space</h1></header>
+  <object data="files/extracols2.html"></object>
+</div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax" target="resouce">minmax( min, max )</a></code> function</h1></header>
+<section class="content">
+  <p>Defines a size range greater than or equal to min and less than or equal to max. </p>
+  <pre contenteditable>minmax( &lt;size> , &lt;size> )</pre>
+  <p>where <code>&lt;size></code> is:</p>
+  <pre contenteditable>&lt;length> | &lt;percentage> | &lt;flex> | min-content | max-content | auto </pre>
+  <p>Used by:</p>
+  <pre>grid-template-columns: minmax(min-content, 200px) minmax(300px, 1fr) 250px;  
+grid-template-rows:
+grid-auto-columns: minmax( 100px , 1fr );
+grid-auto-rows: minmax( 3em , max-content );</pre>
+    <pre>
+</section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>min-max()</code> function</h1></header>
+  <object data="files/minmax.html"></object>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-content" target="resouce">Intrinsic Size</a></code> function</h1></header>
+<section class="content">
+<dl>
+  <dt>min-content</dt>
+<dd>When text is wrapped as small as possible, softwrapping but not breaking any words, in the inline direction, without overflow. Usually the longest word or link, or largest image.</dd>
+<dt>max-content</dt>
+<dd>Size with no wrapping, even if an overflow is caused.</dd>
+</dl>
+</section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>min-max()</code> function (again)</h1></header>
+  <object data="files/minmax.html"></object>
+</div>
+
+
+
+
 <!-- FR -->
 <div class="slide">
   <header><h1>fr and repeat()</h1></header>
@@ -244,6 +380,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   </section>
 </div>
 
+<!-- auto-fill -->
+<div class="slide object">
+  <header><h1><code>auto-fill</code> value</h1></header>
+  <object data="files/autofill.html"></object>
+</div>
 
 <!--  -->
 <div class="slide">
@@ -359,6 +500,13 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
     </table></article>
   </section>
 </div>
+
+
+<div class="slide divider">
+<header><h1>Line based placement</h1></header>
+<section class="content">
+</section>
+</div> 
 
 
 <!--  -->
@@ -488,7 +636,8 @@ aside {
   grid-area: aside;
 }
 footer {
-  grid-area: footer;</pre>
+  grid-area: footer;
+}</pre>
   </section>
 </div>
 
@@ -653,75 +802,7 @@ No matter the relative sizes overflowing, the alignment value is honored.</p>
 
 
 
-<!-- implicit track sizing -->
-<div class="slide">
-  <header><h1>Implicit track sizing </h1></header>
-  <section class="content">
-<p>When items are placed outside of the tracks defined by <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="resource">grid-template-rows</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="resource">grid-template-columns</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-areas" target="resource">grid-template-areas</a></code>, implicit grid tracks by added. These properties size those tracks</p>
-<pre>grid-auto-columns: 
-grid-auto-rows:
-grid-auto-flow:</pre>
-  </section>
-</div>
 
-
-
-
-
-<!-- grid example -->
-<div class="slide object">
-  <header><h1>automatic flow</h1></header>
-  <object data="files/extracols.html"></object>
-</div>
-
-
-<!-- grid example -->
-<div class="slide object">
-  <header><h1>White Space</h1></header>
-  <object data="files/extracols2.html"></object>
-</div>
-
-
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax" target="resouce">minmax( min, max )</a></code> function</h1></header>
-<section class="content">
-  <p>Defines a size range greater than or equal to min and less than or equal to max. </p>
-  <pre contenteditable>minmax( &lt;size> , &lt;size> )</pre>
-  <p>where <code>&lt;size></code> is:</p>
-  <pre contenteditable>&lt;length> | &lt;percentage> | &lt;flex> | min-content | max-content | auto </pre>
-  <p>Used by:</p>
-  <pre>grid-template-columns: minmax(min-content, 200px) minmax(300px, 1fr) 250px;  
-grid-template-rows:
-grid-auto-columns: minmax( 100px , 1fr );
-grid-auto-rows: minmax( 3em , max-content );</pre>
-    <pre>
-</section>
-</div>
-
-<!-- grid example -->
-<div class="slide object">
-  <header><h1><code>min-max()</code> function</h1></header>
-  <object data="files/minmax.html"></object>
-</div>
-
-<div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-content" target="resouce">Intrinsic Size</a></code> function</h1></header>
-<section class="content">
-<dl>
-  <dt>min-content</dt>
-<dd>When text is wrapped as small as possible, softwrapping but not breaking any words, in the inline direction, without overflow. Usually the longest word or link, or largest image.</dd>
-<dt>max-content</dt>
-<dd>Size with no wrapping, even if an overflow is caused.</dd>
-</dl>
-</section>
-</div>
-
-<!-- grid example -->
-<div class="slide object">
-  <header><h1><code>min-max()</code> function (again)</h1></header>
-  <object data="files/minmax.html"></object>
-</div>
 
 
 <div class="slide">
