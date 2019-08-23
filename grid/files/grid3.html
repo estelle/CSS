@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid</title>
+	
+  <link rel="stylesheet" href="../files.css">
+<style>ol {
+	list-style-type: none;
+}
+li {line-height: 100px; border: 1px solid; background-color: #ccc;
+	counter-increment: count;
+	text-align: center;
+}
+li:not(:nth-of-type(4)):before {
+	content: counter(count);
+}
+#editme {line-height: 1.5;}ol {  display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;}
+li:nth-of-type(4) { grid-row: auto / span 2; background-color: pink; list-style-type: none; text-align: left;} 
+dl {line-height: 1.6;}
+dd {display: none;}
+dt {padding-left: 20px;}
+</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<ol>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li>    <dl class="listed">
+<dt>Grid lines</dt>
+<dd>The vertical and horizontal lines that divide the grid and separate the columns and rows. Start counting at 1, not 0.</dd>
+<dt>Grid cell</dt>
+<dd>A single child or unit of a CSS grid.</dd>
+<dt>Grid area</dt>
+<dd>Any rectangular space surrounded by four grid lines. Can contain any number of grid cells.</dd>
+<dt>Grid track</dt>
+<dd>The space between two grid lines. This space can be horizontal or vertical: a grid row or grid column</dd>
+<dt>Grid row</dt>
+<dd>A horizontal grid track.</dd>
+<dt>Grid column</dt>
+<dd>A vertical grid track.</dd>
+<dt>Gutter or Gap</dt>
+<dd>Space between two rows and two columns.</dd>
+</dl></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
+	
+<br><br><br></body>
+</html>
