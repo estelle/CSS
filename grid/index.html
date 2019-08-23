@@ -50,7 +50,7 @@
 <li>item positioning properties</li>
 <li>Grid Item Properties</li>
 <li>Placing an item again</li>
-<li>Template Areas</li>
+<li>Named grid areas</li>
 <li>Alignment</li>
 <li>Row alignment 
 <li>Column alignment 
@@ -290,10 +290,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 <div class="slide">
   <header><h1>Implicit track sizing </h1></header>
   <section class="content">
-<p>When items are placed outside of the tracks defined by <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="resource">grid-template-rows</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="resource">grid-template-columns</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-areas" target="resource">grid-template-areas</a></code>, implicit grid tracks by added. These properties size those tracks</p>
-<pre>grid-auto-columns: 
-grid-auto-rows:
-grid-auto-flow:</pre>
+<p>When items are placed outside of the tracks defined by <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="resource">grid-template-rows</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" target="resource">grid-template-columns</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="resource">grid-template-areas</a></code>, implicit grid tracks by added. These properties size those tracks</p><code>
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="resource">grid-auto-columns:</a></li> 
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="resource">grid-auto-rows:</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="resource">grid-auto-flow:</a></li></ul></code>
   </section>
 </div>
 
@@ -611,6 +612,23 @@ align-self</pre>
 </div>
 
 
+<div class="slide divider">
+<header><h1>Named grid layout</h1></header>
+<section class="content">
+</section>
+</div> 
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="resource">grid-template-areas</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area" target="resource">grid-area</a></code></h1></header>
+<section class="content">
+  <p>Specifies named grid areas.</p>
+  <pre contenteditable>grid-template-areas: "a b b"
+   "a c d";</pre>
+  <pre contenteditable>article {
+  grid-area: b;
+}</pre>
+</section>
+</div>
 <!--  -->
 <div class="slide">
   <header><h1>Template Areas</h1></header>
