@@ -33,7 +33,7 @@
   <object data="files/flex.html"></object>
 </div>
 
-<!-- Flexbox -->
+<!-- Grid better than flex -->
 <div class="slide object">
   <header><h1>Grid</h1></header>
   <object data="files/grid.html"></object>
@@ -50,6 +50,14 @@
   <header><h1>Grid</h1></header>
   <object data="files/grid100.html"></object>
 </div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Grid</h1></header>
+  <object data="files/holygrail.html"></object>
+</div>
+
 
 
 <!-- Terminology -->
@@ -88,6 +96,7 @@
 <p>On the parent</p>
     <pre>display:
 grid-template-columns: 
+grid-template-areas:
 grid-gap:</pre>
 <p>On the child</p>
 <pre>grid-columns:
@@ -117,12 +126,9 @@ grid-template-areas
 grid-template (shorthand)
 grid-column-gap
 grid-row-gap
-grid-gap</pre>
-<pre>
-justify-items
-align-items
-justify-content
-align-content
+grid-gap ( gap )</pre>
+<pre>place-items      ( justify-items | align-items )
+place-content   (justify-content | align-content)
 grid-auto-columns
 grid-auto-rows
 grid-auto-flow
@@ -138,6 +144,10 @@ grid</pre>
   <section class="content">
     <p><code>
           <strong><em>display:</em></strong> inline | block | list-item | inline-list-item | inline-block | flex | inline-flex| <strong><em>grid | inline-grid</em></strong>  | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | flow | flow-root</code></p>
+          <hr>
+          <pre contenteditable>display: inline-grid;</pre>
+          <p>Declaring <code>display: grid</code> gives you a one column grid</p>
+          <p>All the children converted to grid items</p>
   </section>
 </div>
 
@@ -157,19 +167,29 @@ grid</pre>
 <div class="slide">
   <header><h1>Columns and Rows</h1></header>
   <section class="content">
+<h3><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" target="resource">grid-template-columns</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="resource">grid-template-rows</a></code></h3>
 <p>Defines the columns and rows of the grid with a space-separated list of values representing the track size</p>
     <pre>grid-template-columns: none | &lt;track-list> | &lt;auto-track-list>
 grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 
 <ul>
 <li><code>&lt;track-list> = &lt;line-name>? [ &lt;track-size> | &lt;track-repeat> ]</code>
-<li>&lt;track-size> - can be a length, a percentage, or a fraction of the free space (fr) in the grid </li>
-<li>&lt;line-name> - ident or string</li>
+<li><code>&lt;track-size></code> - can be a length, a percentage, or a fraction of the free space (fr) in the grid </li>
+<li><code>&lt;line-name></code> - An ident or string</li>
 </ul>
 <pre>grid-template-columns: 200px 1fr max-content minmax(min-content, 1fr);</pre>
 
   </section>
 </div>
+
+
+<!-- Flexbox -->
+<div class="slide object">
+  <header><h1>Grid</h1></header>
+  <object data="files/columnsandrows.html"></object>
+</div>
+
+
 
 <!--  -->
 <div class="slide">
@@ -216,9 +236,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   <section class="content">
     
     <p><strong>fr</strong><br/>
-      Fraction Unit<br/>describes a fraction of the <strong>available</strong> space</p>
+      Fraction Unit<br/>describes a fraction of the <strong>available</strong>* space</p>
 
     <p><strong>repeat()</strong><br/>repeat notation: <br/><code>repeat(# of repeats, length)</code></p>
+
+    <p>*<small>The fr unit distributes available space, not all space. If a tracks has a large link or image, there's' less distributable space.</small></p>
   </section>
 </div>
 
@@ -256,7 +278,7 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 <div class="slide">
   <header><h1>Adding gutters</h1></header>
   <section class="content">
-<p>Gutter size: global spacing between grid items with:</p>
+<p>Global (only one value per direction) spacing between grid items:</p>
 <dl>
   <dt>grid-column-gap</dt>
   <dd>vertical space between columns</dd>
@@ -264,8 +286,10 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   <dd>horizontal space between rows</dd>
   <dt>grid-gap</dt>
   <dd>Shorthand for grid-row-gap and grid-column-gap, in that order. Can take one or two lengths or percents.</dd>
+  <dt>gap</dt>
+  <dd>Not yet fully supported replacement for <code>grid-gap</code> used in grid, flex, columns.</dd>
 </dl>
-<p>Only a single size for each axis.</p>
+<p></p>
 <pre>    grid-column-gap: 20px;
     grid-row-gap: 1em;
     grid-gap: 1em 20px;</pre>
@@ -281,6 +305,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   <object data="files/gap.html"></object>
 </div>
 
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Margins</h1></header>
+  <object data="files/margins.html"></object>
+</div>
 
 
 <!-- steps -->
@@ -628,12 +657,14 @@ No matter the relative sizes overflowing, the alignment value is honored.</p>
 <div class="slide">
   <header><h1>Implicit track sizing </h1></header>
   <section class="content">
-<p>When items are placed outside of the tracks defined by <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code>, implicit grid tracks by added. These properties size those tracks</p>
+<p>When items are placed outside of the tracks defined by <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="resource">grid-template-rows</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="resource">grid-template-columns</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-areas" target="resource">grid-template-areas</a></code>, implicit grid tracks by added. These properties size those tracks</p>
 <pre>grid-auto-columns: 
 grid-auto-rows:
 grid-auto-flow:</pre>
   </section>
 </div>
+
+
 
 
 
@@ -649,6 +680,49 @@ grid-auto-flow:</pre>
   <header><h1>White Space</h1></header>
   <object data="files/extracols2.html"></object>
 </div>
+
+
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax" target="resouce">minmax( min, max )</a></code> function</h1></header>
+<section class="content">
+  <p>Defines a size range greater than or equal to min and less than or equal to max. </p>
+  <pre contenteditable>minmax( &lt;size> , &lt;size> )</pre>
+  <p>where <code>&lt;size></code> is:</p>
+  <pre contenteditable>&lt;length> | &lt;percentage> | &lt;flex> | min-content | max-content | auto </pre>
+  <p>Used by:</p>
+  <pre>grid-template-columns: minmax(min-content, 200px) minmax(300px, 1fr) 250px;  
+grid-template-rows:
+grid-auto-columns: minmax( 100px , 1fr );
+grid-auto-rows: minmax( 3em , max-content );</pre>
+    <pre>
+</section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>min-max()</code> function</h1></header>
+  <object data="files/minmax.html"></object>
+</div>
+
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-content" target="resouce">Intrinsic Size</a></code> function</h1></header>
+<section class="content">
+<dl>
+  <dt>min-content</dt>
+<dd>When text is wrapped as small as possible, softwrapping but not breaking any words, in the inline direction, without overflow. Usually the longest word or link, or largest image.</dd>
+<dt>max-content</dt>
+<dd>Size with no wrapping, even if an overflow is caused.</dd>
+</dl>
+</section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>min-max()</code> function (again)</h1></header>
+  <object data="files/minmax.html"></object>
+</div>
+
 
 <div class="slide">
   <header><h1>Developer Tools</h1></header>
