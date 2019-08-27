@@ -75,7 +75,7 @@
 <!-- Specificity -->
 <div class="object slide">
   <object data="https://specifishity.com/specifishity.pdf" style="height: 792px;"></object>
-     <header>
+  <header>
     <h1>Specificity (SpeciFISHity)</h1>
   </header>
   <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
@@ -84,22 +84,22 @@
 
 <!-- Specificity Notes -->
 <div class="slide">
-   <header>
+  <header>
     <h1>Specificity: How it works</h1>
   </header>
   <section class="content">
-      <ul>
-        <li><code contenteditable>0-0-0</code>: Global selector</li>
-        <li><code contenteditable>0-0-1</code>: Type Selector (Elements &amp; pseudoelements)</li>
-        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
-        <li><code contenteditable>1-0-0</code>: ID selector</li></ul>
-        <ul>
-         <li> <code contenteditable>1-0-0-0</code>: inline styles</li>
-         <li> <code contenteditable>1-0-0-0-0</code>: <pre style="display: inline"><em>!important</em></pre> (on value)</li>
-
- 
-
-     </section>
+    <ul>
+      <li><code contenteditable>0-0-0</code>: Global selector</li>
+      <li><code contenteditable>0-0-1</code>: Type Selector (Elements &amp; pseudoelements)</li>
+      <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+      <li><code contenteditable>1-0-0</code>: ID selector</li>
+    </ul>
+    <ul>
+       <li><code contenteditable>1-0-0-0</code>: inline styles</li>
+       <li><code contenteditable>1-0-0-0-0</code>: 
+          <pre style="display: inline"><em>!important</em></pre> (on value)</li>
+    </ul>
+  </section>
 </div>
 
 <!-- Specificity Notes -->
@@ -127,64 +127,62 @@
 
 <!-- Specificity Notes -->
 <div class="slide">
-   <header>
+  <header>
     <h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>: How it works</h1>
   </header>
   <section class="content">
-      
- <pre contenteditable>body.blue div#someId a#otherId.classy {
+    <pre contenteditable>body.blue div#someId a#otherId.classy {
   color: blue; }
 #myPage #someId article.home p.important a {
   color: red; }</pre>
-<ol>
-  <li>How many IDs in the selector?</li>
-  <li>How many class, attribute and pseudoclasses?</li>
-  <li>How many type/element or pseudo-elements?</li></ol>
- <pre contenteditable>2-X-X
+    <ol>
+      <li>How many IDs in the selector?</li>
+      <li>How many class, attribute and pseudoclasses?</li>
+      <li>How many type/element or pseudo-elements?</li>
+    </ol>
+    <pre contenteditable>2-X-X
 X-2-X
 X-X-3</pre>
-</section>
+  </section>
 </div>
 
 
 <!-- Specificity Notes -->
 <div class="slide">
-   <header>
+  <header>
     <h1>Specificity: The less than obvious</h1>
   </header>
   <section class="content">
- <p>The * selector, or global selector, has a specifity of 0.</p>
-
-<p>Combinators, like ~, >, spaces, and + have no value</p>
-<pre contenteditable>ul li {} 0-0-2
+    <p>The * selector, or global selector, has a specifity of 0.</p>
+    <p>Combinators, like ~, >, spaces, and + have no value</p>
+    <pre contenteditable>ul li {} 0-0-2
 ul > li {} 0-0-2</pre>
-
-<p>:not has no value, but parameter selector does</p>
-<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
-
-     </section>
+    <p>:not has no value, but parameter selector does</p>
+    <pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+  </section>
 </div>
 
 
 <!-- Specificity Notes -->
 <div class="slide">
-   <header>
+  <header>
     <h1>Specificity v Inheritance</h1>
   </header>
   <section class="content">
-<p>Specificity is not inheritance</p>
-
-<pre contenteditable>p#myP.important { 
+    <p>Specificity is not inheritance</p>
+    <pre contenteditable>p#myP.important { 
   color: red !important;
 }
 a {
   color: purple;
 }</pre>
-<pre contenteditable>&lt;p class="important" id="myP">Paragraph with a &lt;a href="x.html">link&lt;/a>&lt;/p></pre>
-<p class="important" id="myP">Paragraph with a <a href="x.html">link</a></p></p>
-<p>Styles for a directly targeted element take precedence over inherited styles regardless of inherited specificity. </p>
-     </section>
+    <pre contenteditable>&lt;p class="important" id="myP">Paragraph with a &lt;a href="x.html">link&lt;/a>&lt;/p></pre>
+    <p class="important" id="myP">Paragraph with a <a href="x.html">link</a></p>
+    <p>Styles for a directly targeted element take precedence over inherited styles regardless of inherited specificity. </p>
+  </section>
 </div>
+
+
 
 <!-- hacking specificity-->
 <div class="slide">
@@ -194,14 +192,13 @@ a {
   <section class="content">
     <pre contenteditable>:not(a, .b, #c)</pre>
     <pre contenteditable>:not(a, .b, #c)</pre>
-
     <pre contenteditable>:is(a, .b, #c)</pre>
-
     <pre contenteditable>:where(a, .b, #c)</pre>
-
     <pre contenteditable>:nth-child(-n + 3 of a.b#c) /* 1-2-1 */</pre>
   </section>
 </div>
+
+
 
 <!-- hacking specificity-->
 <div class="slide">
@@ -212,8 +209,8 @@ a {
     <h2>Hacking specificity</h2>
     <pre contenteditable>.disabled {cursor: default !important;}
 p.btn {cursor: pointer;}</pre>
-<p>v.</p>
-<pre contenteditable>.disabled.disabled.disabled {cursor: default;}
+    <p>v.</p>
+    <pre contenteditable>.disabled.disabled.disabled {cursor: default;}
 p.btn {cursor: pointer;}</pre>
   </section>
 </div>
@@ -228,7 +225,7 @@ p.btn {cursor: pointer;}</pre>
     <pre contenteditable><b>#TheirWidget</b> {background-color: blue <b>!important</b>;}
 #3rdPartyWidget {background-color: white;}</pre>
 v.
-<pre contenteditable><b>#TheirWidget#TheirWidget</b> {background-color: blue ;}
+    <pre contenteditable><b>#TheirWidget#TheirWidget</b> {background-color: blue ;}
 #3rdPartyWidget {background-color: white;}</pre>
   </section>
 </div>
@@ -244,17 +241,20 @@ v.
   </section>
 </div>
 
+
+
 <div class="slide intro">
-     <header>
-      <h1>Math Class!</h1>
-     </header>
-     <p><a href="exercises/specificity.html" target="exercise">Let's practice</a></p>
-    </div>
+  <header>
+    <h1>Math Class!</h1>
+  </header>
+  <p><a href="exercises/specificity.html" target="exercise">Let's practice</a></p>
+</div>
 
 
 <!-- Overriding important with animation -->
 <div class="slide object">
-<header><h1>!Even More Important</h1>
+  <header>
+    <h1>!Even More Important</h1>
   </header>
   <object data="exercises/importantanimation.html"></object>
   <a href="exercises/importantanimation.html" target="play" title="open code example in new window"  class="objectlink">↪</a>
@@ -270,32 +270,38 @@ v.
   </header>
 </div>
 
+
+
 <div class="slide">
-<header><h1>The Cascade</h1>
+  <header>
+    <h1>The Cascade</h1>
   </header>
-<section class="content">
-<ol>
-<li>Transition declarations</li>
-<li>Important user agent declarations</li>
-<li>Important user declarations</li>
-<li>Important author declarations</li>
-<li>Animation declarations </li>
-<li><strong>Normal author declarations</strong></li>
-<li>Normal user declarations</li>
-<li>Normal user agent declarations</li>
-</ol>
-  <p>When multiple declarations have equal specificity, the last declaration found in the CSS is applied to the element. </p></section>
+  <section class="content">
+    <ol>
+      <li>Transition declarations</li>
+      <li>Important user agent declarations</li>
+      <li>Important user declarations</li>
+      <li>Important author declarations</li>
+      <li>Animation declarations </li>
+      <li><strong>Normal author declarations</strong></li>
+      <li>Normal user declarations</li>
+      <li>Normal user agent declarations</li>
+    </ol>
+    <p>When multiple declarations have equal specificity, the last declaration found in the CSS is applied to the element. </p>
+  </section>
 </div>
 
 
 <div class="slide">
-<header><h1>DevTools</h1>
+  <header>
+    <h1>DevTools</h1>
   </header>
-<section class="content">
-<p>There are extensions that enable you to see the weight of a selectors. But, by default, you can inspect which property value has won out and which selectors lost the specifity battle in the computed section in DevTools, but the selectors are ordered in specifity order.</p>
-<ul><li>The Rules show the cascade by crossing out properties that were overwritten</li>
-<li>The computed styles show the final value impacting the selected element, with all values / selectors that were deprioritized. </li>
-</p>
+  <section class="content">
+    <p>There are extensions that enable you to see the weight of a selectors. But, by default, you can inspect which property value has won out and which selectors lost the specifity battle in the computed section in DevTools, but the selectors are ordered in specifity order.</p>
+    <ul>
+      <li>The Rules show the cascade by crossing out properties that were overwritten</li>
+      <li>The computed styles show the final value impacting the selected element, with all values / selectors that were deprioritized. </li>
+    </ul>
 </section>
 </div>
 
@@ -303,12 +309,15 @@ v.
 
 <!--NEXT-->
 <div class="slide">
-   <header>
+  <header>
     <h1>Generated Content</h1>
   </header>
   <section class="content">
-    <h1><a href="../generated/index.html">Next ➹</a></h1></section>
+    <h1><a href="../generated/index.html">Next ➹</a></h1>
+  </section>
 </div>
+
+
 
 <div class="slide dots">
   <header>
@@ -316,28 +325,27 @@ v.
   </header>
   <section>
     <ol class="col2">
-<li><a href="../intro/index.html">Introduction</a></li>
-    <li><a href="../selectors/index.html">Selectors</a></li>
-    <li><a href="../selectors/specificity.html">Specificity</a></li>
-    <li><a href="../generated/index.html">Generated Content</a></li>
-    <li><a href="../media/index.html">Media Queries</a></li>
-    <li><a href="../values/index.html">Units &amp; Values </a></li>
-    <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
-    <li><a href="../math/index.html">Math &amp; Variables</a></li>
-    <li><a href="../fonts/index.html">Fonts</a></li>
-    <li><a href="../text/index.html">Text</a></li>
-    <li><a href="../images/index.html">Images</a></li>
-    <li><a href="../background/index.html">Backgrounds</a></li>
-    <li><a href="../gradients/index.html">Gradients</a></li>
-    <li><a href="../boxmodel/index.html">Box Model</a></li>
-    <li><a href="../flexbox/index.html">Flexbox</a></li>
-    <li><a href="../tables/index.html">Tables</a></li>
-    <li><a href="../grid/index.html">Grids</a></li>
-    <li><a href="../transforms/index.html">Transforms</a></li>
-    <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
-   <li><a href="../other/index.html">Other Features</a></li>
-
-<p></ol>
+      <li><a href="../intro/index.html">Introduction</a></li>
+      <li><a href="../selectors/index.html">Selectors</a></li>
+      <li><a href="../selectors/specificity.html">Specificity</a></li>
+      <li><a href="../generated/index.html">Generated Content</a></li>
+      <li><a href="../media/index.html">Media Queries</a></li>
+      <li><a href="../values/index.html">Units &amp; Values </a></li>
+      <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
+      <li><a href="../math/index.html">Math &amp; Variables</a></li>
+      <li><a href="../fonts/index.html">Fonts</a></li>
+      <li><a href="../text/index.html">Text</a></li>
+      <li><a href="../images/index.html">Images</a></li>
+      <li><a href="../background/index.html">Backgrounds</a></li>
+      <li><a href="../gradients/index.html">Gradients</a></li>
+      <li><a href="../boxmodel/index.html">Box Model</a></li>
+      <li><a href="../flexbox/index.html">Flexbox</a></li>
+      <li><a href="../tables/index.html">Tables</a></li>
+      <li><a href="../grid/index.html">Grids</a></li>
+      <li><a href="../transforms/index.html">Transforms</a></li>
+      <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
+      <li><a href="../other/index.html">Other Features</a></li>
+    </ol>
   </section>
 </div>
 <!-- TOC -->
@@ -345,21 +353,19 @@ v.
   <header>
     <h1>Links</h1>
   </header>
-    <section class="content">
-      <ul>
-        <li>Original definition: <a href="https://www.w3.org/TR/CSS1/#cascading-order">https://www.w3.org/TR/CSS1/#cascading-order</a></li>
-        <li>CSS2: <a href="https://www.w3.org/TR/CSS2/cascade.html#specificity">https://www.w3.org/TR/CSS2/cascade.html#specificity</a></li>
-        <li>CSS3: <a href="https://drafts.csswg.org/selectors-3/#specificity">https://drafts.csswg.org/selectors-3/#specificity</a></li>
-        <li>CSS4: <a href="https://drafts.csswg.org/selectors-4/#specificity">https://drafts.csswg.org/selectors-4/#specificity</a></li>
-        <li><a href="http://specifishity.com">SpeciFISHity.com</a></li>
-      </ul>
-    </section>
+  <section class="content">
+    <ul>
+      <li>Original definition: <a href="https://www.w3.org/TR/CSS1/#cascading-order">https://www.w3.org/TR/CSS1/#cascading-order</a></li>
+      <li>CSS2: <a href="https://www.w3.org/TR/CSS2/cascade.html#specificity">https://www.w3.org/TR/CSS2/cascade.html#specificity</a></li>
+      <li>CSS3: <a href="https://drafts.csswg.org/selectors-3/#specificity">https://drafts.csswg.org/selectors-3/#specificity</a></li>
+      <li>CSS4: <a href="https://drafts.csswg.org/selectors-4/#specificity">https://drafts.csswg.org/selectors-4/#specificity</a></li>
+      <li><a href="http://specifishity.com">SpeciFISHity.com</a></li>
+    </ul>
+  </section>
 </div>
 
 
-   </div>
-
-
+</div>
 </div>
 <header>
     <nav>
@@ -371,6 +377,4 @@ v.
 </header>
 <script src="../slideshow.js"></script>
   </body>
-
 </html>
-

@@ -3,19 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>CSS: Generated Content</title>
-<link rel="stylesheet" href="../intro/css/main.css"/>
-   <link rel="stylesheet" href="../intro/css/generated.css"/>
-
+    <link rel="stylesheet" href="../intro/css/main.css"/>
+    <link rel="stylesheet" href="../intro/css/generated.css"/>
   </head>
   <body>
 
 
-  <div id="info">
-    <p>
+<div id="info">
+  <p>
     <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
     <span class="key">2</span> for comments. <a href="https://estelle.github.io/CSS/generated">estelle.github.io/CSS/generated</a>
-    </p>
-  </div>
+  </p>
+</div>
 
 <div id="presentation">
   <div id="presentation-counter" style="display: none"></div>
@@ -25,30 +24,30 @@
 
 <!-- slidedeck title -->
 <div class="slide intro">
-    <header>
-    	<h1>CSS: Generated Content</h1>
-    </header>
+  <header>
+  	<h1>CSS: Generated Content</h1>
+  </header>
   <section class="content">
-      <ul>
-        <li>Generated Content</li>
-        <li>Generated Content: quotes</li>
-<li>content: &lt;image></li>
-<li>Generated Content: Attribute Values</li>
-<li><code>position</code> property</li>
-<li>Generated Content: Counters</li>
-<li>Generated Content: Strings</li>
-<li>Special Characters</li>
-<li>Accessibility</li>
-<li>Design Elements</li>
-<li>Exercise</li></ul>
-      <h2><a href="https://estelle.github.io/css/generated">estelle.github.io/css/generated</a></h2>
-    
+    <ul>
+      <li>Generated Content</li>
+      <li>Generated Content: quotes</li>
+      <li>content: &lt;image></li>
+      <li>Generated Content: Attribute Values</li>
+      <li><code>position</code> property</li>
+      <li>Generated Content: Counters</li>
+      <li>Generated Content: Strings</li>
+      <li>Special Characters</li>
+      <li>Accessibility</li>
+      <li>Design Elements</li>
+      <li>Exercise</li>
+    </ul>
+    <h2><a href="https://estelle.github.io/css/generated">estelle.github.io/css/generated</a></h2>
   </section>
 </div>
 
 <!-- title -->
 <div class="slide intro">
-     <header>
+  <header>
     <h1>Generated Content</h1>
   </header>
 </div>
@@ -56,10 +55,11 @@
 
 <!-- ::before and ::after  -->
 <div class="slide">
- <header><h1>::before and ::after</h1>
+  <header>
+    <h1>::before and ::after</h1>
   </header>
- <section class="content">
-  <pre contenteditable>p::before {
+  <section class="content">
+    <pre contenteditable>p::before {
   content: "before content - ";
   font-weight: bold;
 }
@@ -67,48 +67,53 @@ p::after{
   content: " - after content";
   font-weight: bold;
 }</pre>
-<pre contenteditable>&lt;p>the content&lt;/p></pre>
-<p class="beforeafter">the content</p>
-<pre contenteditable>&lt;p>
+    <pre contenteditable>&lt;p>the content&lt;/p></pre>
+    <p class="beforeafter">the content</p>
+    <pre contenteditable>&lt;p>
     &lt;before&gt;before content - &lt;/before>
         the content
     &lt;after&gt; - after content&lt;/after>
 &lt;/p></pre>
-<a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a> </section>
+    <a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a> 
+  </section>
 </div>
 
 
 <div class="slide object">
-<header><h1>Try it out</h1>
+  <header>
+    <h1>Try it out</h1>
   </header>
-<object data="exercises/01_generatedtext.html"></object>
-<a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a>
+  <object data="exercises/01_generatedtext.html"></object>
+  <a href="exercises/01_generatedtext.html" target="play" class="objectlink">Try it out</a>
 </div>
 
 
 
  <!-- 2 free elements  -->
 <div class="slide ">
-     <header>
+  <header>
     <h1>Pseudo Elements</h1>
   </header>
   <section class="content">
-     You get 2 free stylable faux elements for every non-empty element
-     <div style="padding: 4vh 0 4vh 10vw">
-     <div class="beforeafterdivcont d3">
-      <div class="beforeafterdiv"><i>Content</i></div>
-      </div></div>
-      <small>Doesn't apply to replaced elements like <code>&lt;img></code> and <code>&lt;br></code>.</small>
-     </section>
- </div>
+    <p>You get 2 free stylable faux elements for every non-empty element</p>
+    <div style="padding: 4vh 0 4vh 10vw">
+      <div class="beforeafterdivcont d3">
+        <div class="beforeafterdiv"><i>Content</i></div>
+      </div>
+    </div>
+    <small>Doesn't apply to replaced elements like <code>&lt;img></code> and <code>&lt;br></code>.</small>
+  </section>
+</div>
+
+
 
 <!-- Pseudoelement Syntax & Support-->
 <div class="slide">
-   <header>
+  <header>
     <h1>Syntax</h1>
   </header>
   <section class="content">
-     <pre contenteditable>element::before {
+    <pre contenteditable>element::before {
   /* the only 'required' attribute */
   content: ""; 
  }
@@ -117,9 +122,9 @@ element::after {
   /* without "content:", you have no content */
   content: ""; 
  }</pre>
- <p>Objects inserted using the <code>content</code> property are anonymous replaced elements.</p>
-     </section>
- </div>
+    <p>Objects inserted using the <code>content</code> property are anonymous replaced elements.</p>
+  </section>
+</div>
 
 
 <div class="slide intro">
@@ -131,37 +136,37 @@ element::after {
 
 <!-- counters and content -->
 <div class="slide">
-   <header>
+  <header>
     <h1>content: value;</h1>
   </header>
   <section class="content">
-     <dl class="deprecated listed">
-  <dt>none / normal</dt>
-  <dd>Same as no content property declared.</dd>
-  <dt>&lt;image></dt>
-  <dd>URL of  a resource, usual an image</dd>
-  <dt>counter() / counters()</dt>
-  <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
-  <dt>string</dt>
-  <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
-  <dt>open-quote / close-quote</dt>
-  <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
-  <dt>no-open-quote / no-close-quote</dt>
-  <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
-  <dt>attr(X)</dt>
-  <dd>Displays the value of the attribute 'X'</dd>
-</dl>
-</section>
+    <dl class="deprecated listed">
+      <dt>none / normal</dt>
+      <dd>Same as no content property declared.</dd>
+      <dt>&lt;image></dt>
+      <dd>URL of  a resource, usual an image</dd>
+      <dt>counter() / counters()</dt>
+      <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
+      <dt>string</dt>
+      <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
+      <dt>open-quote / close-quote</dt>
+      <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
+      <dt>no-open-quote / no-close-quote</dt>
+      <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
+      <dt>attr(X)</dt>
+      <dd>Displays the value of the attribute 'X'</dd>
+    </dl>
+  </section>
 </div>
 
 
 <!-- counters and content -->
 <div class="slide">
-   <header>
+  <header>
     <h1>content: value;</h1>
   </header>
   <section class="content">
-     <pre contenteditable class="largeblock">content: none;
+    <pre contenteditable class="largeblock">content: none;
 content: normal;
 content: "string of text";
 content: url(path/image.jpg);
@@ -172,38 +177,38 @@ content: counters(mycounter, '.', upper-roman);
 content: open-quote;
 content: close-quote;
 content: no-open-quote;
-content: no-close-quote;</dt>
+content: no-close-quote;
 
-content: attr(href)</dt>
+content: attr(href)
 content: url(path/email.png) " " attr(title);
 
 content: inherit;
 content: initial;
-content: unset;
-</pre>
-</section>
+content: unset;</pre>
+  </section>
 </div>
 
 
 <div class="slide toc">
-<header><h1>content: value;</h1>
+  <header>
+    <h1>content: value;</h1>
   </header>
-<section class="content">
-  <ol class="largeblock codelike">
-    <li>content: none</li>
-    <li>content: normal</li>
-    <li>content: open-quote;
-content: close-quote;
-content: no-open-quote;
-content: no-close-quote;</li>
-    <li>content: &lt;image></li>
-    <li>content: attr()</li>
-    <li>content: counter()
-content: counters()</li>
-    <li>content: &lt;string></li>
-    <li>Examples</li>
-  </ol>
-</section>
+  <section class="content">
+    <ol class="largeblock codelike">
+      <li>content: none</li>
+      <li>content: normal</li>
+      <li>content: open-quote;
+  content: close-quote;
+  content: no-open-quote;
+  content: no-close-quote;</li>
+      <li>content: &lt;image></li>
+      <li>content: attr()</li>
+      <li>content: counter()
+  content: counters()</li>
+      <li>content: &lt;string></li>
+      <li>Examples</li>
+    </ol>
+  </section>
 </div>
 
 
@@ -211,28 +216,26 @@ content: counters()</li>
   <header>
     <h1><code>content: none</code></h1>
   </header>
-<section class="content">
-  <h1>none</h1>
-  <pre>content: none;</pre>
-  <p>Acts as <code>display: none;</code> on pseudo-elements</p>
-  <p>Basically, gets rid of the generated content if there was any added.</p>
-
-</section>
+  <section class="content">
+    <h1>none</h1>
+    <pre>content: none;</pre>
+    <p>Acts as <code>display: none;</code> on pseudo-elements</p>
+    <p>Basically, gets rid of the generated content if there was any added.</p>
+  </section>
 </div>
-<
+
 
 <div class="slide">
   <header>
     <h1><code>content: normal</code></h1>
   </header>
-<section class="content">
-  <h1>normal</h1>
-  <pre>content: normal;</pre>
-  <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.</p>
- <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.</p>
-  <p>For DOM elements, computes to contents, as if not set at all.</p>
-</p>
-</section>
+  <section class="content">
+    <h1>normal</h1>
+    <pre>content: normal;</pre>
+    <p>For <code>::before</code> and <code>::after</code> it's the same as <code>none</code>.</p>
+    <p>For <code>::marker</code> it's as if no <code>content</code> was defined, as if set to <code>initial</code>.</p>
+    <p>For DOM elements, computes to contents, as if not set at all.</p>
+  </section>
 </div>
 
 
@@ -247,18 +250,18 @@ content: counters()</li>
   <header>
     <h1><code>content</code> and <code>quote</code> properties</h1>
   </header>
-<section class="content">
-<p>Quotes are a two step process: definte the <code>quote</code> property, then use <code>open-quote</code> and <code>close-quote</code> as values for the <code>content</code> property.</p>
-  <pre><i>/* Example: Pairs of quotes for two levels in three languages */</i>
+  <section class="content">
+    <p>Quotes are a two step process: definte the <code>quote</code> property, then use <code>open-quote</code> and <code>close-quote</code> as values for the <code>content</code> property.</p>
+    <pre><i>/* Example: Pairs of quotes for two levels in three languages */</i>
 :lang(en) > q { quotes: '"' '"' "'" "'"; }
 :lang(fr) > q { quotes: "«" "»" "’" "’"; }
 :lang(de) > q { quotes: "«" "»" "‹" "›"; }
 
 <i>/* Insert quotes before and after <code>&lt;q></code> element's content */</i>
 q::before { content: open-quote }
-q::after  { content: close-quote }
-</pre>
-<small>They'll alternate, even if they're on different elements</small></section>
+q::after  { content: close-quote }</pre>
+    <small>They'll alternate, even if they're on different elements</small>
+  </section>
 </div>
 
 
@@ -286,11 +289,9 @@ q::after  { content: close-quote }
 
 
 <div class="slide divider">
-   <header>
+  <header>
     <h1>content: &lt;image></h1>
   </header>
-   <section class="content">
-   </section>
 </div>
 
 
@@ -323,13 +324,12 @@ q::after  { content: close-quote }
 
 <!-- attribute example -->
 <div class="slide attr">
-   <header>
+  <header>
     <h1>Attribute Values as content</h1>
   </header>
-   <section class="content attribute">
- 
-   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
-   <style contenteditable class="editme">.attr a[href^=http]:hover {
+  <section class="content attribute">
+    <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
+    <style contenteditable class="editme">.attr a[href^=http]:hover {
    position: relative;
 }
 .attr a[href^=http]:hover::after {
@@ -348,12 +348,12 @@ q::after  { content: close-quote }
 
 <!-- attribute example -->
 <div class="slide attr2">
-   <header>
+  <header>
     <h1>Why relative only on hover?</h1>
   </header>
-   <section class="content attribute">
-   <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
-   <style contenteditable class="editme">.attr2 a {
+  <section class="content attribute">
+    <p>This is a <a href="exercises/10_generatedtext.html" target="play">local link</a>, and this is an <a href="http://lmgtfy.com/?q=css+generated+content+attributes" target="resource">external link</a>.</p>
+    <style contenteditable class="editme">.attr2 a {
    position: relative;
 }
 .attr2 a:hover::after {
@@ -386,13 +386,13 @@ q::after  { content: close-quote }
     <p>Supported</p>
     <pre contenteditable>attr( attrName )</pre>
     <p>Examples:</p>
-<pre contenteditable>@media print {
+    <pre contenteditable>@media print {
   a[href^="https://"]::after, 
   a[href^="http://"]::after  {
     <code>content: " ("  attr(href) ")";</code>
   }
 }</pre>
-<pre contenteditable>abbr[title]:hover::after {
+    <pre contenteditable>abbr[title]:hover::after {
   <code>content: attr(title);</code>
   position: absolute; bottom: 0; right: 0;
   background-color: #ccc;
@@ -402,46 +402,18 @@ q::after  { content: close-quote }
 </div>
     
 
-<!--
-<div class="slide">
-  <header>
-    <h1>attr() value types</h1>
-  </header>
-    <section class="content">
-
-      <pre><code>attr( attrName unit? [ , fallback ]? )</code></pre>
-      <dl class="deprecated">
-        <dt>string</dt>
-<dd>contents of a CSS string. Default is the empty string.</dd>
-<dt>color</dt>
-<dd>Must parse as a readable color. Default is ‘currentColor’.</dd>
-<dt>url</dt>
-<dd>Default is ‘about:invalid’. Relative URLs will be made absolute, not relative to the style sheet.</dd>
-<dt>integer</dt>
-<dd>Default is ‘0’</dd>
-<dt>number</dt>
-<dd>Default is ‘0’</dd>
-<dt>length, angle, time or frequency</dt>
-<dd>Default is ‘0’ in the relevant units. If the unit is a relative length, it will be computed to an absolute length.</dd>
-<dt>length or unit token </dt>
-<dd>'em’ ‘ex’ ‘px’ ‘rem’ ‘vw’ ‘vh’ ‘vmin’ ‘vmax’ ‘mm’ ‘cm’ ‘in’ ‘pt’ ‘pc’ ‘deg’ ‘grad’ ‘rad’ ‘ms’ ‘s’ ‘Hz’ ‘kHz’ or ‘%'. If the unit is a relative length, it will be computed to an absolute length.</dd>
-      </dl>
-    </section>
-</div> -->
-
 
 <div class="slide">
   <header>
     <h1>attr() support, or lack thereof</h1>
   </header>
-    <section class="content">
-      <pre><code>attr( attrName unit? [ , fallback ]? )</code></pre>
-      
-<p>See <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr" target="resource">MDN attr() function</a></p>
-<pre contenteditable>&lt;p data-count="5">Hi&lt;/p>
+  <section class="content">
+    <pre><code>attr( attrName unit? [ , fallback ]? )</code></pre>
+    <p>See <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr" target="resource">MDN attr() function</a></p>
+    <pre contenteditable>&lt;p data-count="5">Hi&lt;/p>
 
 width: attr(data-count em, auto);</pre>
-</section>
+  </section>
 </div>
 
 
@@ -457,21 +429,20 @@ width: attr(data-count em, auto);</pre>
     <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="resource">position</a></code> property</h1>
   </header>
   <section class="content">
-<p>Sets how an element is positioned in a document. <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties determine the final location of <em>positioned</em> (non static) elements.</p>
+    <p>Sets how an element is positioned in a document. <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties determine the final location of <em>positioned</em> (non static) elements.</p>
     <pre contenteditable><b>static</b> | relative | absolute | fixed | sticky</pre>
-<dl>
-<dl class="deprecated listed wide"> 
-<dt>static</dt>
-  <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
-<dt>relative</dt>
-  <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
-<dt>absolute</dt>
-    <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
-<dt>fixed</dt>
-    <dd>Like <code>absolute</code>, element is removed from the normal document flow, positioned relative to the initial containing block established by the viewport, except when one of its ancestors has a <code>transform, perspective</code>, or <code>filter</code> property set. Position is determined by <code>top, right, bottom</code>, and <code>left</code>. When printed, it's placed in the same spot on every page.</dd>
-<dt>sticky</dt>
-    <dd>Positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), based on the values of <code>top, right, bottom</code>, and <code>left</code>. Creates a new stacking context. It "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor.</dd>
-  </dl>
+    <dl class="deprecated listed wide"> 
+      <dt>static</dt>
+      <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
+      <dt>relative</dt>
+      <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
+      <dt>absolute</dt>
+      <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
+      <dt>fixed</dt>
+      <dd>Like <code>absolute</code>, element is removed from the normal document flow, positioned relative to the initial containing block established by the viewport, except when one of its ancestors has a <code>transform, perspective</code>, or <code>filter</code> property set. Position is determined by <code>top, right, bottom</code>, and <code>left</code>. When printed, it's placed in the same spot on every page.</dd>
+      <dt>sticky</dt>
+      <dd>Positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), based on the values of <code>top, right, bottom</code>, and <code>left</code>. Creates a new stacking context. It "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor.</dd>
+    </dl>
   </section>
 </div>
 
@@ -481,13 +452,13 @@ width: attr(data-count em, auto);</pre>
   </header>
   <section class="content">
     <dl>
-    <dt>static</dt>
-  <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
-<dt>relative</dt>
-  <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
-<dt>absolute</dt>
-    <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
-</dl>
+      <dt>static</dt>
+      <dd>Default. Positioned according to the normal flow of the document. <code>top, right, bottom, left</code>, and <code>z-index</code> properties have no effect</dd>
+      <dt>relative</dt>
+      <dd>Positioned according to the normal flow of the document. Can be offset relative to itself by <code>top, right, bottom</code>, and <code>left</code>. Change in position does not move its siblings. <code>z-index</code> creates a new stacking context.</dd> 
+      <dt>absolute</dt>
+      <dd>The element is removed from the normal document flow. No space is created for the element in the page layout. Positioned relative to its closest positioned ancestor, or the <code>&lt;body></code> if none, by the <code>top, right, bottom,</code> and <code>left</code> properties. Creates it's own block formatting context. Margins don't collapse. <code>z-index</code> creates a new stacking context.</dd>
+    </dl>
   </section>
 </div>
 
@@ -497,28 +468,28 @@ width: attr(data-count em, auto);</pre>
   </header>
   <section class="content">
     <p>We're interested in <code>absolute, static &amp; relative</code> for right now</p>
-      <ul>
-        <li>If not <code>static</code>, element is considered <em>positioned</em></li>
-        <li>If <em>positioned</em>, it has it's own stacking context</li>
-        <li>If <code>absolute</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties specify offsets from the edges of the element's containing block.</li>
-
-        <li>Containing block is the nearest "positioned" ancestor, or the <code>&lt;body></code></li>
-        <li>If no <code>height/width</code> declared on absolute, <code>top: 0; bottom: 0; left: 0; right: 0</code> will make it the size of it's parent </li>
-        <li>else, <code>top</code> overrides <code>bottom</code> and <code>left</code> overrides <code>right</code>.</li>
-      </ul>
+    <ul>
+      <li>If not <code>static</code>, element is considered <em>positioned</em></li>
+      <li>If <em>positioned</em>, it has it's own stacking context</li>
+      <li>If <code>absolute</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties specify offsets from the edges of the element's containing block.</li>
+      <li>Containing block is the nearest "positioned" ancestor, or the <code>&lt;body></code></li>
+      <li>If no <code>height/width</code> declared on absolute, <code>top: 0; bottom: 0; left: 0; right: 0</code> will make it the size of it's parent </li>
+      <li>else, <code>top</code> overrides <code>bottom</code> and <code>left</code> overrides <code>right</code>.</li>
+    </ul>
   </section>
 </div>
 
+
 <div class="slide">
  <header>
-    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top" target="resource">top</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom" target="resource">bottom</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="left">left</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="right">right</a></code> properties</h1>  </header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top" target="resource">top</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom" target="resource">bottom</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="left">left</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="right">right</a></code> properties</h1>  
+  </header>
   <section class="content">
-<pre contenteditable>&lt;length> | &lt;percentage> | auto</pre>
-<p><code>position: absolute;</code><br/>Vertical and horizontal positions of element relative to positioned containing block ancestor</p>
-<p><code>position: relative;</code><br/>Vertical and horizontal positions of element compared to where it would have been otherwise positioned.</p>
-<p><code>position: static;</code><br/>Has no impact.</p>
-
-</section>
+    <pre contenteditable>&lt;length> | &lt;percentage> | auto</pre>
+    <p><code>position: absolute;</code><br/>Vertical and horizontal positions of element relative to positioned containing block ancestor</p>
+    <p><code>position: relative;</code><br/>Vertical and horizontal positions of element compared to where it would have been otherwise positioned.</p>
+    <p><code>position: static;</code><br/>Has no impact.</p>
+  </section>
 </div>
 
 <div class="slide object">
@@ -551,11 +522,60 @@ width: attr(data-count em, auto);</pre>
     <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter" target="resource">counter()</a> &amp; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counters" target="resource">counters()</a> styles</h1>
   </header>
   <section class="content">
-
     <pre contenteditable>counter: counter(counter, style)</pre>
     <pre contenteditable>counter: counters(counter, string, style)</pre>
-  
-    <ul class="col4"><li><code>decimal</code></li><li><code>cjk-decimal</code></li><li><code>decimal-leading-zero</code></li><li><code>lower-roman</code></li><li><code>upper-roman</code></li><li><code>lower-greek</code></li><li><code>lower-alpha</code></li><li><code>lower-latin</code></li><li><code>upper-alpha</code></li><li><code>upper-latin</code></li><li><code>arabic-indic</code></li><li><code>armenian</code></li><li><code>bengali</code></li><li><code>cambodian</code></li><li><code>cjk-earthly-branch</code></li><li><code>cjk-heavenly-stem</code></li><li><code>cjk-ideographic</code></li><li><code>devanagari</code></li><li><code>ethiopic-numeric</code></li><li><code>georgian</code></li><li><code>gujarati</code></li><li><code>gurmukhi</code></li><li><code>hebrew</code></li><li><code>hiragana</code></li><li><code>hiragana-iroha</code></li><li><code>japanese-formal</code></li><li><code>japanese-informal</code></li><li><code>kannada</code></li><li><code>katakana</code></li><li><code>katakana-iroha</code></li><li><code>khmer</code></li><li><code>korean-hangul-formal</code></li><li><code>korean-hanja-formal</code></li><li><code>korean-hanja-informal</code></li><li><code>lao</code></li><li><code>lower-armenian</code></li><li><code>malayalam</code></li><li><code>mongolian</code></li><li><code>myanmar</code></li><li><code>oriya</code></li><li><code>persian</code></li><li><code>simp-chinese-formal</code></li><li><code>simp-chinese-informal</code></li><li><code>tamil</code></li><li><code>telugu</code></li><li><code>thai</code></li><li><code>tibetan</code></li><li><code>trad-chinese-formal</code></li><li><code>trad-chinese-informal</code></li><li><code>upper-armenian</code></li></ul>
+    <ul class="col4">
+      <li><code>decimal</code></li>
+      <li><code>cjk-decimal</code></li>
+      <li><code>decimal-leading-zero</code></li>
+      <li><code>lower-roman</code></li>
+      <li><code>upper-roman</code></li>
+      <li><code>lower-greek</code></li>
+      <li><code>lower-alpha</code></li>
+      <li><code>lower-latin</code></li>
+      <li><code>upper-alpha</code></li>
+      <li><code>upper-latin</code></li>
+      <li><code>arabic-indic</code></li>
+      <li><code>armenian</code></li>
+      <li><code>bengali</code></li>
+      <li><code>cambodian</code></li>
+      <li><code>cjk-earthly-branch</code></li>
+      <li><code>cjk-heavenly-stem</code></li>
+      <li><code>cjk-ideographic</code></li>
+      <li><code>devanagari</code></li>
+      <li><code>ethiopic-numeric</code></li>
+      <li><code>georgian</code></li>
+      <li><code>gujarati</code></li>
+      <li><code>gurmukhi</code></li>
+      <li><code>hebrew</code></li>
+      <li><code>hiragana</code></li>
+      <li><code>hiragana-iroha</code></li>
+      <li><code>japanese-formal</code></li>
+      <li><code>japanese-informal</code></li>
+      <li><code>kannada</code></li>
+      <li><code>katakana</code></li>
+      <li><code>katakana-iroha</code></li>
+      <li><code>khmer</code></li>
+      <li><code>korean-hangul-formal</code></li>
+      <li><code>korean-hanja-formal</code></li>
+      <li><code>korean-hanja-informal</code></li>
+      <li><code>lao</code></li>
+      <li><code>lower-armenian</code></li>
+      <li><code>malayalam</code></li>
+      <li><code>mongolian</code></li>
+      <li><code>myanmar</code></li>
+      <li><code>oriya</code></li>
+      <li><code>persian</code></li>
+      <li><code>simp-chinese-formal</code></li>
+      <li><code>simp-chinese-informal</code></li>
+      <li><code>tamil</code></li>
+      <li><code>telugu</code></li>
+      <li><code>thai</code></li>
+      <li><code>tibetan</code></li>
+      <li><code>trad-chinese-formal</code></li>
+      <li><code>trad-chinese-informal</code></li>
+      <li><code>upper-armenian</code></li>
+    </ul>
   </section>
 </div>
 
@@ -592,9 +612,11 @@ body {counter-reset: pagecount;}
   bottom: 2rem;
   left: 1rem;
 }</style>
-<ul><li>Elements that aren't displayed ('display: none') can't increment or reset a counter.</li>
-  <li>Pseudo-elements that aren't generated also don't increment or reset counters</li></ul> 
-</section>
+    <ul>
+      <li>Elements that aren't displayed ('display: none') can't increment or reset a counter.</li>
+      <li>Pseudo-elements that aren't generated also don't increment or reset counters</li>
+    </ul> 
+  </section>
 </div>
 
 
@@ -623,9 +645,8 @@ body {counter-reset: pagecount;}
      <pre contenteditable>
  element::before {
   content: "REQUIRED";
- }
-</pre>
-<hr/>
+ }</pre>
+      <hr/>
       <pre contenteditable>
  element::before {
     content: '';                  /* empty */
@@ -635,8 +656,8 @@ body {counter-reset: pagecount;}
     content: counter(name);
         counter-increment: name;  /* counters */
  }
- </pre>
-</section>
+    </pre>
+  </section>
 </div>
 
 
@@ -653,11 +674,11 @@ body {counter-reset: pagecount;}
     <h1>Decorative Characters</h1>
   </header>
   <section class="content">
-<pre contenteditable>&lt;blockquote&gt;
+    <pre contenteditable>&lt;blockquote&gt;
   &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
   &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
 &lt;/blockquote&gt;</pre>
-<style contenteditable class="editme" style="float: left; width:50%;position:relative; margin-right: 50px;">
+    <style contenteditable class="editme" style="float: left; width:50%;position:relative; margin-right: 50px;">
 blockquote.gc p::before,
 blockquote.gc p::after {
   font-size: 3em;
@@ -673,8 +694,11 @@ blockquote.gc p:last-child::after {
   content: "\275E";
   margin: 0 -40px 0 5px;
 }</style>
-<blockquote class="gc"><p>With generated content you can created text effects.</p><p>We'll cover other uses next.</p></blockquote>
-</section>
+    <blockquote class="gc">
+      <p>With generated content you can created text effects.</p>
+      <p>We'll cover other uses next.</p>
+    </blockquote>
+  </section>
 </div>
 
 <!-- Generated Content: links icons -->
@@ -683,7 +707,7 @@ blockquote.gc p:last-child::after {
     <h1>Improved UX</h1>
   </header>
   <section class="content ba">
-<pre contenteditable style="float: left; margin-right: 30px;">a::before {
+    <pre contenteditable style="float: left; margin-right: 30px;">a::before {
   font-size: 120%;
   padding: 2px 5px;
   display: inline-block;
@@ -698,12 +722,12 @@ a[href^="tel:"]::before {
 a[href$="vcs"]::before {
   content: "\231A";
 }</pre>
-  <ul>
-  	<li><a href="mailto:spam@yahoo.com">spam@yahoo.com</a></li>
-  	<li><a href="tel:18005551212">1.800.555.1212</a></li>
-  	<li><a href="ical.vcs">Add to Calendar</a></li>
-  </ul>
- </section>
+    <ul>
+  	 <li><a href="mailto:spam@yahoo.com">spam@yahoo.com</a></li>
+  	 <li><a href="tel:18005551212">1.800.555.1212</a></li>
+  	 <li><a href="ical.vcs">Add to Calendar</a></li>
+    </ul>
+  </section>
 </div>
 
 
@@ -719,22 +743,23 @@ a[href$="vcs"]::before {
  element::before {
   content: "\2603";
  }</pre>
-<style>#a2603::after {content: "\2603";}</style>
-<object data="https://evotech.net/articles/testjsentities.html" style="height:300px; width:100%; transform: scale(1.35); transform-origin: top left"></object>
-  <p><a href="exercises/10_generatedtext.html" target="play">Try it out</a><br>
-  <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a></p>
-</section>
+    <style>#a2603::after {content: "\2603";}</style>
+    <object data="https://evotech.net/articles/testjsentities.html" style="height:300px; width:100%; transform: scale(1.35); transform-origin: top left"></object>
+    <p><a href="exercises/10_generatedtext.html" target="play">Try it out</a><br>
+      <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a></p>
+  </section>
 </div>
 
 
 <!-- quote bubble -->
 <div class="slide">
- <header><h1>Quotes</h1>
+  <header>
+    <h1>Quotes</h1>
   </header>
  <section class="content">
-    <p class="quote">This is a pull quote<a href="exercises/12_bubbles.html" target="play" style="color: inherit">✍</a> </p>
+    <p class="quote">This is a pull quote<a href="exercises/12_bubbles.html" target="play" style="color: inherit">✍</a></p>
 
-<pre contenteditable>.quote {
+    <pre contenteditable>.quote {
     border-radius: 10px; padding: 20px;
     position:relative;
     background-color: red; color: white;
@@ -747,7 +772,7 @@ a[href$="vcs"]::before {
     border-top-color: red;
     bottom:-39px; left:20px;
 }</pre>
-</section>
+  </section>
 </div>
 
 
@@ -790,20 +815,22 @@ a[href$="vcs"]::before {
 
 
 <div class="slide">
-<header><h1>Accessibility of Generated Content</h1>
+  <header>
+    <h1>Accessibility of Generated Content</h1>
   </header>
-<section class="content">
-  <ul>
-    <li>Generated content can enhance but should not change actual content. </li>
-  <li>Separation of concerns: content v. presentation. </li>
-  <li>generated content is factored into element's <a href="http://w3c.github.io/aria/accname-aam/accname-aam.html#mapping_additional_nd_name">accessible name computation</a> </li>
-  <li>All <a href="https://tink.uk/accessibility-support-for-css-generated-content/">browsers except IE exposes generated content</a> </li>
-<li>Some browsers translate generated content, but not all (yet?)</li></ul>
-  <p>Improved Accessibility (future)</p>
-  <pre>content: url(question.svg) / "More Information";</pre>
-<p>Purely decorative</p>
-<pre>content: "\25BA" / "";</pre>
-</section>
+  <section class="content">
+    <ul>
+      <li>Generated content can enhance but should not change actual content. </li>
+      <li>Separation of concerns: content v. presentation. </li>
+      <li>generated content is factored into element's <a href="http://w3c.github.io/aria/accname-aam/accname-aam.html#mapping_additional_nd_name">accessible name computation</a> </li>
+      <li>All <a href="https://tink.uk/accessibility-support-for-css-generated-content/">browsers except IE exposes generated content</a> </li>
+      <li>Some browsers translate generated content, but not all (yet?)</li>
+    </ul>
+    <p>Improved Accessibility (future)</p>
+    <pre>content: url(question.svg) / "More Information";</pre>
+    <p>Purely decorative</p>
+    <pre>content: "\25BA" / "";</pre>
+  </section>
 </div>
 
 
@@ -817,11 +844,12 @@ a[href$="vcs"]::before {
 
 <!-- quote bubble -->
 <div class="slide">
- <header><h1>Thought bubbles</h1>
+  <header>
+    <h1>Thought bubbles</h1>
   </header>
- <section class="content">
-  <p class="thought">This is a thought bubble <a href="exercises/22_bubbles.html" target="play" style="color: inherit">✍</a></p>
-<pre contenteditable style="font-size: 75%; padding:0">.thought,.thought::before,
+  <section class="content">
+    <p class="thought">This is a thought bubble <a href="exercises/22_bubbles.html" target="play" style="color: inherit">✍</a></p>
+    <pre contenteditable style="font-size: 75%; padding:0">.thought,.thought::before,
 .thought::after  {
   border-radius: 50%;
   border: 5px solid blue;
@@ -839,7 +867,7 @@ a[href$="vcs"]::before {
   left: 12%; bottom: -50px;
   height: 20px; width: 20px;
 }</pre>
- </section>
+  </section>
 </div>
 
 <!-- Cool Example -->
@@ -872,14 +900,14 @@ a[href$="vcs"]::before {
 
 <!-- Tool Tip Example -->
 <div class="slide">
-   <header>
+  <header>
     <h1>Try it: Tool Tip</h1>
   </header>
   <section class="content">
      <p>In this section you have learned the general idea of using generated content to create effects and / or to provide additional information.  Try hovering over me to find out how awesome <i title="Generated Content Rocks my world" data-tooltip="true">generated content</i> can be.</p>
      <p>Open up a text editor and try creating a <i title="'Cause tool tips are awesome" data-tooltip="true">tooltip</i> without looking at the code. But, if you must, the code is attached, or you can check out your web inspector.</p>
      <p style="margin-bottom: 50px;">Here is <a title="Don't cheat" data-tooltip="true" href="exercises/extra.html" target="play">one solution</a></p>
-     </section>
+  </section>
 </div>
 
 
@@ -888,20 +916,20 @@ a[href$="vcs"]::before {
     <h1>Exercise</h1>
   </header>
   <section class="content exercisecards">
-  <figure>
-  <div class="card" data-type="H">
-    <div class="back"></div>
-    <div class="face" data-value="A">♥</div>
-  </div>
-  <div class="card" data-type="C">
-    <div class="back"></div>
-    <div class="face" data-value="A">♣</div>
-  </div>
-  <div class="card" data-type="D">
-    <div class="back"></div>
-   <div class="face" data-value="A">♦</div>
-  </div>
-</figure>
+    <figure>
+      <div class="card" data-type="H">
+        <div class="back"></div>
+        <div class="face" data-value="A">♥</div>
+      </div>
+      <div class="card" data-type="C">
+        <div class="back"></div>
+        <div class="face" data-value="A">♣</div>
+      </div>
+      <div class="card" data-type="D">
+        <div class="back"></div>
+       <div class="face" data-value="A">♦</div>
+      </div>
+    </figure>
  
     <p>Let's add a few pseudo selectors we'll use and generate and position content on them. HTML is on the next page.</p>
     <ol>
@@ -936,52 +964,47 @@ a[href$="vcs"]::before {
    &lt;div class=&quot;face&quot; data-value="A"&gt;♦&lt;/div&gt;
   &lt;/div&gt;
 &lt;/figure&gt;</pre>
-<p>&nbsp;</p>
+    <p>&nbsp;</p>
   </section>
 </div>
 
 
 <!--blank-->
 <div class="slide">
-   <header>
+  <header>
     <h1>This page intentionally left blank</h1>
   </header>
-  <section class="content"></section>
 </div>
 
 
 <!--blank-->
 <div class="slide">
-   <header>
+  <header>
     <h1>Solution</h1>
   </header>
-<section class="content">
-<p>Make each card 300px tall by 200px wide.</p>
-<pre contenteditable>.card {
+  <section class="content">
+    <p>Make each card 300px tall by 200px wide.</p>
+    <pre contenteditable>.card {
   <i>height: 300px;
   width: 300px;</i>
 }</pre>
-<p>Make the face and the back the same size, and in the same spot</p>
-<pre contenteditable>.card {
+    <p>Make the face and the back the same size, and in the same spot</p>
+    <pre contenteditable>.card {
   height: 300px;
   width: 300px;
   <i>position: relative;</i>
 }</pre>
-<p>Add two pseudo element selector blocks for the face of each card</p>
-<pre contenteditable>
-  .face, 
+    <p>Add two pseudo element selector blocks for the face of each card</p>
+    <pre contenteditable>  .face, 
   .back {
     <i>position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;</i>
-}
-</pre>
-<p>Add generated content: the face value</p>
-
-<p>Make that content (the "A" in our current examples, but this should be automatically set), appear twice on the face of the card</p>
-
-<p>Place one of those valies 10 pixels from the upper left hand corner of the face of the card.</p>
-<p>Place the other A 10 pixels from the bottom righ hand corner of the face of the card.</p>
-<pre contenteditable>[data-value]:after,
+}</pre>
+    <p>Add generated content: the face value</p>
+    <p>Make that content (the "A" in our current examples, but this should be automatically set), appear twice on the face of the card</p>
+    <p>Place one of those valies 10 pixels from the upper left hand corner of the face of the card.</p>
+    <p>Place the other A 10 pixels from the bottom righ hand corner of the face of the card.</p>
+    <pre contenteditable>[data-value]:after,
 [data-value]:before {
   content: attr(data-value);
   position: absolute;
@@ -994,21 +1017,19 @@ a[href$="vcs"]::before {
   bottom: 10px;
   right: 10px;
 }</pre>
-
-
-
-     </section>
+  </section>
 </div>
 
 
 
 <!--NEXT-->
 <div class="slide intro">
-     <header>
+  <header>
     <h1>Media Queries</h1>
   </header>
   <section class="content">
-    <h1><a href="../media/index.html">Next ➹</a></h1></section>
+    <h1><a href="../media/index.html">Next ➹</a></h1>
+  </section>
 </div>
 
 
@@ -1018,28 +1039,27 @@ a[href$="vcs"]::before {
   </header>
   <section>
     <ol class="col2">
-<li><a href="../intro/index.html">Introduction</a></li>
-    <li><a href="../selectors/index.html">Selectors</a></li>
-    <li><a href="../selectors/specificity.html">Specificity</a></li>
-    <li><a href="../generated/index.html">Generated Content</a></li>
-    <li><a href="../media/index.html">Media Queries</a></li>
-    <li><a href="../values/index.html">Units &amp; Values </a></li>
-    <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
-    <li><a href="../math/index.html">Math &amp; Variables</a></li>
-    <li><a href="../fonts/index.html">Fonts</a></li>
-    <li><a href="../text/index.html">Text</a></li>
-    <li><a href="../images/index.html">Images</a></li>
-    <li><a href="../background/index.html">Backgrounds</a></li>
-    <li><a href="../gradients/index.html">Gradients</a></li>
-    <li><a href="../boxmodel/index.html">Box Model</a></li>
-    <li><a href="../flexbox/index.html">Flexbox</a></li>
-    <li><a href="../tables/index.html">Tables</a></li>
-    <li><a href="../grid/index.html">Grids</a></li>
-    <li><a href="../transforms/index.html">Transforms</a></li>
-    <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
-   <li><a href="../other/index.html">Other Features</a></li>
-
-<p></ol>
+      <li><a href="../intro/index.html">Introduction</a></li>
+      <li><a href="../selectors/index.html">Selectors</a></li>
+      <li><a href="../selectors/specificity.html">Specificity</a></li>
+      <li><a href="../generated/index.html">Generated Content</a></li>
+      <li><a href="../media/index.html">Media Queries</a></li>
+      <li><a href="../values/index.html">Units &amp; Values </a></li>
+      <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
+      <li><a href="../math/index.html">Math &amp; Variables</a></li>
+      <li><a href="../fonts/index.html">Fonts</a></li>
+      <li><a href="../text/index.html">Text</a></li>
+      <li><a href="../images/index.html">Images</a></li>
+      <li><a href="../background/index.html">Backgrounds</a></li>
+      <li><a href="../gradients/index.html">Gradients</a></li>
+      <li><a href="../boxmodel/index.html">Box Model</a></li>
+      <li><a href="../flexbox/index.html">Flexbox</a></li>
+      <li><a href="../tables/index.html">Tables</a></li>
+      <li><a href="../grid/index.html">Grids</a></li>
+      <li><a href="../transforms/index.html">Transforms</a></li>
+      <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
+      <li><a href="../other/index.html">Other Features</a></li>
+    </ol>
   </section>
 </div>
 
@@ -1048,27 +1068,27 @@ a[href$="vcs"]::before {
   <header>
     <h1>Links</h1>
   </header>
-    <section class="content">
-      <ul>
-        <li>CSS2: <a href="https://www.w3.org/TR/CSS2/generate.html#generated-text">https://www.w3.org/TR/CSS2/generate.html#generated-text</a></li>
-        <li>CSS3: <a href="https://drafts.csswg.org/css-content-3/">https://drafts.csswg.org/css-content-3/</a></li>
-      </ul>
-    </section>
+  <section class="content">
+    <ul>
+      <li>CSS2: <a href="https://www.w3.org/TR/CSS2/generate.html#generated-text">https://www.w3.org/TR/CSS2/generate.html#generated-text</a></li>
+      <li>CSS3: <a href="https://drafts.csswg.org/css-content-3/">https://drafts.csswg.org/css-content-3/</a></li>
+    </ul>
+  </section>
 </div>
+
+
 <header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">&laquo; Back</button></li>
-            <li><button class="button done" id="next">Next &raquo; </button></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><button class="button cancel" id="back">&laquo; Back</button></li>
+      <li><button class="button done" id="next">Next &raquo; </button></li>
+    </ul>
+  </nav>
 </header>
 
 
 </div><!-- End 'slides'-->
-
 </div><!-- End 'presentation'-->
-
   <script src="../slideshow.js"></script>
   </body>
 </html>
