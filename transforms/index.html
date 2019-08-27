@@ -40,16 +40,20 @@
 
 <!-- Title Slide -->
 <div class="slide intro">
-     <header><h1>Transforms</h1></header>
-     <section class="content">
+     <header>
+    <h1>Transforms</h1>
+  </header>
+  <section class="content">
        https://estelle.github.io/CSS/transforms
      </section>
 </div>
 
 
 <div class="slide">
-     <header><h1>Transforms</h1></header>
-     <section class="content"><ul class="col2">
+   <header>
+    <h1>Transforms</h1>
+  </header>
+  <section class="content"><ul class="col2">
 <li>2D Transform Functions</li>
 <li>Transform syntax</li>
 <li>translate()</li>
@@ -83,7 +87,9 @@
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>2D Transform Functions</h1></header>
+  <header>
+    <h1>2D Transform Functions</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -94,8 +100,10 @@
 
 <!-- Title Slide -->
 <div class="slide">
-     <header><h1>Transforming Elements</h1></header>
-     <section class="content"><b class="letters letters_01">LOVE<i>LOVE</i></b>
+   <header>
+    <h1>Transforming Elements</h1>
+  </header>
+  <section class="content"><b class="letters letters_01">LOVE<i>LOVE</i></b>
      <style class="editme" contenteditable>.letters_01 i {
 transform:
    translate(300px, 90px) rotate(50deg) 
@@ -105,8 +113,10 @@ transform:
 </div>
 
 <div class="slide">
-     <header><h1>Transform: syntax</h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform: syntax</h1>
+  </header>
+  <section class="content">
 <pre>transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];</pre>
 <pre contenteditable>transform:
    translate(300px, 90px) rotate(50deg) 
@@ -121,8 +131,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1>2D Transform Functions</h1></header>
-     <section class="content">
+   <header>
+    <h1>2D Transform Functions</h1>
+  </header>
+  <section class="content">
    <dl class="deprecated listed wide">
 
   <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
@@ -168,7 +180,9 @@ transform:
 
 
 <div class="slide">
-  <header><h1>Limitations</h1></header>
+  <header>
+    <h1>Limitations</h1>
+  </header>
   <section class="content">
     <p>Only transformable elements can be transformed.</p>
     <ul>
@@ -181,8 +195,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1>Transform Function: Translate</h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Function: Translate</h1>
+  </header>
+  <section class="content">
    <dl>
 
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate" target="resource">translate</a></strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
@@ -196,9 +212,11 @@ transform:
  </div>
 
 <div class="slide">
-     <header><h1>Transform Function: Translating</h1></header>
+   <header>
+    <h1>Transform Function: Translating</h1>
+  </header>
      <b class="letters letters_02">LOVE<i>LOVE</i></b>
-     <section class="content">
+  <section class="content">
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translate(100px, 100px)</span>;</pre>
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translateX(100px)</span>;</pre>
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translateY(100px)</span>;</pre>
@@ -208,7 +226,8 @@ transform:
  </div>
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate" target="resource">transform: translate()</a></code></h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate" target="resource">transform: translate()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters love02">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .love02 i {
@@ -224,8 +243,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1>Transform Functions: Rotations</h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Functions: Rotations</h1>
+  </header>
+  <section class="content">
     <dl><dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">rotate</a></strong>(&lt;angle&gt;)</dt>
   <dd>Rotates an element around a fixed point on the 2D plane. specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatex" target="resource">rotateX</a></strong>(&lt;angle&gt;)</dt>
@@ -236,9 +257,11 @@ transform:
      </section>
  </div>
 
- <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">rotate()</a></code></h1></header>
-     <section class="content"> <b class="letters letters_03">LOVE<i>LOVE</i></b>
+<div class="slide">
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">rotate()</a></code></h1>
+  </header>
+  <section class="content"> <b class="letters letters_03">LOVE<i>LOVE</i></b>
 
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03', this.innerHTML)">rotate(90deg)</span>;</pre>
      <p>Edit the value to set it. Mouse out to see it.</p>
@@ -246,9 +269,11 @@ transform:
      </section>
  </div>
 
-  <div class="slide">
-     <header><h1>Transform Function: Rotate</h1></header>
-     <section class="content"> <b class="letters letters_03b">LOVE<i>LOVE</i></b>
+<div class="slide">
+   <header>
+    <h1>Transform Function: Rotate</h1>
+  </header>
+  <section class="content"> <b class="letters letters_03b">LOVE<i>LOVE</i></b>
 
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03b', this.innerHTML)">rotate(90deg)</span>;</pre>
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03b', this.innerHTML)">rotateX(90deg)</span>;</pre>
@@ -259,8 +284,9 @@ transform:
  </div>
 
 
- <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">transform: rotate()</a></code></h1></header>
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="resource">transform: rotate()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters love03">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .love03 i {
@@ -274,8 +300,10 @@ transform:
 </div>
 
 <div class="slide">
-     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1></header>
-     <section class="content">
+   <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1>
+  </header>
+  <section class="content">
     <pre>transform-origin: &lt;x-offset> [ &lt;y-offset>? ] [ &lt;z> ]?;</pre>
     <ul>
       <li>The point around which a transformation is applied.</li>
@@ -292,8 +320,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1></header>
-     <section class="content"><b class="letters love04">LOVE<i>LOVE</i></b>
+   <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1>
+  </header>
+  <section class="content"><b class="letters love04">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .love04 i {
    transform-origin: top left;
@@ -308,8 +338,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1>Transform Function: Scaling</h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Function: Scaling</h1>
+  </header>
+  <section class="content">
    <dl>
      <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">scale</a></strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
   <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
@@ -322,8 +354,10 @@ transform:
  </div>
 
 <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">scale()</a></code></h1></header>
-     <section class="content"><b class="letters letters_04">LOVE<i>LOVE</i></b>
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">scale()</a></code></h1>
+  </header>
+  <section class="content"><b class="letters letters_04">LOVE<i>LOVE</i></b>
 
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scale(0.25, 0.75)</span>;</pre>
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scale(0.75)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scaleX(0.25)</span>;</pre>
@@ -333,8 +367,10 @@ transform:
  </div>
 
 <div class="slide">
-     <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">transform: scale()</a></code> &amp; <code>transform-origin</code> </h1></header>
-     <section class="content"><b class="letters love05">LOVE<i>LOVE</i></b>
+   <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="resource">transform: scale()</a></code> &amp; <code>transform-origin</code> </h1>
+  </header>
+  <section class="content"><b class="letters love05">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .love05 i {
    transform-origin: top left;
@@ -349,8 +385,10 @@ transform:
 
 
 <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1>
+  </header>
+  <section class="content">
     <dl>
       <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew</strong>(&lt;angle&gt;)</a></dt>
   <dd>specifies a skew transformation along the the 2D plane.</dd>
@@ -363,8 +401,10 @@ transform:
  </div>
 
 <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1>
+  </header>
+  <section class="content">
      <b class="letters letters_05">LOVE<i>LOVE</i></b>
 
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewX(5deg)</span>;</pre>
@@ -375,9 +415,11 @@ transform:
 
 
 
-  <div class="slide" id="redo">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1></header>
-     <section class="content">
+<div class="slide" id="redo">
+     <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew" target="resource">skew()</a></code></h1>
+  </header>
+  <section class="content">
      <b class="letters letters_05b">LOVE<i>LOVE</i></b>
      <style class="editme" contenteditable>#redo .letters i {
   transform: skewX(15deg);
@@ -391,9 +433,11 @@ transform:
 
 
 
-  <div class="slide">
-     <header><h1><code>transform: skew()</code> &amp; <code>transform-origin</code></h1></header>
-     <section class="content">
+<div class="slide">
+   <header>
+    <h1><code>transform: skew()</code> &amp; <code>transform-origin</code></h1>
+  </header>
+  <section class="content">
      <b class="letters love06">LOVE<i>LOVE</i></b>
      <style class="editme" contenteditable>.love06 i {
   transform-origin: top left;
@@ -407,7 +451,8 @@ transform:
  </div>
 
 <div class="slide">
-<header><h1>Multiple Tranforms</h1></header>
+<header><h1>Multiple Tranforms</h1>
+  </header>
 <section class="content transform"><b class="letters letters_06">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .letters_06 i {
@@ -437,7 +482,8 @@ transform:
 
 
 <div class="slide">
-<header><h1>Multiple Tranforms</h1></header>
+<header><h1>Multiple Tranforms</h1>
+  </header>
 <section class="content transform"><b class="letters letters_06b">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .letters_06b i {
@@ -451,7 +497,8 @@ transform:
 
 
 <div class="slide">
-<header><h1>Multiple Tranforms with <code>transform-origin</code></h1></header>
+<header><h1>Multiple Tranforms with <code>transform-origin</code></h1>
+  </header>
 <section class="content transform"><b class="letters letters_06c">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .letters_06c i {
@@ -467,7 +514,8 @@ transform:
 
 
 <div class="slide">
-<header><h1>Developer Tools</h1></header>
+<header><h1>Developer Tools</h1>
+  </header>
 <section class="content transform"><b class="letters letters_06d">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .letters_06d i {
@@ -482,23 +530,28 @@ transform:
 
 
 <div class="slide object">
-  <header><h1>Check it out</h1></header>
+  <header>
+    <h1>Check it out</h1>
+  </header>
   <object data="https://css-transform.moro.es/"></object>
   <a href="https://css-transform.moro.es/" class="objectlink">Go</a>
 </div>
 
 
 <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix()</a></code></h1></header>
-     <section class="content">
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix()</a></code></h1>
+  </header>
+  <section class="content">
     <p><code>matrix(a, b, c, d, tx, ty)</code><br/>shorthand for<br/><code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code><br/>(which makes no sense).</p>
     <p>Computer generated transform.</p>
      </section>
  </div>
 
 
- <div class="slide">
-<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix(a, b, c, d, tx, ty)</a></code></h1></header>
+<div class="slide">
+<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">matrix(a, b, c, d, tx, ty)</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters love_08">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .love_08 i {
@@ -512,7 +565,9 @@ transform:
 
 
 <div class="slide object">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">transform: matrix()</a></code></h1></header>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="resource">transform: matrix()</a></code></h1>
+  </header>
   <object data="https://css-transform.moro.es/"></object>
   <a href="https://css-transform.moro.es/" class="objectlink">Go</a>
 </div>
@@ -520,14 +575,18 @@ transform:
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>function order</h1></header>
+  <header>
+    <h1>function order</h1>
+  </header>
   <section class="content">
   </section>
 </div>
 
 
 <div class="slide">
-  <header><h1>Transform Order</h1></header>
+  <header>
+    <h1>Transform Order</h1>
+  </header>
     <section class="content">
       <p>Order of transform functions matters: if you rotate first, your translate direction will be on the rotated axis!</p>
 
@@ -538,7 +597,8 @@ transform:
 
 
 <div class="slide">
-<header><h1>transforms</h1></header>
+<header><h1>transforms</h1>
+  </header>
 <section class="content">
 
         
@@ -553,7 +613,9 @@ transform:
 </div>
 
 <div class="slide object">
-  <header><h1>Funtion Order</h1></header>
+  <header>
+    <h1>Funtion Order</h1>
+  </header>
 <object data="exercises/tOrder.html"></object>
   <a href="exercises/transforms/tOrder.html" target="play" title="open resource in reused window">➹</a>
 
@@ -562,7 +624,9 @@ transform:
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>3D Transform Functions</h1></header>
+  <header>
+    <h1>3D Transform Functions</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -570,8 +634,10 @@ transform:
 
 <!-- 3d Transforms -->
 <div class="slide">
-     <header><h1>3d Transforms</h1></header>
-     <section class="content">
+   <header>
+    <h1>3d Transforms</h1>
+  </header>
+  <section class="content">
      <dl  class="deprecated listed wide">
 
   <dt><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatez" target="resource">translateZ</a></strong>(&lt;z-value&gt;)</dt>
@@ -618,7 +684,8 @@ transform:
 
 
 <div class="slide">
-<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatez" target="resource">translateZ()</a></code></h1></header>
+<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translatez" target="resource">translateZ()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters D301">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .D301 i {
@@ -633,7 +700,8 @@ transform:
 
 
 <div class="slide">
-<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective()</a></code></h1></header>
+<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective()</a></code></h1>
+  </header>
 <section class="content">
 <h2><strong>perspective</strong>(&lt;number&gt;)</h2>
   <ul><li>specifies a perspective projection.</li><li> Parameter is the <em>depth</em>, represents the distance of the viewer: <ul><li> Lower values are closer, more pronounced perspective effect</li><li>Larger values are further, less pronounced persepective</li> </ul>
@@ -648,7 +716,8 @@ transform:
 
 
 <div class="slide">
-<header><h1><code>transform: perspective()</code> &amp; <code>translateZ()</code></h1></header>
+<header><h1><code>transform: perspective()</code> &amp; <code>translateZ()</code></h1>
+  </header>
 <section class="content transform"><b class="letters D302">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .D302 i {
@@ -666,7 +735,8 @@ transform:
 
 
 <div class="slide">
-<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d" target="resource">translate3d()</a></code></h1></header>
+<header><h1><code>transform: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d" target="resource">translate3d()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters D303">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .D303 i {
@@ -682,7 +752,9 @@ transform:
 
 
 <div class="slide">
-  <header><h1>3D Translating</h1></header>
+  <header>
+    <h1>3D Translating</h1>
+  </header>
   <section class="content">
     <pre contenteditable>translateZ( &lt;length> )</pre>
     <p>Specifies a 3D translation by the vector [0, 0, tz].</p>
@@ -695,7 +767,9 @@ transform:
 
 
 <div class="slide">
-  <header><h1>3D Scaling</h1></header>
+  <header>
+    <h1>3D Scaling</h1>
+  </header>
   <section class="content">
     <pre contenteditable>scaleZ( &lt;number> )</pre>
     <p>Specifies a 3D scale operation using the [1, 1, sz] scaling vector, where sZ is the parameter.</p>
@@ -710,7 +784,9 @@ transform:
 
 
 <div class="slide">
-  <header><h1>3D Rotation</h1></header>
+  <header>
+    <h1>3D Rotation</h1>
+  </header>
   <section class="content">
     <pre contenteditable>rotate3d( &lt;number> , &lt;number> , &lt;number> , &lt;angle> )</pre>
 
@@ -729,8 +805,9 @@ transform:
 
 
 
- <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d" target="resource">transform: rotate3d()</a></code></h1></header>
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d" target="resource">transform: rotate3d()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters D307">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .D307 i {
@@ -748,7 +825,9 @@ transform:
 
 
 <div class="slide">
-  <header><h1>3D Matrix</h1></header>
+  <header>
+    <h1>3D Matrix</h1>
+  </header>
   <section class="content">
     <pre contenteditable>matrix3d( &lt;number>#{16} )</pre>
     <p>specifies a 3D transformation as a matrix of 16 values </p>
@@ -760,8 +839,9 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 </div>
 
 
- <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="resource">transform: matrix3d()</a></code></h1></header>
+<div class="slide">
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="resource">transform: matrix3d()</a></code></h1>
+  </header>
 <section class="content transform"><b class="letters D308">LOVE<i>LOVE</i></b>
 
 <style class="editme" contenteditable> .D308 i {
@@ -775,7 +855,9 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 
 
 <div class="slide">
-  <header><h1>3D Transforms: Perspective</h1></header>
+  <header>
+    <h1>3D Transforms: Perspective</h1>
+  </header>
   <section class="content">
     <pre contenteditable>perspective( &lt;length> )</pre>
    <ul>
@@ -791,7 +873,9 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 
 
 <div class="slide divider">
-  <header><h1>This page intentionally<br/> left blank</h1></header>
+  <header>
+    <h1>This page intentionally<br/> left blank</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -802,15 +886,19 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 
 <!-- DIVIDER -->
 <div class="slide divider">
-  <header><h1>3D Transform Related Properties</h1></header>
+  <header>
+    <h1>3D Transform Related Properties</h1>
+  </header>
   <section class="content">
   </section>
 </div>
 
 
- <div class="slide">
-     <header><h1>3D Transform related Properties</h1></header>
-     <section class="content">
+<div class="slide">
+   <header>
+    <h1>3D Transform related Properties</h1>
+  </header>
+  <section class="content">
 <dl  class="deprecated listed wide">
     <dt>perspective: none | length</dt>
     <dd>Same as <code>transforms: perspective(value)</code>  except it applies to the positioned or transformed children of the element, not  the element itself.</dd>
@@ -829,7 +917,9 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 
 <!-- Perspective -->
 <div class="slide divider">
-  <header><h1>Perspective</h1></header>
+  <header>
+    <h1>Perspective</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -837,7 +927,9 @@ matrix(-0.5, 1, 0, 0, 1, -0.5, 0, 0, 0, 0, 1, 0, 20, 20, 0, 1)</pre>
 
 <!-- 3D -->
 <div class="slide">
-  <header><h1>Perspective</h1></header>
+  <header>
+    <h1>Perspective</h1>
+  </header>
   <section class="content">
 Screens are flat. 3D requires perspective. 
 
@@ -851,9 +943,11 @@ Screens are flat. 3D requires perspective.
 </div>
 
 <div class="slide">
-     <header><h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective()</a></code></h1></header>
+   <header>
+    <h1>Transform Function: <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective()</a></code></h1>
+  </header>
      <b class="letters letters_07">LOVE<i>LOVE</i></b>
-     <section class="content">
+  <section class="content">
      <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07', this.innerHTML)"> perspective(40px) rotateX(10deg)</span>;</pre>
      <p>The <code>perspective()</code> function must come first</p>
      <p>Smaller numbers have a bigger impact</p>
@@ -863,7 +957,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective</a></code> Property</h1></header>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective" target="resource">perspective</a></code> Property</h1>
+  </header>
 <section class="content transform">
   <div class="initial parent">LOVE<b class="child">LOVE</b></div>
 
@@ -879,7 +975,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-  <header><h1>DevTools</h1></header>
+  <header>
+    <h1>DevTools</h1>
+  </header>
 <section class="content transform">
   
 <p>Edit the previous slide via devTools</p>
@@ -892,7 +990,9 @@ Screens are flat. 3D requires perspective.
 
 <!--  -->
 <div class="slide">
-  <header><h1><code>transform: perspective(400px)</code> v. <code>perspective: 400px</code></h1></header>
+  <header>
+    <h1><code>transform: perspective(400px)</code> v. <code>perspective: 400px</code></h1>
+  </header>
   <section class="content perspective">
     <p><code>transform: perspective(400px)</code> on children</p>
     <article><div>1</div><div>2</div><div>3</div></article>
@@ -907,7 +1007,9 @@ Screens are flat. 3D requires perspective.
 
 <!-- Perspective -->
 <div class="slide divider">
-  <header><h1>perspective-origin</h1></header>
+  <header>
+    <h1>perspective-origin</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -915,7 +1017,9 @@ Screens are flat. 3D requires perspective.
 
 <!--  -->
 <div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin" target="resource">perspective-origin</a></code></h1></header>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin" target="resource">perspective-origin</a></code></h1>
+  </header>
   <section class="content"><p><code>perspective-origin: x y</code></p>
    <ul>
     <li>Property on parent element</li>
@@ -929,7 +1033,8 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide pO">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin" target="resource">perspective-origin</a></code> Property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin" target="resource">perspective-origin</a></code> Property</h1>
+  </header>
 <section class="content">
  <style contenteditable class="editme mini">.one, .two { perspective: 100px; }
 .one i, .two i { transform: rotateX(45deg); }
@@ -945,7 +1050,8 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide perspective pOrigin">
-<header><h1><code>perspective-origin</code> with <code>perspective: 400px</code></h1></header>
+<header><h1><code>perspective-origin</code> with <code>perspective: 400px</code></h1>
+  </header>
   <section class="content perspective">
     <p><code>perspective-origin: 0 0</code> on parent</p>
     <article><div>1</div><div>2</div><div>3</div></article>
@@ -956,7 +1062,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide object">
-  <header><h1><code>perspective-origin</code> Property</h1></header>
+  <header>
+    <h1><code>perspective-origin</code> Property</h1>
+  </header>
     <object data="https://codepen.io/estelle/pen/RXLGRg"></object>
 <a href="https://codepen.io/estelle/pen/RXLGRg" target="play" class="objectlink">➹</a>
 </div>
@@ -965,13 +1073,17 @@ Screens are flat. 3D requires perspective.
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>transform-origin</h1></header>
+  <header>
+    <h1>transform-origin</h1>
+  </header>
   <section class="content">
   </section>
 </div>
 
 <div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1></header>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="resource">transform-origin</a></code> property</h1>
+  </header>
   <section class="content">
     <p>Specifies the x and y position of the origin, relative to the transform object.</p>
   <ul>
@@ -985,7 +1097,9 @@ Screens are flat. 3D requires perspective.
 </div>
 
 <div class="slide">
-  <header><h1><code>transform-origin</code> property</h1></header>
+  <header>
+    <h1><code>transform-origin</code> property</h1>
+  </header>
 <section class="content">
   <b class="letters D310">LOVE<i>LOVE</i></b>
 
@@ -1000,14 +1114,18 @@ Screens are flat. 3D requires perspective.
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>transform-style</h1></header>
+  <header>
+    <h1>transform-style</h1>
+  </header>
   <section class="content">
   </section>
 </div>
 
 <!--  -->
 <div class="slide">
-  <header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code></h1></header>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code></h1>
+  </header>
   <section class="content">
     <dl>
     <dt>transform-style: flat | preserve-3d</dt>
@@ -1032,7 +1150,8 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code> Property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code> Property</h1>
+  </header>
 <section class="content">
 <style contenteditable class="editme mini">.parent1 {
     transform: perspective(400px) rotateX(15deg) rotateY(-15deg);
@@ -1062,7 +1181,8 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code> Property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style" target="resource">transform-style</a></code> Property</h1>
+  </header>
 <section class="content">
 <style contenteditable class="editme mini">.first, .second {
     transform: rotateY(245deg);
@@ -1082,7 +1202,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide object">
-  <header><h1><code>transform-style</code> Property</h1></header>
+  <header>
+    <h1><code>transform-style</code> Property</h1>
+  </header>
     <object data="https://codepen.io/estelle/pen/RXLGRg"></object>
 <a href="https://codepen.io/estelle/pen/RXLGRg" target="play" class="objectlink">➹</a>
 </div>
@@ -1090,7 +1212,9 @@ Screens are flat. 3D requires perspective.
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>backface-visibility</h1></header>
+  <header>
+    <h1>backface-visibility</h1>
+  </header>
   <section class="content">
   </section>
 </div>
@@ -1100,7 +1224,8 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility" target="resource">backface-visibility</a></code> Property</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility" target="resource">backface-visibility</a></code> Property</h1>
+  </header>
 <section class="content">
  <style contenteditable class="editme" style="margin: 30px auto">._1st i, ._2nd i { transform: rotateX(180deg); }
          ._1st i { backface-visibility: visible; }
@@ -1115,7 +1240,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-  <header><h1>Exercise</h1></header>
+  <header>
+    <h1>Exercise</h1>
+  </header>
   <section class="content">
     <p>Here's where all the magic happens! Let's make all the cards slightly off-center so each can be hovered individually. We hide the face of the cards, making the card flip, making the face visible on hover but the back disappear. </p>
     <ol>
@@ -1131,14 +1258,18 @@ Screens are flat. 3D requires perspective.
 </div>
 
 <div class="slide">
-  <header><h1>Solution</h1></header>
+  <header>
+    <h1>Solution</h1>
+  </header>
   <section class="content">
     <a href="exercises/answer.html" target="exercise">HTML</a> | <a href="exercises/answer.css" target="css">CSS</a>
   </section>
 </div>
 
 <div class="slide">
-  <header><h1>Solution</h1></header>
+  <header>
+    <h1>Solution</h1>
+  </header>
   <section class="content">
 <pre contenteditable>.card {
   perspective: 600px;
@@ -1182,7 +1313,9 @@ Screens are flat. 3D requires perspective.
 
 <!-- transform box -->
 <div class="slide">
-  <header><h1><code>transform-box</code> property</h1></header>
+  <header>
+    <h1><code>transform-box</code> property</h1>
+  </header>
   <section class="content">
     <p>Defines the layout box, to which the <code>transform</code> and <code>transform-origin</code> properties relate to.</p>
     <pre contenteditable>content-box | border-box | fill-box | stroke-box | view-box</pre>
@@ -1205,7 +1338,9 @@ Screens are flat. 3D requires perspective.
 
 
 <div class="slide">
-  <header><h1><code>transform-box</code> property</h1></header>
+  <header>
+    <h1><code>transform-box</code> property</h1>
+  </header>
 <section class="content">
   <pre contenteditable style="float: right;">content-box | border-box | fill-box | 
   stroke-box | view-box </pre>
@@ -1244,14 +1379,18 @@ g {
 
 <!-- NEXT -->
 <div class="slide divider">
-     <header><h1>Transitions &amp; Animation</h1></header>
+     <header>
+    <h1>Transitions &amp; Animation</h1>
+  </header>
     <h1><a href="../animations/index.html">Next ➹</a></h1>
     </div>
 
 
 
 <div class="slide dots">
-  <header><h1>Table of Content</h1></header>
+  <header>
+    <h1>Table of Content</h1>
+  </header>
   <section>
     <ol class="col2">
 <li><a href="../intro/index.html">Introduction</a></li>
@@ -1282,7 +1421,9 @@ g {
 
 <!-- TOC -->
 <div class="slide">
-  <header><h1>Links</h1></header>
+  <header>
+    <h1>Links</h1>
+  </header>
     <section class="content">
       <ul>
       </ul>

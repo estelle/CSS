@@ -108,5 +108,4 @@ figure {
 }
 .card:hover .back {
     transform: rotateY(180deg);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }

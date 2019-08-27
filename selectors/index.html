@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8" />
-    <title>Selectors: Select This!</title>
+<title>Selectors: Select This!</title>
 <link rel="stylesheet" href="../intro/css/main.css"/>
 <link rel="stylesheet" href="../intro/css/selectors.css"/>
-
 <style>
 .active {
   background-color: rgba(0,0,0,0.2);
@@ -27,75 +26,80 @@ style.editme {width: 100%; box-sizing: border-box;}
 </head>
 
 <body>
-<!-- Top instructions -->
-<div id="topinfo"></div>
 
 <header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">&laquo; Back</button></li>
-            <li><button class="button done" id="next">Next &raquo; </button></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><button class="button cancel" id="back">&laquo; Back</button></li>
+      <li><button class="button done" id="next">Next &raquo; </button></li>
+    </ul>
+  </nav>
 </header>
+
+
 <!-- footer instructions -->
 <div id="info">
     <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
 </div>
 
-  <div id="presentation">
-   <div id="presentation-counter"></div>
-   <div id="slides">
+<div id="presentation">
+  <div id="presentation-counter"></div>
+  <div id="slides">
 
-    <div class="slide intro">
-     <header>
-      <h1>CSS Selectors</h1>
-     </header>
-     <section>
-      <div class="flex12">
+
+<!-- title slide -->
+<div class="slide intro">
+  <header>
+    <h1>CSS Selectors</h1>
+  </header>
+  <section>
+    <div class="flex12">
       <ol>
         <li>Selectors Part I
-          <ul>
-        <li>Overview</li>
-        <li>Basic Selectors</li>
-<li>Specifications</li>
-<li>Selectors API</li>
-<li>Brief intro to Specificity</li>
-<li>Global selector</li>
-<li>Relational selectors &amp; combinators</li>
-<li>Attribute Selectors</li>
-<li>UI Pseudo-Class Selectors</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><a href="index2.html">Selectors Part II</a>
-          <ul>
-<li>Structural selectors</li>
-<li>Other Logical Combinations:<br/>
-    Negation, Matching and Parent</li>
- <li>Linguistic Pseudo Classess</li>
- <li>Link, location, and user action</li>
- <li>Other Pseudo Classes</li>
-
-</ul>
-</li>
- <li><a href="pseudo.html">Selectors Part III</a>
-          <ul><li>Pseudo-element selectors</li></ul>
-</li>
-</ol>
+           <ul>
+              <li>Overview</li>
+              <li>Basic Selectors</li>
+              <li>Specifications</li>
+              <li>Selectors API</li>
+              <li>Brief intro to Specificity</li>
+              <li>Global selector</li>
+              <li>Relational selectors &amp; combinators</li>
+              <li>Attribute Selectors</li>
+              <li>UI Pseudo-Class Selectors</li>
+            </ul>
+          </li>
+        </ol>
+        <ol start="2">
+          <li><a href="index2.html">Selectors Part II</a>
+            <ul>
+              <li>Structural selectors</li>
+              <li>Other Logical Combinations:<br/>
+              Negation, Matching and Parent</li>
+              <li>Linguistic Pseudo Classess</li>
+              <li>Link, location, and user action</li>
+              <li>Other Pseudo Classes</li>
+            </ul>
+          </li>
+          <li><a href="pseudo.html">Selectors Part III</a>
+            <ul>
+              <li>Pseudo-element selectors</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <p><a href="https://estelle.github.io/CSS/selectors/">estelle.github.io/CSS/selectors/</a></p>
+    </section>
 </div>
-     <p><a href="https://estelle.github.io/CSS/selectors/">estelle.github.io/CSS/selectors/</a></p></section>
-    </div>
 
 
-<!-- basics -->
+<!-- selector / ruleset -->
 <div class="slide">
-  <header><h1>Selectors/Rulesets</h1></header>
-   <section class="content">
-<p>Selectors define which elements &amp; pseudo elements rulesets are applied to.</p>
- 
-<pre contenteditable style="font-size:100%; line-height:1.5">selectorA {
+  <header>
+    <h1>Selectors/Rulesets</h1>
+  </header>
+  <section class="content">
+    <p>Selectors define which elements &amp; pseudo elements rulesets are applied to.</p>
+    <pre contenteditable style="font-size:100%; line-height:1.5">selectorA {
    property1: value1;
    property2: value2;
 }
@@ -105,16 +109,17 @@ selectorC {
    property1: value3;
    property2: value4;
 }</pre>
-</section>
- </div>
+  </section>
+</div>
 
 
 
 <div class="slide">
-  <header><h1>Selectors</h1></header>
+  <header>
+    <h1>Selectors</h1>
+  </header>
   <section class="content">
-
- <pre contenteditable style="font-size:100%; line-height:1.5">selector:pseudo-class::pseudo-element {
+    <pre contenteditable style="font-size:100%; line-height:1.5">selector:pseudo-class::pseudo-element {
     property: value;
 }
 
@@ -124,21 +129,20 @@ selector ~ relation {
     -vendor-property: -vendor-value;
     -vendor-property: experimentalValue;
 }</pre>
-
   </section>
 </div>
 
 <!-- Basic Selectors-->
 <div class="slide normal light" id="slcElement">
-  <header><h1>Basic Selectors</h1></header>
+  <header>
+    <h1>Basic Selectors</h1>
+  </header>
   <section class="content">
-
-<pre contenteditable style="font-size:100%; line-height:1.5">&lt;ul&gt;
+    <pre contenteditable style="font-size:100%; line-height:1.5">&lt;ul&gt;
 &lt;li id=&quot;myID&quot; class=&quot;myClass&quot;&gt;item 1&lt;/li&gt;
 &lt;li class=&quot;myClass&quot;&gt;item 2&lt;/li&gt;
 &lt;li&gt;item 3&lt;/li&gt;
 &lt;/ul&gt; </pre>
-
     <dl class="inline">
       <dt><b class="imp">#</b>myID</dt>
       <dd>ID</dd>
@@ -152,7 +156,9 @@ selector ~ relation {
 
 
 <div class="slide object">
-  <header><h1>Play Time</h1></header>
+  <header>
+    <h1>Play Time</h1>
+  </header>
   <object data="exercises/01_basics.html"></object>
   <a href="exercises/01_basics.html" target="play" class="objectlink">Try it out</a>
 </div>
@@ -160,7 +166,9 @@ selector ~ relation {
 
 <!-- selectors in CSS1 -->
 <div class="slide">
-  <header><h1>Selectors in CSS Level 1</h1></header>
+  <header>
+    <h1>Selectors in CSS Level 1</h1>
+  </header>
   <section class="content">
     <pre contenteditable>E
 E F
@@ -169,35 +177,35 @@ E F
 :link
 :active</pre>
   </section>
-
 </div>
 
 
 <!-- selectors in CSS1 -->
 <div class="slide">
-  <header><h1>Selectors in CSS Level 1</h1></header>
+  <header>
+    <h1>Selectors in CSS Level 1</h1>
+  </header>
   <section class="content">
-<pre contenteditable>span#ID,
+    <pre contenteditable>span#ID,
 .class,
 a.external:link { 
    ... 
 }</pre>
   </section>
-
 </div>
 
 
 <!-- selectors in CSS1 -->
 <div class="slide">
-  <header><h1>Selectors in CSS Level 1</h1></header>
+  <header>
+    <h1>Selectors in CSS Level 1</h1>
+  </header>
   <section class="content">
-
-<pre contenteditable>div#unique .repeated a.external:link { 
+    <pre contenteditable>div#unique .repeated a.external:link { 
    ... 
 }</pre>
-<div class="temphidden">1-3-2</div>
+    <div class="temphidden">1-3-2</div>
   </section>
-
 </div>
 
 
@@ -235,7 +243,6 @@ a.external:link {
         <li>:focus</li>
         <li>:hover</li>
         <li>:visited</li>
-
         <li>:before</li>
         <li>:after</li>
         <li>:first-letter</li>
@@ -279,7 +286,9 @@ a.external:link {
       <li>:empty</li>
       <li>:not(selector)</li>
       <li>:target</li>
-    </ul></section></div>
+    </ul>
+  </section>
+</div>
 
 
 
@@ -298,15 +307,15 @@ a.external:link {
       <li>:placeholder-shown </li>
       <li>:default</li>
       <li>:checked</li>
-       <li>:indeterminate </li>
+      <li>:indeterminate </li>
       <li>:valid</li>
       <li>:invalid</li>
       <li>:in-range</li>
       <li>:out-of-range</li>
       <li>:required</li>
       <li>:optional</li>
-       <li>:blank </li>
-       <li>:user-invalid </li>
+      <li>:blank </li>
+      <li>:user-invalid </li>
     </ul>
   </section>
 </div>
@@ -318,7 +327,6 @@ a.external:link {
   </header>
   <section class="content">
     <ul class="col2">
-
        <li>:not(s1, s2) </li>
        <li>:is() </li>
        <li>:where() </li>
@@ -334,13 +342,11 @@ a.external:link {
        <li>:scope </li>
        <li>:focus-within </li>
        <li>:focus-visible </li>
-
-
       <li>:nth-child(n [of S]?) </li>
       <li>:nth-last-child(n [of S]?) </li>
-
     </ul>
-  </section></div>
+  </section>
+</div>
 
 
 
@@ -373,10 +379,8 @@ a.external:link {
         <li>:nth-last-col(n) </li>
       </ul>
     </article>
-
- 
-    </ul>
-  </section></div>
+  </section>
+</div>
 
 
 
@@ -391,40 +395,42 @@ a.external:link {
   </header>
   <section class="content twopart">
     <article>
-    <h3>Sometime</h3>
-    <ul>
-      <li>::selection</li>
-    </ul>
-    <h3>css-scoping-1</h3>
-    <ul>
-      <li>::slotted()</li>
-      <li>:host</li>
-      <li>:host-context()</li>
-      <li>::shadow</li>
-      <li>::content</li>
-    </ul>
-</article>
-<article>
-  <h3>Removed</h3>
-  <ul>
-      <li><strike>:column(selector)</strike> (see :nth-col())</li>
-       <li><strike>E /foo/ F</strike></li>
-       <li><strike>E! > F</strike> (see :has())</li>
+      <h3>Sometime</h3>
+      <ul>
+        <li>::selection</li>
+      </ul>
+      <h3>css-scoping-1</h3>
+      <ul>
+        <li>::slotted()</li>
+        <li>:host</li>
+        <li>:host-context()</li>
+        <li>::shadow</li>
+        <li>::content</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Removed</h3>
+      <ul>
+        <li><strike>:column(selector)</strike> (see :nth-col())</li>
+         <li><strike>E /foo/ F</strike></li>
+         <li><strike>E! > F</strike> (see :has())</li>
 
-       <li><strike>E >> F</strike></li>
-       <li><strike>:matches()</strike> (now :is())</li>
-       <li><strike>:drop</strike></li>
-       <li><strike>:nth-match()</strike> (now :nth-child(… of selector))</li>
-    </ul>
-  </article>
+         <li><strike>E >> F</strike></li>
+         <li><strike>:matches()</strike> (now :is())</li>
+         <li><strike>:drop</strike></li>
+         <li><strike>:nth-match()</strike> (now :nth-child(… of selector))</li>
+      </ul>
+    </article>
   </section>
 </div>
 
 
 
- <div class="object slide">
+<div class="object slide">
   <object data="selectors.html"></object>
-     <header><h1>All the selectors</h1></header>
+  <header>
+    <h1>All the selectors</h1>
+  </header>
   <a href="selectors.html" target="play" class="objectlink" aria-label="open all the selectors in new window">Open</a>
 </div>
 
@@ -432,22 +438,24 @@ a.external:link {
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>Selectors API</h1></header>
+  <header>
+    <h1>Selectors API</h1>
+  </header>
 </div>
 
 
 
 
 <div class="slide">
-  <header><h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors">Selectors API</a></h1></header>
+  <header>
+    <h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors">Selectors API</a></h1>
+  </header>
   <section class="content">
     <pre contenteditable>var chil = $('#bar .foo');</pre>
     <p>Natively</p>
-
-<pre contenteditable>var el   = document.<strong>querySelector</strong>('#bar');
+    <pre contenteditable>var el   = document.<strong>querySelector</strong>('#bar');
 
 var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
-
     <p>or</p>
     <pre contenteditable>chil = document.<strong>querySelectorAll</strong>('#bar .foo');</pre>
   </section>
@@ -460,9 +468,7 @@ var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
     <h1>In some of our slides ...</h1>
   </header>
   <section class="content">
-
-<pre contenteditable>
-function makeActive(slctr){
+    <pre contenteditable>function makeActive(slctr){
   let i = j = 0,
       elements = document.<strong>querySelectorAll</strong>('.cur .ex li'),
       cur = document.<strong>querySelectorAll</strong>('.cur .ex ' + slctr);
@@ -475,7 +481,6 @@ function makeActive(slctr){
     cur[j].<strong>classList.add</strong>('active');
   }
 }      </pre>
-
   </section>
 </div>
 
@@ -483,77 +488,94 @@ function makeActive(slctr){
 
 <!-- divider -->
 <div class="slide divider">
-
-  <header><h1><span style="font-size: xx-large;">Brief intro to</span><br> Specificity</h1>
-  <p  style="font-size: xx-large;">Will be covered in depth later</p></header>
+  <header>
+    <h1><span style="font-size: xx-large;">Brief intro to</span><br> Specificity</h1>
+    <p  style="font-size: xx-large;">Will be covered in depth later</p>
+  </header>
 </div>
 
- <div class="object slide">
+
+
+<div class="object slide">
   <object data="https://specifishity.com/"></object>
-     <header><h1>Specificity (SpeciFISHity)</h1></header>
+  <header>
+    <h1>Specificity (SpeciFISHity)</h1>
+  </header>
   <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
 </div>
 
 
 <!-- Specificity Notes -->
 <div class="slide">
-     <header><h1>Specificity: How it works</h1></header>
-     <section class="content">
-      <ul>
-        <li><code contenteditable>1-0-0</code>: ID selector</li>
-        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
-        <li><code contenteditable>0-0-1</code>: Element Selector</li></ul>
-
-     </section>
+  <header>
+    <h1>Specificity: How it works</h1>
+  </header>
+  <section class="content">
+    <ul>
+      <li><code contenteditable>1-0-0</code>: ID selector</li>
+      <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+      <li><code contenteditable>0-0-1</code>: Element Selector</li>
+    </ul>
+   </section>
 </div>
+
+
 
 <!-- Specificity Notes -->
 <div class="slide">
-     <header><h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>: How it works</h1></header>
-     <section class="content">
-      
- <pre contenteditable>body.blue div#someId a#otherId.classy {
+  <header>
+    <h1><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>: How it works</h1>
+  </header>
+  <section class="content">    
+    <pre contenteditable>body.blue div#someId a#otherId.classy {
   color: blue;
  }
 #myPage #mySection article.home p.important a {
   color: red;
 }
 </pre>
- <pre contenteditable>2-X-X
+    <pre contenteditable>2-X-X
 X-2-X
 X-X-3</pre>
-</section>
+  </section>
 </div>
+
 
 <!-- Specificity Notes -->
 <div class="slide">
-     <header><h1>Specificity: How it works</h1></header>
-     <section class="content">
-      <ul>
-        <li><code contenteditable>1-0-0</code>: ID selector</li>
-        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
-        <li><code contenteditable>0-0-1</code>: Element Selector</li></ul>
-
- <p>The * selector, or global selector, has no weight.</p>
- <pre contenteditable>* {} 0-0-0 </pre>
-
-<p>Combinators, like ~, >, and + have no weight</p>
-<pre contenteditable>ul > li {} 0-0-2
+  <header>
+    <h1>Specificity: How it works</h1>
+  </header>
+  <section class="content">
+    <ul>
+      <li><code contenteditable>1-0-0</code>: ID selector</li>
+      <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+      <li><code contenteditable>0-0-1</code>: Element Selector</li>
+    </ul>
+    <p>The * selector, or global selector, has no weight.</p>
+    <pre contenteditable>* {} 0-0-0 </pre>
+    <p>Combinators, like ~, >, and + have no weight</p>
+    <pre contenteditable>ul > li {} 0-0-2
 ul li {} 0-0-2</pre>
-
-     </section>
+  </section>
 </div>
 
 
 <!-- divider -->
 <div class="slide intro">
-  <header><h1>Global selector<br/><span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span></h1></header>
+  <header>
+    <h1>Global selector<br/>
+      <span style="font-size: 6em; line-height: 1em; margin-top: 0">*</span>
+    </h1>
+  </header>
   <small><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/universal_selectors">*</a></code></small>
 </div>
 
 
 <div class="slide object">
-  <header><h1>Play Time</h1></header>
+  <header>
+    <h1>Play Time</h1>
+  </header>
   <object data="exercises/02_global.html"></object>
   <a href="exercises/02_global.html" target="play" class="objectlink">Try it out</a>
 </div>
@@ -561,13 +583,17 @@ ul li {} 0-0-2</pre>
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>Relational selectors &amp; combinators</h1></header>
+  <header>
+    <h1>Relational selectors &amp; combinators</h1>
+  </header>
 </div>
 
 
 <!-- Relational selectors -->
 <div class="slide" id="slcRelational">
-  <header><h1>Relational selectors &amp; combinators</h1></header>
+  <header>
+    <h1>Relational selectors &amp; combinators</h1>
+  </header>
   <section class="content twopart">
     <dl>
       <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
@@ -600,7 +626,6 @@ ul li {} 0-0-2</pre>
         <li>item 7</li>
       </ol>
     </div>
-
   </section>
 <script defer>
 function hasaclass(selector) {
@@ -621,7 +646,9 @@ function hasaclass(selector) {
 
 
 <div class="slide object">
-  <header><h1>Play Time</h1></header>
+  <header>
+    <h1>Play Time</h1>
+  </header>
   <object data="exercises/03_combinators.html"></object>
   <a href="exercises/03_combinators.html" target="play" class="objectlink">Try it out</a>
 </div>
@@ -632,7 +659,9 @@ function hasaclass(selector) {
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>Attribute Selectors</h1></header>
+  <header>
+    <h1>Attribute Selectors</h1>
+  </header>
 </div>
 
 
@@ -647,8 +676,7 @@ function hasaclass(selector) {
     <dt>element[attribute]</dt>
     <dd>Select elements containing the named attribute</dd>
   </dl>
-
-<pre contenteditable><strong>img[alt] {}</strong>
+  <pre contenteditable><strong>img[alt] {}</strong>
      &lt;img src=&quot;image.jpg&quot; <b>alt</b>=&quot;accessible&quot;&gt;
      <span class="wrong">&lt;img src=&quot;image.jpg&quot; title=&quot;inaccessible&quot;&gt;</span>
 
@@ -671,14 +699,14 @@ function hasaclass(selector) {
   /* &lt;p lang=&quot;en-us&quot;&gt;  
      &lt;p lang=&quot;fr-fr&quot;&gt; */
 }</pre></dd>
-
     <dt>E[attr=val]</dt>
     <dd>Has the attribute <em>attr</em> with the exact value <em>val</em>.
       <pre contenteditable class="example">p[id<b>=</b>&quot;home&quot;] {...}</pre></dd>
-    
   </dl>
  </section>
 </div>
+
+
 
 <!-- Older attribute selectors -->
 <div class="slide">
@@ -687,7 +715,6 @@ function hasaclass(selector) {
   </header>
   <section class="content">
   <dl>
-    
     <dt>E[attr|=val]</dt>
     <dd>Attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
 
@@ -707,42 +734,51 @@ function hasaclass(selector) {
  </section>
 </div>
 
-<!-- CSS3 Attribute Selectors -->
-<div class="slide">
-     <header><h1>Attribute Selectors, CSS Selectors 3</h1></header>
-     <section class="content">
-     <dl>
-  <dt>E[attr^=val]</dt>
-  <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
-    <pre contenteditable class="example">a[href<b>^=</b>mailto] { background-image: url(emailicon.gif); }
-a[href<b>^=</b>http]::after { content: &quot; (&quot; attr(href) &quot;)&quot;; }</pre>
-  </dd>
-  <dt>E[attr$=val]</dt>
-  <dd>Attribute <em>attr</em> ends in <em>val</em> . <br />
-    <pre contenteditable class="example">a[href<b>$=</b>pdf] { background-image: url(pdficon.gif); }
-a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
-  </dd>
-</dl>
-     </section>
- </div>
 
 
 <!-- CSS3 Attribute Selectors -->
 <div class="slide">
-     <header><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
-     <section class="content">
-      <dl>  <dt>E[attr*=val]</dt>
-  <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>*=</b>"word"] { 
+  <header>
+    <h1>Attribute Selectors, CSS Selectors 3</h1>
+  </header>
+  <section class="content">
+    <dl>
+      <dt>E[attr^=val]</dt>
+      <dd>Attribute <em>attr</em> starts with the value <em>val</em>.<br />
+        <pre contenteditable class="example">a[href<b>^=</b>mailto] { background-image: url(emailicon.gif); }
+    a[href<b>^=</b>http]::after { content: &quot; (&quot; attr(href) &quot;)&quot;; }</pre>
+      </dd>
+      <dt>E[attr$=val]</dt>
+      <dd>Attribute <em>attr</em> ends in <em>val</em> . <br />
+        <pre contenteditable class="example">a[href<b>$=</b>pdf] { background-image: url(pdficon.gif); }
+    a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
+      </dd>
+    </dl>
+  </section>
+</div>
+
+
+<!-- CSS3 Attribute Selectors -->
+<div class="slide">
+  <header>
+    <h1>Attribute Selectors in CSS Selectors Level 3</h1>
+  </header>
+  <section class="content">
+    <dl>  
+      <dt>E[attr*=val]</dt>
+      <dd>Attribute <em>attr </em>matches <em>val</em> anywhere within the attribute.<br/><pre contenteditable  class="example">a[title<b>*=</b>"word"] { 
   /* &lt;a title=&quot;Sentence with 4 words&quot;&gt; */ 
 }</pre></dd>
-</dl>
+    </dl>
 
-<hr />
-<p>Multiple attributes work! </p>
-<pre contenteditable>a[title][href]</pre>
-<pre contenteditable>input[type="number"][min][max]</pre>
-     </section>
- </div>
+    <hr />
+    <p>Multiple attributes work! </p>
+    <pre contenteditable>a[title][href]</pre>
+    <pre contenteditable>input[type="number"][min][max]</pre>
+  </section>
+</div>
+
+
 
 <!-- CSS4: Attribute Selector -->
 <div class="slide">
@@ -750,13 +786,11 @@ a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
     <h1>Attribute Selectors 4: Case Insensitivity</h1>
   </header>
   <section class="content">
-
     <pre contenteditable>E[title*="foobar" i]</pre>
     <pre contenteditable>E[title*="FooBar" i]</pre>
     <pre contenteditable>input[type="checkbox"]</pre>
     <pre contenteditable>input[type="ChEcKbOx"]</pre>
-
-<p>Relevant if attribute value is case senstive (Strings, not keywords)</p>
+    <p>Relevant if attribute value is case senstive (Strings, not keywords)</p>
   </section>
 </div>
 
@@ -767,38 +801,43 @@ a[href<b>$=</b>pdf]::after { content: &quot; (PDF)&quot;; }</pre>
     <h1>Attribute Selectors 4: Case Sensitivity</h1>
   </header>
   <section class="content">
-
     <pre contenteditable>E[id="foobar"]</pre>
     <pre contenteditable>E[id="FooBar"]</pre>
     <pre contenteditable>a[target="ABC" s ] /* <a href="https://codepen.io/estelle/pen/lEGev" target="_play">example</a> */</pre>
     <pre contenteditable>a[target="abc" s ]</pre>
-
-<p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a>.</p><small>case sensitivity in CSS is not exactly the same as in HTML</small>
+    <p>Relevant if attribute value is <a href="https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors" target="play">NOT case sensitive in CSS</a>.</p><small>case sensitivity in CSS is not exactly the same as in HTML</small>
   </section>
 </div>
 
 
 
- <div class="object slide">
+<div class="object slide">
   <object data="https://codepen.io/estelle/pen/lEGev"></object>
-     <header><h1>Case Insensitivity</h1></header>
+  <header>
+    <h1>Case Insensitivity</h1>
+  </header>
   <a href="https://codepen.io/estelle/pen/lEGev" target="play" class="objectlink">Codepen</a>
 </div>
 
 
 
- <div class="object slide">
+<div class="object slide">
   <object data="exercises/05_attr_case.html"></object>
-     <header><h1>Attribute Selector Case (in)sensitivity</h1></header>
+  <header>
+    <h1>Attribute Selector Case (in)sensitivity</h1>
+  </header>
   <a href="exercises/05_attr_case.html" target="play" class="objectlink" aria-label="open the case-sensitive attribute example in a new window">Open</a>
 </div>
 
 
+
 <!-- Attribute Selectors Recap -->
 <div class="slide">
-     <header><h1>Attribute Selectors Recap</h1></header>
-     <section class="content">
-     <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
+  <header>
+    <h1>Attribute Selectors Recap</h1>
+  </header>
+  <section class="content">
+    <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
 input[placeholder] {<b class="notes">/* matches any input with a placeholder */</b>}
 input[type=email] {<b class="notes">/* exact match */</b>}
 abbr[title~=unicorn] {<b class="notes">/* matches unicorn but not unicorns */</b>}
@@ -808,7 +847,7 @@ a[href$=pdf]{<b class="notes">/* ends in */</b>}
 abbr[title*=unicorn] {<b class="notes">/* matches unicorn and unicorns */</b>}
 abbr[title*=UNICORN i] {<b class="notes">/* matches unicorn and UnIcOrNs */</b>}
 </pre>
-<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes">/* have the attribute at all */</b>
+    <pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes">/* have the attribute at all */</b>
 E:[att=val] <b class="notes">/* exact */</b>
 E:[att~=val] <b class="notes">/* val is a space separated word */</b>
 E:[att|=val] <b class="notes">/* with a dash */</b>
@@ -817,40 +856,37 @@ E:[att$=val]  <b class="notes">/* ends with val */</b>
 E:[att*=val]  <b class="notes">/* val is anywhere as a substring */</b>
 E:[att*=VAL i]  <b class="notes">/* anywhere as a case-insenstive substring */</b>
 E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b></pre>
-<!--<pre contenteditable style="clear:both">
-@media print{
-  abbr[title]::after {
-    content: "(" attr(title) ")";
-  }
-  a[href^=http]::after {
-    content: "(" attr(href) ")";
-  }
-}</pre>-->
-     </section>
- </div>
+  </section>
+</div>
+
+
 
 <!-- Using attribute selectors -->
 <div class="slide object">
-<object data="exercises/07_attr.html"></object>
-     <header><h1>Using attribute selectors</h1></header>
-
+  <object data="exercises/07_attr.html"></object>
+  <header>
+    <h1>Using attribute selectors</h1>
+  </header>
   <a href="exercises/07_attr.html" target="play" class="objectlink">Attribute Selectors</a>
   <p><strong>Note:</strong> The CSS is editable. Changing the CSS will impact the contents on the rest of the page.</p>
-
-    </div>
+</div>
 
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1>UI Pseudo-Class Selectors</h1></header>
+  <header>
+    <h1>UI Pseudo-Class Selectors</h1>
+  </header>
 </div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide">
-     <header><h1>UI pseudo-classes</h1></header>
-     <section class="content flex12">
-  <pre contenteditable>:valid
+  <header>
+    <h1>UI pseudo-classes</h1>
+  </header>
+  <section class="content flex12">
+    <pre contenteditable>:valid
 :invalid
 
 :required
@@ -864,61 +900,73 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 :enabled
 :disabled</pre>
-<article>
-<pre contenteditable>:checked
+    <article>
+      <pre contenteditable>:checked
 
 :indeterminate
 
 :default
-</pre><pre contenteditable>
-:placeholder-shown
+</pre>
+      <pre contenteditable>:placeholder-shown
 
 :blank 
 
-:user-invalid</pre></article>
+:user-invalid</pre>
+    </article>
   </section>
 </div>
 
 
 <!-- UI pseudo-classes -->
 <div class="slide" id="checked">
-     <header><h1>UI pseudo-classes</h1></header>
-     <section class="content">
-  <p>Based on the UI state of a checkbox</p>
-  <pre contenteditable><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a>
+  <header>
+    <h1>UI pseudo-classes</h1>
+  </header>
+  <section class="content">
+    <p>Based on the UI state of a checkbox</p>
+    <pre><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a>
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">:default</a>
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate">:indeterminate</a>
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled">:enabled</a>
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled">:disabled</a></pre>
-<footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer>
+    <footer>Basic User Interface Module Level 3 (CSS3 UI), CSS Selectors Level 4</footer>
+  </section>
 </div>
 
 
 <!-- UI pseudo-classes -->
 <div class="slide" id="checked">
-     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a></code></h1></header>
-     <section class="content">
-  <p>Based on the UI state of a checkbox</p>
-<style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a></code></h1>
+  </header>
+  <section class="content">
+    <p>Based on the UI state of a checkbox</p>
+    <style contenteditable class="editme">#checked input[type=checkbox]:checked + label {
   color: red;
 }</style>
-<div>
-<input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
-<input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
+    <div>
+      <input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
+      <input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label>
+    </div>
+  </section>
 </div>
 
 
- <div class="object slide">
-  <header><h1><code>:checked + label</code> Example</h1></header>
+
+<div class="object slide">
+  <header>
+    <h1><code>:checked + label</code> Example</h1>
+  </header>
   <object data="https://estelle.github.io/doyouknowcss/index.html"></object>
-     
   <a href="https://estelle.github.io/doyouknowcss/index.html" target="play" class="objectlink">:checked slides</a>
 </div>
 
 
 
- <div class="object slide">
-     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">:default</a></code></h1></header>
+<div class="object slide">
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">:default</a></code></h1>
+  </header>
   <object data="https://codepen.io/estelle/pen/yWEBOZ"></object>
   <a href="https://codepen.io/estelle/pen/yWEBOZ" target="play" class="objectlink">Codepen</a>
 </div>
@@ -926,13 +974,17 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!--Form related UI pseudo-classes -->
 <div class="slide">
-  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate">:indeterminate</a></code></h1></header>
-  <section class="content"><br/>
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate">:indeterminate</a></code></h1>
+  </header>
+  <section class="content">
+    <br/>
     <style contenteditable class="editme">[type="checkbox"]:indeterminate + label {
   color: blue;
 }</style>
     <p>
-      <input type="checkbox" id="indeterminate_checkbox"> <label for="indeterminate_checkbox" onclick="document.getElementById('indeterminate_checkbox').indeterminate = true; return false">Make prior checkbox indeterminate</label>
+      <input type="checkbox" id="indeterminate_checkbox"> 
+      <label for="indeterminate_checkbox" onclick="document.getElementById('indeterminate_checkbox').indeterminate = true; return false">Make prior checkbox indeterminate</label>
     </p>
     <h2>What is indeterminate?</h2>
     <ul>
@@ -940,34 +992,50 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
       </li>
       <li>progress meter when the percent completion is not known</li>
       <li>Radio-group initialized with no pre-selected choice</li>
-</ul>
+    </ul>
   </section>
 </div>
 
 
- <div class="object slide">
+
+
+<div class="object slide">
   <object data="https://codepen.io/estelle/pen/wVoxpw"></object>
-     <header><h1>:indeterminate</h1></header>
+  <header>
+    <h1>:indeterminate</h1>
+  </header>
   <a href="https://codepen.io/estelle/pen/wVoxpw" target="play" class="objectlink">Codepen</a>
 </div>
 
+
+
 <div class="object slide">
   <object data="https://codepen.io/estelle/pen/bXBjxd"></object>
-     <header><h1>:enabled &amp; :disabled</h1></header>
+  <header>
+    <h1>:enabled &amp; :disabled</h1>
+  </header>
   <a href="https://codepen.io/estelle/pen/bXBjxd" target="play" class="objectlink">Codepen</a>
 </div>
 
- <div class="object slide">
+
+
+<div class="object slide">
   <object data="https://codepen.io/estelle/pen/BexXbd"></object>
-     <header><h1>:enabled &amp; :disabled</h1></header>
+  <header>
+    <h1>:enabled &amp; :disabled</h1>
+  </header>
   <a href="https://codepen.io/estelle/pen/BexXbd" target="play" class="objectlink">Codepen</a>
 </div>
 
+
+
 <!--Form related UI pseudo-classes -->
 <div class="slide">
-     <header><h1>Next ...</h1></header>
-     <section class="content">
-  <pre contenteditable><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid">:valid</a>
+  <header>
+    <h1>Next ...</h1>
+  </header>
+  <section class="content">
+    <pre><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid">:valid</a>
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid">:invalid</a>
 
 <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required">:required</a>
@@ -982,50 +1050,67 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!--Form related UI pseudo-classes -->
 <div class="slide" id="UI">
-     <header><h1>Form related UI pseudo-classes</h1></header>
-     <section class="content">
-<style class="editme" contenteditable>#UI input:valid { border-color: green;}
+  <header>
+    <h1>Form related UI pseudo-classes</h1>
+  </header>
+  <section class="content">
+    <style class="editme" contenteditable>#UI input:valid { border-color: green;}
 #UI input:invalid { border-color: red;}
 #UI input:required,
 #UI input[aria-required="true"] {border-width: 5px;}
 #UI input:optional {border-width: 10px;}
 #UI input:out-of-range { background-color: pink;}
 #UI input:in-range { background-color: lightgreen;}</style>
-<div style="clear:both;">
-<input type="number" min="5" max="7" id="test3ck" required /> <label  for="test3ck">Number between 5 and 7</label><br>
-<input type="number" min="0" step="0.1" max="10" id="test4ck"/><label for="test4ck">Number between 0 and 10</label>
-<pre contenteditable class="example">&lt;input type="number" min="5" max="7"
+    <div style="clear:both;">
+      <input type="number" min="5" max="7" id="test3ck" required /> 
+      <label  for="test3ck">Number between 5 and 7</label>
+      <br>
+      <input type="number" min="0" step="0.1" max="10" id="test4ck"/>
+      <label for="test4ck">Number between 0 and 10</label>
+      <pre contenteditable class="example">&lt;input type="number" min="5" max="7"
   required aria-required="true"/&gt;
 &lt;input type="number" min="0" step="0.1" max="10"/></pre>
-</div>   </section>
+    </div>
+  </section>
 </div>
 
-<!-- UI selectors -->
-<div class="slide object">
-<object data="exercises/09_uiselectors.html"></object>
-     <header><h1>UI selectors</h1></header>
- <a href="exercises/09_uiselectors.html" target="play">UI Selectors</a></h1>
-  <p>Test them out for yourselves</p>
-  <a class="objectlink" href="exercises/09_uiselectors.html">Open in new page</a>
-    </div>
+
 
 <!-- UI selectors -->
 <div class="slide object">
-<object data="exercises/10_counting.html?hop"></object>
-     <header><h1>UI selectors &amp; Counters</h1></header>
- <a href="exercises/10_counting.html" target="play">UI Selectors & counters</a></h1>
+  <object data="exercises/09_uiselectors.html"></object>
+  <header>
+    <h1>UI selectors</h1>
+  </header>
+  <a href="exercises/09_uiselectors.html" target="play">UI Selectors</a>
+  <p>Test them out for yourselves</p>
+  <a class="objectlink" href="exercises/09_uiselectors.html">Open in new page</a>
+</div>
+
+
+
+
+<!-- UI selectors -->
+<div class="slide object">
+  <object data="exercises/10_counting.html?hop"></object>
+  <header>
+    <h1>UI selectors &amp; Counters</h1>
+  </header>
+  <a href="exercises/10_counting.html" target="play">UI Selectors & counters</a>
   <p>Test them out for yourselves</p>
   <a class="objectlink" href="exercises/10_counting.html">Open in new page</a>
-    </div>
+</div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide" id="mui">
-     <header><h1>:user-invalid</h1></header>
-     <section class="content">
-        <pre contenteditable style="display: inline-block">:user-invalid</pre>
-        <pre contenteditable  style="display: inline-block">:-moz-ui-invalid</pre>
-<style class="editme" contenteditable>#mui input:-moz-ui-invalid { /* FF only */
+  <header>
+    <h1>:user-invalid</h1>
+  </header>
+  <section class="content">
+    <pre contenteditable style="display: inline-block">:user-invalid</pre>
+    <pre contenteditable  style="display: inline-block">:-moz-ui-invalid</pre>
+    <style class="editme" contenteditable>#mui input:-moz-ui-invalid { /* FF only */
   border: initial; 
   background-color: pink;
 }
@@ -1033,20 +1118,29 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
   border: initial;
   background-color: red;
 }</style>
-       <div>
-<p><input type="number" min="5" max="7" id="test5ck" required />
-<label  for="test5ck">Number between 5 and 7</label></p><p>
-<input type="number" min="0" step="0.1" max="10" id="test6ck"/>
-<label for="test4ck">Number between 0 and 10</label>
-</p>
-     </section>
+    <div>
+      <p>
+        <input type="number" min="5" max="7" id="test5ck" required />
+        <label  for="test5ck">Number between 5 and 7</label>
+      </p>
+      <p>
+        <input type="number" min="0" step="0.1" max="10" id="test6ck"/>
+        <label for="test4ck">Number between 0 and 10</label>
+      </p>
+    </div>
+  </section>
 </div>
+
+
+
 
 <!--Form related UI pseudo-classes -->
 <div class="slide">
-     <header><h1>Other UI pseudo-classes</h1></header>
-     <section class="content">
-  <pre contenteditable>:read-only
+  <header>
+    <h1>Other UI pseudo-classes</h1>
+  </header>
+  <section class="content">
+    <pre contenteditable>:read-only
 :read-write
 
 :placeholder-shown
@@ -1059,84 +1153,102 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 
 <!--Form related UI pseudo-classes -->
 <div class="slide divider">
-  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write">:read-write</a></code> &amp; <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only">:read-only</a></code></h1></header></div>
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write">:read-write</a></code> &amp; <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only">:read-only</a></code></h1>
+  </header>
+</div>
 
- <div class="object slide">
+
+
+
+
+<div class="object slide">
   <object data="https://codepen.io/estelle/pen/wbjVYq"></object>
-     <header><h1><code>:read-write</code> &amp; <code>:read-only</code></h1></header>
+  <header>
+    <h1><code>:read-write</code> &amp; <code>:read-only</code></h1>
+  </header>
   <a href="https://codepen.io/estelle/pen/wbjVYq" target="play" class="objectlink">Codepen</a>
 </div>
 
 
 
-
-
-
-
-
 <!--Form related UI pseudo-classes -->
 <div class="slide divider">
-  <header><h1><code>:placeholder-shown</code></h1></header></div>
+  <header>
+    <h1><code>:placeholder-shown</code></h1>
+  </header>
+</div>
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide" id="phs">
-     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown">:placeholder-shown</a></code></h1></header>
-     <section class="content">
-<p>When the placeholder attribute value is visible</p>
-<style class="editme" contenteditable>#phs input[placeholder]:placeholder-shown {
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown">:placeholder-shown</a></code></h1>
+  </header>
+  <section class="content">
+    <p>When the placeholder attribute value is visible</p>
+    <style class="editme" contenteditable>#phs input[placeholder]:placeholder-shown {
   border: initial;
   background-color: pink;
 }</style>
-<p>
-  <input type=text placeholder="change color above" class="phs"></p>
-      </section>
+    <p>
+      <input type=text placeholder="change color above" class="phs">
+    </p>
+  </section>
 </div>
 
 <!-- divider -->
 <div class="slide divider">
-  <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code> &amp; <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a></code></h1></header>
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code> &amp; <code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a></code></h1>
+  </header>
 </div>
 
 
 
  <!-- :empty pseudo-class -->
 <div class="slide">
-     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code></h1></header>
-     <section class="content">
-  <pre contenteditable>E<b>:empty</b></pre>
- <pre contenteditable>&lt;E/>
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">:empty</a></code></h1>
+  </header>
+  <section class="content">
+    <pre contenteditable>E<b>:empty</b></pre>
+    <pre contenteditable>&lt;E/>
 &lt;E&gt;&lt;/E&gt;
 &lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
 &lt;E title="this is an empty element"/></pre>
-<p>Changed to be like <code>-moz-only-whitespace</code></p>
- <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
- <p>Use case: empty JS content hooks, hide the bullet from empty list items, removing box-model values for margins collapsing,</p>
-</section>
+    <p>Changed to be like <code>-moz-only-whitespace</code></p>
+    <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
+    <p>Use case: empty JS content hooks, hide the bullet from empty list items, removing box-model values for margins collapsing,</p>
+  </section>
 </div>
+
+
 
  <!-- :empty pseudo-class -->
 <div class="slide">
-     <header><h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a><code></h1></header>
-     <section class="content">
-<p>No browser support...
-<pre contenteditable>E<b>:blank</b></pre>
-<pre contenteditable="">&lt;input name="novalue" value=""></pre>
-
-<pre contenteditable="">&lt;textarea name="novalue" value="">&lt;/textarea></pre>
-<small>Not supported, but <code>:empty</code> matches</small>
-
- </section>
-    </div>
+  <header>
+    <h1><code><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:blank">:blank</a><code></h1>
+  </header>
+  <section class="content">
+    <p>No browser support...
+    <pre contenteditable>E<b>:blank</b></pre>
+    <pre contenteditable="">&lt;input name="novalue" value=""></pre>
+    <pre contenteditable="">&lt;textarea name="novalue" value="">&lt;/textarea></pre>
+    <small>Not supported, but <code>:empty</code> matches</small>
+  </section>
+</div>
 
 
 
 
 <!--Form related UI pseudo-classes -->
 <div class="slide">
-     <header><h1>:empty &amp; :blank</h1></header>
-     <section class="content">
-        <style class="editme" contenteditable>#blank {display: flex; justify-content: space-around;}
+  <header>
+    <h1>:empty &amp; :blank</h1>
+  </header>
+  <section class="content">
+  <style class="editme" contenteditable>#blank {display: flex; justify-content: space-around;}
 #blank > * {border: 3px double; padding: 5px;}
 #blank > *:-moz-only-whitespace {
   background-color: pink;
@@ -1147,31 +1259,29 @@ E:[att*=VAL s]  <b class="notes">/* anywhere as a case-sensitive substring */</b
 #blank > *:blank { /* not yet supported */
   background-color: lightblue;
 }</style>
-<div id="blank">
-  <input type=text value="" placeholder="this is an input">
-  <div></div>
-  <div><!-- just a comment --></div>
-  <div> <!-- white space too -->  </div>
-</div>
-      </section>
+    <div id="blank">
+      <input type=text value="" placeholder="this is an input">
+      <div></div>
+      <div><!-- just a comment --></div>
+      <div> <!-- white space too -->  </div>
+    </div>
+  </section>
 </div>
 
 
 <!-- divider -->
 <div class="slide intro">
-  <header><h1>BREAK</h1></header>
+  <header>
+    <h1>BREAK</h1>
+  </header>
   <section class="content">
     <a href="index2.html">Next ➹</a>
   </section>
 </div>
 
 
-   </div>
-
-
+  </div>
 </div>
 <script src="selectors.js"></script>
-  </body>
-
+</body>
 </html>
-

@@ -5,38 +5,50 @@
     <title>CSS Intro</title>
     <link rel="stylesheet" href="../intro/css/main.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <style>
-
-    </style>
   </head>
-
   <body>
 
-<!-- Top instructions -->
-<div id="topinfo"></div>
+<!-- buttons -->
 <header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">&laquo; Back</button></li>
-            <li><button class="button done" id="next">Next &raquo; </button></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><button class="button cancel" id="back">&laquo; Back</button></li>
+      <li><button class="button done" id="next">Next &raquo; </button></li>
+    </ul>
+  </nav>
 </header>
+
 <!-- footer instructions -->
 <div id="info">
     <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
 </div>
 
+<!-- presentation shell -->
   <div id="presentation">
    <div id="presentation-counter"></div>
    <div id="slides">
 
-    <div class="slide intro">
-     <header>
-      <h1>CSS Basics</h1>
-     </header>
-     <section>
-<div class="flex12">
+<!-- SLIDES -->
+
+<!-- title slide -->
+<div class="slide intro">
+  <header>
+    <h1>CSS in Depth v3</h1>
+  </header>
+  <section class="content">
+    <p><a href="https://estelle.github.io/CSS/intro/">estelle.github.io/CSS/intro/</a></p>
+    <p><a href="https://estelle.github.io/CSS/">estelle.github.io/CSS/</a></p>
+    <p><a href="https://estelle.github.io/">estelle.github.io</a></p>
+  </section>
+</div>
+
+<!-- deck TOC -->
+<div class="slide intro">
+ <header>
+  <h1>CSS Basics</h1>
+ </header>
+ <section>
+ <div class="flex12">
   <ul>
     <li>Declarations</li>
     <li>CSS Rulesets</li>
@@ -70,59 +82,11 @@
 </div>
 
 
-  <div class="slide intro">
-     <header>
-      <h1>CSS Deep Dive</h1>
-     </header>
-     <section>
-
-<p><a href="https://estelle.github.io/CSS/intro/">estelle.github.io/CSS/intro/</a></p>
-<p><a href="https://estelle.github.io/CSS/">estelle.github.io/CSS/</a></p>
-
-<p><a href="https://estelle.github.io/">estelle.github.io</a></p>
-</section>
-</div>
-
-  <div class="slide intro">
-     <header>
-      <h1>In this section</h1>
-     </header>
-     <section>
-<div class="flex12">
-  <ul>
-    <li>Declarations</li>
-    <li>CSS Rulesets</li>
-    <li>Including CSS
-        <ul>
-          <li>&lt;link></li>
-          <li>media</li>
-          <li>&lt;style></li>
-          <li>@import</li>
-          <li>inline styles</li>
-          <li>Scripting</li>
-        </ul>
-    </li>
-  </ul>
-  <ul>
-    <li>Knowledge
-    <ul>
-      <li>White space</li>
-      <li>Character declaration</li>
-      <li>Comments</li>
-      <li>Errors and Error Handling</li>
-      <li>The Cascade</li>
-    </ul>
-    </li>
-    <li>Developer Tools</li>
-    <li>Exercise</li>
-  </ul>
-</div>
-</section>
-</div>
-
-
+<!-- declaration -->
 <div class="slide">
-  <header><h1>Declaration</h1></header>
+  <header>
+    <h1>Declaration</h1>
+  </header>
   <section class="content">
     <h2>Declaration</h2>
     <pre><b>property</b><em>:</em> <b>value</b><em>;</em></pre>
@@ -133,47 +97,58 @@
 
 
 
-<!--properties-->
+<!--CSS properties covered-->
 <div class="slide object">
-     <header><h1>CSS Properties</h1></header>
-     <object data="exercises/properties.html"></object>
+  <header>
+    <h1>CSS Properties</h1>
+  </header>
+  <object data="exercises/properties.html"></object>
 </div>
 
 
+
+<!-- Agenda for the course -->
 <div class="slide">
-  <header><h1>Agenda</h1></header>
-  <section> <ol class="col2">
-    <li><a href="../intro/index.html">Introduction</a></li>
-    <li><a href="../selectors/index.html">Selectors</a></li>
-    <li><a href="../selectors/specificity.html">Specificity</a></li>
-    <li><a href="../generated/index.html">Generated Content</a></li>
-    <li><a href="../media/index.html">Media Queries</a></li>
-    <li><a href="../values/index.html">Units &amp; Values </a></li>
-    <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
-    <li><a href="../math/index.html">Math &amp; Variables</a></li>
-    <li><a href="../fonts/index.html">Fonts</a></li>
-    <li><a href="../text/index.html">Text</a></li>
-    <li><a href="../images/index.html">Images</a></li>
-    <li><a href="../background/index.html">Backgrounds</a></li>
-    <li><a href="../gradients/index.html">Gradients</a></li>
-    <li><a href="../boxmodel/index.html">Box Model</a></li>
-    <li><a href="../flexbox/index.html">Flexbox</a></li>
-    <li><a href="../tables/index.html">Tables</a></li>
-    <li><a href="../grid/index.html">Grids</a></li>
-    <li><a href="../transforms/index.html">Transforms</a></li>
-    <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
-   <li><a href="../other/index.html">Other Features</a></li></ol>
+  <header>
+    <h1>Agenda</h1>
+  </header>
+  <section> 
+    <ol class="col2">
+      <li><a href="../intro/index.html">Introduction</a></li>
+      <li><a href="../selectors/index.html">Selectors</a></li>
+      <li><a href="../selectors/specificity.html">Specificity</a></li>
+      <li><a href="../generated/index.html">Generated Content</a></li>
+      <li><a href="../media/index.html">Media Queries</a></li>
+      <li><a href="../values/index.html">Units &amp; Values </a></li>
+      <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
+      <li><a href="../math/index.html">Math &amp; Variables</a></li>
+      <li><a href="../fonts/index.html">Fonts</a></li>
+      <li><a href="../text/index.html">Text</a></li>
+      <li><a href="../images/index.html">Images</a></li>
+      <li><a href="../background/index.html">Backgrounds</a></li>
+      <li><a href="../gradients/index.html">Gradients</a></li>
+      <li><a href="../boxmodel/index.html">Box Model</a></li>
+      <li><a href="../flexbox/index.html">Flexbox</a></li>
+      <li><a href="../tables/index.html">Tables</a></li>
+      <li><a href="../grid/index.html">Grids</a></li>
+      <li><a href="../transforms/index.html">Transforms</a></li>
+      <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
+      <li><a href="../other/index.html">Other Features</a></li>
+    </ol>
   </section>
 </div>
 
+
+<!-- Declaration block -->
 <div class="slide">
-  <header><h1>Declaration block</h1></header>
+  <header>
+    <h1>Declaration block</h1>
+  </header>
   <section class="content">
     <pre>{
   color: red;
   font-weight: bold;
 }</pre>
-
     <pre>{
   transition: all 2s ease-in;
   transform: scale(2) translate(50vw, 50vh);
@@ -181,9 +156,11 @@
   </section>
 </div>
 
-<!-- basics -->
+<!-- CSS ruleset syntax -->
 <div class="slide">
-  <header><h1>CSS Ruleset</h1></header>
+  <header>
+    <h1>CSS Ruleset</h1>
+  </header>
    <section class="content">
 <pre contenteditable>selectorA {
    property1: value1;
@@ -198,8 +175,13 @@ selectorC {
 </section>
  </div>
 
+
+
+<!-- CSS ruleset -->
 <div class="slide">
-  <header><h1>CSS Rulesets</h1></header>
+  <header>
+    <h1>CSS Rulesets</h1>
+  </header>
   <section class="content">
 <pre contenteditable>p {
    color: #333333;
@@ -210,42 +192,50 @@ a:link {
    text-decoration: underline;
    color: blue;
 }</pre>
-    <p>Selectors define which elements &amp; pseudo elements rulesets are applied to.</p>
+    <p>Selectors define to which elements and pseudo elements the ruleset is applied.</p>
   </section>
 </div>
 
 
+
+
+<!-- How this deck works -->
 <div class="slide thisSlide">
-<header><h1>Live Code</h1></header>
+<header><h1>Live Code</h1>
+  </header>
 <section class="content">
  <style contenteditable class="editme css">.thisSlide .css {
   background-color: var(--dark_bg);
   color: var(--invertedtext);
  }</style>
+ <p>This deck is "live". Changing the selectors, properties and values in a code block will change the CSS for the current deck. Instantly.</p>
 </section>
 </div>
 
 
 
-
-<div class="slide toc">
-
-  <header><h1>Including CSS</h1></header>
-  <section class="content"><ul>
-    <li><code>&lt;link></code></li>
-   <li><code>&lt;style></code></li>
-   <li><code>@import</code></li>
-   <li>inline (<code>style</code> attribute)</li>
-   <li>scripting</li>
-
+<!-- subsection TOC -->
+<div class="slide divider">
+  <header>
+    <h1>Including CSS</h1>
+  </header>
+  <section class="content">
+    <ul>
+     <li><code>&lt;link></code></li>
+     <li><code>&lt;style></code></li>
+     <li><code>@import</code></li>
+     <li>inline (<code>style</code> attribute)</li>
+     <li>scripting</li>
+   </ul>
   </section>
 </div>
 
 
-<!-- exmaple of included styles -->
+<!-- <link>: example of including various styles -->
 <div class="slide">
-
-  <header><h1>&lt;link></h1></header>
+  <header>
+    <h1>&lt;link></h1>
+  </header>
   <section class="content">
 <pre contenteditable  class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
@@ -264,14 +254,18 @@ a:link {
  &lt;/head&gt;
  &lt;body style=&quot;&quot;&gt;
   ...
- &lt;/body&gt;</pre></section>
+ &lt;/body&gt;</pre>
+  </section>
 </div>
 
-<!-- exmaple of included styles -->
-<div class="slide">
-  <header><h1>media</h1></header>
-  <section class="content">
 
+
+<!-- style inclusion: media query -->
+<div class="slide">
+  <header>
+    <h1>media</h1>
+  </header>
+  <section class="content">
     <pre style="float: right;">media="screen"
 media="screen and (max-width: 600px)"
 media="screen, print"
@@ -294,10 +288,11 @@ media="screen, print"
 
 
 
-<!-- exmaple of included styles -->
+<!-- <style>: example of including various styles -->
 <div class="slide">
-
-  <header><h1>&lt;style></h1></header>
+  <header>
+    <h1>&lt;style></h1>
+  </header>
   <section class="content">
 <pre contenteditable  class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
@@ -322,10 +317,12 @@ media="screen, print"
 
 
 
-<!-- exmaple of included styles -->
-<div class="slide">
 
-  <header><h1>@import</h1></header>
+<!-- @import: example of including various styles -->
+<div class="slide">
+  <header>
+    <h1>@import</h1>
+  </header>
   <section class="content">
 <pre contenteditable class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
@@ -355,10 +352,12 @@ media="screen, print"
 
 
 
-<!-- exmaple of included styles -->
+<!-- style attribute: example of including various styles -->
 <div class="slide">
 
-  <header><h1>inline styles</h1></header>
+  <header>
+    <h1>inline styles</h1>
+  </header>
   <section class="content">
 <pre contenteditable class="largeblock">&lt;!DOCTYPE HTML&gt;
   &lt;html&gt;
@@ -381,23 +380,27 @@ media="screen, print"
 </div>
 
 
+<!-- targeting styles with JavaScript -->
 <div class="slide">
-  <header><h1>Scripting</h1></header>
+  <header>
+    <h1>Scripting</h1>
+  </header>
   <section class="content">
-
     <pre contenteditable>let myTarget = document.querySelector('#myID');</pre>
-
     <pre contenteditable>myTarget.style.color = 'blue';</pre>
-
     <pre contenteditable>myTarget.classList.toggle('myClass');
 
 <i>/* methods: add, remove, toggle, contains */</i></pre>
-
   </section>
 </div>
 
+
+
+<!-- subsection TOC -->
 <div class="slide divider">
-  <header><h1>Knowledge</h1></header>
+  <header>
+    <h1>Knowledge</h1>
+  </header>
   <section class="content">
     <ul>
       <li>CSS Rules</li>
@@ -409,29 +412,36 @@ media="screen, print"
 </div>
 
 
+<!-- CSS: White space -->
 <div class="slide">
-  <header><h1>White space</h1></header>
+  <header>
+    <h1>White space</h1>
+  </header>
   <section class="content">
     <ul>
-    <li>CSS is for the most part insensitive to white space, with 3 exceptions:
-    <ul><li>Required between keywords in a value</li>
-      <li>The <code>charset</code> declaration needs to be exact</li>
-      <li>Surround operands with whitespace. Is "-" a minus or a negative number?</li>
+      <li>CSS is for the most part insensitive to white space, with 3 exceptions:
+        <ul>
+          <li>Required between keywords in a value</li>
+          <li>The <code>charset</code> declaration needs to be exact</li>
+          <li>Surround operands with whitespace. Is "-" a minus sign or is it indicating a negative number?</li>
+        </ul>
+      </li>
+      <li>In a selector, one or more spaces is a descendant combinator</li>
+      <li>Comments and white space are encouraged for readability. They can be removed via minification during the build process.</li>
     </ul>
-  </li>
-    <li>In a selector, one or more spaces is also a descendant combinator</li>
-    <li>White space is encouraged for readability, and can be removed during minification.</li></ul>
   </section>
 </div>
 
 
-
+<!-- @charset "UTF-8"; -->
 <div class="slide">
-  <header><h1>Character declaration</h1></header>
+  <header>
+    <h1>Character declaration</h1>
+  </header>
   <section class="content">
     <pre><em>@charset "UTF-8";</em></pre>       
-
-    <ul><li>Must be the first thing in the stylesheet</li>
+    <ul>
+      <li>Must be the first thing in the stylesheet</li>
       <li>Must be the first character on the page</li>
       <li>Must have EXACTLY one space</li>
       <li>Must have double quotes</li>
@@ -441,44 +451,48 @@ media="screen, print"
 </div>
 
 
-
+<!-- CSS Comments -->
 <div class="slide">
-  <header><h1>Comments</h1></header>
-  <section class="content"><p>Comments are generally optional and encouraged for readability, and written with:</p>
+  <header>
+    <h1>Comments</h1>
+  </header>
+  <section class="content">
+    <p>Comments are generally optional and encouraged for readability:</p>
     <pre contenteditable><i>/* this is a comment in CSS (and JS) */</i></pre>
-
     <pre contenteditable><i>/* this is a multiline
 comment in CSS (and JS)
 that spans 3 lines */</i></pre>
-
-<pre contenteditable>color: <i>/* this works */</i> red;</pre>
-
+    <pre contenteditable>color: <i>/* this works */</i> red;</pre>
   </section>
 </div>
 
 
 
+<!-- CSS Comments -->
 <div class="slide">
-  <header><h1>Comments</h1></header>
-<p>Comments can not be nested</p>
-<pre contenteditable><i>/* this is the outer comment
-    /* inner comment */</i>
-  <strike>This is not a comment */</strike></pre>
-
-  <pre contenteditable><strike>// This is a sass &amp; JS comment,  but not CSS </strike></pre>
-
+  <header>
+    <h1>Comments</h1>
+  </header>
+  <section class="content">
+    <p>Comments can not be nested:</p>
+    <pre contenteditable><i>/* this is the outer comment
+/* inner comment */</i>
+<strike>This is not a comment */</strike></pre>
+    <pre contenteditable><strike>// This is a single line comment in sass and JS, but not CSS </strike></pre>
     <p>Comments are encouraged for readability, and can be removed during minification / build.</p>
   </section>
 </div>
 
 
 
-
+<!-- how CSS is forgiving -->
 <div class="slide">
-  <header><h1>Forgiving yet strict</h1></header>
+  <header>
+    <h1>Forgiving yet strict</h1>
+  </header>
   <section class="content">
     <h2>Forgiving</h2>
-    <p>Skips declaration it doesn't understand</p>
+    <p>Skips declarations it doesn't understand</p>
     <pre contenteditable>p {
   color: granola; <i>/* not a valid color */</i>
   groot: green; <i>/* not a valid property */</i>
@@ -492,13 +506,15 @@ that spans 3 lines */</i></pre>
 
 
 
+<!-- how CSS is NOT forgiving -->
 <div class="slide">
-  <header><h1>Forgiving yet strict</h1></header>
+  <header>
+    <h1>Forgiving yet strict</h1>
+  </header>
   <section class="content">
-   
-<h2>Strict</h2>
-<p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
-<pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
+    <h2>Strict</h2>
+    <p>Fails entire ruleset if pseudo-class is wrong in a selector</p>
+    <pre contenteditable>p:oopsie, <i>/* entire declaration tossed */</i>
 p.valid { 
   color: green;
 }</pre>
@@ -507,147 +523,169 @@ p.valid {
 
 
 
-
+<!-- pseudo class rules and -webkit- -->
 <div class="slide">
-  <header><h1>Forgiving for ::-webkit</h1></header>
+  <header>
+    <h1>Forgiving for ::-webkit</h1>
+  </header>
   <section class="content">
-<p>Unless it's a <b>::-webkit-</b> prefixed pseudoelement</p>
-<pre contenteditable>::-webkit-does-not-exist,
+    <p>Unless it's a <b>::-webkit-</b> prefixed pseudoelement</p>
+    <pre contenteditable>::-webkit-does-not-exist,
 ::after { <i>/* this is NOT ignored */</i>
   content: 'foo';
 }</pre>
-<p><i>If there is an invalid pseudo-element or pseudo-class within in a chain or group of selectors, the whole selector list is invalid. If a pseudo-element (but not pseudo-class) has a -webkit- prefix, webkit and mozilla will not invalidate the selector list.</i>
+    <p><i>If there is an invalid pseudo-element or pseudo-class within in a chain or group of selectors, the whole selector list is invalid. If a pseudo-element (but not pseudo-class) has a <code>-webkit-</code> prefix, webkit and mozilla will not invalidate the selector list.</i></p>
   </section>
 </div>
 
 
+<!-- commenting out CSS in "illegal" yet supported ways -->
 <div class="slide">
-  <header><h1>Forgiving yet strict: Comments</h1></header>
- <section class="content">
-  <p>Can be used to comment out lines of CSS as you test</p>
-  <pre contenteditable>p {
+  <header>
+    <h1>Forgiving yet strict: Comments</h1>
+  </header>
+  <section class="content">
+    <p>Can be used to comment out lines of CSS as you test</p>
+    <pre contenteditable>p {
   color: red; <i>/* won't be overwritten */</i>
   //color: green; <i>/* ignored */</i>
   _color: blue; <i>/* ignored */</i>
   font-weight: bold; <i>/* valid */</i>
 }</pre>
-<p>The underscore is used in many of our "try it" pages</p>
+    <p>The underscore is used in many of our code examples.</p>
 </section>
 </div>
 
+
+<!-- ignored versus invalid -->
 <div class="slide">
-  <header><h1>CSS can be difficult</h1></header>
+  <header>
+    <h1>CSS can be difficult</h1>
+  </header>
   <section class="content">
     <p>Paragraph will be blue</p>
-<pre contenteditable>body { color: red; } 
+    <pre contenteditable>body { color: red; } 
 p { color: blue; } 
 p { color: 16px; }</pre>
 
     <p>Paragraph will be red</p>
-<pre contenteditable>:root {--size: 16px;}
+    <pre contenteditable>:root {--size: 16px;}
 body { color: red; } 
 p { color: blue; } 
 p { color: var(--size); }</pre>
-</section>
-<p>The former is a syntax error, which is ignored. The latter is an invalid: custom property values that are invalid are not ignored.
+    <p>The former is a syntax error, which is ignored. The latter is an invalid: custom property values that are invalid are not ignored.
   </section>
 </div>
 
 
-
+<!-- the Cascade -->
 <div class="slide">
-  <header><h1>The cascade</h1></header>
- <section class="content">
-  <p>The C in CSS stands for "Cascade"</p>
-  <pre contenteditable>p {
+  <header>
+    <h1>The cascade</h1>
+  </header>
+  <section class="content">
+    <p>The C in CSS stands for "Cascade"</p>
+    <pre contenteditable>p {
   color: red; 
   color: green; 
   color: blue; 
 }</pre>
-<p>Will be blue</p>
-</section>
-</div>
-
-
-<div class="slide">
-  <header><h1>Developer Tools</h1></header>
- <section class="content">
-  <p>Developer tools help with:</p>
-  <ul>
-    <li>Seeing what CSS impacts each element individually</li>
-    <li>What property values have been inherited</li>
-    <li>Finding mistakes</li>
-    <li>Learning about new features</li>
-    </ul>
-  <p>Right click or command click on this paragraph and inspect it.</p> 
-  <table class="standard-table">
-  <thead>
-      <tr><th>Action</th>
-      <th>Mac</th>
-      <th>Windows / Linux</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td>Open DevTools</td>
-      <td><code>Command + Option + I</code></td>
-      <td><code>F12</code> or <code>Control + Shift + I</code></td>
-    </tr>
-    <tr>
-      <td>Console panel</td>
-      <td><code>Command + Option + J</code></td>
-      <td><code>Control + Shift + J</code></td>
-    </tr>
-    <tr>
-      <td>Elements panel</td>
-      <td>
-        <code>Command + Shift + C</code> <br>
-        <code>Command + Option + C</code>
-      </td>
-      <td><code>Control + Shift + C</code></td>
-    </tr>
-  </tbody>
-</table>
-</section>
-</div>
-
-
-
-<div class="slide">
-  <header><h1>Exercise</h1></header>
-  <section class="content exercisecards">
-  <figure>
-  <div class="card" data-type="H">
-    <div class="back"></div>
-    <div class="face" data-value="A">♥</div>
-  </div>
-  <div class="card" data-type="C">
-    <div class="back"></div>
-    <div class="face" data-value="A">♣</div>
-  </div>
-  <div class="card" data-type="D">
-    <div class="back"></div>
-   <div class="face" data-value="A">♦</div>
-  </div>
-</figure>
+    <p>Will be blue</p>
   </section>
 </div>
 
+
+<!-- developer tools -->
 <div class="slide">
-  <header><h1>Exercise</h1></header>
-  <section class="content  exercisecards"><figure>
-  <div class="card" data-type="H">
-    <div class="back"></div>
-    <div class="face" data-value="A">♥</div>
-  </div>
-  <div class="card" data-type="C">
-    <div class="back"></div>
-    <div class="face" data-value="A">♣</div>
-  </div>
-  <div class="card" data-type="D">
-    <div class="back"></div>
-   <div class="face" data-value="A">♦</div>
-  </div>
-</figure>
+  <header>
+    <h1>Developer Tools</h1>
+  </header>
+  <section class="content">
+    <p>Developer tools help with:</p>
+    <ul>
+      <li>Seeing what CSS impacts each element individually</li>
+      <li>What property values have been inherited</li>
+      <li>Finding mistakes</li>
+      <li>Learning about new features</li>
+    </ul>
+    <p>Right click or command click on this paragraph and inspect it.</p> 
+    <table class="standard-table">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Mac</th>
+          <th>Windows / Linux</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open DevTools</td>
+          <td><code>Command + Option + I</code></td>
+          <td><code>F12</code> or <code>Control + Shift + I</code></td>
+        </tr>
+        <tr>
+          <td>Console panel</td>
+          <td><code>Command + Option + J</code></td>
+          <td><code>Control + Shift + J</code></td>
+        </tr>
+        <tr>
+          <td>Elements panel</td>
+          <td>
+            <code>Command + Shift + C</code> <br>
+            <code>Command + Option + C</code>
+          </td>
+          <td><code>Control + Shift + C</code></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+</div>
+
+
+<!-- Final exercise solution -->
+<div class="slide">
+  <header>
+    <h1>Exercise</h1>
+  </header>
+  <section class="content exercisecards">
+    <figure>
+      <div class="card" data-type="H">
+        <div class="back"></div>
+        <div class="face" data-value="A">♥</div>
+      </div>
+      <div class="card" data-type="C">
+        <div class="back"></div>
+        <div class="face" data-value="A">♣</div>
+      </div>
+      <div class="card" data-type="D">
+        <div class="back"></div>
+       <div class="face" data-value="A">♦</div>
+      </div>
+    </figure>
+  </section>
+</div>
+
+
+<!-- Exercise -->
+<div class="slide">
+  <header>
+    <h1>Exercise</h1>
+  </header>
+  <section class="content  exercisecards">
+    <figure>
+      <div class="card" data-type="H">
+        <div class="back"></div>
+        <div class="face" data-value="A">♥</div>
+      </div>
+      <div class="card" data-type="C">
+        <div class="back"></div>
+        <div class="face" data-value="A">♣</div>
+      </div>
+      <div class="card" data-type="D">
+        <div class="back"></div>
+       <div class="face" data-value="A">♦</div>
+      </div>
+    </figure>
     <p>There will be several exercises in each section. We'll also be creating 3 cards that we can flip as an example throughout the day or week. Let's start by:</p>
     <ol>
       <li>Create an HTML page</li>
@@ -663,8 +701,11 @@ p { color: var(--size); }</pre>
 </div>
 
 
+<!-- HTML: exercise solution -->
 <div class="slide">
-  <header><h1>Solution</h1></header>
+  <header>
+    <h1>Solution</h1>
+  </header>
   <section class="content">
     <h2>HTML document</h2>
     <pre contenteditable>&lt;!DOCTYPE HTML&gt;
@@ -682,89 +723,100 @@ p { color: var(--size); }</pre>
 </div>
 
 
+<!-- CSS: exercise solution -->
 <div class="slide">
-  <header><h1>Solution</h1></header>
+  <header>
+    <h1>Solution</h1>
+  </header>
   <section class="content">
-<h2>CSS file</h2>
-<pre contenteditable>@charset "UTF-8";
+    <h2>CSS file</h2>
+    <pre contenteditable>@charset "UTF-8";
 /* CSS Document */</pre>
-<p>Saves as <code>style.css</code></p>
-</section>
+    <p>Saves as <code>style.css</code></p>
+  </section>
 </div>
 
+
+<!-- Exercise Intro: I have a dream -->
 <div class="slide object">
-  <header><h1>Exercise 2</h1></header>
-<object data="../ihaveadream.html"></object>
-<a href="../ihaveadream.html">Open</a>
+  <header>
+    <h1>Exercise 2</h1>
+  </header>
+  <object data="../ihaveadream.html"></object>
+  <a href="../ihaveadream.html">Open</a>
 </div>
 
 
 
 <!--NEXT-->
 <div class="slide">
-     <header><h1>Selectors</h1></header>
-     <section class="content">
+  <header>
+    <h1>Selectors</h1>
+  </header>
+  <section class="content">
     <h1><a href="../selectors/index.html">Next ➹</a></h1></section>
 </div>
 
 
+<!-- TOC -->
 <div class="slide dots">
-  <header><h1>Table of Content</h1></header>
+  <header>
+    <h1>Table of Content</h1>
+  </header>
   <section>
     <ol class="col2">
-<li><a href="../intro/index.html">Introduction</a></li>
-    <li><a href="../selectors/index.html">Selectors</a></li>
-    <li><a href="../selectors/specificity.html">Specificity</a></li>
-    <li><a href="../generated/index.html">Generated Content</a></li>
-    <li><a href="../media/index.html">Media Queries</a></li>
-    <li><a href="../values/index.html">Units &amp; Values </a></li>
-    <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
-    <li><a href="../math/index.html">Math &amp; Variables</a></li>
-    <li><a href="../fonts/index.html">Fonts</a></li>
-    <li><a href="../text/index.html">Text</a></li>
-    <li><a href="../images/index.html">Images</a></li>
-    <li><a href="../background/index.html">Backgrounds</a></li>
-    <li><a href="../gradients/index.html">Gradients</a></li>
-    <li><a href="../boxmodel/index.html">Box Model</a></li>
-    <li><a href="../flexbox/index.html">Flexbox</a></li>
-    <li><a href="../tables/index.html">Tables</a></li>
-    <li><a href="../grid/index.html">Grids</a></li>
-    <li><a href="../transforms/index.html">Transforms</a></li>
-    <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
-   <li><a href="../other/index.html">Other Features</a></li>
-
-<p></ol>
+      <li><a href="../intro/index.html">Introduction</a></li>
+      <li><a href="../selectors/index.html">Selectors</a></li>
+      <li><a href="../selectors/specificity.html">Specificity</a></li>
+      <li><a href="../generated/index.html">Generated Content</a></li>
+      <li><a href="../media/index.html">Media Queries</a></li>
+      <li><a href="../values/index.html">Units &amp; Values </a></li>
+      <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
+      <li><a href="../math/index.html">Math &amp; Variables</a></li>
+      <li><a href="../fonts/index.html">Fonts</a></li>
+      <li><a href="../text/index.html">Text</a></li>
+      <li><a href="../images/index.html">Images</a></li>
+      <li><a href="../background/index.html">Backgrounds</a></li>
+      <li><a href="../gradients/index.html">Gradients</a></li>
+      <li><a href="../boxmodel/index.html">Box Model</a></li>
+      <li><a href="../flexbox/index.html">Flexbox</a></li>
+      <li><a href="../tables/index.html">Tables</a></li>
+      <li><a href="../grid/index.html">Grids</a></li>
+      <li><a href="../transforms/index.html">Transforms</a></li>
+      <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
+     <li><a href="../other/index.html">Other Features</a></li>
+    </ol>
   </section>
 </div>
-<!-- TOC -->
+
+
+<!-- Resouces -->
 <div class="slide">
-  <header><h1>Links</h1></header>
-    <section class="content">
-      <ul>
-        <li>CSS 1: <a href="https://www.w3.org/TR/CSS1/">https://www.w3.org/TR/CSS1/</a>
-        </li>
-        <li>CSS 2.1: <a href="https://www.w3.org/TR/CSS2/">https://www.w3.org/TR/CSS2/</a></li>
-        <li>CSS "3": <a href="https://www.w3.org/TR/CSS/#css">https://www.w3.org/TR/CSS/#css</a></li>
-      </ul>
+  <header>
+    <h1>Links</h1>
+  </header>
+  <section class="content">
+    <ul>
+      <li>CSS 1: <a href="https://www.w3.org/TR/CSS1/">https://www.w3.org/TR/CSS1/</a>
+      </li>
+      <li>CSS 2.1: <a href="https://www.w3.org/TR/CSS2/">https://www.w3.org/TR/CSS2/</a></li>
+      <li>CSS "3": <a href="https://www.w3.org/TR/CSS/#css">https://www.w3.org/TR/CSS/#css</a></li>
+    </ul>
 
-<p>Photo credits:</p>
-<ul>
-<li> <a href="https://en.wikipedia.org/wiki/Charles_Moore_(photographer)">https://en.wikipedia.org/wiki/Charles_Moore_(photographer)</a> - mlkarrest.jpg</li> 
-<li> <a href="https://www.flickr.com/photos/iip-photo-archive/24475184406">https://www.flickr.com/photos/iip-photo-archive/24475184406</a> - marchlead.jpg</li> 
-<li> <a href="https://www.pbs.org/newshour/extra/lessons-plans/an-introduction-to-the-1965-marches-from-selma-to-montgomery/"> https://www.pbs.org/newshour/extra/lessons-plans/an-introduction-to-the-1965-marches-from-selma-to-montgomery/</a> - selma.jpg</li> 
-<li> <a href="https://en.wikipedia.org/wiki/Civil_rights_movement">https://en.wikipedia.org/wiki/Civil_rights_movement</a> - rosa.jpg</li> 
-</ul>
-    </section>
+    <p>Photo credits:</p>
+    <ul>
+      <li> <a href="https://en.wikipedia.org/wiki/Charles_Moore_(photographer)">https://en.wikipedia.org/wiki/Charles_Moore_(photographer)</a> - mlkarrest.jpg</li> 
+      <li> <a href="https://www.flickr.com/photos/iip-photo-archive/24475184406">https://www.flickr.com/photos/iip-photo-archive/24475184406</a> - marchlead.jpg</li> 
+      <li> <a href="https://www.pbs.org/newshour/extra/lessons-plans/an-introduction-to-the-1965-marches-from-selma-to-montgomery/"> https://www.pbs.org/newshour/extra/lessons-plans/an-introduction-to-the-1965-marches-from-selma-to-montgomery/</a> - selma.jpg</li> 
+      <li> <a href="https://en.wikipedia.org/wiki/Civil_rights_movement">https://en.wikipedia.org/wiki/Civil_rights_movement</a> - rosa.jpg</li> 
+    </ul>
+  </section>
 </div>
 
 
-   </div>
-
-
 </div>
-
-<script src="../slideshow.js"></script>
+</div>
+  <script src="../slideshow.js"></script>
   </body>
-
 </html>
 

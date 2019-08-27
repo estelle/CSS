@@ -24,7 +24,8 @@
    <div id="slides">
 
 <div class="slide intro">
-<header><h1>CSS Math &amp; Variables</h1></header>
+<header><h1>CSS Math &amp; Variables</h1>
+  </header>
 <section class="content">
 <h1>CSS Custom Properties and Math in property values</h1>
    <p><a href="https://estelle.github.io/CSS/fonts/">estelle.github.io/CSS/math/</a></p>
@@ -33,7 +34,8 @@
 
 
 <div class="slide intro">
-<header><h1>CSS Math &amp; Variables</h1></header>
+<header><h1>CSS Math &amp; Variables</h1>
+  </header>
 <section class="content">
 <ul>
   <li>CSS Custom Properities</li>
@@ -58,14 +60,16 @@
 </div>
 
 <div class="slide intro">
-<header><h1>CSS Custom Properties</h1></header>
+<header><h1>CSS Custom Properties</h1>
+  </header>
 <section class="content">
 </section>
 </div>
 
 
 <div class="slide intro">
-	<header><h1>Custom properties with <code>--*</code></h1></header>
+	<header><h1>Custom properties with <code>--*</code></h1>
+  </header>
 	<section class="content">
 		
 	</section>
@@ -73,7 +77,8 @@
 
 
 <div class="slide">
-<header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="resource">Custom properties (--*)</a>: CSS variables</h1></header>
+<header><h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="resource">Custom properties (--*)</a>: CSS variables</h1>
+  </header>
 <section class="content"><p>Property names that are prefixed with <code class="pre">--</code> are custom properties</p> <p>They contain a value that can be used in other declarations using the <code>var()</code> function.</p>
   <style class="editme" contenteditable> :root {
   --font: Book Antiqua, Georgia, serif; 
@@ -91,7 +96,8 @@
 
 
 <div class="slide">
-<header><h1>Global property values</h1></header>
+<header><h1>Global property values</h1>
+  </header>
 <section class="content">
   <p>Custom properties are scoped to the element(s) they are declared on, and participate in the cascade. The <code>main.css</code> file has global colors.</p>
   <style class="editme" contenteditable>:root { 
@@ -114,7 +120,8 @@
 
 
 <div class="slide">
-<header><h1>Scoped property values</h1></header>
+<header><h1>Scoped property values</h1>
+  </header>
 <section class="content">
   <p>Custom properties are scoped to the elements they are declared on. What happen if we scope more locally and change the values of some properties?</p>
   <style class="editme" contenteditable>figure {  
@@ -135,7 +142,9 @@
 
 
 <div class="slide intro">
-  <header><h1>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var" target="resource">var(--*)</a></code> function</h1></header>
+  <header>
+    <h1>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var" target="resource">var(--*)</a></code> function</h1>
+  </header>
   <section class="content">
     
   </section>
@@ -143,7 +152,8 @@
 
 
 <div class="slide">
-<header><h1>Using Custom Properties</h1></header>
+<header><h1>Using Custom Properties</h1>
+  </header>
 <section class="content">
   <p>Custom properties containing values are used in declarations using the <code>var()</code> function. Note property names are case sensitive</p>
 <style class="editme" contenteditable>[id="presentation"] {
@@ -173,7 +183,8 @@ a, em {
 
 
 <div class="slide">
-<header><h1>Using Custom Properties</h1></header>
+<header><h1>Using Custom Properties</h1>
+  </header>
 <section class="content">
   <p>The <code>var()</code> function can be used as a value in other functions</p>
 <style class="editme" contenteditable>#next {
@@ -205,7 +216,8 @@ a, em {
 
 
 <div class="slide">
-<header><h1>Using Custom Properties</h1></header>
+<header><h1>Using Custom Properties</h1>
+  </header>
 <section class="content">
   <p>Internationalization</p>
 <pre contenteditable>:root:lang(en-us) {--wedding: #FFFFFF;}
@@ -218,7 +230,8 @@ a, em {
 
 
 <div class="slide">
-<header><h1>Fallbacks for Custom properties</h1></header>
+<header><h1>Fallbacks for Custom properties</h1>
+  </header>
 <section class="content">
   <p>OOoops, you thought you declared a custom property, but you didn't. No worries. Include fall backs.</p>
   
@@ -232,7 +245,9 @@ a, em {
 
 
 <div class="slide">
-  <header><h1>Invalid values</h1></header>
+  <header>
+    <h1>Invalid values</h1>
+  </header>
   <section class="content">
     <p>Paragraph will be blue</p>
 <pre contenteditable>body { color: red; } 
@@ -246,7 +261,9 @@ p { color: 16px; }</pre>
 
 
 <div class="slide">
-  <header><h1>Invalid values</h1></header>
+  <header>
+    <h1>Invalid values</h1>
+  </header>
   <section class="content">
     <p>Paragraph will be red</p>
 <pre contenteditable>:root {--size: 16px;}
@@ -260,7 +277,9 @@ p { color: var(--size); }</pre>
 
 
 <div class="slide">
-  <header><h1>Invalid values</h1></header>
+  <header>
+    <h1>Invalid values</h1>
+  </header>
   <section class="content">
     <p>Paragraph will be red</p>
 <pre contenteditable>:root {--size: 16px;}
@@ -275,14 +294,17 @@ p { color: var(--pooperscooper); }</pre>
 
 
 <div class="slide object">
-  <header><h1>Invalid custom properties</h1></header>
+  <header>
+    <h1>Invalid custom properties</h1>
+  </header>
   <object data="exercises/invalid.html"></object>
   <a href="exercises/invalid.html" target="play" class="objectlink">Open</a>
 </div>
 
 
 <div class="slide">
-<header><h1>Invalid variables</h1></header>
+<header><h1>Invalid variables</h1>
+  </header>
 <section class="content">
 <p>When the browser encounters an invalid var() substitution, the initial or inherited value of the property is used.</p>
 <p>If a variable substitution doesn’t make any sense, the browser:
@@ -301,7 +323,8 @@ p { color: var(--pooperscooper); }</pre>
 
 
 <div class="slide">
-<header><h1>Custom Properties and JavaScript</h1></header>
+<header><h1>Custom Properties and JavaScript</h1>
+  </header>
 <section class="content">
   <p>you can get the value just like you would any property value</p>
   <pre contenteditable>// get a variable
@@ -319,18 +342,21 @@ let headingColor =
 
 
 <div class="slide intro">
-  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1></header>
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1>
+  </header>
 </div>
 
 
 <div class="slide object">
-  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1></header>
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1>
+  </header>
   <object data="https://webkit.org/blog/7929/designing-websites-for-iphone-x/"></object>
   <a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/" target="play" class="objectlink">iPhone example</a>
 </div>
 
 <div class="slide">
-  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1></header>
+  <header onclick=""><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource" oncl>env()</a></code> function</h1>
+  </header>
   <section>
 <img src="img/env.png" alt="three iphone layouts demonstrating use of env() function" style="height: 80vh; float: left; margin-right: 2em;"><p>For inserting browser environment variable values</p><pre contenteditable style="float: left">body {
   padding:
@@ -346,20 +372,23 @@ let headingColor =
 
 
 <div class="slide intro">
-<header><h1>Math</h1></header>
+<header><h1>Math</h1>
+  </header>
 <section class="content">
 </section>
 </div>
 
 
 <div class="slide intro">
-<header><h1><code>calc()</code></h1></header>
+<header><h1><code>calc()</code></h1>
+  </header>
 <section class="content">
 </section>
 </div>
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="resource">calc()</a></code> syntax</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="resource">calc()</a></code> syntax</h1>
+  </header>
 <section class="content">
   <p>To perform calculations anywhere a <code>&lt;length&gt;, &lt;frequency&gt;, &lt;angle&gt;, &lt;time&gt;, &lt;percentage&gt;, &lt;number&gt;</code>, or <code>&lt;integer&gt;</code> value is allowed.</p>
   <pre contenteditable>property: calc(expression)</pre>
@@ -369,7 +398,8 @@ let headingColor =
 </div>
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="resource">calc()</a></code> computations</h1></header>
+<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="resource">calc()</a></code> computations</h1>
+  </header>
 <section class="content">
   <p>Use standard math:</p>
   <pre contenteditable> calc( 6 * 2 / 3 - 4 + 5);</pre>
@@ -379,7 +409,8 @@ let headingColor =
 </div>
 
 <div class="slide">
-<header><h1><code>calc()</code> rules</h1></header>
+<header><h1><code>calc()</code> rules</h1>
+  </header>
 <section class="content">
   <ul>
     <li>Operands can be any <code>&lt;length></code> syntax value, with or without units.</li>
@@ -396,7 +427,8 @@ let headingColor =
 
 
 <div class="slide">
-<header><h1><code>calc()</code> examples</h1></header>
+<header><h1><code>calc()</code> examples</h1>
+  </header>
 <section class="content">
   <pre contenteditable>:root {
   --widthA: calc(100% - 80px);
@@ -408,7 +440,8 @@ let headingColor =
 </div>
 
 <div class="slide">
-<header><h1><strike><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min" target="resource">min()</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max" target="resource">max()</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" target="resource">clamp()</a></code></strike></h1></header>
+<header><h1><strike><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min" target="resource">min()</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max" target="resource">max()</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" target="resource">clamp()</a></code></strike></h1>
+  </header>
 <section class="content">
 <p>Can be used anywhere a <code>&lt;length&gt;, &lt;frequency&gt;, &lt;angle&gt;, &lt;time&gt;, &lt;percentage&gt;, &lt;number&gt;</code>, or <code>&lt;integer&gt;</code> is allowed.</p>
 <h3><code>min()</code> - only works in Safari</h3>
@@ -423,7 +456,8 @@ let headingColor =
 </div>
 
 <div class="slide">
-<header><h1>When supported</h1></header>
+<header><h1>When supported</h1>
+  </header>
 <section class="content">
   <pre contenteditable>font-size: max(4vw, 2em, 2rem);</pre>
   <pre contenteditable>max-height: min(40vh, 300px);</pre>
@@ -431,7 +465,8 @@ let headingColor =
 </div>
 
 <div class="slide">
-<header><h1><code>clamp()</code> - for the future</h1></header>
+<header><h1><code>clamp()</code> - for the future</h1>
+  </header>
 <section class="content">
   <pre>clamp( &lt;minimum value>, &lt;preferred value>, &lt;maximum value>)</pre><p>Those three values can be calculations, min() functions and max() functions as well</p>
   <p><pre style="display: inline">clamp(MIN, VAL, MAX)</pre> is resolved as <pre style="display: inline">max(MIN, min(VAL, MAX))</pre></p>
@@ -443,7 +478,8 @@ font-size:
 </div>
 
 <div class="slide">
-<header><h1>Other Math!</h1></header>
+<header><h1>Other Math!</h1>
+  </header>
 <section class="content">
   <p>Trigonometric and exponential values</p>
 <pre contenteditable>
@@ -461,7 +497,8 @@ hypot()</section>
 
 
 <div class="slide">
-<header><h1>Useful Math!</h1></header>
+<header><h1>Useful Math!</h1>
+  </header>
 <section class="content">
   <p>Responsive font equation</p>
 <pre contenteditable>font-size: 
@@ -474,12 +511,16 @@ hypot()</section>
 
 <!--NEXT-->
 <div class="slide divider">
-     <header><h1>Fonts</h1></header>
+     <header>
+    <h1>Fonts</h1>
+  </header>
     <h1><a href="../fonts">Next ➹</a></h1>
     </div>
 
 <div class="slide dots">
-  <header><h1>Table of Content</h1></header>
+  <header>
+    <h1>Table of Content</h1>
+  </header>
   <section>
     <ol class="col2">
 <li><a href="../intro/index.html">Introduction</a></li>
@@ -508,7 +549,9 @@ hypot()</section>
 </div>
 <!-- TOC -->
 <div class="slide">
-  <header><h1>Links</h1></header>
+  <header>
+    <h1>Links</h1>
+  </header>
     <section class="content">
       <ul>   <li><a href="https://drafts.csswg.org/css-variables/" >CSS Variables Module Level&nbsp;1</a></li>
 
@@ -523,7 +566,8 @@ hypot()</section>
 </div>
 
 <div class="slide divider">
-<header><h1><code></code></h1></header>
+<header><h1><code></code></h1>
+  </header>
 <section class="content">
 </section>
 </div>
