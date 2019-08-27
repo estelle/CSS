@@ -1,69 +1,69 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <title>Units and Values</title>
-<link rel="stylesheet" href="../intro/css/main.css"/>
-<style>
-  :root { 
-  --splashcolor: #a8a807;
-  --lightsplash: #fafa81;
-  --dark_bg: rgb(45, 45, 3);
-  --colorpop: #a8a807;
-}
-pre {
-  font-size: 1.2em;
-}
-</style>
-</head>
+    <link rel="stylesheet" href="../intro/css/main.css"/>
+    <style>
+      :root { 
+      --splashcolor: #a8a807;
+      --lightsplash: #fafa81;
+      --dark_bg: rgb(45, 45, 3);
+      --colorpop: #a8a807;
+    }
+    pre {
+      font-size: 1.2em;
+    }
+    </style>
+  </head>
+  <body>
 
-<body>
-<!-- Top instructions -->
-<div id="topinfo"></div>
+
 <!-- footer instructions -->
 <div id="info">
-    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+  <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
 </div>
 
-  <div id="presentation">
-   <div id="presentation-counter"></div>
-   <div id="slides">
+<div id="presentation">
+  <div id="presentation-counter"></div>
+  <div id="slides">
 
 <div class="slide intro">
-      <header>
+  <header>
     <h1>Units &amp; Values</h1>
   </header>
   <section class="content">
-         <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
+    <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
   </section>
 </div>
 
 <!-- TOC -->
 <div class="slide">
-   <header>
-      <h1>Units &amp; Values</h1>
-     </header>
-     <section>
-      <div class="flex12">
+  <header>
+    <h1>Units &amp; Values</h1>
+  </header>
+  <section>
+    <div class="flex12">
       <ul>
         <li>Numeric data types
-            <ul>
-              <li>Integer</li>
-              <li>Number</li>
-              <li>Percentage</li>
-              <li>Dimensions
-                  <ul>
-                    <li><code>&lt;length></code></li>
-                    <li><code>&lt;angle></code></li>
-                    <li><code>&lt;time></code></li>
-                    <li><code>&lt;frequency></code></li>
-                    <li><code>&lt;resolution></code></li>
-                  </ul>
-               </li>
-             </ul>
-        </li></ul>
+          <ul>
+            <li>Integer</li>
+            <li>Number</li>
+            <li>Percentage</li>
+            <li>Dimensions
+              <ul>
+                <li><code>&lt;length></code></li>
+                <li><code>&lt;angle></code></li>
+                <li><code>&lt;time></code></li>
+                <li><code>&lt;frequency></code></li>
+                <li><code>&lt;resolution></code></li>
+              </ul>
+             </li>
+           </ul>
+          </li>
+        </ul>
         <ul>
-        <li>Non-numeric data types
+          <li>Non-numeric data types
             <ul>
               <li>Keywords
                   <ul>
@@ -73,31 +73,30 @@ pre {
                   </ul>
               </li>
               <li>Strings
-                  <ul>
-                    <li><code>&lt;string></code> and <code>&lt;ident></code></li>
+                <ul>
+                  <li><code>&lt;string></code> and <code>&lt;ident></code></li>
               </li>
               <li>Developer Tools</li>
               <li>CSS Functions
-                  <ul>
-                    <li><code>&lt;url()</code></li>
-                    <li><code>&lt;image></code> functions</li>
-                    <li>All the CSS functions</li>
-                  </ul>
+                <ul>
+                  <li><code>&lt;url()</code></li>
+                  <li><code>&lt;image></code> functions</li>
+                  <li>All the CSS functions</li>
+                </ul>
               </li>
             </ul>
         </li>
       </ul>
     </div>
-     <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
-   </section>
-    </div>
+    <p><a href="https://estelle.github.io/CSS/values/">estelle.github.io/CSS/values/</a></p>
+  </section>
+</div>
 
 <!-- divider -->
 <div class="slide divider">
   <header>
     <h1>Numeric data types</h1>
   </header>
-
 </div>
 
 
@@ -107,19 +106,18 @@ pre {
   </header>
   <section class="content">
     <dl>
-    <dt><code>&lt;integer></code></dt>
-    <dd><code>0</code> to <code>9</code>, or lots of them. Optional <code>-</code> or <code>+</code></dd>
-    <dt><code>&lt;number></code></dt>
-    <dd>Float, with or without a decimal. Optional <code>-</code> or <code>+</code></dd>
-    <dt><code>&lt;percentage></code></dt>
-    <dd>A fraction of some other value, and relative to that value</dd>
-    <dt><code>&lt;dimension></code></dt>
-    <dd>A <code>&lt;number></code>   with a unit attached to it
-</dd>
-
-    
+      <dt><code>&lt;integer></code></dt>
+      <dd><code>0</code> to <code>9</code>, or lots of them. Optional <code>-</code> or <code>+</code></dd>
+      <dt><code>&lt;number></code></dt>
+      <dd>Float, with or without a decimal. Optional <code>-</code> or <code>+</code></dd>
+      <dt><code>&lt;percentage></code></dt>
+      <dd>A fraction of some other value, and relative to that value</dd>
+      <dt><code>&lt;dimension></code></dt>
+      <dd>A <code>&lt;number></code>   with a unit attached to it</dd>
+    </dl>
   </section>
 </div>
+
 
 <div class="slide">
   <header>
@@ -143,13 +141,14 @@ pre {
   </header>
   <section class="content">
     <ul>
-    <li>Float, with or without a decimal.
+      <li>Float, with or without a decimal.
         <pre contenteditable>0
-3.82</pre>
+  3.82</pre>
       </li>
       <li> Optional <code>-</code> or <code>+</code>        <pre contenteditable>+10.8
--1.333</pre></li>
-</ul>
+  -1.333</pre>
+      </li>
+    </ul>
   </section>
 </div>
 
@@ -162,12 +161,12 @@ pre {
     <ul>
       <li style="outline: 1px dotted #aaa">A fraction of some other value
         <pre contenteditable style="line-height: 60%">line-height: 60%;</pre>
-        <pre contenteditable style="width: 60%">width: 60%;</pre></li>
+        <pre contenteditable style="width: 60%">width: 60%;</pre>
+      </li>
       <li  style="height: 300px; outline: 1px dotted #aaa ">Relative to that value
       <pre contenteditable style="height: 33.33333333333%; box-sizing: border-box;">li {height: 300px;} 
 pre {height: 33.33%;}</pre></li>
-    </ul>
-    
+    </ul> 
   </section>
 </div>
 
@@ -178,14 +177,14 @@ pre {height: 33.33%;}</pre></li>
     <h1>&lt;dimension></h1>
   </header>
   <section class="content">
-   <h2><code>&lt;number></code> with a unit</h2>
-   <ul>
-    <li><code>&lt;length></code></li>
-    <li><code>&lt;angle></code></li>
-    <li><code>&lt;time></code></li>
-    <li><code>&lt;frequency></code></li>
-    <li><code>&lt;resolution></code></li>
-  </ul>
+    <h2><code>&lt;number></code> with a unit</h2>
+    <ul>
+      <li><code>&lt;length></code></li>
+      <li><code>&lt;angle></code></li>
+      <li><code>&lt;time></code></li>
+      <li><code>&lt;frequency></code></li>
+      <li><code>&lt;resolution></code></li>
+    </ul>
   </section>
 </div>
 
@@ -196,7 +195,6 @@ pre {height: 33.33%;}</pre></li>
     <h1><code>&lt;length></code></h1>
   </header>
   <section class="content">
-    <h2>
     <h3>Absolute</h3>
     <p>Actual physical measurements (that might not match a ruler). <br/>
       <code>cm, mm, Q, in, pt, pc, px</code></p>
@@ -204,9 +202,7 @@ pre {height: 33.33%;}</pre></li>
     <p>Relative to some other measurement. <br/>
       <code>em, ex, cap, ch, ic, rem, lh, rlh
 vw, vh, vi, vb, vmin, vmax</code></p>
-
-<p>Note: <code>&lt;length-percentage></code></p>
-    
+    <p>Note: <code>&lt;length-percentage></code></p>
   </section>
 </div>
 
@@ -218,54 +214,53 @@ vw, vh, vi, vb, vmin, vmax</code></p>
     <h1>Absolute units of length</h1>
   </header>
   <section class="content">
-
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Unit</th>
-   <th scope="col">Name</th>
-   <th scope="col">Equivalent to</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>cm</code></td>
-   <td>Centimeters</td>
-   <td>1cm = 96px/2.54</td>
-  </tr>
-  <tr>
-   <td><code>mm</code></td>
-   <td>Millimeters</td>
-   <td>1mm = 1/10th of 1cm</td>
-  </tr>
-  <tr>
-   <td><code>Q</code></td>
-   <td>Quarter-millimeters</td>
-   <td>1Q = 1/40th of 1cm</td>
-  </tr>
-  <tr>
-   <td><code>in</code></td>
-   <td>Inches</td>
-   <td>1in = 2.54cm = 96px</td>
-  </tr>
-  <tr>
-   <td><code>pc</code></td>
-   <td>Picas</td>
-   <td>1pc = 1/16th of 1in</td>
-  </tr>
-  <tr>
-   <td><code>pt</code></td>
-   <td>Points</td>
-   <td>1pt = 1/72th of 1in</td>
-  </tr>
-  <tr>
-   <td><code>px</code></td>
-   <td>Pixels</td>
-   <td>1px* = 1/96th of 1in</td>
-  </tr>
- </tbody>
-</table>
-<small>One pixel. For screen displays, it traditionally represents one device pixel (dot). When hi-dpi (like printers and phones) <code>1px</code> = 1/96th of <code>1in</code>.</small>
+    <table class="standard-table">
+     <thead>
+      <tr>
+       <th scope="col">Unit</th>
+       <th scope="col">Name</th>
+       <th scope="col">Equivalent to</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td><code>cm</code></td>
+       <td>Centimeters</td>
+       <td>1cm = 96px/2.54</td>
+      </tr>
+      <tr>
+       <td><code>mm</code></td>
+       <td>Millimeters</td>
+       <td>1mm = 1/10th of 1cm</td>
+      </tr>
+      <tr>
+       <td><code>Q</code></td>
+       <td>Quarter-millimeters</td>
+       <td>1Q = 1/40th of 1cm</td>
+      </tr>
+      <tr>
+       <td><code>in</code></td>
+       <td>Inches</td>
+       <td>1in = 2.54cm = 96px</td>
+      </tr>
+      <tr>
+       <td><code>pc</code></td>
+       <td>Picas</td>
+       <td>1pc = 1/16th of 1in</td>
+      </tr>
+      <tr>
+       <td><code>pt</code></td>
+       <td>Points</td>
+       <td>1pt = 1/72th of 1in</td>
+      </tr>
+      <tr>
+       <td><code>px</code></td>
+       <td>Pixels</td>
+       <td>1px* = 1/96th of 1in</td>
+      </tr>
+     </tbody>
+    </table>
+    <small>One pixel. For screen displays, it traditionally represents one device pixel (dot). When hi-dpi (like printers and phones) <code>1px</code> = 1/96th of <code>1in</code>.</small>
   </section>
 </div>
 
@@ -275,48 +270,47 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   </header>
   <section class="content">
     <table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Unit</th>
-      <th scope="col">Relative to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>em</code></td>
-      <td>Font size of the element.</td>
-    </tr>
-    <tr>
-      <td><code>ex</code></td>
-      <td>x-height of the element's font.</td>
-    </tr>
-    <tr>
-      <td><code>ch</code></td>
-      <td>Average character advance of a narrow glyph in the element’s font, as represented by the “0” (ZERO, U+0030) glyph.</td>
-    </tr>
-    <tr>
-      <td><code>rem</code></td>
-      <td>Font size of the root element.</td>
-    </tr>
-    <tr>
-      <td><code>vw</code></td>
-      <td>1% of viewport's width.</td>
-    </tr>
-    <tr>
-      <td><code>vh</code></td>
-      <td>1% of viewport's height.</td>
-    </tr>
-    <tr>
-      <td><code>vmin</code></td>
-      <td>1% of viewport's smaller dimension.</td>
-    </tr>
-    <tr>
-      <td><code>vmax</code></td>
-      <td>1% of viewport's larger dimension.</td>
-    </tr>
-  </tbody>
-</table>
-
+      <thead>
+        <tr>
+          <th scope="col">Unit</th>
+          <th scope="col">Relative to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>em</code></td>
+          <td>Font size of the element.</td>
+        </tr>
+        <tr>
+          <td><code>ex</code></td>
+          <td>x-height of the element's font.</td>
+        </tr>
+        <tr>
+          <td><code>ch</code></td>
+          <td>Average character advance of a narrow glyph in the element’s font, as represented by the “0” (ZERO, U+0030) glyph.</td>
+        </tr>
+        <tr>
+          <td><code>rem</code></td>
+          <td>Font size of the root element.</td>
+        </tr>
+        <tr>
+          <td><code>vw</code></td>
+          <td>1% of viewport's width.</td>
+        </tr>
+        <tr>
+          <td><code>vh</code></td>
+          <td>1% of viewport's height.</td>
+        </tr>
+        <tr>
+          <td><code>vmin</code></td>
+          <td>1% of viewport's smaller dimension.</td>
+        </tr>
+        <tr>
+          <td><code>vmax</code></td>
+          <td>1% of viewport's larger dimension.</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </div>
 
@@ -326,16 +320,17 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <header>
     <h1>viewport lengths</h1>
   </header>
-    <section class="content">
-<pre contenteditable class="multi">vw | vh | vmin | vmax</pre>
+  <section class="content">
+    <pre contenteditable class="multi">vw | vh | vmin | vmax</pre>
     <pre contenteditable>
 <b>5vw</b>     /* 5% of the width of the viewport */
 <b>7vh</b>     /* 7% of the height of the viewport */
 <b>4vmin</b>   /* 4% of the viewport height or width, whichever is smaller */
 <b>8vmax</b>   /* 8% of the viewport height or width, whichever is larger */</pre>
-
     </section>
 </div>
+
+
 
 <div class="slide">
   <header>
@@ -343,43 +338,42 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   </header>
   <section class="content">
     <table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Unit</th>
-      <th scope="col">Relative to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>cap</code></td>
-      <td>Cap height (the nominal height of capital letters) of the element's font.</td>
-    </tr>
-    <tr>
-      <td><code>ic</code></td>
-      <td>Average character advance of a full width glyph in the element’s font, as represented by the “水” (CJK water ideograph, U+6C34) glyph.</td>
-    </tr>
-    <tr>
-      <td><code>lh</code></td>
-      <td>Line height of the element.</td>
-    </tr>
-    <tr>
-      <td><code>rlh</code></td>
-      <td>Line height of the root element.</td>
-    </tr>
-    <tr>
-      <td><code>vi</code></td>
-      <td>1% of viewport's size in the root element's inline axis.</td>
-    </tr>
-    <tr>
-      <td><code>vb</code></td>
-      <td>1% of viewport's size in the root element's block axis.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Newer values</p>
-<pre><b>2vi</b>     /* 1% of containing block, in the direction of the root element’s inline axis.
-<b>4vb</b>     /* 4% of the containing block, in the direction of the root element’s block axis.</pre>
+      <thead>
+        <tr>
+          <th scope="col">Unit</th>
+          <th scope="col">Relative to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>cap</code></td>
+          <td>Cap height (the nominal height of capital letters) of the element's font.</td>
+        </tr>
+        <tr>
+          <td><code>ic</code></td>
+          <td>Average character advance of a full width glyph in the element’s font, as represented by the “水” (CJK water ideograph, U+6C34) glyph.</td>
+        </tr>
+        <tr>
+          <td><code>lh</code></td>
+          <td>Line height of the element.</td>
+        </tr>
+        <tr>
+          <td><code>rlh</code></td>
+          <td>Line height of the root element.</td>
+        </tr>
+        <tr>
+          <td><code>vi</code></td>
+          <td>1% of viewport's size in the root element's inline axis.</td>
+        </tr>
+        <tr>
+          <td><code>vb</code></td>
+          <td>1% of viewport's size in the root element's block axis.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Newer values</p>
+    <pre><b>2vi</b>     /* 1% of containing block, in the direction of the root element’s inline axis.
+    <b>4vb</b>     /* 4% of the containing block, in the direction of the root element’s block axis.</pre>
   </section>
 </div>
 
@@ -400,39 +394,37 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   </header>
   <section class="content">
     <p>Angle values are represented by <code>&lt;angle&gt;</code> in the spec:</p>
-
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Unit</th>
-   <th scope="col">Name</th>
-   <th scope="col">Description</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>deg</code></td>
-   <td>Degrees</td>
-   <td>There are 360 degrees in a full circle.</td>
-  </tr>
-  <tr>
-   <td><code>grad</code></td>
-   <td>Gradians</td>
-   <td>There are 400 gradians in a full circle.</td>
-  </tr>
-  <tr>
-   <td><code>rad</code></td>
-   <td>Radians</td>
-   <td>There are 2π radians in a full circle.</td>
-  </tr>
-  <tr>
-   <td><code>turn</code></td>
-   <td>Turns</td>
-   <td>There is 1 turn in a full circle.</td>
-  </tr>
- </tbody>
-</table>
-
+    <table class="standard-table">
+     <thead>
+      <tr>
+       <th scope="col">Unit</th>
+       <th scope="col">Name</th>
+       <th scope="col">Description</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td><code>deg</code></td>
+       <td>Degrees</td>
+       <td>There are 360 degrees in a full circle.</td>
+      </tr>
+      <tr>
+       <td><code>grad</code></td>
+       <td>Gradians</td>
+       <td>There are 400 gradians in a full circle.</td>
+      </tr>
+      <tr>
+       <td><code>rad</code></td>
+       <td>Radians</td>
+       <td>There are 2π radians in a full circle.</td>
+      </tr>
+      <tr>
+       <td><code>turn</code></td>
+       <td>Turns</td>
+       <td>There is 1 turn in a full circle.</td>
+      </tr>
+     </tbody>
+    </table>
   </section>
 </div>
 
@@ -451,11 +443,11 @@ vw, vh, vi, vb, vmin, vmax</code></p>
     <h1>Angle Units</h1>
   </header>
   <section class="content">
-<style style="visibility: hidden; white-space: nowrap;">.gradangle {height: 300px;width: 300px;  border-radius: 50%; background: blue; margin: auto; background: linear-gradient(var(--gradangle), #f69d3c 45%, 46%, #3f87a6, 54%, #ebf8e1 55%); border: 1px solid; } @supports (background-image: conic-gradient(red, blue)) {.gradangle {background-image: conic-gradient(from var(--gradangle), #f69d3c, #3f87a6, #ebf8e1);}}</style>
-<style contenteditable class="editme">:root { --gradangle: 90deg; }</style>
-<div class="gradangle"></div>
-<p>conic in supporting browsers</p>
-</section> 
+    <style style="visibility: hidden; white-space: nowrap;">.gradangle {height: 300px;width: 300px;  border-radius: 50%; background: blue; margin: auto; background: linear-gradient(var(--gradangle), #f69d3c 45%, 46%, #3f87a6, 54%, #ebf8e1 55%); border: 1px solid; } @supports (background-image: conic-gradient(red, blue)) {.gradangle {background-image: conic-gradient(from var(--gradangle), #f69d3c, #3f87a6, #ebf8e1);}}</style>
+    <style contenteditable class="editme">:root { --gradangle: 90deg; }</style>
+    <div class="gradangle"></div>
+    <p>conic in supporting browsers</p>
+  </section> 
 </div>
 
 <div class="slide">
@@ -465,28 +457,28 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <p>Time values are represented by the type <code>&lt;time&gt;</code>. </p>
 
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Unit</th>
-   <th scope="col">Name</th>
-   <th scope="col">Description</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>s</code></td>
-   <td>Seconds</td>
-   <td></td>
-  </tr>
-  <tr>
-   <td><code>ms</code></td>
-   <td>Milliseconds</td>
-   <td>There are 1,000 milliseconds in a second.</td>
-  </tr>
- </tbody>
-</table>
-<p>The unit identifier -- the <code>s</code> or <code>ms</code> -- is required.</p>
+    <table class="standard-table">
+     <thead>
+      <tr>
+       <th scope="col">Unit</th>
+       <th scope="col">Name</th>
+       <th scope="col">Description</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td><code>s</code></td>
+       <td>Seconds</td>
+       <td></td>
+      </tr>
+      <tr>
+       <td><code>ms</code></td>
+       <td>Milliseconds</td>
+       <td>There are 1,000 milliseconds in a second.</td>
+      </tr>
+     </tbody>
+    </table>
+    <p>The unit identifier -- the <code>s</code> or <code>ms</code> -- is required.</p>
   </section>
 </div>
 
@@ -500,11 +492,6 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 
 
 
-
-
-
-
-
 <div class="slide">
   <header>
     <h1><code>&lt;frequency></code></h1>
@@ -512,29 +499,28 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <p>Frequency values are represented by the type <code>&lt;frequency&gt;</code>. </p>
 
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Unit</th>
-   <th scope="col">Name</th>
-   <th scope="col">Description</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>Hz</code></td>
-   <td>Hertz</td>
-   <td>Represents the number of occurances per second.</td>
-  </tr>
-  <tr>
-   <td><code>kHz</code></td>
-   <td>KiloHertz</td>
-   <td>A kiloHertz is 1000 Hertz.</td>
-  </tr>
- </tbody>
-</table>
-<p><code>1Hz</code>, which can also be written as <code>1hz</code> or <code>1HZ</code>, is one cycle per second.</p>
-
+    <table class="standard-table">
+     <thead>
+      <tr>
+       <th scope="col">Unit</th>
+       <th scope="col">Name</th>
+       <th scope="col">Description</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td><code>Hz</code></td>
+       <td>Hertz</td>
+       <td>Represents the number of occurances per second.</td>
+      </tr>
+      <tr>
+       <td><code>kHz</code></td>
+       <td>KiloHertz</td>
+       <td>A kiloHertz is 1000 Hertz.</td>
+      </tr>
+     </tbody>
+    </table>
+    <p><code>1Hz</code>, which can also be written as <code>1hz</code> or <code>1HZ</code>, is one cycle per second.</p>
   </section>
 </div>
 
@@ -547,29 +533,29 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <p>Resolution units are represented by the type <code>&lt;resolution&gt;</code>. </p>
 
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Unit</th>
-   <th scope="col">Description</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td><code>dpi</code></td>
-   <td>Dots per inch.</td>
-  </tr>
-  <tr>
-   <td><code>dpcm</code></td>
-   <td>Dots per centimetre.</td>
-  </tr>
-  <tr>
-   <td><code>dppx</code>, <code>x</code></td>
-   <td>Dots per px unit.</td>
-  </tr>
- </tbody>
-</table>
-<p>Represents the size of a single dot in a graphical representation, such as a screen, by indicating how many of these dots fit in a CSS inch, centimeter, or pixel.</p>
+    <table class="standard-table">
+     <thead>
+      <tr>
+       <th scope="col">Unit</th>
+       <th scope="col">Description</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td><code>dpi</code></td>
+       <td>Dots per inch.</td>
+      </tr>
+      <tr>
+       <td><code>dpcm</code></td>
+       <td>Dots per centimetre.</td>
+      </tr>
+      <tr>
+       <td><code>dppx</code>, <code>x</code></td>
+       <td>Dots per px unit.</td>
+      </tr>
+     </tbody>
+    </table>
+    <p>Represents the size of a single dot in a graphical representation, such as a screen, by indicating how many of these dots fit in a CSS inch, centimeter, or pixel.</p>
   </section>
 </div>
 
@@ -587,7 +573,6 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <header>
     <h1>Non-numeric data types</h1>
   </header>
-
 </div>
 
 
@@ -596,10 +581,6 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <header>
     <h1>Keywords</h1>
   </header>
-  <section class="content">
-    <p>
-    
-  </section>
 </div>
 
 
@@ -611,11 +592,11 @@ vw, vh, vi, vb, vmin, vmax</code></p>
   <section class="content">
     <h2>Explicit Defaulting: CSS-wide property values</h2>
     <dl>
-    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial" target="resource">initial</a></dt> <dd>Sets property to its initial value.</dd>
-    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inherit" target="resource">inherit</a></dt> <dd>Makes element's property the same as its parent.</dd></dd>
-    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset" target="resource">unset</a></dt><dd>Resets to inherited value if it inherits from its parent. Otherwise, set to initial value.</dd>
-    
- </dl></section>
+      <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial" target="resource">initial</a></dt> <dd>Sets property to its initial value.</dd>
+      <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inherit" target="resource">inherit</a></dt> <dd>Makes element's property the same as its parent.</dd></dd>
+      <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset" target="resource">unset</a></dt><dd>Resets to inherited value if it inherits from its parent. Otherwise, set to initial value.</dd>
+    </dl>
+  </section>
 </div>
 
 
@@ -635,8 +616,8 @@ vw, vh, vi, vb, vmin, vmax</code></p>
 div {
   all: unset;
   color: blue;
-}</pre>
-<p>Impacts all properties except <code>unicode-bidi</code> and <code>direction</code>.</p>
+    }</pre>
+    <p>Impacts all properties except <code>unicode-bidi</code> and <code>direction</code>.</p>
   </section>
 </div>
 
@@ -649,10 +630,9 @@ div {
   </header>
   <section class="content">
     <dl>
-
-    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert" target="resource">revert</a></dt> <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)
-    </dd>
-
+      <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert" target="resource">revert</a></dt> 
+      <dd>Resets property to UA stylesheet value (or user stylesheet, if any exist). (FF/Saf)</dd>
+    </dl>
   </section>
 </div>
 
@@ -662,29 +642,32 @@ div {
     <h1>Defaulting</h1>
   </header>
   <section class="content">
-<dl><dt>none / 0</dt> <dd>Often seen in the wild. Valid when valid, but better to use <code>initial</code> to undo instead.</dd></dl>
-    
+    <dl>
+      <dt>none / 0</dt> 
+      <dd>Often seen in the wild. Valid when valid, but better to use <code>initial</code> to undo instead.</dd>
+    </dl>
   </section>
 </div>
 
 
 <div class="slide">
-<header><h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource">all</a></code> property</h1>
+  <header>
+    <h1><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="resource">all</a></code> property</h1>
   </header>
-<section class="content"><p>Custom properties are not reset by the all property</p>
-<pre contenteditable class="multi">initial | inherit | unset | revert</pre>
-  <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
-<dl>
-  <dt>initial</dt>
-  <dd>Specifies that all the element's properties should be changed to their initial values.</dd>
-  <dt>inherit</dt>
-  <dd>Specifies that all the element's properties should be changed to their inherited values.</dd>
-  <dt>unset</dt>
-  <dd>Specifies that all the element's properties should be changed to  their inherited values if they inherit by default, or to their initial  values if not.</dd>
-  <dt>revert</dt>
-  <dd>Specifies behavior that depends on the stylesheet origin to which the declaration belongs</dd>
-</dl>
-</section>
+  <section class="content"><p>Custom properties are not reset by the all property</p>
+    <pre contenteditable class="multi">initial | inherit | unset | revert</pre>
+    <p>The <code>all</code> property resets all of an element's properties, except <code>unicode-bidi</code> and <code>direction</code>).</p><p> It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.</p>
+    <dl>
+      <dt>initial</dt>
+      <dd>Specifies that all the element's properties should be changed to their initial values.</dd>
+      <dt>inherit</dt>
+      <dd>Specifies that all the element's properties should be changed to their inherited values.</dd>
+      <dt>unset</dt>
+      <dd>Specifies that all the element's properties should be changed to  their inherited values if they inherit by default, or to their initial  values if not.</dd>
+      <dt>revert</dt>
+      <dd>Specifies behavior that depends on the stylesheet origin to which the declaration belongs</dd>
+    </dl>
+  </section>
 </div>
 
 
@@ -694,8 +677,8 @@ div {
     <h1>Keyword values</h1>
   </header>
   <section class="content">
-<p>Supported <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="resource">text-align</a></code> values</p>
-<code>left | right | center | justify | start | end | match-parent </code>
+    <p>Supported <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="resource">text-align</a></code> values</p>
+    <code>left | right | center | justify | start | end | match-parent </code>
 
     <pre contenteditable>/* Keyword values */         /* Global values */
 text-align: left;            text-align: inherit;
@@ -705,7 +688,12 @@ text-align: justify;         text-align: revert;
 text-align: start;
 text-align: end;
 text-align: match-parent;</pre>
-<ul><li>appear literally, without quotes</li><li>case-insensitive</li><li>will review as we look at the property</li><li>Avoid in custom identifiers</li></ul>
+    <ul>
+      <li>appear literally, without quotes</li>
+      <li>case-insensitive</li>
+      <li>will review as we look at the property</li>
+      <li>Avoid in custom identifiers</li>
+    </ul>
   </section>
 </div>
 
@@ -719,12 +707,11 @@ text-align: match-parent;</pre>
     <h2>Values</h2>
     <pre>center | top | right | bottom | left </pre>
     <ul>
-  <li>Specified with one or two keywords</li>
-  <li>Optional offsets on TRBL</li>
-</ul>
+      <li>Specified with one or two keywords</li>
+      <li>Optional offsets on TRBL</li>
+    </ul>
     <h2>Offsets</h2>
     <pre> &lt;percentage> | &lt;length></pre>
-
   </section>
 </div>
 
@@ -742,8 +729,9 @@ text-align: match-parent;</pre>
   background-image: radial-gradient(300px at 110% 110%,
     rgba(0, 0, 0, 0.2) 99%, transparent 99.1%);
 }</style>
-
-    <ul><li>position can be outside the parent</li></ul>
+    <ul>
+      <li>position can be outside the parent</li>
+    </ul>
   </section>
 </div>
 
@@ -754,8 +742,7 @@ text-align: match-parent;</pre>
     <h1>Mixed values</h1>
   </header>
   <section class="content">
-
-<h2><code>border-width </code> property</h2>
+    <h2><code>border-width </code> property</h2>
     <code> [ &lt;length> | thick | medium | thin ]{1,4} </code>
     <pre contenteditable>
 border-width: 1px thin;
@@ -771,9 +758,6 @@ border-width: 5px 10px thin thick; </pre>
   <header>
     <h1>Strings</h1>
   </header>
-  <section class="content">
-    
-  </section>
 </div>
 
 
@@ -785,35 +769,18 @@ border-width: 5px 10px thin thick; </pre>
   <section class="content">
     <h2>&lt;string></h2>
     <ul>
-
-    <li>Quoted string of characters</li>
-    <li>Double or single quotes</li>
-    <li>Case-sensitive</li>
-    <li>HTML entities (like &amp;amp;) won't be parsed</li>
-    <li>Unicode characters start with a \, or correct charset</li>
-    <li>Not parsed</li>
-</ul>
-<pre contenteditable>content: ' (pdf)';
+      <li>Quoted string of characters</li>
+      <li>Double or single quotes</li>
+      <li>Case-sensitive</li>
+      <li>HTML entities (like &amp;amp;) won't be parsed</li>
+      <li>Unicode characters start with a \, or correct charset</li>
+      <li>Not parsed</li>
+    </ul>
+    <pre contenteditable>content: ' (pdf)';
 font-family: "myAwesomeFont", serif;
 quotes: "«" '»' "‹" '›';</pre>
-</section>
+  </section>
 </div>
-
-
-<!--
-<div class="slide">
-   <header>
-    <h1>Special Character</h1>
-  </header>
-  <section class="content">
-     <br/>
- <style class="editme" contenteditable>#a2603::after {content: "\2603";}</style>
- <p id="a2603"></p>
-     </section>
-<object data="https://estelle.github.io/CSS-JS-Entity-Calculator/" style="width: 100%; height: 50vh"></object>
- <a class="objectlink" href="https://estelle.github.io/CSS-JS-Entity-Calculator/" target="resource">Calculator</a>
- </div>
--->
 
 
 <div class="slide">
@@ -856,8 +823,9 @@ grid-column-end: oneMore;</pre>
   <header>
     <h1>Reading the specifictions</h1>
   </header>
-<h2>Property names as values == <code>&lt;custom-ident></code></h2>
-<pre contenteditable>will-change: transform;
+  <section class="content">
+    <h2>Property names as values == <code>&lt;custom-ident></code></h2>
+    <pre contenteditable>will-change: transform;
 transition-property: opacity;</pre>
   </section>
 </div>
@@ -869,7 +837,7 @@ transition-property: opacity;</pre>
     <h1><code>&lt;custom-ident> | &lt;string></code></h1>
   </header>
   <section class="content">
-<pre contenteditable>animation-name: myAnimation; 
+    <pre contenteditable>animation-name: myAnimation; 
 
 @keyframes 'myAnimation' {
     0% {transform: translatex(0);}
@@ -886,32 +854,29 @@ font-family: "Helvetica Neue";</pre>
     <h1>DevTools</h1>
   </header>
   <section class="content exercisecards">
-  <figure>
-  <div class="card" data-type="H">
-    <div class="back"></div>
-    <div class="face" data-value="A">♥</div>
-  </div>
-  <div class="card" data-type="C">
-    <div class="back"></div>
-    <div class="face" data-value="A">♣</div>
-  </div>
-  <div class="card" data-type="D">
-    <div class="back"></div>
-   <div class="face" data-value="A">♦</div>
-  </div>
-</figure>
-<p>Inspect how you can increase and decrease length units. Arrow up and down to increase / decrease. With Shift and Alt to jump by 10 and 0.1 respectively.</p>
-<p>Clear out a keyword, and hit up or down to see all the keyword option values. This shows keyword values only.</p>
-</section>
+      <figure>
+      <div class="card" data-type="H">
+        <div class="back"></div>
+        <div class="face" data-value="A">♥</div>
+      </div>
+      <div class="card" data-type="C">
+        <div class="back"></div>
+        <div class="face" data-value="A">♣</div>
+      </div>
+      <div class="card" data-type="D">
+        <div class="back"></div>
+       <div class="face" data-value="A">♦</div>
+      </div>
+    </figure>
+    <p>Inspect how you can increase and decrease length units. Arrow up and down to increase / decrease. With Shift and Alt to jump by 10 and 0.1 respectively.</p>
+    <p>Clear out a keyword, and hit up or down to see all the keyword option values. This shows keyword values only.</p>
+  </section>
 </div>
 
 <div class="slide divider">
   <header>
     <h1>CSS Functions</h1>
   </header>
-  <section class="content">
-    
-  </section>
 </div>
 
 
@@ -921,12 +886,12 @@ font-family: "Helvetica Neue";</pre>
   </header>
   <section class="content">
     <p>Simple usage</p>
-<pre contenteditable>url(https://example.com/images/myImg.jpg);
+    <pre contenteditable>url(https://example.com/images/myImg.jpg);
 url(data:image/png;base64,iRxVB0…);
 url(myFont.woff);
 url(#IDofSVGpath);</pre>
-<p>at-rules</p>
-<pre contenteditable>@document url("https://www.example.com/") { ... }  
+    <p>at-rules</p>
+    <pre contenteditable>@document url("https://www.example.com/") { ... }  
 @import url("https://www.example.com/style.css");
 @namespace url(http://www.w3.org/1999/xhtml);</pre>
   </section>
@@ -938,7 +903,7 @@ url(#IDofSVGpath);</pre>
     <h1>Properties accepting <code> &lt;url></code> function</h1>
   </header>
   <section class="content">
-<pre contenteditable>background-image: url("https://mdn.mozillademos.org/files/16761/star.gif");
+    <pre contenteditable>background-image: url("https://mdn.mozillademos.org/files/16761/star.gif");
 list-style-image: url('../images/bullet.jpg');
 
 content: url("pdficon.jpg");
@@ -958,7 +923,7 @@ mask-image: url("masks.svg#mask1");</pre>
     <h1>Properties accepting <code>&lt;url></code> function</h1>
   </header>
   <section class="content">
-<pre contenteditable>background: url('https://mdn.mozillademos.org/files/16761/star.gif') bottom right repeat-x blue;
+    <pre contenteditable>background: url('https://mdn.mozillademos.org/files/16761/star.gif') bottom right repeat-x blue;
 
 border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;
 
@@ -976,7 +941,7 @@ content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg); 
     <h1><code>&lt;image></code> functions</h1>
   </header>
   <section class="content">
-<pre contenteditable>url(test.jpg)
+    <pre contenteditable>url(test.jpg)
 linear-gradient(blue, red)
 radial-gradient(blue, red)
 conic-gradient(blue, red)
@@ -997,53 +962,57 @@ paint(worklet)</pre>
     <h1>Other CSS Functions</h1>
   </header>
   <section class="content">
-  <article class="col3"><code><p style="margin-top: 0">transform:</p>
-<ul>
-<li>rotate()</li>
-<li>rotate3d()</li>
-<li>rotateX()</li>
-<li>rotateY()</li>
-<li>rotateZ()</li>
-<li>saturate()</li>
-<li>matrix()</li>
-<li>matrix3d()</li>
-<li>scale()</li>
-<li>scale3d()</li>
-<li>scaleX()</li>
-<li>scaleY()</li>
-<li>scaleZ()</li>
-<li>skew()</li>
-<li>skewX()</li>
-<li>skewY()</li>
-<li>translate()</li>
-<li>translate3d()</li>
-<li>translateX()</li>
-<li>translateY()</li>
-<li>translateZ()</li>
-<li>perspective()</li>
-</ul>
-<p>content:</p>
-<ul>
-<li>attr()</li>
-<li>counter()</li>
-<li>counters()</li>
-<li>target-counter()</li>
-<li>target-counters()</li>
-<li>target-text()</li>
-</ul>
-<p><code>filter:</code></p>
-<ul>
-<li>blur()</li>
-<li>brightness()</li>
-<li>contrast()</li>
-<li>drop-shadow()</li>
-<li>grayscale()</li>
-<li>hue-rotate()</li>
-<li>invert()</li>
-<li>opacity()</li>
-<li>sepia()</li>
-</ul></code></article>
-</section>
+    <article class="col3">
+      <code>
+        <p style="margin-top: 0">transform:</p>
+        <ul>
+          <li>rotate()</li>
+          <li>rotate3d()</li>
+          <li>rotateX()</li>
+          <li>rotateY()</li>
+          <li>rotateZ()</li>
+          <li>saturate()</li>
+          <li>matrix()</li>
+          <li>matrix3d()</li>
+          <li>scale()</li>
+          <li>scale3d()</li>
+          <li>scaleX()</li>
+          <li>scaleY()</li>
+          <li>scaleZ()</li>
+          <li>skew()</li>
+          <li>skewX()</li>
+          <li>skewY()</li>
+          <li>translate()</li>
+          <li>translate3d()</li>
+          <li>translateX()</li>
+          <li>translateY()</li>
+          <li>translateZ()</li>
+          <li>perspective()</li>
+        </ul>
+        <p>content:</p>
+        <ul>
+          <li>attr()</li>
+          <li>counter()</li>
+          <li>counters()</li>
+          <li>target-counter()</li>
+          <li>target-counters()</li>
+          <li>target-text()</li>
+        </ul>
+        <p><code>filter:</code></p>
+        <ul>
+          <li>blur()</li>
+          <li>brightness()</li>
+          <li>contrast()</li>
+          <li>drop-shadow()</li>
+          <li>grayscale()</li>
+          <li>hue-rotate()</li>
+          <li>invert()</li>
+          <li>opacity()</li>
+          <li>sepia()</li>
+        </ul>
+      </code>
+    </article>
+  </section>
 </div>
 
 
@@ -1052,58 +1021,62 @@ paint(worklet)</pre>
     <h1>Other CSS Functions</h1>
   </header>
   <section class="content">
-  <article class="col3"><code><p style="margin-top: 0">font-variant-alternates:</p>
-<ul>
-<li>annotation()</li>
-<li>character-variant()</li>
-<li>ornaments()</li>
-<li>styleset()</li>
-<li>stylistic()</li>
-<li>swash()</li>
-</ul>
-<p><code>list-style:</code></p><ul><li> symbols()</li></ul>
-<p><code>width/grid-template-rows:</code></p>
-<ul>
-<li>calc()</li>
-<li>clamp()</li>
-<li>max()</li>
-<li>min()</li>
-<li>minmax()</li>
-<li>fit-content()</li>
-<li>repeat()</li>
-</ul>
-<p><code>clip-path/shape-outside:</code></p>
-<ul>
-<li>cirlcle()</li>
-<li>ellipse()</li>
-<li>inset()</li>
-<li>path()</li>
-<li>polygon()</li>
-<li>rect()</li>
-</ul>
-<p><code>color:</code></p>
-<ul>
-<li>hsl()</li>
-<li>hsla()</li>
-<li>rgb()</li>
-<li>rgba()</li>
-</ul>
-
-<p><code>animation-timing-function:</code></p>
-<ul>
-<li>cubic-bezier()</li>
-<li>steps()</li>
-</ul>
-</code><p>variables</p><code>
-<ul>
-<li>env()</li>
-<li>var()</li>
-<!--<li>format()</li>
-<li>leader()</li>
-<li>local()</li>
-<li>selector()</li>-->
-</ul> </code>
-</article>
+    <article class="col3">
+      <code>
+        <p style="margin-top: 0">font-variant-alternates:</p>
+        <ul>
+          <li>annotation()</li>
+          <li>character-variant()</li>
+          <li>ornaments()</li>
+          <li>styleset()</li>
+          <li>stylistic()</li>
+          <li>swash()</li>
+        </ul>
+        <p><code>list-style:</code></p><ul><li> symbols()</li></ul>
+        <p><code>width/grid-template-rows:</code></p>
+        <ul>
+          <li>calc()</li>
+          <li>clamp()</li>
+          <li>max()</li>
+          <li>min()</li>
+          <li>minmax()</li>
+          <li>fit-content()</li>
+          <li>repeat()</li>
+        </ul>
+        <p><code>clip-path/shape-outside:</code></p>
+        <ul>
+          <li>cirlcle()</li>
+          <li>ellipse()</li>
+          <li>inset()</li>
+          <li>path()</li>
+          <li>polygon()</li>
+          <li>rect()</li>
+        </ul>
+        <p><code>color:</code></p>
+        <ul>
+          <li>hsl()</li>
+          <li>hsla()</li>
+          <li>rgb()</li>
+          <li>rgba()</li>
+        </ul>
+        <p><code>animation-timing-function:</code></p>
+        <ul>
+          <li>cubic-bezier()</li>
+          <li>steps()</li>
+        </ul>
+      </code>
+      <p>variables</p>
+      <code>
+        <ul>
+          <li>env()</li>
+          <li>var()</li>
+          <!--<li>format()</li>
+          <li>leader()</li>
+          <li>local()</li>
+          <li>selector()</li>-->
+        </ul> 
+      </code>
+    </article>
   </section>
 </div>
 
@@ -1115,7 +1088,8 @@ paint(worklet)</pre>
     <h1>Colors &amp; Transparency</h1>
   </header>
   <section class="content">
-    <h1><a href="../colors/index.html">Next ➹</a></h1></section>
+    <h1><a href="../colors/index.html">Next ➹</a></h1>
+  </section>
 </div>
 
 <div class="slide dots">
@@ -1124,28 +1098,27 @@ paint(worklet)</pre>
   </header>
   <section>
     <ol class="col2">
-<li><a href="../intro/index.html">Introduction</a></li>
-    <li><a href="../selectors/index.html">Selectors</a></li>
-    <li><a href="../selectors/specificity.html">Specificity</a></li>
-    <li><a href="../generated/index.html">Generated Content</a></li>
-    <li><a href="../media/index.html">Media Queries</a></li>
-    <li><a href="../values/index.html">Units &amp; Values </a></li>
-    <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
-    <li><a href="../math/index.html">Math &amp; Variables</a></li>
-    <li><a href="../fonts/index.html">Fonts</a></li>
-    <li><a href="../text/index.html">Text</a></li>
-    <li><a href="../images/index.html">Images</a></li>
-    <li><a href="../background/index.html">Backgrounds</a></li>
-    <li><a href="../gradients/index.html">Gradients</a></li>
-    <li><a href="../boxmodel/index.html">Box Model</a></li>
-    <li><a href="../flexbox/index.html">Flexbox</a></li>
-    <li><a href="../tables/index.html">Tables</a></li>
-    <li><a href="../grid/index.html">Grids</a></li>
-    <li><a href="../transforms/index.html">Transforms</a></li>
-    <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
-   <li><a href="../other/index.html">Other Features</a></li>
-
-<p></ol>
+      <li><a href="../intro/index.html">Introduction</a></li>
+      <li><a href="../selectors/index.html">Selectors</a></li>
+      <li><a href="../selectors/specificity.html">Specificity</a></li>
+      <li><a href="../generated/index.html">Generated Content</a></li>
+      <li><a href="../media/index.html">Media Queries</a></li>
+      <li><a href="../values/index.html">Units &amp; Values </a></li>
+      <li><a href="../colors/index.html">Colors &amp; Transparency </a></li>
+      <li><a href="../math/index.html">Math &amp; Variables</a></li>
+      <li><a href="../fonts/index.html">Fonts</a></li>
+      <li><a href="../text/index.html">Text</a></li>
+      <li><a href="../images/index.html">Images</a></li>
+      <li><a href="../background/index.html">Backgrounds</a></li>
+      <li><a href="../gradients/index.html">Gradients</a></li>
+      <li><a href="../boxmodel/index.html">Box Model</a></li>
+      <li><a href="../flexbox/index.html">Flexbox</a></li>
+      <li><a href="../tables/index.html">Tables</a></li>
+      <li><a href="../grid/index.html">Grids</a></li>
+      <li><a href="../transforms/index.html">Transforms</a></li>
+      <li><a href="../animations/index.html">Transitions &amp; Animation</a></li>
+     <li><a href="../other/index.html">Other Features</a></li>
+    </ol>
   </section>
 </div>
 <!-- TOC -->
@@ -1153,32 +1126,29 @@ paint(worklet)</pre>
   <header>
     <h1>Links</h1>
   </header>
-    <section class="content">
-      <ul>  <li><a href="https://drafts.csswg.org/css-values-4/" title="The 'CSS Values and Units Module Level&nbsp;4' specification">CSS Values and Units Module Level&nbsp;4</a></li>
-
-  <li><a href="https://drafts.csswg.org/css-values-3/" title="The 'CSS Values and Units Module Level&nbsp;3' specification">CSS Values and Units Module Level&nbsp;3</a></li>
-  
-  <li><a href="https://www.w3.org/TR/CSS2/" title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification">CSS Level&nbsp;2 (Revision&nbsp;1)</a></li>
-  <li><a href="https://www.w3.org/TR/CSS1/" title="The 'CSS Level&nbsp;1' specification">CSS Level&nbsp;1</a></li>
-      </ul>
-    </section>
+  <section class="content">
+    <ul>  
+      <li><a href="https://drafts.csswg.org/css-values-4/" title="The 'CSS Values and Units Module Level&nbsp;4' specification">CSS Values and Units Module Level&nbsp;4</a></li>
+      <li><a href="https://drafts.csswg.org/css-values-3/" title="The 'CSS Values and Units Module Level&nbsp;3' specification">CSS Values and Units Module Level&nbsp;3</a></li>
+      <li><a href="https://www.w3.org/TR/CSS2/" title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification">CSS Level&nbsp;2 (Revision&nbsp;1)</a></li>
+      <li><a href="https://www.w3.org/TR/CSS1/" title="The 'CSS Level&nbsp;1' specification">CSS Level&nbsp;1</a></li>
+    </ul>
+  </section>
 </div>
 
 
-   </div>
-
-
 </div>
+</div>
+
 <header>
-    <nav>
-        <ul>
-            <li><button class="button cancel" id="back">&laquo; Back</button></li>
-            <li><button class="button done" id="next">Next &raquo; </button></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><button class="button cancel" id="back">&laquo; Back</button></li>
+      <li><button class="button done" id="next">Next &raquo; </button></li>
+    </ul>
+  </nav>
 </header>
+
 <script src="../slideshow.js"></script>
   </body>
-
 </html>
-
