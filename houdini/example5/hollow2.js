@@ -20,11 +20,12 @@ registerPaint('hollowHighlights', class {
 		const blockHeight = size.height * 0.85;
 
 		// the values passed in the paint() function in the CSS
-		const colour = props.get( '--boxColor' );
+		const theColor = props.get( '--boxColor' );
 		const strokeType = args[0].toString();
 		const strokeWidth = parseInt(args[1]);
 
-
+		console.log(theColor);
+		
 		// set the stroke width
 		if ( strokeWidth ) {
 			ctx.lineWidth = strokeWidth;
@@ -34,10 +35,10 @@ registerPaint('hollowHighlights', class {
 		// set the fill type
 		if ( strokeType === 'stroke' ) {
 			ctx.fillStyle = 'transparent';
-			ctx.strokeStyle = colour;
+			ctx.strokeStyle = theColor;
 		} else if ( strokeType === 'filled' ) {
-			ctx.fillStyle = colour;
-			ctx.strokeStyle = colour;
+			ctx.fillStyle = theColor;
+			ctx.strokeStyle = theColor;
 		} else {
 			ctx.fillStyle = 'none';
 			ctx.strokeStyle = 'none';
